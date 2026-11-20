@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Swarm evals on Mistral</title>
+<meta name="description" content="The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost. Computed in your browser from the signed runs.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/swarm/evals.html">
+<meta property="og:title" content="Swarm evals on Mistral">
+<meta property="og:description" content="The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost. Computed in your browser from the signed runs.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swarm evals on Mistral">
+<meta name="twitter:description" content="The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost. Computed in your browser from the signed runs.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/swarm/evals.html">
+<link rel="stylesheet" href="swarm.css">
+<script type="module" src="evals.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<aside class="notice" aria-label="About this demonstration"><div class="wrap">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI. Nothing has been agreed with Mistral AI.</div></aside>
+<div class="wrap">
+<header class="top">
+<nav aria-label="Swarm pages"><a href="../">The site</a> <a href="../team/">The team, live</a> <a href="./">Swarm replays</a> <a href="evals.html" aria-current="page">Evals</a> <a href="HANDOVER.md">Handover note</a></nav>
+<h1>Evals: the same work, on different Mistral models</h1>
+<p class="lede">Every number on this page is computed here, in your browser, from the signed run files: only runs whose signatures verify are counted. A check is code, not a model: is the JSON valid, is the quoted sentence really on the page, are the numbers in the note the measured ones, is the translation in the right language.</p>
+</header>
+<main id="main">
+<p id="status" class="muted" aria-live="polite">Loading and verifying the runs&hellip;</p>
+<div id="out"></div>
+<section class="card" aria-labelledby="read-h">
+<h2 id="read-h">How to read this</h2>
+<ul>
+<li><b>First try</b>: the share of steps whose first call passed every check. <b>In the end</b>: the share that passed within the packet's three tries (each retry is told which checks failed).</li>
+<li>Some checks are rough heuristics: looks_pt and looks_fr count common short words, so a short or name-heavy translation can fail them while being right. The model output is on the replay page, so you can judge it.</li>
+<li>Few runs, small samples: this is a demonstration of the method, not a benchmark. Each count links to the replay of the runs behind it.</li>
+<li>Cost is computed from the usage tokens Mistral returned and Mistral's published prices (<a href="https://docs.mistral.ai/inference/pricing">docs.mistral.ai/inference/pricing</a>, as read on 20 November 2026).</li>
+</ul>
+</section>
+</main>
+<footer><p>Computed by <a href="evals.js">evals.js</a> from <a href="../data/swarm/index.json">data/swarm/index.json</a>. No cookies, no tracking.</p></footer>
+</div>
+</body>
+</html>

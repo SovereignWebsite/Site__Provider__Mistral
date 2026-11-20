@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Our swarm on Mistral, replayed</title>
+<meta name="description" content="The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, with every signature checked here.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/swarm/">
+<meta property="og:title" content="Our swarm, run on Mistral, replayed">
+<meta property="og:description" content="The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, with every signature checked here.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our swarm, run on Mistral, replayed">
+<meta name="twitter:description" content="The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, with every signature checked here.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/swarm/">
+<link rel="stylesheet" href="swarm.css">
+<script type="module" src="index.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<aside class="notice" aria-label="About this demonstration"><div class="wrap">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI. Nothing has been agreed with Mistral AI.</div></aside>
+<div class="wrap">
+<header class="top">
+<nav aria-label="Swarm pages"><a href="../">The site</a> <a href="../team/">The team, live</a> <a href="./" aria-current="page">Swarm replays</a> <a href="evals.html">Evals</a> <a href="HANDOVER.md">Handover note</a></nav>
+<h1>Our swarm, run on Mistral, replayed</h1>
+<p class="lede">The agentic environment behind PrompTugal and the Sovereign Website runs packets of work: a lead issues a signed packet, a runner runs it with model calls, every result is signed. Here the same machinery runs on Mistral's API only, on real tasks, and each run is replayed from its signed file.</p>
+</header>
+<main id="main">
+<section class="card" aria-labelledby="what-h">
+<h2 id="what-h">What ran</h2>
+<ul>
+<li><b>The team inside the site.</b> The seven roles of Dinis Cruz's article <a href="https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html">A website with a team inside</a> (as read on 20 November 2026), each doing its job on a real public site in the family, <a href="https://pipeline-demo.demo.sovereignweb.site/">pipeline-demo</a>: a plan, an edit, a review with a fact check, the edit applied in code, Portuguese and French, a link and accessibility check, a report. Nothing was pushed to that site.</li>
+<li><b>Storm-six, rerun.</b> The PrompTugal Swarm's <a href="https://github.com/PrompTugal/PrompTugal__News__Swarm/tree/dev/packets">storm-six packets</a> of 11 November 2026 ran four open-weight models through OpenRouter. The same prompt and check, on four Mistral models direct, compared with the original results.</li>
+</ul>
+<p class="small muted">Tiers: cheap is ministral-3b-2512, cheap8 is ministral-8b-2512, strong is mistral-small-2603, hard is ministral-14b-2512. Costs are computed from the usage tokens Mistral returned and Mistral's published prices at <a href="https://docs.mistral.ai/inference/pricing">docs.mistral.ai/inference/pricing</a>, as read on 20 November 2026 (USD per million tokens, in/out: 3B 0.1/0.1, 8B 0.15/0.15, 14B 0.2/0.2, Small 4 0.15/0.6). Mistral's invoice is the authority. Every recorded run here called the global endpoint, https://api.mistral.ai, which makes no promise about where inference runs; Mistral's EU endpoint, api.eu.mistral.ai, processes in the EU at 1.1 times list price (<a href="https://docs.mistral.ai/inference/regional-inference">regional inference</a>, as read on 20 November 2026). Model output on these pages is labelled as model output and has not been checked by a person.</p>
+</section>
+<h2 id="runs-h">The runs</h2>
+<p id="status" class="muted" aria-live="polite">Loading the runs&hellip;</p>
+<ul class="runs" id="runs" aria-labelledby="runs-h"></ul>
+<div id="replay"></div>
+</main>
+<footer>
+<p>Built by swarm.mistral@SovereignWebsite.dinis for Dinis Cruz, 20 to 21 November 2026. Code: <a href="engine.js">engine.js</a> (the packet engine, the same in node and in your browser), <a href="replay.js">replay.js</a>, <a href="tools/llm.mjs">tools/llm.mjs</a> and <a href="tools/swarm.mjs">tools/swarm.mjs</a>, adapted from the <a href="https://github.com/PrompTugal/PrompTugal__News__Swarm">PrompTugal Swarm</a> (Apache-2.0). Data: <a href="../data/swarm/index.json">data/swarm/index.json</a> and the ledger summary <a href="../data/swarm/ledger-summary.json">ledger-summary.json</a>. No cookies, no tracking; this page reads only files on this site.</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+ "body": {
+  "v": 1,
+  "id": "m002-storm-six-mistral",
+  "altitude": "A2",
+  "from": "swarm.mistral@SovereignWebsite.dinis",
+  "for": "any runner with a Mistral key: this container, or a visitor's browser (run.html)",
+  "issued_at": "2026-11-20T23:08:42Z",
+  "kind": "storm",
+  "title": "Storm-six rerun on 4 Mistral models",
+  "tasks": [
+   "warnings",
+   "forecast",
+   "stations",
+   "tides",
+   "transport",
+   "flights"
+  ],
+  "models": [
+   "ministral-3b-2512",
+   "ministral-8b-2512",
+   "ministral-14b-2512",
+   "mistral-small-2603"
+  ],
+  "parallel": 6,
+  "story": "A rerun of the PrompTugal Swarm's storm-six packets (s001 and s002, 11 November 2026: four open-weight models through OpenRouter) with the same prompt, check and consensus, on Mistral models only, direct to Mistral's API.",
+  "source": {
+   "workload": "the storm site's datasets, read over its public API",
+   "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/",
+   "original": [
+    "https://github.com/PrompTugal/PrompTugal__News__Swarm/tree/dev/packets/s001-storm-six",
+    "https://github.com/PrompTugal/PrompTugal__News__Swarm/tree/dev/packets/s002-storm-six"
+   ]
+  },
+  "mandate": "Read the six storm datasets and answer each task's question, checked, on each named Mistral model. Nothing else.",
+  "grant": [
+   "read.web:storm-charles.promptugal.news/api/v1",
+   "call.llm:api.mistral.ai (through site/swarm/tools/llm.mjs)",
+   "write.file:site/data/swarm/runs/<id>.json"
+  ],
+  "tries": 3,
+  "budget": {
+   "usd": 0.1
+  },
+  "output": "site/data/swarm/runs/<id>--<runner>.json, signed by a key made for the run"
+ },
+ "by": {
+  "altitude": "A4",
+  "name": "issuer: swarm.mistral@SovereignWebsite.dinis",
+  "fp": "sha256:c3e857f68c30a559",
+  "pub": "MCowBQYDK2VwAyEAVgqdeEF7ZpdbFP1WFYREmAFZnpMqzrUAMG0cUaKn8zo=",
+  "signed_at": "2026-11-20T23:08:42Z"
+ },
+ "sig": "R3Ruda+n2tSUikO4BZIAegnv+8fZaGsInLrU4NjmCA4tODZL1WxrXsZ5G+iM3aKU0sIgXVyWBw0dyggQKpJtCQ=="
+}

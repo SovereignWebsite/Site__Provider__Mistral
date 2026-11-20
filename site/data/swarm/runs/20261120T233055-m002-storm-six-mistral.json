@@ -1,0 +1,4831 @@
+{
+ "body": {
+  "v": 1,
+  "engine": {
+   "file": "site/swarm/engine.js",
+   "sha256": "f3e9ade159d217c2"
+  },
+  "kind": "storm",
+  "packet": "m002-storm-six-mistral",
+  "title": "Storm-six rerun on 4 Mistral models",
+  "story": "A rerun of the PrompTugal Swarm's storm-six packets (s001 and s002, 11 November 2026: four open-weight models through OpenRouter) with the same prompt, check and consensus, on Mistral models only, direct to Mistral's API.",
+  "by": "swarm.mistral@SovereignWebsite.dinis",
+  "environment": {
+   "label": "R1 Claude Code cloud",
+   "account": "dinis-cruz-mistral (proxy-injected key)"
+  },
+  "started_at": "2026-11-20T23:30:55Z",
+  "wall_ms": 8559,
+  "budget": {
+   "usd": 0.1
+  },
+  "source": {
+   "workload": "the storm site's datasets, read over its public API",
+   "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/",
+   "original": [
+    "https://github.com/PrompTugal/PrompTugal__News__Swarm/tree/dev/packets/s001-storm-six",
+    "https://github.com/PrompTugal/PrompTugal__News__Swarm/tree/dev/packets/s002-storm-six"
+   ]
+  },
+  "provider": {
+   "name": "Mistral",
+   "base_url": "https://api.mistral.ai/v1",
+   "price_source": "https://docs.mistral.ai/inference/pricing",
+   "price_read_on": "2026-11-20"
+  },
+  "metrics": {
+   "units": {
+    "P": 1,
+    "A4": 1,
+    "T": 1,
+    "A3": 1,
+    "M": 1,
+    "A2": 24,
+    "A0": 30,
+    "D": 6,
+    "A1": 24
+   },
+   "llm_calls": 24,
+   "valid_calls": 24,
+   "checks": 96,
+   "checks_passed": 96,
+   "tokens_in": 63608,
+   "tokens_out": 1352,
+   "mistral_usd": 0.0098616,
+   "models": [
+    "ministral-3b-2512",
+    "ministral-8b-2512",
+    "ministral-14b-2512",
+    "mistral-small-2603"
+   ],
+   "peak_concurrency": 12,
+   "latency_ms_p50": 864,
+   "by_role": {
+    "storm": {
+     "calls": 24,
+     "valid": 24,
+     "tokens_in": 63608,
+     "tokens_out": 1352,
+     "cost_usd": 0.0098616,
+     "models": [
+      "ministral-3b-2512",
+      "ministral-8b-2512",
+      "ministral-14b-2512",
+      "mistral-small-2603"
+     ]
+    }
+   },
+   "not_measured": "the runner's own agent tokens (the Claude Code session that ran the packet): not exposed to the run"
+  },
+  "consensus": {
+   "warnings": {
+    "tally": {
+     "warning": 3,
+     "normal": 1
+    },
+    "verdict": "warning",
+    "agree": 3,
+    "of": 4
+   },
+   "forecast": {
+    "tally": {
+     "warning": 2,
+     "normal": 2
+    },
+    "verdict": "warning",
+    "agree": 2,
+    "of": 4
+   },
+   "stations": {
+    "tally": {
+     "unknown": 4
+    },
+    "verdict": "unknown",
+    "agree": 4,
+    "of": 4
+   },
+   "tides": {
+    "tally": {
+     "warning": 1,
+     "normal": 3
+    },
+    "verdict": "normal",
+    "agree": 3,
+    "of": 4
+   },
+   "transport": {
+    "tally": {
+     "disrupted": 4
+    },
+    "verdict": "disrupted",
+    "agree": 4,
+    "of": 4
+   },
+   "flights": {
+    "tally": {
+     "disrupted": 4
+    },
+    "verdict": "disrupted",
+    "agree": 4,
+    "of": 4
+   }
+  },
+  "reads": [
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "status": 200,
+    "bytes": 20774,
+    "sha256": "81b2cf946e31060a"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "status": 200,
+    "bytes": 77174,
+    "sha256": "17aeb234d6139443"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "status": 200,
+    "bytes": 77174,
+    "sha256": "17aeb234d6139443"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "status": 200,
+    "bytes": 20774,
+    "sha256": "81b2cf946e31060a"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "status": 200,
+    "bytes": 20774,
+    "sha256": "81b2cf946e31060a"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "status": 200,
+    "bytes": 20774,
+    "sha256": "81b2cf946e31060a"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "status": 200,
+    "bytes": 77174,
+    "sha256": "17aeb234d6139443"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "status": 200,
+    "bytes": 77174,
+    "sha256": "17aeb234d6139443"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "status": 200,
+    "bytes": 103681,
+    "sha256": "72ac3e8764680dae"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "status": 200,
+    "bytes": 103681,
+    "sha256": "72ac3e8764680dae"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "status": 200,
+    "bytes": 103681,
+    "sha256": "72ac3e8764680dae"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "status": 200,
+    "bytes": 103681,
+    "sha256": "72ac3e8764680dae"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "status": 200,
+    "bytes": 24836,
+    "sha256": "c99f98b06ca62105"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "status": 200,
+    "bytes": 24836,
+    "sha256": "c99f98b06ca62105"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "status": 200,
+    "bytes": 24836,
+    "sha256": "c99f98b06ca62105"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "status": 200,
+    "bytes": 24836,
+    "sha256": "c99f98b06ca62105"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "status": 200,
+    "bytes": 17058,
+    "sha256": "88637082aadc4971"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "status": 200,
+    "bytes": 17058,
+    "sha256": "88637082aadc4971"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "status": 200,
+    "bytes": 17058,
+    "sha256": "88637082aadc4971"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "status": 200,
+    "bytes": 17058,
+    "sha256": "88637082aadc4971"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "status": 200,
+    "bytes": 21314,
+    "sha256": "9b7799da4d9b0b4f"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "status": 200,
+    "bytes": 21314,
+    "sha256": "9b7799da4d9b0b4f"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "status": 200,
+    "bytes": 21314,
+    "sha256": "9b7799da4d9b0b4f"
+   },
+   {
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "status": 200,
+    "bytes": 21314,
+    "sha256": "9b7799da4d9b0b4f"
+   }
+  ],
+  "calls": [
+   {
+    "unit": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "warnings:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2516,
+    "tokens_out": 87,
+    "cost_usd": 0.0002603,
+    "latency_ms": 770,
+    "ledger_id": "20261120T233056-2bebb085",
+    "t_start": 473,
+    "t_end": 1243,
+    "prompt_sha256": "7189453619e2dd39",
+    "prompt_chars": 6413,
+    "answer_sha256": "e21d55ac6af204dd",
+    "answer_chars": 208,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon has **red wind warning** (120–140 km/h gusts) and **red rain** (12:00–18:00) for storm Charles; until **21:00 (Wed) and 18:00 (Thu) respectively**\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "warnings:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2516,
+      "tokens_out": 87,
+      "cost_usd": 0.0002603,
+      "answer_sha256": "e21d55ac6af204dd",
+      "prompt_sha256": "7189453619e2dd39"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call warnings:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:7aa0f374afc093f0",
+      "pub": "MCowBQYDK2VwAyEAcHJNP1rA/sl1xn1SH89aYlXXVLAn5ehHcXc/wE6Rvmc=",
+      "signed_at": "2026-11-20T23:30:56Z"
+     },
+     "sig": "dZ4NqZQPPZV3G2/saYe7cTxTIP9OfM0pMQ4iE2oyGJJwQgbz6UKiJqjoUoeWlJRjGYxxYohWfvWrYARkKLdeBQ=="
+    },
+    "storm_task": "warnings",
+    "verdict": "warning",
+    "headline": "Lisbon has **red wind warning** (120–140 km/h gusts) and **red rain** (12:00–18:00) for storm Charles; until **21:00 (Wed) and 18:00 (Thu) respectively**"
+   },
+   {
+    "unit": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "forecast:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2438,
+    "tokens_out": 45,
+    "cost_usd": 0.0002483,
+    "latency_ms": 870,
+    "ledger_id": "20261120T233056-c4575aca",
+    "t_start": 424,
+    "t_end": 1294,
+    "prompt_sha256": "d7d67c0f738ded87",
+    "prompt_chars": 6392,
+    "answer_sha256": "d95ce611fd7a1b70",
+    "answer_chars": 131,
+    "model_output": "```json\n{\n  \"headline\": \"Tomorrow (Nov 12) in Lisbon: rain with moderate wind speeds (48.6 km/h mean)\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "forecast:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2438,
+      "tokens_out": 45,
+      "cost_usd": 0.0002483,
+      "answer_sha256": "d95ce611fd7a1b70",
+      "prompt_sha256": "d7d67c0f738ded87"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call forecast:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:49a3e3198e763006",
+      "pub": "MCowBQYDK2VwAyEAsvYbeA4j8ewZVTAu5Vif9gfrp7Rof4NiobGD9W6hWSw=",
+      "signed_at": "2026-11-20T23:30:56Z"
+     },
+     "sig": "Oqxbhg2DymvAkPFGARuyltiGePlpSjrRP7aZMRPGQBeTjs0ifIANEfI/PQsRNAHweQ0hb7lQOc+XxHZZRtUIDQ=="
+    },
+    "storm_task": "forecast",
+    "verdict": "warning",
+    "headline": "Tomorrow (Nov 12) in Lisbon: rain with moderate wind speeds (48.6 km/h mean)"
+   },
+   {
+    "unit": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "forecast:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2438,
+    "tokens_out": 51,
+    "cost_usd": 0.00037335,
+    "latency_ms": 1068,
+    "ledger_id": "20261120T233056-dce1dca1",
+    "t_start": 421,
+    "t_end": 1490,
+    "prompt_sha256": "d7d67c0f738ded87",
+    "prompt_chars": 6392,
+    "answer_sha256": "8d13d4e0bd15c3c9",
+    "answer_chars": 176,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon expects heavy rain and **strong winds (peak 48.6 km/h NW)** tomorrow, with gusts likely exceeding moderate levels.\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "forecast:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2438,
+      "tokens_out": 51,
+      "cost_usd": 0.00037335,
+      "answer_sha256": "8d13d4e0bd15c3c9",
+      "prompt_sha256": "d7d67c0f738ded87"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call forecast:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:c74019b2685ca2aa",
+      "pub": "MCowBQYDK2VwAyEAkCe4obotMy42YhkabpjNIUYCNdGGhAYFBJF/pN8/N70=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "4D868cN+j3asHPrXHkhmc1oacHSDbkAujtykYLcDX7EZLjM0PzYNkH1Ieh2oiC/kJ2WYJqtYBOgZxbbf8UNYCw=="
+    },
+    "storm_task": "forecast",
+    "verdict": "warning",
+    "headline": "Lisbon expects heavy rain and **strong winds (peak 48.6 km/h NW)** tomorrow, with gusts likely exceeding moderate levels."
+   },
+   {
+    "unit": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "warnings:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2516,
+    "tokens_out": 69,
+    "cost_usd": 0.000517,
+    "latency_ms": 1150,
+    "ledger_id": "20261120T233056-becac6b9",
+    "t_start": 438,
+    "t_end": 1588,
+    "prompt_sha256": "7189453619e2dd39",
+    "prompt_chars": 6413,
+    "answer_sha256": "4675ba7fd320ee5c",
+    "answer_chars": 152,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon has a **red wind warning** (gusts up to 140 km/h) in effect until **2026-11-11T21:00:00Z**\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "warnings:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2516,
+      "tokens_out": 69,
+      "cost_usd": 0.000517,
+      "answer_sha256": "4675ba7fd320ee5c",
+      "prompt_sha256": "7189453619e2dd39"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call warnings:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:2ed94d207453e91a",
+      "pub": "MCowBQYDK2VwAyEAnprlTDy6WaKn9XzQEWHksswYBV5qHkX4YccZ5M3WowI=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "PzsMlECwfWO3rN1OF5dxedRekmRWOGUbLwqRzqKluUxhbdsjePL8LE4TUptc76NsxO+LvWXMwsJtweCe7DmRDA=="
+    },
+    "storm_task": "warnings",
+    "verdict": "warning",
+    "headline": "Lisbon has a **red wind warning** (gusts up to 140 km/h) in effect until **2026-11-11T21:00:00Z**"
+   },
+   {
+    "unit": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "role": "storm",
+    "task": "warnings:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2528,
+    "tokens_out": 49,
+    "cost_usd": 0.0004086,
+    "latency_ms": 978,
+    "ledger_id": "20261120T233056-f11f2a48",
+    "t_start": 716,
+    "t_end": 1694,
+    "prompt_sha256": "7189453619e2dd39",
+    "prompt_chars": 6413,
+    "answer_sha256": "b915da9d2548987b",
+    "answer_chars": 112,
+    "model_output": "{\"headline\": \"Lisbon has no active IPMA warnings (green level) as of 2026-11-12T14:23:11Z.\", \"status\": \"normal\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "warnings:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2528,
+      "tokens_out": 49,
+      "cost_usd": 0.0004086,
+      "answer_sha256": "b915da9d2548987b",
+      "prompt_sha256": "7189453619e2dd39"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call warnings:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:2093a972ec920682",
+      "pub": "MCowBQYDK2VwAyEAuXpvgjFPzcWKAHd3gfM+GnLUqSQHrtJYvutDlhVt6hA=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "xUUiFGzuyTzW27kDRu0mkpDy28OwOLJ0kTjI+PUHozVleDT2LS6HPYTiy2gymB5hZGouNCkQke7UztHqO4beBg=="
+    },
+    "storm_task": "warnings",
+    "verdict": "normal",
+    "headline": "Lisbon has no active IPMA warnings (green level) as of 2026-11-12T14:23:11Z."
+   },
+   {
+    "unit": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "warnings:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2516,
+    "tokens_out": 75,
+    "cost_usd": 0.00038865,
+    "latency_ms": 1349,
+    "ledger_id": "20261120T233056-46e9e60a",
+    "t_start": 379,
+    "t_end": 1729,
+    "prompt_sha256": "7189453619e2dd39",
+    "prompt_chars": 6413,
+    "answer_sha256": "89e5a611c0a6f17f",
+    "answer_chars": 164,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon has a **red wind warning** (120–140 km/h gusts) in force now until **2026-11-11T21:00:00Z** (UTC/WET).\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "warnings:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2516,
+      "tokens_out": 75,
+      "cost_usd": 0.00038865,
+      "answer_sha256": "89e5a611c0a6f17f",
+      "prompt_sha256": "7189453619e2dd39"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call warnings:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:85e004191238e9b3",
+      "pub": "MCowBQYDK2VwAyEAmzwNEiOnppu+7s4WjCfUtPBHI4L7lazY1exVV2+wHhQ=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "HHnqimmvV8KgntmU100j24jPd26LAKHoJ/oGxT3TLfsROlT4yV+W+Inv8eJ2LIxwdhC6jwDaVLhEp9TfaQ20Dg=="
+    },
+    "storm_task": "warnings",
+    "verdict": "warning",
+    "headline": "Lisbon has a **red wind warning** (120–140 km/h gusts) in force now until **2026-11-11T21:00:00Z** (UTC/WET)."
+   },
+   {
+    "unit": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "role": "storm",
+    "task": "forecast:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2450,
+    "tokens_out": 43,
+    "cost_usd": 0.0003933,
+    "latency_ms": 732,
+    "ledger_id": "20261120T233057-c0e91caf",
+    "t_start": 1315,
+    "t_end": 2048,
+    "prompt_sha256": "d7d67c0f738ded87",
+    "prompt_chars": 6392,
+    "answer_sha256": "6daafd38b470e19a",
+    "answer_chars": 150,
+    "model_output": "```json\n{\"headline\": \"Tomorrow in Lisbon: light rain/showers with moderate west winds (100% rain probability, class 2 wind).\", \"status\": \"normal\"}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "forecast:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2450,
+      "tokens_out": 43,
+      "cost_usd": 0.0003933,
+      "answer_sha256": "6daafd38b470e19a",
+      "prompt_sha256": "d7d67c0f738ded87"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call forecast:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:269f1eaf6dc85adc",
+      "pub": "MCowBQYDK2VwAyEANcEGTRqazj2CK0mC8IgupP/TRltcY3Ww0ofpAwSd5hY=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "7O1T7hDoeuMRM4mcR1DL7lEjTxNW6heneV3mWQ7eranZvWcztkmyll9SB/Esp5/VEqVnL3oiAT6vJBj5p8oDDQ=="
+    },
+    "storm_task": "forecast",
+    "verdict": "normal",
+    "headline": "Tomorrow in Lisbon: light rain/showers with moderate west winds (100% rain probability, class 2 wind)."
+   },
+   {
+    "unit": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "stations:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2954,
+    "tokens_out": 43,
+    "cost_usd": 0.0002997,
+    "latency_ms": 604,
+    "ledger_id": "20261120T233057-94884d9b",
+    "t_start": 1551,
+    "t_end": 2156,
+    "prompt_sha256": "4139a4a05de6c5f6",
+    "prompt_chars": 6400,
+    "answer_sha256": "7e3f138aa29ba35f",
+    "answer_chars": 137,
+    "model_output": "```json\n{\n  \"headline\": \"No gust data available for Lisbon; only mean wind speeds (max 35.3 km/h) reported.\",\n  \"status\": \"unknown\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "stations:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2954,
+      "tokens_out": 43,
+      "cost_usd": 0.0002997,
+      "answer_sha256": "7e3f138aa29ba35f",
+      "prompt_sha256": "4139a4a05de6c5f6"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call stations:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:f5cbb7acd1567c2a",
+      "pub": "MCowBQYDK2VwAyEA1q5S/dJnDvny1dgfDpauR01GP7xTidqt0q4dZOfxSnI=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "VoInNNjohdkfzTQIMvN3PLNMhZCvIrnebdp/uL4nLClBcqMK0TYszvkZDRYDCPc2qwJaW0k1zLDlFbZe3bhgBw=="
+    },
+    "storm_task": "stations",
+    "verdict": "unknown",
+    "headline": "No gust data available for Lisbon; only mean wind speeds (max 35.3 km/h) reported."
+   },
+   {
+    "unit": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "forecast:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2438,
+    "tokens_out": 67,
+    "cost_usd": 0.000501,
+    "latency_ms": 956,
+    "ledger_id": "20261120T233056-fab6293c",
+    "t_start": 1265,
+    "t_end": 2221,
+    "prompt_sha256": "d7d67c0f738ded87",
+    "prompt_chars": 6392,
+    "answer_sha256": "67dafe69267bb229",
+    "answer_chars": 174,
+    "model_output": "```json\n{\n  \"headline\": \"Tomorrow (2026-11-13) in Lisbon: 100% rain probability with light showers and moderate winds (mean 15-16 km/h, class 2).\",\n  \"status\": \"normal\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "forecast:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2438,
+      "tokens_out": 67,
+      "cost_usd": 0.000501,
+      "answer_sha256": "67dafe69267bb229",
+      "prompt_sha256": "d7d67c0f738ded87"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call forecast:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:521bd5548e62bbe5",
+      "pub": "MCowBQYDK2VwAyEA5pw8TrsNLv9Weolpq2Tz861zieUZMNRiCvv5WE833PM=",
+      "signed_at": "2026-11-20T23:30:57Z"
+     },
+     "sig": "RvsgGp21KxW+gz5213KdxTulDePgg7fLBh1WZyeYhSZxI+GdyxRh8IBQPzhZFrhWu94/5r1HOVNzZCqK35qsAQ=="
+    },
+    "storm_task": "forecast",
+    "verdict": "normal",
+    "headline": "Tomorrow (2026-11-13) in Lisbon: 100% rain probability with light showers and moderate winds (mean 15-16 km/h, class 2)."
+   },
+   {
+    "unit": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "role": "storm",
+    "task": "stations:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2966,
+    "tokens_out": 29,
+    "cost_usd": 0.0004623,
+    "latency_ms": 738,
+    "ledger_id": "20261120T233057-497ff649",
+    "t_start": 1747,
+    "t_end": 2486,
+    "prompt_sha256": "4139a4a05de6c5f6",
+    "prompt_chars": 6400,
+    "answer_sha256": "41676466db8fc547",
+    "answer_chars": 111,
+    "model_output": "{\"headline\": \"No gust data available in this feed; check Lisbon Airport METAR for gusts.\", \"status\": \"unknown\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "stations:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2966,
+      "tokens_out": 29,
+      "cost_usd": 0.0004623,
+      "answer_sha256": "41676466db8fc547",
+      "prompt_sha256": "4139a4a05de6c5f6"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call stations:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:48e0bdfb9c81337d",
+      "pub": "MCowBQYDK2VwAyEAM7CENFfB69h/xQ945eEV0DXlOaJxG6G9J6rP6OjMh98=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "Wo56NwMVVrdTZXAoyKSf1OQ788j+SUFKlEM06MjPG0T8Sdl8rScJ3YJaKsUawHpuVBDXl21CumvQp49FvAHeAA=="
+    },
+    "storm_task": "stations",
+    "verdict": "unknown",
+    "headline": "No gust data available in this feed; check Lisbon Airport METAR for gusts."
+   },
+   {
+    "unit": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "stations:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2954,
+    "tokens_out": 75,
+    "cost_usd": 0.00045435,
+    "latency_ms": 934,
+    "ledger_id": "20261120T233057-04d28219",
+    "t_start": 1608,
+    "t_end": 2542,
+    "prompt_sha256": "4139a4a05de6c5f6",
+    "prompt_chars": 6400,
+    "answer_sha256": "6b351871865f00c1",
+    "answer_chars": 210,
+    "model_output": "```json\n{\n  \"headline\": \"The strongest gust in Lisbon’s latest hour (2026-11-12T13:00Z) was **32.8 km/h** at Lisboa (Geofísico), though gusts require METAR data for precise values.\",\n  \"status\": \"unknown\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "stations:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2954,
+      "tokens_out": 75,
+      "cost_usd": 0.00045435,
+      "answer_sha256": "6b351871865f00c1",
+      "prompt_sha256": "4139a4a05de6c5f6"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call stations:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:692d0fb67f1a07ec",
+      "pub": "MCowBQYDK2VwAyEAObYJf28C3QNRN7Rl7YJfWqxrzwHEuHFJS7jW9OzFkW8=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "siZ3bgkl58TATaGYnBJxmXyw7+f1/uBZ/YnJONEaJdKD3VCOYDatKfLZcdskUH95YpBBWAqIPA0HAlO9UAxwCw=="
+    },
+    "storm_task": "stations",
+    "verdict": "unknown",
+    "headline": "The strongest gust in Lisbon’s latest hour (2026-11-12T13:00Z) was **32.8 km/h** at Lisboa (Geofísico), though gusts require METAR data for precise values."
+   },
+   {
+    "unit": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "stations:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2954,
+    "tokens_out": 62,
+    "cost_usd": 0.0006032,
+    "latency_ms": 882,
+    "ledger_id": "20261120T233057-c0eee192",
+    "t_start": 1713,
+    "t_end": 2595,
+    "prompt_sha256": "4139a4a05de6c5f6",
+    "prompt_chars": 6400,
+    "answer_sha256": "5d338f9306bb80bb",
+    "answer_chars": 164,
+    "model_output": "```json\n{\n  \"headline\": \"No gust data available in this feed; check Lisbon Airport's METAR for latest gusts (e.g., 2026-11-12T13:00Z).\",\n  \"status\": \"unknown\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "stations:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2954,
+      "tokens_out": 62,
+      "cost_usd": 0.0006032,
+      "answer_sha256": "5d338f9306bb80bb",
+      "prompt_sha256": "4139a4a05de6c5f6"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call stations:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:e47096b62fc0d352",
+      "pub": "MCowBQYDK2VwAyEALyOutfWDVesqy3Hnh3r9pIPJpCbhjGHDVG8Cv78mSYA=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "0k2lHcKPhGX7+JbA5aJtZ/uunwTmh9QBf3TzNrA3t7OLkrFa7teJsA4Kd2tS1M1SKgYkWttTNSvIIGwJlGv2Cg=="
+    },
+    "storm_task": "stations",
+    "verdict": "unknown",
+    "headline": "No gust data available in this feed; check Lisbon Airport's METAR for latest gusts (e.g., 2026-11-12T13:00Z)."
+   },
+   {
+    "unit": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "tides:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2899,
+    "tokens_out": 60,
+    "cost_usd": 0.0002959,
+    "latency_ms": 526,
+    "ledger_id": "20261120T233057-1d3c7133",
+    "t_start": 2109,
+    "t_end": 2636,
+    "prompt_sha256": "207f592af026ac07",
+    "prompt_chars": 6376,
+    "answer_sha256": "d862f918dca6493c",
+    "answer_chars": 151,
+    "model_output": "```json\n{\n  \"headline\": \"Next high water at Cascais on 2026-11-11 at 02:40 UTC, reaching **1.07 m** above mean sea level.\",\n  \"status\": \"warning\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "tides:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2899,
+      "tokens_out": 60,
+      "cost_usd": 0.0002959,
+      "answer_sha256": "d862f918dca6493c",
+      "prompt_sha256": "207f592af026ac07"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call tides:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:2a225f28e0e54701",
+      "pub": "MCowBQYDK2VwAyEAi+5Dg8Cjra5BIcilIXupLZt9IWjcArdLAV+mRmIAt14=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "w2ACcTXctiUgqIu84NvI75LTeeRXKhuz0AbmBT5JryRJvzuGkpLq5YK9RVF4bzY/A0yTQhPLqO0A90QTAdhiCw=="
+    },
+    "storm_task": "tides",
+    "verdict": "warning",
+    "headline": "Next high water at Cascais on 2026-11-11 at 02:40 UTC, reaching **1.07 m** above mean sea level."
+   },
+   {
+    "unit": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "tides:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2899,
+    "tokens_out": 59,
+    "cost_usd": 0.0004437,
+    "latency_ms": 779,
+    "ledger_id": "20261120T233057-178c04aa",
+    "t_start": 2178,
+    "t_end": 2958,
+    "prompt_sha256": "207f592af026ac07",
+    "prompt_chars": 6376,
+    "answer_sha256": "5453873fe707265d",
+    "answer_chars": 149,
+    "model_output": "```json\n{\n  \"headline\": \"Next high water at Cascais on 2026-11-12 at 15:32 UTC, height 0.75 meters above mean sea level.\",\n  \"status\": \"normal\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "tides:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2899,
+      "tokens_out": 59,
+      "cost_usd": 0.0004437,
+      "answer_sha256": "5453873fe707265d",
+      "prompt_sha256": "207f592af026ac07"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call tides:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:4d29c1a2a8d8c6fb",
+      "pub": "MCowBQYDK2VwAyEAb8GtEeTpQ+j3m/46s1Ys7nlYbV+KXuJF9/rBToS34vw=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "ORRGtdthuB9MajWYh7FpAs+cuh5s94K3YcZz29BQDCahPMNaqx6hlcLf681cj4R4FHkmagWI6q2EjHr45vVUCA=="
+    },
+    "storm_task": "tides",
+    "verdict": "normal",
+    "headline": "Next high water at Cascais on 2026-11-12 at 15:32 UTC, height 0.75 meters above mean sea level."
+   },
+   {
+    "unit": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "transport:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2830,
+    "tokens_out": 43,
+    "cost_usd": 0.0002873,
+    "latency_ms": 538,
+    "ledger_id": "20261120T233058-c3907ca6",
+    "t_start": 2630,
+    "t_end": 3169,
+    "prompt_sha256": "4deac2a48603bb6d",
+    "prompt_chars": 6385,
+    "answer_sha256": "d8e45e5cf4a266b5",
+    "answer_chars": 183,
+    "model_output": "```json\n[\n    {\n        \"headline\": \"Carris Metropolitana buses in Lisbon metropolitan area are disrupted due to severe weather conditions.\",\n        \"status\": \"disrupted\"\n    }\n]\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "transport:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2830,
+      "tokens_out": 43,
+      "cost_usd": 0.0002873,
+      "answer_sha256": "d8e45e5cf4a266b5",
+      "prompt_sha256": "4deac2a48603bb6d"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call transport:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:853dd559113f9400",
+      "pub": "MCowBQYDK2VwAyEAwV1UroqLBtiQeDcvqUyo8OJxkv6LPGmClKNWv2aCWz4=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "IX8k6f9Do9fLMkwJ8//zz5OuKm7wx8aziwJ8BHQwezrCIE3QWfGAHlhId1nAGLwSvVw0IcP302yqz6xicfShCA=="
+    },
+    "storm_task": "transport",
+    "verdict": "disrupted",
+    "headline": "Carris Metropolitana buses in Lisbon metropolitan area are disrupted due to severe weather conditions."
+   },
+   {
+    "unit": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "tides:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2899,
+    "tokens_out": 62,
+    "cost_usd": 0.0005922,
+    "latency_ms": 932,
+    "ledger_id": "20261120T233057-3b540498",
+    "t_start": 2240,
+    "t_end": 3173,
+    "prompt_sha256": "207f592af026ac07",
+    "prompt_chars": 6376,
+    "answer_sha256": "47a5723649806500",
+    "answer_chars": 152,
+    "model_output": "```json\n{\n  \"headline\": \"Next high water at Cascais on 2026-11-12 at 15:32 UTC, height 0.75 m above mean sea level (model).\",\n  \"status\": \"normal\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "tides:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2899,
+      "tokens_out": 62,
+      "cost_usd": 0.0005922,
+      "answer_sha256": "47a5723649806500",
+      "prompt_sha256": "207f592af026ac07"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call tides:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:19da2984a6a87e9e",
+      "pub": "MCowBQYDK2VwAyEAfI5xez/8Sj3FrLZv5S3H9f0K7YTvtfTbMxws7dA/kZ4=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "vIG9ZdCvVR05RQK7bau3j52+VeZiceJsROO5FuZGdfAJIewbudDggxmnd+y1iSsT+7VJrd/jJ+5zk3x/G6QhCg=="
+    },
+    "storm_task": "tides",
+    "verdict": "normal",
+    "headline": "Next high water at Cascais on 2026-11-12 at 15:32 UTC, height 0.75 m above mean sea level (model)."
+   },
+   {
+    "unit": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "role": "storm",
+    "task": "tides:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2911,
+    "tokens_out": 52,
+    "cost_usd": 0.00046785,
+    "latency_ms": 663,
+    "ledger_id": "20261120T233058-71e42768",
+    "t_start": 2511,
+    "t_end": 3174,
+    "prompt_sha256": "207f592af026ac07",
+    "prompt_chars": 6376,
+    "answer_sha256": "5fc48e37c6f0dba7",
+    "answer_chars": 139,
+    "model_output": "{\"headline\": \"Next high water at Cascais is at 15:02 UTC on 11 Nov 2026 with a height of 1.06 m above mean sea level.\", \"status\": \"normal\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "tides:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2911,
+      "tokens_out": 52,
+      "cost_usd": 0.00046785,
+      "answer_sha256": "5fc48e37c6f0dba7",
+      "prompt_sha256": "207f592af026ac07"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call tides:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:a3f4232819721565",
+      "pub": "MCowBQYDK2VwAyEA0NRQbwW+esJijV/RotzoM8+Lz0mHIuqLL0ftceqTcBU=",
+      "signed_at": "2026-11-20T23:30:58Z"
+     },
+     "sig": "FgCfNKOeM6M48W83zCs9VceJrYVfaUwvKgKQTgo5chJQFnngNkQt4IMTlHV9e14sI3PuELYIXz3emMRNifVzDw=="
+    },
+    "storm_task": "tides",
+    "verdict": "normal",
+    "headline": "Next high water at Cascais is at 15:02 UTC on 11 Nov 2026 with a height of 1.06 m above mean sea level."
+   },
+   {
+    "unit": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "transport:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2830,
+    "tokens_out": 45,
+    "cost_usd": 0.000575,
+    "latency_ms": 860,
+    "ledger_id": "20261120T233058-a15fd688",
+    "t_start": 2659,
+    "t_end": 3520,
+    "prompt_sha256": "4deac2a48603bb6d",
+    "prompt_chars": 6385,
+    "answer_sha256": "98e54ad6ce153581",
+    "answer_chars": 161,
+    "model_output": "```json\n{\n  \"headline\": \"Carris Metropolitana (buses) is disrupted due to weather-related detours, delays, and modified services.\",\n  \"status\": \"disrupted\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "transport:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2830,
+      "tokens_out": 45,
+      "cost_usd": 0.000575,
+      "answer_sha256": "98e54ad6ce153581",
+      "prompt_sha256": "4deac2a48603bb6d"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call transport:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:f99d42e6ce11d016",
+      "pub": "MCowBQYDK2VwAyEAk587H1rKTgOs8nIrubZSZIObakWymw8kCJjY4/7FjoQ=",
+      "signed_at": "2026-11-20T23:30:59Z"
+     },
+     "sig": "UZPKIUk4KABIiPwTc+8QsEbsBwYbKB1h9nhNjIKqpcdXKEUTWxTuF6NPqlq+rn2CXAsOsSRsZfvCfRTGpzuUAw=="
+    },
+    "storm_task": "transport",
+    "verdict": "disrupted",
+    "headline": "Carris Metropolitana (buses) is disrupted due to weather-related detours, delays, and modified services."
+   },
+   {
+    "unit": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "transport:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2830,
+    "tokens_out": 63,
+    "cost_usd": 0.00043395,
+    "latency_ms": 1001,
+    "ledger_id": "20261120T233058-3e7a93e7",
+    "t_start": 2632,
+    "t_end": 3635,
+    "prompt_sha256": "4deac2a48603bb6d",
+    "prompt_chars": 6385,
+    "answer_sha256": "60724f895d313fe3",
+    "answer_chars": 234,
+    "model_output": "```json\n{\n  \"headline\": \"Carris Metropolitana (buses) and other operators (Metro, CP, Fertagus, Carris, bridges, airport) are disrupted due to Storm Charles; check operator-specific notices for details.\",\n  \"status\": \"disrupted\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "transport:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2830,
+      "tokens_out": 63,
+      "cost_usd": 0.00043395,
+      "answer_sha256": "60724f895d313fe3",
+      "prompt_sha256": "4deac2a48603bb6d"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call transport:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:df14085010828833",
+      "pub": "MCowBQYDK2VwAyEA12SnhEneml8yvtmJ5Bp5xtiWTjLXZ9KZwKjOndF9y3g=",
+      "signed_at": "2026-11-20T23:30:59Z"
+     },
+     "sig": "N/qcgVvbhAyjBTc/4qwBCix1YXzXskolNqibgDyNAjPvxNM/DgGO+64LLZdQfNFMERz+UDc3cu2RWsalMuFKCw=="
+    },
+    "storm_task": "transport",
+    "verdict": "disrupted",
+    "headline": "Carris Metropolitana (buses) and other operators (Metro, CP, Fertagus, Carris, bridges, airport) are disrupted due to Storm Charles; check operator-specific notices for details."
+   },
+   {
+    "unit": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "role": "storm",
+    "task": "transport:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2842,
+    "tokens_out": 30,
+    "cost_usd": 0.0004443,
+    "latency_ms": 659,
+    "ledger_id": "20261120T233058-93d8e6cb",
+    "t_start": 2976,
+    "t_end": 3635,
+    "prompt_sha256": "4deac2a48603bb6d",
+    "prompt_chars": 6385,
+    "answer_sha256": "15d7c3096e206af9",
+    "answer_chars": 131,
+    "model_output": "{\"headline\": \"Carris Metropolitana buses in Lisbon metropolitan area are disrupted due to weather notices.\", \"status\": \"disrupted\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "transport:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2842,
+      "tokens_out": 30,
+      "cost_usd": 0.0004443,
+      "answer_sha256": "15d7c3096e206af9",
+      "prompt_sha256": "4deac2a48603bb6d"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call transport:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:da223845d714e18a",
+      "pub": "MCowBQYDK2VwAyEAr0gcf2mEx2wvyVneNGmBmAiTP1/DGKRTQWoS+Z+jLdA=",
+      "signed_at": "2026-11-20T23:30:59Z"
+     },
+     "sig": "Iy/DaED8DEUIUBp0wx2zjdnQ/IN/tdnLk2dYpoKB1SNat2PfdolfjevA34k/8heVpIh/wB4AYI3uNBa3WZ08Cw=="
+    },
+    "storm_task": "transport",
+    "verdict": "disrupted",
+    "headline": "Carris Metropolitana buses in Lisbon metropolitan area are disrupted due to weather notices."
+   },
+   {
+    "unit": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "role": "storm",
+    "task": "flights:ministral-3b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2247,
+    "tokens_out": 55,
+    "cost_usd": 0.0002302,
+    "latency_ms": 513,
+    "ledger_id": "20261120T233059-5bbe96db",
+    "t_start": 3404,
+    "t_end": 3917,
+    "prompt_sha256": "8830ea25156b7f59",
+    "prompt_chars": 6396,
+    "answer_sha256": "b69b0340fd0b415d",
+    "answer_chars": 152,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon flights today: **124 departures** (vs. ~565 scheduled, ~45 operated normally on 11 Nov).\",\n  \"status\": \"disrupted\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "flights:ministral-3b-2512",
+      "role": "storm",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2247,
+      "tokens_out": 55,
+      "cost_usd": 0.0002302,
+      "answer_sha256": "b69b0340fd0b415d",
+      "prompt_sha256": "8830ea25156b7f59"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call flights:ministral-3b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:283f9968c532041f",
+      "pub": "MCowBQYDK2VwAyEArGHAQ331Vh4AR5B9m+/TR4sR1v97ItjdXt/svHfilA0=",
+      "signed_at": "2026-11-20T23:30:59Z"
+     },
+     "sig": "f0qg1OB2YqoxG51jaZkIx6qEZVeQrF+78uR/A1FP0OhHV45EJwmYdUQE8Uq3OuY0k/+RTEidtoByeRBFbHBJBg=="
+    },
+    "storm_task": "flights",
+    "verdict": "disrupted",
+    "headline": "Lisbon flights today: **124 departures** (vs. ~565 scheduled, ~45 operated normally on 11 Nov)."
+   },
+   {
+    "unit": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "role": "storm",
+    "task": "flights:ministral-8b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2247,
+    "tokens_out": 75,
+    "cost_usd": 0.0003483,
+    "latency_ms": 864,
+    "ledger_id": "20261120T233058-d46d245f",
+    "t_start": 3257,
+    "t_end": 4121,
+    "prompt_sha256": "8830ea25156b7f59",
+    "prompt_chars": 6396,
+    "answer_sha256": "9498ba5467f5e52f",
+    "answer_chars": 200,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon airport had **124 departures** (vs. 277 scheduled, 45 operated) on 2026-11-11 - **59% below normal** due to cancellations and disruptions.\",\n  \"status\": \"disrupted\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "flights:ministral-8b-2512",
+      "role": "storm",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2247,
+      "tokens_out": 75,
+      "cost_usd": 0.0003483,
+      "answer_sha256": "9498ba5467f5e52f",
+      "prompt_sha256": "8830ea25156b7f59"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call flights:ministral-8b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:408942c90039ff21",
+      "pub": "MCowBQYDK2VwAyEA3wu6Fm3nAdY5inkq37GwtR5OXVO3iY2aRDImn2w2wos=",
+      "signed_at": "2026-11-20T23:30:59Z"
+     },
+     "sig": "Ke1TrS+VWm4TrAV1vsgJv3lNp8U7FQq1xyAC5FlRPeCnrmqIMvAFJpCJ4QLYQwpZGKV6qFbJTc65aTdYYnCsCQ=="
+    },
+    "storm_task": "flights",
+    "verdict": "disrupted",
+    "headline": "Lisbon airport had **124 departures** (vs. 277 scheduled, 45 operated) on 2026-11-11 - **59% below normal** due to cancellations and disruptions."
+   },
+   {
+    "unit": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "role": "storm",
+    "task": "flights:mistral-small-2603",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2259,
+    "tokens_out": 55,
+    "cost_usd": 0.00037185,
+    "latency_ms": 802,
+    "ledger_id": "20261120T233059-f98561e1",
+    "t_start": 3537,
+    "t_end": 4340,
+    "prompt_sha256": "8830ea25156b7f59",
+    "prompt_chars": 6396,
+    "answer_sha256": "ebf248e518542553",
+    "answer_chars": 155,
+    "model_output": "```json\n{\"headline\": \"Lisbon flights: 124 detected today vs 565 scheduled, with 310 cancelled (288 in advance, 22 during day).\", \"status\": \"disrupted\"}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "flights:mistral-small-2603",
+      "role": "storm",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2259,
+      "tokens_out": 55,
+      "cost_usd": 0.00037185,
+      "answer_sha256": "ebf248e518542553",
+      "prompt_sha256": "8830ea25156b7f59"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call flights:mistral-small-2603 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:7ececfb81fa582de",
+      "pub": "MCowBQYDK2VwAyEARuC9YBkHPSuT4+X0/cXWJ6kcEBsZCtGyvse+nJRO8HE=",
+      "signed_at": "2026-11-20T23:31:00Z"
+     },
+     "sig": "r7P0JcHCfe4g/0neSYtAH5t6hquWtyGNycxV9/3Nvp7dkDfqt3fjMEIO1+W3F9zbQ+1jKaN/A4fdbRFFub4XAg=="
+    },
+    "storm_task": "flights",
+    "verdict": "disrupted",
+    "headline": "Lisbon flights: 124 detected today vs 565 scheduled, with 310 cancelled (288 in advance, 22 during day)."
+   },
+   {
+    "unit": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "role": "storm",
+    "task": "flights:ministral-14b-2512",
+    "attempt": 1,
+    "tier": "explicit",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "headline_string",
+      "pass": true
+     },
+     {
+      "name": "status_enum",
+      "pass": true
+     }
+    ],
+    "tokens_in": 2247,
+    "tokens_out": 58,
+    "cost_usd": 0.000461,
+    "latency_ms": 5303,
+    "ledger_id": "20261120T233058-fa047dd3",
+    "t_start": 3255,
+    "t_end": 8558,
+    "prompt_sha256": "8830ea25156b7f59",
+    "prompt_chars": 6396,
+    "answer_sha256": "dedba968166a4379",
+    "answer_chars": 158,
+    "model_output": "```json\n{\n  \"headline\": \"Lisbon had 124 flights today (OpenSky) vs. 277 scheduled (ANA), 22 cancelled during day, 45 operated.\",\n  \"status\": \"disrupted\"\n}\n```",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "flights:ministral-14b-2512",
+      "role": "storm",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "headline_string",
+        true
+       ],
+       [
+        "status_enum",
+        true
+       ]
+      ],
+      "tokens_in": 2247,
+      "tokens_out": 58,
+      "cost_usd": 0.000461,
+      "answer_sha256": "dedba968166a4379",
+      "prompt_sha256": "8830ea25156b7f59"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call flights:ministral-14b-2512 #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:16492d392b78bcf7",
+      "pub": "MCowBQYDK2VwAyEA//EdZ/N5m77caaCPf6rMts46Khe9NoT1CBlkjBRMs4Y=",
+      "signed_at": "2026-11-20T23:31:04Z"
+     },
+     "sig": "NCzwKY5l7n/xprDFkgXBd1lpqha6K0Gwthnv5c63UTEjhefZSmRp8NrSXIH/QtHFbTH1Yy/i09DOG+lcTs9lCQ=="
+    },
+    "storm_task": "flights",
+    "verdict": "disrupted",
+    "headline": "Lisbon had 124 flights today (OpenSky) vs. 277 scheduled (ANA), 22 cancelled during day, 45 operated."
+   }
+  ],
+  "nodes": [
+   {
+    "id": "dinis",
+    "kind": "person",
+    "altitude": "P",
+    "label": "Dinis Cruz"
+   },
+   {
+    "id": "issuer",
+    "kind": "swarm",
+    "altitude": "A4",
+    "label": "swarm.mistral@SovereignWebsite.dinis"
+   },
+   {
+    "id": "packet:m002-storm-six-mistral",
+    "kind": "task",
+    "altitude": "T",
+    "label": "packet m002-storm-six-mistral",
+    "edge": "carries"
+   },
+   {
+    "id": "runner",
+    "kind": "agent",
+    "altitude": "A3",
+    "label": "swarm.mistral@SovereignWebsite.dinis",
+    "env": "R1 Claude Code cloud",
+    "account": "dinis-cruz-mistral (proxy-injected key)"
+   },
+   {
+    "id": "mistral",
+    "kind": "provider",
+    "altitude": "M",
+    "label": "Mistral API (api.mistral.ai)"
+   },
+   {
+    "id": "loop:warnings:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "warnings · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:warnings:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/warnings.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "weather/warnings.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "bytes": 20774,
+    "sha256": "81b2cf946e31060a",
+    "read_at": "2026-11-20T23:30:56Z",
+    "status": 200
+   },
+   {
+    "id": "loop:warnings:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "warnings · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:warnings:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/warnings.json"
+   },
+   {
+    "id": "loop:warnings:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "warnings · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:warnings:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/warnings.json"
+   },
+   {
+    "id": "loop:warnings:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "warnings · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:warnings:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/warnings.json"
+   },
+   {
+    "id": "loop:forecast:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "forecast · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:forecast:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/forecast.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "weather/forecast.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "bytes": 77174,
+    "sha256": "17aeb234d6139443",
+    "read_at": "2026-11-20T23:30:57Z",
+    "status": 200
+   },
+   {
+    "id": "loop:forecast:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "forecast · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:forecast:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/forecast.json"
+   },
+   {
+    "id": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "warnings:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:85e004191238e9b3",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 2591,
+    "cost_usd": 0.00038865,
+    "latency_ms": 1349
+   },
+   {
+    "id": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "forecast:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:c74019b2685ca2aa",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 2489,
+    "cost_usd": 0.00037335,
+    "latency_ms": 1068
+   },
+   {
+    "id": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "forecast:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:49a3e3198e763006",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2483,
+    "cost_usd": 0.0002483,
+    "latency_ms": 870
+   },
+   {
+    "id": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "warnings:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:2ed94d207453e91a",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 2585,
+    "cost_usd": 0.000517,
+    "latency_ms": 1150
+   },
+   {
+    "id": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "warnings:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:7aa0f374afc093f0",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2603,
+    "cost_usd": 0.0002603,
+    "latency_ms": 770
+   },
+   {
+    "id": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "warnings:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:2093a972ec920682",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2577,
+    "cost_usd": 0.0004086,
+    "latency_ms": 978
+   },
+   {
+    "id": "loop:forecast:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "forecast · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:forecast:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/forecast.json"
+   },
+   {
+    "id": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "forecast:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:521bd5548e62bbe5",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 2505,
+    "cost_usd": 0.000501,
+    "latency_ms": 956
+   },
+   {
+    "id": "loop:forecast:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "forecast · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:forecast:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/forecast.json"
+   },
+   {
+    "id": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "forecast:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:269f1eaf6dc85adc",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2493,
+    "cost_usd": 0.0003933,
+    "latency_ms": 732
+   },
+   {
+    "id": "loop:stations:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "stations · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:stations:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/stations.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "weather/stations.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "bytes": 103681,
+    "sha256": "72ac3e8764680dae",
+    "read_at": "2026-11-20T23:30:57Z",
+    "status": 200
+   },
+   {
+    "id": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "stations:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:f5cbb7acd1567c2a",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2997,
+    "cost_usd": 0.0002997,
+    "latency_ms": 604
+   },
+   {
+    "id": "loop:stations:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "stations · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:stations:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/stations.json"
+   },
+   {
+    "id": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "stations:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:692d0fb67f1a07ec",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 3029,
+    "cost_usd": 0.00045435,
+    "latency_ms": 934
+   },
+   {
+    "id": "loop:stations:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "stations · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:stations:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/stations.json"
+   },
+   {
+    "id": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "stations:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:e47096b62fc0d352",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 3016,
+    "cost_usd": 0.0006032,
+    "latency_ms": 882
+   },
+   {
+    "id": "loop:stations:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "stations · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:stations:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read weather/stations.json"
+   },
+   {
+    "id": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "stations:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:48e0bdfb9c81337d",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2995,
+    "cost_usd": 0.0004623,
+    "latency_ms": 738
+   },
+   {
+    "id": "loop:tides:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "tides · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:tides:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read exposure/tides.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "exposure/tides.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "bytes": 24836,
+    "sha256": "c99f98b06ca62105",
+    "read_at": "2026-11-20T23:30:58Z",
+    "status": 200
+   },
+   {
+    "id": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "tides:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:2a225f28e0e54701",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2959,
+    "cost_usd": 0.0002959,
+    "latency_ms": 526
+   },
+   {
+    "id": "loop:tides:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "tides · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:tides:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read exposure/tides.json"
+   },
+   {
+    "id": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "tides:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:4d29c1a2a8d8c6fb",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 2958,
+    "cost_usd": 0.0004437,
+    "latency_ms": 779
+   },
+   {
+    "id": "loop:tides:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "tides · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:tides:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read exposure/tides.json"
+   },
+   {
+    "id": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "tides:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:19da2984a6a87e9e",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 2961,
+    "cost_usd": 0.0005922,
+    "latency_ms": 932
+   },
+   {
+    "id": "loop:tides:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "tides · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:tides:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read exposure/tides.json"
+   },
+   {
+    "id": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "tides:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:a3f4232819721565",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2963,
+    "cost_usd": 0.00046785,
+    "latency_ms": 663
+   },
+   {
+    "id": "loop:transport:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "transport · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:transport:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/services.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "transport/services.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "bytes": 17058,
+    "sha256": "88637082aadc4971",
+    "read_at": "2026-11-20T23:30:58Z",
+    "status": 200
+   },
+   {
+    "id": "loop:transport:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "transport · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:transport:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/services.json"
+   },
+   {
+    "id": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "transport:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:853dd559113f9400",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2873,
+    "cost_usd": 0.0002873,
+    "latency_ms": 538
+   },
+   {
+    "id": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "transport:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:df14085010828833",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 2893,
+    "cost_usd": 0.00043395,
+    "latency_ms": 1001
+   },
+   {
+    "id": "loop:transport:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "transport · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:transport:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/services.json"
+   },
+   {
+    "id": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "transport:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:f99d42e6ce11d016",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 2875,
+    "cost_usd": 0.000575,
+    "latency_ms": 860
+   },
+   {
+    "id": "loop:transport:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "transport · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:transport:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/services.json"
+   },
+   {
+    "id": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "transport:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:da223845d714e18a",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2872,
+    "cost_usd": 0.0004443,
+    "latency_ms": 659
+   },
+   {
+    "id": "loop:flights:ministral-3b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "flights · ministral-3b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:flights:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/flights.json"
+   },
+   {
+    "id": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "transport/flights.json",
+    "url": "https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "bytes": 21314,
+    "sha256": "9b7799da4d9b0b4f",
+    "read_at": "2026-11-20T23:30:59Z",
+    "status": 200
+   },
+   {
+    "id": "loop:flights:ministral-8b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "flights · ministral-8b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:flights:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/flights.json"
+   },
+   {
+    "id": "loop:flights:ministral-14b-2512",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "flights · ministral-14b-2512",
+    "role": "storm"
+   },
+   {
+    "id": "loop:flights:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/flights.json"
+   },
+   {
+    "id": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "flights:ministral-14b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:16492d392b78bcf7",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 2305,
+    "cost_usd": 0.000461,
+    "latency_ms": 5303
+   },
+   {
+    "id": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "flights:ministral-8b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:408942c90039ff21",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 2322,
+    "cost_usd": 0.0003483,
+    "latency_ms": 864
+   },
+   {
+    "id": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "flights:ministral-3b-2512 #1",
+    "role": "storm",
+    "key_fp": "sha256:283f9968c532041f",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 2302,
+    "cost_usd": 0.0002302,
+    "latency_ms": 513
+   },
+   {
+    "id": "loop:flights:mistral-small-2603",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "flights · mistral-small-2603",
+    "role": "storm"
+   },
+   {
+    "id": "loop:flights:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read transport/flights.json"
+   },
+   {
+    "id": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "flights:mistral-small-2603 #1",
+    "role": "storm",
+    "key_fp": "sha256:7ececfb81fa582de",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 2314,
+    "cost_usd": 0.00037185,
+    "latency_ms": 802
+   },
+   {
+    "id": "consensus:warnings",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus warnings"
+   },
+   {
+    "id": "consensus:forecast",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus forecast"
+   },
+   {
+    "id": "consensus:stations",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus stations"
+   },
+   {
+    "id": "consensus:tides",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus tides"
+   },
+   {
+    "id": "consensus:transport",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus transport"
+   },
+   {
+    "id": "consensus:flights",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "consensus flights"
+   }
+  ],
+  "edges": [
+   {
+    "from": "dinis",
+    "to": "issuer",
+    "kind": "asks",
+    "t": 0
+   },
+   {
+    "from": "issuer",
+    "to": "packet:m002-storm-six-mistral",
+    "kind": "carries",
+    "t": 0
+   },
+   {
+    "from": "packet:m002-storm-six-mistral",
+    "to": "runner",
+    "kind": "runs",
+    "t": 0
+   },
+   {
+    "from": "runner",
+    "to": "loop:warnings:ministral-3b-2512",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-3b-2512",
+    "to": "loop:warnings:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "runner",
+    "to": "loop:warnings:ministral-8b-2512",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-8b-2512",
+    "to": "loop:warnings:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "runner",
+    "to": "loop:warnings:ministral-14b-2512",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-14b-2512",
+    "to": "loop:warnings:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "runner",
+    "to": "loop:warnings:mistral-small-2603",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:mistral-small-2603",
+    "to": "loop:warnings:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "runner",
+    "to": "loop:forecast:ministral-3b-2512",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:forecast:ministral-3b-2512",
+    "to": "loop:forecast:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:forecast:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "runner",
+    "to": "loop:forecast:ministral-8b-2512",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:forecast:ministral-8b-2512",
+    "to": "loop:forecast:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:forecast:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "loop:warnings:ministral-8b-2512",
+    "to": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 379
+   },
+   {
+    "from": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 379
+   },
+   {
+    "from": "loop:forecast:ministral-8b-2512",
+    "to": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 421
+   },
+   {
+    "from": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 421
+   },
+   {
+    "from": "loop:forecast:ministral-3b-2512",
+    "to": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 424
+   },
+   {
+    "from": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 424
+   },
+   {
+    "from": "loop:warnings:ministral-14b-2512",
+    "to": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 438
+   },
+   {
+    "from": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 438
+   },
+   {
+    "from": "loop:warnings:ministral-3b-2512",
+    "to": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 473
+   },
+   {
+    "from": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 473
+   },
+   {
+    "from": "loop:warnings:mistral-small-2603",
+    "to": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 716
+   },
+   {
+    "from": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 716
+   },
+   {
+    "from": "runner",
+    "to": "loop:forecast:ministral-14b-2512",
+    "kind": "starts",
+    "t": 1244
+   },
+   {
+    "from": "loop:forecast:ministral-14b-2512",
+    "to": "loop:forecast:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "runs",
+    "t": 1244
+   },
+   {
+    "from": "loop:forecast:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "reads",
+    "t": 1244
+   },
+   {
+    "from": "loop:forecast:ministral-14b-2512",
+    "to": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 1265
+   },
+   {
+    "from": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1265
+   },
+   {
+    "from": "runner",
+    "to": "loop:forecast:mistral-small-2603",
+    "kind": "starts",
+    "t": 1295
+   },
+   {
+    "from": "loop:forecast:mistral-small-2603",
+    "to": "loop:forecast:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "runs",
+    "t": 1295
+   },
+   {
+    "from": "loop:forecast:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "kind": "reads",
+    "t": 1295
+   },
+   {
+    "from": "loop:forecast:mistral-small-2603",
+    "to": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 1315
+   },
+   {
+    "from": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1315
+   },
+   {
+    "from": "runner",
+    "to": "loop:stations:ministral-3b-2512",
+    "kind": "starts",
+    "t": 1491
+   },
+   {
+    "from": "loop:stations:ministral-3b-2512",
+    "to": "loop:stations:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "runs",
+    "t": 1491
+   },
+   {
+    "from": "loop:stations:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "reads",
+    "t": 1491
+   },
+   {
+    "from": "loop:stations:ministral-3b-2512",
+    "to": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 1551
+   },
+   {
+    "from": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1551
+   },
+   {
+    "from": "runner",
+    "to": "loop:stations:ministral-8b-2512",
+    "kind": "starts",
+    "t": 1588
+   },
+   {
+    "from": "loop:stations:ministral-8b-2512",
+    "to": "loop:stations:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "runs",
+    "t": 1588
+   },
+   {
+    "from": "loop:stations:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "reads",
+    "t": 1588
+   },
+   {
+    "from": "loop:stations:ministral-8b-2512",
+    "to": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 1608
+   },
+   {
+    "from": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1608
+   },
+   {
+    "from": "runner",
+    "to": "loop:stations:ministral-14b-2512",
+    "kind": "starts",
+    "t": 1695
+   },
+   {
+    "from": "loop:stations:ministral-14b-2512",
+    "to": "loop:stations:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "runs",
+    "t": 1695
+   },
+   {
+    "from": "loop:stations:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "reads",
+    "t": 1695
+   },
+   {
+    "from": "loop:stations:ministral-14b-2512",
+    "to": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 1713
+   },
+   {
+    "from": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1713
+   },
+   {
+    "from": "runner",
+    "to": "loop:stations:mistral-small-2603",
+    "kind": "starts",
+    "t": 1730
+   },
+   {
+    "from": "loop:stations:mistral-small-2603",
+    "to": "loop:stations:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "runs",
+    "t": 1730
+   },
+   {
+    "from": "loop:stations:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "kind": "reads",
+    "t": 1730
+   },
+   {
+    "from": "loop:stations:mistral-small-2603",
+    "to": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 1747
+   },
+   {
+    "from": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 1747
+   },
+   {
+    "from": "runner",
+    "to": "loop:tides:ministral-3b-2512",
+    "kind": "starts",
+    "t": 2048
+   },
+   {
+    "from": "loop:tides:ministral-3b-2512",
+    "to": "loop:tides:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "runs",
+    "t": 2048
+   },
+   {
+    "from": "loop:tides:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "reads",
+    "t": 2048
+   },
+   {
+    "from": "loop:tides:ministral-3b-2512",
+    "to": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 2109
+   },
+   {
+    "from": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2109
+   },
+   {
+    "from": "runner",
+    "to": "loop:tides:ministral-8b-2512",
+    "kind": "starts",
+    "t": 2156
+   },
+   {
+    "from": "loop:tides:ministral-8b-2512",
+    "to": "loop:tides:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "runs",
+    "t": 2156
+   },
+   {
+    "from": "loop:tides:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "reads",
+    "t": 2156
+   },
+   {
+    "from": "loop:tides:ministral-8b-2512",
+    "to": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 2178
+   },
+   {
+    "from": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2178
+   },
+   {
+    "from": "runner",
+    "to": "loop:tides:ministral-14b-2512",
+    "kind": "starts",
+    "t": 2222
+   },
+   {
+    "from": "loop:tides:ministral-14b-2512",
+    "to": "loop:tides:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "runs",
+    "t": 2222
+   },
+   {
+    "from": "loop:tides:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "reads",
+    "t": 2222
+   },
+   {
+    "from": "loop:tides:ministral-14b-2512",
+    "to": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 2240
+   },
+   {
+    "from": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2240
+   },
+   {
+    "from": "runner",
+    "to": "loop:tides:mistral-small-2603",
+    "kind": "starts",
+    "t": 2486
+   },
+   {
+    "from": "loop:tides:mistral-small-2603",
+    "to": "loop:tides:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "runs",
+    "t": 2486
+   },
+   {
+    "from": "loop:tides:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "kind": "reads",
+    "t": 2486
+   },
+   {
+    "from": "loop:tides:mistral-small-2603",
+    "to": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 2511
+   },
+   {
+    "from": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2511
+   },
+   {
+    "from": "runner",
+    "to": "loop:transport:ministral-3b-2512",
+    "kind": "starts",
+    "t": 2542
+   },
+   {
+    "from": "loop:transport:ministral-3b-2512",
+    "to": "loop:transport:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "runs",
+    "t": 2542
+   },
+   {
+    "from": "loop:transport:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "reads",
+    "t": 2542
+   },
+   {
+    "from": "runner",
+    "to": "loop:transport:ministral-8b-2512",
+    "kind": "starts",
+    "t": 2595
+   },
+   {
+    "from": "loop:transport:ministral-8b-2512",
+    "to": "loop:transport:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "runs",
+    "t": 2595
+   },
+   {
+    "from": "loop:transport:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "reads",
+    "t": 2595
+   },
+   {
+    "from": "loop:transport:ministral-3b-2512",
+    "to": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 2630
+   },
+   {
+    "from": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2630
+   },
+   {
+    "from": "loop:transport:ministral-8b-2512",
+    "to": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 2632
+   },
+   {
+    "from": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2632
+   },
+   {
+    "from": "runner",
+    "to": "loop:transport:ministral-14b-2512",
+    "kind": "starts",
+    "t": 2636
+   },
+   {
+    "from": "loop:transport:ministral-14b-2512",
+    "to": "loop:transport:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "runs",
+    "t": 2636
+   },
+   {
+    "from": "loop:transport:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "reads",
+    "t": 2636
+   },
+   {
+    "from": "loop:transport:ministral-14b-2512",
+    "to": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 2659
+   },
+   {
+    "from": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2659
+   },
+   {
+    "from": "runner",
+    "to": "loop:transport:mistral-small-2603",
+    "kind": "starts",
+    "t": 2959
+   },
+   {
+    "from": "loop:transport:mistral-small-2603",
+    "to": "loop:transport:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "runs",
+    "t": 2959
+   },
+   {
+    "from": "loop:transport:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "kind": "reads",
+    "t": 2959
+   },
+   {
+    "from": "loop:transport:mistral-small-2603",
+    "to": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 2976
+   },
+   {
+    "from": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2976
+   },
+   {
+    "from": "runner",
+    "to": "loop:flights:ministral-3b-2512",
+    "kind": "starts",
+    "t": 3169
+   },
+   {
+    "from": "loop:flights:ministral-3b-2512",
+    "to": "loop:flights:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "runs",
+    "t": 3170
+   },
+   {
+    "from": "loop:flights:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "reads",
+    "t": 3170
+   },
+   {
+    "from": "runner",
+    "to": "loop:flights:ministral-8b-2512",
+    "kind": "starts",
+    "t": 3173
+   },
+   {
+    "from": "loop:flights:ministral-8b-2512",
+    "to": "loop:flights:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "runs",
+    "t": 3173
+   },
+   {
+    "from": "loop:flights:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "reads",
+    "t": 3173
+   },
+   {
+    "from": "runner",
+    "to": "loop:flights:ministral-14b-2512",
+    "kind": "starts",
+    "t": 3174
+   },
+   {
+    "from": "loop:flights:ministral-14b-2512",
+    "to": "loop:flights:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "runs",
+    "t": 3174
+   },
+   {
+    "from": "loop:flights:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "reads",
+    "t": 3174
+   },
+   {
+    "from": "loop:flights:ministral-14b-2512",
+    "to": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "kind": "calls",
+    "t": 3255
+   },
+   {
+    "from": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 3255
+   },
+   {
+    "from": "loop:flights:ministral-8b-2512",
+    "to": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "kind": "calls",
+    "t": 3257
+   },
+   {
+    "from": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 3257
+   },
+   {
+    "from": "loop:flights:ministral-3b-2512",
+    "to": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "kind": "calls",
+    "t": 3404
+   },
+   {
+    "from": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 3404
+   },
+   {
+    "from": "runner",
+    "to": "loop:flights:mistral-small-2603",
+    "kind": "starts",
+    "t": 3520
+   },
+   {
+    "from": "loop:flights:mistral-small-2603",
+    "to": "loop:flights:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "runs",
+    "t": 3520
+   },
+   {
+    "from": "loop:flights:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "to": "data:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "kind": "reads",
+    "t": 3520
+   },
+   {
+    "from": "loop:flights:mistral-small-2603",
+    "to": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "kind": "calls",
+    "t": 3537
+   },
+   {
+    "from": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 3537
+   },
+   {
+    "from": "runner",
+    "to": "consensus:warnings",
+    "kind": "runs",
+    "t": 8559
+   },
+   {
+    "from": "runner",
+    "to": "consensus:forecast",
+    "kind": "runs",
+    "t": 8559
+   },
+   {
+    "from": "runner",
+    "to": "consensus:stations",
+    "kind": "runs",
+    "t": 8559
+   },
+   {
+    "from": "runner",
+    "to": "consensus:tides",
+    "kind": "runs",
+    "t": 8559
+   },
+   {
+    "from": "runner",
+    "to": "consensus:transport",
+    "kind": "runs",
+    "t": 8559
+   },
+   {
+    "from": "runner",
+    "to": "consensus:flights",
+    "kind": "runs",
+    "t": 8559
+   }
+  ],
+  "timeline": [
+   {
+    "t": 0,
+    "unit": "runner",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:warnings:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:forecast:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:forecast:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:forecast:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1,
+    "unit": "loop:forecast:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "start"
+   },
+   {
+    "t": 378,
+    "unit": "loop:warnings:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 20774
+   },
+   {
+    "t": 379,
+    "unit": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 421,
+    "unit": "loop:forecast:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 77174
+   },
+   {
+    "t": 421,
+    "unit": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 423,
+    "unit": "loop:forecast:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 77174
+   },
+   {
+    "t": 424,
+    "unit": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 438,
+    "unit": "loop:warnings:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 20774
+   },
+   {
+    "t": 438,
+    "unit": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 472,
+    "unit": "loop:warnings:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 20774
+   },
+   {
+    "t": 473,
+    "unit": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 715,
+    "unit": "loop:warnings:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/warnings.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 20774
+   },
+   {
+    "t": 716,
+    "unit": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1244,
+    "unit": "loop:warnings:ministral-3b-2512/call:warnings:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002603,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 1244,
+    "unit": "loop:warnings:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1244,
+    "unit": "loop:forecast:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1244,
+    "unit": "loop:forecast:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "start"
+   },
+   {
+    "t": 1264,
+    "unit": "loop:forecast:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 77174
+   },
+   {
+    "t": 1265,
+    "unit": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1295,
+    "unit": "loop:forecast:ministral-3b-2512/call:forecast:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002483,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 1295,
+    "unit": "loop:forecast:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1295,
+    "unit": "loop:forecast:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1295,
+    "unit": "loop:forecast:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "start"
+   },
+   {
+    "t": 1314,
+    "unit": "loop:forecast:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/forecast.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 77174
+   },
+   {
+    "t": 1315,
+    "unit": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1491,
+    "unit": "loop:forecast:ministral-8b-2512/call:forecast:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00037335,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 1491,
+    "unit": "loop:forecast:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1491,
+    "unit": "loop:stations:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1491,
+    "unit": "loop:stations:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "start"
+   },
+   {
+    "t": 1550,
+    "unit": "loop:stations:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 103681
+   },
+   {
+    "t": 1551,
+    "unit": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1588,
+    "unit": "loop:warnings:ministral-14b-2512/call:warnings:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.000517,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 1588,
+    "unit": "loop:warnings:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1588,
+    "unit": "loop:stations:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1588,
+    "unit": "loop:stations:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "start"
+   },
+   {
+    "t": 1608,
+    "unit": "loop:stations:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 103681
+   },
+   {
+    "t": 1608,
+    "unit": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1694,
+    "unit": "loop:warnings:mistral-small-2603/call:warnings:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0004086,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 1695,
+    "unit": "loop:warnings:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1695,
+    "unit": "loop:stations:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1695,
+    "unit": "loop:stations:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "start"
+   },
+   {
+    "t": 1712,
+    "unit": "loop:stations:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 103681
+   },
+   {
+    "t": 1713,
+    "unit": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1729,
+    "unit": "loop:warnings:ministral-8b-2512/call:warnings:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00038865,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 1729,
+    "unit": "loop:warnings:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 1730,
+    "unit": "loop:stations:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 1730,
+    "unit": "loop:stations:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "start"
+   },
+   {
+    "t": 1747,
+    "unit": "loop:stations:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/weather/stations.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 103681
+   },
+   {
+    "t": 1747,
+    "unit": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2048,
+    "unit": "loop:forecast:mistral-small-2603/call:forecast:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0003933,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 2048,
+    "unit": "loop:forecast:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2048,
+    "unit": "loop:tides:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2048,
+    "unit": "loop:tides:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "start"
+   },
+   {
+    "t": 2108,
+    "unit": "loop:tides:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 24836
+   },
+   {
+    "t": 2109,
+    "unit": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2156,
+    "unit": "loop:stations:ministral-3b-2512/call:stations:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002997,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 2156,
+    "unit": "loop:stations:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2156,
+    "unit": "loop:tides:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2156,
+    "unit": "loop:tides:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "start"
+   },
+   {
+    "t": 2178,
+    "unit": "loop:tides:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 24836
+   },
+   {
+    "t": 2178,
+    "unit": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2222,
+    "unit": "loop:forecast:ministral-14b-2512/call:forecast:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.000501,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 2222,
+    "unit": "loop:forecast:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2222,
+    "unit": "loop:tides:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2222,
+    "unit": "loop:tides:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "start"
+   },
+   {
+    "t": 2240,
+    "unit": "loop:tides:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 24836
+   },
+   {
+    "t": 2240,
+    "unit": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2486,
+    "unit": "loop:stations:mistral-small-2603/call:stations:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0004623,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 2486,
+    "unit": "loop:stations:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2486,
+    "unit": "loop:tides:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2486,
+    "unit": "loop:tides:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "start"
+   },
+   {
+    "t": 2511,
+    "unit": "loop:tides:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/exposure/tides.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 24836
+   },
+   {
+    "t": 2511,
+    "unit": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2542,
+    "unit": "loop:stations:ministral-8b-2512/call:stations:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00045435,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 2542,
+    "unit": "loop:stations:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2542,
+    "unit": "loop:transport:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2542,
+    "unit": "loop:transport:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "start"
+   },
+   {
+    "t": 2595,
+    "unit": "loop:stations:ministral-14b-2512/call:stations:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0006032,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 2595,
+    "unit": "loop:stations:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2595,
+    "unit": "loop:transport:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2595,
+    "unit": "loop:transport:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "start"
+   },
+   {
+    "t": 2630,
+    "unit": "loop:transport:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 17058
+   },
+   {
+    "t": 2630,
+    "unit": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2632,
+    "unit": "loop:transport:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 17058
+   },
+   {
+    "t": 2632,
+    "unit": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2636,
+    "unit": "loop:tides:ministral-3b-2512/call:tides:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002959,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 2636,
+    "unit": "loop:tides:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2636,
+    "unit": "loop:transport:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2636,
+    "unit": "loop:transport:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "start"
+   },
+   {
+    "t": 2659,
+    "unit": "loop:transport:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 17058
+   },
+   {
+    "t": 2659,
+    "unit": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2958,
+    "unit": "loop:tides:ministral-8b-2512/call:tides:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0004437,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 2959,
+    "unit": "loop:tides:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 2959,
+    "unit": "loop:transport:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 2959,
+    "unit": "loop:transport:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "start"
+   },
+   {
+    "t": 2976,
+    "unit": "loop:transport:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/services.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 17058
+   },
+   {
+    "t": 2976,
+    "unit": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3169,
+    "unit": "loop:transport:ministral-3b-2512/call:transport:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002873,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 3169,
+    "unit": "loop:transport:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3169,
+    "unit": "loop:flights:ministral-3b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3170,
+    "unit": "loop:flights:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "start"
+   },
+   {
+    "t": 3173,
+    "unit": "loop:tides:ministral-14b-2512/call:tides:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0005922,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 3173,
+    "unit": "loop:tides:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3173,
+    "unit": "loop:flights:ministral-8b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3173,
+    "unit": "loop:flights:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "start"
+   },
+   {
+    "t": 3174,
+    "unit": "loop:tides:mistral-small-2603/call:tides:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00046785,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 3174,
+    "unit": "loop:tides:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3174,
+    "unit": "loop:flights:ministral-14b-2512",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3174,
+    "unit": "loop:flights:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "start"
+   },
+   {
+    "t": 3255,
+    "unit": "loop:flights:ministral-14b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 21314
+   },
+   {
+    "t": 3255,
+    "unit": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3256,
+    "unit": "loop:flights:ministral-8b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 21314
+   },
+   {
+    "t": 3257,
+    "unit": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3403,
+    "unit": "loop:flights:ministral-3b-2512/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 21314
+   },
+   {
+    "t": 3404,
+    "unit": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3520,
+    "unit": "loop:transport:ministral-14b-2512/call:transport:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.000575,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 3520,
+    "unit": "loop:transport:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3520,
+    "unit": "loop:flights:mistral-small-2603",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3520,
+    "unit": "loop:flights:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "start"
+   },
+   {
+    "t": 3537,
+    "unit": "loop:flights:mistral-small-2603/read:https://storm-charles.promptugal.news/api/v1/2026-11-10-storm-charles/transport/flights.json",
+    "phase": "end",
+    "ok": true,
+    "bytes": 21314
+   },
+   {
+    "t": 3537,
+    "unit": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "phase": "start",
+    "role": "storm"
+   },
+   {
+    "t": 3635,
+    "unit": "loop:transport:ministral-8b-2512/call:transport:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00043395,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 3635,
+    "unit": "loop:transport:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3635,
+    "unit": "loop:transport:mistral-small-2603/call:transport:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0004443,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 3635,
+    "unit": "loop:transport:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 3918,
+    "unit": "loop:flights:ministral-3b-2512/call:flights:ministral-3b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002302,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 3918,
+    "unit": "loop:flights:ministral-3b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 4121,
+    "unit": "loop:flights:ministral-8b-2512/call:flights:ministral-8b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0003483,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 4121,
+    "unit": "loop:flights:ministral-8b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 4340,
+    "unit": "loop:flights:mistral-small-2603/call:flights:mistral-small-2603#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00037185,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 4340,
+    "unit": "loop:flights:mistral-small-2603",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 8559,
+    "unit": "loop:flights:ministral-14b-2512/call:flights:ministral-14b-2512#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.000461,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 8559,
+    "unit": "loop:flights:ministral-14b-2512",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:warnings",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:warnings",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:forecast",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:forecast",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:stations",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:stations",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:tides",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:tides",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:transport",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:transport",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:flights",
+    "phase": "start"
+   },
+   {
+    "t": 8559,
+    "unit": "consensus:flights",
+    "phase": "end"
+   },
+   {
+    "t": 8559,
+    "unit": "runner",
+    "phase": "end"
+   }
+  ],
+  "id": "20261120T233055-m002-storm-six-mistral",
+  "packet_fp": "sha256:c3e857f68c30a559",
+  "runner_key_fp": "sha256:253d974a94283452",
+  "issued_by": "swarm.mistral@SovereignWebsite.dinis"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "runner: swarm.mistral@SovereignWebsite.dinis for m002-storm-six-mistral",
+  "fp": "sha256:253d974a94283452",
+  "pub": "MCowBQYDK2VwAyEAmlXYnwWIv7weVASMCtu+7NEshGj0AdI72inYmI/UENM=",
+  "signed_at": "2026-11-20T23:31:04Z"
+ },
+ "sig": "v/WM7BaiAyMBZiMvoWJokIDiNLell3UDazH8AFGoawSt/S/YaLSpc6BmqqSDWLGmeTN9s4Ek/EJrkbY1QYSDDA=="
+}

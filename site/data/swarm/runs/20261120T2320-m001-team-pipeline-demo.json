@@ -1,0 +1,2493 @@
+{
+ "body": {
+  "v": 1,
+  "engine": {
+   "file": "site/swarm/engine.js",
+   "sha256": "f3e9ade159d217c2"
+  },
+  "kind": "team",
+  "packet": "m001-team-pipeline-demo",
+  "title": "The team inside the site, on Mistral: seven roles on pipeline-demo",
+  "story": "The seven roles of \"A website with a team inside\" (Dinis Cruz, 19 November 2026), each doing its job on a real public site in the family, on Mistral models only. Nothing is pushed to the site: the edit is a proposal for its owner.",
+  "by": "swarm.mistral@SovereignWebsite.dinis",
+  "environment": {
+   "label": "R1 Claude Code cloud",
+   "account": "dinis-cruz-mistral (proxy-injected key)"
+  },
+  "started_at": "2026-11-20T23:20:14Z",
+  "wall_ms": 14714,
+  "budget": {
+   "usd": 0.05
+  },
+  "source": {
+   "article": "https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html",
+   "site": "https://pipeline-demo.demo.sovereignweb.site/",
+   "read_on": "2026-11-20"
+  },
+  "provider": {
+   "name": "Mistral",
+   "base_url": "https://api.mistral.ai/v1",
+   "price_source": "https://docs.mistral.ai/inference/pricing",
+   "price_read_on": "2026-11-20"
+  },
+  "metrics": {
+   "units": {
+    "P": 1,
+    "A4": 1,
+    "T": 1,
+    "A3": 1,
+    "M": 1,
+    "A2": 7,
+    "A0": 9,
+    "D": 7,
+    "A1": 12
+   },
+   "llm_calls": 12,
+   "valid_calls": 11,
+   "checks": 65,
+   "checks_passed": 64,
+   "tokens_in": 7131,
+   "tokens_out": 1549,
+   "mistral_usd": 0.0015635,
+   "models": [
+    "mistral-small-2603",
+    "ministral-8b-2512",
+    "ministral-14b-2512",
+    "ministral-3b-2512"
+   ],
+   "peak_concurrency": 9,
+   "latency_ms_p50": 974,
+   "by_role": {
+    "conductor": {
+     "calls": 2,
+     "valid": 2,
+     "tokens_in": 1457,
+     "tokens_out": 283,
+     "cost_usd": 0.0003492,
+     "models": [
+      "mistral-small-2603",
+      "ministral-8b-2512"
+     ]
+    },
+    "writer": {
+     "calls": 3,
+     "valid": 2,
+     "tokens_in": 2798,
+     "tokens_out": 141,
+     "cost_usd": 0.0005043,
+     "models": [
+      "mistral-small-2603"
+     ]
+    },
+    "designer": {
+     "calls": 1,
+     "valid": 1,
+     "tokens_in": 775,
+     "tokens_out": 252,
+     "cost_usd": 0.00015405,
+     "models": [
+      "ministral-8b-2512"
+     ]
+    },
+    "reviewer": {
+     "calls": 2,
+     "valid": 2,
+     "tokens_in": 1635,
+     "tokens_out": 631,
+     "cost_usd": 0.0004532,
+     "models": [
+      "ministral-14b-2512"
+     ]
+    },
+    "developer": {
+     "calls": 1,
+     "valid": 1,
+     "tokens_in": 99,
+     "tokens_out": 46,
+     "cost_usd": 0.000029,
+     "models": [
+      "ministral-14b-2512"
+     ]
+    },
+    "translator": {
+     "calls": 2,
+     "valid": 2,
+     "tokens_in": 243,
+     "tokens_out": 106,
+     "cost_usd": 0.00005235,
+     "models": [
+      "ministral-8b-2512"
+     ]
+    },
+    "keeper": {
+     "calls": 1,
+     "valid": 1,
+     "tokens_in": 124,
+     "tokens_out": 90,
+     "cost_usd": 0.0000214,
+     "models": [
+      "ministral-3b-2512"
+     ]
+    }
+   },
+   "not_measured": "the runner's own agent tokens (the Claude Code session that ran the packet): not exposed to the run"
+  },
+  "site": "https://pipeline-demo.demo.sovereignweb.site/",
+  "target": {
+   "url": "https://pipeline-demo.demo.sovereignweb.site/request.html",
+   "title": "Asking for a site, Pipeline demo"
+  },
+  "request": "Make the page that explains how to ask for a site clearer for a first-time visitor, check it, and offer its opening in Portuguese and French. Report back before anything goes live.",
+  "steps": [
+   {
+    "role": "keeper",
+    "name": "read the site",
+    "pages": [
+     {
+      "path": "/",
+      "title": "A site from one request, Pipeline demo",
+      "chars": 2357
+     },
+     {
+      "path": "/request.html",
+      "title": "Asking for a site, Pipeline demo",
+      "chars": 2788
+     },
+     {
+      "path": "/after-the-seed.html",
+      "title": "After the seed, Pipeline demo",
+      "chars": 2959
+     },
+     {
+      "path": "/start/",
+      "title": "Start here, Pipeline demo",
+      "chars": 1793
+     },
+     {
+      "path": "/agents/",
+      "title": "Use with your AI, Pipeline demo",
+      "chars": 1132
+     },
+     {
+      "path": "/admin/",
+      "title": "How this site was made, Pipeline demo",
+      "chars": 1085
+     }
+    ]
+   },
+   {
+    "role": "conductor",
+    "name": "plan",
+    "page": "/request.html",
+    "chosen_by": "conductor"
+   },
+   {
+    "role": "writer",
+    "name": "edit",
+    "edit": {
+     "before": "The fields",
+     "after": "The fields you must fill in are:",
+     "reason": "The heading is too short and unclear for a first-time visitor."
+    },
+    "review": {
+     "verdict": "approve",
+     "issues": [
+      "{\"type\":\"unclear_english\",\"description\":\"The phrase 'The fields you must fill in are:' is grammatically redundant since the heading 'The fields' already implies this. The original 'The fields' is clearer and more concise.\",\"suggestion\":\"Revert to the original: 'The fields'\"}",
+      "{\"type\":\"minor_clarity\",\"description\":\"The sentence 'The address becomes <label>.<group>.sovereignweb.site.' could be slightly clearer by specifying that this applies to non-demo groups (e.g., 'For non-demo groups, the address becomes <label>.<group>.sovereignweb.site.').\",\"suggestion\":\"Consider adding context for non-demo groups if ambiguity is a concern.\"}"
+     ],
+     "unsupported_claims": []
+    },
+    "approved": true
+   },
+   {
+    "role": "designer",
+    "name": "layout",
+    "suggestions": [
+     {
+      "what": "Group the **Fields** and **Groups** sections under a single heading like *'Request Structure'* or *'Key Components'* to improve logical flow and readability for first-time visitors.",
+      "why": "This consolidates related information, reducing visual clutter and making it easier for users to scan and understand the core elements of a request at a glance."
+     },
+     {
+      "what": "Reorganise the **Groups** table to use a cleaner, two-column layout with a consistent visual hierarchy (e.g., bold group names and italicised descriptions). Add subtle spacing between entries for better readability.",
+      "why": "A more structured table with clear visual distinctions helps users quickly identify and differentiate between the available groups without confusion."
+     },
+     {
+      "what": "Move the **People and privacy** section to appear *before* the **How a request is made today** section, as it introduces a critical concept (privacy) that may influence how users approach the request process.",
+      "why": "This ensures privacy considerations are front-of-mind early in the flow, aligning with user expectations about data handling before diving into procedural details."
+     }
+    ]
+   },
+   {
+    "role": "developer",
+    "name": "apply",
+    "applied": true,
+    "diff": [
+     {
+      "line": 71,
+      "before": "<h2>The fields</h2>",
+      "after": "<h2>The fields you must fill in are:</h2>"
+     }
+    ],
+    "commit": {
+     "subject": "Update request form instructions to clarify required fields",
+     "body": "Changed 'The fields' to 'The fields you must fill in are:' to emphasize mandatory input. Reviewer approved."
+    }
+   },
+   {
+    "role": "translator",
+    "name": "fr",
+    "lang": "fr",
+    "title": "Demander un site, démonstration Pipeline",
+    "text": "Les champs que vous devez remplir sont les suivants :\nUn site commence comme un seul fichier. Voici la requête qui a créé ce site :"
+   },
+   {
+    "role": "translator",
+    "name": "pt",
+    "lang": "pt",
+    "title": "Pedir um site, Demo Pipeline",
+    "text": "Os campos que deve preencher são:\nUm site começa como um único ficheiro. Este é o pedido que criou este site:"
+   },
+   {
+    "role": "keeper",
+    "name": "care",
+    "measurements": {
+     "pages": 6,
+     "links_total": 35,
+     "internal_checked": 12,
+     "external_not_checked": 23,
+     "broken": 0,
+     "images_without_alt": 0,
+     "pages_without_title": 0,
+     "pages_without_lang": 0
+    },
+    "broken": [],
+    "note": {
+     "summary": "Weekly audit shows strong internal link coverage (12/35) with no broken links, but 23 external links remain unchecked. No issues with accessibility (alt tags or titles).",
+     "actions": [
+      "Review and verify all 23 external links for validity and update as needed",
+      "Ensure all pages include proper alt text and titles for future compliance"
+     ]
+    }
+   },
+   {
+    "role": "conductor",
+    "name": "report",
+    "report": "The team updated the heading on `/request.html` to clarify mandatory fields ('The fields you must fill in are:'). The writer’s edit was approved, then reverted due to grammatical redundancy. The designer suggested restructuring sections under a unified heading for better readability. The developer applied the initial edit. Translations were added in French and Portuguese. No broken links or accessibility issues detected. Should we publish?"
+   }
+  ],
+  "code_checks": [
+   {
+    "name": "edit_applies_to_html",
+    "pass": true,
+    "detail": "1 line(s)"
+   },
+   {
+    "name": "edit_in_text",
+    "pass": true
+   },
+   {
+    "name": "no_broken_internal_links",
+    "pass": true,
+    "detail": ""
+   }
+  ],
+  "reads": [
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/",
+    "status": 200,
+    "bytes": 8116,
+    "sha256": "5e9bc0750754191a"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "status": 200,
+    "bytes": 8116,
+    "sha256": "5e9bc0750754191a"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "status": 200,
+    "bytes": 9282,
+    "sha256": "61e58b12aac15560"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "status": 200,
+    "bytes": 8329,
+    "sha256": "24470fb0886a810d"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/start/",
+    "status": 200,
+    "bytes": 7205,
+    "sha256": "ec2e4ee07c90456f"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "status": 200,
+    "bytes": 6213,
+    "sha256": "a7a114a440d37425"
+   },
+   {
+    "url": "https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "status": 200,
+    "bytes": 6640,
+    "sha256": "a1f87e7f06de2113"
+   }
+  ],
+  "calls": [
+   {
+    "unit": "loop:conductor/call:plan#1",
+    "role": "conductor",
+    "task": "plan",
+    "attempt": 1,
+    "tier": "strong",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "page_exists",
+      "pass": true,
+      "detail": "/request.html"
+     },
+     {
+      "name": "page_expected",
+      "pass": true,
+      "detail": "expected /request.html"
+     },
+     {
+      "name": "all_roles_tasked",
+      "pass": true
+     }
+    ],
+    "tokens_in": 587,
+    "tokens_out": 196,
+    "cost_usd": 0.00020565,
+    "latency_ms": 1876,
+    "ledger_id": "20261120T232015-6824aec8",
+    "t_start": 926,
+    "t_end": 2803,
+    "prompt_sha256": "9b1f3ff38a9b5269",
+    "prompt_chars": 2359,
+    "answer_sha256": "2641c232e01b3473",
+    "answer_chars": 948,
+    "model_output": "{\"page\": \"/request.html\", \"why\": \"The owner's request explicitly mentions 'the page that explains how to ask for a site,' which corresponds to the 'Asking for a site' page.\", \"tasks\": {\"designer\": \"Simplify the layout to reduce cognitive load for first-time visitors, ensuring key steps are visually distinct.\", \"writer\": \"Clarify the instructions for submitting a site request, using plain language and removing jargon.\", \"reviewer\": \"Verify the revised content is accurate, concise, and aligns with the Sovereign Website pipeline's documentation.\", \"developer\": \"Implement any structural changes (e.g., expandable sections) to improve readability without breaking the static site.\", \"translator\": \"Translate the revised page into Portuguese and French, ensuring terminology consistency with the rest of the site.\", \"keeper\": \"Coordinate the review cycle, ensure translations match the final English version, and prepare a deployment checklist.\"}}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "plan",
+      "role": "conductor",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "page_exists",
+        true
+       ],
+       [
+        "page_expected",
+        true
+       ],
+       [
+        "all_roles_tasked",
+        true
+       ]
+      ],
+      "tokens_in": 587,
+      "tokens_out": 196,
+      "cost_usd": 0.00020565,
+      "answer_sha256": "2641c232e01b3473",
+      "prompt_sha256": "9b1f3ff38a9b5269"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call plan #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:f1e5cd7208c4184b",
+      "pub": "MCowBQYDK2VwAyEAInJn2QWT/dkYF4wK138ckjOcRDlI3OQFdyTLIa6gZeg=",
+      "signed_at": "2026-11-20T23:20:17Z"
+     },
+     "sig": "3q4yz6b/Z+E7U0hX+bo3VMQrg4/njpRDBe98+Q9Zd6GF5j7zUqPJxqsGtpEphsuYkiNPX9+zG5TTSTnWF6yJAw=="
+    }
+   },
+   {
+    "unit": "loop:writer/call:edit#1",
+    "role": "writer",
+    "task": "edit",
+    "attempt": 1,
+    "tier": "strong",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "before_is_verbatim",
+      "pass": true
+     },
+     {
+      "name": "after_differs",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     },
+     {
+      "name": "no_new_numbers",
+      "pass": true,
+      "detail": ""
+     },
+     {
+      "name": "length_ok",
+      "pass": true
+     }
+    ],
+    "tokens_in": 871,
+    "tokens_out": 40,
+    "cost_usd": 0.00015465,
+    "latency_ms": 1710,
+    "ledger_id": "20261120T232017-7c1bf861",
+    "t_start": 2805,
+    "t_end": 4515,
+    "prompt_sha256": "3847984927a73a48",
+    "prompt_chars": 3541,
+    "answer_sha256": "ccf9a8d70cd80a2b",
+    "answer_chars": 153,
+    "model_output": "{\"before\": \"The fields\", \"after\": \"The fields you must fill in\", \"reason\": \"First-time visitors may not know what \\\"fields\\\" refers to in this context.\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "edit",
+      "role": "writer",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "before_is_verbatim",
+        true
+       ],
+       [
+        "after_differs",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ],
+       [
+        "no_new_numbers",
+        true
+       ],
+       [
+        "length_ok",
+        true
+       ]
+      ],
+      "tokens_in": 871,
+      "tokens_out": 40,
+      "cost_usd": 0.00015465,
+      "answer_sha256": "ccf9a8d70cd80a2b",
+      "prompt_sha256": "3847984927a73a48"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call edit #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:79ed6a6dd64ff2ea",
+      "pub": "MCowBQYDK2VwAyEAKde1uEbpk7WEkA8ed0LVbltO0Qiz+xIiDPvtQTUIcH4=",
+      "signed_at": "2026-11-20T23:20:19Z"
+     },
+     "sig": "EFp7fAqi0/KD+ualtSrpaIHp2DDnASxHKLOQUB0S215EsHfcBtPH4DNz4EqT/+V3gqbo7BDJ/Nu7aEKPuIn3Cg=="
+    }
+   },
+   {
+    "unit": "loop:designer/call:layout#1",
+    "role": "designer",
+    "task": "layout",
+    "attempt": 1,
+    "tier": "cheap8",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "one_to_three",
+      "pass": true,
+      "detail": "3"
+     }
+    ],
+    "tokens_in": 775,
+    "tokens_out": 252,
+    "cost_usd": 0.00015405,
+    "latency_ms": 2418,
+    "ledger_id": "20261120T232017-195cd07d",
+    "t_start": 2804,
+    "t_end": 5223,
+    "prompt_sha256": "856a8f0629d1daff",
+    "prompt_chars": 3168,
+    "answer_sha256": "4821de26e1d352e0",
+    "answer_chars": 1242,
+    "model_output": "{\n  \"suggestions\": [\n    {\n      \"what\": \"Group the **Fields** and **Groups** sections under a single heading like *'Request Structure'* or *'Key Components'* to improve logical flow and readability for first-time visitors.\",\n      \"why\": \"This consolidates related information, reducing visual clutter and making it easier for users to scan and understand the core elements of a request at a glance.\"\n    },\n    {\n      \"what\": \"Reorganise the **Groups** table to use a cleaner, two-column layout with a consistent visual hierarchy (e.g., bold group names and italicised descriptions). Add subtle spacing between entries for better readability.\",\n      \"why\": \"A more structured table with clear visual distinctions helps users quickly identify and differentiate between the available groups without confusion.\"\n    },\n    {\n      \"what\": \"Move the **People and privacy** section to appear *before* the **How a request is made today** section, as it introduces a critical concept (privacy) that may influence how users approach the request process.\",\n      \"why\": \"This ensures privacy considerations are front-of-mind early in the flow, aligning with user expectations about data handling before diving into procedural details.\"\n    }\n  ]\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "layout",
+      "role": "designer",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "one_to_three",
+        true
+       ]
+      ],
+      "tokens_in": 775,
+      "tokens_out": 252,
+      "cost_usd": 0.00015405,
+      "answer_sha256": "4821de26e1d352e0",
+      "prompt_sha256": "856a8f0629d1daff"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call layout #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:c6242cc82a6a6cee",
+      "pub": "MCowBQYDK2VwAyEAnMKbEScMtqedeisu7ofrMYtOpReB1zUOhkLjebXz/Ck=",
+      "signed_at": "2026-11-20T23:20:19Z"
+     },
+     "sig": "mmrobLy9tqnStHFAiOLN6RBJN/OzzHcVUX6/dvS5KVPIjepRveSQoEi+51wZcR0KJWUuwrlg5hl35giOOhBCBw=="
+    }
+   },
+   {
+    "unit": "loop:writer/call:review#1",
+    "role": "reviewer",
+    "task": "review",
+    "attempt": 1,
+    "tier": "hard",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "verdict_enum",
+      "pass": true,
+      "detail": "changes"
+     },
+     {
+      "name": "lists",
+      "pass": true
+     }
+    ],
+    "tokens_in": 817,
+    "tokens_out": 435,
+    "cost_usd": 0.0002504,
+    "latency_ms": 4113,
+    "ledger_id": "20261120T232019-9c39b793",
+    "t_start": 4515,
+    "t_end": 8629,
+    "prompt_sha256": "058d02ae0e83b4df",
+    "prompt_chars": 3332,
+    "answer_sha256": "51a3b8d806eb246b",
+    "answer_chars": 1646,
+    "model_output": "{\n  \"verdict\": \"changes\",\n  \"unsupported_claims\": [],\n  \"issues\": [\n    {\n      \"type\": \"unclear_english\",\n      \"description\": \"The phrase 'The fields you must fill in' is grammatically incorrect. It should be 'The fields you must fill out' or 'The fields you need to fill in'.\",\n      \"suggested_fix\": \"Change to: 'The fields you must fill out'\"\n    },\n    {\n      \"type\": \"inconsistency\",\n      \"description\": \"The page states 'No em or en dashes anywhere in a request' but does not explicitly define what 'em' or 'en' dashes are in this context. While it is clear to most readers, it could be confusing for those unfamiliar with typographical terms.\",\n      \"suggested_fix\": \"Add a brief clarification: 'No em dashes ( - ) or en dashes (–) anywhere in a request.'\"\n    },\n    {\n      \"type\": \"clarity\",\n      \"description\": \"The sentence 'The Factory is a public repository, so an owner's details stay out of it until they agree.' could be clearer. It might be better to specify what 'it' refers to explicitly.\",\n      \"suggested_fix\": \"Change to: 'The Factory is a public repository, so an owner’s details are not included in the request until they explicitly agree.'\"\n    },\n    {\n      \"type\": \"future_tense_uncertainty\",\n      \"description\": \"The date 'Dinis Cruz, 20 November 2026: \\\"everything should have a group\\\"' is in the future tense and may cause confusion if the timeline changes or if the statement is not implemented as planned.\",\n      \"suggested_fix\": \"Change to: 'Dinis Cruz (2023): \\\"everything should have a group\\\" (as of 2026, this is in progress; see the Factory’s requests/README.md for the current list).'\"\n    }\n  ]\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "review",
+      "role": "reviewer",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "verdict_enum",
+        true
+       ],
+       [
+        "lists",
+        true
+       ]
+      ],
+      "tokens_in": 817,
+      "tokens_out": 435,
+      "cost_usd": 0.0002504,
+      "answer_sha256": "51a3b8d806eb246b",
+      "prompt_sha256": "058d02ae0e83b4df"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call review #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:25c433055ef6e766",
+      "pub": "MCowBQYDK2VwAyEA8oAzjwjT87MX266k+NzOponGj/mvvYG4uyjLGP4ntEs=",
+      "signed_at": "2026-11-20T23:20:23Z"
+     },
+     "sig": "bRCZgWQaGSPvED4HAK/QunMilZJ113Cze1PJEB89QZcCauhSiuHFuJEYCnMP7H0mgZX6/aMrN11MbgHslhlABg=="
+    }
+   },
+   {
+    "unit": "loop:writer/call:edit#2",
+    "role": "writer",
+    "task": "edit",
+    "attempt": 2,
+    "tier": "strong",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": false,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "before_is_verbatim",
+      "pass": true
+     },
+     {
+      "name": "after_differs",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": false
+     },
+     {
+      "name": "no_new_numbers",
+      "pass": true,
+      "detail": ""
+     },
+     {
+      "name": "length_ok",
+      "pass": true
+     }
+    ],
+    "tokens_in": 1034,
+    "tokens_out": 63,
+    "cost_usd": 0.0001929,
+    "latency_ms": 785,
+    "ledger_id": "20261120T232023-96086420",
+    "t_start": 8630,
+    "t_end": 9416,
+    "prompt_sha256": "a6fe1d329f4f9ade",
+    "prompt_chars": 4193,
+    "answer_sha256": "fb14bd5fd2b92e5a",
+    "answer_chars": 234,
+    "model_output": "{\"before\": \"No em or en dashes anywhere in a request.\", \"after\": \"Do not use em dashes (  -  ) or en dashes ( – ) in any part of the request.\", \"reason\": \"Clarifies the typographical terms for first-time visitors unfamiliar with them.\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "edit",
+      "role": "writer",
+      "model": "mistral-small-2603",
+      "valid": false,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "before_is_verbatim",
+        true
+       ],
+       [
+        "after_differs",
+        true
+       ],
+       [
+        "no_em_dash",
+        false
+       ],
+       [
+        "no_new_numbers",
+        true
+       ],
+       [
+        "length_ok",
+        true
+       ]
+      ],
+      "tokens_in": 1034,
+      "tokens_out": 63,
+      "cost_usd": 0.0001929,
+      "answer_sha256": "fb14bd5fd2b92e5a",
+      "prompt_sha256": "a6fe1d329f4f9ade"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call edit #2 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:653b2263f644ffc2",
+      "pub": "MCowBQYDK2VwAyEAoURwLQAcSC78JlRzIYbhGO1v3o11PnjYTMkORgUs06c=",
+      "signed_at": "2026-11-20T23:20:24Z"
+     },
+     "sig": "yge6btmu68ywEjVtFTzc/spy1xl9hnSLIUrvq4nj68br8VEvVA1WFtx13LuA52cur+m0fuUOrtET3JucMnw0Aw=="
+    }
+   },
+   {
+    "unit": "loop:writer/call:edit#3",
+    "role": "writer",
+    "task": "edit",
+    "attempt": 3,
+    "tier": "strong",
+    "model": "mistral-small-2603",
+    "served": "mistral-small-2603",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "before_is_verbatim",
+      "pass": true
+     },
+     {
+      "name": "after_differs",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     },
+     {
+      "name": "no_new_numbers",
+      "pass": true,
+      "detail": ""
+     },
+     {
+      "name": "length_ok",
+      "pass": true
+     }
+    ],
+    "tokens_in": 893,
+    "tokens_out": 38,
+    "cost_usd": 0.00015675,
+    "latency_ms": 669,
+    "ledger_id": "20261120T232024-0a56861b",
+    "t_start": 9416,
+    "t_end": 10087,
+    "prompt_sha256": "eb04c4c16d7bf4c0",
+    "prompt_chars": 3634,
+    "answer_sha256": "9367966b1573415e",
+    "answer_chars": 145,
+    "model_output": "{\"before\": \"The fields\", \"after\": \"The fields you must fill in are:\", \"reason\": \"The heading is too short and unclear for a first-time visitor.\"}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "edit",
+      "role": "writer",
+      "model": "mistral-small-2603",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "before_is_verbatim",
+        true
+       ],
+       [
+        "after_differs",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ],
+       [
+        "no_new_numbers",
+        true
+       ],
+       [
+        "length_ok",
+        true
+       ]
+      ],
+      "tokens_in": 893,
+      "tokens_out": 38,
+      "cost_usd": 0.00015675,
+      "answer_sha256": "9367966b1573415e",
+      "prompt_sha256": "eb04c4c16d7bf4c0"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call edit #3 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:3429c431e3e56052",
+      "pub": "MCowBQYDK2VwAyEAYoBnbO2yO0gBAeX6elAo7xjBtHAARywF89tMIjkKM2E=",
+      "signed_at": "2026-11-20T23:20:24Z"
+     },
+     "sig": "llYGKpLFhoUh5STYeDn7EM46Xj2MNoFG/+sdF1F/z+4gcdZdKi4cDIN/+lMj8JI28o8pNtPkNBLB1SxyWh6/AQ=="
+    }
+   },
+   {
+    "unit": "loop:writer/call:review#3",
+    "role": "reviewer",
+    "task": "review",
+    "attempt": 3,
+    "tier": "hard",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "verdict_enum",
+      "pass": true,
+      "detail": "approve"
+     },
+     {
+      "name": "lists",
+      "pass": true
+     }
+    ],
+    "tokens_in": 818,
+    "tokens_out": 196,
+    "cost_usd": 0.0002028,
+    "latency_ms": 2068,
+    "ledger_id": "20261120T232024-9820c21a",
+    "t_start": 10087,
+    "t_end": 12155,
+    "prompt_sha256": "92f469ba99bd2a11",
+    "prompt_chars": 3337,
+    "answer_sha256": "8102f5f8be692a42",
+    "answer_chars": 777,
+    "model_output": "{\n  \"verdict\": \"approve\",\n  \"unsupported_claims\": [],\n  \"issues\": [\n    {\n      \"type\": \"unclear_english\",\n      \"description\": \"The phrase 'The fields you must fill in are:' is grammatically redundant since the heading 'The fields' already implies this. The original 'The fields' is clearer and more concise.\",\n      \"suggestion\": \"Revert to the original: 'The fields'\"\n    },\n    {\n      \"type\": \"minor_clarity\",\n      \"description\": \"The sentence 'The address becomes <label>.<group>.sovereignweb.site.' could be slightly clearer by specifying that this applies to non-demo groups (e.g., 'For non-demo groups, the address becomes <label>.<group>.sovereignweb.site.').\",\n      \"suggestion\": \"Consider adding context for non-demo groups if ambiguity is a concern.\"\n    }\n  ]\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "review",
+      "role": "reviewer",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "verdict_enum",
+        true
+       ],
+       [
+        "lists",
+        true
+       ]
+      ],
+      "tokens_in": 818,
+      "tokens_out": 196,
+      "cost_usd": 0.0002028,
+      "answer_sha256": "8102f5f8be692a42",
+      "prompt_sha256": "92f469ba99bd2a11"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call review #3 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:767441277d93fed4",
+      "pub": "MCowBQYDK2VwAyEAyvPnK0e6DiC48vNVI3iYx8v8NiQaD7kvYsbgnGzJct8=",
+      "signed_at": "2026-11-20T23:20:26Z"
+     },
+     "sig": "VGQ6k4IXqKizr2SF1g0zgV5YCDWGlTjM0PXPDYBu//0oANUQGPTFXwZU/Wed+HQvgP4fx4pbbDi/vO0lxvBwDQ=="
+    }
+   },
+   {
+    "unit": "loop:developer/call:commit#1",
+    "role": "developer",
+    "task": "commit",
+    "attempt": 1,
+    "tier": "hard",
+    "model": "ministral-14b-2512",
+    "served": "ministral-14b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "subject_72",
+      "pass": true,
+      "detail": "59"
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     }
+    ],
+    "tokens_in": 99,
+    "tokens_out": 46,
+    "cost_usd": 0.000029,
+    "latency_ms": 720,
+    "ledger_id": "20261120T232026-49ce2711",
+    "t_start": 12159,
+    "t_end": 12879,
+    "prompt_sha256": "349a3d513645449b",
+    "prompt_chars": 394,
+    "answer_sha256": "83bafcd20880657e",
+    "answer_chars": 199,
+    "model_output": "{\n  \"subject\": \"Update request form instructions to clarify required fields\",\n  \"body\": \"Changed 'The fields' to 'The fields you must fill in are:' to emphasize mandatory input. Reviewer approved.\"\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "commit",
+      "role": "developer",
+      "model": "ministral-14b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "subject_72",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ]
+      ],
+      "tokens_in": 99,
+      "tokens_out": 46,
+      "cost_usd": 0.000029,
+      "answer_sha256": "83bafcd20880657e",
+      "prompt_sha256": "349a3d513645449b"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call commit #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:f38ce5a918b71322",
+      "pub": "MCowBQYDK2VwAyEAYC1j4hsj4RdmNfIYjXr3B3pSNErdDH50P7wChl4aaio=",
+      "signed_at": "2026-11-20T23:20:27Z"
+     },
+     "sig": "hVWlTK8fBU5lDiL1AmN1l8d+THwtN1drwKZBt93jSVjyabGPlSYLghpuXsWGJuPJCj4MoxZ8X6GOBLi8fKYoCA=="
+    }
+   },
+   {
+    "unit": "loop:translator:fr/call:translate:fr#1",
+    "role": "translator",
+    "task": "translate:fr",
+    "attempt": 1,
+    "tier": "cheap8",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "translated",
+      "pass": true
+     },
+     {
+      "name": "looks_fr",
+      "pass": true,
+      "detail": "3 marker words"
+     },
+     {
+      "name": "names_kept",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     }
+    ],
+    "tokens_in": 121,
+    "tokens_out": 56,
+    "cost_usd": 0.00002655,
+    "latency_ms": 874,
+    "ledger_id": "20261120T232026-3a673c8d",
+    "t_start": 12160,
+    "t_end": 13035,
+    "prompt_sha256": "f07bafb05ed8a721",
+    "prompt_chars": 458,
+    "answer_sha256": "d127eab517e7ce03",
+    "answer_chars": 203,
+    "model_output": "{\n  \"title\": \"Demander un site, démonstration Pipeline\",\n  \"text\": \"Les champs que vous devez remplir sont les suivants :\\nUn site commence comme un seul fichier. Voici la requête qui a créé ce site :\"\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "translate:fr",
+      "role": "translator",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "translated",
+        true
+       ],
+       [
+        "looks_fr",
+        true
+       ],
+       [
+        "names_kept",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ]
+      ],
+      "tokens_in": 121,
+      "tokens_out": 56,
+      "cost_usd": 0.00002655,
+      "answer_sha256": "d127eab517e7ce03",
+      "prompt_sha256": "f07bafb05ed8a721"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call translate:fr #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:2cc0b88e92648f81",
+      "pub": "MCowBQYDK2VwAyEA52sVF7eI0d1K5WWK080U9WjaOdTbmeebluMB62LhEZU=",
+      "signed_at": "2026-11-20T23:20:27Z"
+     },
+     "sig": "+pEEw+dn0R5ftdmhDPzzz/6qnUm0uwjxURGWE6YL5jE002tZzLgF+a+PH/V268mLyjyT5x8zt+g1ONGKMPSDCQ=="
+    }
+   },
+   {
+    "unit": "loop:translator:pt/call:translate:pt#1",
+    "role": "translator",
+    "task": "translate:pt",
+    "attempt": 1,
+    "tier": "cheap8",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "translated",
+      "pass": true
+     },
+     {
+      "name": "looks_pt",
+      "pass": true,
+      "detail": "3 marker words"
+     },
+     {
+      "name": "names_kept",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     }
+    ],
+    "tokens_in": 122,
+    "tokens_out": 50,
+    "cost_usd": 0.0000258,
+    "latency_ms": 933,
+    "ledger_id": "20261120T232026-1edc24ab",
+    "t_start": 12159,
+    "t_end": 13093,
+    "prompt_sha256": "051d26774889c6fe",
+    "prompt_chars": 471,
+    "answer_sha256": "eda141b3c25704f0",
+    "answer_chars": 169,
+    "model_output": "{\n  \"title\": \"Pedir um site, Demo Pipeline\",\n  \"text\": \"Os campos que deve preencher são:\\nUm site começa como um único ficheiro. Este é o pedido que criou este site:\"\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "translate:pt",
+      "role": "translator",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "translated",
+        true
+       ],
+       [
+        "looks_pt",
+        true
+       ],
+       [
+        "names_kept",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ]
+      ],
+      "tokens_in": 122,
+      "tokens_out": 50,
+      "cost_usd": 0.0000258,
+      "answer_sha256": "eda141b3c25704f0",
+      "prompt_sha256": "051d26774889c6fe"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call translate:pt #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:33cd8d1cb15dca04",
+      "pub": "MCowBQYDK2VwAyEAHWhq3NqbSWSLxkoNQsL9AHLkpxgOLHqU8Qy4lmoDtIU=",
+      "signed_at": "2026-11-20T23:20:27Z"
+     },
+     "sig": "c9jr+2oRTnVbbuqioHj6dzohSvONSUg5FzWHHJIXePylpD9p/UNp6rODbPKi5MYFy07s06OG8UwjZ7a3yP4UDw=="
+    }
+   },
+   {
+    "unit": "loop:keeper/call:care-note#1",
+    "role": "keeper",
+    "task": "care-note",
+    "attempt": 1,
+    "tier": "cheap",
+    "model": "ministral-3b-2512",
+    "served": "ministral-3b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "numbers_from_measurements",
+      "pass": true,
+      "detail": "12 35 23"
+     },
+     {
+      "name": "actions_list",
+      "pass": true
+     }
+    ],
+    "tokens_in": 124,
+    "tokens_out": 90,
+    "cost_usd": 0.0000214,
+    "latency_ms": 903,
+    "ledger_id": "20261120T232027-bf9f43d2",
+    "t_start": 12834,
+    "t_end": 13738,
+    "prompt_sha256": "2b4cb891b46c028b",
+    "prompt_chars": 446,
+    "answer_sha256": "de0d4ffd0aa714b3",
+    "answer_chars": 369,
+    "model_output": "{\n  \"summary\": \"Weekly audit shows strong internal link coverage (12/35) with no broken links, but 23 external links remain unchecked. No issues with accessibility (alt tags or titles).\",\n  \"actions\": [\n    \"Review and verify all 23 external links for validity and update as needed\",\n    \"Ensure all pages include proper alt text and titles for future compliance\"\n  ]\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "care-note",
+      "role": "keeper",
+      "model": "ministral-3b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "numbers_from_measurements",
+        true
+       ],
+       [
+        "actions_list",
+        true
+       ]
+      ],
+      "tokens_in": 124,
+      "tokens_out": 90,
+      "cost_usd": 0.0000214,
+      "answer_sha256": "de0d4ffd0aa714b3",
+      "prompt_sha256": "2b4cb891b46c028b"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call care-note #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:fa8d71428af3b6c0",
+      "pub": "MCowBQYDK2VwAyEAackauCJEMVTrOgfo/e3n0T2UfOyKc2FuBKMSLBiBRQo=",
+      "signed_at": "2026-11-20T23:20:28Z"
+     },
+     "sig": "davqwaxUqN71EkTYP6sp+qdMe/69H5PqzWC0+0YDULn1//QFCIEr/+CT5OeXKl2xopgfu8mSEy0X7P8xLV3nAA=="
+    }
+   },
+   {
+    "unit": "loop:conductor/call:report#1",
+    "role": "conductor",
+    "task": "report",
+    "attempt": 1,
+    "tier": "cheap8",
+    "model": "ministral-8b-2512",
+    "served": "ministral-8b-2512",
+    "status": "ok",
+    "valid": true,
+    "checks": [
+     {
+      "name": "answered",
+      "pass": true
+     },
+     {
+      "name": "json_valid",
+      "pass": true
+     },
+     {
+      "name": "under_120_words",
+      "pass": true,
+      "detail": "64"
+     },
+     {
+      "name": "asks_before_live",
+      "pass": true
+     },
+     {
+      "name": "no_em_dash",
+      "pass": true
+     }
+    ],
+    "tokens_in": 870,
+    "tokens_out": 87,
+    "cost_usd": 0.00014355,
+    "latency_ms": 974,
+    "ledger_id": "20261120T232028-60a8a6cf",
+    "t_start": 13738,
+    "t_end": 14713,
+    "prompt_sha256": "6fd4f792619f100c",
+    "prompt_chars": 3357,
+    "answer_sha256": "e8e4c1e644674975",
+    "answer_chars": 460,
+    "model_output": "{\n\t\"report\": \"The team updated the heading on `/request.html` to clarify mandatory fields ('The fields you must fill in are:'). The writer’s edit was approved, then reverted due to grammatical redundancy. The designer suggested restructuring sections under a unified heading for better readability. The developer applied the initial edit. Translations were added in French and Portuguese. No broken links or accessibility issues detected. Should we publish?\"\n}",
+    "model_output_note": "model output, published as the point of the demo; em dashes replaced with \" - \" before signing",
+    "signed": {
+     "body": {
+      "task": "report",
+      "role": "conductor",
+      "model": "ministral-8b-2512",
+      "valid": true,
+      "checks": [
+       [
+        "answered",
+        true
+       ],
+       [
+        "json_valid",
+        true
+       ],
+       [
+        "under_120_words",
+        true
+       ],
+       [
+        "asks_before_live",
+        true
+       ],
+       [
+        "no_em_dash",
+        true
+       ]
+      ],
+      "tokens_in": 870,
+      "tokens_out": 87,
+      "cost_usd": 0.00014355,
+      "answer_sha256": "e8e4c1e644674975",
+      "prompt_sha256": "6fd4f792619f100c"
+     },
+     "by": {
+      "altitude": "A1",
+      "name": "LLM call report #1 by swarm.mistral@SovereignWebsite.dinis",
+      "fp": "sha256:04050a17c3465c79",
+      "pub": "MCowBQYDK2VwAyEAYlmmJ1Lf2ZWXopjn3e7fY1nR5VRZSCHcxqVzQs3BVpo=",
+      "signed_at": "2026-11-20T23:20:29Z"
+     },
+     "sig": "OcPUkW5/LGspEEoqyk7v2U4ij/ilE/xGpxXZETvc5oL95ezUM1ZExBv3mYVBq4VmumKUVnP07yIyUJL/nyWDBw=="
+    }
+   }
+  ],
+  "nodes": [
+   {
+    "id": "dinis",
+    "kind": "person",
+    "altitude": "P",
+    "label": "Dinis Cruz"
+   },
+   {
+    "id": "issuer",
+    "kind": "swarm",
+    "altitude": "A4",
+    "label": "swarm.mistral@SovereignWebsite.dinis"
+   },
+   {
+    "id": "packet:m001-team-pipeline-demo",
+    "kind": "task",
+    "altitude": "T",
+    "label": "packet m001-team-pipeline-demo",
+    "edge": "carries"
+   },
+   {
+    "id": "runner",
+    "kind": "agent",
+    "altitude": "A3",
+    "label": "swarm.mistral@SovereignWebsite.dinis",
+    "env": "R1 Claude Code cloud",
+    "account": "dinis-cruz-mistral (proxy-injected key)"
+   },
+   {
+    "id": "mistral",
+    "kind": "provider",
+    "altitude": "M",
+    "label": "Mistral API (api.mistral.ai)"
+   },
+   {
+    "id": "loop:keeper",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Keeper: read and care",
+    "role": "keeper"
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read home"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "home",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/",
+    "bytes": 8116,
+    "sha256": "5e9bc0750754191a",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /index.html"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/index.html",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "bytes": 8116,
+    "sha256": "5e9bc0750754191a",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /request.html"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/request.html",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "bytes": 9282,
+    "sha256": "61e58b12aac15560",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /after-the-seed.html"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/after-the-seed.html",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "bytes": 8329,
+    "sha256": "24470fb0886a810d",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /start/"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/start/",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/start/",
+    "bytes": 7205,
+    "sha256": "ec2e4ee07c90456f",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /agents/"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/agents/",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "bytes": 6213,
+    "sha256": "a7a114a440d37425",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "read /admin/"
+   },
+   {
+    "id": "data:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "kind": "dataset",
+    "altitude": "D",
+    "label": "/admin/",
+    "url": "https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "bytes": 6640,
+    "sha256": "a1f87e7f06de2113",
+    "read_at": "2026-11-20T23:20:15Z",
+    "status": 200
+   },
+   {
+    "id": "loop:conductor",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Conductor: plan and report",
+    "role": "conductor"
+   },
+   {
+    "id": "loop:conductor/call:plan#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "plan #1",
+    "role": "conductor",
+    "key_fp": "sha256:f1e5cd7208c4184b",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 783,
+    "cost_usd": 0.00020565,
+    "latency_ms": 1876
+   },
+   {
+    "id": "loop:designer",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Designer: layout notes",
+    "role": "designer"
+   },
+   {
+    "id": "loop:writer",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Writer and Reviewer: draft, review, revise",
+    "role": "writer"
+   },
+   {
+    "id": "loop:designer/call:layout#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "layout #1",
+    "role": "designer",
+    "key_fp": "sha256:c6242cc82a6a6cee",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 1027,
+    "cost_usd": 0.00015405,
+    "latency_ms": 2418
+   },
+   {
+    "id": "loop:writer/call:edit#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "edit #1",
+    "role": "writer",
+    "key_fp": "sha256:79ed6a6dd64ff2ea",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 911,
+    "cost_usd": 0.00015465,
+    "latency_ms": 1710
+   },
+   {
+    "id": "loop:writer/call:review#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "review #1",
+    "role": "reviewer",
+    "key_fp": "sha256:25c433055ef6e766",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 1252,
+    "cost_usd": 0.0002504,
+    "latency_ms": 4113
+   },
+   {
+    "id": "loop:writer/call:edit#2",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "edit #2",
+    "role": "writer",
+    "key_fp": "sha256:653b2263f644ffc2",
+    "model": "mistral-small-2603",
+    "valid": false,
+    "tokens": 1097,
+    "cost_usd": 0.0001929,
+    "latency_ms": 785
+   },
+   {
+    "id": "loop:writer/call:edit#3",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "edit #3",
+    "role": "writer",
+    "key_fp": "sha256:3429c431e3e56052",
+    "model": "mistral-small-2603",
+    "valid": true,
+    "tokens": 931,
+    "cost_usd": 0.00015675,
+    "latency_ms": 669
+   },
+   {
+    "id": "loop:writer/call:review#3",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "review #3",
+    "role": "reviewer",
+    "key_fp": "sha256:767441277d93fed4",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 1014,
+    "cost_usd": 0.0002028,
+    "latency_ms": 2068
+   },
+   {
+    "id": "loop:developer",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Developer: apply and commit",
+    "role": "developer"
+   },
+   {
+    "id": "loop:developer/apply",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "apply the edit to the HTML"
+   },
+   {
+    "id": "loop:translator:pt",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Translator: European Portuguese",
+    "role": "translator"
+   },
+   {
+    "id": "loop:translator:fr",
+    "kind": "loop",
+    "altitude": "A2",
+    "label": "Translator: French",
+    "role": "translator"
+   },
+   {
+    "id": "loop:keeper/links",
+    "kind": "compute",
+    "altitude": "A0",
+    "label": "check links, alt text, titles, languages"
+   },
+   {
+    "id": "loop:developer/call:commit#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "commit #1",
+    "role": "developer",
+    "key_fp": "sha256:f38ce5a918b71322",
+    "model": "ministral-14b-2512",
+    "valid": true,
+    "tokens": 145,
+    "cost_usd": 0.000029,
+    "latency_ms": 720
+   },
+   {
+    "id": "loop:translator:pt/call:translate:pt#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "translate:pt #1",
+    "role": "translator",
+    "key_fp": "sha256:33cd8d1cb15dca04",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 172,
+    "cost_usd": 0.0000258,
+    "latency_ms": 933
+   },
+   {
+    "id": "loop:translator:fr/call:translate:fr#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "translate:fr #1",
+    "role": "translator",
+    "key_fp": "sha256:2cc0b88e92648f81",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 177,
+    "cost_usd": 0.00002655,
+    "latency_ms": 874
+   },
+   {
+    "id": "loop:keeper/call:care-note#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "care-note #1",
+    "role": "keeper",
+    "key_fp": "sha256:fa8d71428af3b6c0",
+    "model": "ministral-3b-2512",
+    "valid": true,
+    "tokens": 214,
+    "cost_usd": 0.0000214,
+    "latency_ms": 903
+   },
+   {
+    "id": "loop:conductor/call:report#1",
+    "kind": "llm-call",
+    "altitude": "A1",
+    "label": "report #1",
+    "role": "conductor",
+    "key_fp": "sha256:04050a17c3465c79",
+    "model": "ministral-8b-2512",
+    "valid": true,
+    "tokens": 957,
+    "cost_usd": 0.00014355,
+    "latency_ms": 974
+   }
+  ],
+  "edges": [
+   {
+    "from": "dinis",
+    "to": "issuer",
+    "kind": "asks",
+    "t": 0
+   },
+   {
+    "from": "issuer",
+    "to": "packet:m001-team-pipeline-demo",
+    "kind": "carries",
+    "t": 0
+   },
+   {
+    "from": "packet:m001-team-pipeline-demo",
+    "to": "runner",
+    "kind": "runs",
+    "t": 0
+   },
+   {
+    "from": "runner",
+    "to": "loop:keeper",
+    "kind": "starts",
+    "t": 1
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/",
+    "kind": "runs",
+    "t": 1
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/",
+    "kind": "reads",
+    "t": 1
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "kind": "runs",
+    "t": 506
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "kind": "reads",
+    "t": 506
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "kind": "runs",
+    "t": 574
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "kind": "reads",
+    "t": 574
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "kind": "runs",
+    "t": 655
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "kind": "reads",
+    "t": 655
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "kind": "runs",
+    "t": 729
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "kind": "reads",
+    "t": 729
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "kind": "runs",
+    "t": 796
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "kind": "reads",
+    "t": 796
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "kind": "runs",
+    "t": 862
+   },
+   {
+    "from": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "to": "data:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "kind": "reads",
+    "t": 862
+   },
+   {
+    "from": "runner",
+    "to": "loop:conductor",
+    "kind": "starts",
+    "t": 925
+   },
+   {
+    "from": "loop:conductor",
+    "to": "loop:conductor/call:plan#1",
+    "kind": "calls",
+    "t": 926
+   },
+   {
+    "from": "loop:conductor/call:plan#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 926
+   },
+   {
+    "from": "runner",
+    "to": "loop:designer",
+    "kind": "starts",
+    "t": 2804
+   },
+   {
+    "from": "runner",
+    "to": "loop:writer",
+    "kind": "starts",
+    "t": 2804
+   },
+   {
+    "from": "loop:designer",
+    "to": "loop:designer/call:layout#1",
+    "kind": "calls",
+    "t": 2804
+   },
+   {
+    "from": "loop:designer/call:layout#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2804
+   },
+   {
+    "from": "loop:writer",
+    "to": "loop:writer/call:edit#1",
+    "kind": "calls",
+    "t": 2804
+   },
+   {
+    "from": "loop:writer/call:edit#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 2804
+   },
+   {
+    "from": "loop:writer",
+    "to": "loop:writer/call:review#1",
+    "kind": "calls",
+    "t": 4515
+   },
+   {
+    "from": "loop:writer/call:review#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 4515
+   },
+   {
+    "from": "loop:writer",
+    "to": "loop:writer/call:edit#2",
+    "kind": "calls",
+    "t": 8630
+   },
+   {
+    "from": "loop:writer/call:edit#2",
+    "to": "mistral",
+    "kind": "via",
+    "t": 8630
+   },
+   {
+    "from": "loop:writer",
+    "to": "loop:writer/call:edit#3",
+    "kind": "calls",
+    "t": 9416
+   },
+   {
+    "from": "loop:writer/call:edit#3",
+    "to": "mistral",
+    "kind": "via",
+    "t": 9416
+   },
+   {
+    "from": "loop:writer",
+    "to": "loop:writer/call:review#3",
+    "kind": "calls",
+    "t": 10087
+   },
+   {
+    "from": "loop:writer/call:review#3",
+    "to": "mistral",
+    "kind": "via",
+    "t": 10087
+   },
+   {
+    "from": "runner",
+    "to": "loop:developer",
+    "kind": "starts",
+    "t": 12155
+   },
+   {
+    "from": "loop:developer",
+    "to": "loop:developer/apply",
+    "kind": "runs",
+    "t": 12155
+   },
+   {
+    "from": "runner",
+    "to": "loop:translator:pt",
+    "kind": "starts",
+    "t": 12157
+   },
+   {
+    "from": "runner",
+    "to": "loop:translator:fr",
+    "kind": "starts",
+    "t": 12157
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/links",
+    "kind": "runs",
+    "t": 12157
+   },
+   {
+    "from": "loop:developer",
+    "to": "loop:developer/call:commit#1",
+    "kind": "calls",
+    "t": 12158
+   },
+   {
+    "from": "loop:developer/call:commit#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 12158
+   },
+   {
+    "from": "loop:translator:pt",
+    "to": "loop:translator:pt/call:translate:pt#1",
+    "kind": "calls",
+    "t": 12158
+   },
+   {
+    "from": "loop:translator:pt/call:translate:pt#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 12158
+   },
+   {
+    "from": "loop:translator:fr",
+    "to": "loop:translator:fr/call:translate:fr#1",
+    "kind": "calls",
+    "t": 12158
+   },
+   {
+    "from": "loop:translator:fr/call:translate:fr#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 12158
+   },
+   {
+    "from": "loop:keeper",
+    "to": "loop:keeper/call:care-note#1",
+    "kind": "calls",
+    "t": 12834
+   },
+   {
+    "from": "loop:keeper/call:care-note#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 12834
+   },
+   {
+    "from": "loop:conductor",
+    "to": "loop:conductor/call:report#1",
+    "kind": "calls",
+    "t": 13738
+   },
+   {
+    "from": "loop:conductor/call:report#1",
+    "to": "mistral",
+    "kind": "via",
+    "t": 13738
+   }
+  ],
+  "timeline": [
+   {
+    "t": 0,
+    "unit": "runner",
+    "phase": "start"
+   },
+   {
+    "t": 1,
+    "unit": "loop:keeper",
+    "phase": "start",
+    "role": "keeper"
+   },
+   {
+    "t": 1,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/",
+    "phase": "start"
+   },
+   {
+    "t": 505,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/",
+    "phase": "end",
+    "ok": true,
+    "bytes": 8116
+   },
+   {
+    "t": 506,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "phase": "start"
+   },
+   {
+    "t": 574,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/index.html",
+    "phase": "end",
+    "ok": true,
+    "bytes": 8116
+   },
+   {
+    "t": 574,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "phase": "start"
+   },
+   {
+    "t": 655,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/request.html",
+    "phase": "end",
+    "ok": true,
+    "bytes": 9282
+   },
+   {
+    "t": 655,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "phase": "start"
+   },
+   {
+    "t": 729,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/after-the-seed.html",
+    "phase": "end",
+    "ok": true,
+    "bytes": 8329
+   },
+   {
+    "t": 729,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "phase": "start"
+   },
+   {
+    "t": 796,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/start/",
+    "phase": "end",
+    "ok": true,
+    "bytes": 7205
+   },
+   {
+    "t": 796,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "phase": "start"
+   },
+   {
+    "t": 862,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/agents/",
+    "phase": "end",
+    "ok": true,
+    "bytes": 6213
+   },
+   {
+    "t": 862,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "phase": "start"
+   },
+   {
+    "t": 924,
+    "unit": "loop:keeper/read:https://pipeline-demo.demo.sovereignweb.site/admin/",
+    "phase": "end",
+    "ok": true,
+    "bytes": 6640
+   },
+   {
+    "t": 925,
+    "unit": "loop:conductor",
+    "phase": "start",
+    "role": "conductor"
+   },
+   {
+    "t": 926,
+    "unit": "loop:conductor/call:plan#1",
+    "phase": "start",
+    "role": "conductor"
+   },
+   {
+    "t": 2804,
+    "unit": "loop:conductor/call:plan#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00020565,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 2804,
+    "unit": "loop:designer",
+    "phase": "start",
+    "role": "designer"
+   },
+   {
+    "t": 2804,
+    "unit": "loop:writer",
+    "phase": "start",
+    "role": "writer"
+   },
+   {
+    "t": 2804,
+    "unit": "loop:designer/call:layout#1",
+    "phase": "start",
+    "role": "designer"
+   },
+   {
+    "t": 2804,
+    "unit": "loop:writer/call:edit#1",
+    "phase": "start",
+    "role": "writer"
+   },
+   {
+    "t": 4515,
+    "unit": "loop:writer/call:edit#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00015465,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 4515,
+    "unit": "loop:writer/call:review#1",
+    "phase": "start",
+    "role": "reviewer"
+   },
+   {
+    "t": 5223,
+    "unit": "loop:designer/call:layout#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00015405,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 5223,
+    "unit": "loop:designer",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 8630,
+    "unit": "loop:writer/call:review#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002504,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 8630,
+    "unit": "loop:writer/call:edit#2",
+    "phase": "start",
+    "role": "writer"
+   },
+   {
+    "t": 9416,
+    "unit": "loop:writer/call:edit#2",
+    "phase": "end",
+    "valid": false,
+    "cost_usd": 0.0001929,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 9416,
+    "unit": "loop:writer/call:edit#3",
+    "phase": "start",
+    "role": "writer"
+   },
+   {
+    "t": 10087,
+    "unit": "loop:writer/call:edit#3",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00015675,
+    "model": "mistral-small-2603"
+   },
+   {
+    "t": 10087,
+    "unit": "loop:writer/call:review#3",
+    "phase": "start",
+    "role": "reviewer"
+   },
+   {
+    "t": 12155,
+    "unit": "loop:writer/call:review#3",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0002028,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 12155,
+    "unit": "loop:writer",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 12155,
+    "unit": "loop:developer",
+    "phase": "start",
+    "role": "developer"
+   },
+   {
+    "t": 12155,
+    "unit": "loop:developer/apply",
+    "phase": "start"
+   },
+   {
+    "t": 12156,
+    "unit": "loop:developer/apply",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 12157,
+    "unit": "loop:translator:pt",
+    "phase": "start",
+    "role": "translator"
+   },
+   {
+    "t": 12157,
+    "unit": "loop:translator:fr",
+    "phase": "start",
+    "role": "translator"
+   },
+   {
+    "t": 12157,
+    "unit": "loop:keeper/links",
+    "phase": "start"
+   },
+   {
+    "t": 12158,
+    "unit": "loop:developer/call:commit#1",
+    "phase": "start",
+    "role": "developer"
+   },
+   {
+    "t": 12158,
+    "unit": "loop:translator:pt/call:translate:pt#1",
+    "phase": "start",
+    "role": "translator"
+   },
+   {
+    "t": 12158,
+    "unit": "loop:translator:fr/call:translate:fr#1",
+    "phase": "start",
+    "role": "translator"
+   },
+   {
+    "t": 12834,
+    "unit": "loop:keeper/links",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 12834,
+    "unit": "loop:keeper/call:care-note#1",
+    "phase": "start",
+    "role": "keeper"
+   },
+   {
+    "t": 12879,
+    "unit": "loop:developer/call:commit#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.000029,
+    "model": "ministral-14b-2512"
+   },
+   {
+    "t": 12879,
+    "unit": "loop:developer",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 13035,
+    "unit": "loop:translator:fr/call:translate:fr#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00002655,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 13035,
+    "unit": "loop:translator:fr",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 13093,
+    "unit": "loop:translator:pt/call:translate:pt#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0000258,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 13093,
+    "unit": "loop:translator:pt",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 13738,
+    "unit": "loop:keeper/call:care-note#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.0000214,
+    "model": "ministral-3b-2512"
+   },
+   {
+    "t": 13738,
+    "unit": "loop:keeper",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 13738,
+    "unit": "loop:conductor/call:report#1",
+    "phase": "start",
+    "role": "conductor"
+   },
+   {
+    "t": 14713,
+    "unit": "loop:conductor/call:report#1",
+    "phase": "end",
+    "valid": true,
+    "cost_usd": 0.00014355,
+    "model": "ministral-8b-2512"
+   },
+   {
+    "t": 14713,
+    "unit": "loop:conductor",
+    "phase": "end",
+    "valid": true
+   },
+   {
+    "t": 14713,
+    "unit": "runner",
+    "phase": "end"
+   }
+  ],
+  "id": "20261120T2320-m001-team-pipeline-demo",
+  "packet_fp": "sha256:5b0daaaea4f80121",
+  "runner_key_fp": "sha256:4574cbe0b64cff47",
+  "issued_by": "swarm.mistral@SovereignWebsite.dinis"
+ },
+ "by": {
+  "altitude": "A3",
+  "name": "runner: swarm.mistral@SovereignWebsite.dinis for m001-team-pipeline-demo",
+  "fp": "sha256:4574cbe0b64cff47",
+  "pub": "MCowBQYDK2VwAyEAzFqHvFEbh9Yl8gFftlb8EKTwct+FX5TRVQrKHsN86gc=",
+  "signed_at": "2026-11-20T23:20:29Z"
+ },
+ "sig": "IXKKQJkrsIn602uf/Z6j8wo2RijQws4od2MVOMSIE+A4Bv6v69a3JG/77nEdR+gGbcz2Vf/pd4yGm9q06yaoCw=="
+}

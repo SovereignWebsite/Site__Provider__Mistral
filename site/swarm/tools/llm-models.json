@@ -1,0 +1,22 @@
+{
+ "about": "The Mistral model router's table: a copy of the PrompTugal Swarm's tools/llm-models.json (Apache-2.0, https://github.com/PrompTugal/PrompTugal__News__Swarm), with every tier on Mistral's own API. The caller names a tier, never a model, unless it must. Model ids from GET https://api.mistral.ai/v1/models on 20 November 2026. Prices in USD per million tokens (input/output), as read on 20 November 2026 at the source below.",
+ "provider": "mistral",
+ "base_url": "https://api.mistral.ai/v1",
+ "price_source": "https://docs.mistral.ai/inference/pricing",
+ "price_read_on": "2026-11-20",
+ "prices_usd_per_m": {
+  "ministral-3b-2512": [0.1, 0.1],
+  "ministral-8b-2512": [0.15, 0.15],
+  "ministral-14b-2512": [0.2, 0.2],
+  "mistral-small-2603": [0.15, 0.6]
+ },
+ "default_tier": "cheap",
+ "tiers": {
+  "cheap": { "model": "ministral-3b-2512", "fallback": "ministral-8b-2512", "for": "classify, extract, summarise, check, first drafts" },
+  "cheap8": { "model": "ministral-8b-2512", "fallback": "ministral-3b-2512", "for": "translation and short structured work a little above the 3B" },
+  "strong": { "model": "mistral-small-2603", "fallback": "ministral-14b-2512", "for": "writing a person reads, plans" },
+  "hard": { "model": "ministral-14b-2512", "fallback": "mistral-small-2603", "for": "reviews and checks; magistral-small-latest has no published price and its card says deprecated, so it is not used" }
+ },
+ "cap_usd": 2.5,
+ "note": "cap_usd is the whole night's cap for this agent, counted from every line of the ledger (the team rule is 3 USD; 2.5 leaves a margin). Cost is computed from prices_usd_per_m and the usage tokens Mistral returns; Mistral's own invoice is the authority."
+}

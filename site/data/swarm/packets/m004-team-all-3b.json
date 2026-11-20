@@ -1,0 +1,43 @@
+{
+ "body": {
+  "v": 1,
+  "id": "m004-team-all-3b",
+  "altitude": "A2",
+  "from": "swarm.mistral@SovereignWebsite.dinis",
+  "for": "any runner with a Mistral key: this container, or a visitor's browser (run.html)",
+  "issued_at": "2026-11-20T23:20:29Z",
+  "kind": "team",
+  "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-3b-2512)",
+  "site": "https://pipeline-demo.demo.sovereignweb.site/",
+  "request": "Make the page that explains how to ask for a site clearer for a first-time visitor, check it, and offer its opening in Portuguese and French. Report back before anything goes live.",
+  "expected_page": "/request.html",
+  "max_pages": 8,
+  "max_links": 30,
+  "story": "The seven roles of \"A website with a team inside\" (Dinis Cruz, 19 November 2026), each doing its job on a real public site in the family, on Mistral models only. Nothing is pushed to the site: the edit is a proposal for its owner. Every role on ministral-3b-2512, to compare with the tiered run.",
+  "source": {
+   "article": "https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html",
+   "site": "https://pipeline-demo.demo.sovereignweb.site/",
+   "read_on": "2026-11-20"
+  },
+  "mandate": "Read the public pages of pipeline-demo.demo.sovereignweb.site; plan, draft, review, apply in memory, translate and check one edit, with Mistral models only. Push nothing to that site.",
+  "grant": [
+   "read.web:pipeline-demo.demo.sovereignweb.site",
+   "call.llm:api.mistral.ai (through site/swarm/tools/llm.mjs)",
+   "write.file:site/data/swarm/runs/<id>.json"
+  ],
+  "model_override": "ministral-3b-2512",
+  "tries": 3,
+  "budget": {
+   "usd": 0.05
+  },
+  "output": "site/data/swarm/runs/<id>--<runner>.json, signed by a key made for the run"
+ },
+ "by": {
+  "altitude": "A4",
+  "name": "issuer: swarm.mistral@SovereignWebsite.dinis",
+  "fp": "sha256:c5dcc61f4c4fdc8a",
+  "pub": "MCowBQYDK2VwAyEAbIkymS8hk4LbVsBA3/K+eGwBePjUBKJl1SRYQDrdHDQ=",
+  "signed_at": "2026-11-20T23:20:29Z"
+ },
+ "sig": "x9hhshrt94NVt3x2+xK84qCwkrDFu2klS6Op9hvML4vA6976jRSaxIYC/+KPnxpYDnsZOncqvHeupEFq29k+CQ=="
+}
