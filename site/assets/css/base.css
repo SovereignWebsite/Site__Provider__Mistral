@@ -128,3 +128,4 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 [id^="fn-"] > a{display:inline-block;min-width:24px;min-height:24px;text-align:center}
 .codebox{max-width:100%;min-width:0}
 .c-code,.c-code > *{min-width:0;max-width:100%}
+.evals-plain{font-size:1.08rem;font-weight:600;margin:1rem 0;padding:.7rem .9rem;border-left:4px solid var(--accent);background:var(--panel)}
