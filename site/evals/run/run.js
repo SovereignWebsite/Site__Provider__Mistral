@@ -112,6 +112,12 @@ async function loadModels() {
 }
 
 async function main() {
+  // A key is typed here, so the page refuses to work inside another site's frame (security.b review 005, applied as on /demos/).
+  if (window.top !== window.self) {
+    $('run').disabled = true; $('set-key').disabled = true; $('key').disabled = true;
+    $('status').replaceChildren('This page is shown inside another page, so it will not take a key. ', el('a', { href: location.href, target: '_top' }, 'Open it directly'), '.');
+    return;
+  }
   const idx = await get('suites/index.json');
   prices = await get('prices.json');
   for (const s of idx.suites) {

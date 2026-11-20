@@ -1,5 +1,6 @@
 {
  "suite": "0.1",
+ "checks_version": "0.1",
  "id": "about-british",
  "name": "About paragraph, word limit, British English",
  "job": "A site owner asks for the short About paragraph on their home page. It must fit the space (a word limit), use British spelling and keep the facts it was given.",

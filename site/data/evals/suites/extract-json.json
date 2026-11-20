@@ -1,5 +1,6 @@
 {
  "suite": "0.1",
+ "checks_version": "0.1",
  "id": "extract-json",
  "name": "Fact extraction into JSON",
  "job": "The site reads one of its own pages and pulls out facts as JSON (for a contact card or structured data). It must copy exactly and use null for anything missing.",

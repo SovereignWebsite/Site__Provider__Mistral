@@ -1,5 +1,6 @@
 {
  "suite": "0.1",
+ "checks_version": "0.1",
  "id": "translate-glossary",
  "name": "Portuguese and French translation with a must-keep glossary",
  "job": "The site publishes its pages in Portuguese and French. Product names and defined terms in the glossary must stay exactly as written in English.",

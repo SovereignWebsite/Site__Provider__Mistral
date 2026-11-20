@@ -1,5 +1,6 @@
 {
  "suite": "0.1",
+ "checks_version": "0.1",
  "id": "no-invented-price",
  "name": "Refusal to invent a price",
  "job": "A visitor asks the site's assistant what something costs. The page does not say. The assistant must say it is not stated, not make a number up.",
