@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.mistral.ai https://api.eu.mistral.ai https://openrouter.ai http://localhost:11434 http://127.0.0.1:11434 http://localhost:8080 http://127.0.0.1:8080; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your key, and where it goes</title>
+<meta name="description" content="Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/demos/your-key.html">
+<meta property="og:title" content="Your key, and where it goes">
+<meta property="og:description" content="Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Your key, and where it goes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your key, and where it goes">
+<meta name="twitter:description" content="Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/demos/your-key.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="demo-nav" aria-label="These demos">
+  <ul>
+    <li><a href="index.html">Demos</a></li>
+    <li><a href="side-by-side.html">Same brief, three brains</a></li>
+    <li><a href="your-key.html" aria-current="page">Your key</a></li>
+    <li><a href="on-device.html">On your device</a></li>
+    <li><a href="https://newsroom.sgit.ai/articles/a-european-brain.html">The article</a></li>
+  </ul>
+</nav>
+<p class="disclaimer">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+
+<main id="main" class="wrap">
+<p class="mark">Demo 2</p>
+<h1>Your key, and where it goes</h1>
+<p class="lede">These demos use your own key, never ours. We have none, and there is no server of ours for a key to reach.</p>
+
+<section aria-labelledby="plain-title" class="prose">
+  <h2 id="plain-title">In plain words</h2>
+  <ul>
+    <li><strong>Where it is kept:</strong> in a variable in this browser tab. Not in local storage, session storage or a cookie. When you close or reload the tab, or go to another page, it is gone, so enter it on the page you want to use.</li>
+    <li><strong>Where it goes:</strong> only to the provider you chose, in the <code>Authorization</code> header of the request, and only when you press Send. A Mistral key goes only to <code>api.mistral.ai</code> or <code>api.eu.mistral.ai</code>; an OpenRouter key only to <code>openrouter.ai</code>. A local server gets no key.</li>
+    <li><strong>What you see of it:</strong> after you press "Use this key", the box is emptied and the page shows only its last four characters, so you can tell which key is in use.</li>
+    <li><strong>What protects it:</strong> any script on a page can read a key held by that page, so these pages load nothing but their own files: no analytics, no fonts, no scripts from anywhere else.</li>
+    <li><strong>How to be rid of it:</strong> press "Forget my keys", or close the tab. To cancel the key itself, delete it in your account at the provider.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="keys-title">
+  <h2 id="keys-title">Your keys</h2>
+  <div id="key-panel"></div>
+</section>
+
+<section aria-labelledby="try-title">
+  <h2 id="try-title">Check a key works</h2>
+  <p class="prose">This sends one tiny request, "Say hello in five words.", with a limit of 20 tokens, to the provider you pick. You can see exactly what it sends below before you press the button.</p>
+  <div class="row">
+    <div>
+      <label for="try-provider">Provider</label>
+      <select id="try-provider"></select>
+    </div>
+    <div>
+      <label for="try-model">Model</label>
+      <input id="try-model" type="text" class="mono" spellcheck="false" autocapitalize="off" autocomplete="off">
+    </div>
+    <button type="button" id="try-send">Send the check</button>
+  </div>
+  <p class="notice">Nothing is sent until you press "Send the check". Then your browser sends the request below to that provider, and nowhere else. Nothing goes to this site.</p>
+  <div id="status" role="status" aria-live="polite"></div>
+  <div class="results" id="results" aria-live="polite"></div>
+  <h3>What this call sends, and to whom</h3>
+  <div class="sends" id="sends"></div>
+  <h3>Calls made from this tab</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col">Time taken (ms)</th><th scope="col">Tokens</th><th scope="col">Bytes sent</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="free-title" class="prose">
+  <h2 id="free-title">Mistral's free mode: what to know first</h2>
+  <p>Mistral's free tier used to be called the Experiment plan; it is now called Free mode, and it is where new accounts start. <span class="src">(<a href="https://docs.mistral.ai/admin/billing-usage/subscriptions">docs.mistral.ai, subscriptions</a>: "Free mode is the default state for new accounts", as read on 20 November 2026; the old name is from <a href="https://newsroom.sgit.ai/articles/free-models-your-own-key.html">our October article</a>)</span></p>
+  <ul>
+    <li><strong>It may learn from what you send.</strong> In Free mode Mistral says it may use your inputs and outputs to train its models, unless you opt out. <span class="src">(<a href="https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models">help.mistral.ai, training</a>, as read on 20 November 2026)</span></li>
+    <li><strong>Switch it off first.</strong> The opt-out for the API is a toggle in the Admin panel under Privacy, separate from the one for Vibe. <span class="src">(<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">help.mistral.ai, opting out</a>, as read on 20 November 2026)</span> The opt-out does not apply to Labs and Public Preview models. <span class="src">(<a href="https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models">same page</a>)</span></li>
+    <li><strong>The paid terms are different.</strong> Mistral's inference page says "Data sent through our API isn't used for model training" <span class="src">(<a href="https://mistral.ai/cloud/inference/">mistral.ai/cloud/inference</a>, as read on 20 November 2026)</span>, but its help centre says otherwise for Free mode, as above. Zero data retention is only for pay-as-you-go, not Free mode. <span class="src">(<a href="https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr">help.mistral.ai, zero data retention</a>, as read on 20 November 2026)</span></li>
+    <li><strong>Kept for 30 days.</strong> API inputs and outputs are kept for thirty rolling days to monitor abuse, unless zero data retention is on. <span class="src">(<a href="https://legal.mistral.ai/terms/privacy-policy/">Mistral privacy policy</a>, as read on 20 November 2026)</span></li>
+    <li><strong>Low limits.</strong> Free mode has the lowest rate limits, meant for evaluation and prototyping; the numbers are shown only in your console. <span class="src">(<a href="https://help.mistral.ai/en/articles/698531-why-am-i-hitting-api-rate-limits-and-how-do-i-increase-them">help.mistral.ai, rate limits</a>, as read on 20 November 2026)</span> If you hit one, the demos say "429: rate limited".</li>
+    <li><strong>One key, the plan of your organisation.</strong> There is no separate Free mode key; a key takes the plan of the organisation it belongs to. <span class="src">(<a href="https://docs.mistral.ai/admin/identity-access/api-keys">docs.mistral.ai, API keys</a>, as read on 20 November 2026)</span></li>
+  </ul>
+  <p class="callout">So: use Free mode for material you would be happy to publish, such as the preset briefs in these demos, with the training toggle off. Never for anything private. Whether your particular use is allowed on Free mode is for Mistral's terms to say, not us: read the <a href="https://legal.mistral.ai/terms/terms-of-service/">terms of service</a> before you build on it.</p>
+  <p class="todo">TODO-cite: whether Free mode still needs no card. Our October article quoted "with no credit card required"; on 20 November 2026 we did not find that phrase on Mistral's pages, and the key quickstart mentions setting up billing.</p>
+</section>
+
+<section aria-labelledby="or-title" class="prose">
+  <h2 id="or-title">OpenRouter's free models</h2>
+  <p>OpenRouter lists models whose ids end in <code>:free</code>, priced at zero in its public model list <span class="src">(<a href="https://openrouter.ai/api/v1/models">openrouter.ai/api/v1/models</a>, as read on 20 November 2026)</span>. In October we found they allow 20 requests a minute and 50 a day, or 1,000 a day once you have bought at least $10 of credit <span class="src">(<a href="https://newsroom.sgit.ai/articles/free-models-your-own-key.html">our October article</a>, not re-checked on 20 November 2026)</span>. Whether a free model's provider keeps or learns from your words depends on the model; see OpenRouter's <a href="https://openrouter.ai/docs/guides/privacy/logging">logging and privacy</a> page.</p>
+</section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>A demonstration for the article <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a>. Nothing has been agreed with Mistral AI. This page is not legal advice.</p>
+  <p>Static files only. No cookies, no tracking, no storage, no server of ours.</p>
+</div></footer>
+<script src="facts.js"></script>
+<script src="core.js"></script>
+<script src="your-key.js"></script>
+</body>
+</html>

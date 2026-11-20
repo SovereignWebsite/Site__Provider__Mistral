@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.mistral.ai https://api.eu.mistral.ai https://openrouter.ai http://localhost:11434 http://127.0.0.1:11434 http://localhost:8080 http://127.0.0.1:8080; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same brief, three brains</title>
+<meta name="description" content="One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/demos/side-by-side.html">
+<meta property="og:title" content="Same brief, three brains">
+<meta property="og:description" content="One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Same brief, three brains">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Same brief, three brains">
+<meta name="twitter:description" content="One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/demos/side-by-side.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="demo-nav" aria-label="These demos">
+  <ul>
+    <li><a href="index.html">Demos</a></li>
+    <li><a href="side-by-side.html" aria-current="page">Same brief, three brains</a></li>
+    <li><a href="your-key.html">Your key</a></li>
+    <li><a href="on-device.html">On your device</a></li>
+    <li><a href="https://newsroom.sgit.ai/articles/a-european-brain.html">The article</a></li>
+  </ul>
+</nav>
+<p class="disclaimer">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+
+<main id="main" class="wrap">
+<p class="mark">Demo 1</p>
+<h1>Same brief, three brains</h1>
+<p class="lede">Write one brief. This page sends it, through one small function, to a European model, to any model on OpenRouter, and to a model on your own computer, and puts the answers side by side. The code that calls each one is the same; only the address, the key and the model change.</p>
+
+<section aria-labelledby="keys-title">
+  <h2 id="keys-title">1. Your keys</h2>
+  <p class="notice">Your keys stay in this tab. Each goes only to the provider it belongs to, and only when you press Send. This page has no server and saves nothing.</p>
+  <div id="key-panel"></div>
+</section>
+
+<section aria-labelledby="brief-title">
+  <h2 id="brief-title">2. The brief</h2>
+  <p class="label" id="presets-label">Start from one of these, or write your own</p>
+  <div class="presets" id="presets" role="group" aria-labelledby="presets-label"></div>
+  <div class="field">
+    <label for="brief">Brief</label>
+    <textarea id="brief" rows="5"></textarea>
+  </div>
+  <div class="field">
+    <label for="max-tokens">Longest answer (max_tokens)</label>
+    <select id="max-tokens">
+      <option value="150">150 tokens</option>
+      <option value="300" selected>300 tokens</option>
+      <option value="600">600 tokens</option>
+    </select>
+    <p class="hint">A short limit keeps it quick and cheap. Free tiers have low limits.</p>
+  </div>
+</section>
+
+<section aria-labelledby="lanes-title">
+  <h2 id="lanes-title">3. The brains</h2>
+  <p>Tick the ones to ask. You can type any model id; the lists are suggestions.</p>
+  <div class="lanes" id="lanes"></div>
+  <p><button type="button" class="secondary" id="add-lane">Add another brain</button></p>
+</section>
+
+<section aria-labelledby="send-title">
+  <h2 id="send-title">4. Send</h2>
+  <p class="notice">Nothing is sent until you press Send. Then your browser sends the brief to each provider you ticked, exactly as shown under "What each call sends, and to whom" below, and nowhere else. Nothing goes to this site.</p>
+  <p><button type="button" id="send">Send the brief</button></p>
+  <div id="status" role="status" aria-live="polite"></div>
+  <div class="results" id="results" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="sends-title">
+  <h2 id="sends-title">What each call sends, and to whom</h2>
+  <p>This is built from the brief and the brains above, before anything is sent. Your key is shown only by its last four characters.</p>
+  <div class="sends" id="sends"></div>
+</section>
+
+<section aria-labelledby="log-title">
+  <h2 id="log-title">Calls made from this tab</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col">Time taken (ms)</th><th scope="col">Tokens</th><th scope="col">Bytes sent</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table>
+  </div>
+  <p class="small muted">Kept in memory in this tab only, and gone when you reload.</p>
+</section>
+
+<section aria-labelledby="code-title">
+  <h2 id="code-title">The code, all of it</h2>
+  <p>This is the function every call above goes through, read from the running page, not a copy:</p>
+  <pre><code id="code-fn"></code></pre>
+  <p>And the only things that differ between the brains:</p>
+  <pre><code id="code-configs"></code></pre>
+  <p class="small">OpenRouter and local servers such as Ollama and llama.cpp offer the OpenAI-style <code>/v1/chat/completions</code>. Mistral's docs describe <code>/v1/chat/completions</code> as its native format, and name <code>https://api.mistral.ai/openai/v1</code> as its OpenAI-compatible endpoint, in public preview (<a href="https://docs.mistral.ai/inference/conversations/chat-completion">chat completion</a>, as read on 20 November 2026). For a request as simple as this one, both returned the same OpenAI-style answer, with <code>choices</code> and <code>usage</code>, in our test on 20 November 2026 (model <code>ministral-3b-2512</code>), so this page uses the generally available <code>/v1</code>.</p>
+</section>
+
+<section aria-labelledby="cors-title">
+  <h2 id="cors-title">Can a web page call them?</h2>
+  <p>A browser only sends a request with a key to another site if that site says, in answer to a preflight check, that it allows it (CORS). We checked on 20 November 2026:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Endpoint</th><th scope="col">Preflight answer</th><th scope="col">From a real browser</th></tr></thead>
+      <tbody>
+        <tr><td><code>api.mistral.ai</code></td><td>Allows any page (<code>Access-Control-Allow-Origin: *</code>), Authorization and Content-Type allowed</td><td id="cors-mistral">A call from a page in Chromium came back readable: status and JSON body, with usage</td></tr>
+        <tr><td><code>api.eu.mistral.ai</code></td><td>Allows any page, Authorization and Content-Type allowed</td><td id="cors-mistral-eu">A call with a dummy key came back as a readable 401, "Invalid API Key"</td></tr>
+        <tr><td><code>openrouter.ai</code></td><td>Allows any page, Authorization and Content-Type allowed</td><td id="cors-openrouter">A call with a dummy key came back as a readable 401</td></tr>
+        <tr><td><code>localhost</code></td><td>Up to your server. Ollama allows only 127.0.0.1 and 0.0.0.0 pages by default; set <code>OLLAMA_ORIGINS</code> (<a href="https://github.com/ollama/ollama/blob/main/docs/faq.mdx">Ollama FAQ</a>, as read on 20 November 2026)</td><td>No model server on our test machine, so the browser reported "Failed to fetch"; the page explains what to check</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">A provider can change its headers at any time; if a call fails with a network error, this page says so plainly.</p>
+</section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>A demonstration for the article <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a>. Nothing has been agreed with Mistral AI; the article proposes a partnership, and that is all it is.</p>
+  <p>Static files only. No cookies, no tracking, no storage, no server of ours.</p>
+</div></footer>
+<script src="facts.js"></script>
+<script src="core.js"></script>
+<script src="side-by-side.js"></script>
+</body>
+</html>

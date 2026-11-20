@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.mistral.ai https://api.eu.mistral.ai https://openrouter.ai http://localhost:11434 http://127.0.0.1:11434 http://localhost:8080 http://127.0.0.1:8080; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 1, on your device</title>
+<meta name="description" content="Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/demos/on-device.html">
+<meta property="og:title" content="Level 1, on your device">
+<meta property="og:description" content="Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Level 1, on your device">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Level 1, on your device">
+<meta name="twitter:description" content="Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/demos/on-device.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="demo-nav" aria-label="These demos">
+  <ul>
+    <li><a href="index.html">Demos</a></li>
+    <li><a href="side-by-side.html">Same brief, three brains</a></li>
+    <li><a href="your-key.html">Your key</a></li>
+    <li><a href="on-device.html" aria-current="page">On your device</a></li>
+    <li><a href="https://newsroom.sgit.ai/articles/a-european-brain.html">The article</a></li>
+  </ul>
+</nav>
+<p class="disclaimer">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+
+<main id="main" class="wrap">
+<p class="mark">Demo 3</p>
+<h1>Level 1, on your device</h1>
+<p class="lede">The first level of a European brain is one that never leaves the house: Ministral 3 running on the box that serves the site. This page says what we expect on a Raspberry Pi 5 with 16GB, how to try it, and lets you compare your own numbers. Nothing on this page is sent anywhere.</p>
+
+<p class="callout"><strong>Not measured yet.</strong> Everything about speed below is an estimate. We have not run Ministral 3 on a Raspberry Pi. When someone does, the numbers go here, with the date and the exact setup.</p>
+
+<section aria-labelledby="est-title" class="prose">
+  <h2 id="est-title">The estimate</h2>
+  <p>The article's estimate: "the 3B and 8B, compressed to about 2 to 5GB, should run on a 16GB Pi 5, the 8B slowly; on a tablet, the 3B is the realistic one." <span class="src">(<a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain</a>, as read on 20 November 2026)</span></p>
+  <p>The file sizes back the first half of that. Mistral's own GGUF files, at the common Q4_K_M compression:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Model</th><th scope="col">Q4_K_M file</th><th scope="col">Q8_0 file</th><th scope="col">Vision part, if loaded</th><th scope="col">Speed on a Pi 5 16GB</th></tr></thead>
+      <tbody>
+        <tr><td>Ministral 3 3B Instruct</td><td class="num">2.15 GB</td><td class="num">3.65 GB</td><td class="num">0.84 GB</td><td>Not measured yet</td></tr>
+        <tr><td>Ministral 3 8B Instruct</td><td class="num">5.20 GB</td><td class="num">9.03 GB</td><td class="num">0.86 GB</td><td>Not measured yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">File sizes from the Hugging Face listings of <a href="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF">mistralai/Ministral-3-3B-Instruct-2512-GGUF</a> and <a href="https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512-GGUF">mistralai/Ministral-3-8B-Instruct-2512-GGUF</a>, 1 GB = 10<sup>9</sup> bytes, as read on 20 November 2026. These are download sizes, not memory use; memory use will be higher once the context is allocated.</p>
+  <p>Ministral 3 is released under Apache 2.0, for edge and local use, in 3B, 8B and 14B sizes. <span class="src">(<a href="https://mistral.ai/news/mistral-3">mistral.ai/news/mistral-3</a>, as read on 20 November 2026)</span></p>
+</section>
+
+<section aria-labelledby="cmd-title" class="prose">
+  <h2 id="cmd-title">The exact commands</h2>
+  <p>On a Raspberry Pi 5 running a 64-bit Linux. Pick one of the two.</p>
+
+  <h3>With Ollama</h3>
+  <pre><code>curl -fsSL https://ollama.com/install.sh | sh
+ollama pull ministral-3:3b
+ollama run ministral-3:3b --verbose "Write the About paragraph for a Chiswick cheese shop's website."</code></pre>
+  <p class="small"><code>--verbose</code> prints timings after the answer; the "eval rate" line is the generation speed in tokens per second. Swap <code>3b</code> for <code>8b</code> to try the larger one. Install command from <a href="https://ollama.com/download/linux">ollama.com/download/linux</a>; tags <code>ministral-3:3b</code>, <code>:8b</code> and <code>:14b</code> from <a href="https://ollama.com/library/ministral-3">ollama.com/library/ministral-3</a>, both as read on 20 November 2026.</p>
+  <p class="small">To let the <a href="side-by-side.html">side-by-side demo</a> call it from a browser, Ollama must allow that page's address. By default it allows only 127.0.0.1 and 0.0.0.0; others are added with <code>OLLAMA_ORIGINS</code> <span class="src">(<a href="https://github.com/ollama/ollama/blob/main/docs/faq.mdx">Ollama FAQ</a>, as read on 20 November 2026)</span>. For this page's address that is:</p>
+  <pre><code id="ollama-origins">OLLAMA_ORIGINS=https://example.org ollama serve</code></pre>
+  <p class="small">If Ollama runs as a system service, set the variable in the service instead, as the FAQ describes.</p>
+
+  <h3>With llama.cpp and Mistral's official GGUF</h3>
+  <pre><code>curl -LsSf https://llama.app/install.sh | sh
+llama serve -hf mistralai/Ministral-3-3B-Instruct-2512-GGUF:Q4_K_M --port 8080</code></pre>
+  <p class="small">This downloads the Q4_K_M file from Mistral's Hugging Face repository and serves an OpenAI-style API at <code>http://localhost:8080/v1</code>. We give <code>--port 8080</code> because the server's own default port is 9931. Its CORS setting, <code>--cors-origins</code>, allows any page by default. <span class="src">(<a href="https://github.com/ggml-org/llama.cpp">llama.cpp README</a> and <a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md">server README</a>, as read on 20 November 2026)</span> The server prints timings, including tokens per second, after each answer.</p>
+  <p class="todo">Not run by us on a Pi. The commands are from each project's own documentation; tell us if one has changed.</p>
+</section>
+
+<section aria-labelledby="cmp-title">
+  <h2 id="cmp-title">Compare your own measurement</h2>
+  <p class="prose">Ran it? Put your numbers here to see what they mean for writing a website. This stays on this page: nothing is sent, nothing is saved, and it is gone when you reload.</p>
+  <form id="measure" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="m-device">Device</label>
+        <input id="m-device" type="text" value="Raspberry Pi 5 16GB" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="m-model">Model and compression</label>
+        <input id="m-model" type="text" value="ministral-3:3b (Q4_K_M)" autocomplete="off" class="mono">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="m-gen">Generation speed, tokens per second</label>
+        <input id="m-gen" type="number" min="0.01" step="0.01" inputmode="decimal" required aria-describedby="m-gen-hint">
+        <p class="hint" id="m-gen-hint">The "eval rate" from Ollama, or the generation figure from llama.cpp.</p>
+      </div>
+      <div class="field">
+        <label for="m-prompt">Prompt speed, tokens per second (optional)</label>
+        <input id="m-prompt" type="number" min="0.01" step="0.01" inputmode="decimal" aria-describedby="m-prompt-hint">
+        <p class="hint" id="m-prompt-hint">"prompt eval rate" in Ollama.</p>
+      </div>
+    </div>
+    <p><button type="submit">Add to the comparison</button></p>
+  </form>
+  <div id="m-status" role="status" aria-live="polite"></div>
+  <div class="table-wrap">
+    <table>
+      <caption class="small muted">Time to write answers of typical lengths at the generation speed given (arithmetic only: length divided by speed, not counting reading the prompt)</caption>
+      <thead><tr><th scope="col">Device</th><th scope="col">Model</th><th scope="col">Tokens/s</th><th scope="col">150-token paragraph</th><th scope="col">600-token page</th><th scope="col">Entered</th></tr></thead>
+      <tbody id="m-body">
+        <tr><td>Raspberry Pi 5 16GB</td><td>Ministral 3 3B and 8B</td><td>Not measured yet</td><td>Not measured yet</td><td>Not measured yet</td><td>The article's estimate</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>A demonstration for the article <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a>, and the experiment <a href="https://newsroom.sgit.ai/articles/a-sovereign-website-on-a-raspberry-pi.html">a sovereign website on a Raspberry Pi</a>. Nothing has been agreed with Mistral AI.</p>
+  <p>Static files only. No cookies, no tracking, no storage, no server of ours.</p>
+</div></footer>
+<script src="on-device.js"></script>
+</body>
+</html>

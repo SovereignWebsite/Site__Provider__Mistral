@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.mistral.ai https://api.eu.mistral.ai https://openrouter.ai http://localhost:11434 http://127.0.0.1:11434 http://localhost:8080 http://127.0.0.1:8080; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A European brain: demos</title>
+<meta name="description" content="Working demonstrations, in your browser, of a sovereign website whose AI model is the owner's choice, like the host.">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/demos/">
+<meta property="og:title" content="A European brain: demos">
+<meta property="og:description" content="Working demonstrations, in your browser, of a sovereign website whose AI model is the owner's choice, like the host.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A European brain: demos">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A European brain: demos">
+<meta name="twitter:description" content="Working demonstrations, in your browser, of a sovereign website whose AI model is the owner's choice, like the host.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/demos/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="demo-nav" aria-label="These demos">
+  <ul>
+    <li><a href="index.html" aria-current="page">Demos</a></li>
+    <li><a href="side-by-side.html">Same brief, three brains</a></li>
+    <li><a href="your-key.html">Your key</a></li>
+    <li><a href="on-device.html">On your device</a></li>
+    <li><a href="https://newsroom.sgit.ai/articles/a-european-brain.html">The article</a></li>
+  </ul>
+</nav>
+<p class="disclaimer">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+
+<main id="main" class="wrap">
+<p class="mark">Demos, London, 21 November 2026</p>
+<h1>The model is a choice the owner makes, like the host</h1>
+<p class="lede">A sovereign website's files are yours, and you can move them to any host. These demos show the same for its brain: one standard way of calling a model, and the owner picks what sits behind it, on the device, in Europe, or anywhere, with their own key.</p>
+
+<div class="prose">
+<p>This is the claim of <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a> by Dinis Cruz: if the model can only ever be one provider, the site is sovereign in its files and rented in its brain. Here you can try it rather than read about it. Everything runs in your browser; there is no server of ours, and nothing is sent anywhere until you press a button that says so.</p>
+</div>
+
+<h2>Three levels</h2>
+<div class="levels">
+  <div>
+    <h3>On the device</h3>
+    <p>Ministral 3, in 3B, 8B and 14B sizes under Apache 2.0, released for edge and local use. <span class="src">(<a href="https://mistral.ai/news/mistral-3">mistral.ai/news/mistral-3</a>, as read on 20 November 2026)</span></p>
+  </div>
+  <div>
+    <h3>In Europe</h3>
+    <p>Mistral's EU endpoint, <code>api.eu.mistral.ai</code>, runs inference in data centres in EU and EFTA countries, at 1.1 times list price. <span class="src">(<a href="https://docs.mistral.ai/inference/regional-inference">docs.mistral.ai, regional inference</a>, as read on 20 November 2026)</span></p>
+  </div>
+  <div>
+    <h3>Any provider</h3>
+    <p>The owner's own key through OpenRouter, for Mistral's models again or anyone else's. Same request, different address.</p>
+  </div>
+</div>
+
+<h2>The demos</h2>
+<ul class="cards">
+  <li><a class="card" href="side-by-side.html"><strong>Same brief, three brains</strong>One brief to Mistral's EU endpoint, a model on OpenRouter and a model on your own computer, side by side, with time, tokens and cost, through one function.</a></li>
+  <li><a class="card" href="your-key.html"><strong>Your key, and where it goes</strong>Where your key is kept (a variable in the tab), where it is sent (only the provider you chose), how to forget it, and what Mistral's free mode does with what you send.</a></li>
+  <li><a class="card" href="on-device.html"><strong>Level 1, on your device</strong>Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands, and a form to compare your own measurement. Nothing is sent.</a></li>
+</ul>
+
+<div class="callout">
+  <p><strong>What each call sends, and to whom.</strong> Every demo shows, before you send, the exact address, headers and body of each request, who receives it and their terms, and keeps a log of every call made from the tab, as the <a href="https://whois.tool.sovereignweb.site/">Whois tool</a> in the same family does.</p>
+</div>
+
+<h2>What this does not claim</h2>
+<ul class="prose">
+  <li>Nothing has been agreed with Mistral AI. The article proposes a partnership; that is all it is.</li>
+  <li>Prices and terms are as Mistral's and OpenRouter's pages showed them on 20 November 2026, with the link beside each.</li>
+  <li>Speed on a Raspberry Pi is an estimate until someone measures it.</li>
+</ul>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <p>Static files only. No cookies, no tracking, no storage, no server of ours. Text CC BY 4.0.</p>
+</div></footer>
+</body>
+</html>
