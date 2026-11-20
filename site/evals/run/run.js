@@ -1,7 +1,8 @@
 // "Run the evals in your browser". Code Apache-2.0. evals.mistral@SovereignWebsite.dinis, 2026-11-20.
-// The visitor's key lives in the core's key store (memory only unless they choose to remember it,
-// then encrypted in the core's vault). It is sent only to the provider they picked.
-import { createKeyStore, createVault, indexedDbBackend, exportRun } from '../core/v0.1/index.js';
+// The visitor's key lives in the core's key store, in this tab's memory only. It is sent only to the
+// provider they picked, and is gone when the tab closes.
+import './frame-guard.js'; // first: refuses to run inside a frame (security.b, review 006)
+import { createKeyStore, exportRun } from '../core/v0.1/index.js';
 import { createMistral, createOpenRouter, createLocal, runSuite } from '../lib/evals.js';
 import { el, rate, table, byModel, recordView, usd } from '../view.js';
 
@@ -9,9 +10,8 @@ const DATA = new URL('../../data/evals/', import.meta.url);
 const get = async (p) => { const r = await fetch(new URL(p, DATA)); if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`); return r.json(); };
 const $ = (id) => document.getElementById(id);
 
-let vault = null;
-try { if (globalThis.indexedDB && globalThis.crypto?.subtle) vault = createVault({ backend: indexedDbBackend() }); } catch { vault = null; }
-const stores = { mistral: createKeyStore({ name: 'sw-mistral', vault }), openrouter: createKeyStore({ name: 'sw-openrouter', vault }) };
+// Memory only (security.b, review 006): no vault, because any script on this shared origin could ask it to decrypt.
+const stores = { mistral: createKeyStore({ name: 'sw-mistral' }), openrouter: createKeyStore({ name: 'sw-openrouter' }) };
 const DEFAULT_MODEL = { mistral: 'ministral-3b-2512', 'mistral-eu': 'ministral-3b-2512', openrouter: 'openrouter/free', local: '' };
 
 let suites = {}, prices = null, records = [], controller = null;
@@ -33,8 +33,7 @@ function showKey() {
   $('local-box').classList.toggle('hidden', !local);
   if (!local) {
     const s = keyFor(p);
-    $('key-status').textContent = s.has() ? `A key is set (${s.masked()})${s.remembered() ? ', remembered encrypted in this browser' : ', in memory only'}.` : 'No key set.';
-    $('remember').disabled = !s.canRemember();
+    $('key-status').textContent = s.has() ? 'A key is set, in this tab\'s memory only.' : 'No key set.';
   }
 }
 
@@ -112,24 +111,17 @@ async function loadModels() {
 }
 
 async function main() {
-  // A key is typed here, so the page refuses to work inside another site's frame (security.b review 005, applied as on /demos/).
-  if (window.top !== window.self) {
-    $('run').disabled = true; $('set-key').disabled = true; $('key').disabled = true;
-    $('status').replaceChildren('This page is shown inside another page, so it will not take a key. ', el('a', { href: location.href, target: '_top' }, 'Open it directly'), '.');
-    return;
-  }
   const idx = await get('suites/index.json');
   prices = await get('prices.json');
   for (const s of idx.suites) {
     suites[s.id] = await get(`suites/${s.file}`);
     $('suites').append(el('label', { class: 'inline' }, el('input', { type: 'checkbox', value: s.id, checked: true, onchange: estimate }), `${s.name} (${s.cases})`));
   }
-  await Promise.all(Object.values(stores).map((s) => s.load().catch(() => false)));
   $('provider').addEventListener('change', () => { $('model').value = DEFAULT_MODEL[pName()]; $('models').replaceChildren(); showKey(); estimate(); });
   $('model').addEventListener('input', estimate);
   $('tries').addEventListener('change', estimate);
   $('set-key').addEventListener('click', async () => {
-    try { await keyFor(pName()).set($('key').value, { remember: $('remember').checked }); $('key').value = ''; } catch (e) { $('key-status').textContent = e.message; return; }
+    try { await keyFor(pName()).set($('key').value); $('key').value = ''; } catch (e) { $('key-status').textContent = e.message; return; }
     showKey();
   });
   $('forget-key').addEventListener('click', async () => { await keyFor(pName()).forget(); $('key').value = ''; showKey(); });

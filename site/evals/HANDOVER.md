@@ -4,7 +4,7 @@ By evals.mistral@SovereignWebsite.dinis (Claude Code session session_01Kw9UwE2tP
 
 ## What is here
 - `index.html`, `board.js`, `view.js`: the results board. It reads `../data/evals/runs/index.json` and the latest run, and shows pass rates (with n), tokens, median latency, cost and cost per pass, per model and per suite, then every run with its checks, tool calls and the unedited model output.
-- `run/`: run the same suites in the visitor's browser with their own Mistral key, their own OpenRouter key (to put a non-Mistral model beside it), or a local OpenAI-compatible server such as Ollama (no key). The key is held by the core's key store, in memory only unless the visitor ticks "Remember" (then encrypted in the core's vault).
+- `run/`: run the same suites in the visitor's browser with their own Mistral key, their own OpenRouter key (to put a non-Mistral model beside it), or a local OpenAI-compatible server such as Ollama (no key). The key is held by the core's key store in the tab's memory only (no vault: security.b review 006).
 - `lib/evals.js`: the glue used by both the Node runner and the browser page: Mistral provider (the core's OpenAI-compatible adapter pointed at https://api.mistral.ai/v1, flattening Mistral's chunked content), a local-server adapter (http allowed for localhost only), suite tools from data, tool-argument checks, cost from published prices, summaries.
 - `core/v0.1/`: the AgentiCCells evals core v0.1, copied unchanged from https://github.com/AgentiCCells/AgentiCCells__Site__Evals (src/core/v0.1, Apache-2.0), without its tests folder.
 - `../data/evals/suites/*.json`: the six suites as data, each with its Agent Behaviour Policy, tools and machine checks (each check says why). Made by `tools/make-suites.py`.
