@@ -25,3 +25,19 @@
 - Chooser thumbnails (`site/assets/designs/*.jpg`) and the share card are made by `node tools/shots.mjs thumbs` and `card`; re-run thumbs after design changes.
 - `data/agents.json` lists the conductor only; the research and demo agents should add their own entries with their names and sessions.
 - The admin page names the conductor's session; check it is the one Dinis wants public.
+
+## Round 2 (design.b round 1 review, 21 November 2026, early)
+
+Done in tools/ and site/assets/ (regenerate with `node tools/gen.mjs`; paths resolve from the repository root):
+- Phone header is one row (name and "Choose a design"); Start here and Use with your AI move into that menu on phones. The notice is one short line on phones ("Independent demonstration, not affiliated with Mistral AI."); the full sentence stays at the top on wider screens and is in every footer.
+- Sources are numbered markers (accessible name "Source n") with a list at the end of each section, the date read stated once per list. None inside code or steps; facts written as code comments are listed under the code. The /sources/ page keeps the full inline form.
+- Code blocks: no wrapping, sideways scroll in a focusable region with a label, Copy buttons from /assets/js/copy.js. The hackathon recipe leads with the no-key local path.
+- Design 3 is only the call: provider switch, request with the facts as comments, and the recorded response (the side-by-side demo's 23:06 UTC call, shortened before the answer's em dash). Design 4 starts with "Your set-up" and "Your tally".
+- The plain line on sovereignty under the hero (designs 1, 2 and 5), linked to the ledger.
+- "Agentic, live on Mistral" on every design: /team/ and /evals/ linked; /swarm/ shows "arriving overnight" until site/swarm/index.html exists, then links itself on the next `node tools/gen.mjs`.
+- /demos/style.css: the home page's tokens and header look; tables fit phone width instead of scrolling (axe scrollable-region-focusable).
+
+Still open:
+- No venue: the poster says when, not where. A question on /questions/ asks for a public organisers' page.
+- The evals block quotes the board's published data after its rescore: ministral-14b-2512 is 54/57 there now, not 56/57.
+- /team/ and /evals/ carry the round 1 header in their own HTML (not generated here): their phone header is still two rows.

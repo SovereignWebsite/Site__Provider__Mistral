@@ -1,7 +1,10 @@
 // Writes the static pages in site/ from tools/facts.mjs. Run from the repository root: node tools/gen.mjs
 // The output is plain HTML: no inline script, no inline style, no <style> blocks (the site runs a strict CSP).
-import { writeFileSync, mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+// Paths are resolved from the repository root (the folder above tools/), wherever this is run from.
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 import { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS } from './facts.mjs';
 import { d1, d2, d3, d4, d5 } from './designs.mjs';
 
@@ -17,17 +20,44 @@ export const DESIGNS = [
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export { esc };
 const link = (k) => `<a href="${esc(S[k].u)}">${esc(S[k].n)}</a>`;
-// A citation: the source, how it was read, and the date.
+// Sources as numbered notes: one small marker per claim, numbered through the page, and a list at the end of each
+// section (sources() prints it and starts the next section's list). The date read is stated once per list.
+let NOTES = [], NUM = 0;
+export const resetNotes = () => { NOTES = []; NUM = 0; };
 export const cite = (key) => {
-  const f = F[key]; const ls = f.s.map(link).join(' and ');
-  const how = ls;
-  return `<span class="src">(Source: ${how}; as read on ${READ}.)</span>`;
+  let x = NOTES.find((y) => y.key === key);
+  if (!x) { x = { key, n: ++NUM }; NOTES.push(x); }
+  return `<a class="fn" href="#fn-${x.n}" aria-label="Source ${x.n}"><sup>${x.n}</sup></a>`;
 };
-export const fact = (key) => `${F[key].t} ${cite(key)}`;
+export const fact = (key) => `${F[key].t}${cite(key)}`;
+// Registers a fact's source without a marker in the text (for facts written as comments in code), and returns its number.
+export const noteNum = (key) => { cite(key); return NOTES.find((y) => y.key === key).n; };
+export const sources = (label = 'Sources') => {
+  if (!NOTES.length) return '';
+  const out = `<div class="notes"><p class="notes-h">${label}, as read on ${READ}</p><ol start="${NOTES[0].n}">${NOTES.map((x) => `<li id="fn-${x.n}">${F[x.key].s.map(link).join('; ')}</li>`).join('')}</ol></div>`;
+  NOTES = []; return out;
+};
+// The old inline form, for the sources page only, where the source is the point.
+const citeInline = (key) => `<span class="src">(Source: ${F[key].s.map(link).join(' and ')}; as read on ${READ}.)</span>`;
+const factInline = (key) => `${F[key].t} ${citeInline(key)}`;
+// The agentic sections. A link appears only once its page is in site/; until then the name carries "arriving overnight".
+const AGENTIC = [
+  { path: 'team', name: 'The team inside the site', text: 'Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.' },
+  { path: 'swarm', name: 'The Swarm, replayed', text: 'Our Swarm run on Mistral, call by call.' },
+  { path: 'evals', name: 'Evals for a site’s jobs', text: 'Six small jobs a sovereign website gives its model, run on Mistral models, with every check published.', extra: 'First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: <code>ministral-3b-2512</code> 30/57, <code>ministral-8b-2512</code> 51/57, <code>ministral-14b-2512</code> 54/57 (after the board’s rescore of one check), <code>mistral-small-2603</code> 52/57 (source: <a href="/evals/">the evals board</a>).' },
+];
+export const agentic = (cls = '') => `<section class="agentic${cls ? ' ' + cls : ''}" aria-labelledby="agentic-h">
+<h2 id="agentic-h">Agentic, live on Mistral</h2>
+<ul class="ag-list">
+${AGENTIC.map((a) => { const live = existsSync(join(ROOT, 'site', a.path, 'index.html'));
+  return `<li><h3>${live ? `<a href="/${a.path}/">${a.name}</a>` : `${a.name} <span class="soon">arriving overnight</span>`}</h3><p>${a.text}</p>${a.extra && live ? `<p class="ag-extra">${a.extra}</p>` : ''}</li>`; }).join('\n')}
+</ul>
+</section>`;
 export const quote = (k, cls = 'pull') => `<figure class="${cls}"><blockquote><p>${esc(Q[k])}</p></blockquote><figcaption>${ARTICLE.author}, <a href="${ARTICLE.url}"><cite>${ARTICLE.title}</cite></a>, ${ARTICLE.date}</figcaption></figure>`;
 export const NOTHING = '<strong>Nothing has been agreed with Mistral.</strong>';
 export const DEMOS = { all: '/demos/', side: '/demos/side-by-side.html', key: '/demos/your-key.html', device: '/demos/on-device.html' };
 export { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS };
+export const NOTICE = 'An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.';
 
 const FAMILY = `<details class="family-credit">
   <summary>Sovereign Website</summary>
@@ -52,6 +82,8 @@ const chooser = (cur) => `<details class="chooser">
     <ul>
 ${DESIGNS.map((d) => `      <li><a href="/designs/${d.n}.html"${cur === d.n ? ' aria-current="page"' : ''}><span class="num">${d.n}</span> ${esc(d.name)}</a></li>`).join('\n')}
       <li class="all"><a href="/designs/"${cur === 'all' ? ' aria-current="page"' : ''}>See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
     </ul>
   </details>`;
 
@@ -94,11 +126,11 @@ ${FAMILY}
   <a class="name" href="/">${esc(SITE.short)}</a>
   <nav class="own" aria-label="This site">
   ${chooser(cur)}
-    <a href="/start/">Start here</a>
-    <a href="/agents/">Use with your AI</a>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
   </nav>
 </header>
-<section class="notice" aria-label="Notice"><p>An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p></section>
+<section class="notice" aria-label="Notice"><p><span class="n-long">${NOTICE}</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
 <main id="main">
 ${body}
 </main>
@@ -111,25 +143,26 @@ ${body}
   <a href="/agents/">Use with your AI</a>
   <a href="/admin/">How this site was made</a>
 </nav>
+<p class="foot-notice">${NOTICE}</p>
 <p>Built from <a href="${ARTICLE.url}">${ARTICLE.title}</a> by ${ARTICLE.author} and from Mistral’s own pages, each linked where it is used and read on ${READ}. Mistral AI’s name is used only to describe its products; this site is not Mistral’s.</p>
 <p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/${SITE.repo}">github.com/SovereignWebsite/${SITE.repo}</a>.</p>
 </footer>
 </body>
 </html>
 `;
-  const out = `site/${path}`; mkdirSync(dirname(out), { recursive: true }); writeFileSync(out, html);
+  const out = join(ROOT, 'site', path); mkdirSync(dirname(out), { recursive: true }); writeFileSync(out, html);
   if (html.includes(String.fromCharCode(0x2014))) throw new Error(`${path}: an em dash`);
 }
 
 // The five designs.
 const D = { 1: d1, 2: d2, 3: d3, 4: d4, 5: d5 };
-const DJS = { 3: ['console.js'], 4: ['ledger.js'] };
+const DJS = { 3: ['console.js', 'copy.js'], 4: ['ledger.js'], 5: ['copy.js'] };
 for (const d of DESIGNS) {
-  const r = D[d.n]();
+  resetNotes(); const r = D[d.n]();
   page({ path: `designs/${d.n}.html`, url: `/designs/${d.n}.html`, title: `Design ${d.n}, ${d.name}`, description: r.description, theme: `d${d.n}`, body: r.body, cur: d.n, js: DJS[d.n] || [] });
 }
 // Home: the chosen design, at /.
-{ const r = D[HOME](); page({ path: 'index.html', url: '/', title: SITE.title, description: SITE.description, theme: `d${HOME}`, body: r.body, cur: HOME, js: DJS[HOME] || [] }); }
+{ resetNotes(); const r = D[HOME](); page({ path: 'index.html', url: '/', title: SITE.title, description: SITE.description, theme: `d${HOME}`, body: r.body, cur: HOME, js: DJS[HOME] || [] }); }
 
 // The chooser.
 page({ path: 'designs/index.html', url: '/designs/', title: 'Choose a design', theme: 'plain', cur: 'all',
@@ -159,20 +192,20 @@ page({ path: 'sources/index.html', url: '/sources/', title: 'Sources', theme: 'p
 <p class="lede">All sources were read on ${READ}. The argument and the quotes come from <a href="${ARTICLE.url}">${ARTICLE.title}</a> by ${ARTICLE.author}. Mistral’s facts were checked on Mistral’s own pages that day by this site’s research agent, and are cited to those pages. Terms and prices change: these are as the pages showed that day.</p>
 <h2>The facts, one by one</h2>
 <ol class="facts">
-${Object.keys(F).map((k) => `<li>${fact(k)}</li>`).join('\n')}
+${Object.keys(F).map((k) => `<li>${factInline(k)}</li>`).join('\n')}
 </ol>
 <h2>Where the article and Mistral’s pages differ</h2>
 <p>Where they differ, this site follows Mistral’s own pages:</p>
 <ul class="plain">
-<li><strong>EU processing.</strong> The article pairs “hosted in the EEA by default” with the EU endpoint. Hosting is not processing: only the EU endpoint commits to processing in the EU. ${cite('euInference')}</li>
-<li><strong>Training.</strong> “Not used for training” holds on Mistral’s inference page, but in Free mode Mistral may train on API data unless you opt out. ${cite('training')}</li>
-<li><strong>Zero data retention.</strong> The article says “on paid plans”; Mistral says pay-as-you-go only, on request, and not for Labs or Public Preview models. The article’s link to the zero data retention page (ending <code>.md</code>) returned 404; the page without <code>.md</code> works. ${cite('retention')}</li>
-<li><strong>OpenAI compatibility.</strong> Mistral’s OpenAI-compatible endpoint is <code>/openai/v1</code>, in public preview; <code>/v1</code> uses its own, similar format. ${cite('openai')}</li>
-<li><strong>Partnership.</strong> The article says there is no public application; Mistral’s partners page has a public expression-of-interest form. ${cite('partners')}</li>
-<li><strong>The Large 4 licence.</strong> Mistral’s announcement and its help centre describe the condition differently. ${cite('licence')}</li>
-<li><strong>Certifications.</strong> Mistral’s wording is that it complies with the frameworks. ${cite('certs')}</li>
-<li><strong>The Swarm.</strong> The Mistral calls went through OpenRouter, not Mistral’s own API; the model was not recorded. ${cite('swarm')}</li>
-<li><strong>“French company”.</strong> Mistral’s About page says European, not French, so this site does not say French. ${cite('founded')}</li>
+<li><strong>EU processing.</strong> The article pairs “hosted in the EEA by default” with the EU endpoint. Hosting is not processing: only the EU endpoint commits to processing in the EU. ${citeInline('euInference')}</li>
+<li><strong>Training.</strong> “Not used for training” holds on Mistral’s inference page, but in Free mode Mistral may train on API data unless you opt out. ${citeInline('training')}</li>
+<li><strong>Zero data retention.</strong> The article says “on paid plans”; Mistral says pay-as-you-go only, on request, and not for Labs or Public Preview models. The article’s link to the zero data retention page (ending <code>.md</code>) returned 404; the page without <code>.md</code> works. ${citeInline('retention')}</li>
+<li><strong>OpenAI compatibility.</strong> Mistral’s OpenAI-compatible endpoint is <code>/openai/v1</code>, in public preview; <code>/v1</code> uses its own, similar format. ${citeInline('openai')}</li>
+<li><strong>Partnership.</strong> The article says there is no public application; Mistral’s partners page has a public expression-of-interest form. ${citeInline('partners')}</li>
+<li><strong>The Large 4 licence.</strong> Mistral’s announcement and its help centre describe the condition differently. ${citeInline('licence')}</li>
+<li><strong>Certifications.</strong> Mistral’s wording is that it complies with the frameworks. ${citeInline('certs')}</li>
+<li><strong>The Swarm.</strong> The Mistral calls went through OpenRouter, not Mistral’s own API; the model was not recorded. ${citeInline('swarm')}</li>
+<li><strong>“French company”.</strong> Mistral’s About page says European, not French, so this site does not say French. ${citeInline('founded')}</li>
 </ul>
 <h2>Our own calls</h2>
 <p>This site’s demo agent called Mistral’s API while building the demos on ${READ} (UTC times, from its call log):</p>
@@ -198,7 +231,7 @@ page({ path: 'questions/index.html', url: '/questions/', title: 'Open questions'
 <ol class="qs">
 <li><h2>Which design for the home page?</h2><p>The home page uses design ${HOME}, the hackathon briefing, because the people arriving on Saturday 21 November 2026 need “start here” first. After the event, design 1, the newsroom long read, may serve better. <a href="/designs/">Compare all five</a>.</p></li>
 <li><h2>The partnership wording</h2><p>Every design says the partnership is a proposal and that nothing has been agreed with Mistral. Is “a partnership to propose”, as in the article, the wording you want, and should the site name the specific asks (a Mistral option on every site, Ministral 3 on the Pro appliances, the European stretch goals, credits for evals)?</p></li>
-<li><h2>The hackathon details</h2><p>The site gives no venue, time, schedule, prizes or organiser details, because none were given to it. Which of these should appear, and from which source?</p></li>
+<li><h2>The hackathon details</h2><p>The poster says when (Saturday 21 November 2026, London) but not where, because no venue was given to this site and none is invented. Is there a public event page from the organisers? If so, the hero can link to it as “Venue and times: on the organisers’ page”. Which of venue, times, schedule, prizes or organisers should appear, and from which source?</p></li>
 <li><h2>Where participants share what they build</h2><p>Design 5 asks participants to put their work in a public repository they own and to post the link “where the organisers ask”. Is there a channel, a hashtag or a form to name?</p></li>
 <li><h2>The EU endpoint in the code samples</h2><p>The code samples use the global endpoint, <code>api.mistral.ai</code>, which the demo agent called successfully. Only the EU endpoint, <code>api.eu.mistral.ai</code>, commits to processing in the EU, at 1.1 times the price; whether it serves <code>ministral-3b-2512</code> was not checked, because no authenticated call to it could be made. Should the samples default to the EU endpoint once that is checked?</p></li>
 <li><h2>Corrections to the article</h2><p>Mistral’s own pages differ from the article on several points (EU processing, training in Free mode, zero data retention and its broken link, the partner form, the Large 4 licence, “French”). This site follows Mistral’s pages; <a href="/sources/">the sources page</a> lists each one. Should the Newsroom article be corrected too?</p></li>

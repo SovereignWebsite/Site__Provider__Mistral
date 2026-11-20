@@ -45,7 +45,6 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 .top .name{font-weight:700;color:var(--fg);text-decoration:none;font-size:1.02rem}
 .own{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.1rem;margin-left:auto;font-size:.95rem}
 .own>a{color:var(--accent);font-weight:600}
-@media (max-width:40rem){.own{margin:0;width:100%}}
 .chooser{position:relative}
 .chooser summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.4rem;min-height:2rem;padding:.2rem .75rem;
   border:1.5px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:600}
@@ -77,3 +76,50 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 .site-links a{font-weight:600}
 .foot p{margin:.3rem 0}
 @media print{.chooser,.notice{display:block}.foot nav{display:none}}
+
+/* Round 2 (design.b round 1): one header row on a phone, a one-line notice, numbered source notes, code blocks that
+   scroll instead of wrapping, the plain line about sovereignty, and the agentic block. */
+.chooser .extra{display:none}
+@media (max-width:40rem){
+  .top{flex-wrap:nowrap;gap:.6rem;padding:2rem 1rem .4rem}
+  .top .name{font-size:.95rem;line-height:1.2;min-width:0}
+  .own{margin-left:auto;gap:.5rem}
+  .own-link{display:none}
+  .chooser .extra{display:block}
+  .chooser .all+.extra{border-top:1px solid var(--line);margin-top:.3rem;padding-top:.3rem}
+  .chooser summary{font-size:.9rem;padding:.15rem .65rem;white-space:nowrap}
+  .chooser ul{left:auto;right:0}
+}
+.n-short{display:none}
+@media (max-width:40rem){
+  .n-long{display:none}.n-short{display:inline}
+  .notice p{font-size:.74rem;padding:.3rem .5rem;border-left-width:3px}
+}
+.foot-notice{font-weight:600;color:var(--fg)}
+.fn{text-decoration:none;font-weight:700;padding:0 .08em;font-family:var(--font)}
+.fn sup{font-size:.68em;line-height:0;vertical-align:super}
+.fn:hover,.fn:focus-visible{text-decoration:underline}
+.notes{margin:1rem 0 1.2rem;padding-top:.5rem;border-top:1px dashed var(--line);font:.8rem/1.5 var(--font);color:var(--muted)}
+.notes-h{margin:0 0 .2rem;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.notes ol{margin:0;padding-left:1.6rem}
+.notes li{margin:.15rem 0}
+.notes a{color:inherit}
+:target{scroll-margin-top:1rem}
+.notes li:target{background:var(--panel);color:var(--fg)}
+.codebox{overflow-x:auto;border-radius:8px;background:var(--code-bg,#161b22);color:var(--code-fg,#e6edf3)}
+.codebox pre{white-space:pre;overflow-wrap:normal;padding:.9rem 1rem;font-size:.84rem;line-height:1.55;margin:0}
+.codebox code{overflow-wrap:normal;background:none;color:inherit;padding:0}
+.codebox:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.copybar{display:flex;justify-content:flex-end;align-items:center;gap:.6rem;margin:0 0 .35rem}
+.copy{font:600 .85rem/1 var(--font);padding:.45rem .9rem;border-radius:var(--radius);border:2px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer;min-height:2rem}
+.copy:hover{text-decoration:underline}
+.copy-status{font-size:.8rem;color:var(--muted)}
+.plain-line{max-width:var(--max);margin:1rem auto 0;font-size:1.05rem;font-weight:600}
+.agentic{margin:2.5rem 0 0}
+.agentic h2{margin:0 0 .8rem}
+.ag-list{list-style:none;padding:0;margin:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.ag-list li{border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:.9rem 1rem;background:var(--panel)}
+.ag-list h3{margin:0 0 .4rem;font-size:1.1rem}
+.ag-list p{margin:0 0 .4rem;font-size:.93rem}
+.ag-extra{color:var(--muted)}
+.soon{display:inline-block;font:700 .72rem/1.4 var(--font);letter-spacing:.06em;text-transform:uppercase;padding:.1rem .45rem;border-radius:999px;border:1px solid var(--muted);color:var(--muted);vertical-align:middle}

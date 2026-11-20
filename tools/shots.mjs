@@ -29,10 +29,10 @@ if (all || what === 'thumbs') {
   }
   console.log('thumbs: site/assets/designs/1..5.jpg');
 }
-const pages = ['/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html', '/designs/', '/', '/sources/', '/questions/', '/start/', '/agents/', '/admin/'];
+const pages = ['/demos/', '/demos/side-by-side.html', '/demos/your-key.html', '/demos/on-device.html', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html', '/designs/', '/', '/sources/', '/questions/', '/start/', '/agents/', '/admin/'];
 if (all || what === 'screens') {
   mkdirSync('screens', { recursive: true });
-  for (const path of pages.slice(0, 7)) for (const [w, h, dev] of [[390, 844, 'phone'], [1280, 900, 'desktop']]) for (const scheme of ['light', 'dark']) {
+  for (const path of pages.slice(0, 11)) for (const [w, h, dev] of [[390, 844, 'phone'], [1280, 900, 'desktop']]) for (const scheme of ['light', 'dark']) {
     const ctx = await b.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: scheme }); const p = await ctx.newPage();
     await p.goto(base + path);
     const name = (path === '/' ? 'home' : path.replace(/^\/|\/$/g, '').replace(/[/.]/g, '-').replace('-html', '')) + `-${dev}-${scheme}.jpg`;

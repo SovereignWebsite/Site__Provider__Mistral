@@ -35,3 +35,13 @@
 .l-notes h2{font-size:1.25rem}
 .l-notes ul{padding-left:1.2rem;max-width:50rem}
 .l-notes li{margin:.5rem 0}
+.l-top{display:grid;gap:1.2rem;align-items:start;margin:1rem 0 2rem}
+@media (min-width:56rem){.l-top{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.setup{background:var(--card);border:2px solid var(--fg);border-radius:6px;padding:1rem 1.2rem}
+.setup h2,.tally h2{font-size:1.35rem;margin:.1rem 0 .8rem}
+.qlist{margin:0;padding-left:1.5rem;font-family:var(--head)}
+.qlist li{margin:0 0 .9rem}
+.qlist label{display:block;font-weight:700;font-size:1.08rem;margin-bottom:.3rem}
+.qlist select{width:100%;max-width:22rem;font:1rem var(--font);padding:.45rem;border:1.5px solid var(--accent);border-radius:4px;background:var(--bg);color:var(--fg)}
+.tally{margin:0}
+.worked h2{font-size:1.5rem;margin:1rem 0 .3rem}

@@ -1,20 +1,20 @@
-/* Demos: A European brain. Family tokens as used by whois.tool.sovereignweb.site (design 1), system fonts, nothing loaded from anywhere else. */
+/* Demos: A European brain. Tokens from the site's home page (design 5, the hackathon: violet and cyan on a cool off-white), system fonts, nothing loaded from anywhere else. */
 :root {
   color-scheme: light dark;
-  --bg: #fbf6ee; --surface: #fffdf9; --fg: #2a1f17; --muted: #5e5148;
-  --accent: #a5432a; --accent-soft: #f6e3d9; --line: #eadccd; --note: #f7ecdc;
-  --field-border: #8f7d6f; --family-fg: #4a3d33;
-  --ok: #2f6b3a; --bad: #9b2c1f;
+  --bg: #f4f2fb; --surface: #ffffff; --fg: #150f30; --muted: #463f63;
+  --accent: #5223c8; --accent-soft: #e9e3fb; --line: #d5cfec; --note: #ece8f8;
+  --field-border: #6f6790; --family-fg: #3a3358;
+  --ok: #1f6b3a; --bad: #9b1c3a;
   --max: 72rem; --text: 44rem;
-  --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a1512; --surface: #231c18; --fg: #f1e9e1; --muted: #c2b5aa;
-    --accent: #f0a084; --accent-soft: #3a261d; --line: #3a2f28; --note: #2b221b;
-    --field-border: #8a7a6e; --family-fg: #d9cdc2;
-    --ok: #8fd19e; --bad: #ffb3a6;
+    --bg: #0d0a1f; --surface: #17122f; --fg: #f1eeff; --muted: #b9b1da;
+    --accent: #b49cff; --accent-soft: #2a2150; --line: #2d2650; --note: #1a1438;
+    --field-border: #8a82ad; --family-fg: #d6d0f0;
+    --ok: #8fd19e; --bad: #ffb3c6;
   }
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -80,7 +80,7 @@ textarea { min-height: 7rem; resize: vertical; }
 input:focus, select:focus, textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
 .mono { font-family: var(--mono); font-size: .92rem; }
 button { font: inherit; font-weight: 650; padding: .65rem 1.15rem; border: 2px solid var(--accent); border-radius: .55rem; background: var(--accent); color: var(--surface); cursor: pointer; min-height: 44px; }
-@media (prefers-color-scheme: dark) { button { color: #1a1512; } }
+@media (prefers-color-scheme: dark) { button { color: #160c38; } }
 button.secondary { background: transparent; color: var(--accent); }
 button:hover { filter: brightness(1.08); }
 button:disabled { opacity: .55; cursor: not-allowed; }
@@ -151,3 +151,24 @@ summary { cursor: pointer; font-weight: 650; color: var(--accent); min-height: 2
 
 .site-footer { border-top: 1px solid var(--line); padding: 1.6rem 0 2.4rem; color: var(--muted); font-size: .92rem; }
 .site-footer p { max-width: var(--text); margin: 0 0 .5rem; }
+
+/* The home page's shell (round 2): the same header line and notice as the rest of the site. */
+.demo-nav { background: var(--bg); border-bottom: 0; font-size: .95rem; padding-top: 1.6rem; }
+.demo-nav ul { gap: .3rem 1.2rem; }
+.demo-nav a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: .18em; }
+.demo-nav a[aria-current="page"] { color: var(--fg); text-decoration: none; }
+.disclaimer { max-width: var(--max); margin: .3rem auto 0; padding: .45rem .8rem; text-align: left; font-weight: 600; font-size: .9rem; background: var(--note); border: 0; border-left: 4px solid var(--accent); }
+.disclaimer-bar { padding: 0 1rem; }
+h1, h2 { letter-spacing: -.02em; }
+.mark { font-weight: 700; }
+/* Phones: tables fit the width instead of scrolling inside a box that a keyboard cannot reach. */
+@media (max-width: 40rem) {
+  .table-wrap { overflow-x: visible; }
+  .table-wrap table { table-layout: fixed; font-size: .82rem; }
+  .table-wrap th, .table-wrap td { overflow-wrap: anywhere; word-break: break-word; padding-left: .3rem; padding-right: .3rem; }
+}
+@media (max-width: 40rem) {
+  .demo-nav { padding-top: 1.4rem; font-size: .85rem; }
+  .demo-nav ul { gap: 0 .8rem; }
+  .disclaimer { font-size: .78rem; padding: .3rem .5rem; border-left-width: 3px; }
+}

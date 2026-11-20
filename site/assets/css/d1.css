@@ -44,3 +44,7 @@
 .try{max-width:46rem;margin:3rem auto 0;text-align:center;border-top:4px double var(--line);padding-top:1.5rem;font-family:var(--font)}
 .try h2{font-family:var(--head);font-size:2rem;margin:.2rem 0 .5rem}
 .try .cta{justify-content:center}
+.t-d1 .plain-line{max-width:46rem;margin:-1rem auto 2rem;text-align:center;font-family:var(--font)}
+.f-agentic{max-width:46rem;margin:3rem auto 0;font-family:var(--font)}
+.f-agentic h2{font-family:var(--head);font-size:1.65rem}
+.glance .notes{margin-bottom:0}
