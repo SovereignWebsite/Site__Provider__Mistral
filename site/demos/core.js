@@ -2,6 +2,21 @@
 // calls every provider, the "what this call sends, and to whom" preview, and the call log.
 // No storage, no cookies, no analytics, no request of any kind until the visitor presses Send.
 'use strict';
+// Refuse to run inside a frame: another site could frame this page and trick a visitor into pressing
+// Send with their own key (security.b, review 005, 20 Nov 2026). GitHub Pages cannot send frame-ancestors.
+if (window.top !== window.self) {
+  document.addEventListener('DOMContentLoaded', function () {
+    const main = document.getElementById('main') || document.body;
+    main.textContent = '';
+    const p = document.createElement('p');
+    p.textContent = 'This demo does not run inside another page. ';
+    const a = document.createElement('a');
+    a.href = window.location.href; a.target = '_top'; a.rel = 'noopener';
+    a.textContent = 'Open it directly.';
+    p.appendChild(a); main.appendChild(p);
+  });
+  throw new Error('framed: demo stopped');
+}
 (function () {
   const F = window.DEMO_FACTS;
 
@@ -198,6 +213,7 @@
       grid.appendChild(el('div', { class: 'keybox' }, [
         el('h3', { text: info.title }),
         el('label', { for: inputId, text: 'Your ' + info.title + ' (get one at ' + new URL(info.get).host + ')' }),
+        el('p', { class: 'keystate', text: 'If your browser offers to save this key as a password, choose Never.' }),
         el('div', { class: 'row' }, [input, use]),
         state,
         el('p', { class: 'keywhere', text: info.goes + ' Held in a variable in this tab; never saved to storage or cookies, never sent to this site. Gone when you close or reload the tab.' })
