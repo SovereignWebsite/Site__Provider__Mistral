@@ -78,7 +78,7 @@
 <li>Temperature was left at the provider default, so tries differ. Nothing was retried or picked: every try is shown.</li>
 <li>The checks are machine checks (word counts, patterns, valid JSON, which tools were called). They catch clear failures; they do not judge quality. Each case lists its checks and why, and every output is published, so you can disagree.</li>
 <li>The suites were written by an AI agent (evals.mistral@SovereignWebsite.dinis) for this demo, not by Mistral, and are not a benchmark. The businesses in them are made up.</li>
-<li>Cost is computed from tokens reported by the API times Mistral's published per-token prices (source and date below), not taken from an invoice.</li>
+<li>Cost is computed from tokens reported by the API times Mistral's published per-token prices (source and date below), not taken from an invoice. Everything this agent spent on Mistral that night, probes and tests included, is in <a href="../data/evals/spend.json">spend.json</a>.</li>
 <li>magistral-small-latest is not a separate model: Mistral's models endpoint (GET /v1/models, 20 November 2026) listed it as an alias of mistral-small-2603. Its rows are a second sample of the same model under another name, not another model.</li>
 <li>mistral-large-4 thinks before it answers. At the suites' usual limit of 700 output tokens its thinking often used the whole budget and left no answer, so it was rerun with a higher limit (shown below); the capped runs are published separately. Licences differ: Ministral 3 and Mistral Small 4 are Apache 2.0, Mistral Large 4 is under a modified MIT licence (<a href="https://docs.mistral.ai/models/">Mistral model pages</a>, as read on 20 November 2026).</li>
 </ul>

@@ -1,10 +1,11 @@
 {
- "latest": "run-2026-11-20T230627Z",
+ "latest": "run-2026-11-20T231821Z",
  "board": {
   "runs": [
-   "run-2026-11-20T230627Z"
+   "run-2026-11-20T230627Z",
+   "run-2026-11-20T231821Z"
   ],
-  "note": "Five models from one run. mistral-large-4 is added when its rerun with a higher output limit is published; until then its capped run is listed above."
+  "note": "Two runs merged: five models from the first run, and mistral-large-4 from its rerun with a higher output limit. Its first, capped run is listed above and kept for the record."
  },
  "runs": [
   {
@@ -46,6 +47,24 @@
    ],
    "tries": 3,
    "records": 285
+  },
+  {
+   "id": "run-2026-11-20T231821Z",
+   "startedAt": "2026-11-20T23:18:21.962Z",
+   "finishedAt": "2026-11-20T23:33:50.447Z",
+   "models": [
+    "mistral-large-4"
+   ],
+   "suites": [
+    "about-british",
+    "extract-json",
+    "tools-abp",
+    "injection",
+    "translate-glossary",
+    "no-invented-price"
+   ],
+   "tries": 3,
+   "records": 57
   }
  ]
 }

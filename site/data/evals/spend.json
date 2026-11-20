@@ -1,15 +1,15 @@
 {
  "agent": "evals.mistral@SovereignWebsite.dinis",
  "from": "2026-11-20T23:02:29.090Z",
- "to": "2026-11-20T23:24:15.433Z",
- "calls": 502,
+ "to": "2026-11-20T23:33:50.446Z",
+ "calls": 568,
  "byPurpose": {
   "probe: reply shape": 1,
   "probe: json mode": 1,
   "probe: tools": 1,
-  "eval runs": 495,
+  "eval runs": 558,
   "probe: large-4 reply shape": 1,
-  "browser smoke test of run page": 3
+  "browser smoke test of run page": 6
  },
  "byModel": [
   {
@@ -21,10 +21,10 @@
   },
   {
    "model": "ministral-3b-2512",
-   "calls": 109,
-   "input": 28826,
-   "output": 4763,
-   "usd": 0.003358899999999998
+   "calls": 112,
+   "input": 29211,
+   "output": 4846,
+   "usd": 0.003405699999999998
   },
   {
    "model": "ministral-8b-2512",
@@ -49,13 +49,13 @@
   },
   {
    "model": "mistral-large-4",
-   "calls": 88,
-   "input": 23227,
-   "output": 52053,
-   "usd": 0.1255702
+   "calls": 151,
+   "input": 42051,
+   "output": 101222,
+   "usd": 0.24200189999999996
   }
  ],
- "totalUsd": 0.147474,
+ "totalUsd": 0.263953,
  "capUsd": 3,
  "priceSource": "https://docs.mistral.ai/inference/pricing",
  "priceReadOn": "2026-11-20",
