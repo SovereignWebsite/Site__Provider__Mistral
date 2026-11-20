@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Design 3, The console: Mistral, a European brain</title>
+<meta name="description" content="The console: pick Mistral’s API, a model on your own device or any provider, see the same OpenAI-style call, and what it sends and to whom.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain for a sovereign website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/designs/3.html">
+<meta property="og:title" content="Design 3, The console: Mistral, a European brain">
+<meta property="og:description" content="The console: pick Mistral’s API, a model on your own device or any provider, see the same OpenAI-style call, and what it sends and to whom.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral, a European brain for a sovereign website: on the device, in the EU, any provider. An independent Sovereign Website demonstration.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Design 3, The console: Mistral, a European brain">
+<meta name="twitter:description" content="The console: pick Mistral’s API, a model on your own device or any provider, see the same OpenAI-style call, and what it sends and to whom.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/designs/3.html">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/d3.css">
+<script src="/assets/js/console.js" defer></script>
+</head>
+<body class="t-d3">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html" aria-current="page"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+    </ul>
+  </details>
+    <a href="/start/">Start here</a>
+    <a href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p>An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p></section>
+<main id="main">
+<div class="c-wrap">
+<header class="c-head">
+  <h1><span class="prompt" aria-hidden="true">&gt;</span> The console</h1>
+  <p class="lede">One call, three places to send it. The code is the same OpenAI-style request each time; only the address, the model and the key change. <span class="src">(Source: <a href="https://docs.mistral.ai/inference/conversations/chat-completion">Mistral docs, Chat completion</a> and <a href="https://docs.ollama.com/api/openai-compatibility">Ollama docs, OpenAI compatibility</a> and <a href="https://openrouter.ai/docs/quickstart">OpenRouter, Quickstart</a>; as read on 20 November 2026.)</span></p>
+</header>
+<div class="c-grid">
+<fieldset class="c-pick">
+  <legend>Provider</legend>
+  <label class="opt"><input type="radio" name="prov" value="mistral" checked><span class="opt-t">Mistral API</span><span class="opt-s">ministral-3b-2512, your key</span></label>
+  <label class="opt"><input type="radio" name="prov" value="local"><span class="opt-t">On your device</span><span class="opt-s">ministral-3:3b with Ollama, no key</span></label>
+  <label class="opt"><input type="radio" name="prov" value="any"><span class="opt-t">Any provider</span><span class="opt-s">OpenRouter, your key</span></label>
+  <p class="c-hint">Your key stays in your own terminal, or in the demo’s browser tab. This page never asks for it.</p>
+</fieldset>
+<div class="c-main">
+<section class="c-pane" id="pane-mistral" data-prov="mistral" aria-labelledby="h-mistral">
+  <div class="c-code">
+    <h2 id="h-mistral" class="c-title">Mistral API: the call</h2>
+    <pre class="code"><code>curl https://api.mistral.ai/v1/chat/completions \
+  -H &quot;Authorization: Bearer $MISTRAL_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;model&quot;: &quot;ministral-3b-2512&quot;,
+       &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Say hello in five words.&quot;}]}'</code></pre>
+    <p class="c-model"><span class="lbl">Model</span> Ministral 3 3B, model name <code>ministral-3b-2512</code>, is listed as Apache 2.0, released 2 December 2025, at 0.10 dollars per million tokens in and 0.10 out. <span class="src">(Source: <a href="https://docs.mistral.ai/models/ministral-3-3b-25-12">Mistral docs, Ministral 3 3B</a> and <a href="https://docs.mistral.ai/inference/pricing">Mistral docs, Pricing</a>; as read on 20 November 2026.)</span></p>
+  </div>
+  <section class="c-sends" aria-labelledby="w-mistral">
+    <h3 id="w-mistral">What this call sends, and to whom</h3>
+    <ul><li>Your brief and your API key, to Mistral AI. Mistral’s chat endpoint is <code>https://api.mistral.ai/v1/chat/completions</code>; the EU one is <code>https://api.eu.mistral.ai/v1/chat/completions</code>. <span class="src">(Source: <a href="https://docs.mistral.ai/inference/conversations/chat-completion">Mistral docs, Chat completion</a> and <a href="https://docs.mistral.ai/inference/regional-inference">Mistral docs, Regional inference</a>; as read on 20 November 2026.)</span></li><li>By default, data is hosted in the EEA. <span class="src">(Source: <a href="https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data">Mistral help centre, Where do you store my data</a>; as read on 20 November 2026.)</span></li><li>Hosting is not processing: Mistral does not commit to an inference location on the global endpoint, <code>api.mistral.ai</code>. Processing in the EU needs the EU endpoint, <code>api.eu.mistral.ai</code>, billed at 1.1 times list price, without Agents, Batch or the Files API, and serving only the models hosted there. <span class="src">(Source: <a href="https://docs.mistral.ai/inference/regional-inference">Mistral docs, Regional inference</a>; as read on 20 November 2026.)</span></li><li>Mistral’s inference page says “Data sent through our API isn’t used for model training”, but its help centre says that in Free mode it may use API inputs and outputs for training unless you opt out (a toggle in the Admin panel, under Privacy), and that Labs and Public Preview models may be used for training whatever the plan. <span class="src">(Source: <a href="https://mistral.ai/cloud/inference/">Mistral AI, Cloud inference</a> and <a href="https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models">Mistral help centre, Do you use my data to train</a> and <a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">Mistral help centre, Opting out of training</a>; as read on 20 November 2026.)</span></li><li>API inputs and outputs are kept for 30 rolling days to monitor abuse, unless zero data retention is on; Agents API data is kept until the account ends. Zero data retention is only for pay-as-you-go, only for stateless calls, must be requested and may be refused, and does not cover Labs or Public Preview models. <span class="src">(Source: <a href="https://legal.mistral.ai/terms/privacy-policy/">Mistral AI, Privacy policy</a> and <a href="https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr">Mistral help centre, Zero data retention</a> and <a href="https://docs.mistral.ai/admin/monitor-comply/zero-data-retention">Mistral docs, Zero data retention</a>; as read on 20 November 2026.)</span></li><li>Some features may move data temporarily outside the EU to listed subprocessors; Enterprise customers can switch some of these off. <span class="src">(Source: <a href="https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data">Mistral help centre, Where do you store my data</a>; as read on 20 November 2026.)</span></li></ul>
+  </section>
+</section>
+<section class="c-pane" id="pane-local" data-prov="local" aria-labelledby="h-local">
+  <div class="c-code">
+    <h2 id="h-local" class="c-title">On your device: the call</h2>
+    <pre class="code"><code>ollama pull ministral-3:3b
+
+curl http://localhost:11434/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;model&quot;: &quot;ministral-3:3b&quot;,
+       &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Say hello in five words.&quot;}]}'</code></pre>
+    <p class="c-model"><span class="lbl">Model</span> Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0. <span class="src">(Source: <a href="https://mistral.ai/news/mistral-3">Mistral AI, Mistral 3</a>; as read on 20 November 2026.)</span></p>
+  </div>
+  <section class="c-sends" aria-labelledby="w-local">
+    <h3 id="w-local">What this call sends, and to whom</h3>
+    <ul><li>Your brief, to your own machine only. Ollama serves an OpenAI-style endpoint at <code>http://localhost:11434/v1/chat/completions</code>. <span class="src">(Source: <a href="https://docs.ollama.com/api/openai-compatibility">Ollama docs, OpenAI compatibility</a>; as read on 20 November 2026.)</span></li><li>Ollama lists <code>ministral-3</code> with the tags <code>3b</code>, <code>8b</code> and <code>14b</code>. <span class="src">(Source: <a href="https://ollama.com/library/ministral-3">Ollama, ministral-3</a>; as read on 20 November 2026.)</span></li><li><strong>An estimate, not measured.</strong> Whether it fits a Pi or a tablet is still to be measured. <span class="src">(Source: <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website (Dinis Cruz, SGit Newsroom)</a>; as read on 20 November 2026.)</span> Mistral’s official compressed (Q4_K_M) files are 2.15 GB for the 3B and 5.20 GB for the 8B, plus about 0.85 GB for vision. Those are download sizes, not memory use or speed. <span class="src">(Source: <a href="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF">Hugging Face, Ministral-3-3B-Instruct-2512-GGUF</a> and <a href="https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512-GGUF">Hugging Face, Ministral-3-8B-Instruct-2512-GGUF</a>; as read on 20 November 2026.)</span></li></ul>
+  </section>
+</section>
+<section class="c-pane" id="pane-any" data-prov="any" aria-labelledby="h-any">
+  <div class="c-code">
+    <h2 id="h-any" class="c-title">Any provider: the call</h2>
+    <pre class="code"><code>curl https://openrouter.ai/api/v1/chat/completions \
+  -H &quot;Authorization: Bearer $OPENROUTER_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;model&quot;: &quot;MODEL_ID_FROM_OPENROUTER_MODELS_PAGE&quot;,
+       &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Say hello in five words.&quot;}]}'</code></pre>
+    <p class="c-model"><span class="lbl">Model</span> Any model OpenRouter lists, Mistral’s included.</p>
+  </div>
+  <section class="c-sends" aria-labelledby="w-any">
+    <h3 id="w-any">What this call sends, and to whom</h3>
+    <ul><li>Your brief and your OpenRouter key, to OpenRouter, then to the provider of the model you pick. OpenRouter’s OpenAI-style API is at <code>https://openrouter.ai/api/v1</code>. <span class="src">(Source: <a href="https://openrouter.ai/docs/quickstart">OpenRouter, Quickstart</a>; as read on 20 November 2026.)</span></li><li>What is kept, and for how long, is set by OpenRouter’s terms and the provider’s; this site has not read them for every provider, so it does not say.</li><li>Pick a model name from <a href="https://openrouter.ai/models">OpenRouter’s models page</a> and put it in place of <code>MODEL_ID_FROM_OPENROUTER_MODELS_PAGE</code>.</li></ul>
+  </section>
+</section>
+</div>
+</div>
+<section class="c-log" aria-labelledby="log-h">
+  <h2 id="log-h">Tokens and time, per call</h2>
+  <p>Every answer from these endpoints carries a <code>usage</code> block with prompt, completion and total tokens. The real calls this site’s demo agent made while building the demos, from its call log:</p>
+  <table class="log">
+    <caption>The demo agent’s calls to Mistral, 20 November 2026</caption>
+    <thead><tr><th scope="col">UTC</th><th scope="col">Model</th><th scope="col">What for</th><th scope="col">Prompt</th><th scope="col">Completion</th><th scope="col">Total</th></tr></thead>
+    <tbody>
+<tr><td data-l="UTC">22:55</td><td data-l="Model"><code>ministral-3b-2512</code></td><td data-l="What for">A five-word hello, to check the answer and its usage fields</td><td data-l="Prompt">9</td><td data-l="Completion">7</td><td data-l="Total">16</td></tr>
+<tr><td data-l="UTC">23:00</td><td data-l="Model"><code>ministral-3b-2512</code></td><td data-l="What for">The same through the OpenAI-compatible path, /openai/v1</td><td data-l="Prompt">9</td><td data-l="Completion">6</td><td data-l="Total">15</td></tr>
+<tr><td data-l="UTC">23:03</td><td data-l="Model"><code>ministral-3b-2512</code></td><td data-l="What for">A call from a browser page, to check it can read the answer</td><td data-l="Prompt">6</td><td data-l="Completion">5</td><td data-l="Total">11</td></tr>
+<tr><td data-l="UTC">23:05</td><td data-l="Model"><code>ministral-3b-2512</code></td><td data-l="What for">The side-by-side demo, end to end (a short brief, at most 150 tokens out)</td><td data-l="Prompt">38</td><td data-l="Completion">150</td><td data-l="Total">188</td></tr>
+    </tbody>
+  </table>
+  <p>Time per call was not logged for these. The side-by-side demo shows the time taken, in milliseconds, and the tokens for every call you make.</p>
+  <p class="cta"><a class="btn" href="/demos/side-by-side.html">Run the same brief on Mistral beside another model</a> <a class="btn btn-2" href="/demos/">All the demos</a></p>
+</section>
+<p class="c-foot">The idea of offering Mistral beside other models on every sovereign website is a proposal in Dinis Cruz’s article <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a>. <strong>Nothing has been agreed with Mistral.</strong></p>
+</div>
+</main>
+<footer class="foot">
+<nav class="site-links" aria-label="About this site">
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/questions/">Open questions</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+<p>Built from <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a> by Dinis Cruz and from Mistral’s own pages, each linked where it is used and read on 20 November 2026. Mistral AI’s name is used only to describe its products; this site is not Mistral’s.</p>
+<p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Provider__Mistral">github.com/SovereignWebsite/Site__Provider__Mistral</a>.</p>
+</footer>
+</body>
+</html>

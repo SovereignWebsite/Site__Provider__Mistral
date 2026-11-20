@@ -1,0 +1,30 @@
+/* The utility pages: start, agents, admin, sources, questions, and the design chooser. */
+.wrap{max-width:46rem;margin:0 auto;padding:2.5rem 1rem 1rem}
+.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0}
+h1{font-size:clamp(2rem,6vw,2.8rem);margin:.4rem 0 1rem}
+h2{font-size:1.3rem;margin:2rem 0 .5rem}
+h3{font-size:1.08rem;margin:1.5rem 0 .4rem}
+.lede{font-size:1.1rem;color:var(--muted)}
+ol,ul.plain{padding-left:1.2rem}
+li{margin:.35rem 0}
+pre{background:var(--panel);padding:.8rem 1rem;border-radius:var(--radius);font-size:.9rem}
+.facts li{margin:.7rem 0}
+.qs{padding-left:1.2rem}
+.qs h2{font-size:1.15rem;margin:1.6rem 0 .3rem}
+.srcs{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.5rem}
+.srcs caption{text-align:left;color:var(--muted);padding-bottom:.4rem}
+.srcs th,.srcs td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+.srcs td:last-child{white-space:nowrap}
+@media (max-width:30rem){.srcs td:last-child{white-space:normal}}
+
+/* The chooser of designs: five screenshot cards. */
+.t-plain .wrap:has(.cards){max-width:var(--max)}
+.cards{list-style:none;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.5rem}
+.card{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.card>a{display:block;text-decoration:none;color:var(--fg)}
+.card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.card-title{display:block;padding:.8rem 1rem 0;font-weight:700;font-size:1.15rem;color:var(--accent)}
+.card>a:hover .card-title{text-decoration:underline}
+.card .num{display:inline-block;min-width:1.6rem;height:1.6rem;line-height:1.6rem;text-align:center;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-size:.9rem;margin-right:.3rem}
+.card p{margin:.4rem 1rem 1rem;font-size:.93rem;color:var(--muted)}
+.card .card-kind{margin-bottom:0;font-weight:600;color:var(--fg)}

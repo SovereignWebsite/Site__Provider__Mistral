@@ -1,0 +1,37 @@
+/* Design 4, the ledger: an account book. Ruled paper, green ink, a red-free palette. */
+:root{--bg:#f4f8f2;--fg:#15261a;--muted:#43554a;--accent:#1d5a32;--accent-fg:#fff;--line:#bcd0c0;--panel:#e8f0e5;--rule:#c8dccb;--card:#fbfdfa;
+  --head:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1611;--fg:#e1ece3;--muted:#a3b8a8;--accent:#86d39e;--accent-fg:#08180d;--line:#2c4233;--panel:#15211a;--rule:#1d2d22;--card:#121c16}}
+.l-wrap{max-width:var(--max);margin:0 auto;padding:0 1rem}
+.l-head{max-width:46rem;padding:2rem 0 1rem}
+.kicker{font:700 .78rem/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0}
+.l-head h1{font-size:clamp(2rem,5.5vw,3.3rem);margin:.4rem 0 .8rem}
+.lede{color:var(--muted);margin:0;font-size:1.08rem}
+.ledger-scroll{margin-top:1rem}
+.ledger{width:100%;border-collapse:collapse;background:var(--card);border:2px solid var(--fg);font-size:.88rem;line-height:1.45}
+.ledger caption{text-align:left;font:700 .78rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 0 .5rem}
+.ledger th,.ledger td{text-align:left;vertical-align:top;padding:.65rem .7rem;border:1px solid var(--rule)}
+.ledger thead th{background:var(--fg);color:var(--bg);font-family:var(--head);font-size:1rem;border-color:var(--fg)}
+.ledger tbody th{font-family:var(--head);font-size:1.05rem;background:var(--panel);min-width:9rem}
+.ledger .sub{display:block;font:400 .78rem/1.3 var(--font);color:var(--muted);margin-top:.2rem}
+.ledger tbody tr:nth-child(even) td{background:var(--panel)}
+.ledger .yours th,.ledger .yours td{border-top:3px double var(--fg);background:var(--bg)}
+.ledger select{width:100%;font:inherit;padding:.35rem;border:1.5px solid var(--accent);border-radius:4px;background:var(--card);color:var(--fg)}
+@media (max-width:56rem){
+  .ledger,.ledger tbody,.ledger tr,.ledger th,.ledger td{display:block;width:100%}
+  .ledger thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .ledger caption{display:block;width:auto}
+  .ledger{border:0;background:transparent}
+  .ledger tr{border:2px solid var(--fg);margin:0 0 1rem;background:var(--card)}
+  .ledger tbody th{border:0;border-bottom:2px solid var(--fg)}
+  .ledger td{border:0;border-bottom:1px solid var(--rule)}
+  .ledger td::before{content:attr(data-q);display:block;font:700 .72rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .ledger tbody tr:nth-child(even) td{background:transparent}
+  .ledger .yours th,.ledger .yours td{border-top:0}
+}
+.tally{margin:1.5rem 0;padding:1rem 1.2rem;border:2px solid var(--accent);border-radius:6px;background:var(--card)}
+.tally h2{font-size:1.25rem;margin:.1rem 0 .4rem}
+.tally output{font-size:1.15rem;font-weight:700;color:var(--fg)}
+.l-notes h2{font-size:1.25rem}
+.l-notes ul{padding-left:1.2rem;max-width:50rem}
+.l-notes li{margin:.5rem 0}

@@ -1,0 +1,48 @@
+/* Design 3, the console: the playground first. Monospace, panels, a terminal green. */
+:root{--bg:#eef0f3;--fg:#161b22;--muted:#4c5561;--accent:#116329;--accent-fg:#fff;--line:#cfd5dd;--panel:#fff;--code-bg:#161b22;--code-fg:#e6edf3;--head:var(--mono)}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0f14;--fg:#e6edf3;--muted:#9da7b3;--accent:#56d364;--accent-fg:#06140a;--line:#2a313b;--panel:#11161d;--code-bg:#05080b;--code-fg:#d5f5dc}}
+.t-d3 .top .name{font-family:var(--mono)}
+.c-wrap{max-width:var(--max);margin:0 auto;padding:0 1rem}
+.c-head{padding:1.8rem 0 1rem;max-width:50rem}
+.c-head h1{font-size:clamp(2rem,6vw,3.2rem);margin:0 0 .6rem;letter-spacing:-.02em}
+.prompt{color:var(--accent)}
+.lede{color:var(--muted);margin:0}
+.c-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:60rem){.c-grid{grid-template-columns:16rem 1fr}}
+.c-pick{margin:0;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);align-self:start;min-width:0}
+.c-pick legend{font:700 .78rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 .3rem}
+.opt{display:grid;grid-template-columns:auto 1fr;gap:0 .6rem;align-items:start;padding:.6rem .5rem;border-radius:6px;cursor:pointer;border:1px solid transparent}
+.opt input{margin:.3rem 0 0;accent-color:var(--accent);width:1.1rem;height:1.1rem}
+.opt-t{font-weight:700}
+.opt-s{grid-column:2;font:.8rem/1.4 var(--mono);color:var(--muted)}
+.opt:has(input:checked){border-color:var(--accent);background:var(--bg)}
+.c-hint{font-size:.85rem;color:var(--muted);margin:.8rem 0 0}
+.c-main{min-width:0;display:grid;gap:1rem}
+.c-pane{display:grid;gap:1rem;grid-template-columns:1fr;min-width:0}
+@media (min-width:80rem){.c-pane{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.js .c-pane[hidden]{display:none}
+.c-code{min-width:0;background:var(--code-bg);color:var(--code-fg);border-radius:8px;padding:0 0 .8rem;overflow:hidden}
+.c-title{font-size:.85rem;margin:0;padding:.6rem 1rem;border-bottom:1px solid rgba(255,255,255,.12);color:var(--code-fg);font-weight:600}
+.c-title::before{content:"\25CF  \25CF  \25CF   ";color:#8b949e;letter-spacing:-.1em}
+.code{padding:1rem;font-size:.86rem;line-height:1.55}
+.c-model{margin:0 1rem;font-size:.85rem;color:var(--code-fg)}
+.c-model code{color:var(--code-fg)}
+.c-model .src{color:#b9c2cc}
+.lbl{font:700 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#8b949e;margin-right:.4rem}
+.c-sends{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:1rem 1.1rem;min-width:0}
+.c-sends h3{font-size:.95rem;margin:0 0 .6rem}
+.c-sends ul{margin:0;padding-left:1.1rem;font-size:.93rem}
+.c-sends li{margin:.5rem 0}
+.c-log{margin-top:2rem;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.c-log h2{font-size:1.2rem;margin:.2rem 0 .5rem}
+.log{border-collapse:collapse;font:.85rem/1.4 var(--mono);margin:.5rem 0 1rem;width:100%}
+.log caption{text-align:left;color:var(--muted);padding-bottom:.3rem;font-family:var(--font)}
+.log th,.log td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--line)}
+@media (max-width:40rem){
+  .log thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .log tr,.log td{display:block}
+  .log td{border:0;padding:.15rem 0}
+  .log td::before{content:attr(data-l) ": ";color:var(--muted)}
+}
+.c-foot{font-size:.9rem;color:var(--muted);margin-top:1.5rem}
+.c-pane{align-items:start}

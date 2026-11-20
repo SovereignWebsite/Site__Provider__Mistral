@@ -1,25 +1,36 @@
-# Mistral
+# Mistral, a European brain for a sovereign website
 
-> A European brain for a sovereign website: what Mistral offers, at every level, and demos to try.
+> The model is a choice the owner makes, like the host: a European option from Mistral on the device, in the EU and through any provider. An independent Sovereign Website demonstration, built from cited facts. Not affiliated with or endorsed by Mistral AI.
 
 This file is for AI agents and the people using them. The site is https://mistral.provider.sovereignweb.site/, static files in the public repository https://github.com/SovereignWebsite/Site__Provider__Mistral (served from site/ on the dev branch). Pick the section that matches who you are acting for, read it in full, then follow it.
 
 ## If you act for a visitor (read-only)
 
-- Read the site's pages, starting at https://mistral.provider.sovereignweb.site/.
+- Read the site's pages, starting at https://mistral.provider.sovereignweb.site/. Every fact on the site links its source and the date it was read (20 November 2026); the full list is at https://mistral.provider.sovereignweb.site/sources/
 - Answer from what the site says, with a link for each point. When the site does not say something, say so plainly; never fill the gap with a guess.
+- Say plainly that the site is an independent demonstration, not affiliated with or endorsed by Mistral AI, that nothing has been agreed with Mistral (the partnership is a proposal), and that the fit of Ministral 3 on a Raspberry Pi or a tablet is an estimate, not measured.
 - Do not change anything.
+
+## If you act for a hackathon participant (Saturday 21 November 2026)
+
+- Start at https://mistral.provider.sovereignweb.site/designs/5.html: a first call in five minutes with the participant's own key or a local model (Ollama), the demos at https://mistral.provider.sovereignweb.site/demos/, and how to share what they build.
+- Never ask the participant to paste an API key into a chat, a document or a commit.
 
 ## If you act for the site's owner
 
 - The owner changes the site through the repository. You need write access, which the owner gets by accepting the repository invitation: https://mistral.provider.sovereignweb.site/start/
 - Work on the dev branch only; main is locked. Read the repository's CLAUDE.md first and follow it.
+- The pages are generated: edit tools/facts.mjs (the facts and their sources) and tools/designs.mjs (the five designs), then run node tools/gen.mjs.
 - Keep the site static: no server code, no cookies, no tracking. Never invent a fact, a price or a customer.
 - Every push to dev publishes the site in a minute or two.
 
 ## More
 
+- The five designs: https://mistral.provider.sovereignweb.site/designs/
+- Sources: https://mistral.provider.sovereignweb.site/sources/
+- Open questions for the owner: https://mistral.provider.sovereignweb.site/questions/
 - Use this site with AI: https://mistral.provider.sovereignweb.site/agents/
-- Start here (for the owner): https://mistral.provider.sovereignweb.site/start/
+- Start here: https://mistral.provider.sovereignweb.site/start/
 - How this site was made: https://mistral.provider.sovereignweb.site/admin/
 - The agents that work on this site: https://mistral.provider.sovereignweb.site/data/agents.json
+- The article it follows: https://newsroom.sgit.ai/articles/a-european-brain.html

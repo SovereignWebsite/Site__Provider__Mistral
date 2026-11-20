@@ -1,0 +1,37 @@
+/* Design 2, the map: where the data goes. A cartographic sheet: slate and teal, one colour per path. */
+:root{--bg:#f3f6f7;--fg:#13232b;--muted:#46565e;--accent:#0c6464;--accent-fg:#fff;--line:#c9d5d9;--panel:#e6edef;
+  --p1:#2c7346;--p2:#2353a0;--p3:#6a3d9e;--zone:#dfe8ea;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1a1f;--fg:#e4eef1;--muted:#a6b8bf;--accent:#5ccfc5;--accent-fg:#06201e;--line:#2a3c44;--panel:#16252c;
+  --p1:#7bd39b;--p2:#8fb4f5;--p3:#c4a2f0;--zone:#16252c;--card:#132128}}
+.t-d2{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;background-attachment:fixed}
+.t-d2 .top,.t-d2 .notice,.t-d2 .foot{background:var(--bg)}
+.m-wrap{max-width:var(--max);margin:0 auto;padding:0 1rem}
+.m-head{max-width:44rem;padding:2rem 0 .5rem}
+.kicker{font:700 .78rem/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0}
+.m-head h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:.4rem 0 .8rem;letter-spacing:-.02em}
+.lede{font-size:1.1rem;color:var(--muted);margin:0}
+.m-fig{margin:1.5rem 0 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem}
+.m-fig figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem}
+.map{display:block;width:100%;font-family:var(--font)}
+.map-tall{display:none;max-width:26rem;margin:0 auto}
+@media (max-width:44rem){.map-wide{display:none}.map-tall{display:block}}
+.map .zone rect{fill:var(--zone);stroke:var(--line);stroke-dasharray:6 5}
+.map .zl{fill:var(--muted);font:700 13px var(--mono);text-anchor:middle;letter-spacing:.1em;text-transform:uppercase}
+.map .wire{fill:none;stroke-width:4;stroke-linecap:round}
+.map .w1{stroke:var(--p1)}.map .w2{stroke:var(--p2)}.map .w3{stroke:var(--p3);stroke-dasharray:10 6}
+.map .wl{fill:var(--muted);font-size:13px;text-anchor:middle}
+.map .node rect{fill:var(--card);stroke-width:3}
+.map .you rect{stroke:var(--fg)}.map .p1 rect{stroke:var(--p1)}.map .p2 rect{stroke:var(--p2)}.map .p3 rect{stroke:var(--p3)}
+.map .t1{fill:var(--fg);font-weight:700;font-size:19px;text-anchor:middle}
+.map .t2{fill:var(--muted);font-size:14px;text-anchor:middle}
+.m-h2{font-size:1.6rem;margin:2.5rem 0 1rem}
+.paths{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.path{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c,var(--accent));border-radius:10px;padding:1rem 1.1rem}
+.path.p1{--c:var(--p1)}.path.p2{--c:var(--p2)}.path.p3{--c:var(--p3)}
+.path h3{font-size:1.25rem;margin:.1rem 0 .8rem;display:flex;gap:.6rem;align-items:center}
+.pn{display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;border:3px solid var(--c);font:700 1rem var(--mono)}
+.path dl{margin:0 0 1rem;font-size:.95rem}
+.path dt{font:700 .72rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.8rem}
+.path dd{margin:.15rem 0 0}
+.m-note{max-width:48rem;margin:2.5rem 0 0;padding:1rem 1.2rem;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.m-note h2{font-size:1.2rem;margin:.2rem 0 .5rem}

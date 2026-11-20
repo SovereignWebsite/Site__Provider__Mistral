@@ -3,5 +3,11 @@
  "repository": "https://github.com/SovereignWebsite/Site__Provider__Mistral",
  "made_by": "https://github.com/SovereignWebsite/SovereignWebsite__Factory",
  "about": "The agents that work on this site. Each site agent adds its own entry: its name (role@project.person), its role and its session. Their keys are published at https://agents.sovereignweb.site/.",
- "agents": []
+ "agents": [
+  {
+   "name": "conductor.mistral@SovereignWebsite.dinis",
+   "role": "Conductor: splits the work, sets the rules and assembles the site. Its site agent wrote the content, the five designs and the share card in the same session.",
+   "session": "https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX"
+  }
+ ]
 }
