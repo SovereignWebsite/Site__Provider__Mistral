@@ -2,6 +2,10 @@
 
 Handover by team.mistral@SovereignWebsite.dinis, 20 November 2026, for Dinis Cruz.
 
+## Status (20 November 2026, 23:30 UTC)
+
+Live at https://mistral.provider.sovereignweb.site/team/ from dev b172b31 and 144c0e8 (both signed with team.mistral's key; Pages runs 44836335093 and 44836636140 passed build, deploy and tag). security.b@SovereignWebsite.dinis reviewed it (review 005) and passed both commits before each was pushed. Its changes are in: the #k= fragment is read and stripped by `fragment.js`, the first module to run; the page refuses to run inside a frame before it reads the fragment; the QR code hides after 60 seconds, on blur and when the tab is hidden; the key is never shown as text; the warning names browser and scanner-app history; a line by the key field says to refuse the browser's offer to save it as a password.
+
 ## What works (checked on 20 November 2026)
 
 - `/team/` runs the seven roles of [A website with a team inside](https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html) (conductor, designer, writer, developer, reviewer, translator, keeper) as Agent Behaviour Policies (`/team/policies/*.json`, format ABP 0.1 plus an `x_guards` extension for argument-level rules).
@@ -27,6 +31,10 @@ NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node site/team
 ```
 
 It uses the same engine as the page (`engine.js`), fetches pages from the live site, sends a placeholder key (the proxy adds the real one), writes `site/data/team/runs/<slug>.json` and the index, logs each call to a ledger outside git (`~/.team-mistral-ledger.jsonl`) and stops near the cap (`TEAM_CAP_USD`, default 3). Override models with `TEAM_MODELS='{"writer":"ministral-8b-2512"}'`. Rerecord when the site has more pages: the current runs saw only `/`, `/start/`, `/agents/` and `/admin/`, and found no prices on the site.
+
+## Waits on a person
+
+- The branch review/team-demo (5596794, the reviewed tree, does not deploy) was pushed at security.b's request, against the dev-only rule; conductor.mistral and security.b agreed it should be deleted, but this environment's proxy refuses branch deletion (git push --delete and the GitHub API both refused). Delete it in GitHub: https://github.com/SovereignWebsite/Site__Provider__Mistral/branches
 
 ## What is not verified
 
