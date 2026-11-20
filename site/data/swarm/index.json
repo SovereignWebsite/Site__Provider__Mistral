@@ -1,6 +1,6 @@
 {
  "about": "Every recorded run of the Mistral swarm: one signed file per run in runs/, its packet in packets/. Each file is an envelope { body, by, sig }: ed25519 over the canonical JSON of { body, fp }, the PrompTugal Swarm's scheme.",
- "updated": "2026-11-20T23:33:45Z",
+ "updated": "2026-11-20T23:42:19Z",
  "runs": [
   {
    "file": "runs/20261120T2307-m001-team-pipeline-demo.json",
@@ -367,6 +367,231 @@
     "mistral-small-2603"
    ],
    "signed_by": "sha256:253d974a94283452"
+  },
+  {
+   "file": "runs/20261120T234023-m001-team-pipeline-demo.json",
+   "id": "20261120T234023-m001-team-pipeline-demo",
+   "kind": "team",
+   "packet": "m001-team-pipeline-demo",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:40:23Z",
+   "llm_calls": 9,
+   "valid_calls": 9,
+   "checks": 47,
+   "checks_passed": 47,
+   "mistral_usd": 0.00106155,
+   "models": [
+    "mistral-small-2603",
+    "ministral-8b-2512",
+    "ministral-14b-2512",
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:f7bd218969c4dffc"
+  },
+  {
+   "file": "runs/20261120T234031-m004-team-all-3b.json",
+   "id": "20261120T234031-m004-team-all-3b",
+   "kind": "team",
+   "packet": "m004-team-all-3b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-3b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:40:31Z",
+   "llm_calls": 14,
+   "valid_calls": 9,
+   "checks": 73,
+   "checks_passed": 67,
+   "mistral_usd": 0.0011731,
+   "models": [
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:b8b19e2a5db369b7"
+  },
+  {
+   "file": "runs/20261120T234043-m005-team-all-14b.json",
+   "id": "20261120T234043-m005-team-all-14b",
+   "kind": "team",
+   "packet": "m005-team-all-14b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-14b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:40:43Z",
+   "llm_calls": 11,
+   "valid_calls": 7,
+   "checks": 63,
+   "checks_passed": 57,
+   "mistral_usd": 0.0014204,
+   "models": [
+    "ministral-14b-2512"
+   ],
+   "signed_by": "sha256:c2ced5c61ec61a07"
+  },
+  {
+   "file": "runs/20261120T234052-m006-team-all-small.json",
+   "id": "20261120T234052-m006-team-all-small",
+   "kind": "team",
+   "packet": "m006-team-all-small",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on mistral-small-2603)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:40:52Z",
+   "llm_calls": 9,
+   "valid_calls": 9,
+   "checks": 47,
+   "checks_passed": 47,
+   "mistral_usd": 0.00114885,
+   "models": [
+    "mistral-small-2603"
+   ],
+   "signed_by": "sha256:d41ab4c045cc4ba5"
+  },
+  {
+   "file": "runs/20261120T234057-m001-team-pipeline-demo.json",
+   "id": "20261120T234057-m001-team-pipeline-demo",
+   "kind": "team",
+   "packet": "m001-team-pipeline-demo",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:40:57Z",
+   "llm_calls": 10,
+   "valid_calls": 9,
+   "checks": 49,
+   "checks_passed": 48,
+   "mistral_usd": 0.0012544,
+   "models": [
+    "mistral-small-2603",
+    "ministral-14b-2512",
+    "ministral-8b-2512",
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:67d9415d91803af1"
+  },
+  {
+   "file": "runs/20261120T234108-m004-team-all-3b.json",
+   "id": "20261120T234108-m004-team-all-3b",
+   "kind": "team",
+   "packet": "m004-team-all-3b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-3b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:08Z",
+   "llm_calls": 14,
+   "valid_calls": 10,
+   "checks": 75,
+   "checks_passed": 71,
+   "mistral_usd": 0.0011107,
+   "models": [
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:06129fc2ff817136"
+  },
+  {
+   "file": "runs/20261120T234118-m005-team-all-14b.json",
+   "id": "20261120T234118-m005-team-all-14b",
+   "kind": "team",
+   "packet": "m005-team-all-14b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-14b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:18Z",
+   "llm_calls": 11,
+   "valid_calls": 7,
+   "checks": 63,
+   "checks_passed": 57,
+   "mistral_usd": 0.0014208,
+   "models": [
+    "ministral-14b-2512"
+   ],
+   "signed_by": "sha256:da5ea3928dd63b03"
+  },
+  {
+   "file": "runs/20261120T234127-m006-team-all-small.json",
+   "id": "20261120T234127-m006-team-all-small",
+   "kind": "team",
+   "packet": "m006-team-all-small",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on mistral-small-2603)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:27Z",
+   "llm_calls": 9,
+   "valid_calls": 9,
+   "checks": 47,
+   "checks_passed": 47,
+   "mistral_usd": 0.00115845,
+   "models": [
+    "mistral-small-2603"
+   ],
+   "signed_by": "sha256:b913b3ef0e70f8d3"
+  },
+  {
+   "file": "runs/20261120T234133-m001-team-pipeline-demo.json",
+   "id": "20261120T234133-m001-team-pipeline-demo",
+   "kind": "team",
+   "packet": "m001-team-pipeline-demo",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:33Z",
+   "llm_calls": 9,
+   "valid_calls": 9,
+   "checks": 47,
+   "checks_passed": 47,
+   "mistral_usd": 0.0010324,
+   "models": [
+    "mistral-small-2603",
+    "ministral-8b-2512",
+    "ministral-14b-2512",
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:c986eeb97342ca7d"
+  },
+  {
+   "file": "runs/20261120T234140-m004-team-all-3b.json",
+   "id": "20261120T234140-m004-team-all-3b",
+   "kind": "team",
+   "packet": "m004-team-all-3b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-3b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:40Z",
+   "llm_calls": 13,
+   "valid_calls": 9,
+   "checks": 71,
+   "checks_passed": 66,
+   "mistral_usd": 0.0010076,
+   "models": [
+    "ministral-3b-2512"
+   ],
+   "signed_by": "sha256:3299de9a87169b10"
+  },
+  {
+   "file": "runs/20261120T234149-m005-team-all-14b.json",
+   "id": "20261120T234149-m005-team-all-14b",
+   "kind": "team",
+   "packet": "m005-team-all-14b",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on ministral-14b-2512)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:49Z",
+   "llm_calls": 12,
+   "valid_calls": 7,
+   "checks": 69,
+   "checks_passed": 62,
+   "mistral_usd": 0.001472,
+   "models": [
+    "ministral-14b-2512"
+   ],
+   "signed_by": "sha256:b0be0db31f737782"
+  },
+  {
+   "file": "runs/20261120T234157-m006-team-all-small.json",
+   "id": "20261120T234157-m006-team-all-small",
+   "kind": "team",
+   "packet": "m006-team-all-small",
+   "title": "The team inside the site, on Mistral: seven roles on pipeline-demo (every role on mistral-small-2603)",
+   "runner": "swarm.mistral@SovereignWebsite.dinis",
+   "started_at": "2026-11-20T23:41:57Z",
+   "llm_calls": 9,
+   "valid_calls": 9,
+   "checks": 47,
+   "checks_passed": 47,
+   "mistral_usd": 0.00112635,
+   "models": [
+    "mistral-small-2603"
+   ],
+   "signed_by": "sha256:7594cd3f55c9f4e2"
   }
  ],
  "reference": [

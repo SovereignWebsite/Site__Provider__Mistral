@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai https://pipeline-demo.demo.sovereignweb.site https://storm-charles.promptugal.news; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Run the swarm yourself</title>
+<meta name="description" content="Run a signed packet of the Sovereign Website's swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/swarm/run.html">
+<meta property="og:title" content="Run the swarm yourself, on your own Mistral key">
+<meta property="og:description" content="Run a signed packet of the Sovereign Website's swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run the swarm yourself, on your own Mistral key">
+<meta name="twitter:description" content="Run a signed packet of the Sovereign Website's swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/swarm/run.html">
+<link rel="stylesheet" href="swarm.css">
+<script type="module" src="run.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<aside class="notice" aria-label="About this demonstration"><div class="wrap">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI. Nothing has been agreed with Mistral AI.</div></aside>
+<div class="wrap">
+<header class="top">
+<nav aria-label="Swarm pages"><a href="../">The site</a> <a href="../team/">The team, live</a> <a href="./">Swarm replays</a> <a href="evals.html">Evals</a> <a href="run.html" aria-current="page">Run it yourself</a> <a href="HANDOVER.md">Handover note</a></nav>
+<h1>Run the swarm yourself, on your own Mistral key</h1>
+<p class="lede">The same signed packets, run by the same engine, in this tab. Your key stays in this tab's memory and goes only to api.mistral.ai. In step-by-step mode you see each request before it leaves, and you send it.</p>
+</header>
+<main id="main">
+<form id="form" class="card" autocomplete="off">
+<h2>1. Choose a packet</h2>
+<label for="packet">Packet</label>
+<select id="packet" name="packet"></select>
+<p id="packet-info" class="small muted" aria-live="polite"></p>
+<h2>2. Your Mistral key</h2>
+<label for="key">Mistral API key</label>
+<input id="key" name="key" type="password" autocomplete="off" spellcheck="false" aria-describedby="key-help">
+<p id="key-help" class="small muted">Held in this tab's memory only: never stored, never sent anywhere but the Mistral endpoint you choose below (POST /v1/chat/completions). Close the tab and it is gone. Calls are billed to your Mistral account at Mistral's prices; each packet carries a budget and the engine stops calling when the run reaches it. Make a key with a low spending limit for demos like this one. If your browser offers to save this key as a password, choose Never.</p>
+<p id="key-status" class="small" aria-live="polite">Key: none.</p>
+<fieldset>
+<legend>Which Mistral endpoint</legend>
+<input type="radio" id="ep-global" name="endpoint" value="global" checked><label for="ep-global">Global, api.mistral.ai (list price; no promise where inference runs)</label>
+<input type="radio" id="ep-eu" name="endpoint" value="eu"><label for="ep-eu">EU, api.eu.mistral.ai (processed in the EU; 1.1 times list price, per <a href="https://docs.mistral.ai/inference/regional-inference">Mistral's regional inference page</a>)</label>
+</fieldset>
+<p class="small muted">Before you use a key on Mistral's free mode: Mistral says free-mode API data may be used for training unless you switch it off (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>); API inputs and outputs are kept for abuse monitoring, and zero data retention is available on request on paid plans only (<a href="https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr">Mistral's help page</a>). Pages as read on 20 November 2026 by the team's research agent. These packets send only public pages and public data.</p>
+<fieldset>
+<legend>3. How to run</legend>
+<input type="radio" id="mode-step" name="mode" value="step" checked><label for="mode-step">Step by step: I send each request</label>
+<input type="radio" id="mode-all" name="mode" value="all"><label for="mode-all">Run it all</label>
+</fieldset>
+<button class="btn" type="submit" id="start">Check the packet's signature and start</button>
+<p id="form-status" class="small" aria-live="polite"></p>
+</form>
+<section id="send" class="card sendpanel" aria-labelledby="send-h" hidden>
+<h2 id="send-h">What this call sends, and to whom</h2>
+<dl id="send-dl"></dl>
+<p id="send-wait" class="small muted" aria-live="polite"></p>
+<details id="send-body-d"><summary>The full request body</summary><pre id="send-body" tabindex="0"></pre></details>
+<div class="controls"><button class="btn" type="button" id="send-go">Send this</button> <button class="btn secondary" type="button" id="send-all">Send this and all the rest</button> <button class="btn secondary" type="button" id="send-stop">Stop the run</button></div>
+</section>
+<section id="live" class="card" aria-labelledby="live-h" hidden>
+<h2 id="live-h">The run, live</h2>
+<p id="live-status" aria-live="polite"></p>
+<ol class="log" id="log"></ol>
+<p id="download" hidden></p>
+</section>
+<div id="replay"></div>
+<section class="card" aria-labelledby="where-h">
+<h2 id="where-h">Where this page sends what</h2>
+<ul>
+<li>Your key and the prompts: to the Mistral endpoint you chose only, <b>api.mistral.ai</b> or <b>api.eu.mistral.ai</b> (POST /v1/chat/completions), with your key in the Authorization header.</li>
+<li>Reads of public pages and data, with no key, no cookies and no referrer: <b>pipeline-demo.demo.sovereignweb.site</b> (the team packet) or <b>storm-charles.promptugal.news</b> (the storm packets).</li>
+<li>Files of this site (the packets, the price table, the engine). Nothing is sent back to this site: the signed result stays in your tab until you download it.</li>
+</ul>
+</section>
+</main>
+<footer>
+<p>The engine is <a href="engine.js">engine.js</a>, the same file that ran the published runs in a cloud container. Prices from <a href="https://docs.mistral.ai/inference/pricing">docs.mistral.ai/inference/pricing</a> as read on 20 November 2026, in <a href="tools/llm-models.json">tools/llm-models.json</a>. No cookies, no tracking.</p>
+</footer>
+</div>
+</body>
+</html>

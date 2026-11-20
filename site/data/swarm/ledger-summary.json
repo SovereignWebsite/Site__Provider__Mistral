@@ -2,9 +2,9 @@
  "about": "Summary of the Mistral ledger of swarm.mistral@SovereignWebsite.dinis (counts, tokens and cost only; the ledger itself and the raw calls stay outside git).",
  "scope": "all days",
  "first_call": "2026-11-20T23:04:18Z",
- "last_call": "2026-11-20T23:30:58Z",
- "calls": 263,
- "cost_usd": 0.046934,
+ "last_call": "2026-11-20T23:42:57Z",
+ "calls": 399,
+ "cost_usd": 0.062943,
  "cap_usd": 2.5,
  "price_source": "https://docs.mistral.ai/inference/pricing",
  "price_read_on": "2026-11-20",
@@ -28,60 +28,60 @@
  },
  "by_model": {
   "ministral-3b-2512": {
-   "calls": 88,
-   "cost_usd": 0.01191,
-   "tokens_in": 110103,
-   "tokens_out": 8997
+   "calls": 138,
+   "cost_usd": 0.0169004,
+   "tokens_in": 153014,
+   "tokens_out": 15990
   },
   "mistral-small-2603": {
-   "calls": 68,
-   "cost_usd": 0.01325565,
-   "tokens_in": 66671,
-   "tokens_out": 5425
+   "calls": 101,
+   "cost_usd": 0.01782255,
+   "tokens_in": 86333,
+   "tokens_out": 8121
   },
   "ministral-8b-2512": {
-   "calls": 39,
-   "cost_usd": 0.0071415,
-   "tokens_in": 43351,
-   "tokens_out": 4259
+   "calls": 52,
+   "cost_usd": 0.008526,
+   "tokens_in": 50687,
+   "tokens_out": 6153
   },
   "ministral-14b-2512": {
-   "calls": 68,
-   "cost_usd": 0.014627,
-   "tokens_in": 63302,
-   "tokens_out": 9833
+   "calls": 108,
+   "cost_usd": 0.0196944,
+   "tokens_in": 84587,
+   "tokens_out": 13885
   }
  },
  "by_tier": {
   "cheap": {
-   "calls": 13,
-   "cost_usd": 0.0006308,
-   "tokens_in": 5195,
-   "tokens_out": 1113
+   "calls": 16,
+   "cost_usd": 0.0007072,
+   "tokens_in": 5684,
+   "tokens_out": 1388
   },
   "strong": {
-   "calls": 21,
-   "cost_usd": 0.0038571,
-   "tokens_in": 17094,
-   "tokens_out": 2155
+   "calls": 27,
+   "cost_usd": 0.00499035,
+   "tokens_in": 21861,
+   "tokens_out": 2852
   },
   "cheap8": {
-   "calls": 27,
-   "cost_usd": 0.00225615,
-   "tokens_in": 11583,
-   "tokens_out": 3458
+   "calls": 40,
+   "cost_usd": 0.00364065,
+   "tokens_in": 18919,
+   "tokens_out": 5352
   },
   "hard": {
-   "calls": 20,
-   "cost_usd": 0.0032408,
-   "tokens_in": 11535,
-   "tokens_out": 4669
+   "calls": 26,
+   "cost_usd": 0.003995,
+   "tokens_in": 14719,
+   "tokens_out": 5256
   },
   "explicit": {
-   "calls": 182,
-   "cost_usd": 0.0369493,
-   "tokens_in": 238020,
-   "tokens_out": 17119
+   "calls": 290,
+   "cost_usd": 0.04961015,
+   "tokens_in": 313438,
+   "tokens_out": 29301
   }
  },
  "by_agent": {
@@ -92,46 +92,46 @@
    "tokens_out": 3
   },
   "conductor@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 41,
-   "cost_usd": 0.00577495,
-   "tokens_in": 29329,
-   "tokens_out": 6312
+   "calls": 71,
+   "cost_usd": 0.01013145,
+   "tokens_in": 51436,
+   "tokens_out": 11167
   },
   "writer@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 37,
-   "cost_usd": 0.00594835,
-   "tokens_in": 34038,
-   "tokens_out": 2612
+   "calls": 61,
+   "cost_usd": 0.00975955,
+   "tokens_in": 56979,
+   "tokens_out": 4330
   },
   "designer@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 17,
-   "cost_usd": 0.00288575,
-   "tokens_in": 13224,
-   "tokens_out": 4461
+   "calls": 30,
+   "cost_usd": 0.0052851,
+   "tokens_in": 24206,
+   "tokens_out": 8017
   },
   "reviewer@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 27,
-   "cost_usd": 0.00527245,
-   "tokens_in": 22565,
-   "tokens_out": 6783
+   "calls": 38,
+   "cost_usd": 0.0069973,
+   "tokens_in": 32624,
+   "tokens_out": 9139
   },
   "developer@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 16,
-   "cost_usd": 0.0005086,
-   "tokens_in": 1921,
-   "tokens_out": 756
+   "calls": 28,
+   "cost_usd": 0.00094395,
+   "tokens_in": 3874,
+   "tokens_out": 1261
   },
   "translator@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 42,
-   "cost_usd": 0.0014247,
-   "tokens_in": 5452,
-   "tokens_out": 2398
+   "calls": 70,
+   "cost_usd": 0.0025926,
+   "tokens_in": 10728,
+   "tokens_out": 3678
   },
   "keeper@swarm.mistral@SovereignWebsite.dinis": {
-   "calls": 16,
-   "cost_usd": 0.0005299,
-   "tokens_in": 2020,
-   "tokens_out": 1413
+   "calls": 28,
+   "cost_usd": 0.00102135,
+   "tokens_in": 4012,
+   "tokens_out": 2436
   },
   "storm@swarm.mistral@SovereignWebsite.dinis": {
    "calls": 60,
@@ -144,14 +144,20 @@
    "cost_usd": 0.0016208,
    "tokens_in": 15884,
    "tokens_out": 324
+  },
+  "run.html test 2 (headless Chromium in the container, via the proxy)": {
+   "calls": 6,
+   "cost_usd": 0.0016226,
+   "tokens_in": 15884,
+   "tokens_out": 342
   }
  },
  "by_status": {
   "ok": {
-   "calls": 263,
-   "cost_usd": 0.04693415,
-   "tokens_in": 283427,
-   "tokens_out": 28514
+   "calls": 399,
+   "cost_usd": 0.06294335,
+   "tokens_in": 374621,
+   "tokens_out": 44149
   }
  }
 }
