@@ -129,3 +129,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 .codebox{max-width:100%;min-width:0}
 .c-code,.c-code > *{min-width:0;max-width:100%}
 .evals-plain{font-size:1.08rem;font-weight:600;margin:1rem 0;padding:.7rem .9rem;border-left:4px solid var(--accent);background:var(--panel)}
+/* Design round 3 (design.b.rounds, 21 Nov 2026): show that code scrolls sideways. */
+.codebox{-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)}
+.codebox:focus-visible,.codebox:hover{-webkit-mask-image:none;mask-image:none}
+@media (max-width:40rem){.codebox::after{content:"Scroll for more \2192";display:block;position:sticky;left:0;padding:.2rem 1rem .5rem;font-size:.8rem;opacity:.8}}

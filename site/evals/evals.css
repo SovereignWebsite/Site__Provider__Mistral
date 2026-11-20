@@ -42,3 +42,5 @@ legend { font-weight: 600; padding: 0 0.3rem; }
 .hidden { display: none; }
 footer.site { margin-top: 3rem; padding-top: 1rem; padding-bottom: 2rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
 
+/* Design round 3: table captions wrap instead of being clipped on phones. */
+caption{white-space:normal;overflow-wrap:anywhere;text-align:left;max-width:calc(100vw - 2rem)}
