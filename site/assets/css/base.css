@@ -123,3 +123,8 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 .ag-list p{margin:0 0 .4rem;font-size:.93rem}
 .ag-extra{color:var(--muted)}
 .soon{display:inline-block;font:700 .72rem/1.4 var(--font);letter-spacing:.06em;text-transform:uppercase;padding:.1rem .45rem;border-radius:999px;border:1px solid var(--muted);color:var(--muted);vertical-align:middle}
+/* Design round 2 (design.b.rounds, 20 Nov 2026): footnote markers and their back-links meet the 24px target size (WCAG 2.5.8); code scrolls inside its box on phones. */
+.fn{display:inline-block;min-width:24px;min-height:24px;text-align:center;line-height:24px}
+[id^="fn-"] > a{display:inline-block;min-width:24px;min-height:24px;text-align:center}
+.codebox{max-width:100%;min-width:0}
+.c-code,.c-code > *{min-width:0;max-width:100%}
