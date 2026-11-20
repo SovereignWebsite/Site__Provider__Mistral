@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Evals of Mistral models for a sovereign website</title>
+<meta name="description" content="Published results of small, honest evals of Mistral models on the jobs a sovereign website gives its model: writing, extraction, tool calling under a policy, prompt injection, translation and not inventing prices.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/evals/">
+<meta property="og:title" content="Evals of Mistral models for a sovereign website">
+<meta property="og:description" content="Published results of small, honest evals of Mistral models on the jobs a sovereign website gives its model: writing, extraction, tool calling under a policy, prompt injection, translation and not inventing prices.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Evals of Mistral models for a sovereign website">
+<meta name="twitter:description" content="Published results of small, honest evals of Mistral models on the jobs a sovereign website gives its model: writing, extraction, tool calling under a policy, prompt injection, translation and not inventing prices.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/evals/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="evals.css">
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+    </ul>
+  </details>
+    <a href="/start/">Start here</a>
+    <a href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p>An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p></section>
+<main id="main">
+<nav class="evals-nav" aria-label="Evals"><a href="/evals/" aria-current="page">Eval results</a> <a href="/evals/run/">Run the evals in your browser</a> <a href="/data/evals/suites/index.json">Suites (JSON)</a></nav>
+<h1>Evals of Mistral models for a sovereign website</h1>
+<p class="lede">A sovereign website gives its model six small jobs: write a short About paragraph, pull facts out of a page as JSON, use tools under an Agent Behaviour Policy, ignore instructions hidden in a page it reads, translate into Portuguese and French while keeping product names, and refuse to make up a price. These are the results of running each job on several Mistral models, with every check, token and millisecond published.</p>
+
+<section class="panel" aria-labelledby="caveats-h">
+<h2 id="caveats-h">Read this first</h2>
+<ul class="caveats">
+<li>Small numbers. Each suite has 3 or 4 cases, each run 3 times per model, so a pass rate is out of 9 or 12. A difference of one or two passes means little.</li>
+<li>One run, one day, one place: the date and time are below, the calls went from one cloud container through one network proxy, to Mistral's global endpoint (https://api.mistral.ai/v1), which makes no promise about where inference runs. The EU endpoint was not used for these runs; you can choose it on the run page. Latency includes that path and will differ for you.</li>
+<li>Temperature was left at the provider default, so tries differ. Nothing was retried or picked: every try is shown.</li>
+<li>The checks are machine checks (word counts, patterns, valid JSON, which tools were called). They catch clear failures; they do not judge quality. Each case lists its checks and why, and every output is published, so you can disagree.</li>
+<li>The suites were written by an AI agent (evals.mistral@SovereignWebsite.dinis) for this demo, not by Mistral, and are not a benchmark. The businesses in them are made up.</li>
+<li>Cost is computed from tokens reported by the API times Mistral's published per-token prices (source and date below), not taken from an invoice.</li>
+<li>magistral-small-latest is not a separate model: Mistral's models endpoint (GET /v1/models, 20 November 2026) listed it as an alias of mistral-small-2603. Its rows are a second sample of the same model under another name, not another model.</li>
+<li>mistral-large-4 thinks before it answers. At the suites' usual limit of 700 output tokens its thinking often used the whole budget and left no answer, so it was rerun with a higher limit (shown below); the capped runs are published separately. Licences differ: Ministral 3 and Mistral Small 4 are Apache 2.0, Mistral Large 4 is under a modified MIT licence (<a href="https://docs.mistral.ai/models/">Mistral model pages</a>, as read on 20 November 2026).</li>
+</ul>
+</section>
+
+<div id="board" aria-live="polite"><p>Loading results…</p></div>
+<noscript><p>The results table needs JavaScript. The raw results are in <a href="../data/evals/runs/index.json">the runs list (JSON)</a>.</p></noscript>
+</main>
+<footer class="site"><p>Made by evals.mistral@SovereignWebsite.dinis for Dinis Cruz, 20 to 21 November 2026. Built on the <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Evals">AgentiCCells evals core v0.1</a> (Apache-2.0), copied unchanged into <a href="core/v0.1/README.md">core/v0.1</a>. Nothing has been agreed with Mistral AI. Code Apache-2.0, text CC BY 4.0. No cookies, no tracking.</p></footer>
+<script type="module" src="board.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai https://openrouter.ai http://localhost:11434 http://127.0.0.1:11434; base-uri 'none'; form-action 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Run the Mistral evals in your browser</title>
+<meta name="description" content="Run the same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/evals/run/">
+<meta property="og:title" content="Run the Mistral evals in your browser">
+<meta property="og:description" content="Run the same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Run the Mistral evals in your browser">
+<meta name="twitter:description" content="Run the same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/evals/run/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="../evals.css">
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+    </ul>
+  </details>
+    <a href="/start/">Start here</a>
+    <a href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p>An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p></section>
+<main id="main">
+<nav class="evals-nav" aria-label="Evals"><a href="/evals/">Eval results</a> <a href="/evals/run/" aria-current="page">Run the evals in your browser</a> <a href="/data/evals/suites/index.json">Suites (JSON)</a></nav>
+<h1>Run the evals in your browser</h1>
+<p class="lede">The same suites and the same code that made the published results, running in this tab. Your browser calls the provider you choose directly; this site has no server and never sees your key or your results.</p>
+
+<section class="panel" aria-labelledby="key-h">
+<h2 id="key-h">1. Provider and key</h2>
+<div class="row">
+<label>Provider
+<select id="provider">
+<option value="mistral">Mistral, global endpoint (api.mistral.ai), your key</option>
+<option value="mistral-eu">Mistral, EU endpoint (api.eu.mistral.ai), your key</option>
+<option value="openrouter">OpenRouter (openrouter.ai), your key</option>
+<option value="local">Local OpenAI-compatible server, such as Ollama</option>
+</select></label>
+</div>
+<div id="key-box">
+<div class="row">
+<label>API key <input type="password" id="key" autocomplete="off" spellcheck="false"></label>
+<label class="inline"><input type="checkbox" id="remember"> Remember in this browser, encrypted</label>
+<button type="button" id="set-key">Use this key</button>
+<button type="button" class="secondary" id="forget-key">Forget key</button>
+</div>
+<p class="small muted" id="key-status" aria-live="polite">No key set.</p>
+<p class="small">The key is kept in this tab's memory only, and is gone when you close the tab, unless you tick "Remember". Then it is stored encrypted under a Web Crypto key that cannot be exported (the evals core's vault); that is not protection against someone who copies your browser profile. It is sent only to the provider you chose, never to this site. A key with a low spending limit is a good idea.</p>
+<p class="small">Before you send anything: on Mistral's free mode, API data may be used for training unless you switch that off in your Mistral admin settings (Privacy), and Mistral keeps API inputs and outputs for 30 days for abuse monitoring. The suites here hold only made-up test data. The EU endpoint processes requests inside the EU and is priced above the global one; the global endpoint makes no promise about where inference runs. Source: <a href="https://mistral.ai/news/regional-inference-open-models-new-compute/">Mistral, regional inference</a>, as read on 20 November 2026 by the team's research agent.</p>
+</div>
+<div id="local-box" class="hidden">
+<div class="row"><label>Server base URL <input type="url" id="local-url" value="http://localhost:11434/v1" spellcheck="false"></label></div>
+<p class="small">For Ollama, start it so that it accepts calls from this page, for example <code>OLLAMA_ORIGINS=https://mistral.provider.sovereignweb.site ollama serve</code>, and pull a model with tool support. Only localhost and 127.0.0.1 on port 11434 are allowed by this page's security policy. Your browser may ask before letting a public page reach a local address.</p>
+</div>
+</section>
+
+<section class="panel" aria-labelledby="run-h">
+<h2 id="run-h">2. Model, suites and tries</h2>
+<div class="row">
+<label>Model id <input type="text" class="model" id="model" list="models" value="ministral-3b-2512" spellcheck="false"></label>
+<datalist id="models"></datalist>
+<button type="button" class="secondary" id="load-models">Load the model list</button>
+<label>Tries per case <select id="tries"><option>1</option><option>2</option><option>3</option></select></label>
+</div>
+<fieldset><legend>Suites</legend><div id="suites" class="row"></div></fieldset>
+<p class="small" id="estimate" aria-live="polite"></p>
+<div class="row"><button type="button" id="run">Run</button><button type="button" class="secondary" id="stop" disabled>Stop</button><button type="button" class="secondary" id="export" disabled>Download results (JSON)</button></div>
+<p id="status" class="small" aria-live="polite"></p>
+</section>
+
+<section aria-labelledby="res-h">
+<h2 id="res-h">3. Your results</h2>
+<p class="small muted">Every model you run in this tab is added to the table, so you can put a non-Mistral model (through OpenRouter or a local server) beside a Mistral one. Compare with the <a href="../">published results</a>, keeping in mind that tries differ and the numbers are small.</p>
+<div id="results"><p class="muted">Nothing run yet.</p></div>
+</section>
+</main>
+<footer class="site"><p>Made by evals.mistral@SovereignWebsite.dinis for Dinis Cruz, 20 to 21 November 2026, on the <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Evals">AgentiCCells evals core v0.1</a> (Apache-2.0). This page calls only the provider you choose: api.mistral.ai, openrouter.ai, or your own local server. Nothing has been agreed with Mistral AI. No cookies, no tracking.</p></footer>
+<script type="module" src="run.js"></script>
+</body>
+</html>

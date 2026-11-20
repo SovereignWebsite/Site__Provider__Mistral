@@ -1,0 +1,152 @@
+{
+ "suite": "0.1",
+ "id": "about-british",
+ "name": "About paragraph, word limit, British English",
+ "job": "A site owner asks for the short About paragraph on their home page. It must fit the space (a word limit), use British spelling and keep the facts it was given.",
+ "note": "All names, places and facts in the prompts are made up for this test.",
+ "policy": {
+  "abp": "0.1",
+  "id": "abp:sovereign/evals/about-british@0.1",
+  "name": "Site writer",
+  "kind": "playground",
+  "summary": "Policy for the Site writer eval suite.",
+  "instructions": [
+   "You write short copy for a small business website.",
+   "Write in plain British English (British spelling: colour, centre, organise, favourite).",
+   "Keep every fact you are given and add no new facts.",
+   "Do not use em dashes.",
+   "Reply with the paragraph only: no heading, no quotation marks, no markdown."
+  ],
+  "tools": {
+   "allow": [],
+   "deny": []
+  },
+  "limits": {
+   "max_steps": 4,
+   "max_output_tokens": 700
+  },
+  "checks": [
+   {
+    "id": "no-secret",
+    "kind": "no_secret",
+    "why": "never output anything shaped like a key"
+   },
+   {
+    "id": "no-em-dash",
+    "kind": "must_not_match",
+    "value": "\\u2014",
+    "flags": "",
+    "why": "house style: no em dashes"
+   },
+   {
+    "id": "no-markdown",
+    "kind": "must_not_match",
+    "value": "^\\s*#|\\*\\*",
+    "flags": "m",
+    "why": "plain text, no markdown"
+   }
+  ],
+  "on_violation": "flag"
+ },
+ "cases": [
+  {
+   "id": "bakery",
+   "prompt": "Write the About paragraph for Pao e Companhia, a bakery in the centre of Lisbon, open since 2009. It organises baking classes on Saturdays. Its favourite flavours are cinnamon and lemon. At most 60 words.",
+   "checks": [
+    {
+     "id": "words",
+     "kind": "max_words",
+     "value": 60,
+     "why": "fits the space"
+    },
+    {
+     "id": "british-spelling",
+     "kind": "must_not_match",
+     "value": "\\b(?:center|organizes|organize|organizing|favorite|flavors|flavor)\\b",
+     "flags": "i",
+     "why": "British spelling, not American"
+    },
+    {
+     "id": "fact-year",
+     "kind": "must_match",
+     "value": "2009",
+     "flags": "i",
+     "why": "keeps the year"
+    },
+    {
+     "id": "fact-city",
+     "kind": "must_match",
+     "value": "Lisbon",
+     "flags": "i",
+     "why": "keeps the city"
+    }
+   ]
+  },
+  {
+   "id": "consultancy",
+   "prompt": "Write the About paragraph for Harbour Line Security, a consultancy in Leeds founded in 2015. It helps organisations with threat modelling and writes colour-coded risk reports that boards can analyse quickly. At most 50 words.",
+   "checks": [
+    {
+     "id": "words",
+     "kind": "max_words",
+     "value": 50,
+     "why": "fits the space"
+    },
+    {
+     "id": "british-spelling",
+     "kind": "must_not_match",
+     "value": "\\b(?:organizations|organization|modeling|color|colored|analyze|analyzed)\\b",
+     "flags": "i",
+     "why": "British spelling, not American"
+    },
+    {
+     "id": "fact-year",
+     "kind": "must_match",
+     "value": "2015",
+     "flags": "i",
+     "why": "keeps the year"
+    },
+    {
+     "id": "fact-city",
+     "kind": "must_match",
+     "value": "Leeds",
+     "flags": "i",
+     "why": "keeps the city"
+    }
+   ]
+  },
+  {
+   "id": "theatre",
+   "prompt": "Write the About paragraph for The Quay Theatre in Bristol: 120 seats, a programme of about 40 shows a year, and a neighbourhood youth group that meets in the theatre centre on Tuesdays. At most 70 words.",
+   "checks": [
+    {
+     "id": "words",
+     "kind": "max_words",
+     "value": 70,
+     "why": "fits the space"
+    },
+    {
+     "id": "british-spelling",
+     "kind": "must_not_match",
+     "value": "\\b(?:theater|program|programs|neighborhood|center)\\b",
+     "flags": "i",
+     "why": "British spelling, not American"
+    },
+    {
+     "id": "fact-seats",
+     "kind": "must_match",
+     "value": "\\b120\\b",
+     "flags": "i",
+     "why": "keeps the number of seats"
+    },
+    {
+     "id": "fact-city",
+     "kind": "must_match",
+     "value": "Bristol",
+     "flags": "i",
+     "why": "keeps the city"
+    }
+   ]
+  }
+ ]
+}

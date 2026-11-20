@@ -1,0 +1,63 @@
+{
+ "agent": "evals.mistral@SovereignWebsite.dinis",
+ "from": "2026-11-20T23:02:29.090Z",
+ "to": "2026-11-20T23:20:15.017Z",
+ "calls": 493,
+ "byPurpose": {
+  "probe: reply shape": 1,
+  "probe: json mode": 1,
+  "probe: tools": 1,
+  "eval runs": 486,
+  "probe: large-4 reply shape": 1,
+  "browser smoke test of run page": 3
+ },
+ "byModel": [
+  {
+   "model": "magistral-small-latest",
+   "calls": 77,
+   "input": 21647,
+   "output": 3070,
+   "usd": 0.005089050000000001
+  },
+  {
+   "model": "ministral-3b-2512",
+   "calls": 109,
+   "input": 28826,
+   "output": 4763,
+   "usd": 0.003358899999999998
+  },
+  {
+   "model": "ministral-8b-2512",
+   "calls": 75,
+   "input": 20100,
+   "output": 3314,
+   "usd": 0.0035120999999999993
+  },
+  {
+   "model": "ministral-14b-2512",
+   "calls": 75,
+   "input": 20295,
+   "output": 3602,
+   "usd": 0.0047794
+  },
+  {
+   "model": "mistral-small-2603",
+   "calls": 78,
+   "input": 22386,
+   "output": 3011,
+   "usd": 0.005164500000000001
+  },
+  {
+   "model": "mistral-large-4",
+   "calls": 79,
+   "input": 21491,
+   "output": 35145,
+   "usd": 0.0888482
+  }
+ ],
+ "totalUsd": 0.110752,
+ "capUsd": 3,
+ "priceSource": "https://docs.mistral.ai/inference/pricing",
+ "priceReadOn": "2026-11-20",
+ "method": "Every Mistral chat call made by this agent is logged (UTC time, model, purpose, usage tokens as returned by the API). Cost is tokens times Mistral's published Standard per-token price, not an invoice. The line-by-line ledger is kept outside git."
+}

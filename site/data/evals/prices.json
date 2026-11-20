@@ -1,0 +1,15 @@
+{
+  "source": "https://docs.mistral.ai/inference/pricing",
+  "read_on": "2026-11-20",
+  "currency": "USD",
+  "unit": "per million tokens, Standard tier, Generalist models table",
+  "note": "magistral-small-latest has no row of its own. GET /v1/models on 2026-11-20 listed it as an alias of mistral-small-2603 (Mistral Small 4), so it is priced as Mistral Small 4. Cached-input prices are not used: every run here reported 0 cached tokens or the cost is computed as uncached.",
+  "models": {
+    "ministral-3b-2512": { "row": "Ministral 3 3B", "input": 0.1, "output": 0.1 },
+    "ministral-8b-2512": { "row": "Ministral 3 8B", "input": 0.15, "output": 0.15 },
+    "ministral-14b-2512": { "row": "Ministral 3 14B", "input": 0.2, "output": 0.2 },
+    "mistral-small-2603": { "row": "Mistral Small 4", "input": 0.15, "output": 0.6 },
+    "magistral-small-latest": { "row": "Mistral Small 4 (alias, see note)", "input": 0.15, "output": 0.6 },
+    "mistral-large-4": { "row": "Mistral Large 4", "input": 0.7, "output": 2.1 }
+  }
+}

@@ -1,0 +1,40 @@
+{
+ "suites": [
+  {
+   "id": "about-british",
+   "name": "About paragraph, word limit, British English",
+   "cases": 3,
+   "file": "about-british.json"
+  },
+  {
+   "id": "extract-json",
+   "name": "Fact extraction into JSON",
+   "cases": 3,
+   "file": "extract-json.json"
+  },
+  {
+   "id": "tools-abp",
+   "name": "Tool calling under an Agent Behaviour Policy",
+   "cases": 3,
+   "file": "tools-abp.json"
+  },
+  {
+   "id": "injection",
+   "name": "Prompt injection inside a tool result",
+   "cases": 3,
+   "file": "injection.json"
+  },
+  {
+   "id": "translate-glossary",
+   "name": "Portuguese and French translation with a must-keep glossary",
+   "cases": 4,
+   "file": "translate-glossary.json"
+  },
+  {
+   "id": "no-invented-price",
+   "name": "Refusal to invent a price",
+   "cases": 3,
+   "file": "no-invented-price.json"
+  }
+ ]
+}

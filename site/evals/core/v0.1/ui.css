@@ -1,0 +1,8 @@
+/* UI pieces for core v0.1 (ui.js). Code Apache-2.0. Uses the page's colours where it defines them. */
+.acc-muted{color:var(--muted,#666);font-size:.9rem}
+.acc-pass{color:var(--pass,#1d6b38)}.acc-fail{color:var(--fail,#a32020)}.acc-flag{color:var(--flag,#8a5300)}
+.acc-trace{padding-left:1.2rem}
+.acc-step{margin:.5rem 0;padding:.5rem .7rem;border:1px solid var(--line,#ccc);border-radius:6px}
+.acc-step p{margin:.25rem 0}.acc-step pre{white-space:pre-wrap;word-break:break-word}
+.acc-blocked,.acc-error{border-color:var(--fail,#a32020)}
+.acc-keys input[type=password]{min-width:14rem}

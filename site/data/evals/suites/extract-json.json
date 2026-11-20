@@ -1,0 +1,179 @@
+{
+ "suite": "0.1",
+ "id": "extract-json",
+ "name": "Fact extraction into JSON",
+ "job": "The site reads one of its own pages and pulls out facts as JSON (for a contact card or structured data). It must copy exactly and use null for anything missing.",
+ "note": "All names, places and facts in the prompts are made up for this test. The request uses Mistral's JSON mode (response_format json_object).",
+ "extra": {
+  "response_format": {
+   "type": "json_object"
+  }
+ },
+ "policy": {
+  "abp": "0.1",
+  "id": "abp:sovereign/evals/extract-json@0.1",
+  "name": "Fact extractor",
+  "kind": "playground",
+  "summary": "Policy for the Fact extractor eval suite.",
+  "instructions": [
+   "You extract facts from a web page into JSON.",
+   "Copy values exactly as the page states them. Never guess: use null when the page does not say."
+  ],
+  "tools": {
+   "allow": [],
+   "deny": []
+  },
+  "limits": {
+   "max_steps": 4,
+   "max_output_tokens": 700
+  },
+  "checks": [
+   {
+    "id": "no-secret",
+    "kind": "no_secret",
+    "why": "never output anything shaped like a key"
+   }
+  ],
+  "on_violation": "flag"
+ },
+ "cases": [
+  {
+   "id": "bakery",
+   "prompt": "Extract the facts from this web page.\nReturn a JSON object with exactly these keys: \"name\" (string), \"city\" (string), \"founded\" (number), \"email\" (string), \"phone\" (string or null), \"opening_hours\" (string). Use null for anything the page does not state. Return the JSON only.\n\nPAGE:\n<h1>Pao e Companhia</h1><p>A family bakery in Lisbon, baking since 2009.</p><h2>Visit us</h2><p>Rua das Flores 12, Lisbon. Open Tuesday to Sunday, 07:00 to 19:00.</p><p>Write to ola@pao-e-companhia.example for orders.</p>",
+   "checks": [
+    {
+     "id": "json",
+     "kind": "json",
+     "why": "valid JSON and nothing else"
+    },
+    {
+     "id": "name",
+     "kind": "must_match",
+     "value": "\"name\"\\s*:\\s*\"Pao e Companhia\"",
+     "flags": "",
+     "why": "name exact"
+    },
+    {
+     "id": "city",
+     "kind": "must_match",
+     "value": "\"city\"\\s*:\\s*\"Lisbon\"",
+     "flags": "",
+     "why": "city exact"
+    },
+    {
+     "id": "founded",
+     "kind": "must_match",
+     "value": "\"founded\"\\s*:\\s*2009\\b",
+     "flags": "",
+     "why": "year as a number"
+    },
+    {
+     "id": "email",
+     "kind": "must_match",
+     "value": "\"email\"\\s*:\\s*\"ola@pao-e-companhia\\.example\"",
+     "flags": "",
+     "why": "email exact"
+    },
+    {
+     "id": "phone-null",
+     "kind": "must_match",
+     "value": "\"phone\"\\s*:\\s*null",
+     "flags": "",
+     "why": "no phone on the page, so null (not invented)"
+    }
+   ]
+  },
+  {
+   "id": "clinic",
+   "prompt": "Extract the facts from this web page.\nReturn a JSON object with exactly these keys: \"name\" (string), \"city\" (string), \"founded\" (number), \"email\" (string), \"phone\" (string or null), \"opening_hours\" (string). Use null for anything the page does not state. Return the JSON only.\n\nPAGE:\n<h1>Northgate Physio</h1><p>Founded in 2018 by two physiotherapists in York.</p><p>Opening hours: Monday to Friday, 08:30 to 18:00.</p><p>Email: bookings@northgate-physio.example</p><p>We do not take bookings by phone.</p>",
+   "checks": [
+    {
+     "id": "json",
+     "kind": "json",
+     "why": "valid JSON and nothing else"
+    },
+    {
+     "id": "name",
+     "kind": "must_match",
+     "value": "\"name\"\\s*:\\s*\"Northgate Physio\"",
+     "flags": "",
+     "why": "name exact"
+    },
+    {
+     "id": "city",
+     "kind": "must_match",
+     "value": "\"city\"\\s*:\\s*\"York\"",
+     "flags": "",
+     "why": "city exact"
+    },
+    {
+     "id": "founded",
+     "kind": "must_match",
+     "value": "\"founded\"\\s*:\\s*2018\\b",
+     "flags": "",
+     "why": "year as a number"
+    },
+    {
+     "id": "email",
+     "kind": "must_match",
+     "value": "\"email\"\\s*:\\s*\"bookings@northgate-physio\\.example\"",
+     "flags": "",
+     "why": "email exact"
+    },
+    {
+     "id": "phone-null",
+     "kind": "must_match",
+     "value": "\"phone\"\\s*:\\s*null",
+     "flags": "",
+     "why": "no phone on the page, so null (not invented)"
+    }
+   ]
+  },
+  {
+   "id": "repair",
+   "prompt": "Extract the facts from this web page.\nReturn a JSON object with exactly these keys: \"name\" (string), \"city\" (string), \"founded\" (number), \"email\" (string), \"phone\" (string or null), \"opening_hours\" (string). Use null for anything the page does not state. Return the JSON only.\n\nPAGE:\n<h1>Atelier Velo</h1><p>Bicycle repairs in Lyon since 1998.</p><p>Hours: Wednesday to Saturday, 10:00 to 18:30.</p><p>Contact: atelier@velo-lyon.example</p>",
+   "checks": [
+    {
+     "id": "json",
+     "kind": "json",
+     "why": "valid JSON and nothing else"
+    },
+    {
+     "id": "name",
+     "kind": "must_match",
+     "value": "\"name\"\\s*:\\s*\"Atelier Velo\"",
+     "flags": "",
+     "why": "name exact"
+    },
+    {
+     "id": "city",
+     "kind": "must_match",
+     "value": "\"city\"\\s*:\\s*\"Lyon\"",
+     "flags": "",
+     "why": "city exact"
+    },
+    {
+     "id": "founded",
+     "kind": "must_match",
+     "value": "\"founded\"\\s*:\\s*1998\\b",
+     "flags": "",
+     "why": "year as a number"
+    },
+    {
+     "id": "email",
+     "kind": "must_match",
+     "value": "\"email\"\\s*:\\s*\"atelier@velo-lyon\\.example\"",
+     "flags": "",
+     "why": "email exact"
+    },
+    {
+     "id": "phone-null",
+     "kind": "must_match",
+     "value": "\"phone\"\\s*:\\s*null",
+     "flags": "",
+     "why": "no phone on the page, so null (not invented)"
+    }
+   ]
+  }
+ ]
+}

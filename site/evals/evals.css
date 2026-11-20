@@ -1,0 +1,44 @@
+/* Evals pages, on top of the site's /assets/css/base.css and plain.css. Code Apache-2.0. */
+:root { --pass: #11643a; --pass-bg: #e3f3e8; --fail: #9b1c1c; --fail-bg: #fbe6e6; --mid-bg: #fff4d6; --mid: #6b4b00; }
+@media (prefers-color-scheme: dark) { :root { --pass: #8fe0ab; --pass-bg: #173323; --fail: #ffaaaa; --fail-bg: #3d1d1d; --mid-bg: #3a3017; --mid: #f2d58a; } }
+main { max-width: var(--max); margin: 0 auto; padding: 1rem 1rem 2rem; }
+.evals-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+.evals-nav a[aria-current="page"] { font-weight: 700; }
+h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); margin: 1.25rem 0 0.5rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; }
+h3 { font-size: 1.1rem; margin: 1.25rem 0 0.4rem; }
+.muted { color: var(--muted); }
+.small { font-size: 0.875rem; }
+.lede { font-size: 1.05rem; max-width: 46rem; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 0.75rem 1rem; margin: 1rem 0; }
+.caveats li { margin: 0.25rem 0; }
+.scroll { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { border: 1px solid var(--line); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+th { background: var(--panel); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rate { display: inline-block; min-width: 4.5rem; padding: 0 0.3rem; border-radius: 3px; font-variant-numeric: tabular-nums; }
+.rate.hi { background: var(--pass-bg); color: var(--pass); }
+.rate.mid { background: var(--mid-bg); color: var(--mid); }
+.rate.lo { background: var(--fail-bg); color: var(--fail); }
+.pass { color: var(--pass); font-weight: 600; }
+.fail { color: var(--fail); font-weight: 600; }
+details { margin: 0.4rem 0; }
+summary { cursor: pointer; }
+pre.output { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); border: 1px dashed var(--line); padding: 0.5rem; margin: 0.3rem 0; font-size: 0.85rem; }
+.label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+form .row, .row { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: flex-end; margin: 0.5rem 0; }
+label { display: inline-flex; flex-direction: column; gap: 0.2rem; font-size: 0.9rem; }
+label.inline { flex-direction: row; align-items: center; gap: 0.4rem; }
+input[type=text], input[type=password], input[type=url], input[type=number], select { font: inherit; padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--fg); max-width: 100%; }
+input[type=password], input[type=url] { width: 22rem; max-width: 100%; }
+label { max-width: 100%; }
+input[type=text].model { width: 18rem; max-width: 100%; }
+button { font: inherit; padding: 0.4rem 0.9rem; border-radius: 4px; border: 1px solid var(--fg); background: var(--fg); color: var(--bg); cursor: pointer; }
+button.secondary { background: transparent; color: var(--fg); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+fieldset { border: 1px solid var(--line); border-radius: 6px; margin: 0.75rem 0; padding: 0.5rem 0.75rem; min-width: 0; }
+legend { font-weight: 600; padding: 0 0.3rem; }
+.hidden { display: none; }
+footer.site { margin-top: 3rem; padding-top: 1rem; padding-bottom: 2rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+

@@ -1,0 +1,201 @@
+{
+ "suite": "0.1",
+ "id": "translate-glossary",
+ "name": "Portuguese and French translation with a must-keep glossary",
+ "job": "The site publishes its pages in Portuguese and French. Product names and defined terms in the glossary must stay exactly as written in English.",
+ "note": "The language checks are rough: they look for common words of the target language and for English words that should have gone. A person should read the output for quality; these checks only catch the obvious failures.",
+ "policy": {
+  "abp": "0.1",
+  "id": "abp:sovereign/evals/translate-glossary@0.1",
+  "name": "Site translator",
+  "kind": "playground",
+  "summary": "Policy for the Site translator eval suite.",
+  "instructions": [
+   "You translate website text.",
+   "These glossary terms must stay exactly as written, in English, never translated: Sovereign Website; Agent Behaviour Policy; sgit.",
+   "Reply with the translation only."
+  ],
+  "tools": {
+   "allow": [],
+   "deny": []
+  },
+  "limits": {
+   "max_steps": 4,
+   "max_output_tokens": 700
+  },
+  "checks": [
+   {
+    "id": "no-secret",
+    "kind": "no_secret",
+    "why": "never output anything shaped like a key"
+   }
+  ],
+  "on_violation": "flag"
+ },
+ "cases": [
+  {
+   "id": "pt-1",
+   "prompt": "Translate into European Portuguese:\n\nThis Sovereign Website runs its agents under an Agent Behaviour Policy. Every change is stored in sgit and checked by a person before it goes live.",
+   "checks": [
+    {
+     "id": "keep-sovereign-website",
+     "kind": "must_match",
+     "value": "\\bSovereign Website\\b",
+     "flags": "",
+     "why": "glossary term \"Sovereign Website\" kept exactly"
+    },
+    {
+     "id": "keep-agent-behaviour-policy",
+     "kind": "must_match",
+     "value": "\\bAgent Behaviour Policy\\b",
+     "flags": "",
+     "why": "glossary term \"Agent Behaviour Policy\" kept exactly"
+    },
+    {
+     "id": "keep-sgit",
+     "kind": "must_match",
+     "value": "\\bsgit\\b",
+     "flags": "",
+     "why": "glossary term \"sgit\" kept exactly"
+    },
+    {
+     "id": "target-language",
+     "kind": "must_match",
+     "value": "\\b(?:o|os|as|um|uma|de|do|da|que|cada|antes|uma|pessoa|todas?|p[aá]gina)\\b",
+     "flags": "i",
+     "why": "reads as European Portuguese"
+    },
+    {
+     "id": "no-english-left",
+     "kind": "must_not_match",
+     "value": "\\b(?:every|change|before|person|visitors|keeps|lives)\\b",
+     "flags": "i",
+     "why": "no untranslated English words from the source"
+    }
+   ]
+  },
+  {
+   "id": "pt-2",
+   "prompt": "Translate into European Portuguese:\n\nVisitors can read the Agent Behaviour Policy on every page. The Sovereign Website keeps no cookies, and its history lives in sgit.",
+   "checks": [
+    {
+     "id": "keep-sovereign-website",
+     "kind": "must_match",
+     "value": "\\bSovereign Website\\b",
+     "flags": "",
+     "why": "glossary term \"Sovereign Website\" kept exactly"
+    },
+    {
+     "id": "keep-agent-behaviour-policy",
+     "kind": "must_match",
+     "value": "\\bAgent Behaviour Policy\\b",
+     "flags": "",
+     "why": "glossary term \"Agent Behaviour Policy\" kept exactly"
+    },
+    {
+     "id": "keep-sgit",
+     "kind": "must_match",
+     "value": "\\bsgit\\b",
+     "flags": "",
+     "why": "glossary term \"sgit\" kept exactly"
+    },
+    {
+     "id": "target-language",
+     "kind": "must_match",
+     "value": "\\b(?:o|os|as|um|uma|de|do|da|que|cada|antes|uma|pessoa|todas?|p[aá]gina)\\b",
+     "flags": "i",
+     "why": "reads as European Portuguese"
+    },
+    {
+     "id": "no-english-left",
+     "kind": "must_not_match",
+     "value": "\\b(?:every|change|before|person|visitors|keeps|lives)\\b",
+     "flags": "i",
+     "why": "no untranslated English words from the source"
+    }
+   ]
+  },
+  {
+   "id": "fr-1",
+   "prompt": "Translate into French:\n\nThis Sovereign Website runs its agents under an Agent Behaviour Policy. Every change is stored in sgit and checked by a person before it goes live.",
+   "checks": [
+    {
+     "id": "keep-sovereign-website",
+     "kind": "must_match",
+     "value": "\\bSovereign Website\\b",
+     "flags": "",
+     "why": "glossary term \"Sovereign Website\" kept exactly"
+    },
+    {
+     "id": "keep-agent-behaviour-policy",
+     "kind": "must_match",
+     "value": "\\bAgent Behaviour Policy\\b",
+     "flags": "",
+     "why": "glossary term \"Agent Behaviour Policy\" kept exactly"
+    },
+    {
+     "id": "keep-sgit",
+     "kind": "must_match",
+     "value": "\\bsgit\\b",
+     "flags": "",
+     "why": "glossary term \"sgit\" kept exactly"
+    },
+    {
+     "id": "target-language",
+     "kind": "must_match",
+     "value": "\\b(?:le|la|les|des|une|un|chaque|avant|personne|est|sont)\\b",
+     "flags": "i",
+     "why": "reads as French"
+    },
+    {
+     "id": "no-english-left",
+     "kind": "must_not_match",
+     "value": "\\b(?:every|change|before|person|visitors|keeps|lives)\\b",
+     "flags": "i",
+     "why": "no untranslated English words from the source"
+    }
+   ]
+  },
+  {
+   "id": "fr-2",
+   "prompt": "Translate into French:\n\nVisitors can read the Agent Behaviour Policy on every page. The Sovereign Website keeps no cookies, and its history lives in sgit.",
+   "checks": [
+    {
+     "id": "keep-sovereign-website",
+     "kind": "must_match",
+     "value": "\\bSovereign Website\\b",
+     "flags": "",
+     "why": "glossary term \"Sovereign Website\" kept exactly"
+    },
+    {
+     "id": "keep-agent-behaviour-policy",
+     "kind": "must_match",
+     "value": "\\bAgent Behaviour Policy\\b",
+     "flags": "",
+     "why": "glossary term \"Agent Behaviour Policy\" kept exactly"
+    },
+    {
+     "id": "keep-sgit",
+     "kind": "must_match",
+     "value": "\\bsgit\\b",
+     "flags": "",
+     "why": "glossary term \"sgit\" kept exactly"
+    },
+    {
+     "id": "target-language",
+     "kind": "must_match",
+     "value": "\\b(?:le|la|les|des|une|un|chaque|avant|personne|est|sont)\\b",
+     "flags": "i",
+     "why": "reads as French"
+    },
+    {
+     "id": "no-english-left",
+     "kind": "must_not_match",
+     "value": "\\b(?:every|change|before|person|visitors|keeps|lives)\\b",
+     "flags": "i",
+     "why": "no untranslated English words from the source"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "latest": "run-2026-11-20T230627Z",
+ "board": {
+  "runs": [
+   "run-2026-11-20T230627Z"
+  ],
+  "note": "Six models, one run each. mistral-large-4 appears once its rerun with a higher output limit is published."
+ },
+ "runs": [
+  {
+   "id": "run-2026-11-20T230627Z-large4-capped",
+   "startedAt": "2026-11-20T23:06:27.768Z",
+   "finishedAt": "2026-11-20T23:17:36.946Z",
+   "models": [
+    "mistral-large-4"
+   ],
+   "suites": [
+    "about-british",
+    "extract-json",
+    "tools-abp",
+    "injection",
+    "translate-glossary",
+    "no-invented-price"
+   ],
+   "tries": 3,
+   "records": 57
+  },
+  {
+   "id": "run-2026-11-20T230627Z",
+   "startedAt": "2026-11-20T23:06:27.768Z",
+   "finishedAt": "2026-11-20T23:17:36.946Z",
+   "models": [
+    "ministral-3b-2512",
+    "ministral-8b-2512",
+    "ministral-14b-2512",
+    "mistral-small-2603",
+    "magistral-small-latest"
+   ],
+   "suites": [
+    "about-british",
+    "extract-json",
+    "tools-abp",
+    "injection",
+    "translate-glossary",
+    "no-invented-price"
+   ],
+   "tries": 3,
+   "records": 285
+  }
+ ]
+}
