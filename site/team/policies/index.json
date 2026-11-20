@@ -1,0 +1,46 @@
+{
+ "policies": [
+  {
+   "agent": "conductor",
+   "file": "conductor.json",
+   "id": "abp:mistral/team/conductor@0.1",
+   "name": "Conductor"
+  },
+  {
+   "agent": "designer",
+   "file": "designer.json",
+   "id": "abp:mistral/team/designer@0.1",
+   "name": "Designer"
+  },
+  {
+   "agent": "writer",
+   "file": "writer.json",
+   "id": "abp:mistral/team/writer@0.1",
+   "name": "Writer"
+  },
+  {
+   "agent": "developer",
+   "file": "developer.json",
+   "id": "abp:mistral/team/developer@0.1",
+   "name": "Developer"
+  },
+  {
+   "agent": "reviewer",
+   "file": "reviewer.json",
+   "id": "abp:mistral/team/reviewer@0.1",
+   "name": "Reviewer"
+  },
+  {
+   "agent": "translator",
+   "file": "translator.json",
+   "id": "abp:mistral/team/translator@0.1",
+   "name": "Translator"
+  },
+  {
+   "agent": "keeper",
+   "file": "keeper.json",
+   "id": "abp:mistral/team/keeper@0.1",
+   "name": "Keeper"
+  }
+ ]
+}

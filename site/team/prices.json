@@ -1,0 +1,11 @@
+{
+ "note": "Mistral's published API prices in US dollars per million tokens, as read on 20 November 2026 from each model's card on docs.mistral.ai. Each card shows two prices; we read them as input then output, in the order the card lists them. The cost on this page is an estimate: tokens as the API returned them, times these prices. It is not Mistral's bill.",
+ "as_read": "2026-11-20",
+ "currency": "USD",
+ "models": {
+  "ministral-3b-2512": { "input_per_m": 0.1, "output_per_m": 0.1, "source": "https://docs.mistral.ai/models/model-cards/ministral-3-3b-25-12" },
+  "ministral-8b-2512": { "input_per_m": 0.15, "output_per_m": 0.15, "source": "https://docs.mistral.ai/models/model-cards/ministral-3-8b-25-12" },
+  "ministral-14b-2512": { "input_per_m": 0.2, "output_per_m": 0.2, "source": "https://docs.mistral.ai/models/model-cards/ministral-3-14b-25-12" },
+  "mistral-small-2603": { "input_per_m": 0.15, "output_per_m": 0.6, "source": "https://docs.mistral.ai/models/model-cards/mistral-small-4-0-26-03" }
+ }
+}

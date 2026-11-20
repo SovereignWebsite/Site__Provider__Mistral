@@ -1,0 +1,29 @@
+{
+ "agent": "team.mistral@SovereignWebsite.dinis",
+ "period": "2026-11-20T23:07:40.576Z to 2026-11-20T23:16:43.873Z",
+ "calls": 82,
+ "by_model": {
+  "mistral-small-2603": {
+   "calls": 33,
+   "input": 32142,
+   "output": 1571,
+   "usd": 0.005784
+  },
+  "ministral-8b-2512": {
+   "calls": 29,
+   "input": 44904,
+   "output": 2603,
+   "usd": 0.007126
+  },
+  "ministral-14b-2512": {
+   "calls": 20,
+   "input": 31454,
+   "output": 1732,
+   "usd": 0.006647
+  }
+ },
+ "total_usd_estimate": 0.019558,
+ "cap_usd": 3,
+ "how": "Every Mistral call this agent made, logged at the time (UTC, model, purpose, usage tokens as returned). Cost is computed only from Mistral's published per-token prices in /team/prices.json (as read on 2026-11-20), not from a bill. The full ledger is kept outside git. Includes test runs that are not published.",
+ "prices": "/team/prices.json"
+}

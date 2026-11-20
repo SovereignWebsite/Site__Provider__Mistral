@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>A team inside the site, on Mistral</title>
+<meta name="description" content="Seven agents inside this website, each under its own behaviour policy, running in your browser on Mistral models with your own key, or replayed from recorded runs with no key at all.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/team/">
+<meta property="og:title" content="A team inside the site, on Mistral">
+<meta property="og:description" content="Seven agents inside this website, each under its own behaviour policy, running in your browser on Mistral models.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A team inside the site, on Mistral">
+<meta name="twitter:description" content="Seven agents inside this website, each under its own behaviour policy, running in your browser on Mistral models.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/team/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/team/team.css">
+<script type="module" src="/team/app.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+    </ul>
+  </details>
+    <a href="/start/">Start here</a>
+    <a href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p>An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p></section>
+<main id="main">
+  <p class="mark">The team inside the site</p>
+  <h1>A website with a team inside, running on Mistral</h1>
+  <p class="lede">Seven agents live in this site: a conductor, a designer, a writer, a developer, a reviewer, a translator and a keeper, the roles from Dinis Cruz's article <a href="https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html">A website with a team inside</a> (as read on 20 November 2026). Give them a brief. The conductor plans it and hands the work out; each specialist reads this site's own pages and proposes changes, which you see as diffs. Nothing is ever written or published.</p>
+  <p class="lede">Each agent runs under a written behaviour policy, on a Mistral model you choose, called from your browser with your own key. Or replay a recorded run with no key at all.</p>
+  <noscript><p class="warn">This page needs JavaScript to run or replay the team. The policies are readable without it: <a href="/team/policies/index.json">policies</a>.</p></noscript>
+
+  <section aria-labelledby="h-brief">
+    <h2 id="h-brief">1. Replay a recorded run, or give a brief</h2>
+    <div id="runs" class="runs"><p class="muted">Loading the recorded runs...</p></div>
+    <div class="speed">
+      <label for="speed">Replay speed</label>
+      <select id="speed">
+        <option value="1">real time</option>
+        <option value="4" selected>4 times faster</option>
+        <option value="0">all at once</option>
+      </select>
+    </div>
+    <h3>A brief of your own (needs your Mistral key)</h3>
+    <label for="brief">Your brief to the conductor</label>
+    <textarea id="brief" rows="3">Make the Start page clearer for a first-time visitor.</textarea>
+    <div class="examples" id="examples">
+      <button type="button" class="chip" data-brief="Make the Start page clearer for a first-time visitor.">Make the Start page clearer</button>
+      <button type="button" class="chip" data-brief="Check that every price on the site has a source.">Check every price has a source</button>
+      <button type="button" class="chip" data-brief="Translate the home page into Portuguese.">Translate the home page into Portuguese</button>
+    </div>
+    <div class="actions">
+      <button type="button" id="run-live" class="primary">Run live on my key</button>
+      <button type="button" id="stop" disabled>Stop</button>
+    </div>
+    <p id="run-status" class="status" role="status"></p>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header of each model call, and is gone when you close the tab. It is never stored, logged or sent to this site. Use a key with a spending limit.</p>
+    <div class="keyrow">
+      <label for="key">Mistral API key</label>
+      <input id="key" type="password" autocomplete="off" spellcheck="false">
+      <button type="button" id="key-set">Use this key</button>
+      <button type="button" id="key-forget">Forget it</button>
+    </div>
+    <p id="key-status" class="status" role="status">No key set.</p>
+    <p>
+      <label for="endpoint">Where the calls go</label><br>
+      <select id="endpoint">
+        <option value="https://api.mistral.ai/v1" selected>api.mistral.ai (global; Mistral makes no promise where it runs)</option>
+        <option value="https://api.eu.mistral.ai/v1">api.eu.mistral.ai (processed inside the EU; 10% above list price)</option>
+      </select>
+    </p>
+    <p class="muted">The recorded runs used the global endpoint, <code>api.mistral.ai</code>. On Mistral's free plan, what you send through the API may be used for training unless you switch that off in your Mistral admin panel (Privacy); send nothing confidential. Mistral keeps API inputs and outputs for 30 days for abuse monitoring. Sources: <a href="https://mistral.ai/news/regional-inference-open-models-new-compute/">regional inference</a>, as read by conductor.mistral@ on 20 November 2026.</p>
+    <details id="phone">
+      <summary>Send this key to my phone</summary>
+      <p>This makes a QR code, in this browser, of a link to this page with your key after a <code>#</code>: <code>/team/#k=...</code>. The part after <code>#</code> is never sent to any server. When your phone opens the link, this page reads the key once into memory and removes it from the address bar.</p>
+      <p class="warn"><strong>The risk, plainly:</strong> anyone who sees or photographs this QR code has your key, and can spend on your account until you revoke it. The full link, key included, is also recorded outside this page: in your phone browser's history (which may sync to your other devices) and in your scanner app's own history, which some apps upload. Show it only to your own phone, use a key with a spending limit, delete that history entry afterwards, and revoke the key after the event. The QR code hides itself after 60 seconds or when you leave this tab; the key and the link are never shown as text.</p>
+      <p><input type="checkbox" id="qr-ok"> <label for="qr-ok">I understand: anyone who sees this QR code has my key.</label></p>
+      <div class="actions">
+        <button type="button" id="qr-make" disabled>Make the QR code</button>
+        <button type="button" id="qr-hide" disabled>Hide it</button>
+      </div>
+      <div id="qr" class="qr"></div>
+    </details>
+  </section>
+
+  <section aria-labelledby="h-team">
+    <h2 id="h-team">3. The team, its models and its policies</h2>
+    <p>Defaults: Mistral Small 4 (<code>mistral-small-2603</code>) for the conductor, Ministral 3 14B for the specialists. Prices are Mistral's published prices per million tokens; see <a href="#h-sources">sources</a>.</p>
+    <div class="tablewrap"><table id="team-table">
+      <caption class="sr">The seven agents</caption>
+      <thead><tr><th scope="col">Agent</th><th scope="col">Its job</th><th scope="col">Model</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <div id="policy-list" class="policies"></div>
+  </section>
+
+  <section aria-labelledby="h-stage">
+    <h2 id="h-stage">4. The team at work</h2>
+    <p id="run-label" class="runlabel"></p>
+    <div class="stage" id="graph-wrap"></div>
+    <div id="totals" class="totals"></div>
+    <h3>What happened, step by step</h3>
+    <ol id="log" class="log" aria-live="polite" tabindex="0" aria-label="Steps of the run"></ol>
+  </section>
+
+  <section aria-labelledby="h-timeline">
+    <h2 id="h-timeline">5. Every model call: tokens, time and cost</h2>
+    <p>Each bar is one call to Mistral, from when it was sent to when the answer came back. The cost is an estimate: tokens as Mistral returned them, times the published price.</p>
+    <div id="timeline" class="timeline"></div>
+    <div class="tablewrap"><table id="calls">
+      <caption class="sr">Model calls</caption>
+      <thead><tr><th scope="col">#</th><th scope="col">Agent</th><th scope="col">Model</th><th scope="col">Tokens in</th><th scope="col">Tokens out</th><th scope="col">Time</th><th scope="col">Cost estimate</th><th scope="col">Sent</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-sends">
+    <h2 id="h-sends">6. What this call sends, and to whom</h2>
+    <div id="sends" class="sends"><p class="muted">Run or replay the team, then pick a call in the table above.</p></div>
+  </section>
+
+  <section aria-labelledby="h-blocked">
+    <h2 id="h-blocked">7. Policies at work: blocked tool calls and checks</h2>
+    <p>A tool call is refused when the agent's policy does not allow the tool, or when a guard in the policy finds its arguments break a rule (the designer may not change prices; only the developer may publish, and only after your yes). The refusal goes back to the model, which has to carry on without it.</p>
+    <ul id="blocked" class="blocked"><li class="muted">No blocked calls yet.</li></ul>
+    <div id="verdicts" class="verdicts"></div>
+  </section>
+
+  <section aria-labelledby="h-proposals">
+    <h2 id="h-proposals">8. Proposed changes</h2>
+    <p>Model output. These diffs are proposals only: nothing has been written to the site or anywhere else.</p>
+    <div id="proposals"><p class="muted">No proposals yet.</p></div>
+  </section>
+
+  <section aria-labelledby="h-report">
+    <h2 id="h-report">9. The conductor's report to you</h2>
+    <div id="report" class="report"><p class="muted">Not yet.</p></div>
+  </section>
+
+  <section aria-labelledby="h-sources">
+    <h2 id="h-sources">Sources, and what this does not claim</h2>
+    <ul class="plain">
+      <li>The seven roles and their jobs: <a href="https://newsroom.sgit.ai/articles/a-website-with-a-team-inside.html">A website with a team inside</a>, Dinis Cruz, 19 November 2026, as read on 20 November 2026.</li>
+      <li>Prices, US dollars per million tokens, as read on 20 November 2026, from each model's card: <a href="https://docs.mistral.ai/models/model-cards/mistral-small-4-0-26-03">Mistral Small 4</a> (0.15 and 0.6), <a href="https://docs.mistral.ai/models/model-cards/ministral-3-14b-25-12">Ministral 3 14B</a> (0.2 and 0.2), <a href="https://docs.mistral.ai/models/model-cards/ministral-3-8b-25-12">Ministral 3 8B</a> (0.15 and 0.15), <a href="https://docs.mistral.ai/models/model-cards/ministral-3-3b-25-12">Ministral 3 3B</a> (0.1 and 0.1). Each card lists two prices; we read them as input then output, in the order shown. The EU endpoint costs 10% more; the page adds that. Prices are before VAT. The cost on this page is our estimate, not Mistral's bill.</li>
+      <li>The agent loop, the policy engine and the key store are <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Evals/tree/75e262dad13a80eea08d09b08bf010b83f8b5ecc/src/core/v0.1">AgentiCCells Evals core v0.1</a> (Apache-2.0), copied into <a href="/team/core/NOTICE.md">/team/core/</a> with one marked change. The QR code is drawn by <a href="https://github.com/kazuhikoarase/qrcode-generator">qrcode-generator</a> 1.4.4 by Kazuhiko Arase (MIT), copied into <a href="/team/qrcode.js">/team/qrcode.js</a>.</li>
+      <li>The policies: <a href="/team/policies/index.json">/team/policies/</a>. The recorded runs, with every call in full: <a href="/data/team/runs/index.json">/data/team/runs/</a>.</li>
+      <li>Nothing has been agreed with Mistral AI. This page uses Mistral's public API like any customer would.</li>
+      <li>The recorded runs are single runs, not benchmarks. Small models make mistakes; the point is that you can see every one of them.</li>
+      <li>This page talks to two places only: this site (to read its pages and policies) and the Mistral endpoint you choose, <code>api.mistral.ai</code> or <code>api.eu.mistral.ai</code> (the model calls, with your key). Its content security policy enforces that.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<nav class="site-links" aria-label="About this site">
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/questions/">Open questions</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by team.mistral@SovereignWebsite.dinis for Dinis Cruz, 20 November 2026. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

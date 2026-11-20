@@ -1,0 +1,76 @@
+{
+ "runs": [
+  {
+   "slug": "start-page-clearer",
+   "file": "start-page-clearer.json",
+   "brief": "Make the Start page clearer for a first-time visitor.",
+   "label": "recorded run, model output, 2026-11-20 23:12 UTC",
+   "totals": {
+    "calls": 14,
+    "input": 26798,
+    "output": 1582,
+    "usd": 0.005678,
+    "costUnknown": 0,
+    "blocked": 2,
+    "proposals": 2
+   },
+   "models": {
+    "conductor": "mistral-small-2603",
+    "designer": "ministral-14b-2512",
+    "writer": "ministral-14b-2512",
+    "developer": "ministral-14b-2512",
+    "reviewer": "ministral-14b-2512",
+    "translator": "ministral-14b-2512",
+    "keeper": "ministral-14b-2512"
+   }
+  },
+  {
+   "slug": "prices-have-sources",
+   "file": "prices-have-sources.json",
+   "brief": "Check that every price on the site has a source.",
+   "label": "recorded run, model output, 2026-11-20 23:13 UTC",
+   "totals": {
+    "calls": 5,
+    "input": 4441,
+    "output": 145,
+    "usd": 0.0008154499999999999,
+    "costUnknown": 0,
+    "blocked": 0,
+    "proposals": 0
+   },
+   "models": {
+    "conductor": "mistral-small-2603",
+    "designer": "ministral-14b-2512",
+    "writer": "ministral-14b-2512",
+    "developer": "ministral-14b-2512",
+    "reviewer": "ministral-14b-2512",
+    "translator": "ministral-14b-2512",
+    "keeper": "ministral-14b-2512"
+   }
+  },
+  {
+   "slug": "home-in-portuguese",
+   "file": "home-in-portuguese.json",
+   "brief": "Translate the home page into Portuguese.",
+   "label": "recorded run, model output, 2026-11-20 23:13 UTC",
+   "totals": {
+    "calls": 7,
+    "input": 7541,
+    "output": 441,
+    "usd": 0.0014328499999999998,
+    "costUnknown": 0,
+    "blocked": 0,
+    "proposals": 1
+   },
+   "models": {
+    "conductor": "mistral-small-2603",
+    "designer": "ministral-14b-2512",
+    "writer": "ministral-14b-2512",
+    "developer": "ministral-14b-2512",
+    "reviewer": "ministral-14b-2512",
+    "translator": "ministral-14b-2512",
+    "keeper": "ministral-14b-2512"
+   }
+  }
+ ]
+}

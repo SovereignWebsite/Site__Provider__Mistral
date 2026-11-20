@@ -1,0 +1,101 @@
+/* The team page. team.mistral@SovereignWebsite.dinis, 20 November 2026. No inline styles anywhere (strict CSP). */
+:root{--add:#e3f1e7;--add-fg:#1b5233;--del:#f8e3e1;--del-fg:#8a2318;--block:#a3261a;--warnbg:#fff4dc;--warnfg:#5c4200;
+  --n-idle:#ffffff;--n-active:#1d4e89;--n-done:#d6e2f1;--edge:#b9b5a8;--flow:#1d4e89;--flow2:#5a4a9c}
+@media (prefers-color-scheme:dark){:root{--add:#173323;--add-fg:#b6e6c6;--del:#3a1a17;--del-fg:#f3b9b1;--block:#ff8f80;--warnbg:#2e2614;--warnfg:#f3dca0;
+  --n-idle:#1d1e1b;--n-active:#8db8ee;--n-done:#22324a;--edge:#55564f;--flow:#8db8ee;--flow2:#b6a8f0}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+main{max-width:62rem;margin:0 auto;padding:1rem 1rem 3rem;overflow-wrap:anywhere}
+.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:1rem 0 0}
+h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15;margin:.3rem 0 1rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;margin:1.4rem 0 .4rem}
+.lede{max-width:46rem}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.warn{background:var(--warnbg);color:var(--warnfg);padding:.6rem .8rem;border-radius:6px}
+code{font-size:.9em}
+button,select,input,textarea{font:inherit;color:inherit}
+button{min-height:2.2rem;padding:.3rem .9rem;border:1px solid var(--accent);background:var(--bg);color:var(--accent);border-radius:6px;cursor:pointer}
+button.primary{background:var(--accent);color:var(--bg)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--flow2);outline-offset:2px}
+textarea,input[type=password],select{background:var(--bg);border:1px solid var(--muted);border-radius:6px;padding:.4rem .5rem;max-width:100%}
+textarea{width:100%;display:block;margin:.3rem 0}
+label{font-weight:600}
+.actions,.examples,.keyrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.6rem 0}
+.keyrow input{flex:1 1 12rem;min-width:0}
+.keyrow label{flex-basis:100%}
+.chip{font-size:.9rem;min-height:2rem;padding:.2rem .7rem;border-radius:999px}
+.status{min-height:1.5em;color:var(--muted)}
+.speed{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:.6rem 0}
+.runs{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.run{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:.7rem .8rem;display:flex;flex-direction:column;gap:.4rem}
+.run p{margin:0}
+.run .brief{font-weight:600}
+.run .meta{font-size:.85rem;color:var(--muted)}
+.run button{align-self:flex-start}
+.tablewrap{max-width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+#team-table select{max-width:12rem}
+#team-table th[scope=row]{white-space:nowrap}
+#calls tr.sel{background:var(--panel)}
+#calls button{min-height:1.8rem;padding:.1rem .5rem;font-size:.85rem}
+.policies{display:grid;gap:.5rem;margin-top:1rem}
+.policies details{border:1px solid var(--line);border-radius:6px;padding:.4rem .7rem}
+.policies summary{cursor:pointer;font-weight:600}
+.policies ul{margin:.3rem 0;padding-left:1.2rem;font-size:.9rem}
+.policies pre,.sends pre,.diff{white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.6rem .7rem;border-radius:6px;font-size:.8rem;line-height:1.45;max-height:28rem;overflow:auto}
+.runlabel{font-weight:600;color:var(--accent);min-height:1.5em}
+.stage{border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.stage svg,.timeline svg{display:block;width:100%;height:auto}
+.g-edge{stroke:var(--edge);stroke-width:1.5;fill:none}
+.g-flow{stroke:var(--flow);stroke-width:3;fill:none;stroke-dasharray:6 6;animation:flow .6s linear infinite}
+.g-flow.api{stroke:var(--flow2)}
+.g-flow.site{stroke:var(--muted);stroke-width:2}
+.g-flow.bad{stroke:var(--block)}
+@keyframes flow{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.g-flow{animation:none}}
+.g-node circle{fill:var(--n-idle);stroke:var(--accent);stroke-width:2}
+.g-node.active circle{fill:var(--n-active)}
+.g-node.done circle{fill:var(--n-done)}
+.g-node.blocked circle{stroke:var(--block);stroke-width:4}
+.g-node text{fill:var(--fg);font:600 13px system-ui,sans-serif;text-anchor:middle}
+.g-node text.sub{font-weight:400;font-size:10.5px;fill:var(--muted)}
+.g-node text.badge{fill:var(--block);font-size:12px}
+.g-node.ext rect{fill:var(--n-idle);stroke:var(--muted);stroke-width:1.5}
+.g-node.ext.active rect{stroke:var(--flow2);stroke-width:3}
+.t-bar{fill:var(--accent)}
+.t-bar.err{fill:var(--block)}
+.t-bar.sel{fill:var(--flow2)}
+.t-label{fill:var(--fg);font:11px system-ui,sans-serif}
+.t-info{fill:var(--muted);font:10px system-ui,sans-serif}
+.t-axis{stroke:var(--line)}
+.totals{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin:.6rem 0;font-variant-numeric:tabular-nums}
+.totals b{color:var(--accent)}
+.log{font-size:.88rem;padding-left:1.6rem;max-height:26rem;overflow:auto;border:1px solid var(--line);border-radius:6px;padding-top:.4rem;padding-bottom:.4rem}
+.log li{margin:.15rem 0}
+.log .who{font-weight:600}
+.log .bad{color:var(--block);font-weight:600}
+.log .t{color:var(--muted);font-variant-numeric:tabular-nums}
+.blocked li{margin:.4rem 0}
+.blocked .bad{color:var(--block);font-weight:600}
+.verdicts{display:grid;gap:.4rem;margin-top:1rem;font-size:.9rem}
+.verdicts .fail{color:var(--block);font-weight:600}
+.diff .add{display:block;background:var(--add);color:var(--add-fg)}
+.diff .del{display:block;background:var(--del);color:var(--del-fg)}
+.diff .ctx{display:block}
+.proposal{border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem;margin:.8rem 0}
+.proposal h3{margin:.1rem 0 .3rem}
+.report{border-left:4px solid var(--accent);padding:.4rem .9rem;background:var(--panel);border-radius:0 6px 6px 0}
+.report .text,.msgtext{white-space:pre-wrap}
+.sends dl{display:grid;grid-template-columns:minmax(6rem,max-content) 1fr;gap:.25rem .8rem;margin:.4rem 0}
+.sends dt{font-weight:600}
+.sends dd{margin:0}
+.qr{margin:.8rem 0}
+.qr svg{width:min(18rem,100%);height:auto;background:#fff;padding:0}
+.qr .q-on{fill:#000}
+ul.plain{padding-left:1.2rem}ul.plain li{margin:.35rem 0}
