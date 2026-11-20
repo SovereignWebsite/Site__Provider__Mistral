@@ -2,6 +2,20 @@
 // A key arriving as #k=... (from the "send this key to my phone" QR code) is read once and stripped from the
 // address bar here. Nothing else on the page ever sees location.href with the fragment.
 // team.mistral@SovereignWebsite.dinis, 20 November 2026 (security.b, review 005, point c). Code Apache-2.0.
+// Refuse to run inside a frame: another site could frame this page and trick a visitor into using their key
+// (security.b, review 005, 20 Nov 2026, as on /demos/). GitHub Pages cannot send frame-ancestors. This runs before
+// the fragment is read, so a framed page never touches #k=.
+if (window.top !== window.self) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const main = document.getElementById('main') || document.body;
+    const p = document.createElement('p');
+    p.textContent = 'This page does not run inside another page. ';
+    const a = document.createElement('a');
+    a.href = '/team/'; a.target = '_top'; a.rel = 'noopener'; a.textContent = 'Open it directly.';
+    p.append(a); main.replaceChildren(p);
+  });
+  throw new Error('framed: /team/ stopped');
+}
 let pending = '';
 if (location.hash.startsWith('#k=')) {
   try { pending = decodeURIComponent(location.hash.slice(3)); } catch { pending = ''; }

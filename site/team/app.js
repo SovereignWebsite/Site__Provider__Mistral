@@ -322,10 +322,10 @@ async function runLive() {
   if (!keys.has()) { $('#run-status').textContent = 'Set your Mistral key first (section 2), or replay a recorded run.'; $('#key').focus(); return; }
   state.mode = 'live';
   reset(`Live run, model output, ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC, on your key.`);
-  $('#run-status').textContent = 'Running live: each model call goes from this tab to api.mistral.ai with your key.';
   busy(true);
   const ctl = new AbortController(); state.abort = ctl;
   const baseUrl = $('#endpoint').value === 'https://api.eu.mistral.ai/v1' ? 'https://api.eu.mistral.ai/v1' : 'https://api.mistral.ai/v1';
+  $('#run-status').textContent = `Running live: each model call goes from this tab to ${new URL(baseUrl).host} with your key.`;
   const eu = baseUrl.includes('.eu.');
   // The EU endpoint is 10% above list price (conductor.mistral@'s verified facts, 20 Nov 2026).
   const prices = eu ? { ...state.prices, models: Object.fromEntries(Object.entries(state.prices.models).map(([k, v]) => [k, { ...v, input_per_m: v.input_per_m * 1.1, output_per_m: v.output_per_m * 1.1 }])) } : state.prices;
