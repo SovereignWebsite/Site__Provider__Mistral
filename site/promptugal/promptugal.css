@@ -27,3 +27,9 @@ input[type=date]{font:inherit;padding:.35rem .5rem;border:1px solid var(--line);
 .mk-br{background:var(--warnbg,#fff4dc);color:var(--warnfg,#5c4200);border-radius:3px;padding:0 .15em;font-weight:600;text-decoration:underline dotted}
 #r-texts details,#live-out details{margin:.4rem 0}
 #r-texts summary,#live-out summary{cursor:pointer}
+.feeds .feed{border:1px solid var(--line);border-radius:8px;padding:.6rem .9rem;margin:.7rem 0}
+.feeds .feed h3{margin:.1rem 0 .2rem}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.feed dl.sendlist{display:grid;grid-template-columns:max-content 1fr;gap:.15rem .9rem;margin:.4rem 0}
+.feed dl.sendlist dt{font-weight:600;margin:0}
+.feed dl.sendlist dd{margin:0;min-width:0}

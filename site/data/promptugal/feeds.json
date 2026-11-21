@@ -1,0 +1,1413 @@
+{
+ "about": "Every public feed of data.promptugal.news and live.promptugal.news, mapped in code by site/promptugal/tools/map-feeds.mjs. \"cors\" is the Access-Control-Allow-Origin header each file returned to a GET with Origin https://mistral.provider.sovereignweb.site; \"*\" means any web page can read it in the browser. Values describe the feeds as read at read_at; the feeds themselves change twice a day or more.",
+ "read_at": "2026-11-21T02:56Z",
+ "catalogue": "https://data.promptugal.news/api/v1/index.json",
+ "count": 48,
+ "feeds": [
+  {
+   "id": "adsb-faro",
+   "host": "data.promptugal.news",
+   "title": "Flights around Faro airport",
+   "places": [
+    "faro"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Aircraft seen within 40 nautical miles of Faro airport: airline flights by callsign, airline and type; every other aircraft only counted.",
+   "publisher": "adsb.lol (community ADS-B receivers)",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:26Z",
+   "status": "ok",
+   "headline": "6 airline flights, 0 other aircraft",
+   "licence": {
+    "name": "ODbL 1.0",
+    "holder": "adsb.lol contributors",
+    "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "adsb.lol: its API data is licensed under the Open Database License (ODbL 1.0): share-alike, with attribution; no key needed up to 500 requests a day per address.",
+   "url": "https://data.promptugal.news/api/v1/adsb-faro/latest.json",
+   "card": "https://data.promptugal.news/api/v1/adsb-faro/card.json",
+   "page": "https://data.promptugal.news/sources/adsb-faro/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 3261
+  },
+  {
+   "id": "base-gov-pt",
+   "host": "data.promptugal.news",
+   "title": "Public contracts (Portal BASE)",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Public contracts of the câmaras municipais of Lisboa and the Algarve's 16 municipalities, as contracting entity: object, contractors that are companies, price, dates and procedure, for the last 90 days.",
+   "publisher": "IMPIC, Instituto dos Mercados Públicos, do Imobiliário e da Construção (Portal BASE), through dados.gov.pt",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:31Z",
+   "status": "ok",
+   "headline": "1471 contracts",
+   "licence": {
+    "name": "Outra (Domínio Público)",
+    "holder": "IMPIC, Portal BASE",
+    "url": "https://dados.gov.pt/pt/datasets/66d72d488ca4b7cb2de28712/",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "IMPIC publishes these contracts as open data on dados.gov.pt with the licence \"Outra (Domínio Público)\" (other-pd, public domain); we name IMPIC and the Portal BASE as the source and link each contract's page.",
+   "url": "https://data.promptugal.news/api/v1/base-gov-pt/latest.json",
+   "card": "https://data.promptugal.news/api/v1/base-gov-pt/card.json",
+   "page": "https://data.promptugal.news/sources/base-gov-pt/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 1764346
+  },
+  {
+   "id": "cams",
+   "host": "data.promptugal.news",
+   "title": "Public live cameras: where they are and whether they are up",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Public live cameras in Lisboa and the Algarve from official operators (câmaras, Infraestruturas de Portugal, ports, airports, parks, public agencies, tourism boards) and operators' own public pages, each with operator, place, coordinates, terms and licence link, and an hourly check of whether its operator's page is up, with the history of changes. No frame, picture or stream is fetched, kept or analysed.",
+   "publisher": "Each camera's operator, on its own page (register/cams.json lists them)",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:32Z",
+   "status": "ok",
+   "headline": "24 cameras",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "each camera's operator",
+    "url": "https://github.com/PrompTugal/PrompTugal__News__Data/blob/dev/register/cams.json",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Official cameras of public bodies and operators' own pages only, by link; each camera's terms are recorded in register/cams.json (terms_page, terms_summary, licence_link). We ask for the operator's page only, once an hour, and keep only whether it answered and whether it still carries a player: never a frame, snapshot or stream, no face or plate recognition, no recording. Never an unsecured private camera. Take-down on request. Rules confirmed by Dinis Cruz on 18 November 2026, about 19:00 UTC (official cameras only; the operator's own embed or a link; never record; MEO BeachCam through its official embeds; Windy's webcams API under its terms, attributed). Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/cams/latest.json",
+   "card": "https://data.promptugal.news/api/v1/cams/card.json",
+   "page": "https://data.promptugal.news/sources/cams/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 59781
+  },
+  {
+   "id": "cisa-kev",
+   "host": "data.promptugal.news",
+   "title": "Known exploited vulnerabilities (CISA KEV)",
+   "places": [
+    "world"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The US Cybersecurity and Infrastructure Security Agency's catalogue of vulnerabilities known to be exploited: each CVE with vendor, product, the day added and ransomware use; and totals per week and vendor, for cyber.promptugal.news's pulse. Products only, never a victim, host or address.",
+   "publisher": "CISA (Cybersecurity and Infrastructure Security Agency, United States)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:37Z",
+   "status": "ok",
+   "headline": "1786 vulnerabilities",
+   "licence": {
+    "name": "CC0 1.0",
+    "holder": "CISA",
+    "url": "https://github.com/cisagov/kev-data/blob/develop/LICENSE",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "CC0 1.0: \"You may use this data in any legal manner\"; third-party links keep their own terms; no use of the CISA logo or DHS seal, no endorsement implied. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/cisa-kev/latest.json",
+   "card": "https://data.promptugal.news/api/v1/cisa-kev/card.json",
+   "page": "https://data.promptugal.news/sources/cisa-kev/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 706109
+  },
+  {
+   "id": "contracts-finder",
+   "host": "data.promptugal.news",
+   "title": "London public contracts (Contracts Finder)",
+   "places": [
+    "london"
+   ],
+   "places_from": "the source card",
+   "country": "GB",
+   "what": "Procurement notices London buyers published on the UK government's Contracts Finder in the last 24 hours: notice page, stage, title, buyer (mostly public bodies, sometimes an agent publishing for one), value, award value and deadline. No supplier or contact is kept.",
+   "publisher": "Cabinet Office (Contracts Finder, UK government)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:39Z",
+   "status": "ok",
+   "headline": "116 notices in window",
+   "licence": {
+    "name": "Open Government Licence v3.0",
+    "holder": "Crown copyright (Crown Commercial Service)",
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "Open Government Licence v3.0, Crown copyright (Crown Commercial Service); credit every value with: \"Contains public sector information licensed under the Open Government Licence v3.0.\" Every OCDS package carries the licence. robots.txt has no rules (page not found). The published search needs no token. Natural persons are not kept (suppliers can be sole traders). Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/contracts-finder/latest.json",
+   "card": "https://data.promptugal.news/api/v1/contracts-finder/card.json",
+   "page": "https://data.promptugal.news/sources/contracts-finder/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 15339
+  },
+  {
+   "id": "ea-flood",
+   "host": "data.promptugal.news",
+   "title": "London flood warnings and Thames levels (Environment Agency)",
+   "places": [
+    "london"
+   ],
+   "places_from": "the source card",
+   "country": "GB",
+   "what": "Flood warnings and alerts in force around London, and the latest water or tidal level at the Thames stations in London, and the nearest ten rainfall gauges (latest 15-minute total and rain per UTC day, 14 days kept), from the Environment Agency's real-time flood-monitoring API. Each warning with its severity, area and times; each station with its latest readings. Not a warning service.",
+   "publisher": "Environment Agency (England)",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:04:54Z",
+   "status": "ok",
+   "headline": "0 warnings, 10 stations, 10 rain gauges",
+   "licence": {
+    "name": "Open Government Licence v3.0",
+    "holder": "Environment Agency",
+    "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "Open Government Licence v3.0, no registration; acknowledge with: \"this uses Environment Agency flood and river level data from the real-time data API (Beta)\". Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/ea-flood/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ea-flood/card.json",
+   "page": "https://data.promptugal.news/sources/ea-flood/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 26334
+  },
+  {
+   "id": "enisa-pubs",
+   "host": "data.promptugal.news",
+   "title": "ENISA publications",
+   "places": [
+    "europe"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The newest publications on the European Union Agency for Cybersecurity's publications page: title, date, link and the topics ENISA gives, for cyber.promptugal.news. ENISA has no feed, so the HTML list (one page) is read. No report text is kept.",
+   "publisher": "ENISA (European Union Agency for Cybersecurity)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:06:42Z",
+   "status": "ok",
+   "headline": "10 publications",
+   "licence": {
+    "name": "ENISA legal notice (reproduction authorised with the source acknowledged)",
+    "holder": "ENISA",
+    "url": "https://www.enisa.europa.eu/about-enisa/legal-notice",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "ENISA legal notice 1.2: reproduction of material on its website is authorised if the source is acknowledged, unless stated otherwise; the logo only for press and media use with the source acknowledged. robots.txt allows /publications to our agent and asks for a 10 second crawl delay; it blocks named AI crawlers (we are code, no model, and not named). Dinis decided on 18 Nov 2026 that ENISA is read through its published interfaces. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/enisa-pubs/latest.json",
+   "card": "https://data.promptugal.news/api/v1/enisa-pubs/card.json",
+   "page": "https://data.promptugal.news/sources/enisa-pubs/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 4912
+  },
+  {
+   "id": "eurostat-tourism",
+   "host": "data.promptugal.news",
+   "title": "Tourist nights by where guests live: Portugal, Algarve, Lisbon, London (Eurostat)",
+   "places": [
+    "europe",
+    "portugal",
+    "algarve",
+    "lisboa",
+    "london"
+   ],
+   "places_from": "the source card",
+   "country": "EU",
+   "what": "Nights spent at tourist accommodation (hotels, short-stay accommodation and camping) by the guest's residence, for Portugal, the Algarve (PT15), the Lisbon metropolitan area (PT17) and London (UKI): annual for the last 10 years and monthly for Portugal for 36 months. Regions are split into domestic, foreign and total guests; Portugal as a whole is also split by named country (United Kingdom, Germany, France, Spain, the Netherlands, the United States). Lisbon is PT17 to 2022 and Grande Lisboa (PT1A) plus Península de Setúbal (PT1B) from 2023, as Eurostat changed the regions. Eurostat's London data stops in 2016.",
+   "publisher": "Eurostat (European Commission)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:06:46Z",
+   "status": "ok",
+   "headline": "280 rows",
+   "licence": {
+    "name": "Eurostat reuse policy (Commission Decision of 12 December 2011)",
+    "holder": "Eurostat",
+    "url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "Reuse of statistical data is authorised for commercial or non-commercial purposes provided the source is acknowledged (Commission Decision of 12 December 2011); no key. Acknowledge with \"Source: Eurostat\" and the dataset code. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/eurostat-tourism/latest.json",
+   "card": "https://data.promptugal.news/api/v1/eurostat-tourism/card.json",
+   "page": "https://data.promptugal.news/sources/eurostat-tourism/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 66964
+  },
+  {
+   "id": "euvd",
+   "host": "data.promptugal.news",
+   "title": "EU Vulnerability Database: latest, exploited and recently updated (ENISA EUVD)",
+   "places": [
+    "europe"
+   ],
+   "places_from": "the source card",
+   "country": "EU",
+   "what": "ENISA's EU Vulnerability Database (EUVD), read through its published API: the vulnerabilities published or updated in the 24 hours before each read, and EUVD's own latest and exploited lists. Each has its EUVD identifier, CVE aliases (checked), published and updated times, CVSS base score and version, a severity band (ours, from the score), vendor and product names, whether EUVD lists it as exploited, and a link to its EUVD page; and totals per day and severity (14 days), for cyber.promptugal.news's pulse. Products only, never a victim, host or address. No descriptions or reference links are kept.",
+   "publisher": "ENISA (European Union Agency for Cybersecurity), EU Vulnerability Database",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:06:53Z",
+   "status": "partly failed",
+   "headline": "3004 in last 24h",
+   "licence": {
+    "name": "ENISA legal notice (reproduction authorised with the source acknowledged)",
+    "holder": "ENISA, EU Vulnerability Database",
+    "url": "https://www.enisa.europa.eu/about-enisa/legal-notice",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "EUVD's API page says no authentication is needed and sets limits of 100 records a request; the EUVD site's footer links ENISA's legal notice, 1.2: reproduction of material on ENISA's website is authorised if the source is acknowledged, unless stated otherwise. robots.txt of euvd.enisa.europa.eu: all agents, nothing disallowed; euvdservices.enisa.europa.eu (the API host) has no robots.txt (404). We name ENISA and the EUVD as the source. EUVD has no separate data licence page that we found: reuse rests on the ENISA legal notice (not reviewed by a person).",
+   "url": "https://data.promptugal.news/api/v1/euvd/latest.json",
+   "card": "https://data.promptugal.news/api/v1/euvd/card.json",
+   "page": "https://data.promptugal.news/sources/euvd/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 2775041
+  },
+  {
+   "id": "events-pt",
+   "host": "data.promptugal.news",
+   "title": "Events in Portugal, by place",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Public events on now or in the next 60 days in Lisbon and the Algarve places, as schema.org Event records, each with its source URL and the time read.",
+   "publisher": "Câmara Municipal de Lisboa (Agenda Cultural de Lisboa, agendalx.pt) Câmara Municipal de Lagos (cm-lagos.pt), Teatro das Figuras, Faro (teatrodasfiguras.pt) and Câmara Municipal de Tavira (cm-tavira.pt)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:12:44Z",
+   "status": "partly failed",
+   "headline": "583 events",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "the agenda each event comes from",
+    "url": "https://www.agendalx.pt/",
+    "commercial_use": "unclear"
+   },
+   "terms_summary": "Strictest of the sources: no reuse licence or terms page was found for any of the four hosts (teatrodasfiguras.pt and cm-tavira.pt show only \"Todos os direitos reservados\" in their footers, and cm-tavira.pt has no robots.txt). The robots.txt files that exist allow the paths read; agendalx.pt sets Content-Signal search=yes, ai-train=no, use=reference. So: reference use only, name the source, link to the event, no AI training. Not reviewed by a person: whether this is enough to republish is for Dinis.",
+   "url": "https://data.promptugal.news/api/v1/events-pt/latest.json",
+   "card": "https://data.promptugal.news/api/v1/events-pt/card.json",
+   "page": "https://data.promptugal.news/sources/events-pt/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 774818
+  },
+  {
+   "id": "github-pt",
+   "host": "data.promptugal.news",
+   "title": "Code from Portuguese organisations on GitHub",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Public repositories and latest releases of Portuguese startups, companies, public bodies, universities and open-source projects on GitHub, each with its source URL, licence and the time read.",
+   "publisher": "The organisations listed in sources/github-pt/orgs.json, through GitHub, Inc.'s REST API",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:13:30Z",
+   "status": "partly failed",
+   "headline": "21 orgs",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "each repository's organisation",
+    "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#h-api-terms",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "GitHub's terms allow this use: reading public data through the API is permitted; excessive requests may be suspended; data must not be used for spam or to sell users' personal information. We read organisations' public repositories and releases only, collect no personal data, stay well under the rate limits, and keep each repository's own licence (or a link to its terms) on every item. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/github-pt/latest.json",
+   "card": "https://data.promptugal.news/api/v1/github-pt/card.json",
+   "page": "https://data.promptugal.news/sources/github-pt/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 542007
+  },
+  {
+   "id": "ipma-city-forecasts",
+   "host": "data.promptugal.news",
+   "title": "IPMA daily forecasts by place",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Five-day forecasts (minimum and maximum temperature, chance of rain, weather type, wind) for each district capital and island, and Loulé, Portimão and Sagres.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:13:52Z",
+   "status": "ok",
+   "headline": "35 places",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-city-forecasts/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-city-forecasts/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-city-forecasts/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 583801
+  },
+  {
+   "id": "ipma-fire-risk",
+   "host": "data.promptugal.news",
+   "title": "IPMA fire risk",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The daily fire risk class (RCM, low to maximum) for every municipality of mainland Portugal, today and the next two days.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:22Z",
+   "status": "ok",
+   "headline": "278 municipalities",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-fire-risk/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-fire-risk/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-fire-risk/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 87683
+  },
+  {
+   "id": "ipma-observations",
+   "host": "data.promptugal.news",
+   "title": "IPMA station observations",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The latest hourly observation of each IPMA surface station: temperature, humidity, wind, rain, pressure and radiation, with the station's name and position.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:29Z",
+   "status": "ok",
+   "headline": "126 of 227 stations reporting",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-observations/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-observations/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-observations/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 414404
+  },
+  {
+   "id": "ipma-sea",
+   "host": "data.promptugal.news",
+   "title": "IPMA sea forecast",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Wave height, period and direction, total sea and sea temperature for each coastal place, today and the next two days.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:34Z",
+   "status": "ok",
+   "headline": "12 coastal places",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-sea/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-sea/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-sea/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 13526
+  },
+  {
+   "id": "ipma-uv",
+   "host": "data.promptugal.news",
+   "title": "IPMA UV index",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The UV index forecast by place and day.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:44Z",
+   "status": "ok",
+   "headline": "28 places",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-uv/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-uv/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-uv/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 22926
+  },
+  {
+   "id": "ipma-warnings",
+   "host": "data.promptugal.news",
+   "title": "IPMA weather warnings",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The weather warnings for every warning area of Portugal (the 18 mainland districts, Madeira and the Azores): yellow, orange and red in full, green counted.",
+   "publisher": "IPMA, Instituto Português do Mar e da Atmosfera",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:47Z",
+   "status": "ok",
+   "headline": "26 active warnings in 25 areas",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "IPMA, Instituto Português do Mar e da Atmosfera",
+    "url": "https://api.ipma.pt/",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "IPMA: free to copy and use for personal or public use if the use has no profit-making or offensive purpose; always name IPMA as the source.",
+   "url": "https://data.promptugal.news/api/v1/ipma-warnings/latest.json",
+   "card": "https://data.promptugal.news/api/v1/ipma-warnings/card.json",
+   "page": "https://data.promptugal.news/sources/ipma-warnings/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 8208
+  },
+  {
+   "id": "meteoalarm-pt",
+   "host": "data.promptugal.news",
+   "title": "MeteoAlarm CAP feed for Portugal",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Every CAP warning message in MeteoAlarm's Portugal feed, one line each: area, hazard, level, onset, expiry, time of issue and text, with what appeared or left since the read before.",
+   "publisher": "MeteoAlarm (EUMETNET), from IPMA",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:49Z",
+   "status": "ok",
+   "headline": "83 messages, 26 not expired",
+   "licence": {
+    "name": "the source's terms",
+    "holder": "MeteoAlarm (EUMETNET), for IPMA",
+    "url": "https://www.meteoalarm.org/en/live/page/terms-and-conditions",
+    "commercial_use": "unclear"
+   },
+   "terms_summary": "MeteoAlarm: re-users must name the national service (IPMA), keep the time of issue, link www.meteoalarm.org and publish MeteoAlarm's disclaimer. latest.json carries all four.",
+   "url": "https://data.promptugal.news/api/v1/meteoalarm-pt/latest.json",
+   "card": "https://data.promptugal.news/api/v1/meteoalarm-pt/card.json",
+   "page": "https://data.promptugal.news/sources/meteoalarm-pt/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 58769
+  },
+  {
+   "id": "nvd-cve",
+   "host": "data.promptugal.news",
+   "title": "CVEs published or modified in the last 24 hours (NVD)",
+   "places": [
+    "world"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "NIST's National Vulnerability Database, CVE API 2.0: the CVEs published or modified in the 24 hours before each read, each with its CNA, status, CVSS base severity and score, weakness types and the vendors and products (NVD's CPE configurations, else the CNA's own list in the same record, marked); and totals per day and severity, for cyber.promptugal.news's pulse. Products only, never a victim, host or address. No descriptions or reference links are kept.",
+   "publisher": "NIST, National Vulnerability Database (United States)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:15:53Z",
+   "status": "ok",
+   "headline": "2196 cves in window",
+   "licence": {
+    "name": "NVD terms of use",
+    "holder": "NIST, National Vulnerability Database",
+    "url": "https://nvd.nist.gov/developers/terms-of-use",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "NVD API Terms of Use: the API is for building a service to \"search, display, analyze, retrieve, view and otherwise get\" NVD data; asked to display \"This product uses the NVD API but is not endorsed or certified by the NVD.\"; the NVD name may identify the source but not imply endorsement; if you modify the content you may not attribute it to the NVD (our totals are ours, our per-CVE values are kept as served); public rate limit 5 requests in a rolling 30 seconds without a key (we use none, seven seconds apart); no more than once every two hours (we read every 6 hours). Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/nvd-cve/latest.json",
+   "card": "https://data.promptugal.news/api/v1/nvd-cve/card.json",
+   "page": "https://data.promptugal.news/sources/nvd-cve/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 1208528
+  },
+  {
+   "id": "nvd-kev",
+   "host": "data.promptugal.news",
+   "title": "NVD's record of every CVE on CISA's KEV list",
+   "places": [
+    "world"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "NIST's National Vulnerability Database, CVE API 2.0 with the hasKev filter: every CVE on CISA's Known Exploited Vulnerabilities list as NVD records it (CNA domain, status, CVSS, weakness types, vendors and products, published and lastModified, NVD's copy of the KEV dates), once a day. Descriptions and references are not kept.",
+   "publisher": "NIST, National Vulnerability Database (United States)",
+   "updated": "daily",
+   "expected_cadence": "daily",
+   "last_read_by_promptugal": "2026-11-20T07:17:20Z",
+   "status": "ok",
+   "headline": "1786 cves",
+   "licence": {
+    "name": "NVD terms of use",
+    "holder": "NIST, National Vulnerability Database",
+    "url": "https://nvd.nist.gov/developers/terms-of-use",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "NVD API Terms of Use: the API is for building a service to \"search, display, analyze, retrieve, view and otherwise get\" NVD data; asked to display \"This product uses the NVD API but is not endorsed or certified by the NVD.\"; the NVD name may identify the source but not imply endorsement; if you modify the content you may not attribute it to the NVD (our totals are ours, our per-CVE values are kept as served); public rate limit 5 requests in a rolling 30 seconds without a key (we use none, seven seconds apart); no more than once every two hours (we read every 6 hours). Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/nvd-kev/latest.json",
+   "card": "https://data.promptugal.news/api/v1/nvd-kev/card.json",
+   "page": "https://data.promptugal.news/sources/nvd-kev/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 1539414
+  },
+  {
+   "id": "open-meteo-london",
+   "host": "data.promptugal.news",
+   "title": "London forecast (Open-Meteo)",
+   "places": [
+    "london"
+   ],
+   "places_from": "the source card",
+   "country": "GB",
+   "what": "Forecast for London from Open-Meteo: hourly temperature, chance and amount of rain, wind and weather code for 3 days, each day's lowest and highest temperature, and every forecast we served kept for 14 days. A model forecast for a grid point, not a warning.",
+   "publisher": "Open-Meteo (OpenMeteo GmbH, Switzerland)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:06Z",
+   "status": "ok",
+   "headline": "72 hourly",
+   "licence": {
+    "name": "CC BY 4.0 (free API, non-commercial use)",
+    "holder": "Open-Meteo",
+    "url": "https://open-meteo.com/en/terms",
+    "commercial_use": "not allowed"
+   },
+   "terms_summary": "Used under Open-Meteo's free non-commercial terms because data.promptugal.news is free and carries no subscriptions or adverts (Dinis, 18 Nov 2026). Sites that charge must not reuse it without a paid plan; that line is still being settled. Data CC BY 4.0: credit Open-Meteo (link to https://open-meteo.com/) and the models' providers, and say if changed. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/open-meteo-london/latest.json",
+   "card": "https://data.promptugal.news/api/v1/open-meteo-london/card.json",
+   "page": "https://data.promptugal.news/sources/open-meteo-london/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 25531
+  },
+  {
+   "id": "social",
+   "host": "data.promptugal.news",
+   "title": "Social signals: organisations' public posts, by link",
+   "places": [
+    "portugal"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "Links to recent public posts by the official accounts of organisations (câmaras, public bodies, venues, organisers, news outlets, companies) on Bluesky and Mastodon, with metadata only: account, time, matched topics and places, language, media or not. No post text or media is stored.",
+   "publisher": "The organisations themselves, through Bluesky (public AppView API) and Mastodon (public instance API)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:08Z",
+   "status": "partly failed",
+   "headline": "146 posts",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "Organisations only, official interfaces only, by link. Bluesky: robots.txt of the public API allows crawling it and asks for backoff on 429; the Terms of Service (14 Aug 2025) leave each post's content with its author, so we store link and metadata only and credit the organisation. Mastodon: mastodon.social's terms (effective 2026-08-31) say whoever owns the content retains ownership and allow API access; its robots.txt disallows only /media_proxy/, /interact/ and a domain-blocks path. Licence on each post: the platform's terms, holder the organisation. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/social/latest.json",
+   "card": "https://data.promptugal.news/api/v1/social/card.json",
+   "page": "https://data.promptugal.news/sources/social/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 82056
+  },
+  {
+   "id": "tfl-jamcams",
+   "host": "data.promptugal.news",
+   "title": "London traffic cameras (TfL JamCams)",
+   "places": [
+    "london"
+   ],
+   "places_from": "our classification",
+   "country": "GB",
+   "what": "Transport for London's 889 traffic cameras: name, position, view, whether TfL marks each available, and the addresses of TfL's own still image and short clip. No image or clip is fetched or kept. Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019].",
+   "publisher": "Transport for London (TfL), Unified API",
+   "updated": "hourly",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:33Z",
+   "status": "ok",
+   "headline": "889 cameras",
+   "licence": {
+    "name": "TfL Transport Data Service terms (OGL v2.0 based)",
+    "holder": "Transport for London",
+    "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "TfL's Transport Data Service terms (based on the Open Government Licence v2.0 with TfL amendments): free to copy, publish, distribute, transmit and adapt the information and to exploit it commercially and non-commercially. Required: the credit 'Powered by TfL Open Data' and 'Contains OS data © Crown copyright and database rights 2016' and Geomni UK Map data © and database rights [2019]; TfL's design and branding guidelines; at most 500 calls a minute per feed; no suggestion that TfL endorses us. Read by Dinis Cruz in a browser on 18 November 2026 (tfl.gov.uk answers agents with a bot check). Not legal advice.",
+   "url": "https://data.promptugal.news/api/v1/tfl-jamcams/latest.json",
+   "card": "https://data.promptugal.news/api/v1/tfl-jamcams/card.json",
+   "page": "https://data.promptugal.news/sources/tfl-jamcams/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 448474
+  },
+  {
+   "id": "youtube-replays",
+   "host": "data.promptugal.news",
+   "title": "Web Summit 2026 replays on YouTube",
+   "places": [
+    "lisboa"
+   ],
+   "places_from": "the source card",
+   "country": "PT",
+   "what": "The recorded talks of Web Summit 2026 (Lisbon, 9 to 12 November 2026; Day Two, 11 November, cancelled) that Web Summit's official YouTube channel published since 1 November 2026: title, time published, length, view and like counts as read, a link to YouTube, the address for YouTube's own player, and the chapters (talk start times and titles, speakers where the line names them) read from each description's timestamp lines. The videos stay Web Summit's: we link and embed with YouTube's player, and keep no description, thumbnail or comment.",
+   "publisher": "Web Summit, through YouTube (YouTube LLC, Google)",
+   "updated": "every 6 hours",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:36Z",
+   "status": "ok",
+   "headline": "6 videos, 0 chapters",
+   "licence": {
+    "name": "YouTube API Services Terms of Service and Developer Policies",
+    "holder": "Web Summit (the videos), YouTube (the API data)",
+    "url": "https://developers.google.com/youtube/terms/developer-policies",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "YouTube API Services Terms of Service and Developer Policies (both last updated 2026-11-06 UTC). Data read without a user's sign-in is Non-Authorized Data: stored for no longer than 30 calendar days, then deleted or refreshed; so this source keeps only the latest read, replaced every run, with no raw copy or history in a vault. YouTube must be shown as the source and its Terms linked (https://www.youtube.com/t/terms); no copy or offline use of the audiovisual content (we link and use YouTube's embedded player only); no aggregation of API Data beyond one content owner's own channels (we read one channel and add no totals across channels). The videos, titles and descriptions stay Web Summit's. Not reviewed by a person.",
+   "url": "https://data.promptugal.news/api/v1/youtube-replays/latest.json",
+   "card": "https://data.promptugal.news/api/v1/youtube-replays/card.json",
+   "page": "https://data.promptugal.news/sources/youtube-replays/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 7304
+  },
+  {
+   "id": "storm-charles-archive",
+   "host": "data.promptugal.news",
+   "title": "Storm Charles archive",
+   "places": [
+    "lisboa",
+    "madeira"
+   ],
+   "places_from": "our classification",
+   "country": null,
+   "what": "The data files behind storm-charles.promptugal.news (Lisbon and Madeira, 10 to 12 November 2026): decisions, exposure, flights, transport, weather and the signal timeline, every file with its size and sha256, checked against the bytes served.",
+   "publisher": "storm-charles.promptugal.news (the Storm Charles incident team)",
+   "updated": "once",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-17T19:27:57Z",
+   "status": "archived",
+   "headline": "142 files",
+   "licence": {
+    "name": "Apache-2.0",
+    "holder": "PrompTugal (the Storm Charles site)",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "commercial_use": "allowed"
+   },
+   "terms_summary": "The storm site's own data: Apache-2.0 (its repository's licence). Quoted sources keep their own terms; each item links its source.",
+   "url": "https://data.promptugal.news/api/v1/storm-charles-archive/latest.json",
+   "card": "https://data.promptugal.news/api/v1/storm-charles-archive/card.json",
+   "page": "https://data.promptugal.news/sources/storm-charles-archive/",
+   "http": 200,
+   "cors": "*",
+   "bytes": 105773
+  },
+  {
+   "id": "by-place/albufeira",
+   "host": "data.promptugal.news",
+   "title": "Now in Albufeira",
+   "places": [
+    "albufeira"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/albufeira.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5944
+  },
+  {
+   "id": "by-place/alcoutim",
+   "host": "data.promptugal.news",
+   "title": "Now in Alcoutim",
+   "places": [
+    "alcoutim"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/alcoutim.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5500
+  },
+  {
+   "id": "by-place/algarve",
+   "host": "data.promptugal.news",
+   "title": "Now in algarve",
+   "places": [
+    "algarve"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in the Algarve: IPMA's warnings for the Faro district, Faro airport, and each place's nearest station.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "warnings, airport, places",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/algarve.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5920
+  },
+  {
+   "id": "by-place/aljezur",
+   "host": "data.promptugal.news",
+   "title": "Now in Aljezur",
+   "places": [
+    "aljezur"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/aljezur.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5762
+  },
+  {
+   "id": "by-place/castro-marim",
+   "host": "data.promptugal.news",
+   "title": "Now in Castro Marim",
+   "places": [
+    "castro-marim"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/castro-marim.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5780
+  },
+  {
+   "id": "by-place/faro",
+   "host": "data.promptugal.news",
+   "title": "Now in Faro",
+   "places": [
+    "faro"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/faro.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 7060
+  },
+  {
+   "id": "by-place/lagoa",
+   "host": "data.promptugal.news",
+   "title": "Now in Lagoa",
+   "places": [
+    "lagoa"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/lagoa.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5956
+  },
+  {
+   "id": "by-place/lagos",
+   "host": "data.promptugal.news",
+   "title": "Now in Lagos",
+   "places": [
+    "lagos"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/lagos.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5965
+  },
+  {
+   "id": "by-place/lisboa",
+   "host": "data.promptugal.news",
+   "title": "Now in Lisboa",
+   "places": [
+    "lisboa"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/lisboa.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5965
+  },
+  {
+   "id": "by-place/london",
+   "host": "data.promptugal.news",
+   "title": "Now in London",
+   "places": [
+    "london"
+   ],
+   "places_from": "the file",
+   "country": "GB",
+   "what": "Now in London, from the Environment Agency (flood warnings and Thames levels, Open Government Licence) and Open-Meteo (forecast, CC BY 4.0), as collected by data.promptugal.news: each value with its source and the time read.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "forecast, floods",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: the Environment Agency's flood data under the Open Government Licence v3.0, Open-Meteo's forecast under CC BY 4.0 (each block carries its own).",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/london.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 4024
+  },
+  {
+   "id": "by-place/loule",
+   "host": "data.promptugal.news",
+   "title": "Now in Loulé",
+   "places": [
+    "loule"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/loule.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 7251
+  },
+  {
+   "id": "by-place/monchique",
+   "host": "data.promptugal.news",
+   "title": "Now in Monchique",
+   "places": [
+    "monchique"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/monchique.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5671
+  },
+  {
+   "id": "by-place/olhao",
+   "host": "data.promptugal.news",
+   "title": "Now in Olhão",
+   "places": [
+    "olhao"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/olhao.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 7248
+  },
+  {
+   "id": "by-place/portimao",
+   "host": "data.promptugal.news",
+   "title": "Now in Portimão",
+   "places": [
+    "portimao"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/portimao.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5968
+  },
+  {
+   "id": "by-place/quarteira",
+   "host": "data.promptugal.news",
+   "title": "Now in Quarteira",
+   "places": [
+    "quarteira"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/quarteira.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5955
+  },
+  {
+   "id": "by-place/sao-bras-de-alportel",
+   "host": "data.promptugal.news",
+   "title": "Now in São Brás de Alportel",
+   "places": [
+    "sao-bras-de-alportel"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/sao-bras-de-alportel.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5710
+  },
+  {
+   "id": "by-place/silves",
+   "host": "data.promptugal.news",
+   "title": "Now in Silves",
+   "places": [
+    "silves"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/silves.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5685
+  },
+  {
+   "id": "by-place/tavira",
+   "host": "data.promptugal.news",
+   "title": "Now in Tavira",
+   "places": [
+    "tavira"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/tavira.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5935
+  },
+  {
+   "id": "by-place/vila-do-bispo",
+   "host": "data.promptugal.news",
+   "title": "Now in Vila do Bispo",
+   "places": [
+    "vila-do-bispo"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/vila-do-bispo.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 5777
+  },
+  {
+   "id": "by-place/vila-real-de-santo-antonio",
+   "host": "data.promptugal.news",
+   "title": "Now in Vila Real de Santo António",
+   "places": [
+    "vila-real-de-santo-antonio"
+   ],
+   "places_from": "the file",
+   "country": "PT",
+   "what": "Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata.",
+   "publisher": "PrompTugal.news (from the sources it names)",
+   "updated": "twice a day",
+   "expected_cadence": "twice a day",
+   "last_read_by_promptugal": "2026-11-20T18:16:43Z",
+   "status": null,
+   "headline": "station, forecast, warnings, fire_risk, uv, sea, airport",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": "per item"
+   },
+   "terms_summary": "Our record; each value keeps its source, under that source's licence: IPMA values under IPMA's terms (https://api.ipma.pt/), adsb.lol counts under ODbL 1.0.",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/vila-real-de-santo-antonio.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 6008
+  },
+  {
+   "id": "live/views",
+   "host": "live.promptugal.news",
+   "title": "Live cameras: views",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": "PT",
+   "what": "The API of live.promptugal.news: GET only, plain JSON files, rebuilt on every release; the changing figures load in the browser. Metadata only: no frame, snapshot or stream.",
+   "publisher": "PrompTugal.news Live (from the camera register)",
+   "updated": "on every release of live.promptugal.news",
+   "expected_cadence": null,
+   "last_read_by_promptugal": "2026-11-20T19:29:38Z",
+   "status": null,
+   "headline": "read (913 cameras kept, 0 skipped)",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": null
+   },
+   "terms_summary": "Our record (structure, names, status as read). Each camera's pictures stay with its operator, under its terms (each item's license and terms); we never store them.",
+   "url": "https://live.promptugal.news/api/v1/views.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 735544
+  },
+  {
+   "id": "live/cameras",
+   "host": "live.promptugal.news",
+   "title": "Live cameras: cameras",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": "PT",
+   "what": "The API of live.promptugal.news: GET only, plain JSON files, rebuilt on every release; the changing figures load in the browser. Metadata only: no frame, snapshot or stream.",
+   "publisher": "PrompTugal.news Live (from the camera register)",
+   "updated": "on every release of live.promptugal.news",
+   "expected_cadence": null,
+   "last_read_by_promptugal": "2026-11-20T19:29:38Z",
+   "status": null,
+   "headline": "read (913 cameras kept, 0 skipped)",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": null
+   },
+   "terms_summary": "Our record (structure, names, status as read). Each camera's pictures stay with its operator, under its terms (each item's license and terms); we never store them.",
+   "url": "https://live.promptugal.news/api/v1/cameras.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 2440071
+  },
+  {
+   "id": "live/places/index",
+   "host": "live.promptugal.news",
+   "title": "Live cameras: places/index",
+   "places": [
+    "lisboa",
+    "algarve"
+   ],
+   "places_from": "our classification",
+   "country": "PT",
+   "what": "The API of live.promptugal.news: GET only, plain JSON files, rebuilt on every release; the changing figures load in the browser. Metadata only: no frame, snapshot or stream.",
+   "publisher": "PrompTugal.news Live (from the camera register)",
+   "updated": "on every release of live.promptugal.news",
+   "expected_cadence": null,
+   "last_read_by_promptugal": "2026-11-20T19:29:38Z",
+   "status": null,
+   "headline": "read (913 cameras kept, 0 skipped)",
+   "licence": {
+    "name": "CC BY 4.0",
+    "holder": "PrompTugal.news",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "commercial_use": null
+   },
+   "terms_summary": "Our record (structure, names, status as read). Each camera's pictures stay with its operator, under its terms (each item's license and terms); we never store them.",
+   "url": "https://live.promptugal.news/api/v1/places/index.json",
+   "http": 200,
+   "cors": "*",
+   "bytes": 92637
+  }
+ ]
+}
