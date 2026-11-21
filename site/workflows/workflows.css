@@ -99,3 +99,9 @@ svg.flow{display:block;width:100%;height:auto;max-height:42rem;border-radius:16p
 .xr-list li{padding:.55rem 0;border-bottom:1px solid var(--line)}
 .xr-list .xr-q{display:block;color:var(--muted);margin-top:.25rem}
 .xr-tally{font-weight:700}
+
+/* Messages and Deliverables. */
+.fl-rev{color:#b9a3ff}.fl-dest{color:#f08bb0}
+.fl-c-conductor\.mistral{color:#9cc2ff}
+.fl-verdict.v-trace{stroke:#7aa7ff;stroke-width:1.6;opacity:.35}
+.mtime{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700}

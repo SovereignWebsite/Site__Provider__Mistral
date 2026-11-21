@@ -76,7 +76,7 @@ export function createFlow(svg, nodes, { title, layout = LAYOUT, structure = STR
       if (!from || e.from === e.to || !N.get(e.to)) return;
       from.hotUntil = now + 500;
       if (reduced()) { N.get(e.to).hotUntil = now + 900; kick(); return; }
-      const cls = 'fl-c-' + e.from + (e.kind === 'tool' || e.kind === 'result' ? ' fl-toolmsg' : '');
+      const cls = 'fl-c-' + (e.tone || e.from) + (e.kind === 'tool' || e.kind === 'result' ? ' fl-toolmsg' : '');
       fly.push({ a: layout[e.from], b: layout[e.to], to: e.to, t0: now, ms: Math.max(260, 900 / Math.sqrt(speed)),
         tail: mk('path', { class: 'fl-tail ' + cls }, trails), halo: mk('circle', { r: 11, class: 'fl-halo ' + cls }, dots), dot: mk('circle', { r: 5, class: 'fl-dot ' + cls }, dots) });
       kick();

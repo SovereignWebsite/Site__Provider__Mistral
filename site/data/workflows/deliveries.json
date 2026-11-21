@@ -1,0 +1,719 @@
+{
+ "about": "Every commit on dev of SovereignWebsite/Site__Provider__Mistral, as messages (the roster agents a commit names) and deliverables (the parts of the site its files changed). Made from git by site/workflows/tools/make-deliveries.mjs; names only from /data/agents/roster.json.",
+ "made": "2026-11-21T03:24:30.224Z",
+ "commits": [
+  {
+   "sha": "06e8884",
+   "at": "2026-11-20T22:58:32+00:00",
+   "agent": null,
+   "mentions": [],
+   "subject": "Initial commit",
+   "files": 1,
+   "parts": {
+    "repository": 1
+   }
+  },
+  {
+   "sha": "6b9752f",
+   "at": "2026-11-20T22:58:47+00:00",
+   "agent": null,
+   "mentions": [],
+   "subject": "Seed 16 files from SovereignWebsite__Factory (org-apply)",
+   "files": 16,
+   "parts": {
+    "repository": 8,
+    "home and root files": 3,
+    "admin": 1,
+    "agents": 1,
+    "assets": 1,
+    "data/agents.json": 1,
+    "start": 1
+   }
+  },
+  {
+   "sha": "c15c2b9",
+   "at": "2026-11-20T23:12:31+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: the browser demos (same brief, three brains; your key; on your device)",
+   "files": 11,
+   "parts": {
+    "demos": 10,
+    "home and root files": 1
+   }
+  },
+  {
+   "sha": "983035b",
+   "at": "2026-11-20T23:14:49+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: five designs, sources, questions; demos pass axe",
+   "files": 41,
+   "parts": {
+    "docs": 2,
+    "admin": 1,
+    "agents": 1,
+    "assets": 15,
+    "data/agents.json": 1,
+    "demos": 4,
+    "designs": 6,
+    "home and root files": 2,
+    "questions": 1,
+    "sources": 1,
+    "start": 1,
+    "tools": 6
+   }
+  },
+  {
+   "sha": "a35fd4a",
+   "at": "2026-11-20T23:19:18+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: demos refuse to run in a frame; password-manager note",
+   "files": 1,
+   "parts": {
+    "demos": 1
+   }
+  },
+  {
+   "sha": "a9269c7",
+   "at": "2026-11-20T23:21:21+00:00",
+   "agent": "evals.mistral",
+   "mentions": [],
+   "subject": "evals.mistral: Mistral evals board, run-it-yourself page, six suites and the first run",
+   "files": 38,
+   "parts": {
+    "data/evals": 13,
+    "evals": 25
+   }
+  },
+  {
+   "sha": "b172b31",
+   "at": "2026-11-20T23:17:31+00:00",
+   "agent": "team.mistral",
+   "mentions": [],
+   "subject": "Add /team/: seven agents inside the site, live on Mistral, with recorded runs",
+   "files": 32,
+   "parts": {
+    "data/team": 5,
+    "team": 27
+   }
+  },
+  {
+   "sha": "144c0e8",
+   "at": "2026-11-20T23:23:45+00:00",
+   "agent": "team.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "/team/: refuse to run in a frame, password-manager note, endpoint in status",
+   "files": 3,
+   "parts": {
+    "team": 3
+   }
+  },
+  {
+   "sha": "bca2c0b",
+   "at": "2026-11-20T23:25:25+00:00",
+   "agent": "evals.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "evals.mistral: rescore a too-lax injection check; show the scam-address finding; frame refusal",
+   "files": 14,
+   "parts": {
+    "data/evals": 9,
+    "evals": 5
+   }
+  },
+  {
+   "sha": "4ce8255",
+   "at": "2026-11-20T23:26:33+00:00",
+   "agent": "team.mistral",
+   "mentions": [],
+   "subject": "/team/: handover note with the review outcome and what waits on a person",
+   "files": 1,
+   "parts": {
+    "team": 1
+   }
+  },
+  {
+   "sha": "ea84d5c",
+   "at": "2026-11-20T23:29:09+00:00",
+   "agent": "evals.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "evals.mistral: run page keeps the key in memory only (security.b review 006)",
+   "files": 4,
+   "parts": {
+    "evals": 4
+   }
+  },
+  {
+   "sha": "6cbfa89",
+   "at": "2026-11-20T23:33:20+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: design round 2 (design.b.rounds round 1 findings)",
+   "files": 31,
+   "parts": {
+    "repository": 1,
+    "docs": 1,
+    "admin": 1,
+    "agents": 1,
+    "assets": 13,
+    "demos": 1,
+    "designs": 6,
+    "home and root files": 1,
+    "questions": 1,
+    "sources": 1,
+    "start": 1,
+    "tools": 3
+   }
+  },
+  {
+   "sha": "e2835c1",
+   "at": "2026-11-20T23:35:19+00:00",
+   "agent": "evals.mistral",
+   "mentions": [],
+   "subject": "evals.mistral: mistral-large-4 rerun at a 4000-token limit; board merges both runs; spend",
+   "files": 5,
+   "parts": {
+    "data/evals": 3,
+    "evals": 2
+   }
+  },
+  {
+   "sha": "7b20446",
+   "at": "2026-11-20T23:38:33+00:00",
+   "agent": "swarm.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "swarm.mistral: the Swarm on Mistral, replayed (site/swarm/)",
+   "files": 43,
+   "parts": {
+    "data/swarm": 32,
+    "swarm": 11
+   }
+  },
+  {
+   "sha": "a4f8efc",
+   "at": "2026-11-20T23:38:54+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: 24px footnote targets; code scrolls in its box on phones",
+   "files": 1,
+   "parts": {
+    "assets": 1
+   }
+  },
+  {
+   "sha": "b535b68",
+   "at": "2026-11-20T23:40:41+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: shared shell on /team/ and /evals/; plain results line",
+   "files": 4,
+   "parts": {
+    "assets": 1,
+    "evals": 2,
+    "team": 1
+   }
+  },
+  {
+   "sha": "a17c9c7",
+   "at": "2026-11-20T23:40:49+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: /swarm/ linked from home and designs (generated)",
+   "files": 6,
+   "parts": {
+    "designs": 5,
+    "home and root files": 1
+   }
+  },
+  {
+   "sha": "250b35c",
+   "at": "2026-11-20T23:43:07+00:00",
+   "agent": "swarm.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "swarm.mistral: run it yourself (security.b review 007), untrusted-data wrapping, rerun evals",
+   "files": 20,
+   "parts": {
+    "data/swarm": 14,
+    "swarm": 6
+   }
+  },
+  {
+   "sha": "eafcec7",
+   "at": "2026-11-20T23:50:50+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: code shows it scrolls; evals captions wrap (design round 3)",
+   "files": 2,
+   "parts": {
+    "assets": 1,
+    "evals": 1
+   }
+  },
+  {
+   "sha": "656b31e",
+   "at": "2026-11-21T00:13:16+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: /swarm/ in the shared shell, runs as a table (design round 3)",
+   "files": 15,
+   "parts": {
+    "assets": 2,
+    "designs": 5,
+    "home and root files": 1,
+    "swarm": 5,
+    "tools": 2
+   }
+  },
+  {
+   "sha": "00a7d66",
+   "at": "2026-11-21T00:39:46+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: the poster names the Mistral Vibe Hackathon and links its page",
+   "files": 6,
+   "parts": {
+    "assets": 1,
+    "designs": 1,
+    "home and root files": 1,
+    "questions": 1,
+    "tools": 2
+   }
+  },
+  {
+   "sha": "747a50b",
+   "at": "2026-11-21T01:01:35+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: three browser demos: voice, document to site, injection lab",
+   "files": 13,
+   "parts": {
+    "browser": 13
+   }
+  },
+  {
+   "sha": "d62db82",
+   "at": "2026-11-21T01:05:09+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: vibe-build a sovereign website, and ask this site",
+   "files": 20,
+   "parts": {
+    "browser": 13,
+    "designs": 5,
+    "home and root files": 1,
+    "tools": 1
+   }
+  },
+  {
+   "sha": "74b960a",
+   "at": "2026-11-21T01:19:59+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "design.b.rounds"
+   ],
+   "subject": "conductor.mistral: recorded run first on voice, ocr, inject; shorter key box",
+   "files": 13,
+   "parts": {
+    "browser": 13
+   }
+  },
+  {
+   "sha": "3f7767f",
+   "at": "2026-11-21T01:35:42+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: draft article, what we built overnight",
+   "files": 1,
+   "parts": {
+    "docs": 1
+   }
+  },
+  {
+   "sha": "18ab641",
+   "at": "2026-11-21T01:40:33+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: an articles section, and the overnight article",
+   "files": 16,
+   "parts": {
+    "docs": 1,
+    "admin": 1,
+    "agents": 1,
+    "articles": 2,
+    "designs": 6,
+    "home and root files": 1,
+    "questions": 1,
+    "sources": 1,
+    "start": 1,
+    "tools": 1
+   }
+  },
+  {
+   "sha": "936bea8",
+   "at": "2026-11-21T01:54:15+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: a key vault in the browser (/browser/keys/)",
+   "files": 11,
+   "parts": {
+    "browser": 11
+   }
+  },
+  {
+   "sha": "bda7192",
+   "at": "2026-11-21T01:54:18+00:00",
+   "agent": "mistral.local",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "mistral.local: /browser/local/, Ministral 3 3B running inside the browser tab",
+   "files": 16,
+   "parts": {
+    "browser": 16
+   }
+  },
+  {
+   "sha": "453013c",
+   "at": "2026-11-21T01:56:32+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: the pipeline checks the vendored wllama files",
+   "files": 1,
+   "parts": {
+    "repository": 1
+   }
+  },
+  {
+   "sha": "3c8a742",
+   "at": "2026-11-21T02:09:12+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "conductor.mistral: /live/, agents at work, drawn from the repository",
+   "files": 12,
+   "parts": {
+    "data/agents": 2,
+    "designs": 5,
+    "home and root files": 1,
+    "live": 3,
+    "tools": 1
+   }
+  },
+  {
+   "sha": "afe3c2f",
+   "at": "2026-11-21T02:26:16+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "mistral.design"
+   ],
+   "subject": "mistral.design: a full site navigation, sitemap and breadcrumbs",
+   "files": 42,
+   "parts": {
+    "docs": 1,
+    "admin": 1,
+    "agents": 1,
+    "articles": 2,
+    "assets": 2,
+    "browser": 9,
+    "demos": 4,
+    "designs": 6,
+    "evals": 2,
+    "home and root files": 2,
+    "live": 1,
+    "questions": 1,
+    "sitemap": 1,
+    "sources": 1,
+    "start": 1,
+    "swarm": 3,
+    "team": 1,
+    "tools": 3
+   }
+  },
+  {
+   "sha": "c504c82",
+   "at": "2026-11-21T02:31:54+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "mistral.design"
+   ],
+   "subject": "mistral.design: navigation v2, the Studio, and design previews",
+   "files": 66,
+   "parts": {
+    "admin": 1,
+    "agents": 1,
+    "articles": 2,
+    "assets": 25,
+    "browser": 9,
+    "data/studio.json": 1,
+    "demos": 4,
+    "designs": 6,
+    "evals": 2,
+    "home and root files": 2,
+    "live": 1,
+    "questions": 1,
+    "sitemap": 1,
+    "sources": 1,
+    "start": 1,
+    "studio": 1,
+    "swarm": 3,
+    "team": 1,
+    "tools": 3
+   }
+  },
+  {
+   "sha": "9e4a9e0",
+   "at": "2026-11-21T01:55:39+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [],
+   "subject": "promptugal: Ask PrompTugal on Mistral, and the /promptugal/ section",
+   "files": 11,
+   "parts": {
+    "browser": 1,
+    "promptugal": 10
+   }
+  },
+  {
+   "sha": "a1295b2",
+   "at": "2026-11-21T02:05:22+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [],
+   "subject": "promptugal: the day's bulletin, written by Mistral and checked in code",
+   "files": 10,
+   "parts": {
+    "browser": 1,
+    "promptugal": 9
+   }
+  },
+  {
+   "sha": "07edd7e",
+   "at": "2026-11-21T02:24:21+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [],
+   "subject": "promptugal: the visitor's key from a QR code, in the browser",
+   "files": 8,
+   "parts": {
+    "promptugal": 8
+   }
+  },
+  {
+   "sha": "08caa2b",
+   "at": "2026-11-21T02:33:12+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "promptugal: security.b reviews 011, 012 and 014; licence lines; nav markers",
+   "files": 10,
+   "parts": {
+    "promptugal": 10
+   }
+  },
+  {
+   "sha": "64ade7d",
+   "at": "2026-11-21T02:37:39+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "promptugal: European or Brazilian Portuguese (recorded runs only), and the handover",
+   "files": 8,
+   "parts": {
+    "promptugal": 8
+   }
+  },
+  {
+   "sha": "a17f976",
+   "at": "2026-11-21T02:38:55+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "promptugal: European or Brazilian Portuguese, live on the visitor's key",
+   "files": 4,
+   "parts": {
+    "promptugal": 4
+   }
+  },
+  {
+   "sha": "e2e6b5e",
+   "at": "2026-11-21T02:49:32+00:00",
+   "agent": "mistral.design",
+   "mentions": [],
+   "subject": "mistral.design: the local model easy to find, the studio look, PrompTugal in the nav",
+   "files": 95,
+   "parts": {
+    "admin": 1,
+    "agents": 1,
+    "articles": 2,
+    "assets": 49,
+    "browser": 9,
+    "data/studio.json": 1,
+    "demos": 4,
+    "designs": 6,
+    "evals": 2,
+    "home and root files": 2,
+    "live": 1,
+    "promptugal": 4,
+    "questions": 1,
+    "sitemap": 1,
+    "sources": 1,
+    "start": 1,
+    "studio": 1,
+    "swarm": 3,
+    "team": 1,
+    "tools": 4
+   }
+  },
+  {
+   "sha": "110ada3",
+   "at": "2026-11-21T02:50:37+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: /live/ credits Silvio Switha and Angelo Leggio",
+   "files": 1,
+   "parts": {
+    "live": 1
+   }
+  },
+  {
+   "sha": "4a490b5",
+   "at": "2026-11-21T02:59:39+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [],
+   "subject": "promptugal: PrompTugal's data feeds, mapped (/promptugal/feeds/)",
+   "files": 6,
+   "parts": {
+    "data/promptugal": 1,
+    "promptugal": 5
+   }
+  },
+  {
+   "sha": "07587d9",
+   "at": "2026-11-21T03:08:35+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "promptugal: handover updated, screenshots of the demos",
+   "files": 6,
+   "parts": {
+    "data/promptugal": 4,
+    "promptugal": 2
+   }
+  },
+  {
+   "sha": "3f7409c",
+   "at": "2026-11-21T03:09:27+00:00",
+   "agent": "mistral.promptugal",
+   "mentions": [
+    "security.b"
+   ],
+   "subject": "promptugal: the London and Lisbon morning briefing, and What should I know today?",
+   "files": 13,
+   "parts": {
+    "promptugal": 13
+   }
+  },
+  {
+   "sha": "afc75ed",
+   "at": "2026-11-21T03:11:57+00:00",
+   "agent": "mistral.design",
+   "mentions": [],
+   "subject": "mistral.design: pictures made by Mistral for every demo, and the flagship demo plan",
+   "files": 82,
+   "parts": {
+    "docs": 1,
+    "admin": 1,
+    "agents": 1,
+    "articles": 2,
+    "assets": 32,
+    "browser": 9,
+    "data/studio-images.json": 1,
+    "data/studio.json": 1,
+    "demos": 4,
+    "designs": 6,
+    "evals": 2,
+    "home and root files": 2,
+    "live": 1,
+    "promptugal": 7,
+    "questions": 1,
+    "sitemap": 1,
+    "sources": 1,
+    "start": 1,
+    "studio": 1,
+    "swarm": 3,
+    "team": 1,
+    "tools": 3
+   }
+  },
+  {
+   "sha": "125c0ab",
+   "at": "2026-11-21T03:15:15+00:00",
+   "agent": "mistral.design",
+   "mentions": [],
+   "subject": "mistral.design: the terms and cost of the pictures, on the studio page and in studio-images.json",
+   "files": 3,
+   "parts": {
+    "data/studio-images.json": 1,
+    "studio": 1,
+    "tools": 1
+   }
+  },
+  {
+   "sha": "0495cfd",
+   "at": "2026-11-21T03:21:31+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [
+    "mistral.workflows"
+   ],
+   "subject": "conductor.mistral: roster adds mistral.workflows; live-page builder finished",
+   "files": 1,
+   "parts": {
+    "data/agents": 1
+   }
+  },
+  {
+   "sha": "0512835",
+   "at": "2026-11-21T03:22:46+00:00",
+   "agent": "conductor.mistral",
+   "mentions": [],
+   "subject": "conductor.mistral: hand-over for the conductor session that takes the hourly loop",
+   "files": 1,
+   "parts": {
+    "docs": 1
+   }
+  }
+ ]
+}

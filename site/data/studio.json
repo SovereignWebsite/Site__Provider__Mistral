@@ -262,6 +262,14 @@
       "key": "either",
       "name": "X-Ray: this site, claim by claim",
       "line": "A page of this site checked claim by claim by two Mistral models at once: each claim a line to its source, CONFIRMED, WEAK SOURCE or NO SOURCE decided in code."
+    },
+    {
+      "id": "workflows-messages",
+      "u": "/workflows/messages/",
+      "group": "agentic",
+      "key": "none",
+      "name": "Messages and deliverables, side by side",
+      "line": "The agents that built this site, replayed from the commit history: who wrote to whom, and what each made and where it went, side by side."
     }
   ]
 }

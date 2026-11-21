@@ -340,6 +340,61 @@ ${callLog}
 CARDS.push({ u: '/workflows/xray/', img: '/workflows/shots/xray-home.jpg', name: 'X-Ray: this site, claim by claim', key: 'Replay with no key, or your key',
   line: 'An extractor lists a page’s claims; four checkers on two models look for another page that says the same; code gives each claim CONFIRMED, WEAK SOURCE or NO SOURCE, drawn as lines to its source.' });
 
+
+// ------------------------------------------------------------------ /workflows/messages/
+page({
+  u: '/workflows/messages/', title: 'Messages and deliverables, side by side',
+  description: 'The agents that built this site, as two views of the same night side by side: who wrote to whom, and what each made and where it went, replayed from the roster and the commit history. No key.',
+  css: ['/browser/voice/kit.css', '/workflows/workflows.css'],
+  scripts: [{ src: '/workflows/messages/messages-page.js', module: true }],
+  body: `
+  <p class="mark"><a href="/workflows/">Workflows on Mistral</a>: messages and deliverables</p>
+  <h1>Messages and deliverables, side by side</h1>
+  <p class="lede">The workflow that built this site, drawn as the stand draws its own: on the left, who wrote to whom (a commit that names another agent is a message); on the right, what each agent made and where it went (each commit flies to the parts of the site its files changed). The same night, two views, side by side.</p>
+  <noscript><p class="warn">This page needs JavaScript. The data is two files on this site: <a href="/data/agents/roster.json">the roster</a> and <a href="/data/workflows/deliveries.json">the commit history, as messages and deliverables</a>.</p></noscript>
+
+  <section aria-labelledby="h-found">
+    <h2 id="h-found">What it shows</h2>
+    <p>The snapshot was made from this repository's own history on dev at 03:23 UTC on 21 November 2026: 47 commits, from 22:58 UTC on 20 November to 03:22 UTC.</p>
+    <ul class="found">
+      <li>conductor.mistral made 23 of the 47 commits; mistral.promptugal 9, evals.mistral 4, team.mistral and mistral.design 3 each, swarm.mistral 2, mistral.local 1. Two had no <code>Agent:</code> line.</li>
+      <li>26 commits name another agent. The one most named is the security reviewer, security.b, in 17 of them: every key page on this site waits for its review, and the commits say so.</li>
+      <li>The parts of the site changed most are the pictures and styles, the in-browser demos and PrompTugal.</li>
+    </ul>
+    <p class="small">For the agents running right now, with the commits read live from GitHub, see <a href="/live/">Agents at work</a>.</p>
+  </section>
+
+  <section aria-labelledby="h-views">
+    <h2 id="h-views">The night, replayed</h2>
+    <div class="field">
+      <label for="mspeed">Speed</label>
+      <select id="mspeed"><option value="1">A minute of the night is a second</option><option value="4" selected>Four minutes a second</option><option value="15">Fifteen minutes a second</option></select>
+      <button type="button" id="mplay" class="primary" disabled>Replay the night</button>
+    </div>
+    <p id="mstatus" class="status" role="status" aria-live="polite">Loading the snapshot.</p>
+    <p><span class="mtime" id="when">-</span> <span id="tally"></span></p>
+    <div class="lanes">
+      <div class="lane"><h3>Messages: who wrote to whom</h3>
+        <svg id="msvg" class="flow" role="img" aria-labelledby="msvg-t"><title id="msvg-t">The agents of this site, the conductor at the core and the others on a ring; each message a dot from its author to the agent it names. The same commits are listed below.</title></svg></div>
+      <div class="lane"><h3>Deliverables: what was made, and where it went</h3>
+        <svg id="wsvg" class="flow" role="img" aria-labelledby="wsvg-t"><title id="wsvg-t">The agents that made commits on the left, the parts of the site on the right; each commit a dot from its author to each part it changed. The same commits are listed below.</title></svg></div>
+    </div>
+    <h3>Every commit, as it plays</h3>
+    <ol class="feed" id="mfeed" tabindex="0" aria-label="Commits replayed"></ol>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <ul>
+      <li><a href="/workflows/tools/make-deliveries.mjs">make-deliveries.mjs</a> reads <code>git log</code> on dev: each commit's <code>Agent:</code> line names its author (kept only if the name is on <a href="/data/agents/roster.json">the roster</a>), the roster names in its message are its messages, and the folders its files changed are its deliverables. Only each commit's first line is kept, with any session link hidden.</li>
+      <li>The views are the stand's "Messages" and "Deliverables" (Angelo Leggio's graphs and live views on the <a href="https://web-summit.sgit.ai/people/angelo/app/index.html#stand">SGit-AI Web Summit stand</a>, and the Galaxy by Silvio Switha's dashboard agent), redrawn in our own SVG, <a href="/workflows/lib/flow.js">flow.js</a>.</li>
+      <li>This page needs no key and calls nobody: both files are on this site.</li>
+    </ul>
+  </section>`,
+});
+CARDS.push({ u: '/workflows/messages/', img: '/workflows/shots/messages.jpg', name: 'Messages and deliverables, side by side', key: 'No key',
+  line: 'The agents that built this site, replayed: who wrote to whom, and what each made and where it went, side by side, from the roster and the commit history.' });
+
 // ------------------------------------------------------------------ /workflows/ (the hub)
 CARDS.unshift(
   { u: '/workflows/relay/', img: '/workflows/shots/relay-large-vs-14b.jpg', name: 'Two models, one workflow, side by side', key: 'Replay with no key, or your key',
