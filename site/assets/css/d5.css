@@ -50,3 +50,5 @@
 .share-list{padding-left:1.3rem;font-size:1.05rem}
 .share-list li{margin:.4rem 0}
 .recipe .codebox{margin-bottom:.3rem}
+.h-event{max-width:40rem;font-size:1rem;color:#f1edff;margin:0 0 1.4rem;padding:.6rem .8rem;border-left:3px solid #a5f3fc;background:rgba(255,255,255,.06)}
+.h-event a{color:#a5f3fc;font-weight:600}

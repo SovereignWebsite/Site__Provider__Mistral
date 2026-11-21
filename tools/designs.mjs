@@ -412,10 +412,11 @@ ${agentic()}
 export function d5() {
   return { description: 'The hackathon briefing for Saturday 21 November 2026 in London: start here, the three demos, a first call to a Mistral model in five minutes with a local model or your own key, and how to share what you build.', body: `<div class="h-wrap">
 <header class="poster">
-  <p class="h-where">Hackathon <span aria-hidden="true">/</span> London</p>
+  <p class="h-where">Mistral Vibe Hackathon <span aria-hidden="true">/</span> London</p>
   <h1><span class="h-day">Saturday</span> <span class="h-date">21 Nov</span> <span class="h-year">2026</span></h1>
   <p class="h-title">Build with a European brain</p>
   <p class="h-sub">A first call to a Mistral model in five minutes, on your own laptop with no key, or with your own key. Then build something a sovereign website could use.</p>
+  <p class="h-event">For participants of the Mistral Vibe Hackathon, organised by Mistral: 8:30 to 20:30, teams of 3 to 5, 18 and over. Venue, schedule and rules are on <a href="https://luma.com/le-chonk-in-london">the organisers' event page</a> (as read on 21 November 2026). This site is independent and not part of the event.</p>
   <p class="cta"><a class="btn btn-big" href="${DEMOS.side}">Open the first demo</a> <a class="btn btn-2" href="#five">Five minutes to a first call</a></p>
 </header>
 ${PLAIN}
