@@ -1,0 +1,285 @@
+{
+  "about": "A recorded run of The document desk on the fictional sample notice (samples/notice.png), made with tools/record-desk.mjs from the same request bodies as the page. Model output, as it came.",
+  "utc": "2026-11-21T03:52:26.436Z",
+  "host": "api.mistral.ai",
+  "events": [
+    {
+      "desk": "read",
+      "model": "mistral-ocr-latest",
+      "ms": 1593,
+      "usage": "1 page",
+      "md": "# BIBLIOTECA DO BAIRRO\n\nThe neighbourhood library of Campo de Ourique, Lisbon\n\n## Notice to readers, November 2026\n\nFrom Monday 1 December the library opens longer hours.\n\n### New opening hours:\n\nMonday to Friday, 9 am to 9 pm\n\nSaturday, 10 am to 6 pm\n\nSunday, closed\n\nWhy: readers asked for evening hours, and the parish council has funded two more staff for one year.\n\n## Reading festival, 6 and 7 December\n\nStory time for children at 11 am on both days, in Portuguese and English. A book swap all weekend: bring a book, take a book. Entry is free. No booking is needed.\n\n## Membership\n\nMembership is free for everyone who lives, works or studies in the parish. Bring a document with your address.\n\n## Contact\n\nRua Saraiva de Carvalho 100, 1250 Lisbon\n\nPhone +351 210 000 000\n\nleitores@biblioteca-do-bairro.example\n\nA fictional sample for a demo. Not a real library."
+    },
+    {
+      "desk": "brief",
+      "model": "mistral-small-2603",
+      "ms": 1781,
+      "usage": "361 tokens in, 309 out",
+      "brief": {
+        "headline": "Campo de Ourique library extends opening hours",
+        "summary": "From 1 December, the neighbourhood library in Lisbon’s Campo de Ourque will open longer hours on weekdays and Saturdays. The change follows requests from readers and is supported by parish council funding for extra staff. A free reading festival will also take place on 6 and 7 December.",
+        "points": [
+          {
+            "text": "Library opens longer hours from 1 December.",
+            "quote": "From Monday 1 December the library opens longer hours."
+          },
+          {
+            "text": "New weekday hours: 9 am to 9 pm, Saturdays 10 am to 6 pm.",
+            "quote": "Monday to Friday, 9 am to 9 pm\n\nSaturday, 10 am to 6 pm"
+          },
+          {
+            "text": "Reading festival on 6 and 7 December with free events.",
+            "quote": "Story time for children at 11 am on both days, in Portuguese and English. A book swap all weekend: bring a book, take a book. Entry is free."
+          },
+          {
+            "text": "Membership remains free for residents, workers or students in the parish.",
+            "quote": "Membership is free for everyone who lives, works or studies in the parish."
+          },
+          {
+            "text": "Library is located at Rua Saraiva de Carvalho 100, Lisbon.",
+            "quote": "Rua Saraiva de Carvalho 100, 1250 Lisbon"
+          }
+        ]
+      }
+    },
+    {
+      "desk": "facts",
+      "model": "mistral-small-2603",
+      "ms": 3066,
+      "usage": "339 tokens in, 706 out",
+      "facts": {
+        "facts": [
+          {
+            "label": "Library name",
+            "value": "Biblioteca do Bairro",
+            "quote": "Biblioteca do Bairro"
+          },
+          {
+            "label": "Neighbourhood",
+            "value": "Campo de Ourique, Lisbon",
+            "quote": "The neighbourhood library of Campo de Ourique, Lisbon"
+          },
+          {
+            "label": "Notice date",
+            "value": "November 2026",
+            "quote": "Notice to readers, November 2026"
+          },
+          {
+            "label": "New opening start date",
+            "value": "1 December",
+            "quote": "From Monday 1 December the library opens longer hours."
+          },
+          {
+            "label": "Weekday hours",
+            "value": "9 am to 9 pm",
+            "quote": "Monday to Friday, 9 am to 9 pm"
+          },
+          {
+            "label": "Saturday hours",
+            "value": "10 am to 6 pm",
+            "quote": "Saturday, 10 am to 6 pm"
+          },
+          {
+            "label": "Sunday status",
+            "value": "Closed",
+            "quote": "Sunday, closed"
+          },
+          {
+            "label": "Reason for change",
+            "value": "Readers asked for evening hours; funded by parish council",
+            "quote": "Why: readers asked for evening hours, and the parish council has funded two more staff for one year."
+          },
+          {
+            "label": "Reading festival dates",
+            "value": "6 and 7 December",
+            "quote": "Reading festival, 6 and 7 December"
+          },
+          {
+            "label": "Story time times",
+            "value": "11 am",
+            "quote": "Story time for children at 11 am on both days"
+          },
+          {
+            "label": "Story time languages",
+            "value": "Portuguese and English",
+            "quote": "in Portuguese and English"
+          },
+          {
+            "label": "Book swap availability",
+            "value": "All weekend",
+            "quote": "A book swap all weekend"
+          },
+          {
+            "label": "Book swap requirement",
+            "value": "Bring a book, take a book",
+            "quote": "bring a book, take a book"
+          },
+          {
+            "label": "Festival entry cost",
+            "value": "Free",
+            "quote": "Entry is free"
+          },
+          {
+            "label": "Festival booking required",
+            "value": "No",
+            "quote": "No booking is needed"
+          },
+          {
+            "label": "Membership cost",
+            "value": "Free",
+            "quote": "Membership is free for everyone who lives, works or studies in the parish"
+          },
+          {
+            "label": "Membership eligibility",
+            "value": "Live, work or study in the parish",
+            "quote": "everyone who lives, works or studies in the parish"
+          },
+          {
+            "label": "Membership document required",
+            "value": "Address document",
+            "quote": "Bring a document with your address"
+          },
+          {
+            "label": "Library address",
+            "value": "Rua Saraiva de Carvalho 100, 1250 Lisbon",
+            "quote": "Rua Saraiva de Carvalho 100, 1250 Lisbon"
+          },
+          {
+            "label": "Library phone",
+            "value": "+351 210 000 000",
+            "quote": "Phone +351 210 000 000"
+          },
+          {
+            "label": "Library email",
+            "value": "leitores@biblioteca-do-bairro.example",
+            "quote": "leitores@biblioteca-do-bairro.example"
+          }
+        ]
+      }
+    },
+    {
+      "desk": "page",
+      "model": "mistral-medium-latest",
+      "ms": 1678,
+      "usage": "363 tokens in, 303 out",
+      "page": {
+        "title": "Biblioteca do Bairro",
+        "standfirst": "Information about the neighbourhood library in Campo de Ourique, Lisbon.",
+        "sections": [
+          {
+            "heading": "New Opening Hours",
+            "text": "The library will extend its opening hours from December.",
+            "quotes": [
+              "From Monday 1 December the library opens longer hours.",
+              "Monday to Friday, 9 am to 9 pm",
+              "Saturday, 10 am to 6 pm",
+              "Sunday, closed"
+            ]
+          },
+          {
+            "heading": "Reading Festival",
+            "text": "A weekend event with activities for children and a book swap.",
+            "quotes": [
+              "Story time for children at 11 am on both days, in Portuguese and English.",
+              "A book swap all weekend: bring a book, take a book.",
+              "Entry is free. No booking is needed."
+            ]
+          },
+          {
+            "heading": "Membership",
+            "text": "Membership is available to local residents, workers, and students.",
+            "quotes": [
+              "Membership is free for everyone who lives, works or studies in the parish. Bring a document with your address."
+            ]
+          },
+          {
+            "heading": "Contact Details",
+            "text": "The library provides its address, phone number, and email.",
+            "quotes": [
+              "Rua Saraiva de Carvalho 100, 1250 Lisbon",
+              "Phone +351 210 000 000",
+              "leitores@biblioteca-do-bairro.example"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "desk": "langs",
+      "model": "mistral-small-2603",
+      "ms": 3193,
+      "usage": "155 tokens in, 436 out",
+      "langs": {
+        "pt": {
+          "headline": "Biblioteca de Campo de Ourique alarga horário de funcionamento",
+          "summary": "A partir de 1 de dezembro, a biblioteca de bairro em Campo de Ourique, em Lisboa, passará a ter horário alargado nos dias úteis e aos sábados. A alteração decorre de pedidos de leitores e é apoiada por financiamento da junta de freguesia para contratação de pessoal adicional. Um festival gratuito de leitura terá também lugar nos dias 6 e 7 de dezembro."
+        },
+        "fr": {
+          "headline": "La bibliothèque de Campo de Ourique prolonge ses horaires d’ouverture",
+          "summary": "À partir du 1er décembre, la bibliothèque de quartier de Campo de Ourique, à Lisbonne, ouvrira plus longtemps en semaine et le samedi. Ce changement fait suite à des demandes de lecteurs et est soutenu par un financement de la paroisse pour l’embauche de personnel supplémentaire. Un festival gratuit de lecture aura également lieu les 6 et 7 décembre."
+        },
+        "de": {
+          "headline": "Bibliothek Campo de Ourique verlängert Öffnungszeiten",
+          "summary": "Ab dem 1. Dezember wird die Stadtteilbibliothek in Campo de Ourique in Lissabon an Wochentagen und samstags länger geöffnet haben. Die Änderung folgt Leseranfragen und wird durch Finanzmittel des Gemeinderats für zusätzliches Personal unterstützt. Ein kostenloses Lesefestival findet zudem am 6. und 7. Dezember statt."
+        },
+        "es": {
+          "headline": "La biblioteca de Campo de Ourique amplía su horario de apertura",
+          "summary": "A partir del 1 de diciembre, la biblioteca de barrio de Campo de Ourique, en Lisboa, abrirá más horas entre semana y los sábados. El cambio responde a peticiones de los lectores y cuenta con el apoyo de la financiación de la junta de parroquia para contratar personal adicional. Además, un festival gratuito de lectura tendrá lugar los días 6 y 7 de diciembre."
+        }
+      }
+    },
+    {
+      "desk": "voice",
+      "model": "voxtral-mini-tts-3",
+      "ms": 2976,
+      "usage": "335 characters",
+      "audio": "samples/recorded-summary.mp3"
+    }
+  ],
+  "calls": [
+    {
+      "desk": "read",
+      "model": "mistral-ocr-latest",
+      "ms": 1593,
+      "usage": "1 page"
+    },
+    {
+      "desk": "brief",
+      "model": "mistral-small-2603",
+      "ms": 1781,
+      "usage": "361 tokens in, 309 out"
+    },
+    {
+      "desk": "facts",
+      "model": "mistral-small-2603",
+      "ms": 3066,
+      "usage": "339 tokens in, 706 out"
+    },
+    {
+      "desk": "page",
+      "model": "mistral-medium-latest",
+      "ms": 1678,
+      "usage": "363 tokens in, 303 out"
+    },
+    {
+      "desk": "langs",
+      "model": "mistral-small-2603",
+      "ms": 3193,
+      "usage": "155 tokens in, 436 out"
+    },
+    {
+      "desk": "voice",
+      "model": "voxtral-mini-tts-3",
+      "ms": 2976,
+      "usage": "335 characters"
+    }
+  ],
+  "kept": {
+    "points": 5,
+    "ofPoints": 5,
+    "facts": 21,
+    "ofFacts": 21,
+    "sections": 4,
+    "ofSections": 4
+  }
+}

@@ -37,6 +37,14 @@
       "line": "Drop in a document, a few photos and a voice memo: Mistral OCR reads, Small looks, Voxtral listens, Medium 3.5 plans, the image tool draws and Codestral designs a website you can download. With a recorded run that needs no key."
     },
     {
+      "id": "desk",
+      "u": "/studio/desk/",
+      "group": "flagship",
+      "key": "either",
+      "name": "The document desk",
+      "line": "One document in, a newsroom desk out: Mistral OCR reads it, Mistral Small writes the summary, the facts with their words and four translations, Medium 3.5 lays out a web page and Voxtral reads it aloud. With a recorded run that needs no key."
+    },
+    {
       "id": "local",
       "u": "/browser/local/",
       "group": "no-key",

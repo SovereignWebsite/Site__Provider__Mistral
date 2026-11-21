@@ -1,0 +1,48 @@
+/* The document desk. mistral.design@SovereignWebsite.dinis, 21 November 2026. With /assets/css/studio.css. */
+.replay-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin:1.2rem 0 .4rem}
+.hidden{display:none}
+.drops{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));margin:1rem 0}
+.drop{position:relative;display:flex;flex-direction:column;gap:.35rem;padding:1.2rem;border:2px dashed var(--line);border-radius:16px;background:var(--panel);transition:border-color .15s ease,background .15s ease}
+.drop.over{border-color:var(--accent);background:var(--note)}
+.drop-kicker{margin:0;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.drop-h{margin:0;font-family:var(--head);font-size:1.3rem;font-weight:600;line-height:1.2}
+.drop p.small{margin:0 0 .4rem}
+.drop input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.pick{align-self:flex-start;display:inline-flex;align-items:center;min-height:2.9rem;padding:.5rem 1.2rem;border:2px solid var(--accent);border-radius:999px;color:var(--accent);background:var(--card,var(--bg));font-weight:650;cursor:pointer}
+.drop:focus-within .pick{outline:3px solid var(--accent);outline-offset:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mode{border:1px solid var(--line);border-radius:12px;padding:.5rem 1rem;margin:.8rem 0}
+.mode legend{font-weight:650;padding:0 .3rem}
+.sends{margin-top:1rem;border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;background:var(--panel)}
+.sends pre.req{max-height:18rem;overflow:auto;white-space:pre-wrap;word-break:break-word;font-size:.78rem;background:var(--card,var(--bg));padding:.6rem .7rem;border-radius:8px}
+.device{display:flex;gap:.5rem;margin:.8rem 0}
+.stage{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#16161a;padding:clamp(.4rem,1.4vw,1rem);box-shadow:0 20px 50px rgba(12,22,44,.18)}
+.stage iframe{display:block;width:100%;height:min(80vh,52rem);border:0;border-radius:10px;background:#fff;margin:0 auto}
+.stage.phone iframe{width:min(100%,390px);height:min(80vh,46rem)}
+#checks q{display:block;margin:.1rem 0}
+#checks q.bad{color:var(--bad)}
+.drop{max-width:40rem}
+/* The desk: six cards that fill as each call comes back. */
+.desk{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));margin:1.2rem 0 0}
+.desk-card{display:flex;flex-direction:column;gap:.3rem;padding:1rem 1.1rem 1.1rem;border:1px solid var(--line);border-top:5px solid var(--line);border-radius:14px;background:var(--card,var(--bg));min-height:11rem;transition:border-color .2s ease,box-shadow .2s ease}
+.desk-card header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.3rem .8rem}
+.desk-card h3{margin:0;font-family:var(--head);font-size:1.35rem;font-weight:600}
+.desk-card header code{font-size:.74rem;color:var(--accent)}
+.desk-what{margin:0;font-size:.86rem;color:var(--muted)}
+.desk-stat{margin:0;font-size:.84rem;font-weight:650}
+.desk-body{margin-top:.4rem;font-size:.92rem;min-width:0}
+.desk-body p{margin:.2rem 0}
+.desk-body .hl{font-family:var(--head);font-size:1.15rem;font-weight:600;line-height:1.25}
+.desk-body .hl-s{font-weight:600;line-height:1.3}
+.desk-body .lang{padding:.35rem 0;border-top:1px solid var(--line)}
+.desk-body .mini{margin:.2rem 0;padding-left:1.1rem}
+.desk-body .mini li{margin:.15rem 0}
+.desk-body pre.ocr{max-height:11rem;overflow:auto;white-space:pre-wrap;font-size:.76rem;background:var(--panel);padding:.5rem .6rem;border-radius:8px}
+.desk-body audio{width:100%}
+.desk-ready,.desk-run{border-top-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.desk-run .desk-stat::after{content:"";display:inline-block;width:.8em;height:.8em;margin-left:.4em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-.1em;animation:spin .9s linear infinite}
+.desk-ok{border-top-color:var(--teal,#0d7d77)}
+.desk-ok .desk-stat{color:var(--ok)}
+.desk-bad{border-top-color:var(--bad)}
+.desk-bad .desk-stat{color:var(--bad)}
+@media (prefers-reduced-motion:reduce){.desk-card{transition:none}.desk-run .desk-stat::after{animation:none}}
