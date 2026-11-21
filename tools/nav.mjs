@@ -84,6 +84,7 @@ const LIST = [
   { u: '/start/', s: 'about', l: 'Start here', t: 'For a hackathon participant, the first call; for the owner, connecting GitHub and the first change.' },
   { u: '/agents/', s: 'about', l: 'Use with your AI', t: 'This site is written for people and for AI agents: point yours at llms.txt.' },
   { u: '/admin/', s: 'about', l: 'How this site was made', t: 'By agents, in which sessions, from which sources, with signed commits.' },
+  { u: '/policy/', s: 'about', l: 'How this site is governed', t: 'The Agent Behaviour Policy: which agents may work on this site, and what is checked before anything is published.' },
   { u: '/questions/', s: 'about', l: 'Open questions', t: 'Decisions this site leaves to its owner.' },
   { u: '/sitemap/', s: 'about', l: 'Site map', t: 'Every page, by section, with one line each.' },
 ];
