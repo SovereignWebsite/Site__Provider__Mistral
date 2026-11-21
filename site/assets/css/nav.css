@@ -102,3 +102,49 @@ body>.notice p{margin:0;padding:.45rem .8rem;border-left:4px solid var(--nav-acc
 @media print{.menu,.sections,.crumbs{display:none}}
 .menu-group .sub2 a{padding-left:1.9rem}
 .sm-list li.sub2{padding-left:2.4rem}
+/* "Choose a design", with a preview of each design. */
+.site-head .chooser{margin:0;border:0;padding:0;background:none}
+.chooser summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.45rem;min-height:2.75rem;padding:.3rem .95rem;
+  border:2px solid var(--nav-accent);border-radius:999px;color:var(--nav-accent);font:700 .95rem/1 var(--nav-font);background:var(--nav-bg)}
+.chooser summary::-webkit-details-marker{display:none}
+.chooser summary::after{content:"";width:.42rem;height:.42rem;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
+.chooser[open] summary{background:var(--nav-accent);color:var(--nav-accent-fg)}
+.chooser[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.ch-short{display:none}
+.chooser-panel{position:absolute;z-index:46;left:1rem;right:1rem;top:100%;margin-top:.3rem;padding:1rem 1.1rem .8rem;
+  background:var(--nav-bg);color:var(--nav-fg);border:1px solid var(--nav-line);border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.chooser-list{list-style:none;margin:0;padding:0;display:grid;gap:.8rem;grid-template-columns:repeat(5,minmax(0,1fr))}
+.chooser-list li{margin:0}
+.chooser-list a{display:flex;flex-direction:column;gap:.15rem;padding:.4rem;border-radius:8px;color:var(--nav-fg);text-decoration:none;height:100%}
+.chooser-list img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:5px;border:1px solid var(--nav-line);margin-bottom:.35rem;background:var(--nav-panel)}
+.ch-name{font-weight:700;font-size:.93rem;line-height:1.25}
+.ch-name .num{font-family:var(--mono,ui-monospace,monospace);color:var(--nav-muted);margin-right:.2rem}
+.ch-kind{font-size:.8rem;line-height:1.3;color:var(--nav-muted)}
+.chooser-list a:hover,.chooser-list a:focus-visible{background:var(--nav-panel)}
+.chooser-list a:hover .ch-name{text-decoration:underline}
+.chooser-list a[aria-current="page"]{background:var(--nav-panel);box-shadow:inset 0 0 0 2px var(--nav-accent)}
+.chooser-list a[aria-current="page"] .ch-name{color:var(--nav-accent)}
+.chooser-all{margin:.8rem 0 0;padding-top:.6rem;border-top:1px solid var(--nav-line);font-size:.88rem;color:var(--nav-muted)}
+.chooser-all a{font-weight:700;color:var(--nav-accent);margin-right:.6rem}
+@media (min-width:48rem){.chooser-panel{left:auto;width:min(62rem,calc(100% - 2rem))}}
+@media (max-width:60rem){.chooser-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:47.99rem){
+  .chooser-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem}
+  .ch-long{display:none}.ch-short{display:inline}
+  .chooser summary{padding:.3rem .8rem}
+}
+@media (max-width:26rem){.site-head .name{flex-basis:100%}.site-head .chooser{margin-left:0}}
+/* Studio. */
+.studio-group{margin-top:2rem}
+.studio-group>p{color:var(--muted,#4f5257);margin:.2rem 0 .8rem}
+.studio-cards{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr))}
+.studio-cards li{margin:0;display:flex;flex-direction:column;border:1px solid var(--line,#dcdde0);border-radius:10px;overflow:hidden;background:var(--panel,#f0f1f3)}
+.studio-cards img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line,#dcdde0)}
+.studio-cards .sc-body{padding:.8rem .95rem 1rem}
+.studio-cards h3{margin:0 0 .35rem;font-size:1.08rem}
+.studio-cards p{margin:.3rem 0 0;font-size:.92rem}
+.key-tag{display:inline-block;font:700 .72rem/1.4 var(--nav-font,system-ui,sans-serif);letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1.5px solid currentColor}
+.key-none{color:var(--ok,#1f6b3a)}
+@media (prefers-color-scheme:dark){.key-none{color:#8fd19e}}
+.key-mistral,.key-either{color:var(--accent,#1d4e89)}
+.studio-wide .wrap{max-width:var(--max,72rem)}

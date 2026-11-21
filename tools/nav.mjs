@@ -19,8 +19,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 // The six sections. "to" is where the section label in the header goes.
 export const SECTIONS = [
   { id: 'overview', label: 'Designs', title: 'Overview and the five designs', to: '/designs/' },
-  { id: 'try', label: 'Try it', title: 'Try it: demos and agents in your browser', to: '/sitemap/#try' },
-  { id: 'agentic', label: 'Agentic', title: 'Agentic, live on Mistral', to: '/sitemap/#agentic' },
+  { id: 'try', label: 'Studio', title: 'The studio: every demo, in your browser', to: '/studio/' },
+  { id: 'agentic', label: 'Agentic', title: 'Agentic, live on Mistral', to: '/studio/#agentic' },
   { id: 'articles', label: 'Articles', title: 'Articles', to: '/articles/' },
   { id: 'sources', label: 'Sources', title: 'Sources', to: '/sources/' },
   { id: 'about', label: 'About', title: 'About this site', to: '/sitemap/#about' },
@@ -36,6 +36,7 @@ const LIST = [
   { u: '/designs/4.html', s: 'overview', p: '/designs/', l: 'Design 4, The ledger', t: 'Five questions for any AI you depend on, with Mistral as the worked example and your own row.' },
   { u: '/designs/5.html', s: 'overview', p: '/designs/', l: 'Design 5, The hackathon', t: 'The briefing for Saturday 21 November 2026: start here, the demos, a first call in five minutes.' },
 
+  { u: '/studio/', s: 'try', l: 'The studio', t: 'Every demo that works today, with what each needs: no key, or your own Mistral key.' },
   { u: '/demos/', s: 'try', l: 'Demos', t: 'Working demonstrations of a site whose AI model is the owner’s choice, like the host.' },
   { u: '/demos/side-by-side.html', s: 'try', p: '/demos/', l: 'Same brief, three brains', t: 'One brief sent to Mistral, OpenRouter and a model on your own machine, side by side.' },
   { u: '/demos/your-key.html', s: 'try', p: '/demos/', l: 'Your key, and where it goes', t: 'Where your model key is kept, where it is sent, and how to forget it.' },
@@ -84,7 +85,7 @@ const ARTICLES = existsSync(ARTDIR) ? readdirSync(ARTDIR).filter((f) => f.endsWi
 
 const fileOf = (u) => join(SITE_DIR, u.endsWith('/') ? u + 'index.html' : u);
 // Generated pages are always listed (tools/gen.mjs writes them); a hand-written page only once its file is in site/.
-const GEN = new Set(['/', '/designs/', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html',
+const GEN = new Set(['/studio/', '/', '/designs/', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html',
   '/articles/', '/sources/', '/start/', '/agents/', '/admin/', '/questions/', '/sitemap/']);
 export const isGenerated = (u) => GEN.has(u) || ARTICLES.some((a) => a.u === u);
 export const pages = () => LIST.filter((x) => isGenerated(x.u) || existsSync(fileOf(x.u)));
@@ -108,6 +109,19 @@ const FAMILY = `<details class="family-credit">
     <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
   </ul>
 </details>`;
+
+// "Choose a design", with a preview of each (the pictures are made by node tools/shots.mjs thumbs).
+const DESIGN_KINDS = ['Newsroom feature', 'Where the data goes', 'Playground first', 'Sovereignty checklist', 'Saturday 21 November 2026'];
+const chooser = (here) => `<details class="chooser">
+    <summary><span class="ch-long">Choose a design</span><span class="ch-short">Designs</span></summary>
+    <div class="chooser-panel">
+      <ul class="chooser-list">
+${[1, 2, 3, 4, 5].map((n) => { const x = find(`/designs/${n}.html`); const name = x.l.replace(/^Design \d, /, '');
+  return `        <li><a href="${x.u}"${cur(here, x.u)}><img src="/assets/designs/${n}.jpg" width="640" height="400" alt="" loading="lazy"><span class="ch-name"><span class="num">${n}</span> ${esc(name)}</span><span class="ch-kind">${esc(DESIGN_KINDS[n - 1])}</span></a></li>`; }).join('\n')}
+      </ul>
+      <p class="chooser-all"><a href="/designs/"${cur(here, '/designs/')}>See all five side by side</a> <span>The home page is design 5.</span></p>
+    </div>
+  </details>`;
 
 const cur = (here, u) => (here === u ? ' aria-current="page"' : '');
 const pageLink = (here, x) => `<a href="${x.u}"${cur(here, x.u)}>${esc(x.l)}</a>`;
@@ -140,6 +154,7 @@ ${items.map((x) => `          <li${x.p ? ` class="sub${find(x.p).p ? ' sub2' : '
 ${FAMILY}
 <header class="top site-head">
   <a class="name" href="/">${esc(NAME)}</a>
+  ${chooser(here)}
   <details class="menu">
     <summary>Menu</summary>
     <nav class="menu-panel" aria-label="All pages">

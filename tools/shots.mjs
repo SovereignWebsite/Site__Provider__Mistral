@@ -29,6 +29,20 @@ if (all || what === 'thumbs') {
   }
   console.log('thumbs: site/assets/designs/1..5.jpg');
 }
+if (what === 'studio') {
+  // One picture per demo for /studio/, from site/data/studio.json. No calls leave the machine: everything but this site is blocked.
+  mkdirSync('site/assets/studio', { recursive: true });
+  for (const d of JSON.parse(readFileSync('site/data/studio.json', 'utf8')).demos) {
+    const f = join(dir, d.u.endsWith('/') ? d.u + 'index.html' : d.u); if (!existsSync(f)) continue;
+    const ctx = await b.newContext({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 0.5, colorScheme: 'light' }); const p = await ctx.newPage();
+    await p.route(/^https?:\/\/(?!127\.0\.0\.1)/, (r) => r.abort());
+    await p.goto(base + d.u, { waitUntil: 'domcontentloaded' }); await p.waitForTimeout(1500);
+    await p.evaluate(() => { const m = document.querySelector('main'); if (m) m.scrollIntoView(); });
+    await p.screenshot({ path: `site/assets/studio/${d.id}.jpg`, type: 'jpeg', quality: 72 });
+    await ctx.close();
+  }
+  console.log('studio: site/assets/studio/*.jpg');
+}
 const pages = ['/demos/', '/demos/side-by-side.html', '/demos/your-key.html', '/demos/on-device.html', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html', '/designs/', '/', '/sources/', '/questions/', '/start/', '/agents/', '/admin/'];
 if (all || what === 'screens') {
   mkdirSync('screens', { recursive: true });
