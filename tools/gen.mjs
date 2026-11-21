@@ -46,6 +46,7 @@ const citeInline = (key) => `<span class="src">(Source: ${F[key].s.map(link).joi
 const factInline = (key) => `${F[key].t} ${citeInline(key)}`;
 // The agentic sections. A link appears only once its page is in site/; until then the name carries "arriving overnight".
 const AGENTIC = [
+  { path: 'live', name: 'Agents at work', text: 'Which agents built this site, which are running now, and when each one fired, drawn live from the repository.' },
   { path: 'browser', name: 'Agents in your browser', text: 'Five demos on Mistral, in this page with your own key: vibe-build a sovereign website and download it, ask this site, talk to it, turn a document into a draft page, and the injection lab.' },
   { path: 'team', name: 'The team inside the site', text: 'Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.' },
   { path: 'swarm', name: 'The Swarm, replayed', text: 'Our Swarm run on Mistral, call by call.' },

@@ -1,0 +1,241 @@
+{
+ "about": "Every agent that has worked on this site, from the conductor's record. Names only: no session links or ids (security.b asked). The /live/ page reads this file; the conductor updates it.",
+ "updated_at": "2026-11-21T02:00:00Z",
+ "updated_by": "conductor.mistral",
+ "timeline_start": "2026-11-20T22:51:00Z",
+ "loops": [
+  {
+   "agent": "mistral.design",
+   "every": "hourly",
+   "minute": 53,
+   "from": "2026-11-21T01:53:00Z",
+   "until": "2026-11-21T21:00:00Z",
+   "what": "a design round on the site navigation"
+  }
+ ],
+ "agents": [
+  {
+   "name": "conductor.mistral",
+   "id": "conductor.mistral@SovereignWebsite.dinis",
+   "kind": "conductor",
+   "job": "Splits the work, sets the rules, reviews and assembles the site, and commits it.",
+   "section": "/",
+   "state": "running",
+   "started": "2026-11-20T22:51:00Z",
+   "finished": null,
+   "reports_to": null
+  },
+  {
+   "name": "research",
+   "kind": "in-session agent",
+   "job": "Research for the site, inside the conductor's session.",
+   "section": null,
+   "state": "finished",
+   "started": null,
+   "finished": null,
+   "when": "finished on the night of 20 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "demos",
+   "kind": "in-session agent",
+   "job": "The demos, inside the conductor's session.",
+   "section": "/demos/",
+   "state": "finished",
+   "started": null,
+   "finished": null,
+   "when": "finished on the night of 20 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "designs",
+   "kind": "in-session agent",
+   "job": "The five designs, inside the conductor's session.",
+   "section": "/designs/",
+   "state": "finished",
+   "started": null,
+   "finished": null,
+   "when": "finished on the night of 20 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "swarm.mistral",
+   "id": "swarm.mistral@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "The Swarm run on Mistral, replayed call by call.",
+   "section": "/swarm/",
+   "state": "finished",
+   "archived": true,
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "evals.mistral",
+   "id": "evals.mistral@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "Evals for a site's jobs, run on Mistral models, with every check published.",
+   "section": "/evals/",
+   "state": "finished",
+   "archived": true,
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "team.mistral",
+   "id": "team.mistral@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "Seven agents inside the site, live on Mistral, with recorded runs.",
+   "section": "/team/",
+   "state": "finished",
+   "archived": true,
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "browser builder 1",
+   "kind": "in-session agent",
+   "job": "One of two agents that built the browser demos: build, ask, voice, ocr and inject (the split between the two is not recorded here).",
+   "section": "/browser/",
+   "state": "finished",
+   "started": null,
+   "finished": "2026-11-21T01:20:00Z",
+   "when": "finished about 01:20 UTC on 21 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "browser builder 2",
+   "kind": "in-session agent",
+   "job": "The other of the two agents that built the browser demos: build, ask, voice, ocr and inject.",
+   "section": "/browser/",
+   "state": "finished",
+   "started": null,
+   "finished": "2026-11-21T01:20:00Z",
+   "when": "finished about 01:20 UTC on 21 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "key-vault builder",
+   "kind": "in-session agent",
+   "job": "Built the key vault in the browser.",
+   "section": "/browser/keys/",
+   "state": "finished",
+   "started": null,
+   "finished": "2026-11-21T01:55:00Z",
+   "when": "finished about 01:55 UTC on 21 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "mistral.local",
+   "id": "mistral.local@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "Ministral 3 3B running inside the browser tab.",
+   "section": "/browser/local/",
+   "state": "finished",
+   "started": "2026-11-21T01:34:00Z",
+   "finished": "2026-11-21T02:00:00Z",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "mistral.promptugal",
+   "id": "mistral.promptugal@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "The /promptugal/ section.",
+   "section": "/promptugal/",
+   "state": "running",
+   "started": "2026-11-21T01:42:00Z",
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "mistral.design",
+   "id": "mistral.design@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "The site's navigation, in hourly design rounds.",
+   "section": "/",
+   "state": "on a loop",
+   "started": "2026-11-21T01:53:00Z",
+   "finished": null,
+   "loop": "hourly at :53 UTC until 21:00 UTC on 21 November",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "live-page builder",
+   "kind": "in-session agent",
+   "job": "Builds this page: which agents built the site, which are running, and when each one fired.",
+   "section": "/live/",
+   "state": "finished",
+   "started": "2026-11-21T01:57:00Z",
+   "finished": "2026-11-21T02:10:00Z",
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "security.b",
+   "id": "security.b@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "Security reviews of every page that touches a key.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "design.b.rounds",
+   "id": "design.b.rounds@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "Design rounds.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "factory.b",
+   "id": "factory.b@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "The repository and its pipeline.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "conductor.b",
+   "id": "conductor.b@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "Signing keys.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "hub.b",
+   "id": "hub.b@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "The hub listing.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
+   "name": "accountant.b",
+   "id": "accountant.b@SovereignWebsite.dinis",
+   "kind": "reviewer",
+   "job": "The budget.",
+   "section": null,
+   "state": "on call",
+   "started": null,
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  }
+ ]
+}

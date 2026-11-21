@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Agents at work</title>
+<meta name="description" content="Which agents built this site, which are running now, and when each one fired, drawn live from the repository: the conductor at the core, its sessions and agents around it, the reviewers in a ring, and a timeline you can scrub.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/live/">
+<meta property="og:title" content="Agents at work">
+<meta property="og:description" content="Which agents built this site, which are running now, and when each one fired, drawn live from the repository: the conductor at the core, its sessions and agents around it, the reviewers in a ring, and a timeline you can scrub.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agents at work">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agents at work">
+<meta name="twitter:description" content="Which agents built this site, which are running now, and when each one fired, drawn live from the repository: the conductor at the core, its sessions and agents around it, the reviewers in a ring, and a timeline you can scrub.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/live/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/live/live.css">
+<script type="module" src="/live/live.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration, for participants of the Mistral Vibe Hackathon in London. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark">Live, from the repository</p>
+  <h1>Agents at work</h1>
+  <p class="lede">The agents that built this site, which of them are running now, and when each one fired. A fire is a commit: every commit names the agent that made it, and a commit that names another agent is drawn as a flow between them. Drag the timeline to watch the night unfold, from 22:51 UTC on 20 November to now.</p>
+  <noscript><p class="warn">The drawing and the table need JavaScript. The same facts are in two files: <a href="/data/agents/roster.json">the roster</a> and <a href="/data/agents/commits-snapshot.json">a snapshot of the commits</a>.</p></noscript>
+
+  <div class="live-bar">
+    <p class="badges" id="badges"><span class="badge b-run">Loading the roster</span></p>
+    <p class="status" id="status" role="status">Asking GitHub for the commits.</p>
+    <p class="actions"><button type="button" id="refresh">Refresh from GitHub</button> <span class="muted small" id="rate"></span></p>
+  </div>
+
+  <figure class="gravity" id="gravity">
+    <svg id="gsvg" role="img" aria-labelledby="g-title g-desc" viewBox="-640 -420 1280 840" preserveAspectRatio="xMidYMid meet">
+      <title id="g-title">The agents, as a universe</title>
+      <desc id="g-desc">The conductor at the core; sessions and in-session agents around it; reviewers in an outer ring. The table below lists the same agents.</desc>
+    </svg>
+    <figcaption>
+      <span class="key"><span class="sw sw-core"></span>Conductor</span>
+      <span class="key"><span class="sw sw-session"></span>Sessions</span>
+      <span class="key"><span class="sw sw-in"></span>Agents inside the conductor&#x27;s session</span>
+      <span class="key"><span class="sw sw-rev"></span>Reviewers</span>
+      <span class="key"><span class="sw sw-flow"></span>A commit that names another agent</span>
+      <span class="key"><span class="sw sw-fire"></span>A fire: a commit</span>
+    </figcaption>
+  </figure>
+
+  <div class="timeline">
+    <button type="button" id="play" aria-pressed="false">Replay the night</button>
+    <label for="scrub">Time (UTC)</label>
+    <input type="range" id="scrub" min="0" max="1" step="1" value="1">
+    <output id="when" for="scrub">now</output>
+  </div>
+  <p class="muted small" id="tsum"></p>
+
+  <h2 id="h-fires">Fires up to that time</h2>
+  <ol class="fires" id="fires" aria-labelledby="h-fires"></ol>
+
+  <h2 id="h-agents">Every agent</h2>
+  <div class="tablewrap">
+    <table class="agents" id="agents">
+      <caption>From the roster the conductor keeps, with each agent&#x27;s commits counted from the repository.</caption>
+      <thead><tr><th scope="col">Agent</th><th scope="col">Kind</th><th scope="col">Job</th><th scope="col">Section</th><th scope="col">State</th><th scope="col">Last fired (UTC)</th><th scope="col">Commits</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="muted small" id="unattributed"></p>
+
+  <h2 id="h-how">How this page knows</h2>
+  <div class="how">
+    <ul>
+      <li><strong>The roster</strong> is a file on this site, <a href="/data/agents/roster.json">/data/agents/roster.json</a>, kept by the conductor. It lists every agent with its kind, job, section and state, and names only: no session links or ids.</li>
+      <li><strong>The fires</strong> are the commits on the <code>dev</code> branch, read by your browser from GitHub&#x27;s public API when the page opens and when you press Refresh, and kept in memory only. Each commit&#x27;s <code>Agent:</code> line names the agent that made it. GitHub allows 60 such requests an hour for each address without a login; when it says no, or cannot be reached, the page shows <a href="/data/agents/commits-snapshot.json">a snapshot of the commits</a> saved on this site, and says when it was taken.</li>
+      <li><strong>Active or retired</strong> comes from the team&#x27;s public list of agent keys in the Factory repository, read for names and status only.</li>
+      <li><strong>Nothing else.</strong> No cookies, no storage, no tracking. Nothing about you is sent anywhere, except that GitHub sees your browser&#x27;s requests for the commits and the key list, as it sees any visit. Commit messages are shown as plain text.</li>
+    </ul>
+  </div>
+
+  <h2 id="h-draw">The drawing</h2>
+  <p>The idea is <a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/lib/gravity">Gravity, from the SGit-AI Web Summit stand</a>: a core, centres of gravity around it, the nodes that belong to each centre, and the flows between them, where a commit that names another agent counts as a message. Gravity is Apache-2.0, so it could be copied here. We drew our own version in SVG instead, for three reasons: version 0.1.0 loads three.js and two fonts from other sites at run time, it styles itself with inline styles that this page&#x27;s security policy refuses, and it needs WebGL. This drawing is plain SVG made by one small script on this site, needs no WebGL, and its data has Gravity&#x27;s own shape (core, centres, nodes, flows, feed), so the library could draw it later.</p>
+  <p class="muted small">With reduced motion set on your device, the drawing stays still at the current time and the replay is off; the timeline still moves when you drag it.</p>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by the live-page builder, an agent in conductor.mistral&#x27;s session, for Dinis Cruz, 21 November 2026. Code Apache-2.0, text CC BY 4.0. Static files only: no cookies, no tracking, no storage, no server of ours; this page asks GitHub for the commits, nothing else. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

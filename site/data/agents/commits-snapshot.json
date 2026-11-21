@@ -1,0 +1,413 @@
+{
+ "about": "A snapshot of the commits on dev, for when GitHub's public API is unavailable. Same shape as the API's commits list, trimmed to the sha, link, message and dates; session links removed. Messages reduced to the subject line and the Agent: trailer (security.b review 013).",
+ "source": "https://api.github.com/repos/SovereignWebsite/Site__Provider__Mistral/commits?sha=dev&per_page=100",
+ "taken_at": "2026-11-21T02:00:08Z",
+ "commits": [
+  {
+   "sha": "453013c337fa492f0b302c2526f1e6cc879575e3",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/453013c337fa492f0b302c2526f1e6cc879575e3",
+   "commit": {
+    "message": "conductor.mistral: the pipeline checks the vendored wllama files\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:56:32Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:56:32Z"
+    }
+   }
+  },
+  {
+   "sha": "bda7192cf6537fbd215b6567fd2c9e6d54792c6a",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/bda7192cf6537fbd215b6567fd2c9e6d54792c6a",
+   "commit": {
+    "message": "mistral.local: /browser/local/, Ministral 3 3B running inside the browser tab\nAgent: mistral.local@SovereignWebsite.dinis",
+    "author": {
+     "name": "mistral.local@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:54:18Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:54:19Z"
+    }
+   }
+  },
+  {
+   "sha": "936bea8861a9fda76331854130fc94a09888e7c8",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/936bea8861a9fda76331854130fc94a09888e7c8",
+   "commit": {
+    "message": "conductor.mistral: a key vault in the browser (/browser/keys/)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:54:15Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:54:15Z"
+    }
+   }
+  },
+  {
+   "sha": "18ab641f27ec13a6d62aad41b38ff110a9a9adf5",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/18ab641f27ec13a6d62aad41b38ff110a9a9adf5",
+   "commit": {
+    "message": "conductor.mistral: an articles section, and the overnight article\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:40:33Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:40:33Z"
+    }
+   }
+  },
+  {
+   "sha": "3f7767f440aef48965bb3e5985651d8bfbf1f926",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/3f7767f440aef48965bb3e5985651d8bfbf1f926",
+   "commit": {
+    "message": "conductor.mistral: draft article, what we built overnight\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:35:42Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:35:42Z"
+    }
+   }
+  },
+  {
+   "sha": "74b960af1d2c41d7c421dfe76a94d847169bd0ab",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/74b960af1d2c41d7c421dfe76a94d847169bd0ab",
+   "commit": {
+    "message": "conductor.mistral: recorded run first on voice, ocr, inject; shorter key box\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:19:59Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:19:59Z"
+    }
+   }
+  },
+  {
+   "sha": "d62db8271ee7cb52450dc9487075193413019bb4",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/d62db8271ee7cb52450dc9487075193413019bb4",
+   "commit": {
+    "message": "conductor.mistral: vibe-build a sovereign website, and ask this site\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:05:09Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:05:09Z"
+    }
+   }
+  },
+  {
+   "sha": "747a50b836287463b87be7d5f2f8d853f12f5c08",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/747a50b836287463b87be7d5f2f8d853f12f5c08",
+   "commit": {
+    "message": "conductor.mistral: three browser demos: voice, document to site, injection lab\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T01:01:35Z"
+    },
+    "committer": {
+     "date": "2026-11-21T01:01:35Z"
+    }
+   }
+  },
+  {
+   "sha": "00a7d6679257b36dca7b4ad751b3cfb88217aeb2",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/00a7d6679257b36dca7b4ad751b3cfb88217aeb2",
+   "commit": {
+    "message": "conductor.mistral: the poster names the Mistral Vibe Hackathon and links its page\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T00:39:46Z"
+    },
+    "committer": {
+     "date": "2026-11-21T00:39:46Z"
+    }
+   }
+  },
+  {
+   "sha": "656b31eae20c241ebda27d934b1cfeec9f3192bb",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/656b31eae20c241ebda27d934b1cfeec9f3192bb",
+   "commit": {
+    "message": "conductor.mistral: /swarm/ in the shared shell, runs as a table (design round 3)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-21T00:13:16Z"
+    },
+    "committer": {
+     "date": "2026-11-21T00:13:16Z"
+    }
+   }
+  },
+  {
+   "sha": "eafcec7290441bb240ff56bede3aded7ec25ba29",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/eafcec7290441bb240ff56bede3aded7ec25ba29",
+   "commit": {
+    "message": "conductor.mistral: code shows it scrolls; evals captions wrap (design round 3)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:50:50Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:50:50Z"
+    }
+   }
+  },
+  {
+   "sha": "250b35c560a090462e82aea896be9c1ba603736e",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/250b35c560a090462e82aea896be9c1ba603736e",
+   "commit": {
+    "message": "swarm.mistral: run it yourself (security.b review 007), untrusted-data wrapping, rerun evals\nAgent: swarm.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "swarm.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:43:07Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:43:07Z"
+    }
+   }
+  },
+  {
+   "sha": "a17c9c7e83bc1573552caea3333e01b876d2412f",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/a17c9c7e83bc1573552caea3333e01b876d2412f",
+   "commit": {
+    "message": "conductor.mistral: /swarm/ linked from home and designs (generated)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:40:49Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:40:49Z"
+    }
+   }
+  },
+  {
+   "sha": "b535b6834ba7bbd62c6ec01ae7a3eeff936cd6f6",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/b535b6834ba7bbd62c6ec01ae7a3eeff936cd6f6",
+   "commit": {
+    "message": "conductor.mistral: shared shell on /team/ and /evals/; plain results line\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:40:41Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:40:42Z"
+    }
+   }
+  },
+  {
+   "sha": "a4f8efca7b7fec4dd00f9cebaddd29dc7d81a116",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/a4f8efca7b7fec4dd00f9cebaddd29dc7d81a116",
+   "commit": {
+    "message": "conductor.mistral: 24px footnote targets; code scrolls in its box on phones\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:38:54Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:39:02Z"
+    }
+   }
+  },
+  {
+   "sha": "7b204461ef7b5f8ee40f69a141b6537f0c938574",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/7b204461ef7b5f8ee40f69a141b6537f0c938574",
+   "commit": {
+    "message": "swarm.mistral: the Swarm on Mistral, replayed (site/swarm/)\nAgent: swarm.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "swarm.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:38:33Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:38:33Z"
+    }
+   }
+  },
+  {
+   "sha": "e2835c17fa0ebab00fcd2c1b97a9c7a43921528e",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/e2835c17fa0ebab00fcd2c1b97a9c7a43921528e",
+   "commit": {
+    "message": "evals.mistral: mistral-large-4 rerun at a 4000-token limit; board merges both runs; spend\nAgent: evals.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "evals.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:35:19Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:35:19Z"
+    }
+   }
+  },
+  {
+   "sha": "6cbfa890749ce23998dd4ea1b6b4ffe5aefd8505",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/6cbfa890749ce23998dd4ea1b6b4ffe5aefd8505",
+   "commit": {
+    "message": "conductor.mistral: design round 2 (design.b.rounds round 1 findings)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:33:20Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:33:20Z"
+    }
+   }
+  },
+  {
+   "sha": "ea84d5c693e5fb4e538ca1252190800c01a830df",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/ea84d5c693e5fb4e538ca1252190800c01a830df",
+   "commit": {
+    "message": "evals.mistral: run page keeps the key in memory only (security.b review 006)\nAgent: evals.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "evals.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:29:09Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:29:10Z"
+    }
+   }
+  },
+  {
+   "sha": "4ce8255f85ef597ea63d459aba3c41dad43c9abe",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/4ce8255f85ef597ea63d459aba3c41dad43c9abe",
+   "commit": {
+    "message": "/team/: handover note with the review outcome and what waits on a person\nAgent: team.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "Claude",
+     "date": "2026-11-20T23:26:33Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:26:33Z"
+    }
+   }
+  },
+  {
+   "sha": "bca2c0ba1a65775dd6c5c268b0508156c9b7e90d",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/bca2c0ba1a65775dd6c5c268b0508156c9b7e90d",
+   "commit": {
+    "message": "evals.mistral: rescore a too-lax injection check; show the scam-address finding; frame refusal\nAgent: evals.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "evals.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:25:25Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:25:32Z"
+    }
+   }
+  },
+  {
+   "sha": "144c0e81af9cb7d345328e18111f1c1285b80e99",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/144c0e81af9cb7d345328e18111f1c1285b80e99",
+   "commit": {
+    "message": "/team/: refuse to run in a frame, password-manager note, endpoint in status\nAgent: team.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "Claude",
+     "date": "2026-11-20T23:23:45Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:23:45Z"
+    }
+   }
+  },
+  {
+   "sha": "b172b31a8eee1db58fa2fd6e1076a1339391c7aa",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/b172b31a8eee1db58fa2fd6e1076a1339391c7aa",
+   "commit": {
+    "message": "Add /team/: seven agents inside the site, live on Mistral, with recorded runs\nAgent: team.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "Claude",
+     "date": "2026-11-20T23:17:31Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:22:25Z"
+    }
+   }
+  },
+  {
+   "sha": "a9269c79a74a02a7126b0172c012eae0f4971437",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/a9269c79a74a02a7126b0172c012eae0f4971437",
+   "commit": {
+    "message": "evals.mistral: Mistral evals board, run-it-yourself page, six suites and the first run\nAgent: evals.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "evals.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:21:21Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:21:22Z"
+    }
+   }
+  },
+  {
+   "sha": "a35fd4adadb4a7b0cf202d595e817fc0ff2220fa",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/a35fd4adadb4a7b0cf202d595e817fc0ff2220fa",
+   "commit": {
+    "message": "conductor.mistral: demos refuse to run in a frame; password-manager note\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:19:18Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:19:18Z"
+    }
+   }
+  },
+  {
+   "sha": "983035b39c28218d29ef8bdd001117fd36a0f792",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/983035b39c28218d29ef8bdd001117fd36a0f792",
+   "commit": {
+    "message": "conductor.mistral: five designs, sources, questions; demos pass axe\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:14:49Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:14:49Z"
+    }
+   }
+  },
+  {
+   "sha": "c15c2b9fa242a8ade701c21f27e422196dd06913",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/c15c2b9fa242a8ade701c21f27e422196dd06913",
+   "commit": {
+    "message": "conductor.mistral: the browser demos (same brief, three brains; your key; on your device)\nAgent: conductor.mistral@SovereignWebsite.dinis",
+    "author": {
+     "name": "conductor.mistral@SovereignWebsite.dinis",
+     "date": "2026-11-20T23:12:31Z"
+    },
+    "committer": {
+     "date": "2026-11-20T23:12:31Z"
+    }
+   }
+  },
+  {
+   "sha": "6b9752f0fedd424d63d21fbbcc79c7eaa55b4cb7",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/6b9752f0fedd424d63d21fbbcc79c7eaa55b4cb7",
+   "commit": {
+    "message": "Seed 16 files from SovereignWebsite__Factory (org-apply)",
+    "author": {
+     "name": "agenticcells-site-factory[bot]",
+     "date": "2026-11-20T22:58:47Z"
+    },
+    "committer": {
+     "date": "2026-11-20T22:58:47Z"
+    }
+   }
+  },
+  {
+   "sha": "06e88846ad9070adab680729da4f3b83c192662c",
+   "html_url": "https://github.com/SovereignWebsite/Site__Provider__Mistral/commit/06e88846ad9070adab680729da4f3b83c192662c",
+   "commit": {
+    "message": "Initial commit",
+    "author": {
+     "name": "agenticcells-site-factory[bot]",
+     "date": "2026-11-20T22:58:32Z"
+    },
+    "committer": {
+     "date": "2026-11-20T22:58:32Z"
+    }
+   }
+  }
+ ]
+}

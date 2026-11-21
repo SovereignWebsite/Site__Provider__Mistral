@@ -1,0 +1,70 @@
+/* Agents at work: the gravity drawing, the timeline, the fires and the table. The live-page builder, 21 November 2026.
+   Colours as tokens, light and dark; no inline styles anywhere (strict CSP). */
+:root{--c-core:#1d4e89;--c-session:#11766b;--c-in:#6a4fb3;--c-rev:#9a5b00;--c-flow:#b07d1c;--c-fire:#c0392b;--c-tie:#c4c7cc;--c-sky:#f3f5f7}
+@media (prefers-color-scheme:dark){:root{--c-core:#8db8ee;--c-session:#43d9c6;--c-in:#b6a2ff;--c-rev:#f2b544;--c-flow:#d9b26e;--c-fire:#ff7f6e;--c-tie:#3a3e44;--c-sky:#0d1416}}
+.small{font-size:.86rem}
+.block{display:block}
+.live-bar{margin:1rem 0}
+.live-bar p{margin:.4rem 0}
+.badges{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.badges .block{flex-basis:100%}
+.badge{display:inline-block;padding:.1rem .6rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid currentColor;line-height:1.6}
+.b-run{color:var(--ok);background:var(--okbg)}
+.b-loop{color:var(--c-in)}
+.b-call{color:var(--c-rev)}
+.b-done{color:var(--muted)}
+.gravity{margin:1rem 0 .5rem;border:1px solid var(--line);border-radius:12px;background:var(--c-sky);padding:.5rem}
+.gravity svg{display:block;width:100%;height:auto;max-height:78vh}
+.gravity figcaption{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:.85rem;color:var(--muted);padding:.4rem .3rem 0}
+.key{display:inline-flex;align-items:center;gap:.35rem}
+.sw{display:inline-block;width:.8rem;height:.8rem;border-radius:50%}
+.sw-core{background:var(--c-core)}.sw-session{background:var(--c-session)}.sw-in{background:var(--c-in)}.sw-rev{background:var(--c-rev)}
+.sw-flow{height:.25rem;width:1.3rem;border-radius:2px;background:var(--c-flow)}
+.sw-fire{background:transparent;border:2px solid var(--c-fire)}
+.ring,.orbit{fill:none;stroke:var(--c-tie);stroke-dasharray:4 8}
+.tie{stroke:var(--c-tie);stroke-width:1.5}
+.tie-rev{stroke-dasharray:2 6}
+.centre{fill:var(--muted)}
+.clabel{fill:var(--muted);text-anchor:middle;font-style:italic}
+.flow{fill:none;stroke:var(--c-flow);stroke-opacity:.75;stroke-linecap:round}
+.node .orb{stroke:var(--bg);stroke-width:2}
+.k-core .orb{fill:var(--c-core)}
+.k-sessions .orb{fill:var(--c-session)}
+.k-in-session .orb{fill:var(--c-in)}
+.k-reviewers .orb{fill:var(--c-rev)}
+.node.done .orb{fill-opacity:.35}
+.node.done .nlabel{fill:var(--muted)}
+.halo{fill:none;stroke:var(--ok);stroke-width:3}
+.halo.loop{stroke:var(--c-in);stroke-dasharray:6 5}
+.nlabel{fill:var(--fg);text-anchor:middle;font-family:var(--mono);paint-order:stroke;stroke:var(--c-sky);stroke-width:5px;stroke-linejoin:round}
+.k-core .nlabel{font-weight:700}
+.fire{fill:none;stroke:var(--c-fire);stroke-width:3}
+.spark{fill:var(--c-flow)}
+.timeline{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin:.6rem 0}
+.timeline label{font-weight:600}
+.timeline input[type=range]{flex:1 1 14rem;min-width:0;min-height:2.4rem;accent-color:var(--accent)}
+.timeline output{font-family:var(--mono);min-width:9rem}
+.fires{padding-left:1.4rem}
+.fires li{margin:.35rem 0}
+.ftime{color:var(--muted);font-size:.86rem}
+.tablewrap{overflow-x:auto}
+.agents{width:100%;border-collapse:collapse;font-size:.9rem}
+.agents caption{text-align:left;color:var(--muted);padding-bottom:.4rem}
+.agents th,.agents td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+.agents thead th{font-size:.82rem;color:var(--muted)}
+.agents td.num{text-align:right;font-variant-numeric:tabular-nums}
+.agents tbody th{font-weight:600;white-space:nowrap}
+.agents td:nth-child(2),.agents td:nth-child(4) a{white-space:nowrap}
+.agents td:nth-child(6){min-width:6.5rem}
+.agents td:nth-child(5){min-width:8rem}
+.how{border:1px solid var(--line);border-radius:8px;padding:.3rem 1rem;background:var(--panel)}
+@media (max-width:40rem){
+  .agents thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .agents,.agents tbody,.agents tr,.agents td,.agents tbody th{display:block;width:100%}
+  .agents tr{border-bottom:1px solid var(--line);padding:.5rem 0}
+  .agents td,.agents tbody th{border:0;padding:.1rem 0}
+  .agents td.num{text-align:left}
+  .agents caption{display:block;width:100%}
+  .agents td:nth-child(5),.agents td:nth-child(6){min-width:0}
+  .agents td[data-l]::before{content:attr(data-l) ": ";font-weight:600;color:var(--muted)}
+}
