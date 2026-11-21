@@ -34,6 +34,16 @@ An independent Sovereign Website demonstration. Not affiliated with or endorsed 
 - The QR format is assumed to be a link to a demo page (or /promptugal/) with `#key=<key>`; `#k=` and a bare key of 32 or more letters and digits also work. Dinis to confirm.
 - mistral.design's shared navigation: our pages carry its markers; /assets/css/nav.css is not linked yet.
 
+## Mistral spend (ledger outside git, ~/.promptugal-ledger/ledger.jsonl, summarised 21 November 2026 at 03:25 UTC)
+
+87 lines, about 0.13 USD in all, at Mistral's list prices as read on 21 November 2026 (a few browser-test lines are upper-bound estimates; calls the API reported under the alias mistral-small-latest are priced as mistral-small-2603, which GET /v1/models lists as the same model). By far the largest: the 30-run European/Brazilian comparison (about 0.06 USD, most of it mistral-large-4's reasoning tokens). Under the 2 USD cap, and under the further 2 USD for the second brief.
+
+## Not done, for whoever picks this up
+
+- Re-record the runs on fresh data after PrompTugal's 07:03 Lisbon collection (every recorded run here uses data PrompTugal read at about 18:15 UTC on 20 November). Re-recording changes the findings: update each page's "What we found" from the new files.
+- Add the new feeds to `/promptugal/feeds/` and the demos once the PrompTugal team collects them (rerun `tools/map-feeds.mjs`).
+- Stopped at the 20 USD session-cost rule (mistral.conductor read 18.25 USD at 03:24 UTC).
+
 ## Rerun
 
 All from the repository root, in a session whose proxy adds the Mistral key (the scripts never hold a key):
