@@ -1,0 +1,464 @@
+{
+  "about": "Pictures on /studio/ and the demo pages, each made by Mistral's image generation tool (POST /v1/conversations, tools: image_generation) by mistral.design@SovereignWebsite.dinis, with the prompt as sent. Made with tools/studio-images.mjs.",
+  "images": [
+    {
+      "id": "local",
+      "file": "/assets/studio/img/local.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A laptop open on a wooden desk by a chalet window in the Alps at night; inside the screen, a small constellation of light. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:01:05.303Z",
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 501,
+        "total_tokens": 1079,
+        "connector_tokens": 291,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "keys",
+      "file": "/assets/studio/img/keys.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. An old iron key and a sealed envelope with a wax seal, on a table of blue Portuguese tiles. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:01:38.499Z",
+      "usage": {
+        "prompt_tokens": 280,
+        "completion_tokens": 513,
+        "total_tokens": 1085,
+        "connector_tokens": 292,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "seal",
+      "file": "/assets/studio/img/seal.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A hand-press for wax seals beside a folded letter, in a quiet stone room lit by one window. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:01:51.979Z",
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 497,
+        "total_tokens": 1071,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "build",
+      "file": "/assets/studio/img/build.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. An architect's drafting table where a small town of paper buildings rises out of the blueprints. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:02:04.714Z",
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 401,
+        "total_tokens": 968,
+        "connector_tokens": 289,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "ask",
+      "file": "/assets/studio/img/ask.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A tall library reading room with endless shelves and a single green lamp on a long table. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:02:17.124Z",
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 475,
+        "total_tokens": 1045,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "voice",
+      "file": "/assets/studio/img/voice.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A radio mast on a hill above a European harbour town, its signal drawn as calm rings over the sea. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:02:30.593Z",
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 516,
+        "total_tokens": 1087,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "ocr",
+      "file": "/assets/studio/img/ocr.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Sheets of paper flying off a printing press and settling into a neat grid of columns. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:02:43.218Z",
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 434,
+        "total_tokens": 1002,
+        "connector_tokens": 292,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "inject",
+      "file": "/assets/studio/img/inject.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A castle gate with a lowered portcullis; a single paper note lies on the stones outside, kept out. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:02:55.201Z",
+      "usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 498,
+        "total_tokens": 1076,
+        "connector_tokens": 295,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "side",
+      "file": "/assets/studio/img/side.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Three lighthouses on three headlands along one coastline, each with its own beam. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:03:07.991Z",
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 468,
+        "total_tokens": 1036,
+        "connector_tokens": 291,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "live",
+      "file": "/assets/studio/img/live.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A map of Europe at night drawn as a railway network, stations glowing as nodes along the lines. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:03:21.255Z",
+      "usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 505,
+        "total_tokens": 1074,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "swarm",
+      "file": "/assets/studio/img/swarm.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A murmuration of starlings swirling above a river city with bridges and spires. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:03:45.843Z",
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 494,
+        "total_tokens": 1066,
+        "connector_tokens": 294,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "swarm-evals",
+      "file": "/assets/studio/img/swarm-evals.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A row of brass laboratory balances on a long bench, each weighing a small cube. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:03:58.474Z",
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 477,
+        "total_tokens": 1040,
+        "connector_tokens": 287,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "evals",
+      "file": "/assets/studio/img/evals.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A glasshouse in a botanical garden with tidy specimen beds and small labels on stakes. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:04:24.846Z",
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 480,
+        "total_tokens": 1051,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "evals-run",
+      "file": "/assets/studio/img/evals-run.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Laboratory glassware on a bench, flasks and tubes catching cold light. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:04:41.096Z",
+      "usage": {
+        "prompt_tokens": 274,
+        "completion_tokens": 472,
+        "total_tokens": 1036,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "your-key",
+      "file": "/assets/studio/img/your-key.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A bank vault door, half open, rows of small safe-deposit boxes inside. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:04:53.419Z",
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 482,
+        "total_tokens": 1051,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "on-device",
+      "file": "/assets/studio/img/on-device.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A small circuit board seen from above, drawn as a miniature city with streets and squares. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:05:07.842Z",
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 493,
+        "total_tokens": 1060,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "demos",
+      "file": "/assets/studio/img/demos.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Three painted doors side by side in an old Mediterranean wall, each slightly open. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:05:21.702Z",
+      "usage": {
+        "prompt_tokens": 275,
+        "completion_tokens": 471,
+        "total_tokens": 1036,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal",
+      "file": "/assets/studio/img/promptugal.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A Lisbon hillside at blue hour, a tram climbing a narrow street between tiled houses. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:05:36.266Z",
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 501,
+        "total_tokens": 1065,
+        "connector_tokens": 286,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-ask",
+      "file": "/assets/studio/img/promptugal-ask.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A baroque university library in Coimbra, carved shelves and a ladder. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:05:49.616Z",
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 475,
+        "total_tokens": 1036,
+        "connector_tokens": 288,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-bulletin",
+      "file": "/assets/studio/img/promptugal-bulletin.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. An Atlantic weather station on a cliff, instruments and a lighthouse under passing clouds. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:06:03.945Z",
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 503,
+        "total_tokens": 1069,
+        "connector_tokens": 290,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-pt",
+      "file": "/assets/studio/img/promptugal-pt.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Two coastlines facing each other across a wide ocean, one with old towers, one with a modern city. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:06:17.583Z",
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 505,
+        "total_tokens": 1078,
+        "connector_tokens": 292,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "studio",
+      "file": "/assets/studio/img/studio.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A grand empty European museum atrium under a geometric glass skylight, plain stone walls, arches opening onto empty galleries, no statues, no sculptures. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:06:52.826Z",
+      "usage": {
+        "prompt_tokens": 289,
+        "completion_tokens": 493,
+        "total_tokens": 1071,
+        "connector_tokens": 289,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "team",
+      "file": "/assets/studio/img/team.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. Seven small empty sailing boats moored in a neat row on a wide canal between old warehouses, their sails half raised. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:07:05.116Z",
+      "usage": {
+        "prompt_tokens": 285,
+        "completion_tokens": 488,
+        "total_tokens": 1058,
+        "connector_tokens": 285,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "swarm-run",
+      "file": "/assets/studio/img/swarm-run.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A single paper boat gliding across a still mountain lake, its wake a clean line. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:07:17.205Z",
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 475,
+        "total_tokens": 1045,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-today",
+      "file": "/assets/studio/img/promptugal-today.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A compass rose inlaid in a stone square in Lisbon, lines radiating to the river and the hills. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:10:02.622Z",
+      "usage": {
+        "prompt_tokens": 280,
+        "completion_tokens": 506,
+        "total_tokens": 1070,
+        "connector_tokens": 284,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-morning",
+      "file": "/assets/studio/img/promptugal-morning.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. The Thames in London and the Tagus in Lisbon at first blue light, two river cities joined by one bridge across a split horizon. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:10:16.592Z",
+      "usage": {
+        "prompt_tokens": 286,
+        "completion_tokens": 425,
+        "total_tokens": 997,
+        "connector_tokens": 286,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    },
+    {
+      "id": "promptugal-feeds",
+      "file": "/assets/studio/img/promptugal-feeds.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. A network of copper pipes and valves feeding into neat glass jars on shelves, each jar holding a different coloured liquid. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:10:30.438Z",
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 492,
+        "total_tokens": 1067,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
+    }
+  ]
+}

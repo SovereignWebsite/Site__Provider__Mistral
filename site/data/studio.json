@@ -206,6 +206,30 @@
       "key": "either",
       "name": "European or Brazilian Portuguese",
       "line": "The same brief to five Mistral models, asked for European and Brazilian Portuguese, every text scanned in code for the words where the two differ."
+    },
+    {
+      "id": "promptugal-today",
+      "u": "/promptugal/today/",
+      "group": "agentic",
+      "key": "either",
+      "name": "What should I know today?",
+      "line": "A Mistral agent that reads across PrompTugal's feeds for London and Portugal with tool calls in your browser, answers with each source and read time, and draws every step as a flow."
+    },
+    {
+      "id": "promptugal-morning",
+      "u": "/promptugal/morning/",
+      "group": "agentic",
+      "key": "either",
+      "name": "London and Lisbon, the morning briefing",
+      "line": "A morning briefing for London and Lisbon side by side, written by Mistral from PrompTugal's public data, with every figure, warning and the weekday checked in code."
+    },
+    {
+      "id": "promptugal-feeds",
+      "u": "/promptugal/feeds/",
+      "group": "no-key",
+      "key": "none",
+      "name": "PrompTugal's data feeds, mapped",
+      "line": "Every public data feed PrompTugal publishes, for Portugal, London and Europe: what each holds, how often it is updated, its licence, and a live sample of each."
     }
   ]
 }

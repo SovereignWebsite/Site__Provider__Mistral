@@ -63,6 +63,9 @@ const LIST = [
   { u: '/promptugal/ask/', s: 'agentic', p: '/promptugal/', l: 'Ask PrompTugal', t: 'Ask about Portugal in European Portuguese or English, answered only from PrompTugal’s public data.' },
   { u: '/promptugal/bulletin/', s: 'agentic', p: '/promptugal/', l: 'The PrompTugal bulletin', t: 'A daily bulletin for Portugal from public data, every figure checked in code, translated and read aloud by Voxtral.' },
   { u: '/promptugal/pt-pt/', s: 'agentic', p: '/promptugal/', l: 'European or Brazilian Portuguese', t: 'The same brief to five Mistral models, asked for European and Brazilian Portuguese, scanned in code for where they differ.' },
+  { u: '/promptugal/today/', s: 'agentic', p: '/promptugal/', l: 'What should I know today?', t: 'A Mistral agent that reads across PrompTugal’s feeds for London and Portugal with tool calls, and draws every step.' },
+  { u: '/promptugal/morning/', s: 'agentic', p: '/promptugal/', l: 'London and Lisbon, the morning briefing', t: 'A morning briefing for London and Lisbon side by side, written by Mistral, every figure checked in code.' },
+  { u: '/promptugal/feeds/', s: 'agentic', p: '/promptugal/', l: 'PrompTugal’s data feeds, mapped', t: 'Every public data feed PrompTugal publishes: what it holds, how often, its licence, and a live sample.' },
   { u: '/live/', s: 'agentic', l: 'Agents at work', t: 'The agents working on this site.' },
 
   { u: '/articles/', s: 'articles', l: 'All articles', t: 'What was built on this site, how, and what it showed.' },
@@ -91,22 +94,28 @@ const ARTICLES = existsSync(ARTDIR) ? readdirSync(ARTDIR).filter((f) => f.endsWi
 const STUDIO = JSON.parse(readFileSync(join(SITE_DIR, 'data', 'studio.json'), 'utf8'));
 const KEY = { none: 'No key', mistral: 'Your Mistral key', either: 'Your key, or no key' };
 const KEYLINE = { none: 'Works as soon as it opens, in your browser.', mistral: 'Calls Mistral from your browser with your own key, held in this tab.', either: 'With your own key, or with no key at all.' };
+// A demo's picture: Mistral's illustration (tools/studio-images.mjs) where there is one, else the geometric poster.
+export const pic = (id) => existsSync(join(SITE_DIR, 'assets', 'studio', 'img', `${id}.jpg`))
+  ? { src: `/assets/studio/img/${id}.jpg`, w: 1184, h: 896, made: true } : { src: `/assets/studio/art/${id}.svg`, w: 1200, h: 300, made: false };
+const credit = '<a class="pic-credit" href="/data/studio-images.json">Picture made by Mistral</a>';
+
 // The local model, as a prominent card (home page, /browser/, /studio/): Dinis could not find it.
-export const featureLocal = () => `<section class="feature-local" aria-labelledby="fl-h">
-  <img class="fl-art" src="/assets/studio/art/local.svg" width="1200" height="300" alt="">
+export const featureLocal = () => { const p = pic('local'); return `<section class="feature-local" aria-labelledby="fl-h">
+  <img class="fl-art" src="${p.src}" width="${p.w}" height="${p.h}" alt="">
   <div class="fl-body">
     <p class="fl-tag"><span class="key-tag key-none">No key</span> <span>Runs in this browser tab</span></p>
     <h2 id="fl-h">Mistral on your device, no key</h2>
     <p>Ministral 3 3B, Mistral’s Apache 2.0 model, running inside your browser: no key, no API, no server. The weights download once (2.15 GB) and stay in this browser; your messages never leave your machine. Use a laptop or desktop.</p>
-    <p class="fl-go"><a class="btn" href="/browser/local/">Run Mistral in this tab</a></p>
+    <p class="fl-go"><a class="btn" href="/browser/local/">Run Mistral in this tab</a></p>${p.made ? `\n    <p class="fl-credit">${credit}</p>` : ''}
   </div>
-</section>`;
+</section>`; };
 function band(here) {
   const d = STUDIO.demos.find((x) => x.u === here);
   if (!d) return '';
+  const p = pic(d.id);
   return `\n<aside class="studio-band" aria-label="About this demo">
-  <img class="sb-art" src="/assets/studio/art/${d.id}.svg" width="1200" height="300" alt="">
-  <p class="sb-info"><span class="key-tag key-${d.key}">${KEY[d.key]}</span> <span class="sb-line">${KEYLINE[d.key]}</span> <a href="/studio/">Every demo, in the studio</a></p>
+  <img class="sb-art${p.made ? ' sb-photo' : ''}" src="${p.src}" width="${p.w}" height="${p.h}" alt="">
+  <p class="sb-info"><span class="key-tag key-${d.key}">${KEY[d.key]}</span> <span class="sb-line">${KEYLINE[d.key]}</span>${p.made ? ` ${credit}` : ''} <a class="sb-all" href="/studio/">Every demo, in the studio</a></p>
 </aside>`;
 }
 const isStudioPage = (here) => here === '/studio/' || STUDIO.demos.some((x) => x.u === here);

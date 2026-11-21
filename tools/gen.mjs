@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 import { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS } from './facts.mjs';
 import { d1, d2, d3, d4, d5 } from './designs.mjs';
-import { head, foot, sitemapBody, featureLocal, run as navRun } from './nav.mjs';
+import { head, foot, sitemapBody, featureLocal, pic, run as navRun } from './nav.mjs';
 import { poster } from './art.mjs';
 
 export const HOME = 5; // the design used for the home page (see /questions/)
@@ -358,12 +358,12 @@ ${articles.map((a) => `<li><a href="/articles/${a.slug}.html">${esc(a.title)}</a
   mkdirSync(join(ROOT, 'site', 'assets', 'studio', 'art'), { recursive: true });
   for (const d of st.demos) writeFileSync(join(ROOT, 'site', 'assets', 'studio', 'art', `${d.id}.svg`), poster(d.id));
   writeFileSync(join(ROOT, 'site', 'assets', 'studio', 'art', 'studio.svg'), poster('studio', 14, 4));
-  const card = (d) => { const shot = existsSync(join(ROOT, 'site', 'assets', 'studio', `${d.id}.jpg`)) ? `<img class="sc-shot" src="/assets/studio/${d.id}.jpg" width="640" height="400" alt="" loading="lazy">` : '';
-    return `<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/${d.id}.svg" width="1200" height="300" alt="" loading="lazy">${shot}</div><div class="sc-body"><h3><a href="${d.u}">${esc(d.name)}</a></h3><span class="key-tag key-${d.key}">${KEY[d.key]}</span><p>${esc(d.line)}</p></div></li>`; };
+  const card = (d) => { const p = pic(d.id);
+    return `<li><div class="sc-pics"><img class="sc-art" src="${p.src}" width="${p.w}" height="${p.h}" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="${d.u}">${esc(d.name)}</a></h3><span class="key-tag key-${d.key}">${KEY[d.key]}</span><p>${esc(d.line)}</p></div></li>`; };
   page({ path: 'studio/index.html', url: '/studio/', title: 'The studio', theme: 'plain', bodyClass: 'studio-wide',
     description: `Every demo on this site that works today (${live.length}), in your browser: what each one does, and whether it needs your own Mistral key.`,
     body: `<div class="wrap">
-<img class="studio-hero" src="/assets/studio/art/studio.svg" width="1400" height="400" alt="">
+${(() => { const p = pic('studio'); return `<img class="studio-hero${p.made ? ' sb-photo' : ''}" src="${p.src}" width="${p.w}" height="${p.h}" alt="">`; })()}
 <p class="mark">The studio</p>
 <h1>Every demo, working today</h1>
 <p class="lede">${live.length} demos, all running in your browser from this static site. The ones marked “No key” work as soon as they open; the others call Mistral with your own key, held in the tab and sent only to Mistral. ${NOTHING}</p>
@@ -376,7 +376,7 @@ ${st.groups.map((g) => { const ds = live.filter((d) => d.group === g.id); if (!d
 ${ds.map(card).join('\n')}
 </ul>
 </section>`; }).join('\n')}
-<p class="small">This list is <a href="/data/studio.json">data/studio.json</a>. Every page on the site is in the <a href="/sitemap/">site map</a>.</p>
+<p class="small">This list is <a href="/data/studio.json">data/studio.json</a>. The pictures were made by Mistral’s image generation tool; each prompt is in <a href="/data/studio-images.json">data/studio-images.json</a>. Every page on the site is in the <a href="/sitemap/">site map</a>.</p>
 </div>` });
 }
 

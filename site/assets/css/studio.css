@@ -17,8 +17,7 @@ body:has(.studio-band),body.studio-wide{
 .studio-band{max-width:var(--max,72rem);margin:1rem auto 0;padding:0 1rem}
 .sb-art,.studio-hero{display:block;width:100%;height:clamp(6.5rem,17vw,14rem);object-fit:cover;border-radius:16px;background:#0b1f4b}
 .sb-info{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem 1rem;margin:.75rem 0 0;font-size:.93rem;color:var(--muted)}
-.sb-info a{font-weight:700;color:var(--accent);margin-left:auto}
-@media (max-width:40rem){.sb-info a{margin-left:0}}
+.sb-info .sb-all{font-weight:700;color:var(--accent)}
 .key-none{color:var(--teal)}
 .key-mistral,.key-either{color:var(--accent)}
 
@@ -80,3 +79,9 @@ body:has(.studio-band) main pre{border-radius:12px}
 .studio-cards p{margin:0;font-size:.93rem;color:var(--muted)}
 .studio-cards .key-tag{align-self:flex-start}
 @media (prefers-reduced-motion:reduce){.studio-cards li,body:has(.studio-band) main button{transition:none}}
+/* Mistral's illustrations: a taller band, a credit line. */
+.sb-photo{height:clamp(11rem,30vw,24rem)!important;object-position:center 60%}
+.studio-wide .studio-hero.sb-photo{height:clamp(12rem,34vw,28rem)}
+.sb-info .sb-all{margin-left:auto}
+.pic-credit{font-size:.82rem;color:var(--muted);text-decoration-style:dotted}
+@media (max-width:40rem){.sb-info .sb-all{margin-left:0}}

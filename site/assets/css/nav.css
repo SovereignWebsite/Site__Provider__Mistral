@@ -149,3 +149,4 @@ body>.notice p{margin:0;padding:.45rem .8rem;border-left:4px solid var(--nav-acc
 .feature-local .btn:hover{text-decoration:underline}
 @media (max-width:44rem){.feature-local{grid-template-columns:1fr}.feature-local .fl-art{min-height:0;height:8rem}}
 @media (prefers-color-scheme:dark){.feature-local .key-none{color:var(--teal,#5fd0c6)}}
+.feature-local .fl-credit{font-size:.82rem;margin-top:.6rem}.feature-local .fl-credit a{color:var(--muted,#4f5257)}
