@@ -54,7 +54,16 @@ EXAMPLES.forEach(([l, q]) => {
   $('examples').appendChild(b);
 });
 
-// ---- Drawing an answer: text only. A link becomes <a> only if its exact address came back from a tool. ----
+// ---- Links: only to an address a tool returned this turn, and only on these hosts or their subdomains
+// (security.b, review 011): a poisoned row in collected data cannot put an outside link into an answer. ----
+const LINK_HOSTS = ['promptugal.news', 'data.promptugal.news', 'ipma.pt', 'nvd.nist.gov', 'euvd.enisa.europa.eu', 'cisa.gov'];
+function linkable(href, seen) {
+  if (!seen.has(href)) return false;
+  let u; try { u = new URL(href); } catch (e) { return false; }
+  if (u.protocol !== 'https:') return false;
+  return LINK_HOSTS.some((h) => u.hostname === h || u.hostname.endsWith('.' + h));
+}
+// ---- Drawing an answer: text only. A link becomes <a> only if its exact address came back from a tool, on a host above. ----
 function renderAnswer(box, text, seen) {
   box.textContent = '';
   const linked = [];
@@ -67,8 +76,8 @@ function renderAnswer(box, text, seen) {
       while ((m = re.exec(line))) {
         p.appendChild(document.createTextNode(line.slice(at, m.index).replace(/\*\*/g, '')));
         const label = m[1] || m[3], href = (m[2] || m[3]).replace(/[.,;:]+$/, '');
-        if (/^https:\/\//.test(href) && seen.has(href)) { p.appendChild(el('a', { href, rel: 'noopener noreferrer', text: label })); linked.push(href); }
-        else p.appendChild(document.createTextNode(m[1] ? label + ' (' + href + ', not linked: no tool gave that address)' : label));
+        if (linkable(href, seen)) { p.appendChild(el('a', { href, rel: 'noopener noreferrer', text: label })); linked.push(href); }
+        else p.appendChild(document.createTextNode(m[1] ? label + ' (' + href + ', not linked: not an address a tool gave, on a host this page links to)' : label));
         at = re.lastIndex;
       }
       p.appendChild(document.createTextNode(line.slice(at).replace(/\*\*/g, '')));
@@ -119,7 +128,7 @@ function apply(ev) {
     turn.cites.textContent = '';
     if (turn.used.length) {
       const ul = el('ul');
-      turn.used.forEach((u) => ul.appendChild(el('li', null, [el('a', { href: u, rel: 'noopener noreferrer', text: u.replace(/^https:\/\//, '') })])));
+      turn.used.forEach((u) => ul.appendChild(el('li', null, [linkable(u, new Set([u])) ? el('a', { href: u, rel: 'noopener noreferrer', text: u.replace(/^https:\/\//, '') }) : el('code', { text: u })])));
       turn.cites.append(el('p', { class: 'label', text: 'What the tools read (fetched by this page, as read at the time of this answer):' }), ul);
     }
     turn.meta.textContent = (ev.model ? 'Answered by ' + ev.model + ' via ' + ev.host + '. ' : '') + (turn.meta.dataset.tokens ? turn.meta.dataset.tokens + ' tokens in all. ' : '') + 'Model output: check it against the sources.';

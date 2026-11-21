@@ -103,7 +103,8 @@
           if (Array.isArray(v)) {
             const kept = w ? v.filter((r) => fold(JSON.stringify(r)).includes(w)) : v;
             out.rows_total = v.length; out.rows_matching = kept.length; out.rows = kept.slice(0, limit);
-            if (w) out.match_note = kept.length ? kept.length + ' row(s) contain "' + a.match + '": they are listed in rows.' : 'no row contains "' + a.match + '".';
+            const said = String(a.match).slice(0, 200); // capped (security.b, review 011)
+            if (w) out.match_note = kept.length ? kept.length + ' row(s) contain "' + said + '": they are listed in rows.' : 'no row contains "' + said + '".';
             if (kept.length > limit) out.note = 'only the first ' + limit + ' rows: narrow with "match" or raise "limit"';
           } else if (v && typeof v === 'object' && w) {
             const keys = Object.keys(v).filter((k) => fold(k + JSON.stringify(v[k])).includes(w));

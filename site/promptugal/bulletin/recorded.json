@@ -15,7 +15,8 @@
    "status": 200,
    "bytes": 8208,
    "ms": 578,
-   "read_at": "2026-11-20T18:15:47Z"
+   "read_at": "2026-11-20T18:15:47Z",
+   "licence": "IPMA, Instituto Português do Mar e da Atmosfera: the source's terms; commercial use not allowed"
   },
   {
    "t": 636,
@@ -25,7 +26,8 @@
    "status": 200,
    "bytes": 13526,
    "ms": 58,
-   "read_at": "2026-11-20T18:15:34Z"
+   "read_at": "2026-11-20T18:15:34Z",
+   "licence": "IPMA, Instituto Português do Mar e da Atmosfera: the source's terms; commercial use not allowed"
   },
   {
    "t": 752,
@@ -35,7 +37,8 @@
    "status": 200,
    "bytes": 87683,
    "ms": 116,
-   "read_at": "2026-11-20T18:15:22Z"
+   "read_at": "2026-11-20T18:15:22Z",
+   "licence": "IPMA, Instituto Português do Mar e da Atmosfera: the source's terms; commercial use not allowed"
   },
   {
    "t": 790,
@@ -45,7 +48,8 @@
    "status": 200,
    "bytes": 706109,
    "ms": 38,
-   "read_at": "2026-11-20T18:04:37Z"
+   "read_at": "2026-11-20T18:04:37Z",
+   "licence": "CISA: CC0 1.0; commercial use allowed"
   },
   {
    "t": 905,
@@ -55,7 +59,8 @@
    "status": 200,
    "bytes": 2775041,
    "ms": 115,
-   "read_at": "2026-11-20T18:06:53Z"
+   "read_at": "2026-11-20T18:06:53Z",
+   "licence": "ENISA, EU Vulnerability Database: ENISA legal notice (reproduction authorised with the source acknowledged); commercial use allowed"
   },
   {
    "t": 908,

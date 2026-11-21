@@ -66,9 +66,11 @@ function drawTranslation(box, s, ptText) {
       [wd.ok !== false, wd.ok === null ? 'No weekday named.' : 'Weekday: ' + wd.named.join(', ') + ' (should be ' + wd.want + ').']
     ].concat(s.markers_stripped ? [[true, 'The model echoed the untrusted-data markers around its answer; they were removed in code.']] : [])));
 }
+// Each source's licence line, from its own JSON (holder, name, commercial use).
+function licenceOf(j) { const l = (j && j.license) || {}; return [l.holder, l.name].filter(Boolean).join(': ') + (l.commercial_use ? '; commercial use ' + l.commercial_use : ''); }
 function drawFacts(box, facts, fetches) {
   box.replaceChildren(
-    el('ul', { class: 'plain small' }, fetches.map((f) => el('li', {}, 'Read ', el('code', { text: f.url.replace('https://', '') }), ' (' + (f.status === 200 ? bytesText(f.bytes) : 'HTTP ' + f.status) + '): PrompTugal read it from its source at ' + (f.read_at || 'an unstated time') + '.'))),
+    el('ul', { class: 'plain small' }, fetches.map((f) => el('li', {}, 'Read ', el('code', { text: f.url.replace('https://', '') }), ' (' + (f.status === 200 ? bytesText(f.bytes) : 'HTTP ' + f.status) + '): PrompTugal read it from its source at ' + (f.read_at || 'an unstated time') + '. Licence, from the file: ' + (f.licence || 'not stated') + '.'))),
     el('details', {}, el('summary', { text: 'The facts the model gets (picked in code; ' + JSON.stringify(facts).length + ' characters of JSON)' }), el('pre', { class: 'facts', tabindex: '0', text: JSON.stringify(facts, null, 1) })));
 }
 function drawRoundtrip(box, s, said) {
@@ -83,7 +85,7 @@ function drawRoundtrip(box, s, said) {
       [rt.words_heard / rt.words >= 0.95, rt.words_heard + ' of ' + rt.words + ' words of the bulletin are in the transcript (' + Math.round(100 * rt.words_heard / rt.words) + '%)' + (rt.missing.length ? '; not heard as written: ' + rt.missing.join(', ') : '') + '.'],
       [!lost.length, (fig.said.length - lost.length) + ' of ' + fig.said.length + ' figures heard back with the same value' + (lost.length ? '; not heard: ' + lost.join(', ') : '') + '.']
     ]),
-    el('p', { class: 'small', text: 'A round trip shows the words came through; it cannot tell whether the accent sounds European Portuguese. Listen and judge. Mistral lists no Portuguese preset voice (GET /v1/audio/voices, 21 November 2026): the voice is ' + TTS.voice + '.' }));
+    el('p', { class: 'small', text: 'A round trip shows the words came through; it cannot tell whether the accent sounds European Portuguese. Listen and judge. Mistral lists no Portuguese preset voice (GET /v1/audio/voices, 21 November 2026): this is ' + TTS.voice + ', an English preset voice reading Portuguese.' }));
 }
 
 // ---- The recorded run. ----
@@ -98,7 +100,7 @@ $('replay').addEventListener('click', async () => {
   drawBulletin($('r-pt'), { ...pt, bulletin_date: recorded.bulletin_date });
   by('translation').forEach((s) => drawTranslation($('r-' + s.lang), s, pt.text));
   const sp = by('speech')[0], rt = by('roundtrip')[0];
-  if (sp) { const a = $('r-audio'); a.src = 'recorded-bulletin.mp3'; a.classList.remove('hidden'); $('r-audio-note').textContent = 'Voxtral (' + sp.model + ', voice ' + sp.voice + ') reading the Portuguese bulletin: ' + sp.characters + ' characters, ' + bytesText(sp.bytes) + ' of MP3, model output.'; }
+  if (sp) { const a = $('r-audio'); a.src = 'recorded-bulletin.mp3'; a.classList.remove('hidden'); $('r-audio-note').textContent = 'Voxtral (' + sp.model + ', voice ' + sp.voice + ', an English preset voice reading Portuguese) reading the bulletin: ' + sp.characters + ' characters, ' + bytesText(sp.bytes) + ' of MP3, model output.'; }
   if (rt) drawRoundtrip($('r-rt'), rt, pt.text);
   $('replay-out').classList.remove('hidden');
   $('replay').disabled = false;
@@ -119,7 +121,7 @@ $('read').addEventListener('click', async () => {
       const text = await r.text();
       fetches.push({ id, url, status: r.status, bytes: text.length });
       if (!r.ok) throw new Error(url + ' answered ' + r.status);
-      files[id] = JSON.parse(text); fetches[fetches.length - 1].read_at = files[id].read_at;
+      files[id] = JSON.parse(text); fetches[fetches.length - 1].read_at = files[id].read_at; fetches[fetches.length - 1].licence = licenceOf(files[id]);
     }
   } catch (e) { $('read-status').textContent = 'Could not read PrompTugal\'s data: ' + e.message; $('read').disabled = false; return; }
   facts = B.build(files, $('date').value);

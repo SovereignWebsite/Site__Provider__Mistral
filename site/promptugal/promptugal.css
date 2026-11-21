@@ -23,3 +23,7 @@ input[type=date]{font:inherit;padding:.35rem .5rem;border:1px solid var(--line);
 .drop:focus-visible,.drop.over{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
 .drop label{display:block;margin:.4rem 0 .2rem;font-weight:600}
 .drop input[type=file]{max-width:100%}
+.mk-pt{background:var(--okbg);color:var(--ok);border-radius:3px;padding:0 .15em;font-weight:600}
+.mk-br{background:var(--warnbg,#fff4dc);color:var(--warnfg,#5c4200);border-radius:3px;padding:0 .15em;font-weight:600;text-decoration:underline dotted}
+#r-texts details,#live-out details{margin:.4rem 0}
+#r-texts summary,#live-out summary{cursor:pointer}

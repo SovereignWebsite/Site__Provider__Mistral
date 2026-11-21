@@ -56,7 +56,8 @@ for (const id of B.SOURCES) {
   const r = await fetch(B.URL_OF(id));
   const text = await r.text();
   files[id] = JSON.parse(text);
-  step({ type: 'fetch', id, url: B.URL_OF(id), status: r.status, bytes: text.length, ms: Date.now() - t, read_at: files[id].read_at });
+  const l = files[id].license || {};
+  step({ type: 'fetch', id, url: B.URL_OF(id), status: r.status, bytes: text.length, ms: Date.now() - t, read_at: files[id].read_at, licence: [l.holder, l.name].filter(Boolean).join(': ') + (l.commercial_use ? '; commercial use ' + l.commercial_use : '') });
 }
 // 2. The facts, in code.
 const facts = B.build(files, DATE);

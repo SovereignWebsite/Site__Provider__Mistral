@@ -10,7 +10,7 @@
  *  2. Pasting or dropping a picture of the QR code on the drop area (or choosing the file). The picture is decoded here,
  *     with the browser's own BarcodeDetector or, where there is none, jsQR (self-hosted, /promptugal/vendor/), and is
  *     sent nowhere.
- * Either way the key goes straight into the page's existing key box (the one in /browser/ask/panel.js or
+ * Either way the visitor is asked first ("Use it" or "Do not use it"), then the key goes into the page's existing key box (the one in /browser/ask/panel.js or
  * /browser/voice/kit.js, unchanged), exactly as if it had been pasted there, and that box clears it from the field.
  * Nothing here stores, logs, shows or sends the key. On /promptugal/ (the list page) a key from the link is held in this
  * script's closure and added to a demo link's "#" only at the moment that link is followed.
@@ -19,27 +19,36 @@
   'use strict';
   if (window.top !== window.self) return; // the pages refuse to run in a frame; so does this
   const SHAPE = /^[A-Za-z0-9_-]{16,128}$/;
+  // A fragment holds a key when it says key= or k=, or is one bare run of 32 or more letters and digits (no hyphen,
+  // so an ordinary "#section" link is left alone: security.b, review 014).
+  function looksLikeKey(f) { return /(?:^|&)(?:key|k)=/.test(f) || /^[A-Za-z0-9]{32,128}$/.test(f); }
   function keyFrom(fragment) {
     let f = String(fragment || '').replace(/^#/, '');
     if (!f) return null;
     try { f = decodeURIComponent(f); } catch (e) { return null; }
+    if (!looksLikeKey(f)) return null;
     const m = /(?:^|&)(?:key|k)=([^&]*)/.exec(f);
     const k = m ? m[1] : f;
     return SHAPE.test(k) ? k : null;
   }
-  // What a decoded QR code says: a link with the key after "#", or the bare key. Nothing else is accepted.
+  // What a decoded QR code says: a link to this site with the key after "#", or the bare key. A link to any other
+  // site is refused (security.b, review 014).
   function keyFromQr(text) {
     const s = String(text || '').trim();
     if (SHAPE.test(s)) return s;
-    try { const u = new URL(s); return keyFrom(u.hash); } catch (e) { return null; }
+    try { const u = new URL(s); return u.origin === location.origin ? keyFrom(u.hash) : null; } catch (e) { return null; }
   }
 
-  // 1. The link. Before anything else on the page runs.
+  // 1. The link. Before anything else on the page runs. The fragment is removed only when it holds a key.
   let pending = null, fromLink = false;
   if (location.hash) {
-    pending = keyFrom(location.hash);
-    fromLink = true;
-    history.replaceState(history.state, '', location.pathname + location.search);
+    let raw = location.hash.slice(1);
+    try { raw = decodeURIComponent(raw); } catch (e) { /* keep as is */ }
+    if (looksLikeKey(raw)) {
+      pending = keyFrom(location.hash);
+      fromLink = true;
+      history.replaceState(history.state, '', location.pathname + location.search);
+    }
   }
 
   function target() {
@@ -58,8 +67,26 @@
   function say(text, bad) {
     const s = document.getElementById('qr-status');
     if (!s) return;
-    s.textContent = text;
+    s.replaceChildren(document.createTextNode(text));
     s.classList.toggle('bad', !!bad);
+  }
+  // A key that arrives by link or QR code is used only when the visitor says so: anyone can send a link with their
+  // own key in it, and what is sent with it would go to Mistral on that stranger's account (security.b, review 014).
+  // No character of the key is shown.
+  function confirmKey(key, how) {
+    const s = document.getElementById('qr-status');
+    if (!s) return;
+    s.classList.remove('bad');
+    const use = document.createElement('button'), no = document.createElement('button');
+    use.type = 'button'; use.className = 'primary'; use.textContent = 'Use it';
+    no.type = 'button'; no.textContent = 'Do not use it';
+    const p = document.createElement('span');
+    p.textContent = 'A key came with this ' + how + '. Use it only if you know where it came from: everything you send with it goes to Mistral on that key\'s account, and the account\'s owner can see the usage. ';
+    let k = key;
+    use.addEventListener('click', function () { const ok = give(k); k = null; say(ok ? 'Key from the ' + how + ' set, in this tab\'s memory only. It is not shown.' : 'This page has no key box.', !ok); });
+    no.addEventListener('click', function () { k = null; say('Not used. The key from the ' + how + ' was dropped.'); });
+    s.replaceChildren(p, use, document.createTextNode(' '), no);
+    use.focus();
   }
 
   // 2. A picture of the QR code: decoded in this tab.
@@ -103,8 +130,8 @@
     if (!text) { say('No QR code found in that picture. Try a sharper or closer picture.', true); return; }
     const key = keyFromQr(text);
     if (!key) { say('That QR code holds no Mistral key in the form this page expects (a link with the key after "#", or the key alone). Nothing was set.', true); return; }
-    if (give(key)) say('Key read from the QR code and set, in this tab\'s memory only. It is not shown.');
-    else say('Key read, but this page has no key box.', true);
+    if (!target()) { say('Key read, but this page has no key box.', true); return; }
+    confirmKey(key, 'QR code');
   }
 
   function wireDrop() {
@@ -134,7 +161,13 @@
   function wireLinks() {
     if (!pending) return;
     document.querySelectorAll('a[data-carry-key]').forEach(function (a) {
-      a.addEventListener('click', function () { if (pending) a.href = a.getAttribute('href').split('#')[0] + '#key=' + encodeURIComponent(pending); });
+      a.addEventListener('click', function () {
+        if (!pending) return;
+        const u = new URL(a.getAttribute('href'), location.href);
+        if (u.origin !== location.origin) return; // only into this site's own pages (security.b, review 014)
+        u.hash = 'key=' + encodeURIComponent(pending);
+        a.href = u.href;
+      });
     });
     window.addEventListener('pagehide', function () { pending = null; });
   }
@@ -145,11 +178,12 @@
     if (!pending) { say('The link had something after "#", but not a key in the form this page expects. It was removed from the address bar; nothing was set.', true); return; }
     if (document.querySelector('a[data-carry-key]') && !target()) {
       wireLinks();
-      say('A key came with the link. It is held in this tab\'s memory and removed from the address bar; the demo you open from this page receives it. It is not shown.');
+      say('A key came with the link. It is held in this tab\'s memory and removed from the address bar; the demo you open from this page receives it and asks you whether to use it. It is not shown.');
       return;
     }
-    const ok = give(pending);
+    const k = pending;
     pending = null;
-    say(ok ? 'A key came with the link: it is set, in this tab\'s memory only, and removed from the address bar. It is not shown.' : 'A key came with the link, but this page has no key box. It was removed from the address bar.', !ok);
+    if (!target()) { say('A key came with the link, but this page has no key box. It was removed from the address bar.', true); return; }
+    confirmKey(k, 'link');
   });
 })();
