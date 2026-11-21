@@ -27,14 +27,18 @@ export const resetNotes = () => { NOTES = []; NUM = 0; };
 export const cite = (key) => {
   let x = NOTES.find((y) => y.key === key);
   if (!x) { x = { key, n: ++NUM }; NOTES.push(x); }
-  return `<a class="fn" href="#fn-${x.n}" aria-label="Source ${x.n}"><sup>${x.n}</sup></a>`;
+  // A word joiner (U+2060) before the marker, so a marker never wraps onto a line of its own.
+  return `&#8288;<a class="fn" href="#fn-${x.n}" aria-label="Source ${x.n}"><sup>${x.n}</sup></a>`;
 };
-export const fact = (key) => `${F[key].t}${cite(key)}`;
+// A fact keeps its last word and its marker together (white-space: nowrap), so the number never sits alone.
+export const fact = (key) => { const t = F[key].t; const i = t.lastIndexOf(' '); const tail = t.slice(i + 1);
+  if (tail.replace(/<[^>]+>/g, '').length > 20) return `${t}${cite(key)}`; // a long URL may still wrap; the word joiner keeps the marker on
+  return `${t.slice(0, i + 1)}<span class="nw">${tail}${cite(key)}</span>`; };
 // Registers a fact's source without a marker in the text (for facts written as comments in code), and returns its number.
 export const noteNum = (key) => { cite(key); return NOTES.find((y) => y.key === key).n; };
 export const sources = (label = 'Sources') => {
   if (!NOTES.length) return '';
-  const out = `<div class="notes"><p class="notes-h">${label}, as read on ${READ}</p><ol start="${NOTES[0].n}">${NOTES.map((x) => `<li id="fn-${x.n}">${F[x.key].s.map(link).join('; ')}</li>`).join('')}</ol></div>`;
+  const out = `<div class="notes"><p class="notes-h">${label}, as read on ${READ}</p><ol start="${NOTES[0].n}">${NOTES.map((x) => `<li id="fn-${x.n}">${F[x.key].s.map(link).join('&nbsp;<span class="sep" aria-hidden="true">·</span> ')}</li>`).join('')}</ol></div>`;
   NOTES = []; return out;
 };
 // The old inline form, for the sources page only, where the source is the point.

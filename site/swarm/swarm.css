@@ -26,11 +26,9 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 syst
 a { color: var(--link); }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-.skip { position: absolute; left: -9999px; }
-.skip:focus { left: 16px; top: 8px; background: var(--surface); padding: 8px; z-index: 2; }
-.notice { background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: 14px; padding: 8px 0; }
-header.top { padding: 20px 0 8px; }
-header.top nav { font-size: 15px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+/* The site's shared shell (header, notice, footer) comes from /assets/css/base.css; this is the swarm's own page head. */
+.page-head { padding: 20px 0 8px; }
+.swarm-nav { font-size: 15px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
 h1 { font-size: clamp(26px, 5vw, 38px); line-height: 1.15; margin: 12px 0 8px; }
 h2 { font-size: 22px; margin: 32px 0 8px; }
 h3 { font-size: 17px; margin: 20px 0 6px; }
@@ -103,3 +101,22 @@ fieldset label { display: inline; font-weight: 400; margin: 0 12px 0 4px; }
 ol.log { font-size: 14px; padding-left: 22px; max-height: 300px; overflow: auto; }
 footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 16px 0 40px; color: var(--ink-2); font-size: 14px; }
 [hidden] { display: none !important; }
+
+/* The runs, as a table (one row per run, the replay button names its run). On phones each row stacks. */
+.runs-table { margin: 8px 0 16px; }
+.runs-table td.when { white-space: nowrap; }
+.runs-table button { font: inherit; font-size: 14px; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--focus); background: var(--surface); color: var(--link); cursor: pointer; text-align: left; }
+.runs-table button[aria-pressed="true"] { background: var(--link); border-color: var(--link); color: var(--bg); }
+.runs-table tr[aria-current="true"] td { background: var(--surface-2); }
+@media (max-width: 40rem) {
+  .runs-table table, .runs-table tbody, .runs-table tr, .runs-table td, .runs-table th { display: block; width: 100%; }
+  .runs-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .runs-table tr { border: 1px solid var(--line); border-radius: 8px; margin: 0 0 10px; padding: 6px 8px; background: var(--surface); }
+  .runs-table td, .runs-table th { border: 0; padding: 2px 0; text-align: left; }
+  .runs-table td[data-l]::before { content: attr(data-l) ": "; color: var(--ink-2); }
+  .runs-table td.num { text-align: left; }
+}
+.runs-table .meta { display: block; color: var(--ink-2); font-size: 13px; }
+.runs-table th, .runs-table td { overflow-wrap: normal; }
+.runs-table th[scope="row"], .runs-table button { white-space: nowrap; }
+@media (max-width: 40rem) { .runs-table caption { display: block; width: auto; } }

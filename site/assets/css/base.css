@@ -133,3 +133,5 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 .codebox{-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)}
 .codebox:focus-visible,.codebox:hover{-webkit-mask-image:none;mask-image:none}
 @media (max-width:40rem){.codebox::after{content:"Scroll for more \2192";display:block;position:sticky;left:0;padding:.2rem 1rem .5rem;font-size:.8rem;opacity:.8}}
+.nw{white-space:nowrap}
+.notes .sep{color:var(--muted)}

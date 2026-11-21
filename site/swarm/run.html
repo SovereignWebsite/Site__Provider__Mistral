@@ -23,19 +23,58 @@
 <meta name="twitter:description" content="Run a signed packet of the Sovereign Website's swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.">
 <meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
 <link rel="canonical" href="https://mistral.provider.sovereignweb.site/swarm/run.html">
+<link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="swarm.css">
 <script type="module" src="run.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
-<aside class="notice" aria-label="About this demonstration"><div class="wrap">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI. Nothing has been agreed with Mistral AI.</div></aside>
-<div class="wrap">
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
 <header class="top">
-<nav aria-label="Swarm pages"><a href="../">The site</a> <a href="../team/">The team, live</a> <a href="./">Swarm replays</a> <a href="evals.html">Evals</a> <a href="run.html" aria-current="page">Run it yourself</a> <a href="HANDOVER.md">Handover note</a></nav>
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<div class="wrap">
+<main id="main">
+<div class="page-head">
+<nav class="swarm-nav" aria-label="Swarm pages"><a href="../">The site</a> <a href="../team/">The team, live</a> <a href="./">Swarm replays</a> <a href="evals.html">Evals</a> <a href="run.html" aria-current="page">Run it yourself</a> <a href="HANDOVER.md">Handover note</a></nav>
 <h1>Run the swarm yourself, on your own Mistral key</h1>
 <p class="lede">The same signed packets, run by the same engine, in this tab. Your key stays in this tab's memory and goes only to api.mistral.ai. In step-by-step mode you see each request before it leaves, and you send it.</p>
-</header>
-<main id="main">
+<p class="small muted">Nothing has been agreed with Mistral AI.</p>
+</div>
 <form id="form" class="card" autocomplete="off">
 <h2>1. Choose a packet</h2>
 <label for="packet">Packet</label>
@@ -83,9 +122,18 @@
 </ul>
 </section>
 </main>
-<footer>
+</div>
+<footer class="foot">
+<nav class="site-links" aria-label="About this site">
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/questions/">Open questions</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
 <p>The engine is <a href="engine.js">engine.js</a>, the same file that ran the published runs in a cloud container. Prices from <a href="https://docs.mistral.ai/inference/pricing">docs.mistral.ai/inference/pricing</a> as read on 20 November 2026, in <a href="tools/llm-models.json">tools/llm-models.json</a>. No cookies, no tracking.</p>
 </footer>
-</div>
 </body>
 </html>

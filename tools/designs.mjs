@@ -66,7 +66,7 @@ ${quote('rented')}
 ${quote('choice', 'pull pull-big')}
 <p>The agents and tools on a sovereign website call that one interface. The owner chooses what sits behind it, at three levels.</p>
 <ol class="levels">
-  <li><h3><span class="lv">1</span> On the device</h3><p>A local model on the owner’s own hardware, so a site can be built and changed with nothing leaving the house. ${fact('m3')}</p><p class="est">${ESTIMATE} ${F.piEstimate.t.replace('The article’s estimate, not measured: ', '')}${cite('piEstimate')} ${fact('fileSizes')}</p></li>
+  <li><h3><span class="lv">1</span> On the device</h3><p>A local model on the owner’s own hardware, so a site can be built and changed with nothing leaving the house. ${fact('m3')}</p><p class="est">${ESTIMATE} ${F.piEstimate.t.replace('The article’s estimate, not measured: the', 'The article estimates that the')}${cite('piEstimate')} ${fact('fileSizes')}</p></li>
   <li><h3><span class="lv">2</span> In Europe</h3><p>Mistral’s API, for the team of agents inside the site. ${fact('eea')} ${fact('euInference')} ${fact('euEndpoint')}</p><p>${fact('training')}</p></li>
   <li><h3><span class="lv">3</span> Any provider</h3><p>The owner’s own key, through OpenRouter, for any model, Mistral’s again among them. ${fact('openrouter')}</p></li>
 </ol>
@@ -201,7 +201,7 @@ ${pathCard(1, 'p1', 'On your device', [
   ['To whom', 'No one else. For example Ministral 3 run by Ollama. ' + fact('ollamaOai')],
   ['What is kept', 'Whatever you keep, on your own disk.'],
   ['The model', fact('m3')],
-  ['Will it fit', `${ESTIMATE} ${F.piEstimate.t.replace('The article’s estimate, not measured: ', '')}${cite('piEstimate')} ${fact('fileSizes')}`],
+  ['Will it fit', `${ESTIMATE} ${F.piEstimate.t.replace('The article’s estimate, not measured: the', 'The article estimates that the')}${cite('piEstimate')} ${fact('fileSizes')}`],
 ], DEMOS.device, 'Open the on-device demo')}
 ${pathCard(2, 'p2', 'To Mistral, in the EU', [
   ['What is sent', 'Your brief and your own API key, to Mistral’s API: for processing in the EU, to its EU endpoint.'],
