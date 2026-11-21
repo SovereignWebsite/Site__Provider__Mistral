@@ -4,6 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 node tools/gen.mjs
+node tools/nav.mjs --check
 node .github/ci/build.mjs
 node .github/ci/share-check.mjs _site
 if [ ! -d site/demos ] && [ -d ../demos ]; then

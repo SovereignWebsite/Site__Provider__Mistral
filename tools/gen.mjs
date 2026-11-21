@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 import { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS } from './facts.mjs';
 import { d1, d2, d3, d4, d5 } from './designs.mjs';
+import { head, foot, sitemapBody, run as navRun } from './nav.mjs';
 
 export const HOME = 5; // the design used for the home page (see /questions/)
 export const DESIGNS = [
@@ -65,35 +66,7 @@ export const DEMOS = { all: '/demos/', side: '/demos/side-by-side.html', key: '/
 export { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS };
 export const NOTICE = 'An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.';
 
-const FAMILY = `<details class="family-credit">
-  <summary>Sovereign Website</summary>
-  <ul>
-    <li><a href="/start/">Start here</a></li>
-    <li><a href="/agents/">Use with your AI</a></li>
-    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
-    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
-    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
-    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
-    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
-    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
-    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
-    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
-    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
-    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
-  </ul>
-</details>`;
-
-const chooser = (cur) => `<details class="chooser">
-    <summary>Choose a design</summary>
-    <ul>
-${DESIGNS.map((d) => `      <li><a href="/designs/${d.n}.html"${cur === d.n ? ' aria-current="page"' : ''}><span class="num">${d.n}</span> ${esc(d.name)}</a></li>`).join('\n')}
-      <li class="all"><a href="/designs/"${cur === 'all' ? ' aria-current="page"' : ''}>See all five</a></li>
-      <li class="extra"><a href="/start/">Start here</a></li>
-      <li class="extra"><a href="/agents/">Use with your AI</a></li>
-    </ul>
-  </details>`;
-
-function page({ path, url, title, description, theme, body, cur, js = [], bodyClass = '' }) {
+function page({ path, url, title, description, theme, body, js = [], bodyClass = '' }) {
   const full = title === SITE.title ? title : `${title}: ${SITE.short}`;
   const u = `https://${SITE.host}${url}`;
   const img = `https://${SITE.host}/assets/share/card-1200x630.jpg`;
@@ -123,34 +96,16 @@ function page({ path, url, title, description, theme, body, cur, js = [], bodyCl
 <link rel="canonical" href="${u}">
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/${theme}.css">
+<link rel="stylesheet" href="/assets/css/nav.css">
 ${js.map((j) => `<script src="/assets/js/${j}" defer></script>`).join('\n')}
 </head>
 <body class="t-${theme}${bodyClass ? ' ' + bodyClass : ''}">
-<a class="skip" href="#main">Skip to content</a>
-${FAMILY}
-<header class="top">
-  <a class="name" href="/">${esc(SITE.short)}</a>
-  <nav class="own" aria-label="This site">
-  ${chooser(cur)}
-    <a class="own-link" href="/start/">Start here</a>
-    <a class="own-link" href="/agents/">Use with your AI</a>
-  </nav>
-</header>
-<section class="notice" aria-label="Notice"><p><span class="n-long">${NOTICE}</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+${head(url)}
 <main id="main">
 ${body}
 </main>
 <footer class="foot">
-<nav class="site-links" aria-label="About this site">
-  <a href="/designs/">All five designs</a>
-  <a href="/sources/">Sources</a>
-  <a href="/articles/">Articles</a>
-  <a href="/questions/">Open questions</a>
-  <a href="/start/">Start here</a>
-  <a href="/agents/">Use with your AI</a>
-  <a href="/admin/">How this site was made</a>
-</nav>
-<p class="foot-notice">${NOTICE}</p>
+${foot(url)}
 <p>Built from <a href="${ARTICLE.url}">${ARTICLE.title}</a> by ${ARTICLE.author} and from Mistral’s own pages, each linked where it is used and read on ${READ}. Mistral AI’s name is used only to describe its products; this site is not Mistral’s.</p>
 <p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/${SITE.repo}">github.com/SovereignWebsite/${SITE.repo}</a>.</p>
 </footer>
@@ -166,13 +121,13 @@ const D = { 1: d1, 2: d2, 3: d3, 4: d4, 5: d5 };
 const DJS = { 3: ['console.js', 'copy.js'], 4: ['ledger.js'], 5: ['copy.js'] };
 for (const d of DESIGNS) {
   resetNotes(); const r = D[d.n]();
-  page({ path: `designs/${d.n}.html`, url: `/designs/${d.n}.html`, title: `Design ${d.n}, ${d.name}`, description: r.description, theme: `d${d.n}`, body: r.body, cur: d.n, js: DJS[d.n] || [] });
+  page({ path: `designs/${d.n}.html`, url: `/designs/${d.n}.html`, title: `Design ${d.n}, ${d.name}`, description: r.description, theme: `d${d.n}`, body: r.body, js: DJS[d.n] || [] });
 }
 // Home: the chosen design, at /.
-{ resetNotes(); const r = D[HOME](); page({ path: 'index.html', url: '/', title: SITE.title, description: SITE.description, theme: `d${HOME}`, body: r.body, cur: HOME, js: DJS[HOME] || [] }); }
+{ resetNotes(); const r = D[HOME](); page({ path: 'index.html', url: '/', title: SITE.title, description: SITE.description, theme: `d${HOME}`, body: r.body, js: DJS[HOME] || [] }); }
 
 // The chooser.
-page({ path: 'designs/index.html', url: '/designs/', title: 'Choose a design', theme: 'plain', cur: 'all',
+page({ path: 'designs/index.html', url: '/designs/', title: 'Choose a design', theme: 'plain',
   description: 'Five designs of the same cited facts about Mistral and a sovereign website: a newsroom long read, a map, a console, a ledger and a hackathon poster.',
   body: `<div class="wrap">
 <p class="mark">Choose a design</p>
@@ -392,4 +347,9 @@ ${articles.map((a) => `<li><a href="/articles/${a.slug}.html">${esc(a.title)}</a
 </ul>
 </div>` });
 
+// The site map: every page, from tools/nav.mjs.
+page({ path: 'sitemap/index.html', url: '/sitemap/', title: 'Site map', theme: 'plain', description: 'Every page on this site, by section, with one line each.', body: sitemapBody() });
+
 console.log('generated site/');
+// The hand-written pages: rewrite their marked navigation blocks from the same list, and site/sitemap.xml.
+navRun();

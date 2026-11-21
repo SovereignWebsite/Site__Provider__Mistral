@@ -28,8 +28,10 @@
 <link rel="stylesheet" href="/browser/ask/panel.css">
 <link rel="stylesheet" href="/live/live.css">
 <script type="module" src="/live/live.js"></script>
+<link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body class="t-plain">
+<!-- nav:head: written by tools/nav.mjs from its page list; edit there, not here -->
 <a class="skip" href="#main">Skip to content</a>
 <details class="family-credit">
   <summary>Sovereign Website</summary>
@@ -48,27 +50,84 @@
     <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
   </ul>
 </details>
-<header class="top">
+<header class="top site-head">
   <a class="name" href="/">Mistral, a European brain</a>
-  <nav class="own" aria-label="This site">
-  <details class="chooser">
-    <summary>Choose a design</summary>
-    <ul>
-      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
-      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
-      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
-      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
-      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
-      <li class="all"><a href="/designs/">See all five</a></li>
-      <li class="extra"><a href="/start/">Start here</a></li>
-      <li class="extra"><a href="/agents/">Use with your AI</a></li>
-    </ul>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav class="menu-panel" aria-label="All pages">
+      <div class="menu-group">
+        <p class="menu-h" id="menu-overview">Designs</p>
+        <ul aria-labelledby="menu-overview">
+          <li><a href="/">Home</a></li>
+          <li><a href="/designs/">Choose a design</a></li>
+          <li class="sub"><a href="/designs/1.html">Design 1, The European brain</a></li>
+          <li class="sub"><a href="/designs/2.html">Design 2, The map</a></li>
+          <li class="sub"><a href="/designs/3.html">Design 3, The console</a></li>
+          <li class="sub"><a href="/designs/4.html">Design 4, The ledger</a></li>
+          <li class="sub"><a href="/designs/5.html">Design 5, The hackathon</a></li>
+        </ul>
+      </div>
+      <div class="menu-group">
+        <p class="menu-h" id="menu-try">Try it</p>
+        <ul aria-labelledby="menu-try">
+          <li><a href="/demos/">Demos</a></li>
+          <li class="sub"><a href="/demos/side-by-side.html">Same brief, three brains</a></li>
+          <li class="sub"><a href="/demos/your-key.html">Your key, and where it goes</a></li>
+          <li class="sub"><a href="/demos/on-device.html">Level 1, on your device</a></li>
+          <li><a href="/browser/">In your browser</a></li>
+          <li class="sub"><a href="/browser/build/">Vibe-build a sovereign website</a></li>
+          <li class="sub"><a href="/browser/local/">Mistral, inside your browser</a></li>
+          <li class="sub"><a href="/browser/ask/">Ask this site</a></li>
+          <li class="sub"><a href="/browser/voice/">Talk to a European brain</a></li>
+          <li class="sub"><a href="/browser/ocr/">From a document to your site</a></li>
+          <li class="sub"><a href="/browser/inject/">The injection lab</a></li>
+          <li class="sub"><a href="/browser/keys/">Your browser’s key pair</a></li>
+          <li class="sub sub2"><a href="/browser/keys/seal.html">Seal a key for a browser</a></li>
+        </ul>
+      </div>
+      <div class="menu-group is-here">
+        <p class="menu-h" id="menu-agentic">Agentic</p>
+        <ul aria-labelledby="menu-agentic">
+          <li><a href="/team/">The team inside the site</a></li>
+          <li><a href="/swarm/">The Swarm, replayed</a></li>
+          <li class="sub"><a href="/swarm/evals.html">Swarm evals</a></li>
+          <li class="sub"><a href="/swarm/run.html">Run the swarm yourself</a></li>
+          <li><a href="/evals/">Evals</a></li>
+          <li class="sub"><a href="/evals/run/">Run the evals yourself</a></li>
+          <li><a href="/live/" aria-current="page">Agents at work</a></li>
+        </ul>
+      </div>
+      <div class="menu-group">
+        <p class="menu-h" id="menu-articles">Articles</p>
+        <ul aria-labelledby="menu-articles">
+          <li><a href="/articles/">All articles</a></li>
+          <li class="sub"><a href="/articles/what-we-built-overnight.html">One night, one European brain: what an agent team built on Mistral</a></li>
+        </ul>
+      </div>
+      <div class="menu-group">
+        <p class="menu-h" id="menu-sources">Sources</p>
+        <ul aria-labelledby="menu-sources">
+          <li><a href="/sources/">Sources</a></li>
+        </ul>
+      </div>
+      <div class="menu-group">
+        <p class="menu-h" id="menu-about">About</p>
+        <ul aria-labelledby="menu-about">
+          <li><a href="/start/">Start here</a></li>
+          <li><a href="/agents/">Use with your AI</a></li>
+          <li><a href="/admin/">How this site was made</a></li>
+          <li><a href="/questions/">Open questions</a></li>
+          <li><a href="/sitemap/">Site map</a></li>
+        </ul>
+      </div>
+      <p class="menu-all"><a href="/sitemap/">Site map: every page, with one line each</a></p>
+    </nav>
   </details>
-    <a class="own-link" href="/start/">Start here</a>
-    <a class="own-link" href="/agents/">Use with your AI</a>
-  </nav>
+  <nav class="sections" aria-label="Sections"><ul><li><a href="/designs/">Designs</a></li><li><a href="/sitemap/#try">Try it</a></li><li><a href="/sitemap/#agentic" aria-current="true">Agentic</a></li><li><a href="/articles/">Articles</a></li><li><a href="/sources/">Sources</a></li><li><a href="/sitemap/#about">About</a></li></ul></nav>
 </header>
-<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration, for participants of the Mistral Vibe Hackathon in London. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/sitemap/#agentic">Agentic</a></li><li><span aria-current="page">Agents at work</span></li></ol></nav>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<!-- /nav:head -->
 <main id="main">
   <p class="mark">Live, from the repository</p>
   <h1>Agents at work</h1>
@@ -132,15 +191,17 @@
   <p class="muted small">With reduced motion set on your device, the drawing stays still at the current time and the replay is off; the timeline still moves when you drag it.</p>
 </main>
 <footer class="foot">
+<!-- nav:foot: written by tools/nav.mjs; edit there, not here -->
 <p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
-<nav class="site-links" aria-label="About this site">
-  <a href="/browser/">In your browser</a>
-  <a href="/designs/">All five designs</a>
-  <a href="/sources/">Sources</a>
-  <a href="/start/">Start here</a>
-  <a href="/agents/">Use with your AI</a>
-  <a href="/admin/">How this site was made</a>
+<nav class="foot-map" aria-label="Site map">
+  <div class="fm-group"><p class="fm-h"><a href="/designs/">Designs</a></p><ul><li><a href="/">Home</a></li><li><a href="/designs/">Choose a design</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/sitemap/#try">Try it</a></p><ul><li><a href="/demos/">Demos</a></li><li><a href="/browser/">In your browser</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/sitemap/#agentic">Agentic</a></p><ul><li><a href="/team/">The team inside the site</a></li><li><a href="/swarm/">The Swarm, replayed</a></li><li><a href="/evals/">Evals</a></li><li><a href="/live/" aria-current="page">Agents at work</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/articles/">Articles</a></p><ul><li><a href="/articles/">All articles</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/sources/">Sources</a></p><ul><li><a href="/sources/">Sources</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/sitemap/#about">About</a></p><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li><a href="/questions/">Open questions</a></li><li><a href="/sitemap/">Site map</a></li></ul></div>
 </nav>
+<!-- /nav:foot -->
   <p>Built by the live-page builder, an agent in conductor.mistral&#x27;s session, for Dinis Cruz, 21 November 2026. Code Apache-2.0, text CC BY 4.0. Static files only: no cookies, no tracking, no storage, no server of ours; this page asks GitHub for the commits, nothing else. <a href="/">Home</a>.</p>
 </footer>
 </body>
