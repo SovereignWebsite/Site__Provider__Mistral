@@ -1,0 +1,2297 @@
+{
+ "kind": "promptugal-variant-run",
+ "recorded": "2026-11-21 02:07 UTC (mistral-large-4 re-recorded 2026-11-21 02:09 UTC)",
+ "endpoint": "api.mistral.ai",
+ "runs_per_cell": 3,
+ "temperature": "not set (the API default)",
+ "max_tokens": "500; 4000 for mistral-large-4, which reasons before it answers",
+ "brief": [
+  {
+   "role": "system",
+   "content": "You write short public notices. Use only the facts given. Plain text, no markdown, no em dashes."
+  },
+  {
+   "role": "user",
+   "content": "Write a notice of about 120 words in European Portuguese, as written in Portugal for people in Porto.\nFacts: IPMA, the Portuguese weather institute, has an orange warning for persistent, sometimes heavy rain for the district of Porto from 06:00 to 18:00 on Saturday 21 November 2026 (Lisbon time), as read from PrompTugal's data at 18:15 UTC on 20 November 2026.\nIn the notice: say that it is raining now; advise taking the bus or the train rather than the car; advise charging their mobile phone; advise keeping the civil protection's phone contacts at hand; say that users can register on the civil protection's website to receive alerts; say that the emergency teams are working. End by saying to follow IPMA and the civil protection authority (ANEPC)."
+  }
+ ],
+ "brief_br_differs_only_in": {
+  "pt": "European Portuguese, as written in Portugal",
+  "br": "Brazilian Portuguese, as written in Brazil"
+ },
+ "note": "Recorded real runs. The texts are model output; the scan and the figure check are code (variant.js, figcheck.js).",
+ "by": "site/promptugal/tools/record-variant.mjs, mistral.promptugal@SovereignWebsite.dinis",
+ "rows": [
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "pt",
+   "run": 1,
+   "ms": 1187,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 403,
+    "completion_tokens": 186,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.000040300000000000004,
+   "text": "**Alerta de chuva persistente em Porto**\n\nAtualmente está a chover em Porto. De acordo com o IPMA, há um aviso de chuva persistente, às vezes intensa, na área do Porto entre as 06:00 e as 18:00 de sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar conduzir e optar por transportes públicos, como o autocarro ou o comboio. Guarde o seu telemóvel carregado e mantenha os contactos da Proteção Civil à mão. Podes inscrever-te na plataforma da Proteção Civil para receber alertas em tempo real. As equipas de emergência estão ativas.\n\nSegui as atualizações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "está a chover",
+      "start": 53,
+      "end": 66
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 320,
+      "end": 329
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 335,
+      "end": 342
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 357,
+      "end": 366
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 391,
+      "end": 400
+     },
+     {
+      "side": "pt",
+      "what": "sign up",
+      "text": "inscrever",
+      "start": 432,
+      "end": 441
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 516,
+      "end": 523
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "pt",
+   "run": 2,
+   "ms": 890,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 406,
+    "completion_tokens": 189,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00004060000000000001,
+   "text": "**Aviso Meteorológico para Porto**\n\nEstá a chover atualmente na área do Porto. De acordo com o IPMA, há um aviso de chuva persistente e intensa, com alerta laranja, entre as 06:00 e as 18:00 de sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como o autocarro ou o comboio. Guarde o seu telemóvel carregado e mantenha os contactos da Proteção Civil à mão. Podes registar-te na página da Proteção Civil para receber alertas em tempo real.\n\nAs equipas de emergência estão activas e prontas para responder. Segui as orientações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 36,
+      "end": 49
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 321,
+      "end": 330
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 336,
+      "end": 343
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 358,
+      "end": 367
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 392,
+      "end": 401
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 433,
+      "end": 441
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 513,
+      "end": 520
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "pt",
+   "run": 3,
+   "ms": 1029,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 410,
+    "completion_tokens": 193,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.000041,
+   "text": "**Aviso Meteorológico para Porto**\n\nEstá a chover atualmente na área do Porto. De acordo com o IPMA, há um aviso de chuva persistente e, em alguns momentos, intensa para o distrito de Porto entre as 06:00 e as 18:00 de sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como o autocarro ou o comboio. Guarde o seu telemóvel carregado e mantenha os contactos da Proteção Civil à mão. Podes registar-te na página da Proteção Civil para receber alertas em tempo real. As equipas de emergência estão ativas e prontas para responder.\n\nSegui as atualizações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 36,
+      "end": 49
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 346,
+      "end": 355
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 361,
+      "end": 368
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 383,
+      "end": 392
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 417,
+      "end": 426
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 458,
+      "end": 466
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 537,
+      "end": 544
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "br",
+   "run": 1,
+   "ms": 959,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 393,
+    "completion_tokens": 176,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.000039300000000000007,
+   "text": "**Alerta de Chuva Persistente em Porto**\n\nAtualmente está chovendo em Porto. De acordo com o IPMA, há um aviso de chuva persistente, às vezes intensa, para o distrito de Porto entre 06:00 e 18:00 deste sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como ônibus ou trem. Mantenha o celular carregado e os contatos da Proteção Civil à mão. Você pode se cadastrar no site da Proteção Civil para receber alertas em tempo real. As equipes de emergência estão ativas.\n\nSiga as orientações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "está chovendo",
+      "start": 53,
+      "end": 66
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 327,
+      "end": 333
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 337,
+      "end": 341
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 354,
+      "end": 361
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 377,
+      "end": 385
+     },
+     {
+      "side": "lean-br",
+      "what": "\"você\" (used in both, far more in Brazil)",
+      "text": "Você",
+      "start": 411,
+      "end": 415
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 424,
+      "end": 433
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 499,
+      "end": 506
+     }
+    ],
+    "br": 7,
+    "pt": 0,
+    "lean_br": 1,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "br",
+   "run": 2,
+   "ms": 1629,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 394,
+    "completion_tokens": 177,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00003940000000000001,
+   "text": "**Alerta de chuva persistente em Porto**\n\nAtualmente está chovendo em Porto. De acordo com o IPMA, há alerta de chuva persistente, às vezes intensa, na região do Porto entre 06:00 e 18:00 deste sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como ônibus ou trem. Mantenha o celular carregado e guarde os contatos da Proteção Civil à mão. Você pode se cadastrar no site da Proteção Civil para receber alertas em tempo real.\n\nAs equipes de emergência estão ativas e prontas para responder. Siga as orientações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "está chovendo",
+      "start": 53,
+      "end": 66
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 319,
+      "end": 325
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 329,
+      "end": 333
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 346,
+      "end": 353
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 376,
+      "end": 384
+     },
+     {
+      "side": "lean-br",
+      "what": "\"você\" (used in both, far more in Brazil)",
+      "text": "Você",
+      "start": 410,
+      "end": 414
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 423,
+      "end": 432
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 499,
+      "end": 506
+     }
+    ],
+    "br": 7,
+    "pt": 0,
+    "lean_br": 1,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-3b-2512",
+   "served_model": "ministral-3b-2512",
+   "variant": "br",
+   "run": 3,
+   "ms": 831,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 406,
+    "completion_tokens": 189,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00004060000000000001,
+   "text": "**AVISO IMPORTANTE PARA A POPULAÇÃO DE PORTO**\n\nAtualmente está chovendo em Porto. De acordo com o IPMA, há um aviso de **alarme laranja** para chuva persistente e, em alguns momentos, intensa, na região do Porto entre 06:00 e 18:00 deste sábado, 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como ônibus ou trem. Mantenha o celular carregado e os contatos da Proteção Civil à mão. Você pode se cadastrar no site da Proteção Civil para receber alertas em tempo real.\n\nAs equipes de emergência estão ativas. Siga as orientações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "está chovendo",
+      "start": 59,
+      "end": 72
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 364,
+      "end": 370
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 374,
+      "end": 378
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 391,
+      "end": 398
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 414,
+      "end": 422
+     },
+     {
+      "side": "lean-br",
+      "what": "\"você\" (used in both, far more in Brazil)",
+      "text": "Você",
+      "start": 448,
+      "end": 452
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 461,
+      "end": 470
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 537,
+      "end": 544
+     }
+    ],
+    "br": 7,
+    "pt": 0,
+    "lean_br": 1,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "pt",
+   "run": 1,
+   "ms": 1185,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 388,
+    "completion_tokens": 171,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0000582,
+   "text": "Está a chover neste momento em Porto. O IPMA emitiu um alerta laranja para chuva persistente e, em alguns momentos, forte, no distrito de Porto, entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar pelo transporte público, como autocarros ou comboios. Tenha o telemóvel carregado e mantenha à mão os contactos da Proteção Civil. Pode registar-se no site da Proteção Civil para receber alertas.\n\nAs equipas de emergência estão a operar. Siga as informações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 301,
+      "end": 311
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 315,
+      "end": 323
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 333,
+      "end": 342
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 373,
+      "end": 382
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 407,
+      "end": 415
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 471,
+      "end": 478
+     },
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "estão a operar",
+      "start": 493,
+      "end": 507
+     }
+    ],
+    "br": 0,
+    "pt": 8,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "pt",
+   "run": 2,
+   "ms": 1116,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 369,
+    "completion_tokens": 152,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00005535,
+   "text": "Está a chover neste momento em Porto e o IPMA emitiu um alerta laranja para chuva persistente, às vezes forte, no distrito de Porto, entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa). Recomenda-se evitar o uso do carro e optar pelo transporte público ou comboio. Carreguem o telemóvel e tenham sempre à mão os contactos da Proteção Civil. Podem registar-se no site da Proteção Civil para receber alertas. As equipas de emergência estão a trabalhar. Siga as informações do IPMA e da ANEPC.",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 285,
+      "end": 292
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 306,
+      "end": 315
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 341,
+      "end": 350
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 376,
+      "end": 384
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 439,
+      "end": 446
+     },
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "estão a trabalhar",
+      "start": 461,
+      "end": 478
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "pt",
+   "run": 3,
+   "ms": 1191,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 377,
+    "completion_tokens": 160,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00005655,
+   "text": "Está a chover neste momento no distrito do Porto. O IPMA emitiu um alerta laranja para chuva persistente, às vezes forte, entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar pelo transporte público, como autocarros ou comboios. Tenha o telemóvel carregado e mantenha à mão os contactos da Proteção Civil. Pode registar-se no site da Proteção Civil para receber alertas.\n\nAs equipas de emergência estão a trabalhar. Fique atento ao IPMA e à Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 278,
+      "end": 288
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 292,
+      "end": 300
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 310,
+      "end": 319
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 350,
+      "end": 359
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 384,
+      "end": 392
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 448,
+      "end": 455
+     },
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "estão a trabalhar",
+      "start": 470,
+      "end": 487
+     }
+    ],
+    "br": 0,
+    "pt": 8,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "br",
+   "run": 1,
+   "ms": 1309,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 381,
+    "completion_tokens": 164,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00005714999999999999,
+   "text": "Está chovendo atualmente em Porto. O IPMA emitiu alerta laranja para chuva persistente, às vezes forte, no distrito de Porto entre as 06:00 e 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público como ônibus ou trem. Certifique-se de carregar o celular e mantenha os contatos da Proteção Civil à mão. Os serviços de emergência estão em funcionamento.\n\nOs cidadãos podem se cadastrar no site da Proteção Civil para receber alertas. Siga as atualizações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "Está chovendo",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 276,
+      "end": 282
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 286,
+      "end": 290
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 320,
+      "end": 327
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 342,
+      "end": 350
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 448,
+      "end": 457
+     }
+    ],
+    "br": 6,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "br",
+   "run": 2,
+   "ms": 1352,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 385,
+    "completion_tokens": 168,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00005775,
+   "text": "Está chovendo atualmente em Porto. O IPMA emitiu alerta laranja para chuva persistente e, em alguns momentos, forte no distrito de Porto, entre as 06:00 e 18:00 de sábado, dia 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público como ônibus ou trem. Certifique-se de carregar o celular e mantenha os contatos da Proteção Civil à mão. Os serviços de emergência estão em funcionamento.\n\nOs cidadãos podem se cadastrar no site da Proteção Civil para receber alertas. Fique atento às informações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "Está chovendo",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 292,
+      "end": 298
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 302,
+      "end": 306
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 336,
+      "end": 343
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 358,
+      "end": 366
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 464,
+      "end": 473
+     }
+    ],
+    "br": 6,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-8b-2512",
+   "served_model": "ministral-8b-2512",
+   "variant": "br",
+   "run": 3,
+   "ms": 1356,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 384,
+    "completion_tokens": 167,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0000576,
+   "text": "Está chovendo neste momento na região do Porto. O IPMA emitiu alerta laranja para chuva persistente e, em alguns momentos, intensa, válido de 06:00 às 18:00 de sábado, dia 21 de novembro de 2026 (horário de Lisboa).\n\nRecomenda-se evitar o uso do carro e optar por transporte público, como ônibus ou trem. Certifique-se de carregar o celular e mantenha à mão os contatos da Proteção Civil.\n\nOs utilizadores podem registar-se no site da Proteção Civil para receber alertas. As equipas de emergência estão a trabalhar.\n\nFique atento às atualizações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "Está chovendo",
+      "start": 0,
+      "end": 13
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 289,
+      "end": 295
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 299,
+      "end": 303
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 333,
+      "end": 340
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 361,
+      "end": 369
+     },
+     {
+      "side": "pt",
+      "what": "user",
+      "text": "utilizadores",
+      "start": 393,
+      "end": 405
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 412,
+      "end": 420
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 475,
+      "end": 482
+     },
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "estão a trabalhar",
+      "start": 497,
+      "end": 514
+     }
+    ],
+    "br": 5,
+    "pt": 4,
+    "lean_br": 0,
+    "reads_as": "mixed"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "pt",
+   "run": 1,
+   "ms": 2405,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 403,
+    "completion_tokens": 186,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00008060000000000001,
+   "text": "O Instituto Português do Mar e da Atmosfera (IPMA) emitiu um aviso laranja para chuva persistente, por vezes forte, no distrito do Porto, válido entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa). Atualmente, está a chover.\n\nRecomenda-se o uso preferencial de transportes públicos, como autocarros ou comboios, evitando o carro sempre que possível. Mantenha o telemóvel carregado e tenha à mão os contactos da Autoridade Nacional de Proteção Civil (ANEPC). Pode ainda registar-se no site da ANEPC para receber alertas.\n\nAs equipas de emergência estão em alerta. Consulte regularmente as informações do IPMA e da ANEPC.",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "está a chover",
+      "start": 239,
+      "end": 252
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 317,
+      "end": 327
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 331,
+      "end": 339
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 390,
+      "end": 399
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 427,
+      "end": 436
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 498,
+      "end": 506
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 553,
+      "end": 560
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "pt",
+   "run": 2,
+   "ms": 2342,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 405,
+    "completion_tokens": 188,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.000081,
+   "text": "O Instituto Português do Mar e da Atmosfera (IPMA) emitiu um aviso laranja para chuva persistente, por vezes forte, no distrito do Porto, válido entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa). Atualmente, está a chover.\n\nRecomenda-se o uso preferencial de transportes públicos, como autocarros ou comboios, evitando o carro sempre que possível. Mantenha o telemóvel carregado e tenha à mão os contactos da Autoridade Nacional de Proteção Civil (ANEPC). Pode ainda registar-se no site da ANEPC para receber alertas.\n\nAs equipas de emergência encontram-se em alerta. Consulte regularmente as informações do IPMA e da ANEPC.",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "está a chover",
+      "start": 239,
+      "end": 252
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 317,
+      "end": 327
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 331,
+      "end": 339
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 390,
+      "end": 399
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 427,
+      "end": 436
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 498,
+      "end": 506
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 553,
+      "end": 560
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "pt",
+   "run": 3,
+   "ms": 2178,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 403,
+    "completion_tokens": 186,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00008060000000000001,
+   "text": "O Instituto Português do Mar e da Atmosfera (IPMA) emitiu um aviso laranja para chuva persistente, por vezes forte, no distrito do Porto, válido entre as 06:00 e as 18:00 de sábado, dia 21 de novembro de 2026 (hora de Lisboa). Atualmente, está a chover.\n\nRecomenda-se o uso preferencial de transporte público, como autocarros ou comboios, em vez do carro. Mantenha o telemóvel carregado e tenha à mão os contactos da Proteção Civil. Pode ainda registar-se no site da Proteção Civil para receber alertas.\n\nAs equipas de emergência estão em alerta. Consulte regularmente as informações do IPMA e da Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "está a chover",
+      "start": 239,
+      "end": 252
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 315,
+      "end": 325
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 329,
+      "end": 337
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 367,
+      "end": 376
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 404,
+      "end": 413
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 444,
+      "end": 452
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 508,
+      "end": 515
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "br",
+   "run": 1,
+   "ms": 1943,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 388,
+    "completion_tokens": 171,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0000776,
+   "text": "Atenção, população de Porto. Segundo o IPMA, há alerta laranja para chuva persistente e, por vezes, forte no distrito de Porto a partir das 06:00 até às 18:00 de sábado, 21 de novembro de 2026 (hora de Lisboa). Atualmente, já está chovendo.\n\nRecomenda-se o uso de transporte público, como ônibus ou trem, em vez de carro. Mantenha o celular carregado e tenha à mão os contatos da proteção civil. Os usuários podem se cadastrar no site da proteção civil para receber alertas.\n\nAs equipes de emergência estão em operação. Fique atento às atualizações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "está chovendo",
+      "start": 226,
+      "end": 239
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 289,
+      "end": 295
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 299,
+      "end": 303
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 333,
+      "end": 340
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 368,
+      "end": 376
+     },
+     {
+      "side": "br",
+      "what": "user",
+      "text": "usuários",
+      "start": 399,
+      "end": 407
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 417,
+      "end": 426
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 479,
+      "end": 486
+     }
+    ],
+    "br": 8,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "br",
+   "run": 2,
+   "ms": 2719,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 380,
+    "completion_tokens": 163,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.000076,
+   "text": "Atenção, população de Porto. Segundo o IPMA, há alerta laranja para chuva persistente, às vezes forte, no distrito de Porto a partir das 06:00 até às 18:00 de sábado, 21 de novembro de 2026 (horário de Lisboa). Atualmente, já está chovendo.\n\nRecomenda-se o uso de transporte público, como ônibus ou trem, em vez de carro. Mantenha o celular carregado e tenha à mão os contatos da proteção civil. Os usuários podem se cadastrar no site da proteção civil para receber alertas.\n\nAs equipes de emergência estão em operação. Fique atento às atualizações do IPMA e da ANEPC.",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "progressive with the gerund (\"está chovendo\")",
+      "text": "está chovendo",
+      "start": 226,
+      "end": 239
+     },
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 289,
+      "end": 295
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 299,
+      "end": 303
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 333,
+      "end": 340
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 368,
+      "end": 376
+     },
+     {
+      "side": "br",
+      "what": "user",
+      "text": "usuários",
+      "start": 399,
+      "end": 407
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 417,
+      "end": 426
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 479,
+      "end": 486
+     }
+    ],
+    "br": 8,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "ministral-14b-2512",
+   "served_model": "ministral-14b-2512",
+   "variant": "br",
+   "run": 3,
+   "ms": 1727,
+   "usage": {
+    "prompt_tokens": 217,
+    "total_tokens": 371,
+    "completion_tokens": 154,
+    "prompt_tokens_details": {
+     "cached_tokens": 128
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0000742,
+   "text": "Atenção. Chove neste momento em Porto. O IPMA emitiu alerta laranja para chuva persistente e, por vezes, forte no distrito de Porto, válido das 06:00 às 18:00 de sábado, 21 de novembro de 2026 (hora de Lisboa).\n\nRecomenda-se o uso de transporte público, como ônibus ou trem, evitando o carro. Mantenha o celular carregado e tenha à mão os contatos da proteção civil. É possível se cadastrar no site da proteção civil para receber alertas.\n\nAs equipes de emergência estão em operação. Fique atento às atualizações do IPMA e da ANEPC.",
+   "scan": {
+    "hits": [
+     {
+      "side": "br",
+      "what": "bus",
+      "text": "ônibus",
+      "start": 259,
+      "end": 265
+     },
+     {
+      "side": "br",
+      "what": "train",
+      "text": "trem",
+      "start": 269,
+      "end": 273
+     },
+     {
+      "side": "br",
+      "what": "mobile phone",
+      "text": "celular",
+      "start": 304,
+      "end": 311
+     },
+     {
+      "side": "br",
+      "what": "contact",
+      "text": "contatos",
+      "start": 339,
+      "end": 347
+     },
+     {
+      "side": "br",
+      "what": "sign up",
+      "text": "cadastrar",
+      "start": 381,
+      "end": 390
+     },
+     {
+      "side": "br",
+      "what": "team",
+      "text": "equipes",
+      "start": 443,
+      "end": 450
+     }
+    ],
+    "br": 6,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "Brazilian"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "pt",
+   "run": 1,
+   "ms": 1799,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 410,
+    "completion_tokens": 181,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00014294999999999998,
+   "text": "AVISO METEOROLÓGICO – DISTRITO DO PORTO\n\nO IPMA emitiu um aviso laranja por chuva persistente e por vezes forte para o distrito do Porto entre as 06h00 e as 18h00 de sábado, 21 de novembro de 2026. A chuva já se faz sentir.\n\nRecomenda-se a utilização de transportes públicos, como autocarro ou comboio, em vez do carro. Carregue o telemóvel e mantenha os contactos de emergência da proteção civil à mão. Registe-se no site da ANEPC para receber alertas em tempo real.\n\nAs equipas de emergência estão mobilizadas. Siga as indicações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 281,
+      "end": 290
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 294,
+      "end": 301
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 331,
+      "end": 340
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 355,
+      "end": 364
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "Registe",
+      "start": 404,
+      "end": 411
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 472,
+      "end": 479
+     }
+    ],
+    "br": 0,
+    "pt": 6,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "pt",
+   "run": 2,
+   "ms": 1660,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 389,
+    "completion_tokens": 160,
+    "prompt_tokens_details": {
+     "cached_tokens": 208
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00013035,
+   "text": "Aviso Meteorológico IPMA\n\nEstá a chover agora no distrito do Porto. O IPMA emitiu um aviso laranja por chuva persistente e por vezes forte para este sábado, 21 de novembro de 2026, entre as 06:00 e as 18:00 (hora de Lisboa).\n\nRecomenda-se:\nUsar transportes públicos como autocarro ou comboio em vez do carro.\nCarregar o telemóvel.\nTer os contactos da proteção civil à mão.\nRegistar-se no site da proteção civil para receber alertas.\n\nAs equipas de emergência estão em ação. Siga as indicações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 26,
+      "end": 39
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 271,
+      "end": 280
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 284,
+      "end": 291
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 320,
+      "end": 329
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 338,
+      "end": 347
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "Registar",
+      "start": 373,
+      "end": 381
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 437,
+      "end": 444
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "pt",
+   "run": 3,
+   "ms": 1874,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 400,
+    "completion_tokens": 171,
+    "prompt_tokens_details": {
+     "cached_tokens": 208
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00013695,
+   "text": "Aviso Meteorológico IPMA\n\nEstá a chover agora no distrito do Porto. O IPMA emitiu um aviso laranja por chuva persistente, por vezes forte, para amanhã, sábado 21 de novembro de 2026, entre as 06h00 e as 18h00 (hora de Lisboa).\n\nRecomenda-se a utilização de transportes públicos, como o autocarro ou o comboio, em vez do carro. Carregue o telemóvel e mantenha os contactos da proteção civil à mão. Registe-se no site da ANEPC para receber alertas.\n\nAs equipas de emergência estão em alerta. Siga as indicações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 26,
+      "end": 39
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 286,
+      "end": 295
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 301,
+      "end": 308
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 338,
+      "end": 347
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 362,
+      "end": 371
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "Registe",
+      "start": 397,
+      "end": 404
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 451,
+      "end": 458
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "br",
+   "run": 1,
+   "ms": 1525,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 389,
+    "completion_tokens": 160,
+    "prompt_tokens_details": {
+     "cached_tokens": 32
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00013035,
+   "text": "Aviso Meteorológico IPMA\n\nEstá a chover agora no Porto. O IPMA emitiu um aviso laranja de chuva persistente e por vezes forte para o distrito do Porto entre as 06h00 e as 18h00 do próximo sábado, 21 de novembro de 2026.\n\nRecomenda-se o uso de transportes públicos como autocarros ou comboios em vez do carro. Carregue o telemóvel e mantenha os contactos de proteção civil à mão. Registe-se no site da proteção civil para receber alertas. As equipas de emergência estão em ação.\n\nSiga as informações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 26,
+      "end": 39
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 269,
+      "end": 279
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 283,
+      "end": 291
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 320,
+      "end": 329
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 344,
+      "end": 353
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "Registe",
+      "start": 379,
+      "end": 386
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 441,
+      "end": 448
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "br",
+   "run": 2,
+   "ms": 1700,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 407,
+    "completion_tokens": 178,
+    "prompt_tokens_details": {
+     "cached_tokens": 208
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00014115000000000002,
+   "text": "Prezados residentes do Porto,\n\nO IPMA emitiu um alerta laranja para chuva persistente e por vezes forte na área do Porto, válido das 06:00 às 18:00 do sábado, 21 de novembro de 2026. A chuva já está a cair.\n\nRecomendamos que evitem conduzir e optem pelo transporte público, como autocarros ou comboios. Certifiquem-se de que os telemóveis estão carregados e tenham os contactos de emergência da proteção civil à mão.\n\nPodem inscrever-se no site da proteção civil para receber alertas em tempo real. As equipas de emergência estão mobilizadas.\n\nSigam as orientações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "está a cair",
+      "start": 194,
+      "end": 205
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarros",
+      "start": 279,
+      "end": 289
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboios",
+      "start": 293,
+      "end": 301
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóveis",
+      "start": 328,
+      "end": 338
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 368,
+      "end": 377
+     },
+     {
+      "side": "pt",
+      "what": "sign up",
+      "text": "inscrever",
+      "start": 424,
+      "end": 433
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 502,
+      "end": 509
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-small-2603",
+   "served_model": "mistral-small-2603",
+   "variant": "br",
+   "run": 3,
+   "ms": 1922,
+   "usage": {
+    "prompt_tokens": 229,
+    "total_tokens": 403,
+    "completion_tokens": 174,
+    "prompt_tokens_details": {
+     "cached_tokens": 208
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00013875,
+   "text": "AVISO METEOROLÓGICO - DISTRITO DO PORTO\n\nEstá a chover no Porto. O IPMA emitiu um aviso laranja por chuva persistente e por vezes forte para o distrito do Porto, válido das 06h00 às 18h00 do sábado, 21 de novembro de 2026.\n\nRecomenda-se o uso de transportes públicos (autocarro ou comboio) em vez do carro. Mantenha o telemóvel carregado e tenha à mão os contactos da proteção civil. Registe-se no site da ANEPC para receber alertas.\n\nAs equipas de emergência estão mobilizadas. Siga as informações do IPMA e da Autoridade Nacional de Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 41,
+      "end": 54
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 268,
+      "end": 277
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 281,
+      "end": 288
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 318,
+      "end": 327
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 355,
+      "end": 364
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "Registe",
+      "start": 384,
+      "end": 391
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 438,
+      "end": 445
+     }
+    ],
+    "br": 0,
+    "pt": 7,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 3,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "pt",
+   "run": 1,
+   "ms": 28805,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 4213,
+    "completion_tokens": 4000,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3999
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0085491,
+   "finish": "length",
+   "max_tokens": 4000,
+   "text": "",
+   "scan": {
+    "hits": [],
+    "br": 0,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "no markers"
+   },
+   "figures": {
+    "total": 0,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "pt",
+   "run": 2,
+   "ms": 23672,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 3781,
+    "completion_tokens": 3568,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3393
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.007641900000000001,
+   "finish": "stop",
+   "max_tokens": 4000,
+   "text": "O Instituto Português do Mar e da Atmosfera (IPMA) tem um aviso laranja para chuva persistente, por vezes forte, no distrito do Porto, das 06h00 às 18h00 de sábado, 21 de novembro de 2026 (hora de Lisboa), conforme dados da PrompTugal lidos às 18h15 UTC de 20 de novembro de 2026. Está a chover agora. Aconselha-se a utilizar o autocarro ou o comboio em vez do carro. Carregue o seu telemóvel. Tenha à mão os contactos telefónicos da proteção civil. Pode registar-se no site da proteção civil para receber alertas. As equipas de emergência estão a trabalhar. Siga o IPMA e a Autoridade Nacional de Emergência e Proteção Civil (ANEPC).",
+   "scan": {
+    "hits": [
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "Está a chover",
+      "start": 281,
+      "end": 294
+     },
+     {
+      "side": "pt",
+      "what": "bus",
+      "text": "autocarro",
+      "start": 328,
+      "end": 337
+     },
+     {
+      "side": "pt",
+      "what": "train",
+      "text": "comboio",
+      "start": 343,
+      "end": 350
+     },
+     {
+      "side": "pt",
+      "what": "mobile phone",
+      "text": "telemóvel",
+      "start": 383,
+      "end": 392
+     },
+     {
+      "side": "pt",
+      "what": "contact",
+      "text": "contactos",
+      "start": 409,
+      "end": 418
+     },
+     {
+      "side": "pt",
+      "what": "telephone (adjective)",
+      "text": "telefónicos",
+      "start": 419,
+      "end": 430
+     },
+     {
+      "side": "pt",
+      "what": "register",
+      "text": "registar",
+      "start": 455,
+      "end": 463
+     },
+     {
+      "side": "pt",
+      "what": "team",
+      "text": "equipas",
+      "start": 518,
+      "end": 525
+     },
+     {
+      "side": "pt",
+      "what": "progressive with a + infinitive (\"está a chover\")",
+      "text": "estão a trabalhar",
+      "start": 540,
+      "end": 557
+     }
+    ],
+    "br": 0,
+    "pt": 9,
+    "lean_br": 0,
+    "reads_as": "European"
+   },
+   "figures": {
+    "total": 5,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "pt",
+   "run": 3,
+   "ms": 28473,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 4213,
+    "completion_tokens": 4000,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3999
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0085491,
+   "finish": "length",
+   "max_tokens": 4000,
+   "text": "",
+   "scan": {
+    "hits": [],
+    "br": 0,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "no markers"
+   },
+   "figures": {
+    "total": 0,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "br",
+   "run": 1,
+   "ms": 23047,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 4213,
+    "completion_tokens": 4000,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3999
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0085491,
+   "finish": "length",
+   "max_tokens": 4000,
+   "text": "",
+   "scan": {
+    "hits": [],
+    "br": 0,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "no markers"
+   },
+   "figures": {
+    "total": 0,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "br",
+   "run": 2,
+   "ms": 23133,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 4213,
+    "completion_tokens": 4000,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3999
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0085491,
+   "finish": "length",
+   "max_tokens": 4000,
+   "text": "",
+   "scan": {
+    "hits": [],
+    "br": 0,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "no markers"
+   },
+   "figures": {
+    "total": 0,
+    "not_found": []
+   }
+  },
+  {
+   "model": "mistral-large-4",
+   "served_model": "mistral-large-4",
+   "variant": "br",
+   "run": 3,
+   "ms": 36072,
+   "usage": {
+    "prompt_tokens": 213,
+    "total_tokens": 4213,
+    "completion_tokens": 4000,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 3999
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.0085491,
+   "finish": "length",
+   "max_tokens": 4000,
+   "text": "",
+   "scan": {
+    "hits": [],
+    "br": 0,
+    "pt": 0,
+    "lean_br": 0,
+    "reads_as": "no markers"
+   },
+   "figures": {
+    "total": 0,
+    "not_found": []
+   }
+  }
+ ]
+}

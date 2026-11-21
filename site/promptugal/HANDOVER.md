@@ -1,0 +1,32 @@
+# Handover: PrompTugal on Mistral (site/promptugal/)
+
+By mistral.promptugal@SovereignWebsite.dinis (session https://claude.ai/code/session_01Kw9UwDyA9BERjrFpsR4B8K), for Dinis Cruz, 21 November 2026. Started by conductor.mistral at Dinis's request.
+
+An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI, and not speaking for PrompTugal.
+
+## What is live
+
+- `/promptugal/`: the list page. A key that arrives in its link (`#key=...`) is held in memory and carried, at click time, only into a demo on this site, which then asks whether to use it.
+- `/promptugal/ask/` "Ask PrompTugal": a chat on Mistral (default `mistral-small-2603`, temperature 0) in European Portuguese or English, with four read-only tools (`lib/pt-tools.js`) over https://data.promptugal.news/api/v1/ (catalogue and `<id>/latest.json`, ids from the catalogue only) and https://promptugal.news/api/v1/search/docs.json plus the `.md` twin of a page in that index. Every number, time and date in an answer is checked in code against what the tools returned (`lib/figcheck.js`). Links only to an address a tool returned this turn, on an allow-listed host (security.b, review 011). Key panel and loop: `/browser/ask/panel.js` and `/browser/ask/chat-core.js`, unchanged.
+- `/promptugal/bulletin/`: the day's facts picked in code from five data.promptugal.news files (`lib/bulletin-facts.js`), a bulletin in European Portuguese written by Mistral from those facts only, figures, must-name items and the weekday checked in code, English and French translations with our glossary checked in code, Voxtral TTS (an English preset voice reading Portuguese; Mistral lists no Portuguese voice) and an STT round trip. Key holder: `/browser/voice/kit.js`, unchanged.
+- The visitor's key from a QR code (`lib/qrkey.js`, first script in the head of each page): the QR holds a link to a demo page with the key after `#`, or the page reads a pasted, dropped or chosen picture of the QR code (BarcodeDetector, else self-hosted jsQR 1.4.0 in `vendor/`). The visitor is asked "Use it" or "Do not use it" first; no character of the key is shown; QR links from another origin are refused (security.b, review 014). The pages also offer browser.c's "Use the sealed key stored in this browser" (`/browser/keys/`), through the unchanged key holders.
+
+## Recorded runs and findings (all on the pages)
+
+- Ask: two runs of four questions. First run: the model read Lisboa's yellow warning and said there was none, and gave a news read time no tool gave ("16:40 UTC"). After a prompt change and temperature 0, the second run is right, but names 3 of the 4 vendors CISA added on 18 November.
+- Bulletin: one run; every check passes, yet one sentence stretches Lisboa's wave range (1,7 to 2,6 m) over Figueira da Foz (1,3 to 2,6 m). Round trip: 155 of 161 words back.
+- European or Brazilian Portuguese (`/promptugal/pt-pt/`, replay only for now): 30 runs. Asked for European, the Ministrals and Mistral Small 4 wrote European in 12 of 12; asked for Brazilian (the control), the Ministrals wrote Brazilian in 8 of 9 (one mixed) and Mistral Small 4 wrote European in 3 of 3; Mistral Large 4 wrote text in 1 of 6 calls (the rest spent 4,000 tokens reasoning).
+
+## Open
+
+- `/promptugal/pt-pt/` live mode, on the visitor's key: sent to security.b as review 015, held outside the repository until it passes.
+
+## Rerun
+
+All from the repository root, in a session whose proxy adds the Mistral key (the scripts never hold a key):
+
+    NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node site/promptugal/tools/record-ask.mjs
+    NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt DATE=2026-11-21 node site/promptugal/tools/record-bulletin.mjs
+    NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node site/promptugal/tools/record-variant.mjs
+
+Each logs every call to `~/.promptugal-ledger/ledger.jsonl` (outside git) and stops at 2 USD in that ledger. Re-recording changes the results: update each page's "What we found" from the new file, and never leave a finding the file does not support.
