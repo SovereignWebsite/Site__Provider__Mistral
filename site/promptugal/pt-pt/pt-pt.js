@@ -2,15 +2,9 @@
 // as a control, Brazilian Portuguese; every text scanned in code (../lib/variant.js) for the words and the one
 // construction where the two usually differ, and its figures checked against the brief's facts (../lib/figcheck.js).
 // Written by mistral.promptugal@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026. Code Apache-2.0.
-// For now this page only shows the recorded runs, from a file on this site, and sends nothing: the live part (on the
-// visitor's key, through /browser/voice/kit.js) waits for security.b's review.
-function el(tag, attrs = {}, ...kids) {
-  const n = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs || {})) { if (v === null || v === undefined || v === false) continue; if (k === 'text') n.textContent = v; else if (k === 'class') n.className = v; else n.setAttribute(k, v === true ? '' : v); }
-  for (const c of kids.flat()) if (c !== null && c !== undefined && c !== false) n.append(c instanceof Node ? c : document.createTextNode(String(c)));
-  return n;
-}
-if (window.top !== window.self) throw new Error('framed: demo stopped');
+// The key, the frame check, the one call function and "what this call sends, and to whom" are /browser/voice/kit.js,
+// unchanged. The recorded runs replay from a file on this site and send nothing.
+import { wireKey, callMistral, renderSends, logCall, drawLog, el, explain, costOf, bytesText, hasKey } from '/browser/voice/kit.js';
 
 const V = window.Variant, VB = window.VariantBrief, FC = window.FigCheck;
 const $ = (id) => document.getElementById(id);
@@ -62,6 +56,35 @@ $('replay').addEventListener('click', async () => {
   $('replay-status').textContent = 'Recorded ' + run.recorded + ' on ' + run.endpoint + ': ' + run.rows.length + ' calls, ' + run.runs_per_cell + ' per model and variant, temperature ' + run.temperature + '. Replayed from a file on this site: nothing is sent.';
   $('replay-out').classList.remove('hidden');
   $('replay').disabled = false;
+});
+
+// ---- Live: the same brief, on the model you pick, both variants. ----
+const model = () => $('model').value;
+const body = (v) => ({ model: model(), messages: VB.messages(v), max_tokens: VB.maxTokens(model()) });
+wireKey(() => preview());
+drawLog();
+function preview() { renderSends($('sends'), { path: '/chat/completions', model: model(), purpose: 'The brief, asking for European Portuguese; a second call like it asks for Brazilian Portuguese, as the control.', shown: body('pt') }); }
+$('model').addEventListener('change', preview);
+preview();
+$('run').addEventListener('click', async () => {
+  if (!hasKey()) { $('run-status').textContent = 'Paste your Mistral key in step 2 first. Nothing was sent.'; return; }
+  $('run').disabled = true; $('live-out').replaceChildren();
+  for (const v of ['pt', 'br']) {
+    $('run-status').textContent = 'Asking ' + model() + ', ' + ASKED[v] + '...';
+    const b = body(v);
+    const r = await callMistral({ path: '/chat/completions', json: b });
+    const u = r.data && r.data.usage;
+    logCall({ to: r.host + '/v1/chat/completions', model: b.model, purpose: ASKED[v], sent: bytesText(JSON.stringify(b).length) + ' of JSON', status: r.status || 'no answer', ms: r.ms, usage: u ? u.prompt_tokens + ' in, ' + u.completion_tokens + ' out' : 'none', cost: u ? costOf(b.model, { tokensIn: u.prompt_tokens, tokensOut: u.completion_tokens }) : null });
+    if (!r.ok) { $('run-status').textContent = explain(r); $('run').disabled = false; return; }
+    const ch = r.data.choices[0];
+    const text = VB.textOf(ch.message.content);
+    const figs = FC.check(text, VB.FACTS);
+    const row = { model: b.model, variant: v, run: 1, text, finish: ch.finish_reason, max_tokens: b.max_tokens, usage: u, scan: V.scan(text), figures: { total: figs.length, not_found: figs.filter((x) => !x.found).map((x) => x.text) } };
+    const card = textCard(row); card.open = true;
+    $('live-out').append(card);
+  }
+  $('run-status').textContent = 'Done. Model output, scanned in code.';
+  $('run').disabled = false;
 });
 
 // Our list of markers, from variant.js itself.
