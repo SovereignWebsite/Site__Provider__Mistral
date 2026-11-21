@@ -1,0 +1,101 @@
+/* /workflows/: complex agent workflows on Mistral, drawn live. On top of base.css, plain.css, /browser/voice/kit.css,
+   /promptugal/promptugal.css (the QR key box) and studio.css. The graph panel is a dark "galaxy" in both themes, after
+   the SGit-AI Web Summit stand's views. No inline styles (strict CSP). mistral.workflows@SovereignWebsite.dinis, 21 Nov 2026. */
+:root{--g-bg0:#122a52;--g-bg1:#060d1c;--g-line:#294a64;--g-text:#f2f6fc;--g-muted:#a9bcd6;
+  --c-brief:#e9eef7;--c-planner:#7aa7ff;--c-resA:#5fd0c6;--c-resB:#8fe3b0;--c-site:#c7d2e6;--c-writer:#f08bb0;--c-reviewer:#b9a3ff;--c-publisher:#9cc2ff;--c-out:#ffffff}
+
+/* The two lanes. */
+.lanes{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));margin-top:1rem}
+.lane{border:1px solid var(--line);border-radius:18px;padding:.4rem 1rem 1rem;background:var(--card,var(--bg));min-width:0}
+.lane>h3{margin:.6rem 0 .5rem;font-size:1.05rem}
+.lane .where{color:var(--muted);font-weight:400;font-size:.9rem}
+.lane h4{margin:1rem 0 .35rem;font-size:.95rem}
+.lane-empty{color:var(--muted);padding:2rem 1rem;text-align:center;border:1px dashed var(--line);border-radius:14px}
+svg.flow{display:block;width:100%;height:auto;max-height:42rem;border-radius:16px}
+
+/* The galaxy. */
+.fl-bg0{stop-color:var(--g-bg0)}
+.fl-bg1{stop-color:var(--g-bg1)}
+.fl-stars circle{fill:#dfe8ff;opacity:.35}
+.fl-title{fill:var(--g-muted);font:600 15px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.fl-link{fill:none;stroke:var(--g-line);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round}
+.fl-node .fl-core{fill:#0e2035;stroke:currentColor;stroke-width:3}
+.fl-node .fl-glow{fill:currentColor;opacity:0;transition:opacity .35s ease}
+.fl-node.fl-hot .fl-glow{opacity:.28}
+.fl-node.fl-hot .fl-core{fill:#183558}
+.fl-node.fl-done .fl-core{fill:currentColor}
+.fl-node.fl-err .fl-core{stroke:#ff8fa8;stroke-dasharray:5 4}
+.fl-label{fill:var(--g-text);font:600 15px/1 system-ui,sans-serif;text-anchor:middle}
+.fl-count{fill:var(--g-text);font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-anchor:middle}
+.fl-io .fl-count{display:none}
+.fl-dot{fill:currentColor}
+.fl-halo{fill:currentColor;opacity:.3}
+.fl-tail{fill:none;stroke:currentColor;stroke-width:3.5;stroke-linecap:round;opacity:.75}
+.fl-toolmsg.fl-dot{r:4px}
+.fl-c-brief{color:var(--c-brief)}.fl-c-planner{color:var(--c-planner)}.fl-c-resA{color:var(--c-resA)}.fl-c-resB{color:var(--c-resB)}
+.fl-c-site{color:var(--c-site)}.fl-c-writer{color:var(--c-writer)}.fl-c-reviewer{color:var(--c-reviewer)}.fl-c-publisher{color:var(--c-publisher)}.fl-c-out{color:var(--c-out)}
+@media (prefers-reduced-motion:reduce){.fl-node .fl-glow{transition:none}}
+
+/* The meter, the messages and the deliverable. */
+.meter{display:grid;grid-template-columns:repeat(auto-fit,minmax(5.6rem,1fr));gap:.4rem;margin:.7rem 0 0}
+.meter div{background:var(--panel);border-radius:10px;padding:.4rem .5rem}
+.meter dt{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.meter dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums;font-size:.92rem;white-space:nowrap}
+.feed{list-style:none;margin:0;padding:.4rem .6rem;max-height:14rem;overflow:auto;background:var(--panel);border-radius:10px;font-size:.84rem;line-height:1.45}
+.feed li{padding:.12rem 0;border-bottom:1px solid var(--line)}
+.feed li:last-child{border-bottom:0}
+.feed .at{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--muted);font-size:.78rem}
+.feed .k-tool{color:var(--muted)}
+.feed .k-error{color:var(--bad)}
+.d-title{font-weight:700;margin:0 0 .4rem}
+.d-body{white-space:pre-wrap;margin:0;font-size:.95rem}
+.checks{padding-left:1.2rem;font-size:.92rem}
+.checks li.ok::marker{content:"\2713  "}
+.checks li.bad::marker{content:"\2717  "}
+#compare{margin-top:1.2rem}
+
+/* Figures: screenshots of real runs. */
+.shot{margin:1rem 0}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px}
+.shot figcaption{font-size:.88rem;color:var(--muted);margin-top:.4rem}
+.found li{margin:.35rem 0}
+
+/* The hub. */
+.wf-cards{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr))}
+.wf-cards li{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card,var(--bg))}
+.wf-cards img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;background:#0b1f4b}
+.wf-cards .wf-b{padding:.9rem 1rem 1.1rem}
+.wf-cards h2{margin:0 0 .35rem;padding:0;border:0;font-size:1.2rem}
+.wf-cards h2 a::after{content:"";position:absolute;inset:0}
+.wf-cards p{margin:0 0 .35rem;font-size:.93rem;color:var(--muted)}
+
+/* The poster studio. */
+.fl-c-director{color:var(--c-planner)}.fl-c-painter{color:var(--c-writer)}.fl-c-imagetool{color:var(--c-site)}.fl-c-designer{color:var(--c-resA)}.fl-c-sanitiser{color:var(--c-site)}.fl-c-wall{color:var(--c-out)}
+.pstage{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:start}
+.wall{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));align-items:start;margin-top:1rem}
+.poster{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card,var(--bg))}
+.poster-art img,.poster-svg{display:block;width:100%;height:auto}
+.poster-type{background:#121a2b;color:#f6f5f1;padding:1rem 1.1rem 1.2rem}
+.poster-type .p-head{font-family:var(--head,Georgia,serif);font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.05;font-weight:600;margin:0 0 .4rem}
+.poster-type .p-tag{margin:0;font-size:1rem;color:#cdd6e6}
+.poster figcaption{padding:.6rem .9rem .8rem;font-size:.86rem;color:var(--muted)}
+.swatch{display:inline-block;margin:0 .35rem .2rem 0;padding:.05rem .4rem;border-radius:6px;background:var(--panel)}
+.evidence li{margin:.4rem 0}
+
+/* The X-Ray. */
+.fl-pinlabel{fill:var(--g-text);font:600 12.5px/1 system-ui,sans-serif}
+.fl-pinlabel.fl-left{text-anchor:end}
+.fl-pin .fl-core{stroke-width:2.5}
+.fl-c-page{color:var(--c-brief)}.fl-c-extractor{color:var(--c-planner)}.fl-c-checkerA{color:var(--c-resA)}.fl-c-checkerB{color:var(--c-resB)}
+.fl-claim{color:#c7d2e6}.fl-src{color:var(--c-publisher)}.fl-c-nosource{color:#ff8fa8}
+.fl-node.fl-ok{color:#5fe0a0}.fl-node.fl-weak{color:#ffd27a}.fl-node.fl-bad{color:#ff8fa8}
+.fl-node.fl-ok .fl-core,.fl-node.fl-weak .fl-core,.fl-node.fl-bad .fl-core{fill:currentColor}
+.fl-verdict{fill:none;stroke-width:2.2;opacity:.8}
+.fl-verdict.v-ok{stroke:#5fe0a0}.fl-verdict.v-weak{stroke:#ffd27a;stroke-dasharray:6 5}.fl-verdict.v-bad{stroke:#ff8fa8;stroke-dasharray:2 6}
+.badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.06em;padding:.12rem .45rem;border-radius:6px;white-space:nowrap}
+.b-ok{background:var(--okbg,#e4f3ef);color:var(--ok)}.b-weak{background:#fff1d6;color:#7a4b00}.b-bad{background:var(--badbg,#f9e7ed);color:var(--bad)}.b-skip{background:var(--panel);color:var(--muted)}
+@media (prefers-color-scheme:dark){.b-weak{background:#3a2e12;color:#ffd27a}}
+.xr-list{list-style:none;padding:0;margin:.6rem 0 0;font-size:.9rem}
+.xr-list li{padding:.55rem 0;border-bottom:1px solid var(--line)}
+.xr-list .xr-q{display:block;color:var(--muted);margin-top:.25rem}
+.xr-tally{font-weight:700}

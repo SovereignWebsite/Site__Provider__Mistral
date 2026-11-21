@@ -1,0 +1,160 @@
+{
+ "about": "One real run of the poster studio, recorded through api.mistral.ai by mistral.workflows@SovereignWebsite.dinis. Model output, unedited; the SVG is sanitised when the page shows it.",
+ "recorded": "2026-11-21T03:12:02.586Z",
+ "endpoint": "api.mistral.ai",
+ "run": {
+  "brief": "A poster for a small bakery in Porto that has just moved its website to a sovereign website: it owns its site, its keys and its AI model, and the model is European. Warm, confident, modern.",
+  "model": "mistral-small-2603",
+  "designer": "mistral-small-2603",
+  "imageModel": "mistral-medium-latest",
+  "events": [
+   {
+    "at": 0,
+    "from": "brief",
+    "to": "director",
+    "kind": "msg",
+    "label": "A poster for a small bakery in Porto that has just moved its website to a sovereign websi…"
+   },
+   {
+    "at": 2073,
+    "from": "director",
+    "to": "director",
+    "kind": "call",
+    "label": "director → mistral-small-2603 (359 in, 228 out)",
+    "tin": 359,
+    "tout": 228,
+    "status": 200
+   },
+   {
+    "at": 2073,
+    "from": "director",
+    "to": "painter",
+    "kind": "msg",
+    "label": "A warm golden-brown sourdough loaf, crusty and inviting, sitting on a simple dark wooden …"
+   },
+   {
+    "at": 2073,
+    "from": "painter",
+    "to": "imagetool",
+    "kind": "tool",
+    "label": "image_generation"
+   },
+   {
+    "at": 2075,
+    "from": "director",
+    "to": "designer",
+    "kind": "msg",
+    "label": "A central golden-brown sourdough loaf icon, slightly textured, with a clean shadow beneat…"
+   },
+   {
+    "at": 6860,
+    "from": "designer",
+    "to": "designer",
+    "kind": "call",
+    "label": "designer → mistral-small-2603 (340 in, 985 out)",
+    "tin": 340,
+    "tout": 985,
+    "status": 200
+   },
+   {
+    "at": 6860,
+    "from": "designer",
+    "to": "sanitiser",
+    "kind": "msg",
+    "label": "SVG, 1929 characters"
+   },
+   {
+    "at": 6860,
+    "from": "sanitiser",
+    "to": "wall",
+    "kind": "result",
+    "label": "checked SVG"
+   },
+   {
+    "at": 13003,
+    "from": "painter",
+    "to": "painter",
+    "kind": "call",
+    "label": "painter → mistral-medium-latest (279 in, 428 out)",
+    "tin": 279,
+    "tout": 428,
+    "status": 200
+   },
+   {
+    "at": 13003,
+    "from": "imagetool",
+    "to": "wall",
+    "kind": "result",
+    "label": "an image"
+   }
+  ],
+  "calls": [
+   {
+    "agent": "director",
+    "model": "mistral-small-2603",
+    "status": 200,
+    "ms": 2067,
+    "tin": 359,
+    "tout": 228,
+    "connectors": null
+   },
+   {
+    "agent": "designer",
+    "model": "mistral-small-2603",
+    "status": 200,
+    "ms": 4783,
+    "tin": 340,
+    "tout": 985,
+    "connectors": null
+   },
+   {
+    "agent": "painter",
+    "model": "mistral-medium-latest",
+    "status": 200,
+    "ms": 10927,
+    "tin": 279,
+    "tout": 428,
+    "connectors": {
+     "image_generation": 1
+    }
+   }
+  ],
+  "totals": {
+   "calls": 3,
+   "tin": 978,
+   "tout": 1641,
+   "ms": 13003,
+   "images": 1,
+   "usdTokens": 0.000833
+  },
+  "ok": true,
+  "commission": {
+   "headline": "Porto Bakes Free",
+   "tagline": "Own your taste, own your site, own your future",
+   "image_prompt": "A warm golden-brown sourdough loaf, crusty and inviting, sitting on a simple dark wooden table. Behind it, a soft afternoon light filters through a window with a hint of Porto’s terracotta rooftops visible in the distance. The background is softly blurred, focusing attention on the bread. No text, no logos, no letters.",
+   "palette": [
+    "#8B4513",
+    "#D2B48C",
+    "#556B2F",
+    "#2F4F4F",
+    "#FFD700"
+   ],
+   "svg_brief": "A central golden-brown sourdough loaf icon, slightly textured, with a clean shadow beneath it. The background is a gradient from warm terracotta (#8B4513) at the bottom to soft cream (#D2B48C) at the top. Minimal, bold, and modern."
+  },
+  "checks": {
+   "headlineWords": 3,
+   "taglineWords": 9
+  },
+  "image": {
+   "saved": "/data/workflows/poster-porto-bakery.jpg",
+   "host": "mistralaiblackforestprod.blob.core.windows.net",
+   "bytes": 408222,
+   "prompt": "A warm golden-brown sourdough loaf, crusty and inviting, sitting on a simple dark wooden table. Behind it, soft afternoon light filters through a window with a hint of Porto’s terracotta rooftops visible in the blurred distance. The background is softly blurred, focusing attention on the bread. No text, no logos, no letters, no numbers.",
+   "inputs": "Generate one image with the image generation tool. A warm golden-brown sourdough loaf, crusty and inviting, sitting on a simple dark wooden table. Behind it, a soft afternoon light filters through a window with a hint of Porto’s terracotta rooftops visible in the distance. The background is softly blurred, focusing attention on the bread. No text, no logos, no letters. Absolutely no text, letters, numbers or logos in the image.",
+   "linkExpires": "2026-11-21T04:11:59Z"
+  },
+  "svg": {
+   "svg": "<svg viewBox=\"0 0 600 800\" xmlns=\"http://www.w3.org/2000/svg\">\n  <!-- Background Gradient -->\n  <defs>\n    <linearGradient id=\"bgGradient\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0\" stop-color=\"#8B4513\" />\n      <stop offset=\"1\" stop-color=\"#D2B48C\" />\n    </linearGradient>\n    \n    <!-- Loaf Shadow Filter -->\n    <filter id=\"loafShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\">\n      <feDropShadow dx=\"5\" dy=\"10\" stdDeviation=\"3\" flood-color=\"rgba(0,0,0,0.3)\" />\n    </filter>\n    \n    <!-- Loaf Texture Pattern -->\n    <pattern id=\"loafTexture\" patternUnits=\"userSpaceOnUse\" width=\"20\" height=\"20\">\n      <path d=\"M0,10 Q5,5 10,10 T20,10\" stroke=\"#556B2F\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.3\" />\n      <path d=\"M0,15 Q5,10 10,15 T20,15\" stroke=\"#556B2F\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.3\" />\n    </pattern>\n  </defs>\n\n  <!-- Background -->\n  <rect width=\"600\" height=\"800\" fill=\"url(#bgGradient)\" />\n\n  <!-- Headline -->\n  <text x=\"300\" y=\"200\" font-family=\"Arial, sans-serif\" font-size=\"48\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#2F4F4F\">Porto Bakes Free</text>\n\n  <!-- Loaf Icon -->\n  <g transform=\"translate(250, 300)\" filter=\"url(#loafShadow)\">\n    <!-- Loaf Body -->\n    <path d=\"M200,150 C220,100 280,100 300,150 L320,200 C340,250 340,300 300,350 C280,370 220,370 200,350 L180,300 C140,250 140,200 180,150 Z\" fill=\"#D2B48C\" stroke=\"#8B4513\" stroke-width=\"3\" />\n    \n    <!-- Loaf Texture -->\n    <path d=\"M200,150 C220,100 280,100 300,150 L320,200 C340,250 340,300 300,350 C280,370 220,370 200,350 L180,300 C140,250 140,200 180,150 Z\" fill=\"url(#loafTexture)\" />\n    \n    <!-- Loaf Shadow -->\n    <ellipse cx=\"250\" cy=\"380\" rx=\"60\" ry=\"15\" fill=\"rgba(0,0,0,0.1)\" />\n  </g>\n\n  <!-- Tagline -->\n  <text x=\"300\" y=\"500\" font-family=\"Arial, sans-serif\" font-size=\"24\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#556B2F\">Own your taste, own your site, own your future</text>\n</svg>"
+  }
+ }
+}

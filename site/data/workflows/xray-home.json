@@ -1,0 +1,1240 @@
+{
+ "about": "One real X-Ray run on two Mistral models at once, recorded through api.mistral.ai by mistral.workflows@SovereignWebsite.dinis. Lane A lists the claims; both lanes check them. The claims and quotes are model output; the badges are decided in code.",
+ "recorded": "2026-11-21T03:20:20.443Z",
+ "endpoint": "api.mistral.ai",
+ "index": "/browser/voice/site-index.json",
+ "index_made": "2026-11-21",
+ "subject": "/",
+ "lanes": [
+  {
+   "model": "mistral-small-2603",
+   "subject": "/",
+   "events": [
+    {
+     "at": 0,
+     "from": "page",
+     "to": "extractor",
+     "kind": "msg",
+     "label": "Mistral, a European brain for a sovereign website"
+    },
+    {
+     "at": 2789,
+     "from": "extractor",
+     "to": "extractor",
+     "kind": "call",
+     "label": "extractor",
+     "tin": 1931,
+     "tout": 627
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim1",
+     "kind": "msg",
+     "label": "Hackathon / London"
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim2",
+     "kind": "msg",
+     "label": "Saturday 21 Nov 2026"
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim3",
+     "kind": "msg",
+     "label": "A first call to a Mistral model in five minutes, on your own laptop with no key, or with …"
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim4",
+     "kind": "msg",
+     "label": "Sovereign means you can choose, and change, who runs your model."
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim5",
+     "kind": "msg",
+     "label": "The ledger asks five questions of any AI you depend on."
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim6",
+     "kind": "msg",
+     "label": "Install Ollama."
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim7",
+     "kind": "msg",
+     "label": "Pull the smallest Ministral 3 and call it: ollama pull ministral-3:3b"
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim8",
+     "kind": "msg",
+     "label": "Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions."
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim9",
+     "kind": "msg",
+     "label": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local …"
+    },
+    {
+     "at": 2792,
+     "from": "extractor",
+     "to": "claim10",
+     "kind": "msg",
+     "label": "Get an API key from the Mistral console."
+    },
+    {
+     "at": 2792,
+     "from": "claim1",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 1"
+    },
+    {
+     "at": 2792,
+     "from": "claim2",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 2"
+    },
+    {
+     "at": 2792,
+     "from": "claim3",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 3"
+    },
+    {
+     "at": 2792,
+     "from": "claim4",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 4"
+    },
+    {
+     "at": 2792,
+     "from": "claim5",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 5"
+    },
+    {
+     "at": 2793,
+     "from": "claim6",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 6"
+    },
+    {
+     "at": 2793,
+     "from": "claim7",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 7"
+    },
+    {
+     "at": 2793,
+     "from": "claim8",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 8"
+    },
+    {
+     "at": 2793,
+     "from": "claim9",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 9"
+    },
+    {
+     "at": 2793,
+     "from": "claim10",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 10"
+    },
+    {
+     "at": 3614,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 524,
+     "tout": 107
+    },
+    {
+     "at": 3614,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Hackathon London\")"
+    },
+    {
+     "at": 3616,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Saturday 21 Nov 2026\")"
+    },
+    {
+     "at": 3618,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"first call to a Mistral model in five m…\")"
+    },
+    {
+     "at": 3622,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Sovereign means you can choose and chan…\")"
+    },
+    {
+     "at": 3625,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"The ledger asks five questions of any A…\")"
+    },
+    {
+     "at": 3909,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 563,
+     "tout": 123
+    },
+    {
+     "at": 3909,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Install Ollama\")"
+    },
+    {
+     "at": 3910,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"ollama pull ministral-3:3b\")"
+    },
+    {
+     "at": 3913,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Ollama serves an OpenAI-style endpoint …\")"
+    },
+    {
+     "at": 3915,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Ministral 3 was announced on 2 December…\")"
+    },
+    {
+     "at": 3917,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Get an API key from the Mistral console\")"
+    },
+    {
+     "at": 4400,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 3391,
+     "tout": 51
+    },
+    {
+     "at": 4400,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/start/)"
+    },
+    {
+     "at": 4401,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/questions/)"
+    },
+    {
+     "at": 4401,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/designs/)"
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 3646,
+     "tout": 106
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/on-device.html)"
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/sources/)"
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/sources/)"
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/sources/)"
+    },
+    {
+     "at": 4857,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/your-key.html)"
+    },
+    {
+     "at": 4961,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 4984,
+     "tout": 18
+    },
+    {
+     "at": 4961,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/)"
+    },
+    {
+     "at": 6369,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 5640,
+     "tout": 244
+    },
+    {
+     "at": 6369,
+     "from": "checkerA",
+     "to": "src:/designs/",
+     "kind": "msg",
+     "label": "1: WEAK SOURCE"
+    },
+    {
+     "at": 6370,
+     "from": "checkerA",
+     "to": "src:/questions/",
+     "kind": "msg",
+     "label": "2: WEAK SOURCE"
+    },
+    {
+     "at": 6370,
+     "from": "checkerA",
+     "to": "src:/start/",
+     "kind": "msg",
+     "label": "3: CONFIRMED"
+    },
+    {
+     "at": 6370,
+     "from": "checkerA",
+     "to": "nosource",
+     "kind": "msg",
+     "label": "4: NO SOURCE"
+    },
+    {
+     "at": 6370,
+     "from": "checkerA",
+     "to": "src:/designs/",
+     "kind": "msg",
+     "label": "5: CONFIRMED"
+    },
+    {
+     "at": 6764,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 8440,
+     "tout": 250
+    },
+    {
+     "at": 6764,
+     "from": "checkerB",
+     "to": "src:/demos/on-device.html",
+     "kind": "msg",
+     "label": "6: CONFIRMED"
+    },
+    {
+     "at": 6765,
+     "from": "checkerB",
+     "to": "src:/demos/on-device.html",
+     "kind": "msg",
+     "label": "7: CONFIRMED"
+    },
+    {
+     "at": 6765,
+     "from": "checkerB",
+     "to": "nosource",
+     "kind": "msg",
+     "label": "8: NO SOURCE"
+    },
+    {
+     "at": 6765,
+     "from": "checkerB",
+     "to": "src:/sources/",
+     "kind": "msg",
+     "label": "9: CONFIRMED"
+    },
+    {
+     "at": 6765,
+     "from": "checkerB",
+     "to": "src:/demos/your-key.html",
+     "kind": "msg",
+     "label": "10: WEAK SOURCE"
+    }
+   ],
+   "calls": [
+    {
+     "agent": "extractor",
+     "status": 200,
+     "ms": 2782,
+     "tin": 1931,
+     "tout": 627
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 819,
+     "tin": 524,
+     "tout": 107
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 1115,
+     "tin": 563,
+     "tout": 123
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 770,
+     "tin": 3391,
+     "tout": 51
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 936,
+     "tin": 3646,
+     "tout": 106
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 559,
+     "tin": 4984,
+     "tout": 18
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 1407,
+     "tin": 5640,
+     "tout": 244
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 1904,
+     "tin": 8440,
+     "tout": 250
+    }
+   ],
+   "totals": {
+    "calls": 8,
+    "tin": 29119,
+    "tout": 1526,
+    "ms": 6765,
+    "usd": 0.005283
+   },
+   "claims": [
+    {
+     "n": 1,
+     "text": "Hackathon / London",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/designs/",
+     "quote": "The home page uses design 5, the hackathon, for the hackathon on Saturday 21 November 2026.",
+     "why": "quote found on /designs/, but sharing only 1 word with the claim"
+    },
+    {
+     "n": 2,
+     "text": "Saturday 21 Nov 2026",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/questions/",
+     "quote": "The poster says when (Saturday 21 November 2026, London)",
+     "why": "quote found on /questions/, but sharing only 1 word with the claim"
+    },
+    {
+     "n": 3,
+     "text": "A first call to a Mistral model in five minutes, on your own laptop with no key, or with your own key.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/start/",
+     "quote": "Open the hackathon briefing : a first call to a Mistral model in five minutes, with your own key or a local model, then the demos",
+     "why": "quote found on /start/, with the claim’s numbers and words"
+    },
+    {
+     "n": 4,
+     "text": "Sovereign means you can choose, and change, who runs your model.",
+     "onPage": true,
+     "status": "NO SOURCE",
+     "said": "not found",
+     "path": null,
+     "quote": null,
+     "why": "the checker found no page"
+    },
+    {
+     "n": 5,
+     "text": "The ledger asks five questions of any AI you depend on.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/designs/",
+     "quote": "The ledger  \nSovereignty checklist\nFive questions as a table: Mistral’s three levels as the worked example, and your own row to fill in.",
+     "why": "quote found on /designs/, with the claim’s numbers and words"
+    },
+    {
+     "n": 6,
+     "text": "Install Ollama.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/demos/on-device.html",
+     "quote": "curl -fsSL https://ollama.com/install.sh | sh",
+     "why": "quote found on /demos/on-device.html, with the claim’s numbers and words"
+    },
+    {
+     "n": 7,
+     "text": "Pull the smallest Ministral 3 and call it: ollama pull ministral-3:3b",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/demos/on-device.html",
+     "quote": "ollama pull ministral-3:3b",
+     "why": "quote found on /demos/on-device.html, with the claim’s numbers and words"
+    },
+    {
+     "n": 8,
+     "text": "Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions.",
+     "onPage": true,
+     "status": "NO SOURCE",
+     "said": "not found",
+     "path": null,
+     "quote": null,
+     "why": "the checker found no page"
+    },
+    {
+     "n": 9,
+     "text": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/sources/",
+     "quote": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0.",
+     "why": "quote found on /sources/, with the claim’s numbers and words"
+    },
+    {
+     "n": 10,
+     "text": "Get an API key from the Mistral console.",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/demos/your-key.html",
+     "quote": "A Mistral key goes only to api.mistral.ai or api.eu.mistral.ai ; an OpenRouter key only to openrouter.ai .",
+     "why": "quote found on /demos/your-key.html, but sharing only 1 word with the claim"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "model": "ministral-14b-2512",
+   "subject": "/",
+   "events": [
+    {
+     "at": 0,
+     "from": "page",
+     "to": "extractor",
+     "kind": "msg",
+     "label": "Mistral, a European brain for a sovereign website"
+    },
+    {
+     "at": 2783,
+     "from": "extractor",
+     "to": "extractor",
+     "kind": "msg",
+     "label": "the same 10 claims as the other lane"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim1",
+     "kind": "msg",
+     "label": "Hackathon / London"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim2",
+     "kind": "msg",
+     "label": "Saturday 21 Nov 2026"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim3",
+     "kind": "msg",
+     "label": "A first call to a Mistral model in five minutes, on your own laptop with no key, or with …"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim4",
+     "kind": "msg",
+     "label": "Sovereign means you can choose, and change, who runs your model."
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim5",
+     "kind": "msg",
+     "label": "The ledger asks five questions of any AI you depend on."
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim6",
+     "kind": "msg",
+     "label": "Install Ollama."
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim7",
+     "kind": "msg",
+     "label": "Pull the smallest Ministral 3 and call it: ollama pull ministral-3:3b"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim8",
+     "kind": "msg",
+     "label": "Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions."
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim9",
+     "kind": "msg",
+     "label": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local …"
+    },
+    {
+     "at": 2785,
+     "from": "extractor",
+     "to": "claim10",
+     "kind": "msg",
+     "label": "Get an API key from the Mistral console."
+    },
+    {
+     "at": 2785,
+     "from": "claim1",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 1"
+    },
+    {
+     "at": 2785,
+     "from": "claim2",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 2"
+    },
+    {
+     "at": 2785,
+     "from": "claim3",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 3"
+    },
+    {
+     "at": 2785,
+     "from": "claim4",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 4"
+    },
+    {
+     "at": 2785,
+     "from": "claim5",
+     "to": "checkerA",
+     "kind": "msg",
+     "label": "claim 5"
+    },
+    {
+     "at": 2785,
+     "from": "claim6",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 6"
+    },
+    {
+     "at": 2785,
+     "from": "claim7",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 7"
+    },
+    {
+     "at": 2785,
+     "from": "claim8",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 8"
+    },
+    {
+     "at": 2785,
+     "from": "claim9",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 9"
+    },
+    {
+     "at": 2785,
+     "from": "claim10",
+     "to": "checkerB",
+     "kind": "msg",
+     "label": "claim 10"
+    },
+    {
+     "at": 4190,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 512,
+     "tout": 83
+    },
+    {
+     "at": 4190,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Hackathon London\")"
+    },
+    {
+     "at": 4192,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Saturday 21 Nov 2026\")"
+    },
+    {
+     "at": 4194,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"first call to a Mistral model in five m…\")"
+    },
+    {
+     "at": 4195,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Sovereign means you can choose\")"
+    },
+    {
+     "at": 4197,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"The ledger asks five questions\")"
+    },
+    {
+     "at": 4281,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 551,
+     "tout": 91
+    },
+    {
+     "at": 4281,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Install Ollama\")"
+    },
+    {
+     "at": 4282,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"ollama pull ministral-3:3b\")"
+    },
+    {
+     "at": 4284,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Ollama serves an OpenAI-style endpoint\")"
+    },
+    {
+     "at": 4285,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Ministral 3 announced 2 December 2025\")"
+    },
+    {
+     "at": 4287,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"Get an API key from the Mistral console\")"
+    },
+    {
+     "at": 5682,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 3626,
+     "tout": 90
+    },
+    {
+     "at": 5682,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/on-device.html)"
+    },
+    {
+     "at": 5682,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/sources/)"
+    },
+    {
+     "at": 5682,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/side-by-side.html)"
+    },
+    {
+     "at": 5682,
+     "from": "checkerB",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/evals/run/)"
+    },
+    {
+     "at": 5685,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 3385,
+     "tout": 69
+    },
+    {
+     "at": 5685,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/questions/)"
+    },
+    {
+     "at": 5685,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/start/)"
+    },
+    {
+     "at": 5685,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/demos/)"
+    },
+    {
+     "at": 5685,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/team/)"
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 6255,
+     "tout": 196
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "src:/start/",
+     "kind": "msg",
+     "label": "1: WEAK SOURCE"
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "src:/questions/",
+     "kind": "msg",
+     "label": "2: WEAK SOURCE"
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "src:/start/",
+     "kind": "msg",
+     "label": "3: CONFIRMED"
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "src:/demos/",
+     "kind": "msg",
+     "label": "4: WEAK SOURCE"
+    },
+    {
+     "at": 8266,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"The ledger asks five questions\")"
+    },
+    {
+     "at": 8823,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 7030,
+     "tout": 15
+    },
+    {
+     "at": 8823,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "search_site(\"ledger asks five questions\")"
+    },
+    {
+     "at": 9175,
+     "from": "checkerB",
+     "to": "checkerB",
+     "kind": "call",
+     "label": "checkerB",
+     "tin": 6346,
+     "tout": 299
+    },
+    {
+     "at": 9176,
+     "from": "checkerB",
+     "to": "src:/demos/on-device.html",
+     "kind": "msg",
+     "label": "6: CONFIRMED"
+    },
+    {
+     "at": 9176,
+     "from": "checkerB",
+     "to": "src:/demos/on-device.html",
+     "kind": "msg",
+     "label": "7: CONFIRMED"
+    },
+    {
+     "at": 9176,
+     "from": "checkerB",
+     "to": "src:/demos/side-by-side.html",
+     "kind": "msg",
+     "label": "8: WEAK SOURCE"
+    },
+    {
+     "at": 9177,
+     "from": "checkerB",
+     "to": "src:/sources/",
+     "kind": "msg",
+     "label": "9: CONFIRMED"
+    },
+    {
+     "at": 9177,
+     "from": "checkerB",
+     "to": "src:/evals/run/",
+     "kind": "msg",
+     "label": "10: WEAK SOURCE"
+    },
+    {
+     "at": 9440,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 7624,
+     "tout": 20
+    },
+    {
+     "at": 9440,
+     "from": "checkerA",
+     "to": "site",
+     "kind": "tool",
+     "label": "read_page(/designs/)"
+    },
+    {
+     "at": 10185,
+     "from": "checkerA",
+     "to": "checkerA",
+     "kind": "call",
+     "label": "checkerA",
+     "tin": 7797,
+     "tout": 16
+    },
+    {
+     "at": 10185,
+     "from": "checkerA",
+     "to": "nosource",
+     "kind": "msg",
+     "label": "5: NO SOURCE"
+    }
+   ],
+   "calls": [
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 1404,
+     "tin": 512,
+     "tout": 83
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 1493,
+     "tin": 551,
+     "tout": 91
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 1391,
+     "tin": 3626,
+     "tout": 90
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 1480,
+     "tin": 3385,
+     "tout": 69
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 2579,
+     "tin": 6255,
+     "tout": 196
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 554,
+     "tin": 7030,
+     "tout": 15
+    },
+    {
+     "agent": "checkerB",
+     "status": 200,
+     "ms": 3491,
+     "tin": 6346,
+     "tout": 299
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 613,
+     "tin": 7624,
+     "tout": 20
+    },
+    {
+     "agent": "checkerA",
+     "status": 200,
+     "ms": 744,
+     "tin": 7797,
+     "tout": 16
+    }
+   ],
+   "totals": {
+    "calls": 9,
+    "tin": 43126,
+    "tout": 879,
+    "ms": 10185,
+    "usd": 0.008801
+   },
+   "claims": [
+    {
+     "n": 1,
+     "text": "Hackathon / London",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/start/",
+     "quote": "Open the hackathon briefing : a first call to a Mistral model in five minutes, with your own key or a local model, then the demos.",
+     "why": "quote found on /start/, but sharing only 1 word with the claim"
+    },
+    {
+     "n": 2,
+     "text": "Saturday 21 Nov 2026",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/questions/",
+     "quote": "Saturday 21 November 2026",
+     "why": "quote found on /questions/, but sharing only 1 word with the claim"
+    },
+    {
+     "n": 3,
+     "text": "A first call to a Mistral model in five minutes, on your own laptop with no key, or with your own key.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/start/",
+     "quote": "a first call to a Mistral model in five minutes, with your own key or a local model",
+     "why": "quote found on /start/, with the claim’s numbers and words"
+    },
+    {
+     "n": 4,
+     "text": "Sovereign means you can choose, and change, who runs your model.",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/demos/",
+     "quote": "The model is a choice the owner makes, like the host",
+     "why": "quote found on /demos/, but sharing only 1 word with the claim"
+    },
+    {
+     "n": 5,
+     "text": "The ledger asks five questions of any AI you depend on.",
+     "onPage": true,
+     "status": "NO SOURCE",
+     "said": "not found",
+     "path": null,
+     "quote": null,
+     "why": "the checker found no page"
+    },
+    {
+     "n": 6,
+     "text": "Install Ollama.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/demos/on-device.html",
+     "quote": "curl -fsSL https://ollama.com/install.sh | sh",
+     "why": "quote found on /demos/on-device.html, with the claim’s numbers and words"
+    },
+    {
+     "n": 7,
+     "text": "Pull the smallest Ministral 3 and call it: ollama pull ministral-3:3b",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/demos/on-device.html",
+     "quote": "ollama pull ministral-3:3b",
+     "why": "quote found on /demos/on-device.html, with the claim’s numbers and words"
+    },
+    {
+     "n": 8,
+     "text": "Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions.",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/demos/side-by-side.html",
+     "quote": "localhost Up to your server. Ollama allows only 127.0.0.1 and 0.0.0.0 pages by default; set OLLAMA_ORIGINS ( Ollama FAQ , as read on 20 November 2026)",
+     "why": "quote found on /demos/side-by-side.html, but without 11434, 1"
+    },
+    {
+     "n": 9,
+     "text": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0.",
+     "onPage": true,
+     "status": "CONFIRMED",
+     "said": "found",
+     "path": "/sources/",
+     "quote": "Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0.",
+     "why": "quote found on /sources/, with the claim’s numbers and words"
+    },
+    {
+     "n": 10,
+     "text": "Get an API key from the Mistral console.",
+     "onPage": true,
+     "status": "WEAK SOURCE",
+     "said": "found",
+     "path": "/evals/run/",
+     "quote": "Mistral, EU endpoint (api.eu.mistral.ai), your key",
+     "why": "quote found on /evals/run/, but sharing only 1 word with the claim"
+    }
+   ],
+   "ok": true,
+   "sharedClaims": true
+  }
+ ]
+}

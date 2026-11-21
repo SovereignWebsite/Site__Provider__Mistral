@@ -230,6 +230,38 @@
       "key": "none",
       "name": "PrompTugal's data feeds, mapped",
       "line": "Every public data feed PrompTugal publishes, for Portugal, London and Europe: what each holds, how often it is updated, its licence, and a live sample of each."
+    },
+    {
+      "id": "workflows",
+      "u": "/workflows/",
+      "group": "agentic",
+      "key": "either",
+      "name": "Workflows on Mistral",
+      "line": "Agent workflows on Mistral, drawn live: each agent a node, each message a dot on an arc. Recorded runs replay with no key; each runs live on your key."
+    },
+    {
+      "id": "workflows-relay",
+      "u": "/workflows/relay/",
+      "group": "agentic",
+      "key": "either",
+      "name": "Two models, one workflow, side by side",
+      "line": "Planner, researchers, writer, reviewer and publisher on Mistral function calling, run on two models at once: paths, tokens, time, cost and checks compared live."
+    },
+    {
+      "id": "workflows-poster",
+      "u": "/workflows/poster/",
+      "group": "agentic",
+      "key": "either",
+      "name": "A poster for your sovereign website",
+      "line": "An art director on Mistral writes the commission; Mistral's image tool paints the picture while a Mistral model draws the same poster in SVG, sanitised before it is shown."
+    },
+    {
+      "id": "workflows-xray",
+      "u": "/workflows/xray/",
+      "group": "agentic",
+      "key": "either",
+      "name": "X-Ray: this site, claim by claim",
+      "line": "A page of this site checked claim by claim by two Mistral models at once: each claim a line to its source, CONFIRMED, WEAK SOURCE or NO SOURCE decided in code."
     }
   ]
 }
