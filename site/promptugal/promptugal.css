@@ -1,0 +1,14 @@
+/* /promptugal/: PrompTugal on Mistral. mistral.promptugal@SovereignWebsite.dinis, 21 November 2026.
+   On top of /assets/css/base.css, /assets/css/plain.css and /browser/ask/panel.css. No inline styles (strict CSP). */
+.field{margin:.6rem 0}
+.field label{display:block;font-weight:600;margin-bottom:.2rem}
+.turn .label{margin:.6rem 0 .2rem}
+.fig-ok{background:var(--okbg);color:var(--ok);border-radius:3px;padding:0 .15em}
+.fig-bad{background:var(--badbg);color:var(--bad);border-radius:3px;padding:0 .15em;text-decoration:underline wavy}
+.checks{margin:.4rem 0;padding-left:1.4rem;font-size:.9rem}
+.checks .ok::marker{color:var(--ok)}
+.checks .bad::marker{color:var(--bad)}
+.bulletin{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:.6rem 1rem;margin:.6rem 0}
+.side{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+.facts{font-size:.85rem;max-height:20rem;overflow:auto;white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.5rem .6rem;border-radius:6px}
+.cards li h2{margin-top:.2rem}

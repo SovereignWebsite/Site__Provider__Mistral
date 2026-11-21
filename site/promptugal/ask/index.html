@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai https://data.promptugal.news https://promptugal.news; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Ask PrompTugal, on Mistral</title>
+<meta name="description" content="Ask about Portugal in European Portuguese or English: a Mistral model, called from your browser with your own key, answers only from PrompTugal&#x27;s public data and pages, citing each source and when it was read.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/promptugal/ask/">
+<meta property="og:title" content="Ask PrompTugal, on Mistral">
+<meta property="og:description" content="Ask about Portugal in European Portuguese or English: a Mistral model, called from your browser with your own key, answers only from PrompTugal&#x27;s public data and pages, citing each source and when it was read.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ask PrompTugal, on Mistral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ask PrompTugal, on Mistral">
+<meta name="twitter:description" content="Ask about Portugal in European Portuguese or English: a Mistral model, called from your browser with your own key, answers only from PrompTugal&#x27;s public data and pages, citing each source and when it was read.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/promptugal/ask/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/browser/ask/ask.css">
+<link rel="stylesheet" href="/promptugal/promptugal.css">
+<script src="/demos/facts.js" defer></script>
+<script src="/browser/ask/chat-core.js" defer></script>
+<script src="/browser/ask/panel.js" defer></script>
+<script src="/promptugal/lib/pt-tools.js" defer></script>
+<script src="/promptugal/lib/figcheck.js" defer></script>
+<script type="module" src="/promptugal/ask/ask.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+<p class="mark"><a href="/promptugal/">PrompTugal on Mistral</a>: ask</p>
+  <h1>Ask PrompTugal, on Mistral</h1>
+  <p class="lede">Ask about Portugal, in European Portuguese or in English. A Mistral model, called from this page with your own key, answers only from what PrompTugal publishes: the public data on data.promptugal.news (IPMA weather warnings and forecasts, fire risk, sea, events, cyber security) and the pages of PrompTugal.news. It links each source it used and says when the data was read, and says so plainly when PrompTugal's data does not say.</p>
+  <noscript><p class="warn">This page needs JavaScript to ask or replay.</p></noscript>
+
+  <section aria-labelledby="h-reads">
+    <h2 id="h-reads">What this page reads, and from where</h2>
+    <p>When the model asks for a tool, your browser reads PrompTugal's public files itself, with a plain GET: no key, no cookies, no question text. Only these addresses, and the content security policy of this page allows no others:</p>
+    <ul class="plain">
+      <li><code>https://data.promptugal.news/api/v1/index.json</code>: the catalogue of PrompTugal's data sources.</li>
+      <li><code>https://data.promptugal.news/api/v1/&lt;source&gt;/latest.json</code>: one source's latest data, for a source named in that catalogue only.</li>
+      <li><code>https://promptugal.news/api/v1/search/docs.json</code>: PrompTugal.news's own search index (about 240 KB).</li>
+      <li><code>https://promptugal.news/&lt;page&gt;.md</code>: the text of a page listed in that index only.</li>
+    </ul>
+    <p class="small">PrompTugal is a family of Portuguese news and public-data sites built by AI agents with a named human operator, Dinis Cruz, as its <a href="https://promptugal.news/llms.txt">llms.txt</a> says (as read on 21 November 2026): (<a href="https://promptugal.news/">promptugal.news</a>, <a href="https://data.promptugal.news/">data.promptugal.news</a>). Its data is collected by code, twice a day for IPMA's sources, and each file says when it was read (as read on 21 November 2026). IPMA's data may be used without a profit-making purpose only; this demonstration is not commercial. Not a warning service: follow <a href="https://www.ipma.pt/">IPMA</a> and the civil protection authority, ANEPC.</p>
+  </section>
+
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Replay a recorded run (no key needed)</h2>
+    <p>Four questions we asked through Mistral's API on 21 November 2026, two in Portuguese and two in English, one of which PrompTugal's data does not answer. Saved as <a href="/promptugal/ask/recorded.json">a file on this site</a>, with every tool call and what it read. Replaying sends nothing anywhere.</p>
+    <div class="actions">
+      <button type="button" id="replay" class="primary">Replay the recorded run</button>
+      <label for="speed">Speed</label>
+      <select id="speed">
+        <option value="1">real time</option>
+        <option value="3" selected>3 times faster</option>
+        <option value="0">all at once</option>
+      </select>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <div id="key-panel"></div>
+  </section>
+
+  <section aria-labelledby="h-ask">
+    <h2 id="h-ask">3. Ask</h2>
+    <div class="field">
+      <label for="lang">Answer in</label>
+      <select id="lang">
+        <option value="pt" selected>European Portuguese (português europeu)</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <p class="label" id="examples-label">Try one of these, or ask your own (questions in Portuguese are marked as such for screen readers)</p>
+    <div class="examples" id="examples" role="group" aria-labelledby="examples-label"></div>
+    <label for="question">Your question about Portugal</label>
+    <textarea id="question" rows="3"></textarea>
+    <div class="actions">
+      <button type="button" id="ask" class="primary">Ask</button>
+      <button type="button" id="stop" disabled>Stop</button>
+      <button type="button" id="new">New conversation</button>
+      <button type="button" id="export" disabled>Download this conversation (JSON)</button>
+    </div>
+    <p id="ask-status" class="status" role="status" aria-live="polite"></p>
+    <div id="chat" class="chat"></div>
+  </section>
+
+  <section aria-labelledby="h-sends">
+    <h2 id="h-sends">4. What this call sends, and to whom</h2>
+    <p>Built before anything is sent, and updated before each call. What the tools read from PrompTugal goes on to Mistral inside the next call, marked as data, not instructions.</p>
+    <div id="sends" class="sends"></div>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Calls to Mistral made from this tab</h2>
+    <div class="tablewrap"><table>
+      <caption class="sr">Calls to Mistral from this tab</caption>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col" class="num">Time taken (ms)</th><th scope="col" class="num">Tokens</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table></div>
+    <p class="small">Kept in memory in this tab only, and gone when you reload. The reads from PrompTugal are listed under each answer.</p>
+  </section>
+
+  <section aria-labelledby="h-found">
+    <h2 id="h-found">What we found in our own runs</h2>
+    <p>Two recorded runs of the same four questions on <code>mistral-small-2603</code> through api.mistral.ai, 21 November 2026, on PrompTugal data read at 18:04 to 18:15 UTC on 20 November. n = 2 runs, 8 answers: a small sample, not a benchmark.</p>
+    <ul class="plain">
+      <li>First run (01:55 UTC, temperature not set; <a href="/promptugal/ask/recorded-0155.json">the file</a>): asked about warnings for Lisbon, the model read the one row for Lisboa (yellow, rain, 12:00 to 18:00 on 21 November) and then answered "Não há avisos meteorológicos ativos para Lisboa." That is wrong. In the same run it gave a read time of "16:40 UTC" for news pages that no tool gave: the figure check above flags exactly that kind of number. And its refusal described what PrompTugal publishes from nothing the tools returned.</li>
+      <li>So we changed three things: the prompt says rows returned are the answer and a read time must come from a tool, <code>read_news</code> now gives the time it read the page, and the temperature is 0.</li>
+      <li>Second run (the replay above): the Lisbon warning right, every figure in the four answers found in what the tools read, the refusal plain. One miss the figure check cannot see: asked which vulnerabilities CISA added most recently, it named three vendors for 18 November, but the data has four entries that day (the fourth is Vanderbilt University's REDCap).</li>
+    </ul>
+    <p class="small">Checking figures in code catches an invented number; it does not catch a missing one, or a true number put in the wrong place. Read the sources.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what it does not claim</h2>
+    <ul class="plain">
+      <li>Four tools, in <a href="/promptugal/lib/pt-tools.js">pt-tools.js</a>: <code>list_sources</code>, <code>read_source</code> (one source, one part of it, the rows that contain a word), <code>search_news</code> and <code>read_news</code>. They follow PrompTugal.news's own <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/assets/search/json-tools.js">json-tools.js</a> (Apache-2.0). The model never gives an address: it names a source from the catalogue or a page from the index, and the address is built in code.</li>
+      <li>The tool loop is PrompTugal.news's chat-core, ported to Mistral for <a href="/browser/ask/">Ask this site</a>, reused unchanged: <a href="/browser/ask/chat-core.js">chat-core.js</a>. The key panel is that page's <a href="/browser/ask/panel.js">panel.js</a>, unchanged. PrompTugal.news's own chat runs on OpenRouter (its default model is <code>anthropic/claude-sonnet-5</code>, in <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/assets/chat/chat-core.js">chat-core.js</a>, as read on 21 November 2026); here the brain is Mistral's.</li>
+      <li>Each number, time and date in an answer is looked for, in code, in what the tools returned for that answer (<a href="/promptugal/lib/figcheck.js">figcheck.js</a>), and marked found or not found.</li>
+      <li>Every tool result goes back to the model inside <code>&lt;untrusted-data&gt;</code> markers, with the instruction that it is material, never instruction. A link in an answer becomes clickable only if a tool returned that exact address.</li>
+      <li>The model is told to answer only from the tools, in European Portuguese (not Brazilian) or in English, and to give each figure as the data gives it. It can still be wrong: open the sources and check. The answers are model output.</li>
+      <li>This page talks to four places only: this site, the Mistral endpoint you choose (with your key, when you press Ask), data.promptugal.news and promptugal.news (without your key). Its content security policy enforces that.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/promptugal/">PrompTugal on Mistral</a>
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by mistral.promptugal@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>
