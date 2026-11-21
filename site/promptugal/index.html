@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="/assets/css/plain.css">
 <link rel="stylesheet" href="/browser/voice/kit.css">
 <link rel="stylesheet" href="/promptugal/promptugal.css">
+<script src="/promptugal/lib/qrkey.js"></script>
 </head>
 <body class="t-plain">
 <a class="skip" href="#main">Skip to content</a>
@@ -72,14 +73,16 @@
 <p class="mark"><a href="/browser/">In your browser</a>: PrompTugal</p>
   <h1>PrompTugal on Mistral</h1>
   <p class="lede">PrompTugal is a family of Portuguese news and public-data sites: <a href="https://promptugal.news/">PrompTugal.news</a> and its public data on <a href="https://data.promptugal.news/">data.promptugal.news</a> (IPMA weather warnings and forecasts, fire risk, sea, events, cyber security), each file saying where it came from and when it was read. These demos put a European model on that Portuguese public data: Mistral, called from your browser with your own key. Each one has a recorded real run first, which replays with no key.</p>
+  <p id="qr-status" class="status" role="status" aria-live="polite"></p>
+  <p class="small">Given your Mistral key as a QR code? Its link opens a demo with the key after "#"; each demo takes it from there, removes it from the address bar, and holds it in the tab's memory only. Each demo also reads a pasted or dropped picture of the QR code.</p>
   <ul class="cards">
     <li>
-      <h2><a href="/promptugal/ask/">Ask PrompTugal</a></h2>
+      <h2><a href="/promptugal/ask/" data-carry-key>Ask PrompTugal</a></h2>
       <p>Ask about Portugal in European Portuguese or English. A Mistral model reads PrompTugal's data and pages through four read-only tools, cites each source with the time it was read, and every number, time and date in its answer is checked in code against what it read.</p>
       <p class="small">Your key goes to Mistral only. PrompTugal's files are read by your browser, without your key.</p>
     </li>
     <li>
-      <h2><a href="/promptugal/bulletin/">The day's bulletin, checked in code</a></h2>
+      <h2><a href="/promptugal/bulletin/" data-carry-key>The day's bulletin, checked in code</a></h2>
       <p>The day's facts picked in code from IPMA's warnings, sea and fire risk and the CISA and ENISA vulnerability lists; a bulletin in European Portuguese written by Mistral from those facts only; every figure and every place it must name checked in code; translations into English and French with a glossary; Voxtral reading it aloud and transcribing it back.</p>
       <p class="small">Your key goes to Mistral only. The five data files are read by your browser, without your key.</p>
     </li>

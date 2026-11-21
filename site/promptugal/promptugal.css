@@ -17,3 +17,9 @@
 .bulletin p{margin:.45rem 0}
 .replay-out{margin-top:.6rem}
 input[type=date]{font:inherit;padding:.35rem .5rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);color-scheme:light dark}
+.qrbox{margin:.8rem 0;padding:.6rem .8rem;border:1px solid var(--line);border-radius:8px}
+.qrbox h3{margin-top:.2rem}
+.drop{border:2px dashed var(--muted);border-radius:8px;padding:.8rem;margin:.5rem 0;text-align:center}
+.drop:focus-visible,.drop.over{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
+.drop label{display:block;margin:.4rem 0 .2rem;font-weight:600}
+.drop input[type=file]{max-width:100%}
