@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>The studio: Mistral, a European brain</title>
-<meta name="description" content="Every demo on this site that works today (19), in your browser: what each one does, and whether it needs your own Mistral key.">
+<meta name="description" content="Every demo on this site that works today (23), in your browser: what each one does, and whether it needs your own Mistral key.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mistral, a European brain for a sovereign website">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://mistral.provider.sovereignweb.site/studio/">
 <meta property="og:title" content="The studio: Mistral, a European brain">
-<meta property="og:description" content="Every demo on this site that works today (19), in your browser: what each one does, and whether it needs your own Mistral key.">
+<meta property="og:description" content="Every demo on this site that works today (23), in your browser: what each one does, and whether it needs your own Mistral key.">
 <meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -19,13 +19,14 @@
 <meta property="og:image:alt" content="Mistral, a European brain for a sovereign website: on the device, in the EU, any provider. An independent Sovereign Website demonstration.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The studio: Mistral, a European brain">
-<meta name="twitter:description" content="Every demo on this site that works today (19), in your browser: what each one does, and whether it needs your own Mistral key.">
+<meta name="twitter:description" content="Every demo on this site that works today (23), in your browser: what each one does, and whether it needs your own Mistral key.">
 <meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
 <link rel="canonical" href="https://mistral.provider.sovereignweb.site/studio/">
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/plain.css">
 <link rel="stylesheet" href="/assets/css/nav.css">
 
+<link rel="stylesheet" href="/assets/css/studio.css">
 </head>
 <body class="t-plain studio-wide">
 <!-- nav:head: written by tools/nav.mjs from its page list; edit there, not here -->
@@ -81,13 +82,13 @@
         <p class="menu-h" id="menu-try">Studio</p>
         <ul aria-labelledby="menu-try">
           <li><a href="/studio/" aria-current="page">The studio</a></li>
+          <li><a href="/browser/local/">Mistral on your device (no key)</a></li>
           <li><a href="/demos/">Demos</a></li>
           <li class="sub"><a href="/demos/side-by-side.html">Same brief, three brains</a></li>
           <li class="sub"><a href="/demos/your-key.html">Your key, and where it goes</a></li>
           <li class="sub"><a href="/demos/on-device.html">Level 1, on your device</a></li>
           <li><a href="/browser/">In your browser</a></li>
           <li class="sub"><a href="/browser/build/">Vibe-build a sovereign website</a></li>
-          <li class="sub"><a href="/browser/local/">Mistral, inside your browser</a></li>
           <li class="sub"><a href="/browser/ask/">Ask this site</a></li>
           <li class="sub"><a href="/browser/voice/">Talk to a European brain</a></li>
           <li class="sub"><a href="/browser/ocr/">From a document to your site</a></li>
@@ -105,6 +106,10 @@
           <li class="sub"><a href="/swarm/run.html">Run the swarm yourself</a></li>
           <li><a href="/evals/">Evals</a></li>
           <li class="sub"><a href="/evals/run/">Run the evals yourself</a></li>
+          <li><a href="/promptugal/">PrompTugal on Mistral</a></li>
+          <li class="sub"><a href="/promptugal/ask/">Ask PrompTugal</a></li>
+          <li class="sub"><a href="/promptugal/bulletin/">The PrompTugal bulletin</a></li>
+          <li class="sub"><a href="/promptugal/pt-pt/">European or Brazilian Portuguese</a></li>
           <li><a href="/live/">Agents at work</a></li>
         </ul>
       </div>
@@ -138,53 +143,68 @@
 </header>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">The studio</span></li></ol></nav>
 <section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+
 <!-- /nav:head -->
 <main id="main">
 <div class="wrap">
+<img class="studio-hero" src="/assets/studio/art/studio.svg" width="1400" height="400" alt="">
 <p class="mark">The studio</p>
 <h1>Every demo, working today</h1>
-<p class="lede">19 demos, all running in your browser from this static site. The ones marked “No key” work as soon as they open; the others call Mistral with your own key, held in the tab and sent only to Mistral. <strong>Nothing has been agreed with Mistral.</strong></p>
+<p class="lede">23 demos, all running in your browser from this static site. The ones marked “No key” work as soon as they open; the others call Mistral with your own key, held in the tab and sent only to Mistral. <strong>Nothing has been agreed with Mistral.</strong></p>
+<section class="feature-local" aria-labelledby="fl-h">
+  <img class="fl-art" src="/assets/studio/art/local.svg" width="1200" height="300" alt="">
+  <div class="fl-body">
+    <p class="fl-tag"><span class="key-tag key-none">No key</span> <span>Runs in this browser tab</span></p>
+    <h2 id="fl-h">Mistral on your device, no key</h2>
+    <p>Ministral 3 3B, Mistral’s Apache 2.0 model, running inside your browser: no key, no API, no server. The weights download once (2.15 GB) and stay in this browser; your messages never leave your machine. Use a laptop or desktop.</p>
+    <p class="fl-go"><a class="btn" href="/browser/local/">Run Mistral in this tab</a></p>
+  </div>
+</section>
 <section class="studio-group" id="no-key" aria-labelledby="sg-no-key">
 <h2 id="sg-no-key">Try now, no key</h2>
 <p>Open and use: nothing to sign up for, nothing to paste.</p>
 <ul class="studio-cards">
-<li><img src="/assets/studio/local.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/local/">Mistral, inside your browser</a></h3><span class="key-tag key-none">No key</span><p>Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once; your messages never leave your machine.</p></div></li>
-<li><img src="/assets/studio/keys.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/keys/">Your browser's key pair</a></h3><span class="key-tag key-none">No key</span><p>Give this browser its own key pair with Web Crypto, then send it your Mistral key sealed from another device. Kept as ciphertext; opens only when you ask.</p></div></li>
-<li><img src="/assets/studio/seal.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/keys/seal.html">Seal a key for a browser</a></h3><span class="key-tag key-none">No key</span><p>Encrypt your Mistral key with another browser's public key, so only that browser can open it. Nothing is sent and nothing is stored.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/local.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/local.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/local/">Mistral, inside your browser</a></h3><span class="key-tag key-none">No key</span><p>Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once; your messages never leave your machine.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/keys.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/keys.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/keys/">Your browser's key pair</a></h3><span class="key-tag key-none">No key</span><p>Give this browser its own key pair with Web Crypto, then send it your Mistral key sealed from another device. Kept as ciphertext; opens only when you ask.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/seal.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/seal.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/keys/seal.html">Seal a key for a browser</a></h3><span class="key-tag key-none">No key</span><p>Encrypt your Mistral key with another browser's public key, so only that browser can open it. Nothing is sent and nothing is stored.</p></div></li>
 </ul>
 </section>
 <section class="studio-group" id="your-key" aria-labelledby="sg-your-key">
 <h2 id="sg-your-key">With your own Mistral key</h2>
 <p>Live calls to Mistral from your browser. Your key stays in the tab's memory and goes only to Mistral; every call is shown before it is sent.</p>
 <ul class="studio-cards">
-<li><img src="/assets/studio/build.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/build/">Vibe-build a sovereign website</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Write a brief; an agent on Mistral builds a small static website with four tools until the site's own rules pass. Preview it safely, then download it as a zip.</p></div></li>
-<li><img src="/assets/studio/ask.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/ask/">Ask this site</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>A streamed chat on Mistral that answers only from this site's own pages, links the pages it used, and says so when the site does not say.</p></div></li>
-<li><img src="/assets/studio/voice.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/voice/">Talk to a European brain</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Ask out loud. Voxtral transcribes it, a Mistral model answers from this site's own pages, and Voxtral speaks the answer back.</p></div></li>
-<li><img src="/assets/studio/ocr.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/ocr/">From a document to your site</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Choose a PDF or a picture. Mistral OCR reads it, a model picks out the facts with the words they came from, and only quoted words make the draft About section.</p></div></li>
-<li><img src="/assets/studio/inject.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/browser/inject/">The injection lab</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>The Contact-page injection case from this site's evals, live on the Mistral model you pick, with and without untrusted-data wrapping, side by side.</p></div></li>
-<li><img src="/assets/studio/side.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/demos/side-by-side.html">Same brief, three brains</a></h3><span class="key-tag key-either">Your key, or no key</span><p>One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/build.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/build.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/build/">Vibe-build a sovereign website</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Write a brief; an agent on Mistral builds a small static website with four tools until the site's own rules pass. Preview it safely, then download it as a zip.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/ask.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/ask.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/ask/">Ask this site</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>A streamed chat on Mistral that answers only from this site's own pages, links the pages it used, and says so when the site does not say.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/voice.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/voice.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/voice/">Talk to a European brain</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Ask out loud. Voxtral transcribes it, a Mistral model answers from this site's own pages, and Voxtral speaks the answer back.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/ocr.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/ocr.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/ocr/">From a document to your site</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Choose a PDF or a picture. Mistral OCR reads it, a model picks out the facts with the words they came from, and only quoted words make the draft About section.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/inject.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/inject.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/browser/inject/">The injection lab</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>The Contact-page injection case from this site's evals, live on the Mistral model you pick, with and without untrusted-data wrapping, side by side.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/side.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/side.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/demos/side-by-side.html">Same brief, three brains</a></h3><span class="key-tag key-either">Your key, or no key</span><p>One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom.</p></div></li>
 </ul>
 </section>
 <section class="studio-group" id="agentic" aria-labelledby="sg-agentic">
 <h2 id="sg-agentic">Agentic, live on Mistral</h2>
 <p>Agent teams, swarms and evals on Mistral models: replay the signed runs with no key, or run them on yours.</p>
 <ul class="studio-cards">
-<li><img src="/assets/studio/live.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/live/">Agents at work</a></h3><span class="key-tag key-none">No key</span><p>Which agents built this site, which are running now, and when each one fired, drawn live from the repository, with a timeline you can scrub.</p></div></li>
-<li><img src="/assets/studio/team.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/team/">The team inside the site</a></h3><span class="key-tag key-either">Your key, or no key</span><p>Seven agents inside this website, each under its own behaviour policy, on Mistral models with your own key, or replayed from recorded runs with no key.</p></div></li>
-<li><img src="/assets/studio/swarm.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/swarm/">The Swarm, replayed</a></h3><span class="key-tag key-none">No key</span><p>The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, every signature checked here.</p></div></li>
-<li><img src="/assets/studio/swarm-evals.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/swarm/evals.html">Swarm evals</a></h3><span class="key-tag key-none">No key</span><p>The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost.</p></div></li>
-<li><img src="/assets/studio/swarm-run.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/swarm/run.html">Run the swarm yourself</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Run a signed packet of the swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.</p></div></li>
-<li><img src="/assets/studio/evals.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/evals/">Evals for a site's jobs</a></h3><span class="key-tag key-none">No key</span><p>Published results of small evals of Mistral models on a sovereign website's jobs: writing, extraction, tool calling, prompt injection, translation, not inventing prices.</p></div></li>
-<li><img src="/assets/studio/evals-run.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/evals/run/">Run the evals yourself</a></h3><span class="key-tag key-either">Your key, or no key</span><p>The same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/live.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/live.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/live/">Agents at work</a></h3><span class="key-tag key-none">No key</span><p>Which agents built this site, which are running now, and when each one fired, drawn live from the repository, with a timeline you can scrub.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/team.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/team.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/team/">The team inside the site</a></h3><span class="key-tag key-either">Your key, or no key</span><p>Seven agents inside this website, each under its own behaviour policy, on Mistral models with your own key, or replayed from recorded runs with no key.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/swarm.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/swarm.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/swarm/">The Swarm, replayed</a></h3><span class="key-tag key-none">No key</span><p>The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, every signature checked here.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/swarm-evals.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/swarm-evals.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/swarm/evals.html">Swarm evals</a></h3><span class="key-tag key-none">No key</span><p>The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/swarm-run.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/swarm-run.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/swarm/run.html">Run the swarm yourself</a></h3><span class="key-tag key-mistral">Your Mistral key</span><p>Run a signed packet of the swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/evals.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/evals.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/evals/">Evals for a site's jobs</a></h3><span class="key-tag key-none">No key</span><p>Published results of small evals of Mistral models on a sovereign website's jobs: writing, extraction, tool calling, prompt injection, translation, not inventing prices.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/evals-run.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/evals-run.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/evals/run/">Run the evals yourself</a></h3><span class="key-tag key-either">Your key, or no key</span><p>The same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/promptugal.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/promptugal.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/promptugal/">PrompTugal on Mistral</a></h3><span class="key-tag key-either">Your key, or no key</span><p>Demos that put Mistral on PrompTugal's Portuguese public data, from your browser with your own key, each with a recorded run that replays with no key.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/promptugal-ask.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/promptugal-ask.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/promptugal/ask/">Ask PrompTugal</a></h3><span class="key-tag key-either">Your key, or no key</span><p>Ask about Portugal in European Portuguese or English: a Mistral model answers only from PrompTugal's public data and pages, citing each source.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/promptugal-bulletin.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/promptugal-bulletin.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/promptugal/bulletin/">The PrompTugal bulletin</a></h3><span class="key-tag key-either">Your key, or no key</span><p>A daily bulletin for Portugal in European Portuguese from public data, every figure checked in code, translated into English and French, read aloud by Voxtral.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/promptugal-pt.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/promptugal-pt.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/promptugal/pt-pt/">European or Brazilian Portuguese</a></h3><span class="key-tag key-either">Your key, or no key</span><p>The same brief to five Mistral models, asked for European and Brazilian Portuguese, every text scanned in code for the words where the two differ.</p></div></li>
 </ul>
 </section>
 <section class="studio-group" id="how" aria-labelledby="sg-how">
 <h2 id="sg-how">How it works</h2>
 <p>Where your key goes, and what runs on your own device.</p>
 <ul class="studio-cards">
-<li><img src="/assets/studio/your-key.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/demos/your-key.html">Your key, and where it goes</a></h3><span class="key-tag key-none">No key</span><p>Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send.</p></div></li>
-<li><img src="/assets/studio/on-device.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/demos/on-device.html">Level 1, on your device</a></h3><span class="key-tag key-none">No key</span><p>Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement.</p></div></li>
-<li><img src="/assets/studio/demos.jpg" width="640" height="400" alt="" loading="lazy"><div class="sc-body"><h3><a href="/demos/">The first three demos</a></h3><span class="key-tag key-none">No key</span><p>The overview of the first demos: the model is a choice the owner makes, like the host.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/your-key.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/your-key.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/demos/your-key.html">Your key, and where it goes</a></h3><span class="key-tag key-none">No key</span><p>Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/on-device.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/on-device.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/demos/on-device.html">Level 1, on your device</a></h3><span class="key-tag key-none">No key</span><p>Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement.</p></div></li>
+<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/demos.svg" width="1200" height="300" alt="" loading="lazy"><img class="sc-shot" src="/assets/studio/demos.jpg" width="640" height="400" alt="" loading="lazy"></div><div class="sc-body"><h3><a href="/demos/">The first three demos</a></h3><span class="key-tag key-none">No key</span><p>The overview of the first demos: the model is a choice the owner makes, like the host.</p></div></li>
 </ul>
 </section>
 <p class="small">This list is <a href="/data/studio.json">data/studio.json</a>. Every page on the site is in the <a href="/sitemap/">site map</a>.</p>
@@ -195,8 +215,8 @@
 <p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
 <nav class="foot-map" aria-label="Site map">
   <div class="fm-group"><p class="fm-h"><a href="/designs/">Designs</a></p><ul><li><a href="/">Home</a></li><li><a href="/designs/">Choose a design</a></li></ul></div>
-  <div class="fm-group"><p class="fm-h"><a href="/studio/">Studio</a></p><ul><li><a href="/studio/" aria-current="page">The studio</a></li><li><a href="/demos/">Demos</a></li><li><a href="/browser/">In your browser</a></li></ul></div>
-  <div class="fm-group"><p class="fm-h"><a href="/studio/#agentic">Agentic</a></p><ul><li><a href="/team/">The team inside the site</a></li><li><a href="/swarm/">The Swarm, replayed</a></li><li><a href="/evals/">Evals</a></li><li><a href="/live/">Agents at work</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/studio/">Studio</a></p><ul><li><a href="/studio/" aria-current="page">The studio</a></li><li><a href="/browser/local/">Mistral on your device (no key)</a></li><li><a href="/demos/">Demos</a></li><li><a href="/browser/">In your browser</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/studio/#agentic">Agentic</a></p><ul><li><a href="/team/">The team inside the site</a></li><li><a href="/swarm/">The Swarm, replayed</a></li><li><a href="/evals/">Evals</a></li><li><a href="/promptugal/">PrompTugal on Mistral</a></li><li><a href="/live/">Agents at work</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/articles/">Articles</a></p><ul><li><a href="/articles/">All articles</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/sources/">Sources</a></p><ul><li><a href="/sources/">Sources</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/sitemap/#about">About</a></p><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li><a href="/questions/">Open questions</a></li><li><a href="/sitemap/">Site map</a></li></ul></div>

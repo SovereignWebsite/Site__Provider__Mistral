@@ -1,0 +1,82 @@
+/* The studio: one look for every demo page (linked by tools/nav.mjs on the pages in site/data/studio.json, and on
+   /studio/). European modernist, after the Swiss and Bauhaus posters: a geometric picture band, a serif display face,
+   white panels on warm paper, cobalt and teal. It restyles the pages' own markup only: no script, no ids, no layout
+   that a demo's code depends on. No Mistral colours (no orange, no yellow). mistral.design@SovereignWebsite.dinis. */
+body:has(.studio-band),body.studio-wide{
+  --bg:#f6f5f1;--fg:#121a2b;--muted:#485267;--accent:#1f48c4;--accent-fg:#fff;--line:#d9d8d1;--panel:#eef0f5;
+  --surface:#fff;--note:#eef3f7;--card:#fff;--teal:#0d7d77;--rose:#b23a62;
+  --head:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif;
+  --warnbg:#eef3f7;--warnfg:#121a2b;--okbg:#e4f3ef;--ok:#0b5f59;--badbg:#f9e7ed;--bad:#9e2a52;--focus2:#1f48c4;
+  background:var(--bg);color:var(--fg)}
+@media (prefers-color-scheme:dark){body:has(.studio-band),body.studio-wide{
+  --bg:#0c111d;--fg:#edf0f6;--muted:#aab3c6;--accent:#a3c0ff;--accent-fg:#0b1220;--line:#29334a;--panel:#1a2236;
+  --surface:#131a2a;--note:#17223a;--card:#131a2a;--teal:#5fd0c6;--rose:#f08bb0;
+  --warnbg:#17223a;--warnfg:#edf0f6;--okbg:#10302d;--ok:#8fe0d6;--badbg:#3a1826;--bad:#ff9fbf;--focus2:#a3c0ff}}
+
+/* The picture band, under the notice. */
+.studio-band{max-width:var(--max,72rem);margin:1rem auto 0;padding:0 1rem}
+.sb-art,.studio-hero{display:block;width:100%;height:clamp(6.5rem,17vw,14rem);object-fit:cover;border-radius:16px;background:#0b1f4b}
+.sb-info{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem 1rem;margin:.75rem 0 0;font-size:.93rem;color:var(--muted)}
+.sb-info a{font-weight:700;color:var(--accent);margin-left:auto}
+@media (max-width:40rem){.sb-info a{margin-left:0}}
+.key-none{color:var(--teal)}
+.key-mistral,.key-either{color:var(--accent)}
+
+/* Type. */
+:is(body:has(.studio-band),body.studio-wide) main h1{font-family:var(--head);font-weight:600;font-size:clamp(2.2rem,5.4vw,3.9rem);line-height:1.04;letter-spacing:-.015em;margin:.35rem 0 1rem;max-width:22ch}
+:is(body:has(.studio-band),body.studio-wide) main .mark{display:flex;align-items:center;gap:.7rem;font-size:.78rem;letter-spacing:.16em;color:var(--accent);margin-top:1.6rem}
+:is(body:has(.studio-band),body.studio-wide) main .mark::before{content:"";width:2.2rem;height:3px;background:var(--teal);border-radius:2px;flex:none}
+:is(body:has(.studio-band),body.studio-wide) main .lede{font-size:clamp(1.08rem,1.5vw,1.27rem);line-height:1.6;max-width:48rem;color:var(--fg)}
+:is(body:has(.studio-band),body.studio-wide) main h2{font-family:var(--head);font-weight:600;letter-spacing:-.005em}
+:is(body:has(.studio-band),body.studio-wide) main h3{letter-spacing:-.003em}
+
+/* Sections as panels. */
+body:has(.studio-band) main>section,body:has(.studio-band) main>form,body:has(.studio-band) main .card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(1.1rem,2.6vw,2rem);margin:1.4rem 0;
+  box-shadow:0 1px 2px rgba(12,22,44,.05),0 10px 28px rgba(12,22,44,.06)}
+@media (prefers-color-scheme:dark){body:has(.studio-band) main>section,body:has(.studio-band) main>form,body:has(.studio-band) main .card{box-shadow:none}}
+body:has(.studio-band) main>section>h2:first-child,body:has(.studio-band) main>section>h2{margin-top:0;padding-top:0;border-top:0;font-size:clamp(1.35rem,2.3vw,1.8rem)}
+body:has(.studio-band) main>section section{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1rem}
+
+/* Notes and warnings. */
+body:has(.studio-band) .warn{background:var(--warnbg);color:var(--warnfg);border-left:4px solid var(--teal);border-radius:10px;padding:.9rem 1.1rem;font-size:.95rem;line-height:1.55}
+
+/* Controls. */
+body:has(.studio-band) main button{min-height:2.9rem;padding:.55rem 1.3rem;border:2px solid var(--accent);border-radius:999px;font-weight:650;background:var(--card);color:var(--accent);transition:transform .12s ease,box-shadow .12s ease}
+body:has(.studio-band) main button.primary,body:has(.studio-band) main button[type="submit"],body:has(.studio-band) main .btn{background:var(--accent);color:var(--accent-fg);box-shadow:0 6px 16px rgba(31,72,196,.25)}
+body:has(.studio-band) main button:not(:disabled):hover{transform:translateY(-1px)}
+body:has(.studio-band) main button:disabled{opacity:.55;box-shadow:none}
+body:has(.studio-band) main .chip{min-height:2.5rem;padding:.3rem 1rem;font-weight:600}
+body:has(.studio-band) main :is(textarea,select,input[type=text],input[type=password],input[type=url],input[type=number]){background:var(--card);border:1.5px solid var(--muted);border-radius:12px;padding:.65rem .8rem}
+body:has(.studio-band) main :is(input[type=checkbox],input[type=radio]){accent-color:var(--accent);width:1.15rem;height:1.15rem}
+body:has(.studio-band) main progress{-webkit-appearance:none;appearance:none;height:.85rem;border:0;border-radius:999px;background:var(--panel);overflow:hidden}
+body:has(.studio-band) main progress::-webkit-progress-bar{background:var(--panel);border-radius:999px}
+body:has(.studio-band) main progress::-webkit-progress-value{background:linear-gradient(90deg,var(--accent),var(--teal));border-radius:999px}
+body:has(.studio-band) main progress::-moz-progress-bar{background:linear-gradient(90deg,var(--accent),var(--teal));border-radius:999px}
+
+/* Tables and code. */
+body:has(.studio-band) main th{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+body:has(.studio-band) main pre{border-radius:12px}
+
+/* The studio page. */
+.studio-wide .wrap{max-width:var(--max,72rem)}
+.studio-wide .studio-hero{margin:1.2rem 0 0;height:clamp(8rem,22vw,18rem)}
+.studio-group{margin-top:2.6rem}
+.studio-group>h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:0 0 .3rem}
+.studio-group>p{color:var(--muted);margin:0 0 1rem;max-width:48rem}
+.studio-cards{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,18rem),1fr))}
+.studio-cards li{margin:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);
+  box-shadow:0 1px 2px rgba(12,22,44,.05),0 10px 28px rgba(12,22,44,.06);transition:transform .15s ease,box-shadow .15s ease}
+.studio-cards li:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(12,22,44,.06),0 16px 36px rgba(12,22,44,.1)}
+.studio-cards .sc-pics{position:relative;aspect-ratio:16/10;background:#0b1f4b;overflow:hidden}
+.studio-cards .sc-pics .sc-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.studio-cards .sc-pics .sc-shot{position:absolute;left:8%;right:8%;top:14%;width:84%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.studio-cards .sc-body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.studio-cards h3{margin:0;font-family:var(--head);font-weight:600;font-size:1.25rem;line-height:1.2}
+.studio-cards h3 a{color:var(--fg);text-decoration:none}
+.studio-cards h3 a::after{content:"";position:absolute;inset:0}
+.studio-cards li{position:relative}
+.studio-cards h3 a:hover,.studio-cards h3 a:focus-visible{text-decoration:underline;color:var(--accent)}
+.studio-cards p{margin:0;font-size:.93rem;color:var(--muted)}
+.studio-cards .key-tag{align-self:flex-start}
+@media (prefers-reduced-motion:reduce){.studio-cards li,body:has(.studio-band) main button{transition:none}}

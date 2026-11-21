@@ -1,30 +1,211 @@
 {
   "about": "Every demo on this site that works today, for /studio/ and the navigation. Written by mistral.design@SovereignWebsite.dinis from each page's own description, 21 November 2026. A demo is listed only once its page is in site/. key: none (works with no key), mistral (your own Mistral key, held in the tab), either (your key, or a replay or local model with no key).",
   "groups": [
-    { "id": "no-key", "title": "Try now, no key", "line": "Open and use: nothing to sign up for, nothing to paste." },
-    { "id": "your-key", "title": "With your own Mistral key", "line": "Live calls to Mistral from your browser. Your key stays in the tab's memory and goes only to Mistral; every call is shown before it is sent." },
-    { "id": "agentic", "title": "Agentic, live on Mistral", "line": "Agent teams, swarms and evals on Mistral models: replay the signed runs with no key, or run them on yours." },
-    { "id": "how", "title": "How it works", "line": "Where your key goes, and what runs on your own device." }
+    {
+      "id": "no-key",
+      "title": "Try now, no key",
+      "line": "Open and use: nothing to sign up for, nothing to paste."
+    },
+    {
+      "id": "your-key",
+      "title": "With your own Mistral key",
+      "line": "Live calls to Mistral from your browser. Your key stays in the tab's memory and goes only to Mistral; every call is shown before it is sent."
+    },
+    {
+      "id": "agentic",
+      "title": "Agentic, live on Mistral",
+      "line": "Agent teams, swarms and evals on Mistral models: replay the signed runs with no key, or run them on yours."
+    },
+    {
+      "id": "how",
+      "title": "How it works",
+      "line": "Where your key goes, and what runs on your own device."
+    }
   ],
   "demos": [
-    { "id": "local", "u": "/browser/local/", "group": "no-key", "key": "none", "name": "Mistral, inside your browser", "line": "Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once; your messages never leave your machine." },
-    { "id": "keys", "u": "/browser/keys/", "group": "no-key", "key": "none", "name": "Your browser's key pair", "line": "Give this browser its own key pair with Web Crypto, then send it your Mistral key sealed from another device. Kept as ciphertext; opens only when you ask." },
-    { "id": "seal", "u": "/browser/keys/seal.html", "group": "no-key", "key": "none", "name": "Seal a key for a browser", "line": "Encrypt your Mistral key with another browser's public key, so only that browser can open it. Nothing is sent and nothing is stored." },
-    { "id": "build", "u": "/browser/build/", "group": "your-key", "key": "mistral", "name": "Vibe-build a sovereign website", "line": "Write a brief; an agent on Mistral builds a small static website with four tools until the site's own rules pass. Preview it safely, then download it as a zip." },
-    { "id": "ask", "u": "/browser/ask/", "group": "your-key", "key": "mistral", "name": "Ask this site", "line": "A streamed chat on Mistral that answers only from this site's own pages, links the pages it used, and says so when the site does not say." },
-    { "id": "voice", "u": "/browser/voice/", "group": "your-key", "key": "mistral", "name": "Talk to a European brain", "line": "Ask out loud. Voxtral transcribes it, a Mistral model answers from this site's own pages, and Voxtral speaks the answer back." },
-    { "id": "ocr", "u": "/browser/ocr/", "group": "your-key", "key": "mistral", "name": "From a document to your site", "line": "Choose a PDF or a picture. Mistral OCR reads it, a model picks out the facts with the words they came from, and only quoted words make the draft About section." },
-    { "id": "inject", "u": "/browser/inject/", "group": "your-key", "key": "mistral", "name": "The injection lab", "line": "The Contact-page injection case from this site's evals, live on the Mistral model you pick, with and without untrusted-data wrapping, side by side." },
-    { "id": "side", "u": "/demos/side-by-side.html", "group": "your-key", "key": "either", "name": "Same brief, three brains", "line": "One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom." },
-    { "id": "live", "u": "/live/", "group": "agentic", "key": "none", "name": "Agents at work", "line": "Which agents built this site, which are running now, and when each one fired, drawn live from the repository, with a timeline you can scrub." },
-    { "id": "team", "u": "/team/", "group": "agentic", "key": "either", "name": "The team inside the site", "line": "Seven agents inside this website, each under its own behaviour policy, on Mistral models with your own key, or replayed from recorded runs with no key." },
-    { "id": "swarm", "u": "/swarm/", "group": "agentic", "key": "none", "name": "The Swarm, replayed", "line": "The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, every signature checked here." },
-    { "id": "swarm-evals", "u": "/swarm/evals.html", "group": "agentic", "key": "none", "name": "Swarm evals", "line": "The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost." },
-    { "id": "swarm-run", "u": "/swarm/run.html", "group": "agentic", "key": "mistral", "name": "Run the swarm yourself", "line": "Run a signed packet of the swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom." },
-    { "id": "evals", "u": "/evals/", "group": "agentic", "key": "none", "name": "Evals for a site's jobs", "line": "Published results of small evals of Mistral models on a sovereign website's jobs: writing, extraction, tool calling, prompt injection, translation, not inventing prices." },
-    { "id": "evals-run", "u": "/evals/run/", "group": "agentic", "key": "either", "name": "Run the evals yourself", "line": "The same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama." },
-    { "id": "your-key", "u": "/demos/your-key.html", "group": "how", "key": "none", "name": "Your key, and where it goes", "line": "Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send." },
-    { "id": "on-device", "u": "/demos/on-device.html", "group": "how", "key": "none", "name": "Level 1, on your device", "line": "Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement." },
-    { "id": "demos", "u": "/demos/", "group": "how", "key": "none", "name": "The first three demos", "line": "The overview of the first demos: the model is a choice the owner makes, like the host." }
+    {
+      "id": "local",
+      "u": "/browser/local/",
+      "group": "no-key",
+      "key": "none",
+      "name": "Mistral, inside your browser",
+      "line": "Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once; your messages never leave your machine."
+    },
+    {
+      "id": "keys",
+      "u": "/browser/keys/",
+      "group": "no-key",
+      "key": "none",
+      "name": "Your browser's key pair",
+      "line": "Give this browser its own key pair with Web Crypto, then send it your Mistral key sealed from another device. Kept as ciphertext; opens only when you ask."
+    },
+    {
+      "id": "seal",
+      "u": "/browser/keys/seal.html",
+      "group": "no-key",
+      "key": "none",
+      "name": "Seal a key for a browser",
+      "line": "Encrypt your Mistral key with another browser's public key, so only that browser can open it. Nothing is sent and nothing is stored."
+    },
+    {
+      "id": "build",
+      "u": "/browser/build/",
+      "group": "your-key",
+      "key": "mistral",
+      "name": "Vibe-build a sovereign website",
+      "line": "Write a brief; an agent on Mistral builds a small static website with four tools until the site's own rules pass. Preview it safely, then download it as a zip."
+    },
+    {
+      "id": "ask",
+      "u": "/browser/ask/",
+      "group": "your-key",
+      "key": "mistral",
+      "name": "Ask this site",
+      "line": "A streamed chat on Mistral that answers only from this site's own pages, links the pages it used, and says so when the site does not say."
+    },
+    {
+      "id": "voice",
+      "u": "/browser/voice/",
+      "group": "your-key",
+      "key": "mistral",
+      "name": "Talk to a European brain",
+      "line": "Ask out loud. Voxtral transcribes it, a Mistral model answers from this site's own pages, and Voxtral speaks the answer back."
+    },
+    {
+      "id": "ocr",
+      "u": "/browser/ocr/",
+      "group": "your-key",
+      "key": "mistral",
+      "name": "From a document to your site",
+      "line": "Choose a PDF or a picture. Mistral OCR reads it, a model picks out the facts with the words they came from, and only quoted words make the draft About section."
+    },
+    {
+      "id": "inject",
+      "u": "/browser/inject/",
+      "group": "your-key",
+      "key": "mistral",
+      "name": "The injection lab",
+      "line": "The Contact-page injection case from this site's evals, live on the Mistral model you pick, with and without untrusted-data wrapping, side by side."
+    },
+    {
+      "id": "side",
+      "u": "/demos/side-by-side.html",
+      "group": "your-key",
+      "key": "either",
+      "name": "Same brief, three brains",
+      "line": "One brief, sent through one function to Mistral, OpenRouter and a model on your own machine, side by side, with what each call sends and to whom."
+    },
+    {
+      "id": "live",
+      "u": "/live/",
+      "group": "agentic",
+      "key": "none",
+      "name": "Agents at work",
+      "line": "Which agents built this site, which are running now, and when each one fired, drawn live from the repository, with a timeline you can scrub."
+    },
+    {
+      "id": "team",
+      "u": "/team/",
+      "group": "agentic",
+      "key": "either",
+      "name": "The team inside the site",
+      "line": "Seven agents inside this website, each under its own behaviour policy, on Mistral models with your own key, or replayed from recorded runs with no key."
+    },
+    {
+      "id": "swarm",
+      "u": "/swarm/",
+      "group": "agentic",
+      "key": "none",
+      "name": "The Swarm, replayed",
+      "line": "The Sovereign Website's agent swarm run on Mistral models only: signed results of real runs, replayed in the browser, every signature checked here."
+    },
+    {
+      "id": "swarm-evals",
+      "u": "/swarm/evals.html",
+      "group": "agentic",
+      "key": "none",
+      "name": "Swarm evals",
+      "line": "The same signed packets run several times on Mistral models: which roles pass their checks on which model, and at what cost."
+    },
+    {
+      "id": "swarm-run",
+      "u": "/swarm/run.html",
+      "group": "agentic",
+      "key": "mistral",
+      "name": "Run the swarm yourself",
+      "line": "Run a signed packet of the swarm in your own browser, on your own Mistral key, one call at a time, seeing what each call sends and to whom."
+    },
+    {
+      "id": "evals",
+      "u": "/evals/",
+      "group": "agentic",
+      "key": "none",
+      "name": "Evals for a site's jobs",
+      "line": "Published results of small evals of Mistral models on a sovereign website's jobs: writing, extraction, tool calling, prompt injection, translation, not inventing prices."
+    },
+    {
+      "id": "evals-run",
+      "u": "/evals/run/",
+      "group": "agentic",
+      "key": "either",
+      "name": "Run the evals yourself",
+      "line": "The same eval suites in your own browser, with your own Mistral or OpenRouter key, or against a local OpenAI-compatible server such as Ollama."
+    },
+    {
+      "id": "your-key",
+      "u": "/demos/your-key.html",
+      "group": "how",
+      "key": "none",
+      "name": "Your key, and where it goes",
+      "line": "Where your model key is kept, where it is sent, how to forget it, and what Mistral's free mode does with what you send."
+    },
+    {
+      "id": "on-device",
+      "u": "/demos/on-device.html",
+      "group": "how",
+      "key": "none",
+      "name": "Level 1, on your device",
+      "line": "Ministral 3 on a Raspberry Pi 5 16GB: an estimate, not measured yet, the exact commands to try it, and a form to compare your own measurement."
+    },
+    {
+      "id": "demos",
+      "u": "/demos/",
+      "group": "how",
+      "key": "none",
+      "name": "The first three demos",
+      "line": "The overview of the first demos: the model is a choice the owner makes, like the host."
+    },
+    {
+      "id": "promptugal",
+      "u": "/promptugal/",
+      "group": "agentic",
+      "key": "either",
+      "name": "PrompTugal on Mistral",
+      "line": "Demos that put Mistral on PrompTugal's Portuguese public data, from your browser with your own key, each with a recorded run that replays with no key."
+    },
+    {
+      "id": "promptugal-ask",
+      "u": "/promptugal/ask/",
+      "group": "agentic",
+      "key": "either",
+      "name": "Ask PrompTugal",
+      "line": "Ask about Portugal in European Portuguese or English: a Mistral model answers only from PrompTugal's public data and pages, citing each source."
+    },
+    {
+      "id": "promptugal-bulletin",
+      "u": "/promptugal/bulletin/",
+      "group": "agentic",
+      "key": "either",
+      "name": "The PrompTugal bulletin",
+      "line": "A daily bulletin for Portugal in European Portuguese from public data, every figure checked in code, translated into English and French, read aloud by Voxtral."
+    },
+    {
+      "id": "promptugal-pt",
+      "u": "/promptugal/pt-pt/",
+      "group": "agentic",
+      "key": "either",
+      "name": "European or Brazilian Portuguese",
+      "line": "The same brief to five Mistral models, asked for European and Brazilian Portuguese, every text scanned in code for the words where the two differ."
+    }
   ]
 }

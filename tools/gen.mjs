@@ -7,7 +7,8 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 import { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS } from './facts.mjs';
 import { d1, d2, d3, d4, d5 } from './designs.mjs';
-import { head, foot, sitemapBody, run as navRun } from './nav.mjs';
+import { head, foot, sitemapBody, featureLocal, run as navRun } from './nav.mjs';
+import { poster } from './art.mjs';
 
 export const HOME = 5; // the design used for the home page (see /questions/)
 export const DESIGNS = [
@@ -353,14 +354,20 @@ ${articles.map((a) => `<li><a href="/articles/${a.slug}.html">${esc(a.title)}</a
   const fileOf = (u) => join(ROOT, 'site', u.endsWith('/') ? u + 'index.html' : u);
   const live = st.demos.filter((d) => existsSync(fileOf(d.u)));
   const KEY = { none: 'No key', mistral: 'Your Mistral key', either: 'Your key, or no key' };
-  const card = (d) => { const img = existsSync(join(ROOT, 'site', 'assets', 'studio', `${d.id}.jpg`)) ? `<img src="/assets/studio/${d.id}.jpg" width="640" height="400" alt="" loading="lazy">` : '';
-    return `<li>${img}<div class="sc-body"><h3><a href="${d.u}">${esc(d.name)}</a></h3><span class="key-tag key-${d.key}">${KEY[d.key]}</span><p>${esc(d.line)}</p></div></li>`; };
+  // A geometric picture per demo (tools/art.mjs), with a screenshot of the demo on it when there is one (tools/shots.mjs studio).
+  mkdirSync(join(ROOT, 'site', 'assets', 'studio', 'art'), { recursive: true });
+  for (const d of st.demos) writeFileSync(join(ROOT, 'site', 'assets', 'studio', 'art', `${d.id}.svg`), poster(d.id));
+  writeFileSync(join(ROOT, 'site', 'assets', 'studio', 'art', 'studio.svg'), poster('studio', 14, 4));
+  const card = (d) => { const shot = existsSync(join(ROOT, 'site', 'assets', 'studio', `${d.id}.jpg`)) ? `<img class="sc-shot" src="/assets/studio/${d.id}.jpg" width="640" height="400" alt="" loading="lazy">` : '';
+    return `<li><div class="sc-pics"><img class="sc-art" src="/assets/studio/art/${d.id}.svg" width="1200" height="300" alt="" loading="lazy">${shot}</div><div class="sc-body"><h3><a href="${d.u}">${esc(d.name)}</a></h3><span class="key-tag key-${d.key}">${KEY[d.key]}</span><p>${esc(d.line)}</p></div></li>`; };
   page({ path: 'studio/index.html', url: '/studio/', title: 'The studio', theme: 'plain', bodyClass: 'studio-wide',
     description: `Every demo on this site that works today (${live.length}), in your browser: what each one does, and whether it needs your own Mistral key.`,
     body: `<div class="wrap">
+<img class="studio-hero" src="/assets/studio/art/studio.svg" width="1400" height="400" alt="">
 <p class="mark">The studio</p>
 <h1>Every demo, working today</h1>
 <p class="lede">${live.length} demos, all running in your browser from this static site. The ones marked “No key” work as soon as they open; the others call Mistral with your own key, held in the tab and sent only to Mistral. ${NOTHING}</p>
+${featureLocal()}
 ${st.groups.map((g) => { const ds = live.filter((d) => d.group === g.id); if (!ds.length) return '';
   return `<section class="studio-group" id="${g.id === 'agentic' ? 'agentic' : g.id}" aria-labelledby="sg-${g.id}">
 <h2 id="sg-${g.id}">${esc(g.title)}</h2>

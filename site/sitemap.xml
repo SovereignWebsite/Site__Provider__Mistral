@@ -8,13 +8,13 @@
   <url><loc>https://mistral.provider.sovereignweb.site/designs/4.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/designs/5.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/studio/</loc></url>
+  <url><loc>https://mistral.provider.sovereignweb.site/browser/local/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/demos/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/demos/side-by-side.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/demos/your-key.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/demos/on-device.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/browser/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/browser/build/</loc></url>
-  <url><loc>https://mistral.provider.sovereignweb.site/browser/local/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/browser/ask/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/browser/voice/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/browser/ocr/</loc></url>
@@ -27,6 +27,10 @@
   <url><loc>https://mistral.provider.sovereignweb.site/swarm/run.html</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/evals/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/evals/run/</loc></url>
+  <url><loc>https://mistral.provider.sovereignweb.site/promptugal/</loc></url>
+  <url><loc>https://mistral.provider.sovereignweb.site/promptugal/ask/</loc></url>
+  <url><loc>https://mistral.provider.sovereignweb.site/promptugal/bulletin/</loc></url>
+  <url><loc>https://mistral.provider.sovereignweb.site/promptugal/pt-pt/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/live/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/articles/</loc></url>
   <url><loc>https://mistral.provider.sovereignweb.site/articles/what-we-built-overnight.html</loc></url>

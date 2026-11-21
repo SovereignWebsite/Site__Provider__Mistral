@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="/browser/voice/kit.css">
 <script type="module" src="/browser/inject/inject.js"></script>
 <link rel="stylesheet" href="/assets/css/nav.css">
+<link rel="stylesheet" href="/assets/css/studio.css">
 </head>
 <body class="t-plain">
 <!-- nav:head: written by tools/nav.mjs from its page list; edit there, not here -->
@@ -83,13 +84,13 @@
         <p class="menu-h" id="menu-try">Studio</p>
         <ul aria-labelledby="menu-try">
           <li><a href="/studio/">The studio</a></li>
+          <li><a href="/browser/local/">Mistral on your device (no key)</a></li>
           <li><a href="/demos/">Demos</a></li>
           <li class="sub"><a href="/demos/side-by-side.html">Same brief, three brains</a></li>
           <li class="sub"><a href="/demos/your-key.html">Your key, and where it goes</a></li>
           <li class="sub"><a href="/demos/on-device.html">Level 1, on your device</a></li>
           <li><a href="/browser/">In your browser</a></li>
           <li class="sub"><a href="/browser/build/">Vibe-build a sovereign website</a></li>
-          <li class="sub"><a href="/browser/local/">Mistral, inside your browser</a></li>
           <li class="sub"><a href="/browser/ask/">Ask this site</a></li>
           <li class="sub"><a href="/browser/voice/">Talk to a European brain</a></li>
           <li class="sub"><a href="/browser/ocr/">From a document to your site</a></li>
@@ -107,6 +108,10 @@
           <li class="sub"><a href="/swarm/run.html">Run the swarm yourself</a></li>
           <li><a href="/evals/">Evals</a></li>
           <li class="sub"><a href="/evals/run/">Run the evals yourself</a></li>
+          <li><a href="/promptugal/">PrompTugal on Mistral</a></li>
+          <li class="sub"><a href="/promptugal/ask/">Ask PrompTugal</a></li>
+          <li class="sub"><a href="/promptugal/bulletin/">The PrompTugal bulletin</a></li>
+          <li class="sub"><a href="/promptugal/pt-pt/">European or Brazilian Portuguese</a></li>
           <li><a href="/live/">Agents at work</a></li>
         </ul>
       </div>
@@ -140,6 +145,11 @@
 </header>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/studio/">Studio</a></li><li><a href="/browser/">In your browser</a></li><li><span aria-current="page">The injection lab</span></li></ol></nav>
 <section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+
+<aside class="studio-band" aria-label="About this demo">
+  <img class="sb-art" src="/assets/studio/art/inject.svg" width="1200" height="300" alt="">
+  <p class="sb-info"><span class="key-tag key-mistral">Your Mistral key</span> <span class="sb-line">Calls Mistral from your browser with your own key, held in this tab.</span> <a href="/studio/">Every demo, in the studio</a></p>
+</aside>
 <!-- /nav:head -->
 <main id="main">
   <p class="mark"><a href="/browser/">In your browser</a>: injection</p>
@@ -259,8 +269,8 @@
 <p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
 <nav class="foot-map" aria-label="Site map">
   <div class="fm-group"><p class="fm-h"><a href="/designs/">Designs</a></p><ul><li><a href="/">Home</a></li><li><a href="/designs/">Choose a design</a></li></ul></div>
-  <div class="fm-group"><p class="fm-h"><a href="/studio/">Studio</a></p><ul><li><a href="/studio/">The studio</a></li><li><a href="/demos/">Demos</a></li><li><a href="/browser/">In your browser</a></li></ul></div>
-  <div class="fm-group"><p class="fm-h"><a href="/studio/#agentic">Agentic</a></p><ul><li><a href="/team/">The team inside the site</a></li><li><a href="/swarm/">The Swarm, replayed</a></li><li><a href="/evals/">Evals</a></li><li><a href="/live/">Agents at work</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/studio/">Studio</a></p><ul><li><a href="/studio/">The studio</a></li><li><a href="/browser/local/">Mistral on your device (no key)</a></li><li><a href="/demos/">Demos</a></li><li><a href="/browser/">In your browser</a></li></ul></div>
+  <div class="fm-group"><p class="fm-h"><a href="/studio/#agentic">Agentic</a></p><ul><li><a href="/team/">The team inside the site</a></li><li><a href="/swarm/">The Swarm, replayed</a></li><li><a href="/evals/">Evals</a></li><li><a href="/promptugal/">PrompTugal on Mistral</a></li><li><a href="/live/">Agents at work</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/articles/">Articles</a></p><ul><li><a href="/articles/">All articles</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/sources/">Sources</a></p><ul><li><a href="/sources/">Sources</a></li></ul></div>
   <div class="fm-group"><p class="fm-h"><a href="/sitemap/#about">About</a></p><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li><a href="/questions/">Open questions</a></li><li><a href="/sitemap/">Site map</a></li></ul></div>

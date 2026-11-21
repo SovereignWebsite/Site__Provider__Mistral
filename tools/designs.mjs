@@ -2,6 +2,7 @@
 // Sources: cite()/fact() put a small numbered marker after a claim; sources() closes a section with its list.
 // No source ever goes inside a code block or a step: facts written as code comments are listed under the code.
 import { cite, fact, sources, agentic, quote, esc, NOTHING, DEMOS, READ, ARTICLE, Q, S, F, RUNS } from './gen.mjs';
+import { featureLocal } from './nav.mjs';
 
 const art = `<a href="${ARTICLE.url}">${ARTICLE.title}</a>`;
 const ESTIMATE = '<strong>An estimate, not measured.</strong>';
@@ -420,6 +421,8 @@ export function d5() {
   <p class="cta"><a class="btn btn-big" href="${DEMOS.side}">Open the first demo</a> <a class="btn btn-2" href="#five">Five minutes to a first call</a></p>
 </header>
 ${PLAIN}
+
+${featureLocal()}
 
 <section class="h-start" aria-labelledby="start-h">
   <h2 id="start-h">Start here</h2>

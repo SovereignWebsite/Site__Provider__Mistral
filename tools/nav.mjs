@@ -37,13 +37,13 @@ const LIST = [
   { u: '/designs/5.html', s: 'overview', p: '/designs/', l: 'Design 5, The hackathon', t: 'The briefing for Saturday 21 November 2026: start here, the demos, a first call in five minutes.' },
 
   { u: '/studio/', s: 'try', l: 'The studio', t: 'Every demo that works today, with what each needs: no key, or your own Mistral key.' },
+  { u: '/browser/local/', s: 'try', l: 'Mistral on your device (no key)', t: 'Ministral 3 3B, Mistral’s Apache 2.0 model, running inside this browser tab: no key, no API; the weights download once.' },
   { u: '/demos/', s: 'try', l: 'Demos', t: 'Working demonstrations of a site whose AI model is the owner’s choice, like the host.' },
   { u: '/demos/side-by-side.html', s: 'try', p: '/demos/', l: 'Same brief, three brains', t: 'One brief sent to Mistral, OpenRouter and a model on your own machine, side by side.' },
   { u: '/demos/your-key.html', s: 'try', p: '/demos/', l: 'Your key, and where it goes', t: 'Where your model key is kept, where it is sent, and how to forget it.' },
   { u: '/demos/on-device.html', s: 'try', p: '/demos/', l: 'Level 1, on your device', t: 'Ministral 3 on a Raspberry Pi 5: an estimate, not measured yet, and the commands to try it.' },
   { u: '/browser/', s: 'try', l: 'In your browser', t: 'Demos that call Mistral straight from this static page, with your own key.' },
   { u: '/browser/build/', s: 'try', p: '/browser/', l: 'Vibe-build a sovereign website', t: 'Write a brief; an agent on Mistral builds a small static site in your tab, to download.' },
-  { u: '/browser/local/', s: 'try', p: '/browser/', l: 'Mistral, inside your browser', t: 'Ministral 3 3B running inside this tab: no key, no API; the weights download once.' },
   { u: '/browser/ask/', s: 'try', p: '/browser/', l: 'Ask this site', t: 'A chat on Mistral that answers only from this site’s own pages, and links them.' },
   { u: '/browser/voice/', s: 'try', p: '/browser/', l: 'Talk to a European brain', t: 'Ask out loud: Voxtral transcribes, a Mistral model answers from this site, Voxtral speaks.' },
   { u: '/browser/ocr/', s: 'try', p: '/browser/', l: 'From a document to your site', t: 'Mistral OCR reads a PDF or a picture; only quoted words make the draft About section.' },
@@ -59,6 +59,10 @@ const LIST = [
   { u: '/evals/', s: 'agentic', l: 'Evals', t: 'Small, published evals of Mistral models on the jobs a sovereign website gives its model.' },
   { u: '/evals/run/', s: 'agentic', p: '/evals/', l: 'Run the evals yourself', t: 'The same suites in your browser, with your own key or against a local model.' },
 
+  { u: '/promptugal/', s: 'agentic', l: 'PrompTugal on Mistral', t: 'Mistral on PrompTugal’s Portuguese public data, with your own key, each with a recorded run that replays with no key.' },
+  { u: '/promptugal/ask/', s: 'agentic', p: '/promptugal/', l: 'Ask PrompTugal', t: 'Ask about Portugal in European Portuguese or English, answered only from PrompTugal’s public data.' },
+  { u: '/promptugal/bulletin/', s: 'agentic', p: '/promptugal/', l: 'The PrompTugal bulletin', t: 'A daily bulletin for Portugal from public data, every figure checked in code, translated and read aloud by Voxtral.' },
+  { u: '/promptugal/pt-pt/', s: 'agentic', p: '/promptugal/', l: 'European or Brazilian Portuguese', t: 'The same brief to five Mistral models, asked for European and Brazilian Portuguese, scanned in code for where they differ.' },
   { u: '/live/', s: 'agentic', l: 'Agents at work', t: 'The agents working on this site.' },
 
   { u: '/articles/', s: 'articles', l: 'All articles', t: 'What was built on this site, how, and what it showed.' },
@@ -82,6 +86,30 @@ const ARTICLES = existsSync(ARTDIR) ? readdirSync(ARTDIR).filter((f) => f.endsWi
   return { u: `/articles/${slug}.html`, s: 'articles', p: '/articles/', l: title, t: `Article, ${f.slice(0, 10)}.`, gen: true };
 }) : [];
 { const i = LIST.findIndex((x) => x.u === '/articles/'); LIST.splice(i + 1, 0, ...ARTICLES); }
+
+// The studio's demos (site/data/studio.json): a demo page gets a picture band under the notice, and studio.css.
+const STUDIO = JSON.parse(readFileSync(join(SITE_DIR, 'data', 'studio.json'), 'utf8'));
+const KEY = { none: 'No key', mistral: 'Your Mistral key', either: 'Your key, or no key' };
+const KEYLINE = { none: 'Works as soon as it opens, in your browser.', mistral: 'Calls Mistral from your browser with your own key, held in this tab.', either: 'With your own key, or with no key at all.' };
+// The local model, as a prominent card (home page, /browser/, /studio/): Dinis could not find it.
+export const featureLocal = () => `<section class="feature-local" aria-labelledby="fl-h">
+  <img class="fl-art" src="/assets/studio/art/local.svg" width="1200" height="300" alt="">
+  <div class="fl-body">
+    <p class="fl-tag"><span class="key-tag key-none">No key</span> <span>Runs in this browser tab</span></p>
+    <h2 id="fl-h">Mistral on your device, no key</h2>
+    <p>Ministral 3 3B, Mistral’s Apache 2.0 model, running inside your browser: no key, no API, no server. The weights download once (2.15 GB) and stay in this browser; your messages never leave your machine. Use a laptop or desktop.</p>
+    <p class="fl-go"><a class="btn" href="/browser/local/">Run Mistral in this tab</a></p>
+  </div>
+</section>`;
+function band(here) {
+  const d = STUDIO.demos.find((x) => x.u === here);
+  if (!d) return '';
+  return `\n<aside class="studio-band" aria-label="About this demo">
+  <img class="sb-art" src="/assets/studio/art/${d.id}.svg" width="1200" height="300" alt="">
+  <p class="sb-info"><span class="key-tag key-${d.key}">${KEY[d.key]}</span> <span class="sb-line">${KEYLINE[d.key]}</span> <a href="/studio/">Every demo, in the studio</a></p>
+</aside>`;
+}
+const isStudioPage = (here) => here === '/studio/' || STUDIO.demos.some((x) => x.u === here);
 
 const fileOf = (u) => join(SITE_DIR, u.endsWith('/') ? u + 'index.html' : u);
 // Generated pages are always listed (tools/gen.mjs writes them); a hand-written page only once its file is in site/.
@@ -165,6 +193,7 @@ ${menu}
   <nav class="sections" aria-label="Sections"><ul>${row}</ul></nav>
 </header>${crumbs}
 <section class="notice" aria-label="Notice"><p><span class="n-long">${NOTICE}</span><span class="n-short">${NOTICE_SHORT}</span></p></section>
+${band(here)}
 <!-- /nav:head -->`;
 }
 
@@ -207,10 +236,12 @@ const urlOf = (f) => { const r = '/' + relative(SITE_DIR, f).split('\\').join('/
 const HEAD_RE = /<!-- nav:head[\s\S]*?<!-- \/nav:head -->/;
 const FOOT_RE = /<!-- nav:foot[\s\S]*?<!-- \/nav:foot -->/;
 const CSS = '<link rel="stylesheet" href="/assets/css/nav.css">';
+const SCSS = '<link rel="stylesheet" href="/assets/css/studio.css">';
 
 export function apply(html, here) {
   let h = html.replace(HEAD_RE, () => head(here)).replace(FOOT_RE, () => foot(here));
   if (!h.includes(CSS)) h = h.replace('</head>', `${CSS}\n</head>`);
+  if (isStudioPage(here) && !h.includes(SCSS)) h = h.replace('</head>', `${SCSS}\n</head>`);
   return h;
 }
 
