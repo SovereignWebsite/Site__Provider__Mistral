@@ -1,5 +1,7 @@
 /* /promptugal/: PrompTugal on Mistral. mistral.promptugal@SovereignWebsite.dinis, 21 November 2026.
-   On top of /assets/css/base.css, /assets/css/plain.css and /browser/ask/panel.css. No inline styles (strict CSP). */
+   On top of /assets/css/base.css, /assets/css/plain.css and /browser/ask/panel.css or /browser/voice/kit.css. No inline styles (strict CSP). */
+:root{--ok:#1b5233;--okbg:#e3f1e7;--bad:#a3261a;--badbg:#f8e3e1}
+@media (prefers-color-scheme:dark){:root{--ok:#b6e6c6;--okbg:#173323;--bad:#ff8f80;--badbg:#3a1a17}}
 .field{margin:.6rem 0}
 .field label{display:block;font-weight:600;margin-bottom:.2rem}
 .turn .label{margin:.6rem 0 .2rem}
@@ -12,3 +14,6 @@
 .side{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
 .facts{font-size:.85rem;max-height:20rem;overflow:auto;white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.5rem .6rem;border-radius:6px}
 .cards li h2{margin-top:.2rem}
+.bulletin p{margin:.45rem 0}
+.replay-out{margin-top:.6rem}
+input[type=date]{font:inherit;padding:.35rem .5rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);color-scheme:light dark}

@@ -1,0 +1,1168 @@
+{
+ "kind": "promptugal-bulletin-run",
+ "recorded": "2026-11-21 02:02 UTC",
+ "bulletin_date": "2026-11-21",
+ "endpoint": "api.mistral.ai",
+ "model": "mistral-small-2603",
+ "note": "Recorded real run. The bulletin, translations and audio are model output; the facts and every check are code.",
+ "by": "site/promptugal/tools/record-bulletin.mjs, mistral.promptugal@SovereignWebsite.dinis",
+ "steps": [
+  {
+   "t": 578,
+   "type": "fetch",
+   "id": "ipma-warnings",
+   "url": "https://data.promptugal.news/api/v1/ipma-warnings/latest.json",
+   "status": 200,
+   "bytes": 8208,
+   "ms": 578,
+   "read_at": "2026-11-20T18:15:47Z"
+  },
+  {
+   "t": 636,
+   "type": "fetch",
+   "id": "ipma-sea",
+   "url": "https://data.promptugal.news/api/v1/ipma-sea/latest.json",
+   "status": 200,
+   "bytes": 13526,
+   "ms": 58,
+   "read_at": "2026-11-20T18:15:34Z"
+  },
+  {
+   "t": 752,
+   "type": "fetch",
+   "id": "ipma-fire-risk",
+   "url": "https://data.promptugal.news/api/v1/ipma-fire-risk/latest.json",
+   "status": 200,
+   "bytes": 87683,
+   "ms": 116,
+   "read_at": "2026-11-20T18:15:22Z"
+  },
+  {
+   "t": 790,
+   "type": "fetch",
+   "id": "cisa-kev",
+   "url": "https://data.promptugal.news/api/v1/cisa-kev/latest.json",
+   "status": 200,
+   "bytes": 706109,
+   "ms": 38,
+   "read_at": "2026-11-20T18:04:37Z"
+  },
+  {
+   "t": 905,
+   "type": "fetch",
+   "id": "euvd",
+   "url": "https://data.promptugal.news/api/v1/euvd/latest.json",
+   "status": 200,
+   "bytes": 2775041,
+   "ms": 115,
+   "read_at": "2026-11-20T18:06:53Z"
+  },
+  {
+   "t": 908,
+   "type": "facts",
+   "facts": {
+    "bulletin_date": "2026-11-21",
+    "note": "Every figure below is copied in code from PrompTugal's files; times without a zone are Lisbon time (UTC in November).",
+    "sources": [
+     {
+      "id": "ipma-warnings",
+      "title": "IPMA weather warnings",
+      "read_at": "2026-11-20T18:15:47Z",
+      "url": "https://data.promptugal.news/api/v1/ipma-warnings/latest.json"
+     },
+     {
+      "id": "ipma-sea",
+      "title": "IPMA sea forecast",
+      "read_at": "2026-11-20T18:15:34Z",
+      "url": "https://data.promptugal.news/api/v1/ipma-sea/latest.json"
+     },
+     {
+      "id": "ipma-fire-risk",
+      "title": "IPMA fire risk",
+      "read_at": "2026-11-20T18:15:22Z",
+      "url": "https://data.promptugal.news/api/v1/ipma-fire-risk/latest.json"
+     },
+     {
+      "id": "cisa-kev",
+      "title": "Known exploited vulnerabilities (CISA KEV)",
+      "read_at": "2026-11-20T18:04:37Z",
+      "url": "https://data.promptugal.news/api/v1/cisa-kev/latest.json"
+     },
+     {
+      "id": "euvd",
+      "title": "EU Vulnerability Database: latest, exploited and recently updated (ENISA EUVD)",
+      "read_at": "2026-11-20T18:06:53Z",
+      "url": "https://data.promptugal.news/api/v1/euvd/latest.json"
+     }
+    ],
+    "warnings": {
+     "read_at": "2026-11-20T18:15:47Z",
+     "areas_with_a_warning": 14,
+     "areas_orange": [
+      "Aveiro",
+      "Braga",
+      "Coimbra",
+      "Guarda",
+      "Porto",
+      "Viana do Castelo",
+      "Viseu",
+      "Vila Real"
+     ],
+     "areas_red": [],
+     "by_area": {
+      "Aveiro": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "03:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Bragança": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Braga": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "2026-11-20 21:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "18:00",
+        "to": "21:00",
+        "text": "Aguaceiros, por vezes fortes e que podem ser acompanhados de trovoada."
+       }
+      ],
+      "Castelo Branco": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Coimbra": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "03:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Guarda": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "03:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Leiria": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Lisboa": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "12:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Portalegre": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "12:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Porto": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "2026-11-20 21:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "18:00",
+        "to": "21:00",
+        "text": "Aguaceiros, por vezes fortes e que podem ser acompanhados de trovoada."
+       }
+      ],
+      "Santarém": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Viana do Castelo": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "2026-11-20 21:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "18:00",
+        "to": "21:00",
+        "text": "Aguaceiros, por vezes fortes e que podem ser acompanhados de trovoada."
+       }
+      ],
+      "Viseu": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "03:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       }
+      ],
+      "Vila Real": [
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "2026-11-20 21:00",
+        "to": "06:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "orange",
+        "nivel": "laranja",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "06:00",
+        "to": "18:00",
+        "text": "Chuva persistente, por vezes forte."
+       },
+       {
+        "level": "yellow",
+        "nivel": "amarelo",
+        "type": "rain",
+        "tipo": "Precipitação",
+        "from": "18:00",
+        "to": "21:00",
+        "text": "Aguaceiros, por vezes fortes e que podem ser acompanhados de trovoada."
+       }
+      ]
+     }
+    },
+    "sea": {
+     "read_at": "2026-11-20T18:15:34Z",
+     "coasts": 12,
+     "highest_waves_m": 2.6,
+     "coasts_with_highest_waves": [
+      "Figueira da Foz, Costa",
+      "Lisboa, costa"
+     ],
+     "by_coast": [
+      {
+       "coast": "Figueira da Foz, Costa",
+       "waves_min_m": 1.3,
+       "waves_max_m": 2.6,
+       "sea_temp_max_c": 17.3
+      },
+      {
+       "coast": "Faro, costa",
+       "waves_min_m": 0.6,
+       "waves_max_m": 1.2,
+       "sea_temp_max_c": 19.1
+      },
+      {
+       "coast": "Sagres, costa",
+       "waves_min_m": 1.4,
+       "waves_max_m": 2.1,
+       "sea_temp_max_c": 18.7
+      },
+      {
+       "coast": "Lisboa, costa",
+       "waves_min_m": 1.7,
+       "waves_max_m": 2.6,
+       "sea_temp_max_c": 17.8
+      },
+      {
+       "coast": "Porto, costa",
+       "waves_min_m": 1.7,
+       "waves_max_m": 2.5,
+       "sea_temp_max_c": 16.8
+      },
+      {
+       "coast": "Sines, costa",
+       "waves_min_m": 1.7,
+       "waves_max_m": 2.4,
+       "sea_temp_max_c": 18.7
+      },
+      {
+       "coast": "Viana do Castelo, costa",
+       "waves_min_m": 1.6,
+       "waves_max_m": 2.5,
+       "sea_temp_max_c": 16.8
+      },
+      {
+       "coast": "Funchal, costa",
+       "waves_min_m": 0.7,
+       "waves_max_m": 1,
+       "sea_temp_max_c": 22.1
+      },
+      {
+       "coast": "Porto Santo, costa",
+       "waves_min_m": 0.9,
+       "waves_max_m": 1.1,
+       "sea_temp_max_c": 22
+      },
+      {
+       "coast": "Ponta Delgada, costa",
+       "waves_min_m": 1.5,
+       "waves_max_m": 1.8,
+       "sea_temp_max_c": 19.7
+      },
+      {
+       "coast": "Horta, costa",
+       "waves_min_m": 1.5,
+       "waves_max_m": 2.3,
+       "sea_temp_max_c": 18.6
+      },
+      {
+       "coast": "Santa Cruz das Flores, costa",
+       "waves_min_m": 1.5,
+       "waves_max_m": 2.3,
+       "sea_temp_max_c": 19
+      }
+     ]
+    },
+    "fire_risk": {
+     "read_at": "2026-11-20T18:15:22Z",
+     "municipalities_by_level": {
+      "low": 278
+     }
+    },
+    "cisa_kev": {
+     "read_at": "2026-11-20T18:04:37Z",
+     "added_in_7_days_to_read": 5,
+     "from": "2026-11-14",
+     "entries": [
+      {
+       "cve": "CVE-2024-10441",
+       "vendor": "Synology",
+       "product": "DiskStation Manager (DSM)",
+       "added": "2026-11-18"
+      },
+      {
+       "cve": "CVE-2026-40217",
+       "vendor": "BerriAI",
+       "product": "LiteLLM",
+       "added": "2026-11-18"
+      },
+      {
+       "cve": "CVE-2026-90436",
+       "vendor": "Apache",
+       "product": "Axis",
+       "added": "2026-11-18"
+      },
+      {
+       "cve": "CVE-2026-90817",
+       "vendor": "Vanderbilt University",
+       "product": "Research Electronic Data Capture (REDCap)",
+       "added": "2026-11-18"
+      },
+      {
+       "cve": "CVE-2026-115731",
+       "vendor": "Perforce",
+       "product": "Puppet Enterprise",
+       "added": "2026-11-17"
+      }
+     ]
+    },
+    "euvd": {
+     "read_at": "2026-11-20T18:06:53Z",
+     "new_last_24h": 709,
+     "new_critical": 33,
+     "new_high": 130,
+     "exploited_last_24h": 5
+    }
+   }
+  },
+  {
+   "t": 3388,
+   "type": "bulletin",
+   "lang": "pt",
+   "model": "mistral-small-2603",
+   "usage": {
+    "prompt_tokens": 3207,
+    "total_tokens": 3494,
+    "completion_tokens": 287,
+    "prompt_tokens_details": {
+     "cached_tokens": 3184
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "ms": 2474,
+   "usd": 0.00065325,
+   "request_bytes": 10109,
+   "text": "Boletim PrompTugal, sábado, 21 de novembro de 2026\n\nO IPMA emitiu avisos laranja para oito áreas entre as 06h00 e as 18h00: Aveiro, Braga, Coimbra, Guarda, Porto, Viana do Castelo, Viseu e Vila Real. Em Braga, Porto e Viana do Castelo há também avisos amarelos entre as 18h00 e as 21h00 por aguaceiros fortes e trovoada. No total, 14 áreas têm avisos ativos.\n\nAs ondas mais altas atingem 2,6 m na costa de Figueira da Foz e em Lisboa, com valores entre 1,7 m e 2,6 m nestas zonas.\n\nO risco de incêndio mantém-se baixo em todos os 278 municípios.\n\nA CISA adicionou cinco CVEs nos últimos sete dias, nomeadamente da Synology, BerriAI, Apache, Vanderbilt e Perforce. A EUVD regista 709 novas vulnerabilidades nas últimas 24 horas, das quais 33 críticas.\n\nDados lidos a 20 de novembro às 18h15 UTC.\nNão é um serviço de avisos: siga o IPMA e a ANEPC.",
+   "checks": {
+    "figures": [
+     {
+      "text": "21 de novembro de 2026",
+      "kind": "date",
+      "start": 28,
+      "end": 50,
+      "found": true
+     },
+     {
+      "text": "06h00",
+      "kind": "time",
+      "start": 106,
+      "end": 111,
+      "found": true
+     },
+     {
+      "text": "18h00",
+      "kind": "time",
+      "start": 117,
+      "end": 122,
+      "found": true
+     },
+     {
+      "text": "18h00",
+      "kind": "time",
+      "start": 270,
+      "end": 275,
+      "found": true
+     },
+     {
+      "text": "21h00",
+      "kind": "time",
+      "start": 281,
+      "end": 286,
+      "found": true
+     },
+     {
+      "text": "14",
+      "kind": "number",
+      "start": 331,
+      "end": 333,
+      "found": true
+     },
+     {
+      "text": "2,6",
+      "kind": "number",
+      "start": 388,
+      "end": 391,
+      "found": true
+     },
+     {
+      "text": "1,7",
+      "kind": "number",
+      "start": 453,
+      "end": 456,
+      "found": true
+     },
+     {
+      "text": "2,6",
+      "kind": "number",
+      "start": 461,
+      "end": 464,
+      "found": true
+     },
+     {
+      "text": "278",
+      "kind": "number",
+      "start": 530,
+      "end": 533,
+      "found": true
+     },
+     {
+      "text": "709",
+      "kind": "number",
+      "start": 679,
+      "end": 682,
+      "found": true
+     },
+     {
+      "text": "24",
+      "kind": "number",
+      "start": 718,
+      "end": 720,
+      "found": true
+     },
+     {
+      "text": "33",
+      "kind": "number",
+      "start": 738,
+      "end": 740,
+      "found": true
+     },
+     {
+      "text": "20 de novembro",
+      "kind": "date",
+      "start": 766,
+      "end": 780,
+      "found": true
+     },
+     {
+      "text": "18h15",
+      "kind": "time",
+      "start": 784,
+      "end": 789,
+      "found": true
+     }
+    ],
+    "mentions": [
+     {
+      "what": "Aveiro",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Braga",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Coimbra",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Guarda",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Porto",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Viana do Castelo",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Viseu",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Vila Real",
+      "why": "an orange or red warning",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Figueira da Foz",
+      "why": "the highest waves",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Lisboa",
+      "why": "the highest waves",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Synology",
+      "why": "added to CISA KEV in the window",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "BerriAI",
+      "why": "added to CISA KEV in the window",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Apache",
+      "why": "added to CISA KEV in the window",
+      "found": true,
+      "by_first_word": false
+     },
+     {
+      "what": "Vanderbilt University",
+      "why": "added to CISA KEV in the window",
+      "found": true,
+      "by_first_word": true
+     },
+     {
+      "what": "Perforce",
+      "why": "added to CISA KEV in the window",
+      "found": true,
+      "by_first_word": false
+     }
+    ],
+    "weekday": {
+     "want": "sabado",
+     "named": [
+      "sabado"
+     ],
+     "ok": true
+    }
+   }
+  },
+  {
+   "t": 5665,
+   "type": "translation",
+   "lang": "en",
+   "model": "mistral-small-2603",
+   "usage": {
+    "prompt_tokens": 592,
+    "total_tokens": 851,
+    "completion_tokens": 259,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "ms": 2275,
+   "usd": 0.00024419999999999997,
+   "text": "Boletim PrompTugal, Saturday, 21 November 2026\n\nThe IPMA issued orange warnings for eight areas between 06:00 and 18:00: Aveiro, Braga, Coimbra, Guarda, Porto, Viana do Castelo, Viseu and Vila Real. In Braga, Porto and Viana do Castelo there are also yellow warnings between 18:00 and 21:00 due to heavy showers and thunderstorms. In total, 14 areas have active warnings.\n\nThe highest waves reach 2.6 m on the coast of Figueira da Foz and in Lisboa, with values between 1.7 m and 2.6 m in these areas.\n\nThe fire risk remains low in all 278 municipalities.\n\nThe CISA added five CVEs in the last seven days, namely from Synology, BerriAI, Apache, Vanderbilt and Perforce. The EUVD records 709 new vulnerabilities in the last 24 hours, 33 of which are critical.\n\nData read on 20 November at 18:15 UTC.\nThis is not a warning service: follow IPMA and ANEPC.",
+   "markers_stripped": false,
+   "keep": [
+    "IPMA",
+    "ANEPC",
+    "CISA",
+    "EUVD",
+    "PrompTugal",
+    "Aveiro",
+    "Braga",
+    "Coimbra",
+    "Guarda",
+    "Lisboa",
+    "Porto",
+    "Viana do Castelo",
+    "Viseu",
+    "Vila Real",
+    "Figueira da Foz",
+    "Synology",
+    "BerriAI",
+    "Apache",
+    "Perforce"
+   ],
+   "checks": {
+    "names": [
+     {
+      "what": "IPMA",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "ANEPC",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "CISA",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "EUVD",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "PrompTugal",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Aveiro",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Braga",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Coimbra",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Guarda",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Lisboa",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Porto",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Viana do Castelo",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Viseu",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Vila Real",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Figueira da Foz",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Synology",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "BerriAI",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Apache",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Perforce",
+      "kind": "name",
+      "found": true
+     }
+    ],
+    "terms": [
+     {
+      "what": "yellow warning",
+      "kind": "glossary",
+      "from": "aviso amarelo",
+      "found": true
+     },
+     {
+      "what": "orange warning",
+      "kind": "glossary",
+      "from": "aviso laranja",
+      "found": true
+     },
+     {
+      "what": "fire risk",
+      "kind": "glossary",
+      "from": "risco de incêndio",
+      "found": true
+     },
+     {
+      "what": "This is not a warning service: follow IPMA and ANEPC.",
+      "kind": "glossary",
+      "from": "Não é um serviço de avisos: siga o IPMA e a ANEPC.",
+      "found": true
+     }
+    ],
+    "figures": {
+     "in_source": 15,
+     "kept": 15,
+     "lost": [],
+     "added": []
+    },
+    "weekday": {
+     "want": "saturday",
+     "named": [
+      "saturday"
+     ],
+     "ok": true
+    }
+   }
+  },
+  {
+   "t": 7668,
+   "type": "translation",
+   "lang": "fr",
+   "model": "mistral-small-2603",
+   "usage": {
+    "prompt_tokens": 614,
+    "total_tokens": 914,
+    "completion_tokens": 300,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "ms": 2001,
+   "usd": 0.0002721,
+   "text": "Boletin PrompTugal, samedi, 21 novembre 2026\n\nL'IPMA a émis des vigilances orange pour huit zones entre 06h00 et 18h00 : Aveiro, Braga, Coimbra, Guarda, Porto, Viana do Castelo, Viseu et Vila Real. À Braga, Porto et Viana do Castelo, il y a aussi des vigilances jaunes entre 18h00 et 21h00 en raison d'averses fortes et d'orages. Au total, 14 zones ont des vigilances actives.\n\nLes vagues les plus hautes atteignent 2,6 m sur la côte de Figueira da Foz et à Lisboa, avec des valeurs comprises entre 1,7 m et 2,6 m dans ces zones.\n\nLe risque d'incendie reste faible dans les 278 municipalités.\n\nLa CISA a ajouté cinq CVEs au cours des sept derniers jours, notamment celles de Synology, BerriAI, Apache, Vanderbilt et Perforce. L'EUVD recense 709 nouvelles vulnérabilités au cours des dernières 24 heures, dont 33 critiques.\n\nDonnées lues le 20 novembre à 18h15 UTC.\nCe n'est pas un service d'alerte : suivez l'IPMA et l'ANEPC.",
+   "markers_stripped": false,
+   "keep": [
+    "IPMA",
+    "ANEPC",
+    "CISA",
+    "EUVD",
+    "PrompTugal",
+    "Aveiro",
+    "Braga",
+    "Coimbra",
+    "Guarda",
+    "Lisboa",
+    "Porto",
+    "Viana do Castelo",
+    "Viseu",
+    "Vila Real",
+    "Figueira da Foz",
+    "Synology",
+    "BerriAI",
+    "Apache",
+    "Perforce"
+   ],
+   "checks": {
+    "names": [
+     {
+      "what": "IPMA",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "ANEPC",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "CISA",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "EUVD",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "PrompTugal",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Aveiro",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Braga",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Coimbra",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Guarda",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Lisboa",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Porto",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Viana do Castelo",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Viseu",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Vila Real",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Figueira da Foz",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Synology",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "BerriAI",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Apache",
+      "kind": "name",
+      "found": true
+     },
+     {
+      "what": "Perforce",
+      "kind": "name",
+      "found": true
+     }
+    ],
+    "terms": [
+     {
+      "what": "vigilance jaune",
+      "kind": "glossary",
+      "from": "aviso amarelo",
+      "found": true
+     },
+     {
+      "what": "vigilance orange",
+      "kind": "glossary",
+      "from": "aviso laranja",
+      "found": true
+     },
+     {
+      "what": "risque d'incendie",
+      "kind": "glossary",
+      "from": "risco de incêndio",
+      "found": true
+     },
+     {
+      "what": "Ce n'est pas un service d'alerte : suivez l'IPMA et l'ANEPC.",
+      "kind": "glossary",
+      "from": "Não é um serviço de avisos: siga o IPMA e a ANEPC.",
+      "found": true
+     }
+    ],
+    "figures": {
+     "in_source": 15,
+     "kept": 15,
+     "lost": [],
+     "added": []
+    },
+    "weekday": {
+     "want": "samedi",
+     "named": [
+      "samedi"
+     ],
+     "ok": true
+    }
+   }
+  },
+  {
+   "t": 13394,
+   "type": "speech",
+   "model": "voxtral-mini-tts-3",
+   "voice": "gb_jane_neutral",
+   "characters": 845,
+   "bytes": 481393,
+   "ms": 5726,
+   "file": "recorded-bulletin.mp3",
+   "usd": 0.010985
+  },
+  {
+   "t": 15092,
+   "type": "roundtrip",
+   "model": "voxtral-mini-transcribe-3",
+   "audio_seconds": 72,
+   "ms": 1693,
+   "text": "Boletim Prom Portugal, sábado, 21 de novembro de 2026. O IPMA emitiu avisos laranja para oito áreas entre as 06:00 e as 18:00: Aveiro, Braga, Coimbra, Guarda, Porto, Viana do Castelo, Viseu e Vila Real. Em Braga, Porto e Viana do Castelo, há também avisos amarelos entre as 18:00 e as 21:00, por aguaceiros fortes e trovoada. No total, 14 áreas têm avisos ativos. As ondas mais altas atingem 2,6 metros na costa de Figueira da Foz e em Lisboa, com valores entre 1,7 metros e 2,6 metros nestas zonas. O risco de incêndio mantém-se baixo em todos os 278 municípios. A SISA adicionou cinco CVEs nos últimos sete dias, nomeadamente da Synology, Berry AI, Apache, Vanderbilt e Perforce. A EUVD regista 709 novas vulnerabilidades nas últimas 24 horas, das quais 33 críticas. Dados lidos a 20 de novembro, às 18:15 UTC. Não é um serviço de avisos. Siga o IPMA e a ANEPC.",
+   "words": 161,
+   "words_heard": 155,
+   "figures": {
+    "said": [
+     "date:2026-11-21",
+     "time:06:00",
+     "time:18:00",
+     "time:18:00",
+     "time:21:00",
+     "n:14",
+     "n:2.6",
+     "n:1.7",
+     "n:2.6",
+     "n:278",
+     "n:709",
+     "n:24",
+     "n:33",
+     "date:2026-11-20",
+     "time:18:15"
+    ],
+    "heard": [
+     "date:2026-11-21",
+     "time:06:00",
+     "time:18:00",
+     "time:18:00",
+     "time:21:00",
+     "n:14",
+     "n:2.6",
+     "n:1.7",
+     "n:2.6",
+     "n:278",
+     "n:709",
+     "n:24",
+     "n:33",
+     "date:2026-11-20",
+     "time:18:15"
+    ]
+   },
+   "missing": [
+    "promptugal",
+    "m",
+    "cisa",
+    "berriai"
+   ]
+  }
+ ]
+}

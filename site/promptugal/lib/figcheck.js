@@ -65,5 +65,10 @@
       return { text: g.text, kind: g.kind, start: g.start, end: g.end, found };
     });
   }
-  return { figures, check, fold };
+  // values(text) -> the figures as comparable values ('date:2026-11-21', 'time:12:00', 'n:4.5'), for comparing a
+  // translation with its source whatever the language writes them as.
+  function values(text, year) {
+    return figures(text, year).map((g) => g.kind === 'date' ? 'date:' + g.want[0] : g.kind === 'time' ? 'time:' + g.want[0].slice(1) : 'n:' + String(parseFloat(g.want[0])));
+  }
+  return { figures, check, values, fold };
 });
