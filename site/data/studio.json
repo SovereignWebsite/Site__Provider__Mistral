@@ -270,6 +270,14 @@
       "key": "none",
       "name": "Messages and deliverables, side by side",
       "line": "The agents that built this site, replayed from the commit history: who wrote to whom, and what each made and where it went, side by side."
+    },
+    {
+      "id": "workflows-five",
+      "u": "/workflows/five/",
+      "group": "agentic",
+      "key": "either",
+      "name": "Five Mistral brains, one brief",
+      "line": "The same six-agent workflow on five Mistral models at once, Ministral 3B to Large 4: five galaxies side by side, a podium and a league table."
     }
   ]
 }

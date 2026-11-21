@@ -20,7 +20,7 @@ const curve = (a, b) => { const q = bend(a, b); return `M${f1(a[0])},${f1(a[1])}
 const at = (a, b, u) => { const q = bend(a, b), v = 1 - u; return [v * v * a[0] + 2 * v * u * q[0] + u * u * b[0], v * v * a[1] + 2 * v * u * q[1] + u * u * b[1]]; };
 
 export function createFlow(svg, nodes, { title, layout = LAYOUT, structure = STRUCTURE, height = 700 } = {}) {
-  svg.setAttribute('viewBox', `0 0 600 ${height}`);
+  svg.setAttribute('viewBox', `0 0 600 ${height}`); svg.setAttribute('width', '600'); svg.setAttribute('height', String(height));
   for (const c of [...svg.childNodes]) if (c.nodeName !== 'title' && c.nodeName !== 'desc') c.remove();
   const defs = mk('defs', {}, svg);
   const grad = mk('radialGradient', { id: svg.id + '-bg', cx: '50%', cy: '40%', r: '75%' }, defs);

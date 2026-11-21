@@ -72,6 +72,7 @@ const LIST = [
   { u: '/workflows/poster/', s: 'agentic', p: '/workflows/', l: 'A poster for your sovereign website', t: 'An art director on Mistral, Mistral’s image tool and an SVG designer, side by side, with what we found testing image generation from a browser.' },
   { u: '/workflows/xray/', s: 'agentic', p: '/workflows/', l: 'X-Ray: this site, claim by claim', t: 'A page of this site checked claim by claim by two Mistral models, with CONFIRMED, WEAK SOURCE and NO SOURCE decided in code.' },
   { u: '/workflows/messages/', s: 'agentic', p: '/workflows/', l: 'Messages and deliverables', t: 'The agents that built this site, replayed: who wrote to whom, and what each made and where it went, side by side.' },
+  { u: '/workflows/five/', s: 'agentic', p: '/workflows/', l: 'Five Mistral brains, one brief', t: 'The six-agent relay on five Mistral models at once, Ministral 3B to Large 4: five galaxies, a podium and a league table.' },
   { u: '/workflows/relay/', s: 'agentic', p: '/workflows/', l: 'Two models, one workflow', t: 'Six agents on Mistral function calling, planner to publisher, on two models at once: tokens, time, cost and checks compared.' },
 
   { u: '/articles/', s: 'articles', l: 'All articles', t: 'What was built on this site, how, and what it showed.' },

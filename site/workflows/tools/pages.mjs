@@ -215,7 +215,7 @@ page({
   <section aria-labelledby="h-studio">
     <h2 id="h-studio">The studio</h2>
     <div class="pstage">
-      <svg id="pflow" class="flow" role="img" aria-labelledby="pflow-t"><title id="pflow-t">The poster workflow: brief, art director, then the painter with the image tool and the SVG designer with the sanitiser, side by side, then the wall. The same messages are listed beside it.</title></svg>
+      <svg id="pflow" class="wf-flow" role="img" aria-labelledby="pflow-t"><title id="pflow-t">The poster workflow: brief, art director, then the painter with the image tool and the SVG designer with the sanitiser, side by side, then the wall. The same messages are listed beside it.</title></svg>
       <div>
         <h3>Messages</h3>
         <ol class="feed" id="pfeed" tabindex="0" aria-label="Messages in the poster studio"></ol>
@@ -375,9 +375,9 @@ page({
     <p><span class="mtime" id="when">-</span> <span id="tally"></span></p>
     <div class="lanes">
       <div class="lane"><h3>Messages: who wrote to whom</h3>
-        <svg id="msvg" class="flow" role="img" aria-labelledby="msvg-t"><title id="msvg-t">The agents of this site, the conductor at the core and the others on a ring; each message a dot from its author to the agent it names. The same commits are listed below.</title></svg></div>
+        <svg id="msvg" class="wf-flow" role="img" aria-labelledby="msvg-t"><title id="msvg-t">The agents of this site, the conductor at the core and the others on a ring; each message a dot from its author to the agent it names. The same commits are listed below.</title></svg></div>
       <div class="lane"><h3>Deliverables: what was made, and where it went</h3>
-        <svg id="wsvg" class="flow" role="img" aria-labelledby="wsvg-t"><title id="wsvg-t">The agents that made commits on the left, the parts of the site on the right; each commit a dot from its author to each part it changed. The same commits are listed below.</title></svg></div>
+        <svg id="wsvg" class="wf-flow" role="img" aria-labelledby="wsvg-t"><title id="wsvg-t">The agents that made commits on the left, the parts of the site on the right; each commit a dot from its author to each part it changed. The same commits are listed below.</title></svg></div>
     </div>
     <h3>Every commit, as it plays</h3>
     <ol class="feed" id="mfeed" tabindex="0" aria-label="Commits replayed"></ol>
@@ -394,6 +394,79 @@ page({
 });
 CARDS.push({ u: '/workflows/messages/', img: '/workflows/shots/messages.jpg', name: 'Messages and deliverables, side by side', key: 'No key',
   line: 'The agents that built this site, replayed: who wrote to whom, and what each made and where it went, side by side, from the roster and the commit history.' });
+
+
+// ------------------------------------------------------------------ /workflows/five/
+const TICK = [['ministral-3b-2512', 'Ministral 3 3B'], ['ministral-8b-2512', 'Ministral 3 8B'], ['ministral-14b-2512', 'Ministral 3 14B'], ['mistral-small-2603', 'Mistral Small 4'], ['mistral-large-4', 'Mistral Large 4']];
+page({
+  u: '/workflows/five/', title: 'Five Mistral brains, one brief',
+  description: 'The same six-agent workflow on five Mistral models at the same time, from Ministral 3 3B to Mistral Large 4: five galaxies side by side, and a league table of time, tokens, cost and checks. Replays with no key; runs on yours.',
+  connect: MISTRAL, css: KEYCSS,
+  scripts: [{ src: '/promptugal/lib/qrkey.js' }, { src: '/workflows/five/five-page.js', module: true }],
+  body: `
+  <p class="mark"><a href="/workflows/">Workflows on Mistral</a>: five brains</p>
+  <h1>Five Mistral brains, one brief</h1>
+  <p class="lede">The <a href="/workflows/relay/">relay</a>'s six agents, planner to publisher, run on five Mistral models at the same moment: the three Ministral 3 sizes, Mistral Small 4 and Mistral Large 4. Five galaxies side by side show who reads more, who is done first and who gets it right; the table and the checks say it in numbers.</p>
+  <noscript><p class="warn">This page needs JavaScript. The recorded run is <a href="/data/workflows/relay-five.json">a file on this site</a>.</p></noscript>
+
+  <section aria-labelledby="h-found">
+    <h2 id="h-found">What we found</h2>
+    <p>One recorded run on api.mistral.ai, 21 November 2026 at 03:31 UTC, all five lanes started together, temperature 0.2, the relay's brief. One run: not a benchmark.</p>
+    <ul class="found">
+      <li><strong>Speed:</strong> <code>ministral-3b-2512</code> published first, in 7.4 s, with <code>mistral-small-2603</code> 0.1 s behind; <code>mistral-large-4</code> took 127.1 s.</li>
+      <li><strong>Cost:</strong> the four smaller models cost between $0.0019 and $0.0025 each at list price; Large 4 cost $0.108, more than forty times as much, for 110,153 tokens in and 14,821 out.</li>
+      <li><strong>Care:</strong> Large 4 made 58 tool calls on the site's pages, found all 4 of its quotes word for word, and cited all four. Ministral 3B found 1 of its 4 quotes on the pages it named and cited none, and its reviewer approved it at the first draft.</li>
+      <li><strong>Made-up addresses:</strong> Ministral 8B linked its pages on example.com. The off-site check also counts real addresses that are not this site, such as API endpoints: Small 4 gave one, Large 4 two (localhost for Ollama and api.mistral.ai). Read them in each lane.</li>
+      <li>Ministral 14B made only 5 tool calls and cited no finding by number; its reviewer asked for a revision.</li>
+    </ul>
+    <figure class="shot">
+      <img src="/workflows/shots/relay-five.jpg" width="1200" height="900" alt="Five dark workflow panels in a grid, one per Mistral model, each with its agents lit and dots in flight, and under each its calls, tokens, time and cost.">
+      <figcaption>The recorded run, replayed on this page (a screenshot).</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Replay the recorded run (no key needed)</h2>
+    <div class="field">
+      <label for="speed">Speed</label>
+      <select id="speed"><option value="2">2 times faster</option><option value="6" selected>6 times faster</option><option value="20">20 times faster</option></select>
+    </div>
+    <div class="actions"><button type="button" id="replay" class="primary">Replay all five</button></div>
+    <p id="replay-status" class="status" role="status" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-lanes">
+    <h2 id="h-lanes">The five lanes</h2>
+    <div class="lanes" id="five-lanes">
+${TICK.map(([, l], i) => `      <div class="lane" id="five-${i}"><p class="lane-empty">${l}: press Replay, or run it live below.</p></div>`).join('\n')}
+    </div>
+    <h3>The podium, computed</h3>
+    <div id="podium"><p class="muted">After a replay or a run.</p></div>
+    <div id="compare"></div>
+  </section>
+${keyBox()}
+  <section aria-labelledby="h-live">
+    <h2 id="h-live">3. Run it live, on your key</h2>
+    <fieldset class="ticks"><legend>Models to run at once</legend>
+${TICK.map(([v, l]) => `      <label><input type="checkbox" id="m-${v}" checked> ${l} <code>${v}</code></label>`).join('\n')}
+    </fieldset>
+    <label for="brief">The brief</label>
+    <textarea id="brief" rows="3" maxlength="600"></textarea>
+    <div class="sends"><h3>What this call sends, and to whom</h3><div id="sends"></div></div>
+    <div class="actions"><button type="button" id="run" class="primary">Run the ticked models</button> <button type="button" id="stop" disabled>Stop</button></div>
+    <p id="run-status" class="status" role="status" aria-live="polite"></p>
+  </section>
+${callLog}
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <ul>
+      <li>The same <a href="/workflows/lib/relay.js">relay.js</a> as <a href="/workflows/relay/">the relay</a>, five times at once; its checks are explained there. The lanes are <a href="/workflows/lib/lanes.js">lanes.js</a> and the drawing <a href="/workflows/lib/flow.js">flow.js</a>, after the <a href="https://web-summit.sgit.ai/people/angelo/app/index.html#stand">SGit-AI Web Summit stand</a>'s views by Angelo Leggio and the Galaxy by Silvio Switha's dashboard agent.</li>
+      <li>Prices are Mistral's list prices (<a href="https://docs.mistral.ai/inference/pricing">pricing</a>, ${READ}).</li>
+    </ul>
+  </section>`,
+});
+CARDS.push({ u: '/workflows/five/', img: '/workflows/shots/relay-five.jpg', name: 'Five Mistral brains, one brief', key: 'Replay with no key, or your key',
+  line: 'The six-agent relay on Ministral 3B, 8B and 14B, Small 4 and Large 4 at once: five galaxies side by side, a podium and a league table.' });
 
 // ------------------------------------------------------------------ /workflows/ (the hub)
 CARDS.unshift(

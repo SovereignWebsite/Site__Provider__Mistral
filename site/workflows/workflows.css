@@ -11,7 +11,7 @@
 .lane .where{color:var(--muted);font-weight:400;font-size:.9rem}
 .lane h4{margin:1rem 0 .35rem;font-size:.95rem}
 .lane-empty{color:var(--muted);padding:2rem 1rem;text-align:center;border:1px dashed var(--line);border-radius:14px}
-svg.flow{display:block;width:100%;height:auto;max-height:42rem;border-radius:16px}
+svg.wf-flow{display:block;width:100%;height:auto;border-radius:16px}
 
 /* The galaxy. */
 .fl-bg0{stop-color:var(--g-bg0)}
@@ -105,3 +105,9 @@ svg.flow{display:block;width:100%;height:auto;max-height:42rem;border-radius:16p
 .fl-c-conductor\.mistral{color:#9cc2ff}
 .fl-verdict.v-trace{stroke:#7aa7ff;stroke-width:1.6;opacity:.35}
 .mtime{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700}
+
+/* Five lanes. */
+#five-lanes{grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+#five-lanes .feed{max-height:9rem}
+.ticks{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:.5rem 0;padding:0;border:0}
+.ticks label{font-weight:500;display:flex;gap:.4rem;align-items:center}

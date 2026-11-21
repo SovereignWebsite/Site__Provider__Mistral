@@ -28,7 +28,7 @@ function view(box, model, subject, idx, nClaims) {
   const structure = [['page', 'extractor']];
   box.replaceChildren();
   const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  s.id = box.id + '-svg'; s.setAttribute('role', 'img'); s.setAttribute('class', 'flow');
+  s.id = box.id + '-svg'; s.setAttribute('role', 'img'); s.setAttribute('class', 'wf-flow');
   const t = document.createElementNS('http://www.w3.org/2000/svg', 'title'); t.textContent = 'The X-Ray on ' + model + ': claims on the left, this site’s other pages on the right, a line from each claim to the page that supports it. The same verdicts are listed below.'; s.append(t);
   const meter = el('dl', { class: 'meter' }), tally = el('p', { class: 'xr-tally' }), list = el('ol', { class: 'xr-list', 'aria-label': 'Verdicts on ' + model });
   box.append(el('h3', {}, el('code', { text: model })), s, meter, tally, list);
