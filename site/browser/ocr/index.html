@@ -73,9 +73,17 @@
   <h1>From a document to your site</h1>
   <p class="lede">Choose a flyer, a leaflet or a menu, as a PDF or a picture. Mistral OCR turns it into text, a Mistral chat model picks out the facts an About section needs, each with the exact words it came from, and this page drafts that About section from those quoted words only. All from your browser, with your own Mistral key.</p>
   <noscript><p class="warn">This demo needs JavaScript. Nothing on this page sends anything without it.</p></noscript>
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Watch a recorded run first (no key needed)</h2>
+    <p class="mark-run">Recorded run, model output, mistral-ocr-latest and ministral-8b-2512, 2026-11-21 01:12 UTC</p>
+    <div class="actions"><button type="button" id="replay" class="primary">Replay</button></div>
+    <p>Our fictional sample flyer, sent through Mistral OCR and the facts step on the global endpoint, saved as <a href="/browser/ocr/recorded-run.json">a file on this site</a>. Replaying it sends nothing anywhere: the page reads the file and shows it with the same code as a live run.</p>
+    <div id="replay-out" aria-live="polite"></div>
+  </section>
+
   <section aria-labelledby="h-key">
-    <h2 id="h-key">1. Your Mistral key</h2>
-    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory and goes only to the Mistral endpoint you choose.</p>
     <div class="keyrow">
       <label for="key">Mistral API key (get one at console.mistral.ai)</label>
       <input id="key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
@@ -84,7 +92,12 @@
     </div>
     <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
     <p id="key-status" class="status" role="status">No key set.</p>
-    <p class="warn">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026). Send nothing confidential.</p>
+    <p class="warn">Mistral's Free mode: what you send may be used to train Mistral's models unless you switch that off, so send nothing confidential.</p>
+    <details class="keymore">
+      <summary>Where your key goes</summary>
+      <p class="small">It goes in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+      <p class="small">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026).</p>
+    </details>
     <div class="field">
       <label for="endpoint">Where the calls go</label>
       <select id="endpoint">
@@ -95,7 +108,7 @@
   </section>
 
   <section aria-labelledby="h-file">
-    <h2 id="h-file">2. Choose a document</h2>
+    <h2 id="h-file">3. Choose a document</h2>
     <p class="privacy"><strong>Your file, plainly.</strong> Choosing a file does not send it anywhere: your browser reads it into this tab. It goes to one place only, Mistral's OCR endpoint, when you press "Send the document to Mistral OCR", as a base64 data URL inside the request (the way Mistral's OCR documentation describes). It never goes to this site, and nothing is kept after you close the tab. Mistral's own terms apply to what you send it, so do not send anything private.</p>
     <p class="privacy" id="file-warning"><strong>Your file is sent to Mistral (api.mistral.ai or the EU endpoint you chose) to be read. Do not use documents with other people's personal details or anything confidential; try the sample flyer instead.</strong></p>
     <div class="field">
@@ -112,7 +125,7 @@
   </section>
 
   <section aria-labelledby="h-ocr">
-    <h2 id="h-ocr">3. Mistral OCR: the document as text</h2>
+    <h2 id="h-ocr">4. Mistral OCR: the document as text</h2>
     <div class="sends">
       <h3>What this call sends, and to whom</h3>
       <div id="ocr-sends"><p class="muted">Choose a document first.</p></div>
@@ -126,7 +139,7 @@
   </section>
 
   <section aria-labelledby="h-facts">
-    <h2 id="h-facts">4. The facts, each with its quote</h2>
+    <h2 id="h-facts">5. The facts, each with its quote</h2>
     <p>A chat model reads the text and answers in a fixed JSON shape (structured output with a JSON schema, <a href="https://docs.mistral.ai/inference/conversations/structured-output/custom">custom structured outputs</a>, as read on 21 November 2026): the name, what it offers, and a contact if there is one, each with the words it was taken from. This page then checks each quote against the OCR text, character for character apart from spacing, and drops any fact whose quote is not there.</p>
     <div class="field">
       <label for="chat-model">Chat model</label>
@@ -155,7 +168,7 @@
   </section>
 
   <section aria-labelledby="h-about">
-    <h2 id="h-about">5. A draft About section</h2>
+    <h2 id="h-about">6. A draft About section</h2>
     <p>Built in this page, with no further call, from the quotes that were found in the document, word for word. Nothing in it comes from the model's own words. A draft for you to edit, not a page that has been published.</p>
     <div id="about"><p class="muted">Extract the facts first.</p></div>
   </section>

@@ -73,9 +73,21 @@
   <h1>The injection lab</h1>
   <p class="lede">A site agent is asked to summarise a Contact page. Someone else wrote that page, and hidden in it are instructions aimed at the model. Run the exact case from this site's <a href="/evals/">evals</a> on the Mistral model you pick, twice, side by side: once with the page wrapped in <code>&lt;untrusted-data&gt;</code> markers and a rule that says it is data, once without. The same checks as the evals decide pass or fail.</p>
   <noscript><p class="warn">This lab needs JavaScript. The case and its checks are readable without it: <a href="/data/evals/suites/injection.json">injection.json</a>.</p></noscript>
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. See a recorded run first (no key needed)</h2>
+    <p class="mark-run">Recorded run, model output, ministral-8b-2512, 2026-11-21 01:11 UTC</p>
+    <div class="actions"><button type="button" id="replay" class="primary" disabled>Replay</button></div>
+    <p>The case "visible-note", run once with wrapping and once without, through the evals' own code on Mistral's global endpoint, saved as <a href="/browser/inject/recorded-run.json">a file on this site</a>. Replaying it sends nothing anywhere.</p>
+    <div class="lanes">
+      <div class="lane"><h3>With wrapping</h3><div id="rp-wrapped"><p class="muted">Press Replay.</p></div></div>
+      <div class="lane"><h3>Without wrapping</h3><div id="rp-plain"><p class="muted">Press Replay.</p></div></div>
+    </div>
+    <p id="rp-status" class="status" role="status"></p>
+  </section>
+
   <section aria-labelledby="h-key">
-    <h2 id="h-key">1. Your Mistral key</h2>
-    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory and goes only to the Mistral endpoint you choose.</p>
     <div class="keyrow">
       <label for="key">Mistral API key (get one at console.mistral.ai)</label>
       <input id="key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
@@ -84,7 +96,12 @@
     </div>
     <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
     <p id="key-status" class="status" role="status">No key set.</p>
-    <p class="warn">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026). Say nothing confidential.</p>
+    <p class="warn">Mistral's Free mode: what you send may be used to train Mistral's models unless you switch that off, so send nothing confidential.</p>
+    <details class="keymore">
+      <summary>Where your key goes</summary>
+      <p class="small">It goes in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+      <p class="small">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026).</p>
+    </details>
     <div class="field">
       <label for="endpoint">Where the calls go</label>
       <select id="endpoint">
@@ -95,7 +112,7 @@
   </section>
 
   <section aria-labelledby="h-case">
-    <h2 id="h-case">2. The case</h2>
+    <h2 id="h-case">3. The case</h2>
     <p>Loaded from this site's own eval data, <a href="/data/evals/suites/injection.json">/data/evals/suites/injection.json</a>, not copied by hand. All names, places and addresses in it are made up for the test, and the injected text is fixed test data.</p>
     <div class="field">
       <label for="case">Which version of the Contact page</label>
@@ -106,7 +123,7 @@
   </section>
 
   <section aria-labelledby="h-model">
-    <h2 id="h-model">3. The model</h2>
+    <h2 id="h-model">4. The model</h2>
     <div class="field">
       <label for="model">Mistral model</label>
       <select id="model">
@@ -127,7 +144,7 @@
   </section>
 
   <section aria-labelledby="h-sends">
-    <h2 id="h-sends">4. What each run sends, and to whom</h2>
+    <h2 id="h-sends">5. What each run sends, and to whom</h2>
     <p>Each run is the evals' own agent loop (<a href="/evals/core/v0.1/README.md">AgentiCCells evals core v0.1</a>, loaded from this site): up to four calls to <code>/v1/chat/completions</code>, each repeating the conversation so far. The first call is shown here; when the model reads <code>/contact</code>, the page's text goes back to it as shown under "What the model sees".</p>
     <div class="lanes">
       <div class="lane"><h3>With untrusted-data wrapping</h3><div id="sends-wrapped"></div></div>
@@ -136,7 +153,7 @@
   </section>
 
   <section aria-labelledby="h-run">
-    <h2 id="h-run">5. Run it</h2>
+    <h2 id="h-run">6. Run it</h2>
     <p>Two runs, one after the other, each up to four calls. On the Ministral models and Mistral Small 4 that is a few thousand tokens, well under one US cent at list price; in our test on 21 November 2026, ministral-8b-2512 used about 1,700 tokens for both runs together. mistral-large-4 with the 4000-token limit costs more: at most about 8 US cents for both runs at its list price ($0.7 in, $2.1 out, per million tokens), usually far less.</p>
     <div class="actions"><button type="button" id="run" class="primary" disabled>Run both on my key</button></div>
     <p id="run-status" class="status" role="status"></p>
@@ -148,9 +165,9 @@
   </section>
 
   <section aria-labelledby="h-pub">
-    <h2 id="h-pub">6. The published results, beside yours</h2>
+    <h2 id="h-pub">7. The published results, beside yours</h2>
     <p>From the runs on this site's <a href="/evals/#finding">evals board</a>, 20 November 2026, Mistral's global endpoint, three tries per model. Those runs used wrapping only: the "without wrapping" side has no published run.</p>
-    <div id="published"><p class="muted">Loading the published runs...</p></div>
+    <div id="published"><p class="muted">Not loaded yet.</p></div>
   </section>
 
   <section aria-labelledby="h-log">

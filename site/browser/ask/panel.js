@@ -177,15 +177,22 @@ if (window.top !== window.self) {
     });
 
     box.appendChild(el('div', { class: 'keybox' }, [
+      el('p', { class: 'small', text: 'Your key stays in this tab\'s memory and goes only to the Mistral endpoint you choose.' }),
       el('label', { for: 'mk-key', text: 'Your Mistral API key (get one at console.mistral.ai)' }),
       el('p', { id: 'mk-never', class: 'small', text: 'If your browser offers to save this key as a password, choose Never.' }),
       el('div', { class: 'keyrow' }, [keyInput, use, forget]),
       status,
-      el('p', { class: 'small', text: 'Held in one variable in this tab: never saved to storage or cookies, never shown, never sent to this site. Sent only to the Mistral endpoint you pick below, in the Authorization header. Gone when you close or reload the tab. Use a key with a spending limit.' }),
       el('p', { class: 'warn' }, [
         el('strong', { text: 'Mistral\'s Free mode: ' }),
-        'Mistral says it may use what you send through the API, and what comes back, to train its models, unless you switch that off in the Admin panel, under Privacy. Labs and preview models may be used for training whatever you choose. Send nothing confidential.',
-        src(F.S.mistralTrainHelp), ' ', link('How to switch it off', F.S.mistralOptOut), '.'
+        'what you send may be used to train Mistral\'s models unless you switch that off, so send nothing confidential.'
+      ]),
+      el('details', { class: 'keymore' }, [
+        el('summary', { text: 'Where your key goes' }),
+        el('p', { class: 'small', text: 'Held in one variable in this tab: never saved to storage or cookies, never shown, never sent to this site. Sent only to the Mistral endpoint you pick below, in the Authorization header. Gone when you close or reload the tab. Use a key with a spending limit.' }),
+        el('p', { class: 'small' }, [
+          'On Free mode, Mistral says it may use what you send through the API, and what comes back, to train its models, unless you switch that off in the Admin panel, under Privacy. Labs and preview models may be used for training whatever you choose.',
+          src(F.S.mistralTrainHelp), ' ', link('How to switch it off', F.S.mistralOptOut), '.'
+        ])
       ])
     ]));
     box.appendChild(epGroup);

@@ -67,7 +67,7 @@ export const apiBase = () => endpoint().origin + '/v1';
 const PATHS = new Set(['/audio/transcriptions', '/chat/completions', '/audio/speech', '/ocr']);
 export async function callMistral({ path, json, form, signal }) {
   if (!PATHS.has(path)) throw new Error('not a path these demos call: ' + path);
-  if (!key) { const e = new Error('No key set: paste your Mistral key in step 1 first.'); e.noKey = true; throw e; }
+  if (!key) { const e = new Error('No key set: paste your Mistral key in step 2 first.'); e.noKey = true; throw e; }
   const url = apiBase() + path;
   const host = new URL(url).host;
   if (host !== 'api.mistral.ai' && host !== 'api.eu.mistral.ai') throw new Error('refusing to send the key to ' + host);
@@ -90,7 +90,7 @@ export function keyedFetch(onCall) {
   return async (url, init = {}) => {
     const u = new URL(String(url));
     if (u.host !== 'api.mistral.ai' && u.host !== 'api.eu.mistral.ai') throw new Error('refusing to send the key to ' + u.host);
-    if (!key) throw new Error('No key set: paste your Mistral key in step 1 first.');
+    if (!key) throw new Error('No key set: paste your Mistral key in step 2 first.');
     const headers = { ...(init.headers || {}), Authorization: 'Bearer ' + key };
     const t0 = performance.now();
     const r = await fetch(u.href, { ...init, headers, redirect: 'error', credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store' });

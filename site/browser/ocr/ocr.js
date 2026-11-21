@@ -47,7 +47,7 @@ function previewOcr() {
 
 async function runOcr() {
   if (!doc) return;
-  if (!hasKey()) { $('ocr-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('ocr-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   const body = ocrBody();
   const json = JSON.stringify(body);
   $('ocr-send').disabled = true;
@@ -81,11 +81,11 @@ function previewChat() {
 
 // Quotes are compared with spacing, curly quotes and markdown emphasis evened out; nothing else is forgiven.
 const norm = (s) => String(s || '').normalize('NFKC').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
-const found = (q) => !!norm(q) && norm(markdown).includes(norm(q));
+const found = (q, md) => !!norm(q) && norm(md).includes(norm(q));
 
 async function extract() {
   if (!markdown) return;
-  if (!hasKey()) { $('extract-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('extract-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   const body = chatBody();
   const json = JSON.stringify(body);
   $('extract').disabled = true;
@@ -105,38 +105,68 @@ async function extract() {
   drawFacts();
 }
 
-function rows() {
+// Each fact with its quote, and whether the quote is in the OCR text (md). Used for live runs and the replay.
+function rows(f, md) {
   const out = [];
-  const one = (label, f) => { if (f && typeof f === 'object') out.push({ label, value: String(f.value || ''), quote: String(f.quote || ''), ok: found(f.quote) }); };
-  one('Name', facts.name);
-  (Array.isArray(facts.offers) ? facts.offers : []).forEach((f, i) => one('Offers ' + (i + 1), f));
-  one('Contact', facts.contact);
+  const one = (label, x) => { if (x && typeof x === 'object') out.push({ label, value: String(x.value || ''), quote: String(x.quote || ''), ok: found(x.quote, md) }); };
+  one('Name', f.name);
+  (Array.isArray(f.offers) ? f.offers : []).forEach((x, i) => one('Offers ' + (i + 1), x));
+  one('Contact', f.contact);
   return out;
 }
+const factRows = (list) => list.length ? list.map((x) => el('tr', {},
+  el('th', { scope: 'row', text: x.label }), el('td', { text: x.value }), el('td', {}, el('q', { text: x.quote })),
+  el('td', { class: x.ok ? 'ok' : 'bad', text: x.ok ? 'Yes, word for word' : 'No: left out of the draft' }))) : [el('tr', {}, el('td', { colspan: '4', text: 'The model found no facts.' }))];
+const factSummary = (list) => { const kept = list.filter((x) => x.ok).length; return list.length + ' facts given; ' + kept + ' quoted word for word from the document' + (kept < list.length ? '; the rest are left out.' : '.'); };
 function drawFacts() {
-  const list = rows();
-  $('facts-body').replaceChildren(...(list.length ? list.map((x) => el('tr', {},
-    el('th', { scope: 'row', text: x.label }), el('td', { text: x.value }), el('td', {}, el('q', { text: x.quote })),
-    el('td', { class: x.ok ? 'ok' : 'bad', text: x.ok ? 'Yes, word for word' : 'No: left out of the draft' }))) : [el('tr', {}, el('td', { colspan: '4', text: 'The model found no facts.' }))]));
+  const list = rows(facts, markdown);
+  $('facts-body').replaceChildren(...factRows(list));
   $('facts-box').classList.remove('hidden');
-  const kept = list.filter((x) => x.ok).length;
-  $('extract-status').textContent = list.length + ' facts given; ' + kept + ' quoted word for word from the document' + (kept < list.length ? '; the rest are left out.' : '.');
-  drawAbout(list.filter((x) => x.ok));
+  $('extract-status').textContent = factSummary(list);
+  $('about').replaceChildren(aboutNode(list.filter((x) => x.ok), doc ? doc.name : 'your document', $('chat-model').value));
 }
 
 // The draft uses the verified quotes only, as text. No model wording, no HTML from the model.
-function drawAbout(ok) {
+function aboutNode(ok, docName, chatModel) {
   const name = ok.find((x) => x.label === 'Name');
   const offers = ok.filter((x) => x.label.startsWith('Offers'));
   const contact = ok.find((x) => x.label === 'Contact');
-  if (!ok.length) { $('about').replaceChildren(el('p', { text: 'No fact had a quote found in the document, so there is nothing to draft from.' })); return; }
-  $('about').replaceChildren(el('div', { class: 'about-draft' },
-    el('p', { class: 'small', text: 'Draft: every line below is quoted from your document.' }),
+  if (!ok.length) return el('p', { text: 'No fact had a quote found in the document, so there is nothing to draft from.' });
+  return el('div', { class: 'about-draft' },
+    el('p', { class: 'small', text: 'Draft: every line below is quoted from the document.' }),
     el('h3', { text: name ? 'About ' + name.quote.replace(/^#+\s*/, '') : 'About' }),
     offers.length ? el('p', { text: 'What it offers:' }) : null,
     offers.length ? el('ul', {}, offers.map((x) => el('li', {}, el('q', { text: x.quote })))) : null,
     contact ? el('p', {}, 'Contact: ', el('q', { text: contact.quote })) : el('p', { class: 'small', text: 'No contact was quoted from the document, so none is given.' }),
-    el('p', { class: 'small', text: 'Source: "' + (doc ? doc.name : 'your document') + '", read by ' + OCR_MODEL + ' and ' + $('chat-model').value + ', checked in this page.' })));
+    el('p', { class: 'small', text: 'Source: "' + docName + '", read by ' + OCR_MODEL + ' and ' + chatModel + ', checked in this page.' }));
+}
+
+// ---- The recorded run: read from this site, shown with the same code as a live run. Sends nothing anywhere. ----
+let replaying = false;
+async function replay() {
+  if (replaying) return;
+  replaying = true; $('replay').disabled = true;
+  const box = $('replay-out');
+  box.replaceChildren(el('p', { class: 'muted', text: 'Reading the recorded run from this site...' }));
+  let rec;
+  try { const r = await fetch(new URL('./recorded-run.json', import.meta.url), { credentials: 'omit' }); if (!r.ok) throw new Error('HTTP ' + r.status); rec = await r.json(); }
+  catch (e) { box.replaceChildren(el('p', { class: 'bad', text: 'Could not read the recorded run: ' + e.message })); replaying = false; $('replay').disabled = false; return; }
+  const wait = (ms) => new Promise((ok) => setTimeout(ok, ms));
+  box.replaceChildren(el('p', {}, 'The document: ', el('a', { href: './' + rec.document.name, text: rec.document.name }), ' (fictional sample, ' + rec.document.type + ', ' + bytesText(rec.document.bytes) + ').'));
+  await wait(500);
+  box.append(el('h3', { text: 'What ' + rec.ocr.model + ' read (' + rec.ocr.pages + ' page)' }), el('pre', { class: 'out', tabindex: '0', text: rec.ocr.markdown }));
+  await wait(900);
+  let f = null; try { f = JSON.parse(rec.facts.json); } catch { /* shown as it came */ }
+  const list = f ? rows(f, rec.ocr.markdown) : [];
+  box.append(el('h3', { text: 'The facts from ' + rec.facts.model + ', each with its quote' }),
+    el('div', { class: 'tablewrap', tabindex: '0', role: 'region', 'aria-label': 'Recorded facts' }, el('table', {},
+      el('thead', {}, el('tr', {}, el('th', { scope: 'col', text: 'Fact' }), el('th', { scope: 'col', text: 'The model\'s short version' }), el('th', { scope: 'col', text: 'Quoted from the document' }), el('th', { scope: 'col', text: 'Quote found?' }))),
+      el('tbody', {}, factRows(list)))),
+    el('p', { class: 'status', text: f ? factSummary(list) : 'The recorded answer was not JSON.' }));
+  await wait(900);
+  box.append(el('h3', { text: 'The draft About section' }), aboutNode(list.filter((x) => x.ok), rec.document.name, rec.facts.model),
+    el('p', { class: 'small', text: 'Two calls were made when this was recorded: ' + rec.calls.map((c) => c.to + ' (' + c.status + ')').join(' and ') + '. ' + rec.facts.tokensIn + ' tokens in and ' + rec.facts.tokensOut + ' out for the facts.' }));
+  replaying = false; $('replay').disabled = false;
 }
 
 // ---- Wiring. ----
@@ -151,6 +181,7 @@ $('sample-pdf').addEventListener('click', () => sample('pdf'));
 $('sample-png').addEventListener('click', () => sample('png'));
 $('ocr-send').addEventListener('click', runOcr);
 $('extract').addEventListener('click', extract);
+$('replay').addEventListener('click', replay);
 $('chat-model').addEventListener('change', previewChat);
 window.addEventListener('pagehide', () => { doc = null; markdown = ''; facts = null; if (thumbUrl) URL.revokeObjectURL(thumbUrl); });
 drawLog();

@@ -1,0 +1,86 @@
+{
+ "kind": "Recorded run of /browser/voice/",
+ "at": "2026-11-21T01:12:07.479Z",
+ "endpoint": "api.mistral.ai",
+ "note": "Model output, unedited. The question was spoken by Voxtral TTS and played into Chromium's fake microphone; nothing else was recorded.",
+ "recording": {
+  "seconds": 5.2,
+  "size": "81.4 KB",
+  "type": "audio/webm"
+ },
+ "transcribe": {
+  "model": "voxtral-mini-transcribe-3",
+  "text": "Hello from London. What does this site say about the European endpoint? Hello from London.",
+  "audioSeconds": 5
+ },
+ "chat": {
+  "model": "mistral-small-2603",
+  "turns": [
+   {
+    "status": 200,
+    "tokensIn": 366,
+    "tokensOut": 12
+   },
+   {
+    "status": 200,
+    "tokensIn": 1110,
+    "tokensOut": 12
+   },
+   {
+    "status": 200,
+    "tokensIn": 1781,
+    "tokensOut": 80
+   }
+  ],
+  "steps": [
+   {
+    "tool": "search_site",
+    "arguments": {
+     "query": "European endpoint"
+    }
+   },
+   {
+    "tool": "read_page",
+    "arguments": {
+     "path": "/questions/"
+    }
+   }
+  ],
+  "answer": "This site notes that Mistral\u2019s EU endpoint, api.eu.mistral.ai, processes data in EU and EFTA data centres at 1.1 times the global price. It also says the code samples currently use the global endpoint and that the EU endpoint\u2019s support for ministral-3b-2512 was not verified. (from /questions/ and /demos/)"
+ },
+ "speech": {
+  "model": "voxtral-mini-tts-3",
+  "voice": "gb_jane_neutral",
+  "chars": 306,
+  "file": "recorded-answer.mp3",
+  "bytes": 99074,
+  "fileNote": "Re-encoded here from Mistral's mp3 to 32 kbit/s mono to keep this page light; the words are as Mistral spoke them."
+ },
+ "calls": [
+  {
+   "at": "2026-11-21T01:12:07.479Z",
+   "to": "api.mistral.ai/v1/audio/transcriptions",
+   "status": 200
+  },
+  {
+   "at": "2026-11-21T01:12:08.432Z",
+   "to": "api.mistral.ai/v1/chat/completions",
+   "status": 200
+  },
+  {
+   "at": "2026-11-21T01:12:09.004Z",
+   "to": "api.mistral.ai/v1/chat/completions",
+   "status": 200
+  },
+  {
+   "at": "2026-11-21T01:12:10.069Z",
+   "to": "api.mistral.ai/v1/chat/completions",
+   "status": 200
+  },
+  {
+   "at": "2026-11-21T01:12:14.032Z",
+   "to": "api.mistral.ai/v1/audio/speech",
+   "status": 200
+  }
+ ]
+}

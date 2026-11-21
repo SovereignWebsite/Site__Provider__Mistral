@@ -79,7 +79,7 @@ function previewStt() {
 }
 async function transcribe() {
   if (!recorded) return;
-  if (!hasKey()) { $('stt-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('stt-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   const model = $('stt-model').value;
   const form = new FormData();
   form.append('model', model);
@@ -158,7 +158,7 @@ let answer = '';
 async function ask() {
   const q = $('question').value.trim();
   if (!q) { $('ask-status').textContent = 'Record or type a question first.'; return; }
-  if (!hasKey()) { $('ask-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('ask-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   const model = $('chat-model').value;
   $('ask').disabled = true; $('steps').replaceChildren(); $('answer-box').classList.add('hidden'); $('speak').disabled = true;
   $('ask-status').classList.remove('bad');
@@ -210,7 +210,7 @@ function previewTts() {
 let ttsUrl = null;
 async function speak() {
   if (!answer) return;
-  if (!hasKey()) { $('tts-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('tts-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   const body = ttsBody();
   $('speak').disabled = true;
   $('tts-status').classList.remove('bad');
@@ -229,6 +229,32 @@ async function speak() {
   try { await a.play(); } catch { /* autoplay refused: the player is there */ }
 }
 
+// ---- The recorded run: read from this site and shown step by step. Sends nothing anywhere. ----
+let replaying = false;
+async function replay() {
+  if (replaying) return;
+  replaying = true; $('replay').disabled = true;
+  const box = $('replay-out');
+  box.replaceChildren(el('p', { class: 'muted', text: 'Reading the recorded run from this site...' }));
+  let rec;
+  try { const r = await fetch(new URL('./recorded-run.json', import.meta.url), { credentials: 'omit' }); if (!r.ok) throw new Error('HTTP ' + r.status); rec = await r.json(); }
+  catch (e) { box.replaceChildren(el('p', { class: 'bad', text: 'Could not read the recorded run: ' + e.message })); replaying = false; $('replay').disabled = false; return; }
+  const wait = (ms) => new Promise((ok) => setTimeout(ok, ms));
+  const list = el('ol', { class: 'small' });
+  box.replaceChildren(list);
+  const step = async (...kids) => { list.append(el('li', {}, ...kids)); await wait(700); };
+  await step('Recorded ' + rec.recording.seconds + ' seconds of audio (' + rec.recording.size + ', ' + rec.recording.type + ') and sent it to ', el('code', { text: rec.transcribe.model }), '.');
+  await step('Mistral heard: ', el('q', { text: rec.transcribe.text }));
+  for (const t of rec.chat.steps) await step(el('code', { text: rec.chat.model }), ' asked for ', el('code', { text: t.tool + '(' + JSON.stringify(t.arguments) + ')' }), '; the page answered from the site index.');
+  const tin = rec.chat.turns.reduce((a, t) => a + t.tokensIn, 0), tout = rec.chat.turns.reduce((a, t) => a + t.tokensOut, 0);
+  await step('The answer, after ' + rec.chat.turns.length + ' calls (' + tin + ' tokens in, ' + tout + ' out):');
+  box.append(el('p', { class: 'answer', text: rec.chat.answer }));
+  const audio = el('audio', { controls: true, src: new URL('./' + rec.speech.file, import.meta.url).pathname });
+  box.append(el('p', { class: 'small', text: 'Spoken by ' + rec.speech.model + ' in the voice ' + rec.speech.voice + ' (' + rec.speech.chars + ' characters). ' + (rec.speech.fileNote || '') }), audio);
+  try { await audio.play(); } catch { /* the player is there */ }
+  replaying = false; $('replay').disabled = false;
+}
+
 // ---- Wiring. ----
 wireKey(() => { if (recorded) previewStt(); previewChat(); previewTts(); });
 $('rec-start').addEventListener('click', startRecording);
@@ -240,5 +266,6 @@ $('chat-model').addEventListener('change', previewChat);
 $('ask').addEventListener('click', ask);
 $('voice').addEventListener('change', previewTts);
 $('speak').addEventListener('click', speak);
+$('replay').addEventListener('click', replay);
 previewChat();
 drawLog();

@@ -58,3 +58,4 @@ audio{max-width:100%}
 .tablewrap td code{overflow-wrap:anywhere}
 .lane .tablewrap>table{min-width:26rem}
 #published .tablewrap>table,#facts-box .tablewrap>table{min-width:30rem}
+.mark-run{display:inline-block;font-weight:700;font-size:.85rem;padding:.2rem .6rem;border:1px solid var(--accent);border-radius:6px;color:var(--accent);margin:.2rem 0}

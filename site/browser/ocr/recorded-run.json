@@ -1,0 +1,39 @@
+{
+ "kind": "Recorded run of /browser/ocr/",
+ "at": "2026-11-21T01:12:37.516Z",
+ "endpoint": "api.mistral.ai",
+ "note": "Model output, unedited. The document is this site's fictional sample flyer.",
+ "document": {
+  "name": "fictional-sample-flyer.pdf",
+  "type": "application/pdf",
+  "bytes": 2344
+ },
+ "ocr": {
+  "model": "mistral-ocr-latest",
+  "servedAs": "mistral-ocr-latest",
+  "pages": 1,
+  "markdown": "FICTIONAL SAMPLE: made up for a demo, not a real business\n\n# Bramblegate Bike Kitchen\n\nA volunteer bicycle repair workshop\n\n## What we offer\n\n- Free repair sessions: bring your bike and we show you how to fix it.\n- Second-hand parts, sorted and labelled.\n- A beginners' maintenance class on the first Sunday of each month.\n\n## When\n\nWednesdays 18:00 to 21:00 and Saturdays 10:00 to 14:00.\n\n## Where\n\nUnit 4, Example Yard, Imaginary Lane, Fictionton.\n\n## Contact\n\nEmail: hello@bramblegate-bikes.example\n\nEveryone is welcome. No booking needed for repair sessions.\n\nFictional sample for a demo. The names and the address are invented."
+ },
+ "facts": {
+  "model": "ministral-8b-2512",
+  "tokensIn": 303,
+  "tokensOut": 197,
+  "json": "{\n  \"name\": {\n    \"value\": \"Bramblegate Bike Kitchen\",\n    \"quote\": \"Bramblegate Bike Kitchen\"\n  },\n  \"offers\": [\n    {\n      \"value\": \"Free repair sessions (bring your bike, we teach you how to fix it)\",\n      \"quote\": \"Free repair sessions: bring your bike and we show you how to fix it.\"\n    },\n    {\n      \"value\": \"Second-hand bike parts (sorted and labelled)\",\n      \"quote\": \"Second-hand parts, sorted and labelled.\"\n    },\n    {\n      \"value\": \"Beginners' maintenance class (first Sunday of each month)\",\n      \"quote\": \"A beginners' maintenance class on the first Sunday of each month.\"\n    }\n  ],\n  \"contact\": {\n    \"value\": \"hello@bramblegate-bikes.example\",\n    \"quote\": \"Email: hello@bramblegate-bikes.example\"\n  }\n}"
+ },
+ "result": "5 facts given; 5 quoted word for word from the document.",
+ "draftText": "Draft: every line below is quoted from your document.\n\nAbout Bramblegate Bike Kitchen\n\nWhat it offers:\n\nFree repair sessions: bring your bike and we show you how to fix it.\nSecond-hand parts, sorted and labelled.\nA beginners' maintenance class on the first Sunday of each month.\n\nContact: Email: hello@bramblegate-bikes.example\n\nSource: \"fictional-sample-flyer.pdf\", read by mistral-ocr-latest and ministral-8b-2512, checked in this page.",
+ "calls": [
+  {
+   "at": "2026-11-21T01:12:37.516Z",
+   "to": "api.mistral.ai/v1/ocr",
+   "status": 200,
+   "bytes": 3239
+  },
+  {
+   "at": "2026-11-21T01:12:39.175Z",
+   "to": "api.mistral.ai/v1/chat/completions",
+   "status": 200,
+   "bytes": 2129
+  }
+ ]
+}

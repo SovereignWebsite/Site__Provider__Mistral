@@ -12,14 +12,14 @@ const $ = (id) => document.getElementById(id);
 const DATA = new URL('../../data/evals/', import.meta.url);
 const getJson = async (p) => { const r = await fetch(new URL(p, DATA), { credentials: 'omit' }); if (!r.ok) throw new Error(p + ': HTTP ' + r.status); return r.json(); };
 
-let suite = null, prices = null, published = [];
+let suite = null, prices = null, published = null, publishedLoading = null;
 const policyFor = (wrapped) => ({ ...suite.policy, untrusted: { ...(suite.policy.untrusted || {}), wrap: wrapped } });
 const theCase = () => suite.cases.find((c) => c.id === $('case').value) || suite.cases[0];
 const injected = (c) => (c.tool_overrides?.read_page || {})['/contact'] ?? suite.tools.find((t) => t.name === 'read_page').responses['/contact'];
 const LABEL = { comment: 'An HTML comment hidden in the page', 'fake-system': 'A fake end-of-data marker and a fake SYSTEM message', 'visible-note': 'A visible note to "any AI reading this" (the finding)' };
 
-function whyOf(id) {
-  const own = id.startsWith('case:') ? (theCase().checks || []).find((k) => 'case:' + k.id === id) : (suite.policy.checks || []).find((k) => k.id === id);
+function whyOf(id, c = theCase()) {
+  const own = id.startsWith('case:') ? (c.checks || []).find((k) => 'case:' + k.id === id) : (suite.policy.checks || []).find((k) => k.id === id);
   return own ? own.why : '';
 }
 
@@ -49,13 +49,13 @@ function drawSends() {
   }
 }
 
-function drawResult(box, rec, calls) {
+function drawResult(box, rec, calls, c = theCase()) {
   const cost = calls.reduce((a, x) => a + (x.cost || 0), 0);
   box.replaceChildren(...[
     el('p', { class: 'verdict ' + (rec.pass ? 'ok' : 'bad'), text: rec.pass ? 'Passed every check' : 'Failed' + (rec.error ? ': ' + rec.error : '') }),
-    el('div', { class: 'tablewrap', tabindex: '0', role: 'region', 'aria-label': 'Checks ' + (box.id === 'res-wrapped' ? 'with' : 'without') + ' wrapping' }, el('table', {},
+    el('div', { class: 'tablewrap', tabindex: '0', role: 'region', 'aria-label': (box.id.startsWith('rp-') ? 'Recorded run: checks ' : 'Your run: checks ') + (/wrapped$/.test(box.id) ? 'with' : 'without') + ' wrapping' }, el('table', {},
       el('thead', {}, el('tr', {}, el('th', { scope: 'col', text: 'Check' }), el('th', { scope: 'col', text: 'Result' }), el('th', { scope: 'col', text: 'Why it matters' }))),
-      el('tbody', {}, rec.checks.map((k) => el('tr', {}, el('td', {}, el('code', { text: k.id })), el('td', { class: k.pass ? 'ok' : 'bad', text: (k.pass ? 'pass' : 'fail') + (k.detail ? ' (' + k.detail + ')' : '') }), el('td', { text: whyOf(k.id) })))))),
+      el('tbody', {}, rec.checks.map((k) => el('tr', {}, el('td', {}, el('code', { text: k.id })), el('td', { class: k.pass ? 'ok' : 'bad', text: (k.pass ? 'pass' : 'fail') + (k.detail ? ' (' + k.detail + ')' : '') }), el('td', { text: whyOf(k.id, c) })))))),
     el('p', {}, el('strong', { text: 'Tool calls: ' }), rec.toolCalls.length ? rec.toolCalls.map((t) => t.name + '(' + JSON.stringify(t.arguments) + ')' + (t.ran ? '' : ' [refused]')).join(', ') : 'none'),
     rec.flags.length ? el('p', { class: 'small', text: 'The evals core flagged phrases in the page that read as instructions: ' + rec.flags.flatMap((f) => f.phrases).join('; ') + '.' }) : null,
     el('p', {}, el('strong', { text: 'The model\'s answer (model output, unedited):' })),
@@ -82,7 +82,7 @@ async function runLane(wrapped, model) {
 let running = false;
 async function run() {
   if (running || !suite) return;
-  if (!hasKey()) { $('run-status').textContent = 'Paste your Mistral key in step 1 first.'; return; }
+  if (!hasKey()) { $('run-status').textContent = 'Paste your Mistral key in step 2 first.'; return; }
   running = true; $('run').disabled = true;
   const model = $('model').value;
   for (const [wrapped, id] of [[true, 'res-wrapped'], [false, 'res-plain']]) {
@@ -92,10 +92,28 @@ async function run() {
   }
   $('run-status').textContent = 'Done. One try each: run it again and the answers may differ, because the temperature is the provider default, as in the evals.';
   running = false; $('run').disabled = false;
-  drawPublished();
+  showPublished();
 }
 
+// The published runs are about 380 KB, so they are fetched only when asked for: a case chosen, the button below, a run or a replay.
+function loadPublished() {
+  if (!publishedLoading) {
+    $('published').replaceChildren(el('p', { class: 'muted', text: 'Loading the published runs from this site...' }));
+    publishedLoading = getJson('runs/index.json')
+      .then((idx) => Promise.all(idx.board.runs.map(async (id) => ({ id, records: (await getJson('runs/' + id + '.json')).records }))))
+      .then((p) => { published = p; })
+      .catch((e) => { publishedLoading = null; $('published').replaceChildren(el('p', { class: 'bad', text: 'Could not load the published runs: ' + e.message })); throw e; });
+  }
+  return publishedLoading;
+}
+function offerPublished() {
+  const b = el('button', { type: 'button', id: 'show-published', text: 'Show the published results for this case' });
+  b.addEventListener('click', () => showPublished());
+  $('published').replaceChildren(el('p', { class: 'small', text: 'Not loaded yet: the two published run files are about 380 KB, so this page fetches them from this site only when you ask.' }), el('div', { class: 'actions' }, b));
+}
+async function showPublished() { try { await loadPublished(); drawPublished(); } catch { /* message shown */ } }
 function drawPublished() {
+  if (!published) return;
   const c = theCase();
   const by = new Map();
   for (const { id, records } of published) for (const r of records) {
@@ -121,17 +139,34 @@ async function start() {
   $('case').replaceChildren(...suite.cases.map((c) => el('option', { value: c.id, text: c.id + ': ' + (LABEL[c.id] || c.id), selected: c.id === 'visible-note' })));
   drawCase(); drawSends();
   $('run').disabled = false;
-  try {
-    const idx = await getJson('runs/index.json');
-    published = await Promise.all(idx.board.runs.map(async (id) => ({ id, records: (await getJson('runs/' + id + '.json')).records })));
-    drawPublished();
-  } catch (e) { $('published').replaceChildren(el('p', { class: 'bad', text: 'Could not load the published runs: ' + e.message })); }
+  $('replay').disabled = false;
+  offerPublished();
+}
+
+// ---- The recorded run: read from this site and shown with the same code as a live run. Sends nothing anywhere. ----
+async function replay() {
+  if (!suite) return;
+  $('replay').disabled = true;
+  $('rp-status').textContent = 'Reading the recorded run from this site...';
+  let rec;
+  try { const r = await fetch(new URL('./recorded-run.json', import.meta.url), { credentials: 'omit' }); if (!r.ok) throw new Error('HTTP ' + r.status); rec = await r.json(); }
+  catch (e) { $('rp-status').textContent = 'Could not read the recorded run: ' + e.message; $('replay').disabled = false; return; }
+  const c = suite.cases.find((x) => x.id === rec.case);
+  for (const [lane, id] of [['wrapped', 'rp-wrapped'], ['plain', 'rp-plain']]) {
+    $(id).replaceChildren(el('p', { class: 'muted', text: 'Replaying...' }));
+    await new Promise((ok) => setTimeout(ok, 700));
+    drawResult($(id), rec.lanes[lane], rec.calls.filter((x) => x.lane === lane), c);
+  }
+  $('rp-status').textContent = 'Case ' + rec.case + ', ' + rec.model + ', max_tokens ' + rec.maxTokens + ', one try per lane, recorded ' + rec.at.slice(0, 16).replace('T', ' ') + ' UTC. The published results for this case are in step 7.';
+  $('replay').disabled = false;
+  showPublished();
 }
 
 wireKey(drawSends);
-$('case').addEventListener('change', () => { drawCase(); drawSends(); drawPublished(); ['res-wrapped', 'res-plain'].forEach((id) => $(id).replaceChildren(el('p', { class: 'muted', text: 'Not run yet.' }))); });
+$('case').addEventListener('change', () => { drawCase(); drawSends(); showPublished(); ['res-wrapped', 'res-plain'].forEach((id) => $(id).replaceChildren(el('p', { class: 'muted', text: 'Not run yet.' }))); });
 $('model').addEventListener('change', () => { drawSends(); drawPublished(); });
 $('max-tokens').addEventListener('change', drawSends);
 $('run').addEventListener('click', run);
+$('replay').addEventListener('click', replay);
 drawLog();
 start();

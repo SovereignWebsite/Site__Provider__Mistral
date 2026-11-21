@@ -74,9 +74,17 @@
   <p class="lede">Ask this site a question out loud. Mistral's Voxtral turns your words into text, a Mistral chat model answers using only this site's own pages, and Voxtral reads the answer back to you. Everything runs from this page, in your browser, with your own Mistral key. Each call is shown before you send it.</p>
   <noscript><p class="warn">This demo needs JavaScript. Nothing on this page sends anything without it.</p></noscript>
 
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Hear a recorded run first (no key needed)</h2>
+    <p class="mark-run">Recorded run, model output, voxtral-mini-transcribe-3, mistral-small-2603 and voxtral-mini-tts-3, 2026-11-21 01:12 UTC</p>
+    <div class="actions"><button type="button" id="replay" class="primary">Replay</button></div>
+    <p>A question spoken into this page, transcribed, answered from this site's pages and spoken back, on Mistral's global endpoint, saved as <a href="/browser/voice/recorded-run.json">a file on this site</a> with <a href="/browser/voice/recorded-answer.mp3">the spoken answer</a>. The question itself was spoken by Voxtral, not by a person. Replaying it sends nothing anywhere.</p>
+    <div id="replay-out" aria-live="polite"></div>
+  </section>
+
   <section aria-labelledby="h-key">
-    <h2 id="h-key">1. Your Mistral key</h2>
-    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory and goes only to the Mistral endpoint you choose.</p>
     <div class="keyrow">
       <label for="key">Mistral API key (get one at console.mistral.ai)</label>
       <input id="key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
@@ -85,7 +93,12 @@
     </div>
     <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
     <p id="key-status" class="status" role="status">No key set.</p>
-    <p class="warn">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026). Say nothing confidential.</p>
+    <p class="warn">Mistral's Free mode: what you send may be used to train Mistral's models unless you switch that off, so say nothing confidential.</p>
+    <details class="keymore">
+      <summary>Where your key goes</summary>
+      <p class="small">It goes in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+      <p class="small">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026).</p>
+    </details>
     <div class="field">
       <label for="endpoint">Where the calls go</label>
       <select id="endpoint">
@@ -96,7 +109,7 @@
   </section>
 
   <section aria-labelledby="h-rec">
-    <h2 id="h-rec">2. Ask out loud, or type</h2>
+    <h2 id="h-rec">3. Ask out loud, or type</h2>
     <p class="privacy"><strong>Your microphone, plainly.</strong> Nothing is recorded until you press Record; then your browser asks you for the microphone. Recording stops when you press Stop, or after 30 seconds, and the microphone is released at once. The recording stays in this tab: you can play it back, and it is sent only to Mistral, only when you press "Send the recording". Nothing is kept after you close the tab.</p>
     <div class="actions">
       <button type="button" id="rec-start" class="primary">Record</button>
@@ -127,7 +140,7 @@
   </section>
 
   <section aria-labelledby="h-ask">
-    <h2 id="h-ask">3. The answer, from this site's pages</h2>
+    <h2 id="h-ask">4. The answer, from this site's pages</h2>
     <p>The model gets two tools that read this site and nothing else: <code>search_site</code> and <code>read_page</code>. They run here, in your browser, over <a href="/browser/voice/site-index.json">a static index of this site's pages</a>, made when the site was built. The page text goes back to the model marked as data, not instructions.</p>
     <div class="field">
       <label for="chat-model">Chat model</label>
@@ -151,7 +164,7 @@
   </section>
 
   <section aria-labelledby="h-speak">
-    <h2 id="h-speak">4. Hear it</h2>
+    <h2 id="h-speak">5. Hear it</h2>
     <p>Speech comes from Mistral too: <code>POST /v1/audio/speech</code> with <code>voxtral-mini-tts-3</code>. The answer's text goes to Mistral and nowhere else; the audio comes back in the response and plays here.</p>
     <div class="field">
       <label for="voice">Voice</label>
