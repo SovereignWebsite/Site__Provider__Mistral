@@ -1,0 +1,61 @@
+/* Shared by /browser/ask/ and /browser/build/: forms, the key panel, "what this call sends", logs and tables.
+   browser.a@SovereignWebsite.dinis, 21 November 2026. No inline styles anywhere (strict CSP). Based on /team/team.css. */
+:root{--ok:#1b5233;--okbg:#e3f1e7;--bad:#a3261a;--badbg:#f8e3e1;--warnbg:#fff4dc;--warnfg:#5c4200;--focus2:#5a4a9c}
+@media (prefers-color-scheme:dark){:root{--ok:#b6e6c6;--okbg:#173323;--bad:#ff8f80;--badbg:#3a1a17;--warnbg:#2e2614;--warnfg:#f3dca0;--focus2:#b6a8f0}}
+main{max-width:66rem;margin:0 auto;padding:1rem 1rem 3rem;overflow-wrap:anywhere}
+.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:1rem 0 0}
+h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15;margin:.3rem 0 1rem}
+h2{font-size:1.3rem;margin:2.4rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+.lede{max-width:46rem}
+.muted{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.warn{background:var(--warnbg);color:var(--warnfg);padding:.6rem .8rem;border-radius:6px;font-size:.92rem}
+.warn a,.warn .src{color:inherit}
+.label{font-weight:600;margin:.6rem 0 .3rem}
+button,select,input,textarea{font:inherit;color:inherit}
+button{min-height:2.4rem;padding:.3rem .9rem;border:1px solid var(--accent);background:var(--bg);color:var(--accent);border-radius:6px;cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-fg)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus2);outline-offset:2px}
+textarea,input[type=password],input[type=text],select{background:var(--bg);border:1px solid var(--muted);border-radius:6px;padding:.45rem .55rem;max-width:100%}
+textarea{width:100%;display:block;margin:.3rem 0}
+label{font-weight:600}
+.mono{font-family:var(--mono)}
+.actions,.examples,.keyrow,.modelrow{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.6rem 0}
+.keyrow input{flex:1 1 14rem;min-width:0}
+.modelrow label{flex-basis:100%}
+.modelrow select{flex:1 1 16rem;min-width:0}
+.modelrow p{flex-basis:100%;margin:0}
+.chip{font-size:.9rem;min-height:2.2rem;padding:.2rem .75rem;border-radius:999px}
+.status{min-height:1.5em;color:var(--muted)}
+.keybox{border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;background:var(--panel)}
+.keybox p{margin:.4rem 0}
+.keystate{font-weight:600}
+.keystate.set{color:var(--ok)}
+.endpoint{border:1px solid var(--line);border-radius:8px;margin:.8rem 0;padding:.5rem 1rem}
+.endpoint legend{font-weight:600;padding:0 .3rem}
+.radio{display:flex;gap:.5rem;align-items:flex-start;margin:.35rem 0}
+.radio input{margin-top:.35rem;width:1.1rem;height:1.1rem;flex:none}
+.radio label{font-weight:400}
+.sends{border:1px solid var(--line);border-radius:8px;padding:.6rem .9rem}
+.sendlist{display:grid;grid-template-columns:minmax(6rem,max-content) 1fr;gap:.25rem .8rem;margin:.4rem 0}
+.sendlist dt{font-weight:600}
+.sendlist dd{margin:0}
+@media (max-width:30rem){.sendlist{grid-template-columns:1fr}.sendlist dd{margin-bottom:.4rem}}
+.sendbody,.result pre{white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.6rem .7rem;border-radius:6px;font-size:.78rem;line-height:1.45;max-height:22rem;overflow:auto}
+.tablewrap{max-width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.log{font-size:.88rem;padding:.4rem .6rem .4rem 2rem;max-height:30rem;overflow:auto;border:1px solid var(--line);border-radius:6px;margin:0}
+.log li{margin:.25rem 0}
+.log .who{font-weight:600}
+.log .tool{font-family:var(--mono);font-weight:700;color:var(--accent)}
+.log .bad,.bad{color:var(--bad)}
+.log .ok,.ok{color:var(--ok)}
+.msgtext{white-space:pre-wrap}
+.runlabel{font-weight:600;color:var(--accent);min-height:1.5em}
+.totals{font-variant-numeric:tabular-nums;color:var(--muted);min-height:1.2em}
+ul.plain{padding-left:1.2rem}ul.plain li{margin:.45rem 0}

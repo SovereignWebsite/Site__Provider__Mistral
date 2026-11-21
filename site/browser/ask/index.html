@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src 'none'; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Ask this site</title>
+<meta name="description" content="A chat on Mistral, called from your browser with your own key, that answers only from this site&#x27;s own pages through three tools, streams its answer, links the pages it used, and says so when the site does not say.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/ask/">
+<meta property="og:title" content="Ask this site">
+<meta property="og:description" content="A chat on Mistral, called from your browser with your own key, that answers only from this site&#x27;s own pages through three tools, streams its answer, links the pages it used, and says so when the site does not say.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ask this site">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ask this site">
+<meta name="twitter:description" content="A chat on Mistral, called from your browser with your own key, that answers only from this site&#x27;s own pages through three tools, streams its answer, links the pages it used, and says so when the site does not say.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/ask/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/browser/ask/ask.css">
+<script src="/demos/facts.js" defer></script>
+<script src="/browser/ask/chat-core.js" defer></script>
+<script src="/browser/ask/panel.js" defer></script>
+<script type="module" src="/browser/ask/ask.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration, for participants of the Mistral Vibe Hackathon in London. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark">In your browser, on Mistral</p>
+  <h1>Ask this site</h1>
+  <p class="lede">A chat that answers only from this site's own pages. A Mistral model you choose, called from this page with your own key, has three tools: list this site's pages, search them, and read one. The tools run here, in your browser, and read the pages from this site. The answer streams in, links the pages it used, and says plainly when the site does not say.</p>
+  <noscript><p class="warn">This page needs JavaScript to ask or replay.</p></noscript>
+
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Replay recorded examples (no key needed)</h2>
+    <p>Three questions we asked through Mistral's API, saved as a file on this site: two the site answers, one it does not. Replaying them sends nothing anywhere.</p>
+    <div class="actions">
+      <button type="button" id="replay" class="primary">Replay the recorded examples</button>
+      <label for="speed">Speed</label>
+      <select id="speed">
+        <option value="1">real time</option>
+        <option value="3" selected>3 times faster</option>
+        <option value="0">all at once</option>
+      </select>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <div id="key-panel"></div>
+  </section>
+
+  <section aria-labelledby="h-ask">
+    <h2 id="h-ask">3. Ask</h2>
+    <p class="label" id="examples-label">Try one of these, or ask your own</p>
+    <div class="examples" id="examples" role="group" aria-labelledby="examples-label"></div>
+    <label for="question">Your question about this site</label>
+    <textarea id="question" rows="3"></textarea>
+    <div class="actions">
+      <button type="button" id="ask" class="primary">Ask</button>
+      <button type="button" id="stop" disabled>Stop</button>
+      <button type="button" id="new">New conversation</button>
+      <button type="button" id="export" disabled>Download this conversation (JSON)</button>
+    </div>
+    <p id="ask-status" class="status" role="status" aria-live="polite"></p>
+    <div id="chat" class="chat"></div>
+  </section>
+
+  <section aria-labelledby="h-sends">
+    <h2 id="h-sends">4. What this call sends, and to whom</h2>
+    <p>Built before anything is sent, and updated before each call. The pages the tools read are fetched from this site by your browser; only their text goes on to Mistral, inside the next call.</p>
+    <div id="sends" class="sends"></div>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Calls made from this tab</h2>
+    <div class="tablewrap"><table>
+      <caption class="sr">Calls to Mistral from this tab</caption>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col" class="num">Time taken (ms)</th><th scope="col" class="num">Tokens</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table></div>
+    <p class="small">Kept in memory in this tab only, and gone when you reload.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what it does not claim</h2>
+    <ul class="plain">
+      <li>The tools are this site's own <a href="/team/sitetools.js">/team/sitetools.js</a>, written for <a href="/team/">the team inside the site</a>: list_pages follows the site's links from the home page (up to 40 pages), read_page returns a page's visible text, and search_site finds lines that contain your words. They read only from this site's own address.</li>
+      <li>Every tool result goes back to the model inside <code>&lt;untrusted-data&gt;</code> markers, with the instruction that it is material, never instruction, so a page cannot tell the model what to do. Answers are shown as text; a link in an answer becomes clickable only if it points at a page of this site.</li>
+      <li>The model is told to answer only from the pages and to say "This site does not say." otherwise. It can still be wrong: follow the links and check.</li>
+      <li>The streamed chat and the tool loop are ported from <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/975e750db7b9810dd9e167f9b2faca905bcba95d/assets/chat/chat-core.js">PrompTugal News's chat-core.js</a> (Apache-2.0), pointed at Mistral: <a href="chat-core.js">chat-core.js</a>.</li>
+      <li>This page talks to two places only: this site (to read its pages and the recorded examples) and the Mistral endpoint you choose, with your key, when you press Ask or ask for the model list. Its content security policy enforces that.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by browser.a@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026. Code Apache-2.0, text CC BY 4.0. Static files only: no cookies, no tracking, no storage, no server of ours. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

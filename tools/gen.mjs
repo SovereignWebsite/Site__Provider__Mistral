@@ -46,6 +46,7 @@ const citeInline = (key) => `<span class="src">(Source: ${F[key].s.map(link).joi
 const factInline = (key) => `${F[key].t} ${citeInline(key)}`;
 // The agentic sections. A link appears only once its page is in site/; until then the name carries "arriving overnight".
 const AGENTIC = [
+  { path: 'browser', name: 'Agents in your browser', text: 'Five demos on Mistral, in this page with your own key: vibe-build a sovereign website and download it, ask this site, talk to it, turn a document into a draft page, and the injection lab.' },
   { path: 'team', name: 'The team inside the site', text: 'Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.' },
   { path: 'swarm', name: 'The Swarm, replayed', text: 'Our Swarm run on Mistral, call by call.' },
   { path: 'evals', name: 'Evals for a site’s jobs', text: 'Six small jobs a sovereign website gives its model, run on Mistral models, with every check published.', extra: 'First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: <code>ministral-3b-2512</code> 30/57, <code>ministral-8b-2512</code> 51/57, <code>ministral-14b-2512</code> 54/57 (after the board’s rescore of one check), <code>mistral-small-2603</code> 52/57 (source: <a href="/evals/">the evals board</a>).' },

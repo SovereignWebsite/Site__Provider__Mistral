@@ -1,0 +1,16 @@
+/* Ask this site: the conversation. browser.a@, 21 November 2026. */
+.chat{display:grid;gap:1rem;margin-top:1rem}
+.turn{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:.7rem 1rem;background:var(--bg)}
+.turn.refused{border-left-color:var(--muted)}
+.turn .q{font-weight:600;margin:.2rem 0 .4rem}
+.turn .who{color:var(--muted)}
+.stepbox{font-size:.86rem;margin:.4rem 0}
+.stepbox summary{cursor:pointer;font-weight:600}
+.steps{margin:.3rem 0;padding-left:1.6rem}
+.steps li{margin:.2rem 0}
+.steps pre{white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.5rem .6rem;border-radius:6px;font-size:.76rem;max-height:16rem;overflow:auto}
+.steps .tool{font-family:var(--mono);font-weight:700;color:var(--accent)}
+.answer{font-size:1rem;white-space:normal}
+.answer p{margin:.5rem 0}
+.cites ul{margin:.2rem 0;padding-left:1.2rem}
+.cites a{font-family:var(--mono);font-size:.9rem}

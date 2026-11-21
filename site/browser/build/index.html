@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- style-src data: on this page only: the sandbox="" preview frame (opaque origin) inherits this policy, and data: stylesheets were the only way to style it without allow-same-origin. Accepted by security.b, review 008 part 2, 21 November 2026. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' data:; img-src 'self' data: blob:; frame-src 'self'; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Vibe-build a sovereign website</title>
+<meta name="description" content="Write a brief; an agent on Mistral, called from your browser with your own key, builds a small static website with four tools until the site&#x27;s own rules pass. Preview it safely, then download it as a zip.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/build/">
+<meta property="og:title" content="Vibe-build a sovereign website">
+<meta property="og:description" content="Write a brief; an agent on Mistral, called from your browser with your own key, builds a small static website with four tools until the site&#x27;s own rules pass. Preview it safely, then download it as a zip.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vibe-build a sovereign website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vibe-build a sovereign website">
+<meta name="twitter:description" content="Write a brief; an agent on Mistral, called from your browser with your own key, builds a small static website with four tools until the site&#x27;s own rules pass. Preview it safely, then download it as a zip.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/build/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/browser/build/build.css">
+<script src="/demos/facts.js" defer></script>
+<script src="/browser/ask/chat-core.js" defer></script>
+<script src="/browser/ask/panel.js" defer></script>
+<script src="/browser/build/engine.js" defer></script>
+<script src="/browser/build/build.js" defer></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration, for participants of the Mistral Vibe Hackathon in London. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark">In your browser, on Mistral</p>
+  <h1>Vibe-build a sovereign website</h1>
+  <p class="lede">Write a brief. An agent on a Mistral model you choose, called from this page with your own key, writes a small static website into a folder that lives only in this tab, using four tools: write a file, read a file, list the files, and check the site against this site's own rules. It keeps going until the rules pass or it reaches the step limit. You watch every tool call, see the result in a preview that cannot run script, and leave with a zip of your own files.</p>
+  <noscript><p class="warn">This page needs JavaScript to build or replay a site.</p></noscript>
+
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Watch a recorded run first (no key needed)</h2>
+    <p>A run we made through Mistral's API, saved as a file on this site. Replaying it sends nothing anywhere: the page reads the file and plays the same tool calls into a fresh folder.</p>
+    <p class="small">Read what it wrote. In this run the brief gave no facts about the shop, yet the model still wrote "We offer a wide selection of cheeses from around the world". The rules cannot catch a claim like that; only you can. That is why the zip's note asks you to check every sentence.</p>
+    <div class="actions">
+      <button type="button" id="replay" class="primary">Replay the recorded run</button>
+      <label for="speed">Speed</label>
+      <select id="speed">
+        <option value="1">real time</option>
+        <option value="4" selected>4 times faster</option>
+        <option value="0">all at once</option>
+      </select>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <div id="key-panel"></div>
+  </section>
+
+  <section aria-labelledby="h-brief">
+    <h2 id="h-brief">3. Your brief</h2>
+    <p class="label" id="presets-label">Start from one of these, or write your own</p>
+    <div class="examples" id="presets" role="group" aria-labelledby="presets-label"></div>
+    <label for="brief">Brief</label>
+    <textarea id="brief" rows="4"></textarea>
+    <div class="actions">
+      <label for="steps">Step limit (model calls)</label>
+      <select id="steps">
+        <option value="6">6</option>
+        <option value="10" selected>10</option>
+        <option value="16">16</option>
+      </select>
+    </div>
+    <p class="small">Each call sends the whole conversation so far, so a run of 10 calls on Codestral is usually a few US cents. Tokens, and a cost estimate where we have read the price, are shown as it runs.</p>
+    <div class="actions">
+      <button type="button" id="run" class="primary">Run live on my key</button>
+      <button type="button" id="stop" disabled>Stop</button>
+    </div>
+    <p id="run-status" class="status" role="status" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-sends">
+    <h2 id="h-sends">4. What this call sends, and to whom</h2>
+    <p>Built from the brief, the model and the endpoint above before anything is sent, and updated before each call of a live run.</p>
+    <div id="sends" class="sends"></div>
+  </section>
+
+  <section aria-labelledby="h-work">
+    <h2 id="h-work">5. The agent at work</h2>
+    <p id="run-label" class="runlabel"></p>
+    <p id="totals" class="totals"></p>
+    <div class="workgrid">
+      <div>
+        <h3>Every step</h3>
+        <ol id="steps-log" class="log" aria-live="polite" tabindex="0" aria-label="Steps of the run"></ol>
+      </div>
+      <div>
+        <h3>The files</h3>
+        <ul id="tree" class="tree"></ul>
+        <h3>The site's rules (check_site)</h3>
+        <div id="checks" class="checks"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-preview">
+    <h2 id="h-preview">6. Preview</h2>
+    <div id="pages" class="examples" role="group" aria-label="Pages of the built site"></div>
+    <iframe id="preview" class="preview" sandbox="" title="Preview of the built site" referrerpolicy="no-referrer"></iframe>
+    <p id="preview-note" class="small" role="status"></p>
+  </section>
+
+  <section aria-labelledby="h-take">
+    <h2 id="h-take">7. Take it with you</h2>
+    <p>The zip is made in this browser by a few lines of code on this page (store-only, no library), from the files above, plus a note of the brief and the model. Nothing is uploaded. The files are yours: put them on any static host.</p>
+    <div class="actions">
+      <button type="button" id="download" class="primary" disabled>Download my site as a zip</button>
+      <button type="button" id="export" disabled>Download this run (JSON)</button>
+    </div>
+    <p id="download-status" class="small" role="status" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Calls made from this tab</h2>
+    <div class="tablewrap"><table>
+      <caption class="sr">Calls to Mistral from this tab</caption>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col" class="num">Time taken (ms)</th><th scope="col" class="num">Tokens</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table></div>
+    <p class="small">Kept in memory in this tab only, and gone when you reload.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what it does not claim</h2>
+    <ul class="plain">
+      <li>The rules check_site applies are this site's own house rules, written again in JavaScript in <a href="engine.js">engine.js</a>: an index page, a title and a language on every page, no em dashes, no inline script or style (and here no JavaScript at all), nothing loaded from another site, no key-shaped strings, and no broken links inside the site. Passing them does not make a site good, true or accessible; it makes it clean. Read what the model wrote.</li>
+      <li>The model is told never to invent facts, and to leave a [placeholder] where the owner must add one. Small and large models still make mistakes: check every sentence before you publish.</li>
+      <li>The preview frame has <code>sandbox=""</code>: no scripts, and an origin of its own, so it cannot read this page or your key. Before the model's HTML reaches it, this page removes every script, event handler, <code>meta http-equiv</code>, <code>base</code>, frame and <code>javascript:</code> link, and every reference that is not a file in your folder; the frame then carries its own content security policy (<code>default-src 'none'</code>), on top of this page's.</li>
+      <li>Models offered: Codestral by default. <code>mistral-vibe-cli-with-tools</code> is in Mistral's model list, where it is named as an alias of Mistral Medium; it accepted a chat completion with tools in our test through Mistral's API on 21 November 2026. No Devstral model was in Mistral's model list when we read it on 21 November 2026, so none is offered. Press "Ask Mistral which models this key can use" to see the models your key has.</li>
+      <li>Prices for the cost estimate: Codestral 0.3 and 0.9 US dollars per million tokens, input then output, from its <a href="https://docs.mistral.ai/models/model-cards/codestral-25-08">model card</a>, as read on 21 November 2026; the Ministral and Small prices as on <a href="/team/">the team page</a>. No price is shown for a model whose card we have not read. The EU endpoint is 1.1 times list price. Our estimate is not Mistral's bill.</li>
+      <li>The streamed chat and the tool loop are ported from <a href="https://github.com/PrompTugal/PrompTugal__News__Website/blob/975e750db7b9810dd9e167f9b2faca905bcba95d/assets/chat/chat-core.js">PrompTugal News's chat-core.js</a> (Apache-2.0), into <a href="/browser/ask/chat-core.js">/browser/ask/chat-core.js</a>, shared with <a href="/browser/ask/">Ask this site</a>.</li>
+      <li>This page talks to two places only: this site (to load its own files and the recorded run) and the Mistral endpoint you choose, with your key, when you press Run or ask for the model list. Its content security policy enforces that.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by browser.a@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026. Code Apache-2.0, text CC BY 4.0. Static files only: no cookies, no tracking, no storage, no server of ours. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,759 @@
+{
+ "kind": "browser-ask-run",
+ "recorded": "2026-11-21 00:59 UTC",
+ "note": "Recorded example, model output.",
+ "events": [
+  {
+   "t": 0,
+   "type": "question",
+   "text": "Where does the EU endpoint run, and what does it cost compared with the global one?",
+   "label": ""
+  },
+  {
+   "t": 1,
+   "type": "request",
+   "hop": 0,
+   "host": "api.mistral.ai",
+   "messages": 2,
+   "bytes": 2408
+  },
+  {
+   "t": 969,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 561,
+    "total_tokens": 586,
+    "completion_tokens": 25,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 0,
+   "tools": 2
+  },
+  {
+   "t": 969,
+   "type": "call",
+   "id": "srIp4zN1T",
+   "name": "search_site",
+   "args": {
+    "query": "EU endpoint run"
+   }
+  },
+  {
+   "t": 976,
+   "type": "fetch",
+   "path": "/",
+   "status": 200
+  },
+  {
+   "t": 979,
+   "type": "fetch",
+   "path": "/start/",
+   "status": 200
+  },
+  {
+   "t": 981,
+   "type": "fetch",
+   "path": "/agents/",
+   "status": 200
+  },
+  {
+   "t": 984,
+   "type": "fetch",
+   "path": "/admin/",
+   "status": 200
+  },
+  {
+   "t": 988,
+   "type": "fetch",
+   "path": "/designs/1.html",
+   "status": 200
+  },
+  {
+   "t": 990,
+   "type": "fetch",
+   "path": "/designs/2.html",
+   "status": 200
+  },
+  {
+   "t": 992,
+   "type": "fetch",
+   "path": "/designs/3.html",
+   "status": 200
+  },
+  {
+   "t": 995,
+   "type": "fetch",
+   "path": "/designs/4.html",
+   "status": 200
+  },
+  {
+   "t": 997,
+   "type": "fetch",
+   "path": "/designs/5.html",
+   "status": 200
+  },
+  {
+   "t": 1001,
+   "type": "fetch",
+   "path": "/designs/",
+   "status": 200
+  },
+  {
+   "t": 1003,
+   "type": "fetch",
+   "path": "/demos/side-by-side.html",
+   "status": 200
+  },
+  {
+   "t": 1005,
+   "type": "fetch",
+   "path": "/demos/your-key.html",
+   "status": 200
+  },
+  {
+   "t": 1007,
+   "type": "fetch",
+   "path": "/demos/on-device.html",
+   "status": 200
+  },
+  {
+   "t": 1010,
+   "type": "fetch",
+   "path": "/evals/",
+   "status": 200
+  },
+  {
+   "t": 1013,
+   "type": "fetch",
+   "path": "/team/",
+   "status": 200
+  },
+  {
+   "t": 1018,
+   "type": "fetch",
+   "path": "/swarm/",
+   "status": 200
+  },
+  {
+   "t": 1021,
+   "type": "fetch",
+   "path": "/sources/",
+   "status": 200
+  },
+  {
+   "t": 1023,
+   "type": "fetch",
+   "path": "/questions/",
+   "status": 200
+  },
+  {
+   "t": 1025,
+   "type": "fetch",
+   "path": "/demos/",
+   "status": 200
+  },
+  {
+   "t": 1027,
+   "type": "fetch",
+   "path": "/evals/run/",
+   "status": 200
+  },
+  {
+   "t": 1032,
+   "type": "fetch",
+   "path": "/evals/core/v0.1/README.md",
+   "status": 200
+  },
+  {
+   "t": 1034,
+   "type": "fetch",
+   "path": "/team/core/NOTICE.md",
+   "status": 200
+  },
+  {
+   "t": 1036,
+   "type": "fetch",
+   "path": "/swarm/evals.html",
+   "status": 200
+  },
+  {
+   "t": 1039,
+   "type": "fetch",
+   "path": "/swarm/run.html",
+   "status": 200
+  },
+  {
+   "t": 1044,
+   "type": "fetch",
+   "path": "/swarm/HANDOVER.md",
+   "status": 200
+  },
+  {
+   "t": 1049,
+   "type": "result",
+   "id": "srIp4zN1T",
+   "name": "search_site",
+   "args": {
+    "query": "EU endpoint run"
+   },
+   "result": "/:  Sovereign means you can choose, and change, who runs your model. The ledger asks five questions of any AI you depend on. \n/:  Open the demos. Run the same brief on Mistral beside another model.\n/:  Ollama lists ministral-3 with the tags 3b , 8b and 14b .⁠ 1 Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions .⁠ 2 Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes,\n/:  Put it in your terminal in place of your-key-here , and run the call. Never paste a key into a shared document or a commit.\n/:  A sovereignty check. Who holds the keys, where it runs, which licence, how long data is kept, can you leave. See the ledger .\n/:  Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.\n/:  Our Swarm run on Mistral, call by call.\n/:  Six small jobs a sovereign website gives its model, run on Mistral models, with every check published.\n/:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/start/:  Open the site folder on dev and pick the page to change. The pages are written by tools/gen.mjs from tools/facts.mjs and tools/designs.mjs , so change those and run node tools/gen.mjs .\n/admin/:  The workflow runs : each publish of the site, with its checks (links, em dashes, leak scan, HTML validity, accessibility, link previews).\n/admin/:  Synthetic user runs\n/admin/:  Runs of synthetic users against this site, and what they found, are listed here as the site’s agents record them. None yet.\n/designs/1.html:  Sovereign means you can choose, and change, who runs your model. The ledger asks five questions of any AI you depend on. \n/designs/1.html:  Hosted in the EEA by default⁠ 3 ; processed in the EU only on the EU endpoint.⁠ 4 \n/designs/1.html:  The design is the one already used for hosts: one standard interface, several providers behind it. Mistral offers an OpenAI-compatible endpoint at https://api.mistral.ai/openai/v1 , in public preview; its standard /v1/c\n/designs/1.html:  An estimate, not measured. The article estimates that the 3B and 8B, compressed to about 2 to 5GB, should run on a 16GB Raspberry Pi 5, the 8B slowly; on a tablet, the 3B is the realistic one.⁠ 8 Mistral’s official comp\n/designs/1.html:  Mistral’s API, for the team of agents inside the site. By default, data is hosted in the EEA.⁠ 10 Hosting is not processing: Mistral does not commit to an inference location on the global endpoint, api.mistral.ai . Proc\n/designs/1.html:  Already run, without saying so\n/designs/1.html:  Nothing has been agreed with Mistral. The article proposes a conversation: a Mistral option on every site, in the team inside and in the build page, where the same brief can run on Mistral beside other models as an open",
+   "error": null
+  },
+  {
+   "t": 1049,
+   "type": "call",
+   "id": "yCjnfPN3p",
+   "name": "search_site",
+   "args": {
+    "query": "cost EU endpoint"
+   }
+  },
+  {
+   "t": 1052,
+   "type": "result",
+   "id": "yCjnfPN3p",
+   "name": "search_site",
+   "args": {
+    "query": "cost EU endpoint"
+   },
+   "result": "/:  Ollama lists ministral-3 with the tags 3b , 8b and 14b .⁠ 1 Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions .⁠ 2 Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes,\n/:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/designs/1.html:  Hosted in the EEA by default⁠ 3 ; processed in the EU only on the EU endpoint.⁠ 4 \n/designs/1.html:  The design is the one already used for hosts: one standard interface, several providers behind it. Mistral offers an OpenAI-compatible endpoint at https://api.mistral.ai/openai/v1 , in public preview; its standard /v1/c\n/designs/1.html:  Mistral’s API, for the team of agents inside the site. By default, data is hosted in the EEA.⁠ 10 Hosting is not processing: Mistral does not commit to an inference location on the global endpoint, api.mistral.ai . Proc\n/designs/1.html:  What it costs, and what it can do\n/designs/1.html:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/designs/2.html:  No one else. For example Ministral 3 run by Ollama. Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions .⁠ 2 \n/designs/2.html:  Your brief and your own API key, to Mistral’s API: for processing in the EU, to its EU endpoint.\n/designs/2.html:  By default, data is hosted in the EEA.⁠ 7 Hosting is not processing: Mistral does not commit to an inference location on the global endpoint, api.mistral.ai . Processing in the EU needs the EU endpoint, api.eu.mistral.a\n/designs/2.html:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/designs/3.html:  # Mistral's global endpoint: Mistral does not\n/designs/3.html:  Recorded by this site’s side-by-side demo at 23:06 UTC on 20 November 2026, with this brief, this model and this endpoint. The answer is shortened.\n/designs/3.html:  Cost\n/designs/3.html: # endpoint on localhost:11434.\n/designs/3.html:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/designs/4.html:  Mistral, in the EU Mistral’s API, your key You hold your API key; Mistral runs the model. Hosted in the EEA by default⁠ 4 ; processed in the EU only on the EU endpoint, at 1.1 times the price.⁠ 5 Some features may use s\n/designs/4.html:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal\n/designs/5.html:  Ollama lists ministral-3 with the tags 3b , 8b and 14b .⁠ 1 Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions .⁠ 2 Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes,\n/designs/5.html:  First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-smal",
+   "error": null
+  },
+  {
+   "t": 1053,
+   "type": "request",
+   "hop": 1,
+   "host": "api.mistral.ai",
+   "messages": 5,
+   "bytes": 9515
+  },
+  {
+   "t": 1649,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 2844,
+    "total_tokens": 2859,
+    "completion_tokens": 15,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 1,
+   "tools": 1
+  },
+  {
+   "t": 1649,
+   "type": "call",
+   "id": "lPfvjedUB",
+   "name": "read_page",
+   "args": {
+    "path": "/designs/4.html"
+   }
+  },
+  {
+   "t": 1649,
+   "type": "result",
+   "id": "lPfvjedUB",
+   "name": "read_page",
+   "args": {
+    "path": "/designs/4.html"
+   },
+   "result": "Title: Design 4, The ledger: Mistral, a European brain\nLanguage: en-GB\nPath: /designs/4.html\n\nThe ledger\n Does sovereignty matter to you? Five questions\n Sovereign means you can choose, and change, who runs your model. Answer for the AI you use today.\n Your set-up\n Who holds the keys? Choose I do A provider does Not sure \n Where does it run? Choose On my own device In the EU Outside the EU Not sure \n Which licence? Choose Apache 2.0 or as open Restricted or closed Not sure \n How long is data kept? Choose Not kept, or by me only A stated period Not stated Not sure \n Can you leave? Choose Yes: change the address Only with real work No Not sure \n Your tally\n Answer the five questions and your tally appears here. \n Worked out in this page, in your browser. Nothing you choose is sent anywhere or stored.\n Not sure of an answer? The worked example below shows where to look.\n The worked example: Mistral’s three levels\n Every cell sourced, as read on 20 November 2026.\n Five questions, answered for Mistral on the device, in the EU and through any provider \n Set-up Who holds the keys? Where does it run? Which licence? How long is data kept? Can you leave? \n On the device Ministral 3, run locally You. A local model needs no API key. On your own hardware. Whether a Pi or a tablet is enough is an estimate, not measured.⁠ 1 Apache 2.0.⁠ 2 On your disk, for as long as you keep it. Yes: the same OpenAI-style call as the others.⁠ 3 \n Mistral, in the EU Mistral’s API, your key You hold your API key; Mistral runs the model. Hosted in the EEA by default⁠ 4 ; processed in the EU only on the EU endpoint, at 1.1 times the price.⁠ 5 Some features may use subprocessors outside the EU.⁠ 6 Apache 2.0 for Ministral 3 and Mistral Small 4; Mistral Large 4 has a modified MIT licence whose condition Mistral’s pages describe two ways.⁠ 7 30 rolling days for abuse monitoring, unless zero data retention is on (pay-as-you-go, stateless calls, on request); Agents API data until the account ends.⁠ 8 Yes: an OpenAI-compatible endpoint (in public preview), like local servers and OpenRouter.⁠ 9 \n Any provider OpenRouter, your key You hold your OpenRouter key; the provider runs the model.⁠ 10 Wherever that provider runs. Read its terms. Depends on the model you pick. Set by OpenRouter’s and the provider’s terms; not read here for every provider. Yes: change the address and the model name. \n Sources, as read on 20 November 2026\n A European brain for a sovereign website (Dinis Cruz, SGit Newsroom) \n Mistral AI, Mistral 3 \n Ollama docs, OpenAI compatibility \n Mistral help centre, Where do you store my data \n Mistral docs, Regional inference \n Mistral help centre, Where do you store my data \n Mistral docs, Ministral 3 8B · Mistral AI, Mistral Large 4 · Mistral help centre, Licences of the open models \n Mistral AI, Privacy policy · Mistral help centre, Zero data retention · Mistral docs, Zero data retention \n Mistral docs, Chat completion · Ollama docs, OpenAI compatibility · OpenRouter, Quickstart \n OpenRouter, Quickstart \n Worth knowing before you answer\n Mistral’s inference page says “Data sent through our API isn’t used for model training”, but its help centre says that in Free mode it may use API inputs and outputs for training unless you opt out (a toggle in the Admin panel, under Privacy), and that Labs and Public Preview models may be used for training whatever the plan.⁠ 11 \n Mistral says it “complies with both SOC 2 Type II and ISO 27001/27701 frameworks”.⁠ 12 \n The idea of a Mistral default for sovereign websites is a proposal from A European brain for a sovereign website . Nothing has been agreed with Mistral. \n Sources, as read on 20 November 2026\n Mistral AI, Cloud inference · Mistral help centre, Do you use my data to train · Mistral help centre, Opting out of training \n Mistral help centre, SOC 2 and ISO 27001 \n Test a row: run the same brief on two models All the demos \n Agentic, live on Mistral\n The team inside the site \n Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.\n The Swarm, replayed \n Our Swarm run on Mistral, call by call.\n Evals for a site’s jobs \n Six small jobs a sovereign website gives its model, run on Mistral models, with every check published.\n First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-small-2603 52/57 (source: the evals board ).\n\nLinks:\nSkip to content -> #main\nStart here -> /start/\nUse with your AI -> /agents/\nHow this site was made -> /admin/\nSovereign Website -> https://sovereignwebsite.ai/\nPrinciples -> https://sovereignwebsite.org/\nHosted -> https://sovereignwebsite.site/\nHub -> https://hub.sovereignweb.site/\nAgents -> https://agents.sovereignweb.site/\nVault -> https://vault.sovereignwebsite.site/\nAgentiCCells -> https://agenticcells.ai/\nRiskMandate -> https://riskmandate.ai/\nNewsroom -> https://newsroom.sgit.ai/\nMistral, a European brain -> /\n1 The European brain -> /designs/1.html\n2 The map -> /designs/2.html\n3 The console -> /designs/3.html\n4 The ledger -> /designs/4.html\n5 The hackathon -> /designs/5.html\nSee all five -> /designs/\nStart here -> /start/\nUse with your AI -> /agents/\nStart here -> /start/\nUse with your AI -> /agents/\n1 -> #fn-1\n2 -> #fn-2\n3 -> #fn-3\n4 -> #fn-4\n5 -> #fn-5\n6 -> #fn-6",
+   "error": null
+  },
+  {
+   "t": 1650,
+   "type": "request",
+   "hop": 2,
+   "host": "api.mistral.ai",
+   "messages": 7,
+   "bytes": 15356
+  },
+  {
+   "t": 2106,
+   "type": "delta",
+   "text": "The"
+  },
+  {
+   "t": 2109,
+   "type": "delta",
+   "text": " EU endpoint runs in"
+  },
+  {
+   "t": 2124,
+   "type": "delta",
+   "text": " the EU only."
+  },
+  {
+   "t": 2142,
+   "type": "delta",
+   "text": " It"
+  },
+  {
+   "t": 2154,
+   "type": "delta",
+   "text": " costs 1."
+  },
+  {
+   "t": 2168,
+   "type": "delta",
+   "text": "1 times the global"
+  },
+  {
+   "t": 2184,
+   "type": "delta",
+   "text": " endpoint price.\n\n"
+  },
+  {
+   "t": 2197,
+   "type": "delta",
+   "text": "Sources"
+  },
+  {
+   "t": 2215,
+   "type": "delta",
+   "text": ":\n"
+  },
+  {
+   "t": 2224,
+   "type": "delta",
+   "text": "["
+  },
+  {
+   "t": 2243,
+   "type": "delta",
+   "text": "/"
+  },
+  {
+   "t": 2255,
+   "type": "delta",
+   "text": "designs/4"
+  },
+  {
+   "t": 2268,
+   "type": "delta",
+   "text": ".html](/"
+  },
+  {
+   "t": 2282,
+   "type": "delta",
+   "text": "designs/4"
+  },
+  {
+   "t": 2312,
+   "type": "delta",
+   "text": ".html)"
+  },
+  {
+   "t": 2316,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 4399,
+    "total_tokens": 4437,
+    "completion_tokens": 38,
+    "prompt_tokens_details": {
+     "cached_tokens": 544
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 2,
+   "tools": 0
+  },
+  {
+   "t": 2316,
+   "type": "answer",
+   "content": "The EU endpoint runs in the EU only. It costs 1.1 times the global endpoint price.\n\nSources:\n[/designs/4.html](/designs/4.html)",
+   "model": "mistral-small-latest",
+   "host": "api.mistral.ai"
+  },
+  {
+   "t": 2383,
+   "type": "question",
+   "text": "Does this site keep my key, and where does it send it?",
+   "label": ""
+  },
+  {
+   "t": 2384,
+   "type": "request",
+   "hop": 0,
+   "host": "api.mistral.ai",
+   "messages": 9,
+   "bytes": 15603
+  },
+  {
+   "t": 2957,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 4453,
+    "total_tokens": 4464,
+    "completion_tokens": 11,
+    "prompt_tokens_details": {
+     "cached_tokens": 4368
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 0,
+   "tools": 1
+  },
+  {
+   "t": 2957,
+   "type": "call",
+   "id": "dUunub2od",
+   "name": "search_site",
+   "args": {
+    "query": "key"
+   }
+  },
+  {
+   "t": 2961,
+   "type": "result",
+   "id": "dUunub2od",
+   "name": "search_site",
+   "args": {
+    "query": "key"
+   },
+   "result": "/:  A first call to a Mistral model in five minutes, on your own laptop with no key, or with your own key. Then build something a sovereign website could use.\n/:  Pick a path. A model on your laptop with Ollama (no key), or your own Mistral key.\n/:  Your own key\n/:  Where your key is kept (a variable in the tab, gone on reload) and where it goes (only to the provider you choose).\n/:  Your key, and where it goes \n/:  No key needed: a model on your laptop\n/:  With your own Mistral key\n/:  Get an API key from the Mistral console .\n/:  Put it in your terminal in place of your-key-here , and run the call. Never paste a key into a shared document or a commit.\n/:  export MISTRAL_API_KEY=your-key-here\n/:  -H \"Authorization: Bearer $MISTRAL_API_KEY\" \\\n/:  Free mode is the default for new accounts, with the lowest rate limits. Mistral’s key quickstart asks for “a plan with API access”; whether Free mode needs a payment card today was not confirmed.⁠ 4 In Free mode, Mistra\n/:  Mistral docs, Subscriptions · Mistral docs, Activate and generate an API key \n/:  A sovereignty check. Who holds the keys, where it runs, which licence, how long data is kept, can you leave. See the ledger .\n/:  Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.\n/:  Say in the README which path you used (a local model, your key, or another provider) and which model.\n/:  Check there is no key in it before you push.\n/start/:  Open the hackathon briefing : a first call to a Mistral model in five minutes, with your own key or a local model, then the demos .\n/admin/:  The agents that work on this site are listed in data/agents.json . Each signs its commits with a key published at agents.sovereignweb.site , and adds Agent: and Claude-Session: trailers, as the repository’s rules requir\n/designs/1.html:  The owner’s own key, through OpenRouter, for any model, Mistral’s again among them. OpenRouter’s OpenAI-style API is at https://openrouter.ai/api/v1 .⁠ 14 ",
+   "error": null
+  },
+  {
+   "t": 2962,
+   "type": "request",
+   "hop": 1,
+   "host": "api.mistral.ai",
+   "messages": 11,
+   "bytes": 17951
+  },
+  {
+   "t": 3564,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 5022,
+    "total_tokens": 5037,
+    "completion_tokens": 15,
+    "prompt_tokens_details": {
+     "cached_tokens": 4432
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 1,
+   "tools": 1
+  },
+  {
+   "t": 3564,
+   "type": "call",
+   "id": "B71eIUOCc",
+   "name": "read_page",
+   "args": {
+    "path": "/designs/2.html"
+   }
+  },
+  {
+   "t": 3564,
+   "type": "result",
+   "id": "B71eIUOCc",
+   "name": "read_page",
+   "args": {
+    "path": "/designs/2.html"
+   },
+   "result": "Title: Design 2, The map: Mistral, a European brain\nLanguage: en-GB\nPath: /designs/2.html\n\nThe map\n Where your words go\n When a sovereign website asks a model to write, your brief has to go somewhere. There are three places it can go. This drawing uses only what the providers publish, as read on 20 November 2026.\n Sovereign means you can choose, and change, who runs your model. The ledger asks five questions of any AI you depend on. \n Three paths, one interface: the same OpenAI-style call, with a different address.⁠ 1 Sources, as read on 20 November 2026\n Mistral docs, Chat completion · Ollama docs, OpenAI compatibility · OpenRouter, Quickstart \n Pick a path\n 1 On your device\n What is sent\n Your brief, to a model on your own machine. After the model is downloaded, nothing needs to leave it.\n To whom\n No one else. For example Ministral 3 run by Ollama. Ollama serves an OpenAI-style endpoint at http://localhost:11434/v1/chat/completions .⁠ 2 \n What is kept\n Whatever you keep, on your own disk.\n The model\n Ministral 3 was announced on 2 December 2025 in 3B, 8B and 14B sizes, for edge and local use, each with image understanding, under Apache 2.0.⁠ 3 \n Will it fit\n An estimate, not measured. The article estimates that the 3B and 8B, compressed to about 2 to 5GB, should run on a 16GB Raspberry Pi 5, the 8B slowly; on a tablet, the 3B is the realistic one.⁠ 4 Mistral’s official compressed (Q4_K_M) files are 2.15 GB for the 3B and 5.20 GB for the 8B, plus about 0.85 GB for vision. Those are download sizes, not memory use or speed.⁠ 5 \n Open the on-device demo \n Sources, as read on 20 November 2026\n Ollama docs, OpenAI compatibility \n Mistral AI, Mistral 3 \n A European brain for a sovereign website (Dinis Cruz, SGit Newsroom) \n Hugging Face, Ministral-3-3B-Instruct-2512-GGUF · Hugging Face, Ministral-3-8B-Instruct-2512-GGUF \n 2 To Mistral, in the EU\n What is sent\n Your brief and your own API key, to Mistral’s API: for processing in the EU, to its EU endpoint.\n To whom\n Mistral AI was founded in April 2023, and describes itself as “a European leader” in AI.⁠ 6 \n Where\n By default, data is hosted in the EEA.⁠ 7 Hosting is not processing: Mistral does not commit to an inference location on the global endpoint, api.mistral.ai . Processing in the EU needs the EU endpoint, api.eu.mistral.ai , billed at 1.1 times list price, without Agents, Batch or the Files API, and serving only the models hosted there.⁠ 8 Mistral’s regional endpoints were announced as generally available on 11 August 2026.⁠ 9 Some features may move data temporarily outside the EU to listed subprocessors; Enterprise customers can switch some of these off.⁠ 10 \n What is kept, how long\n API inputs and outputs are kept for 30 rolling days to monitor abuse, unless zero data retention is on; Agents API data is kept until the account ends. Zero data retention is only for pay-as-you-go, only for stateless calls, must be requested and may be refused, and does not cover Labs or Public Preview models.⁠ 11 \n Training\n Mistral’s inference page says “Data sent through our API isn’t used for model training”, but its help centre says that in Free mode it may use API inputs and outputs for training unless you opt out (a toggle in the Admin panel, under Privacy), and that Labs and Public Preview models may be used for training whatever the plan.⁠ 12 \n Run it side by side \n Sources, as read on 20 November 2026\n Mistral AI, About \n Mistral help centre, Where do you store my data \n Mistral docs, Regional inference \n Mistral AI, Regional inference announcement \n Mistral help centre, Where do you store my data \n Mistral AI, Privacy policy · Mistral help centre, Zero data retention · Mistral docs, Zero data retention \n Mistral AI, Cloud inference · Mistral help centre, Do you use my data to train · Mistral help centre, Opting out of training \n 3 To any provider, with your key\n What is sent\n Your brief and your own key, to OpenRouter, which passes the brief to the provider of the model you pick.\n To whom\n OpenRouter, then that provider. OpenRouter’s OpenAI-style API is at https://openrouter.ai/api/v1 .⁠ 13 \n What is kept, how long\n Set by OpenRouter’s terms and the provider’s. This site has not read them for every provider, so it does not say.\n Why it matters\n Leaving is changing an address, not rebuilding the site.\n Your key, and where it goes \n Sources, as read on 20 November 2026\n OpenRouter, Quickstart \n Before you pick\n Ministral 3, Mistral Small 4 and Voxtral Small are labelled Apache 2.0. Mistral Large 4 is under a modified MIT licence: its announcement says a company offering it as a model-as-a-service needs a separate commercial licence, while Mistral’s help centre describes the condition as a monthly revenue threshold of 20 million dollars. The pages disagree; read the licence file itself before relying on either.⁠ 14 \n The idea of a Mistral default on every sovereign website is a proposal from Dinis Cruz’s article A European brain for a sovereign website . Nothing has been agreed with Mistral. \n Sources, as read on 20 November 2026\n Mistral docs, Ministral 3 8B · Mistral AI, Mistral Large 4 · Mistral help centre, Licences of the open models \n Agentic, live on Mistral\n The team inside the site \n Seven agents, live in your browser on a Mistral model you choose, with your own key; or replay a recorded run with no key.\n The Swarm, replayed \n Our Swarm run on Mistral, call by call.\n Evals for a site’s jobs \n Six small jobs a sovereign website gives its model, run on Mistral models, with every check published.\n First run, 20 November 2026, 23:06 to 23:17 UTC, global endpoint, 19 cases, 3 tries each: ministral-3b-2512 30/57, ministral-8b-2512 51/57, ministral-14b-2512 54/57 (after the board’s rescore of one check), mistral-small-2603 52/57 (source: the evals board ).\n\nLinks:\nSkip to content -> #main\nStart here -> /start/\nUse with your AI -> /agents/\nHow this site was made -> /admin/\nSovereign Website -> https://sovereignwebsite.ai/\nPrinciples -> https:/\n[... 981 more characters cut]",
+   "error": null
+  },
+  {
+   "t": 3565,
+   "type": "request",
+   "hop": 2,
+   "host": "api.mistral.ai",
+   "messages": 13,
+   "bytes": 24391
+  },
+  {
+   "t": 4059,
+   "type": "delta",
+   "text": "This"
+  },
+  {
+   "t": 4068,
+   "type": "delta",
+   "text": " site keeps"
+  },
+  {
+   "t": 4081,
+   "type": "delta",
+   "text": " your key"
+  },
+  {
+   "t": 4094,
+   "type": "delta",
+   "text": " only"
+  },
+  {
+   "t": 4109,
+   "type": "delta",
+   "text": " as"
+  },
+  {
+   "t": 4125,
+   "type": "delta",
+   "text": " a variable in the"
+  },
+  {
+   "t": 4143,
+   "type": "delta",
+   "text": " browser tab and does"
+  },
+  {
+   "t": 4162,
+   "type": "delta",
+   "text": " not store"
+  },
+  {
+   "t": 4168,
+   "type": "delta",
+   "text": " it. It"
+  },
+  {
+   "t": 4184,
+   "type": "delta",
+   "text": " sends your"
+  },
+  {
+   "t": 4199,
+   "type": "delta",
+   "text": " key only"
+  },
+  {
+   "t": 4215,
+   "type": "delta",
+   "text": " to the"
+  },
+  {
+   "t": 4228,
+   "type": "delta",
+   "text": " provider you choose ("
+  },
+  {
+   "t": 4245,
+   "type": "delta",
+   "text": "Mistral or"
+  },
+  {
+   "t": 4261,
+   "type": "delta",
+   "text": " another"
+  },
+  {
+   "t": 4276,
+   "type": "delta",
+   "text": ").\n\nSources:\n["
+  },
+  {
+   "t": 4292,
+   "type": "delta",
+   "text": "/designs/"
+  },
+  {
+   "t": 4305,
+   "type": "delta",
+   "text": "2.html](/"
+  },
+  {
+   "t": 4320,
+   "type": "delta",
+   "text": "designs/2"
+  },
+  {
+   "t": 4339,
+   "type": "delta",
+   "text": ".html)"
+  },
+  {
+   "t": 4348,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 6731,
+    "total_tokens": 6784,
+    "completion_tokens": 53,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 2,
+   "tools": 0
+  },
+  {
+   "t": 4348,
+   "type": "answer",
+   "content": "This site keeps your key only as a variable in the browser tab and does not store it. It sends your key only to the provider you choose (Mistral or another).\n\nSources:\n[/designs/2.html](/designs/2.html)",
+   "model": "mistral-small-latest",
+   "host": "api.mistral.ai"
+  },
+  {
+   "t": 4418,
+   "type": "question",
+   "text": "What does Mistral charge for a T-shirt?",
+   "label": ""
+  },
+  {
+   "t": 4419,
+   "type": "request",
+   "hop": 0,
+   "host": "api.mistral.ai",
+   "messages": 15,
+   "bytes": 24698
+  },
+  {
+   "t": 4956,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 6796,
+    "total_tokens": 6818,
+    "completion_tokens": 22,
+    "prompt_tokens_details": {
+     "cached_tokens": 6704
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 0,
+   "tools": 2
+  },
+  {
+   "t": 4956,
+   "type": "call",
+   "id": "Sw6tetgvZ",
+   "name": "search_site",
+   "args": {
+    "query": "T-shirt"
+   }
+  },
+  {
+   "t": 4960,
+   "type": "result",
+   "id": "Sw6tetgvZ",
+   "name": "search_site",
+   "args": {
+    "query": "T-shirt"
+   },
+   "result": "no line on the site mentions t-shirt",
+   "error": null
+  },
+  {
+   "t": 4960,
+   "type": "call",
+   "id": "8RvdR05AT",
+   "name": "search_site",
+   "args": {
+    "query": "charge"
+   }
+  },
+  {
+   "t": 4963,
+   "type": "result",
+   "id": "8RvdR05AT",
+   "name": "search_site",
+   "args": {
+    "query": "charge"
+   },
+   "result": "no line on the site mentions charge",
+   "error": null
+  },
+  {
+   "t": 4964,
+   "type": "request",
+   "hop": 1,
+   "host": "api.mistral.ai",
+   "messages": 18,
+   "bytes": 25321
+  },
+  {
+   "t": 5381,
+   "type": "delta",
+   "text": "This"
+  },
+  {
+   "t": 5390,
+   "type": "delta",
+   "text": " site does not say"
+  },
+  {
+   "t": 5392,
+   "type": "delta",
+   "text": ". The"
+  },
+  {
+   "t": 5481,
+   "type": "delta",
+   "text": " closest page is ["
+  },
+  {
+   "t": 5482,
+   "type": "delta",
+   "text": "/designs/"
+  },
+  {
+   "t": 5482,
+   "type": "delta",
+   "text": "4.html](/"
+  },
+  {
+   "t": 5482,
+   "type": "delta",
+   "text": "designs/4"
+  },
+  {
+   "t": 5482,
+   "type": "delta",
+   "text": ".html)."
+  },
+  {
+   "t": 5482,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 6875,
+    "total_tokens": 6900,
+    "completion_tokens": 25,
+    "prompt_tokens_details": {
+     "cached_tokens": 6768
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 1,
+   "tools": 0
+  },
+  {
+   "t": 5482,
+   "type": "answer",
+   "content": "This site does not say. The closest page is [/designs/4.html](/designs/4.html).",
+   "model": "mistral-small-latest",
+   "host": "api.mistral.ai"
+  }
+ ]
+}
