@@ -71,7 +71,7 @@
 <main id="main">
   <p class="mark">In your browser</p>
   <h1>Mistral, from a web page</h1>
-  <p class="lede">Demos that call Mistral straight from this static page, with your own key, held in the tab's memory only. Each one shows every call before it is sent: what it sends, and to whom. Made for the Mistral hackathon in London on 21 November 2026; this site is independent and not affiliated with Mistral AI.</p>
+  <p class="lede">Demos that call Mistral straight from this static page, with your own key, held in the tab's memory only, or sealed to this browser if you choose. Each one shows every call before it is sent: what it sends, and to whom. Made for the Mistral hackathon in London on 21 November 2026; this site is independent and not affiliated with Mistral AI.</p>
   <ul class="cards">
     <li>
       <h2><a href="/browser/build/">Vibe-build a sovereign website</a></h2>
@@ -97,6 +97,11 @@
       <h2><a href="/browser/inject/">The injection lab</a></h2>
       <p>The Contact-page injection case from this site's evals, run live on the model you pick, with and without untrusted-data wrapping, side by side, next to the published results.</p>
       <p class="small">The model's tools write, send and fetch nothing.</p>
+    </li>
+    <li>
+      <h2><a href="/browser/keys/">Your browser's key pair</a></h2>
+      <p>Give this browser its own key pair, then send it your Mistral key sealed from your laptop by QR code. It is kept here as ciphertext, survives reloads, and the demos use it only when you press "Use the sealed key stored in this browser".</p>
+      <p class="small">No request of any kind. Any page of this site can ask this browser to use the sealed key: use a key with a spending limit.</p>
     </li>
   </ul>
 </main>

@@ -144,6 +144,20 @@ if (window.top !== window.self) {
     use.addEventListener('click', take);
     keyInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); take(); } });
     forget.addEventListener('click', function () { forgetKey(); keyInput.value = ''; show(); status.textContent = 'Key forgotten. This tab holds none now.'; });
+    // Opt-in, only on a press: the Mistral key sealed to this browser at /browser/keys/ (browser.c, 21 Nov 2026).
+    // The module is loaded on the press, not before; it unwraps the key in memory and this closure holds it as above.
+    const sealed = el('button', { type: 'button', id: 'mk-sealed', text: 'Use the sealed key stored in this browser' });
+    const until = el('span', { id: 'mk-sealed-until', class: 'small' });
+    let expiry = null;
+    sealed.addEventListener('click', async function () {
+      let r = { key: null, note: 'No sealed key is stored in this browser.' };
+      try { r = await (await import('/browser/keys/vault-client.js')).useSealedKey(); } catch (e) { /* keep the note */ }
+      until.textContent = r.key ? r.note : '';
+      if (!r.key) { status.textContent = r.note; return; }
+      const v = r.key; setKey(v); show();
+      // Dropped from memory when it expires, even if the tab stays open (security.b, review 009).
+      clearTimeout(expiry); expiry = setTimeout(function () { if (key === v) { forgetKey(); show(); until.textContent = 'The sealed key expired and was dropped from this tab.'; } }, Math.max(0, Date.parse(r.expires) - Date.now()));
+    });
 
     const epGroup = el('fieldset', { class: 'endpoint' }, [el('legend', { text: 'Where the calls go' })]);
     Object.keys(C.ENDPOINTS).forEach(function (id) {
@@ -180,7 +194,7 @@ if (window.top !== window.self) {
       el('p', { class: 'small', text: 'Your key stays in this tab\'s memory and goes only to the Mistral endpoint you choose.' }),
       el('label', { for: 'mk-key', text: 'Your Mistral API key (get one at console.mistral.ai)' }),
       el('p', { id: 'mk-never', class: 'small', text: 'If your browser offers to save this key as a password, choose Never.' }),
-      el('div', { class: 'keyrow' }, [keyInput, use, forget]),
+      el('div', { class: 'keyrow' }, [keyInput, use, forget, sealed, until]),
       status,
       el('p', { class: 'warn' }, [
         el('strong', { text: 'Mistral\'s Free mode: ' }),

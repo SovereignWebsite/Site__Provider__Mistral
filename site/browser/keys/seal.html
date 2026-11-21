@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Seal a key for a browser</title>
+<meta name="description" content="Encrypt your Mistral key in this tab with another browser&#x27;s public key, so only that browser can open it. Nothing is sent and nothing is stored.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/keys/seal.html">
+<meta property="og:title" content="Seal a key for a browser">
+<meta property="og:description" content="Encrypt your Mistral key in this tab with another browser&#x27;s public key, so only that browser can open it. Nothing is sent and nothing is stored.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Seal a key for a browser">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seal a key for a browser">
+<meta name="twitter:description" content="Encrypt your Mistral key in this tab with another browser&#x27;s public key, so only that browser can open it. Nothing is sent and nothing is stored.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/keys/seal.html">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/voice/kit.css">
+<link rel="stylesheet" href="/browser/keys/keys.css">
+<script type="module" src="/browser/keys/seal.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration, for participants of the Mistral Vibe Hackathon in London. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark">In your browser</p>
+  <h1>Seal a key for a browser</h1>
+  <p class="lede">Open this on the device that holds your Mistral key. It encrypts the key, in this tab, with another browser's public key, so that only that browser can open it. Nothing is sent anywhere and nothing is stored.</p>
+  <noscript><p class="warn">This page needs JavaScript: the sealing is done by your browser's Web Crypto.</p></noscript>
+
+  <section aria-labelledby="h-to">
+    <h2 id="h-to">1. The browser you are sealing for</h2>
+    <p id="to-intro">Scan the code on that browser's <a href="./">key pair page</a>, or paste its public key here.</p>
+    <div class="actions"><button type="button" id="paste-show" class="hidden">Paste a different public key instead</button></div>
+    <div id="paste-box">
+      <label for="pub-in">That browser's public key (the text, or the link)</label>
+      <textarea id="pub-in" class="mono" rows="4" spellcheck="false"></textarea>
+      <div class="actions"><button type="button" id="pub-read">Read this public key</button></div>
+    </div>
+    <p id="to-status" class="status" role="status" aria-live="polite"></p>
+    <div id="to" class="hidden">
+      <p class="label">Its fingerprint</p>
+      <p id="to-fp" class="fp"></p>
+      <p class="warn"><strong>Compare this with the fingerprint shown on the browser you mean to send to.</strong> If they differ, stop: someone could have sent you their own public key, and a key sealed to it would be theirs to open.</p>
+      <p id="to-meta" class="small"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <p>It is read once from the box, which is cleared at once, sealed in this tab, and not kept: not shown again, not stored, not sent.</p>
+    <div class="field">
+      <label for="hours">The sealed key stops working after</label>
+      <select id="hours">
+        <option value="2">2 hours</option>
+        <option value="8">8 hours</option>
+        <option value="24" selected>24 hours</option>
+      </select>
+    </div>
+    <p class="must"><strong>Only seal for a browser you can see in front of you. Check that the fingerprint on both screens is the same.</strong></p>
+    <div class="keyrow">
+      <label for="secret">Mistral API key</label>
+      <input id="secret" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" disabled>
+      <button type="button" id="seal" class="primary" disabled>Seal it for that browser</button>
+    </div>
+    <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
+    <p id="seal-status" class="status" role="status" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-out" id="out" class="hidden">
+    <h2 id="h-out">3. The sealed key</h2>
+    <p>Open this link in the browser with that fingerprint: scan the code with it, or copy the text across. That browser stores it as it is, and opens it only when you ask.</p>
+    <div class="qrwrap"><div id="sealed-qr" class="qr"></div></div>
+    <p class="privacy"><strong>A photograph of this code is useless to anyone else.</strong> It holds only ciphertext, which nothing can open except the private key inside the browser it was sealed for, and that key cannot be copied out of it. That is the gain over the code on <a href="/team/">the team page</a>, which carries the plain key: anyone who sees that one has your key.</p>
+    <label for="sealed-text">The sealed key, as a link</label>
+    <textarea id="sealed-text" class="mono" rows="5" readonly></textarea>
+    <div class="actions"><button type="button" id="sealed-copy">Copy the sealed key link</button><span id="sealed-copy-status" class="status" role="status"></span></div>
+  </section>
+
+  <section aria-labelledby="h-honest">
+    <h2 id="h-honest">What sealing protects, and what it does not</h2>
+    <ul class="plain">
+      <li><strong>Only the browser you seal for can open it.</strong> Its private key was made not extractable, so it cannot be copied out of that browser, and what that browser stores is only ciphertext.</li>
+      <li><strong>But any script running on mistral.provider.sovereignweb.site can ask that browser to unwrap the key and use it.</strong> Every page of this site shares one origin, and so one key store. This site loads no script from anywhere else and every page has a strict content security policy, but that is the line.</li>
+      <li><strong>So can anyone using that browser profile</strong>, or anyone who copies it.</li>
+      <li><strong>So:</strong> use a Mistral key with a spending limit, revoke it after the event, and on a shared machine press "Forget this browser's keys" on its key pair page when you are done.</li>
+      <li>Clearing that site's data, or a private window, loses the key pair and the sealed key there. Seal the key again for its new key pair.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How the sealing works</h2>
+    <ol>
+      <li>The public key comes in the part of the link after <code>#</code>, which browsers do not send to any server, or as pasted text. This page removes it from the address bar, then checks that the key pair was made on this same site, that its fingerprint (SHA-256 of the key's SubjectPublicKeyInfo bytes, first 16 hex characters) matches the key, and that the key is RSA-OAEP 3072-bit. A public key from any other site is refused.</li>
+      <li>When you press Seal, Web Crypto makes a fresh AES-256-GCM key and a random 12-byte nonce, encrypts your Mistral key with them, and wraps the AES key with RSA-OAEP (SHA-256) under that public key. The AES key and your plain key are then dropped.</li>
+      <li>The result is <code>{v:2, origin, fp, created, expires, wrapped, iv, ct}</code> in base64url, shown as a link to <a href="./">/browser/keys/</a> with it after <code>#sealed=</code>. The origin, fingerprint, creation time and expiry are bound to the ciphertext as AES-GCM additional data, so changing any of them makes it impossible to open. The browser it is for refuses it after it expires (2, 8 or 24 hours, your choice) and deletes it.</li>
+      <li>This page makes no request of any kind, and its content security policy allows none to anywhere but this site.</li>
+    </ol>
+    <p class="small">Sealing code: <a href="vault.js">vault.js</a>, adapted from <a href="https://github.com/AgentiCCells/AgentiCCells__Site__Evals/blob/75e262dad13a80eea08d09b08bf010b83f8b5ecc/src/core/v0.1/vault.js">AgentiCCells__Site__Evals</a> (Apache-2.0). QR codes: Kazuhiko Arase's qrcode-generator (MIT), at <a href="/team/qrcode.js">/team/qrcode.js</a>.</p>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by browser.c@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026. Code Apache-2.0, text CC BY 4.0. Static files only: no cookies, no tracking, no server of ours. This page stores nothing and sends nothing. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

@@ -56,6 +56,23 @@ export function wireKey(onChange = () => {}) {
   $('key-set').addEventListener('click', take);
   input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); take(); } });
   $('key-forget').addEventListener('click', () => { forgetKey(); input.value = ''; show(); });
+  // Opt-in, only on a press: the Mistral key sealed to this browser at /browser/keys/ (browser.c, 21 Nov 2026).
+  // The module is loaded on the press, not before; it unwraps the key in memory and this closure holds it as above.
+  const sealed = document.createElement('button');
+  sealed.type = 'button'; sealed.id = 'key-sealed'; sealed.textContent = 'Use the sealed key stored in this browser';
+  const until = document.createElement('span');
+  until.id = 'key-sealed-until'; until.className = 'small';
+  $('key-forget').after(sealed, until);
+  let expiry = null;
+  sealed.addEventListener('click', async () => {
+    let r = { key: null, note: 'No sealed key is stored in this browser.' };
+    try { r = await (await import('/browser/keys/vault-client.js')).useSealedKey(); } catch { /* keep the note */ }
+    until.textContent = r.key ? r.note : '';
+    if (!r.key) { status.textContent = r.note; return; }
+    const v = r.key; key = v; show();
+    // Dropped from memory when it expires, even if the tab stays open (security.b, review 009).
+    clearTimeout(expiry); expiry = setTimeout(() => { if (key === v) { forgetKey(); show(); until.textContent = 'The sealed key expired and was dropped from this tab.'; } }, Math.max(0, Date.parse(r.expires) - Date.now()));
+  });
   $('endpoint').addEventListener('change', onChange);
   show();
 }
