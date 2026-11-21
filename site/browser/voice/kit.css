@@ -1,0 +1,60 @@
+/* The three browser demos (/browser/voice/, /browser/ocr/, /browser/inject/). browser-b, 21 November 2026.
+   On top of /assets/css/base.css and /assets/css/plain.css. No inline styles anywhere (strict CSP). */
+:root{--ok:#1b5e33;--bad:#a3261a;--rec:#b3001b;--warnbg:#fff4dc;--warnfg:#5c4200}
+@media (prefers-color-scheme:dark){:root{--ok:#8fd6a8;--bad:#ff9a8c;--rec:#ff6b7f;--warnbg:#2e2614;--warnfg:#f3dca0}}
+main{max-width:62rem;margin:0 auto;padding:1rem 1rem 3rem;overflow-wrap:anywhere}
+.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:1rem 0 0}
+h1{font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.15;margin:.3rem 0 1rem}
+h2{font-size:1.3rem;margin:2.2rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+.lede{max-width:46rem}
+.muted{color:var(--muted)}
+.warn{background:var(--warnbg);color:var(--warnfg);padding:.6rem .8rem;border-radius:6px}
+.privacy{border-left:4px solid var(--accent);background:var(--panel);padding:.6rem .8rem;border-radius:0 6px 6px 0}
+button,select,input,textarea{font:inherit;color:inherit}
+button{min-height:2.4rem;padding:.3rem .9rem;border:1px solid var(--accent);background:var(--bg);color:var(--accent);border-radius:6px;cursor:pointer}
+button.primary{background:var(--accent);color:var(--accent-fg)}
+button:disabled{opacity:.55;cursor:not-allowed}
+textarea,input[type=password],input[type=text],select{background:var(--bg);border:1px solid var(--muted);border-radius:6px;padding:.4rem .5rem;max-width:100%}
+input[type=file]{max-width:100%}
+textarea{width:100%;display:block;margin:.3rem 0}
+label{font-weight:600}
+.actions,.keyrow,.field{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.6rem 0}
+.keyrow input{flex:1 1 12rem;min-width:0}
+.keyrow label,.field label{flex-basis:100%}
+.status{min-height:1.5em;color:var(--muted)}
+.status.bad,.bad{color:var(--bad)}
+.ok{color:var(--ok)}
+.sendlist{display:grid;grid-template-columns:max-content 1fr;gap:.2rem .8rem;margin:.4rem 0;font-size:.92rem}
+.sendlist dt{font-weight:700}
+.sendlist dd{margin:0}
+@media (max-width:34rem){.sendlist{grid-template-columns:1fr}.sendlist dd{margin-bottom:.3rem}}
+pre.req,pre.out{white-space:pre-wrap;word-break:break-word;background:var(--panel);padding:.6rem .7rem;border-radius:6px;font-size:.8rem;line-height:1.45;max-height:22rem;overflow:auto}
+.sends{border:1px dashed var(--muted);border-radius:8px;padding:.4rem .8rem .8rem;margin:.6rem 0}
+.sends>h3{margin-top:.5rem}
+.tablewrap{max-width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+caption{text-align:left;color:var(--muted);padding-bottom:.3rem}
+th,td{text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rec{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--rec)}
+.rec::before{content:"";width:.9rem;height:.9rem;border-radius:50%;background:var(--rec)}
+.hidden{display:none}
+.answer{font-size:1.08rem;background:var(--panel);border-radius:8px;padding:.8rem 1rem}
+.lanes{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr))}
+.lane{border:1px solid var(--line);border-radius:8px;padding:.2rem .9rem .9rem;background:var(--bg);min-width:0}
+.verdict{font-weight:700;font-size:1.1rem}
+.about-draft{border:2px solid var(--accent);border-radius:8px;padding:.4rem 1rem 1rem}
+.about-draft blockquote{margin:.3rem 0;padding-left:.8rem;border-left:3px solid var(--line)}
+.thumb{max-width:min(100%,18rem);border:1px solid var(--line);border-radius:6px}
+audio{max-width:100%}
+.cards{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.cards li{border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:.9rem 1rem;background:var(--panel)}
+.cards h2{margin:0 0 .4rem;padding:0;border:0;font-size:1.15rem}
+.cards p{margin:0 0 .4rem;font-size:.93rem}
+/* Tables keep readable columns on a phone and scroll sideways inside their box instead of breaking words. */
+.tablewrap>table{min-width:40rem}
+.tablewrap th,.tablewrap td{overflow-wrap:normal;word-break:normal}
+.tablewrap td code{overflow-wrap:anywhere}
+.lane .tablewrap>table{min-width:26rem}
+#published .tablewrap>table,#facts-box .tablewrap>table{min-width:30rem}

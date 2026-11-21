@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Talk to a European brain</title>
+<meta name="description" content="Ask this site a question out loud. Voxtral transcribes it, a Mistral model answers from this site's own pages, and Voxtral speaks the answer back, all from your browser with your own key, with every call shown.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/voice/">
+<meta property="og:title" content="Talk to a European brain">
+<meta property="og:description" content="Ask this site a question out loud: Voxtral transcribes it, a Mistral model answers from this site's pages, and Voxtral speaks the answer back, from your browser with your own key.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral, a European brain">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Talk to a European brain">
+<meta name="twitter:description" content="Ask this site a question out loud: Voxtral transcribes it, a Mistral model answers from this site's pages, and Voxtral speaks the answer back, from your browser with your own key.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/voice/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/voice/kit.css">
+<script type="module" src="/browser/voice/voice.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark"><a href="/browser/">In your browser</a>: voice</p>
+  <h1>Talk to a European brain</h1>
+  <p class="lede">Ask this site a question out loud. Mistral's Voxtral turns your words into text, a Mistral chat model answers using only this site's own pages, and Voxtral reads the answer back to you. Everything runs from this page, in your browser, with your own Mistral key. Each call is shown before you send it.</p>
+  <noscript><p class="warn">This demo needs JavaScript. Nothing on this page sends anything without it.</p></noscript>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">1. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+    <div class="keyrow">
+      <label for="key">Mistral API key (get one at console.mistral.ai)</label>
+      <input id="key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
+      <button type="button" id="key-set">Use this key</button>
+      <button type="button" id="key-forget">Forget it</button>
+    </div>
+    <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
+    <p id="key-status" class="status" role="status">No key set.</p>
+    <p class="warn">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026). Say nothing confidential.</p>
+    <div class="field">
+      <label for="endpoint">Where the calls go</label>
+      <select id="endpoint">
+        <option value="global" selected>api.mistral.ai (global; Mistral makes no promise where it runs)</option>
+        <option value="eu">api.eu.mistral.ai (EU; 1.1 times list price; not tested by us for audio)</option>
+      </select>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-rec">
+    <h2 id="h-rec">2. Ask out loud, or type</h2>
+    <p class="privacy"><strong>Your microphone, plainly.</strong> Nothing is recorded until you press Record; then your browser asks you for the microphone. Recording stops when you press Stop, or after 30 seconds, and the microphone is released at once. The recording stays in this tab: you can play it back, and it is sent only to Mistral, only when you press "Send the recording". Nothing is kept after you close the tab.</p>
+    <div class="actions">
+      <button type="button" id="rec-start" class="primary">Record</button>
+      <button type="button" id="rec-stop" disabled>Stop</button>
+      <span id="rec-state" class="status" role="status" aria-live="polite">Not recording. The microphone is off.</span>
+    </div>
+    <div id="rec-ready" class="hidden">
+      <p id="rec-info"></p>
+      <audio id="rec-audio" controls></audio>
+      <div class="field">
+        <label for="stt-model">Transcription model</label>
+        <select id="stt-model">
+          <option value="voxtral-mini-transcribe-3" selected>voxtral-mini-transcribe-3 ($0.0035 a minute)</option>
+          <option value="voxtral-small-transcribe-3">voxtral-small-transcribe-3 ($0.004 a minute)</option>
+        </select>
+      </div>
+      <div class="sends" id="stt-sends-box">
+        <h3>What this call sends, and to whom</h3>
+        <div id="stt-sends"></div>
+      </div>
+      <div class="actions"><button type="button" id="stt-send" class="primary">Send the recording to Mistral for transcription</button></div>
+    </div>
+    <p id="stt-status" class="status" role="status"></p>
+    <div class="field">
+      <label for="question">Your question (the transcript appears here; you can also type)</label>
+      <textarea id="question" rows="2">What is the difference between Mistral's global endpoint and its EU endpoint?</textarea>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ask">
+    <h2 id="h-ask">3. The answer, from this site's pages</h2>
+    <p>The model gets two tools that read this site and nothing else: <code>search_site</code> and <code>read_page</code>. They run here, in your browser, over <a href="/browser/voice/site-index.json">a static index of this site's pages</a>, made when the site was built. The page text goes back to the model marked as data, not instructions.</p>
+    <div class="field">
+      <label for="chat-model">Chat model</label>
+      <select id="chat-model">
+        <option value="mistral-small-2603" selected>mistral-small-2603 (Mistral Small 4)</option>
+        <option value="ministral-8b-2512">ministral-8b-2512 (Ministral 3 8B)</option>
+        <option value="ministral-14b-2512">ministral-14b-2512 (Ministral 3 14B)</option>
+      </select>
+    </div>
+    <div class="sends">
+      <h3>What this call sends, and to whom</h3>
+      <div id="chat-sends"></div>
+    </div>
+    <div class="actions"><button type="button" id="ask" class="primary">Ask Mistral</button></div>
+    <p id="ask-status" class="status" role="status"></p>
+    <ol id="steps" class="small"></ol>
+    <div id="answer-box" class="hidden">
+      <h3>Answer (model output)</h3>
+      <p id="answer" class="answer"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-speak">
+    <h2 id="h-speak">4. Hear it</h2>
+    <p>Speech comes from Mistral too: <code>POST /v1/audio/speech</code> with <code>voxtral-mini-tts-3</code>. The answer's text goes to Mistral and nowhere else; the audio comes back in the response and plays here.</p>
+    <div class="field">
+      <label for="voice">Voice</label>
+      <select id="voice">
+        <option value="gb_jane_neutral" selected>gb_jane_neutral (the voice in Mistral's docs)</option>
+        <option value="en_paul_neutral">en_paul_neutral (a preset voice listed by GET /v1/audio/voices)</option>
+      </select>
+    </div>
+    <div class="sends">
+      <h3>What this call sends, and to whom</h3>
+      <div id="tts-sends"><p class="muted">Ask a question first.</p></div>
+    </div>
+    <div class="actions"><button type="button" id="speak" class="primary" disabled>Speak the answer</button></div>
+    <p id="tts-status" class="status" role="status"></p>
+    <audio id="tts-audio" controls class="hidden"></audio>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Every call made from this tab</h2>
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Table of calls (scrolls sideways on a small screen)">
+      <table>
+        <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">For</th><th scope="col">What was sent</th><th scope="col">Status</th><th scope="col" class="num">Time taken</th><th scope="col">Usage and cost</th></tr></thead>
+        <tbody id="calls-body"><tr><td colspan="8">No calls yet. Nothing has been sent from this tab.</td></tr></tbody>
+      </table>
+    </div>
+    <p class="small">Kept in memory in this tab only. Cost is an estimate: what Mistral reports (seconds of audio, tokens, characters) times its published list price (<a href="https://docs.mistral.ai/inference/pricing">pricing</a>, as read on 21 November 2026), times 1.1 on the EU endpoint. Not an invoice.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what we checked</h2>
+    <ul>
+      <li>Recording: the browser's own <code>MediaRecorder</code>, usually WebM with Opus (Chrome, Firefox) or MP4 (Safari). No library.</li>
+      <li>Transcription: <code>POST /v1/audio/transcriptions</code>, a multipart form with <code>model</code> and <code>file</code> (<a href="https://docs.mistral.ai/studio/audio/speech-to-text/transcribe-files">file transcription</a>, as read on 21 November 2026). We sent a WebM/Opus and an MP4/AAC clip through it on 21 November 2026; both came back as text.</li>
+      <li>Answer: <code>POST /v1/chat/completions</code> with two tools; at most four model turns, the last one without tools.</li>
+      <li>Speech: <code>POST /v1/audio/speech</code> with <code>model</code>, <code>input</code>, <code>voice_id</code> and <code>response_format</code>; the audio comes back base64-encoded in <code>audio_data</code> (<a href="https://docs.mistral.ai/studio/audio/text-to-speech/generate-speech">speech generation</a>, as read on 21 November 2026).</li>
+      <li>Can a web page call them? On 21 November 2026 both <code>api.mistral.ai</code> and <code>api.eu.mistral.ai</code> answered the browser's preflight for all three paths with <code>Access-Control-Allow-Origin: *</code>, allowing the Authorization and Content-Type headers, and a page in Chromium read the answers. We could test real audio only on the global endpoint.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/questions/">Open questions</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by browser.b.mistral@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

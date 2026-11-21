@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>From a document to your site</title>
+<meta name="description" content="Choose a PDF or a picture. Mistral OCR reads it, a Mistral model picks out the facts with the words they came from, and this page drafts an About section from those quotes only, from your browser with your own key.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/ocr/">
+<meta property="og:title" content="From a document to your site">
+<meta property="og:description" content="Choose a PDF or a picture. Mistral OCR reads it, a Mistral model picks out the facts with the words they came from, and this page drafts an About section from those quotes only, from your browser with your own key.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral, a European brain">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From a document to your site">
+<meta name="twitter:description" content="Choose a PDF or a picture. Mistral OCR reads it, a Mistral model picks out the facts with the words they came from, and this page drafts an About section from those quotes only, from your browser with your own key.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/ocr/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/voice/kit.css">
+<script type="module" src="/browser/ocr/ocr.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark"><a href="/browser/">In your browser</a>: documents</p>
+  <h1>From a document to your site</h1>
+  <p class="lede">Choose a flyer, a leaflet or a menu, as a PDF or a picture. Mistral OCR turns it into text, a Mistral chat model picks out the facts an About section needs, each with the exact words it came from, and this page drafts that About section from those quoted words only. All from your browser, with your own Mistral key.</p>
+  <noscript><p class="warn">This demo needs JavaScript. Nothing on this page sends anything without it.</p></noscript>
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">1. Your Mistral key</h2>
+    <p>Your key stays in this tab's memory. It is sent only to the Mistral endpoint you choose below, in the Authorization header, and only when you press a button that sends something. It is never stored, never shown, never sent to this site, and gone when you close or reload the tab. Use a key with a spending limit.</p>
+    <div class="keyrow">
+      <label for="key">Mistral API key (get one at console.mistral.ai)</label>
+      <input id="key" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
+      <button type="button" id="key-set">Use this key</button>
+      <button type="button" id="key-forget">Forget it</button>
+    </div>
+    <p class="muted">If your browser offers to save this key as a password, choose Never.</p>
+    <p id="key-status" class="status" role="status">No key set.</p>
+    <p class="warn">On Mistral's free plan, what you send through the API may be used to train Mistral's models unless you switch that off in your Mistral admin panel (<a href="https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training">how to opt out</a>, as read on 21 November 2026). Send nothing confidential.</p>
+    <div class="field">
+      <label for="endpoint">Where the calls go</label>
+      <select id="endpoint">
+        <option value="global" selected>api.mistral.ai (global; Mistral makes no promise where it runs)</option>
+        <option value="eu">api.eu.mistral.ai (EU; 1.1 times list price; not tested by us for OCR)</option>
+      </select>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-file">
+    <h2 id="h-file">2. Choose a document</h2>
+    <p class="privacy"><strong>Your file, plainly.</strong> Choosing a file does not send it anywhere: your browser reads it into this tab. It goes to one place only, Mistral's OCR endpoint, when you press "Send the document to Mistral OCR", as a base64 data URL inside the request (the way Mistral's OCR documentation describes). It never goes to this site, and nothing is kept after you close the tab. Mistral's own terms apply to what you send it, so do not send anything private.</p>
+    <p class="privacy" id="file-warning"><strong>Your file is sent to Mistral (api.mistral.ai or the EU endpoint you chose) to be read. Do not use documents with other people's personal details or anything confidential; try the sample flyer instead.</strong></p>
+    <div class="field">
+      <label for="file">A PDF or an image (PNG, JPEG, WebP or AVIF), up to 10 MB (this page's own limit)</label>
+      <input id="file" type="file" aria-describedby="file-warning" accept="application/pdf,image/png,image/jpeg,image/webp,image/avif">
+    </div>
+    <p>Or use our fictional sample, a one-page flyer for a made-up bicycle repair workshop: <a href="/browser/ocr/fictional-sample-flyer.pdf">PDF</a>, <a href="/browser/ocr/fictional-sample-flyer.png">PNG</a>.</p>
+    <div class="actions">
+      <button type="button" id="sample-pdf">Use the fictional sample (PDF)</button>
+      <button type="button" id="sample-png">Use the fictional sample (PNG)</button>
+    </div>
+    <p id="file-status" class="status" role="status">No document chosen.</p>
+    <div id="thumb-box"></div>
+  </section>
+
+  <section aria-labelledby="h-ocr">
+    <h2 id="h-ocr">3. Mistral OCR: the document as text</h2>
+    <div class="sends">
+      <h3>What this call sends, and to whom</h3>
+      <div id="ocr-sends"><p class="muted">Choose a document first.</p></div>
+    </div>
+    <div class="actions"><button type="button" id="ocr-send" class="primary" disabled>Send the document to Mistral OCR</button></div>
+    <p id="ocr-status" class="status" role="status"></p>
+    <div id="ocr-box" class="hidden">
+      <h3>What OCR read (model output, shown as plain text)</h3>
+      <pre id="ocr-text" class="out" tabindex="0"></pre>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-facts">
+    <h2 id="h-facts">4. The facts, each with its quote</h2>
+    <p>A chat model reads the text and answers in a fixed JSON shape (structured output with a JSON schema, <a href="https://docs.mistral.ai/inference/conversations/structured-output/custom">custom structured outputs</a>, as read on 21 November 2026): the name, what it offers, and a contact if there is one, each with the words it was taken from. This page then checks each quote against the OCR text, character for character apart from spacing, and drops any fact whose quote is not there.</p>
+    <div class="field">
+      <label for="chat-model">Chat model</label>
+      <select id="chat-model">
+        <option value="ministral-8b-2512" selected>ministral-8b-2512 (Ministral 3 8B)</option>
+        <option value="ministral-14b-2512">ministral-14b-2512 (Ministral 3 14B)</option>
+        <option value="mistral-small-2603">mistral-small-2603 (Mistral Small 4)</option>
+      </select>
+    </div>
+    <div class="sends">
+      <h3>What this call sends, and to whom</h3>
+      <div id="chat-sends"><p class="muted">Run OCR first.</p></div>
+    </div>
+    <div class="actions"><button type="button" id="extract" class="primary" disabled>Extract the facts</button></div>
+    <p id="extract-status" class="status" role="status"></p>
+    <div id="facts-box" class="hidden">
+      <div class="tablewrap" tabindex="0" role="region" aria-labelledby="facts-cap">
+        <table>
+          <caption id="facts-cap">The facts the model gave, and whether this page found each quote in the document</caption>
+          <thead><tr><th scope="col">Fact</th><th scope="col">The model's short version</th><th scope="col">Quoted from the document</th><th scope="col">Quote found?</th></tr></thead>
+          <tbody id="facts-body"></tbody>
+        </table>
+      </div>
+      <details><summary>The JSON exactly as the model returned it</summary><pre id="facts-json" class="out" tabindex="0"></pre></details>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-about">
+    <h2 id="h-about">5. A draft About section</h2>
+    <p>Built in this page, with no further call, from the quotes that were found in the document, word for word. Nothing in it comes from the model's own words. A draft for you to edit, not a page that has been published.</p>
+    <div id="about"><p class="muted">Extract the facts first.</p></div>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Every call made from this tab</h2>
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Table of calls (scrolls sideways on a small screen)">
+      <table>
+        <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">For</th><th scope="col">What was sent</th><th scope="col">Status</th><th scope="col" class="num">Time taken</th><th scope="col">Usage and cost</th></tr></thead>
+        <tbody id="calls-body"><tr><td colspan="8">No calls yet. Nothing has been sent from this tab.</td></tr></tbody>
+      </table>
+    </div>
+    <p class="small">Kept in memory in this tab only. Cost is an estimate: pages or tokens as Mistral reports them, times its published list price (<a href="https://docs.mistral.ai/inference/pricing">pricing</a>, as read on 21 November 2026: OCR 4.1 at $4 per 1000 pages; <code>mistral-ocr-latest</code> was an alias of OCR 4.1 in <code>GET /v1/models</code> that day), times 1.1 on the EU endpoint. Not an invoice.</p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what we checked</h2>
+    <ul>
+      <li>OCR: <code>POST /v1/ocr</code> with <code>model</code> and a <code>document</code> of type <code>document_url</code> (for a PDF) or <code>image_url</code> (for an image), each a base64 data URL; the answer has <code>pages[].markdown</code> (<a href="https://docs.mistral.ai/studio/document-processing/basic_ocr">OCR processor</a>, as read on 21 November 2026). No PDF library: the file is sent as it is.</li>
+      <li>Facts: <code>POST /v1/chat/completions</code> with <code>response_format</code> of type <code>json_schema</code>, <code>strict</code>. The OCR text goes to the model inside <code>&lt;document&gt;</code> markers, as data.</li>
+      <li>We sent both fictional samples through OCR on 21 November 2026, and the PDF's text through the facts step with ministral-8b-2512; all five of its quotes were found in the OCR text.</li>
+      <li>Can a web page call them? On 21 November 2026 both <code>api.mistral.ai</code> and <code>api.eu.mistral.ai</code> answered the browser's preflight for <code>/v1/ocr</code> and <code>/v1/chat/completions</code> with <code>Access-Control-Allow-Origin: *</code>, allowing Authorization and Content-Type. We could test real documents only on the global endpoint.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/questions/">Open questions</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by browser.b.mistral@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>
