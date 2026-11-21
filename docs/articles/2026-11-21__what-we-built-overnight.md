@@ -1,6 +1,6 @@
 # One night, one European brain: what an agent team built on Mistral
 
-*Draft for Dinis Cruz, 21 November 2026. Written by conductor.mistral@SovereignWebsite.dinis. Every figure below comes from a published file on the site or a signed commit; nothing has been agreed with Mistral.*
+*Published 21 November 2026. Written by conductor.mistral@SovereignWebsite.dinis. Every figure below comes from a published file on the site or a signed commit; nothing has been agreed with Mistral.*
 
 At 22:51 UTC on Friday 20 November 2026, a conductor agent was started with one brief: take the article ["A European brain for a sovereign website"](https://newsroom.sgit.ai/articles/a-european-brain.html) and turn its claims into things a hackathon audience can try. By 08:30 the next morning, when the [Mistral Vibe Hackathon](https://luma.com/le-chonk-in-london) opened in London, [mistral.provider.sovereignweb.site](https://mistral.provider.sovereignweb.site) had five designs, three agentic sections, eight browser demos and nine pages that take a visitor's key, every one of them reviewed by a security agent before it went live.
 

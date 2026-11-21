@@ -1,6 +1,6 @@
 // Writes the static pages in site/ from tools/facts.mjs. Run from the repository root: node tools/gen.mjs
 // The output is plain HTML: no inline script, no inline style, no <style> blocks (the site runs a strict CSP).
-import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 // Paths are resolved from the repository root (the folder above tools/), wherever this is run from.
@@ -143,6 +143,7 @@ ${body}
 <nav class="site-links" aria-label="About this site">
   <a href="/designs/">All five designs</a>
   <a href="/sources/">Sources</a>
+  <a href="/articles/">Articles</a>
   <a href="/questions/">Open questions</a>
   <a href="/start/">Start here</a>
   <a href="/agents/">Use with your AI</a>
@@ -334,6 +335,60 @@ page({ path: 'admin/index.html', url: '/admin/', title: 'How this site was made'
 <p>Five designs were made from the same facts, each a rebuild; <a href="/designs/">compare them</a>. Each design round and its review is in the design agent’s <a href="https://design.agents.sovereignweb.site/back-office.html">back office</a>.</p>
 <h2>Synthetic user runs</h2>
 <p>Runs of synthetic users against this site, and what they found, are listed here as the site’s agents record them. None yet.</p>
+</div>` });
+
+// ---------------------------------------------------------------- Articles: docs/articles/*.md, published at /articles/<slug>.html
+// A small Markdown subset: ## and ### headings, paragraphs, "- " lists, **bold**, *italic*, `code`, [text](https://...) links.
+const mdInline = (t) => esc(t)
+  .replace(/`([^`]+)`/g, '<code>$1</code>')
+  .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+  .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+  .replace(/\[([^\]]+)\]\(((?:https:\/\/|\/)[^)\s]+)\)/g, '<a href="$2">$1</a>');
+function mdToHtml(md) {
+  const out = []; let list = null, para = [];
+  const flush = () => { if (para.length) { out.push('<p>' + mdInline(para.join(' ')) + '</p>'); para = []; } if (list) { out.push('<ul>' + list.map((li) => '<li>' + mdInline(li) + '</li>').join('') + '</ul>'); list = null; } };
+  for (const line of md.split('\n')) {
+    if (/^#\s/.test(line)) continue;
+    const h = line.match(/^(#{2,3})\s+(.*)$/);
+    if (h) { flush(); out.push(`<h${h[1].length}>${mdInline(h[2])}</h${h[1].length}>`); continue; }
+    const li = line.match(/^- (.*)$/);
+    if (li) { if (para.length) { out.push('<p>' + mdInline(para.join(' ')) + '</p>'); para = []; } (list ||= []).push(li[1]); continue; }
+    if (/^\s+\S/.test(line) && list) { list[list.length - 1] += ' ' + line.trim(); continue; }
+    if (!line.trim()) { flush(); continue; }
+    if (list) flush();
+    para.push(line.trim());
+  }
+  flush();
+  return out.join('\n');
+}
+const ARTDIR = join(ROOT, 'docs', 'articles');
+const articles = existsSync(ARTDIR) ? readdirSync(ARTDIR).filter((f) => f.endsWith('.md')).sort().reverse().map((f) => {
+  const md = readFileSync(join(ARTDIR, f), 'utf8');
+  const title = (md.match(/^#\s+(.*)$/m) || [, f])[1].trim();
+  const date = f.slice(0, 10);
+  const slug = f.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}__/, '');
+  const body = md.replace(/^\*(Draft for|Published )[^\n]*\n/m, '');
+  const first = (body.split('\n').find((l) => l.trim() && !/^#/.test(l) && !/^\*/.test(l)) || '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*`]/g, '');
+  return { f, md: body, title, date, slug, summary: first.length > 200 ? first.slice(0, 197).replace(/\s+\S*$/, '') + '...' : first };
+}) : [];
+for (const a of articles) {
+  page({ path: `articles/${a.slug}.html`, url: `/articles/${a.slug}.html`, title: a.title, theme: 'plain', description: a.summary,
+    body: `<article class="wrap prose">
+<p class="mark">Article, ${a.date}</p>
+<h1>${esc(a.title)}</h1>
+<p class="lede">By conductor.mistral@SovereignWebsite.dinis, for Dinis Cruz. Every figure comes from a published file on this site or a signed commit. ${NOTHING}</p>
+${mdToHtml(a.md)}
+<p class="small">Source of this page: <a href="https://github.com/SovereignWebsite/Site__Provider__Mistral/blob/dev/docs/articles/${a.f}">docs/articles/${a.f}</a>. Text licensed CC BY 4.0. <a href="/articles/">All articles</a>.</p>
+</article>` });
+}
+page({ path: 'articles/index.html', url: '/articles/', title: 'Articles', theme: 'plain', description: 'Articles about this site: what was built, how and what it showed.',
+  body: `<div class="wrap">
+<p class="mark">Articles</p>
+<h1>Articles</h1>
+<p class="lede">What was built on this site, how, and what it showed, written by its agents for Dinis Cruz.</p>
+<ul class="plain">
+${articles.map((a) => `<li><a href="/articles/${a.slug}.html">${esc(a.title)}</a> (${a.date}). ${esc(a.summary)}</li>`).join('\n')}
+</ul>
 </div>` });
 
 console.log('generated site/');
