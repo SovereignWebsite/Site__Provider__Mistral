@@ -1,0 +1,19 @@
+{
+  "recorded": "2026-11-21, 01:40 to 01:47 UTC, by mistral.local@SovereignWebsite.dinis",
+  "summary": "Recorded on 21 November 2026 with this page's own code, in headless Chromium 157 in a cloud container, not on a laptop. That container has no WebGPU, so this is the slow case: WebAssembly on the processor, one thread. A recent laptop with WebGPU should be faster; we have not measured one yet. The two answers below are model output, copied as written, mistakes included. They come from two runs: the second was the second message of its own conversation, which is why it read only 21 new prompt tokens.",
+  "facts": [
+    ["Model", "Ministral 3 3B Instruct (2512), Q4_K_M, Mistral's own GGUF file, 2,147,023,008 bytes"],
+    ["Engine", "wllama 3.13.0 (llama.cpp b12211), WebAssembly, one thread, no WebGPU"],
+    ["Machine", "Cloud container: 4 virtual processors (Intel Xeon, 2.10 GHz), 15 GB memory"],
+    ["Loading", "16 s the first time and 9.5 s after a reload, from a copy of the file on the test server; the 2.15 GB download from Hugging Face is not included, and depends on your connection"],
+    ["Writing speed", "about 1 token per second (1.02 and 0.95 in the two runs below)"],
+    ["Waiting for the first word", "48.6 s for the first message (65 prompt tokens read), 18.0 s for the second (21 new prompt tokens)"],
+    ["Memory used by the tab", "not measured"]
+  ],
+  "turns": [
+    { "role": "user", "content": "Write a two-sentence About paragraph for a Chiswick cheese shop's website." },
+    { "role": "assistant", "content": "At our Chiswick cheese shop, we curate a selection of artisanal cheeses from local and international producers, ensuring every wedge is fresh and of the highest quality. Whether you're after a classic Cheddar or a bold blue, our expert team is here to help you find the perfect cheese for your next gathering.", "stats": "68 tokens in 66.4 s: 1.02 tokens per second. First token after 48.6 s (65 prompt tokens read). Measured in Chromium in a cloud container, 01:41 UTC." },
+    { "role": "user", "content": "Translate into French: \"Our shop is open from nine until five, Monday to Saturday.\"" },
+    { "role": "assistant", "content": "Not sure about this phrasing in French, but here’s a polite version:\n\n*\"Notre boutique est ouverte de neuf heures à cinq, du lundi au samedi.\"*", "stats": "34 tokens in 35.6 s: 0.95 tokens per second. First token after 18.0 s (21 new prompt tokens read). Measured in Chromium in a cloud container, 01:47 UTC. Note the slip: \"à cinq\" reads as five in the morning; \"à dix-sept heures\" is what was meant. A 3B model is small; check what matters." }
+  ]
+}

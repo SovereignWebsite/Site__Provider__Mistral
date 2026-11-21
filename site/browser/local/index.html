@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSP. 'wasm-unsafe-eval' is in script-src because the engine (llama.cpp compiled to WebAssembly) must compile
+     its WebAssembly module, and browsers block that under a strict policy without it; it does not allow JavaScript eval.
+     worker-src 'self': the engine's two workers are files on this site (vendor/wllama/llama-worker.js, opfs-worker.js).
+     connect-src: this site, plus huggingface.co (Mistral's repository) and the Hugging Face file servers it
+     redirects the download to (*.hf.co: observed us.aws.cdn.hf.co on 21 November 2026; other regions use other names
+     under hf.co). Nothing else. Passed by security.b, review 010. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://huggingface.co https://*.hf.co; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Mistral, inside your browser</title>
+<meta name="description" content="Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once from Mistral's Hugging Face repository; your messages never leave your machine.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/browser/local/">
+<meta property="og:title" content="Mistral, inside your browser">
+<meta property="og:description" content="Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once from Mistral's Hugging Face repository; your messages never leave your machine.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mistral, inside your browser">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mistral, inside your browser">
+<meta name="twitter:description" content="Ministral 3 3B, Mistral's Apache 2.0 model, running inside this browser tab: no key, no API. The weights download once from Mistral's Hugging Face repository; your messages never leave your machine.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/browser/local/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/browser/ask/ask.css">
+<link rel="stylesheet" href="/browser/local/local.css">
+<script type="module" src="/browser/local/local.js"></script>
+</head>
+<body class="t-plain">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<main id="main">
+  <p class="mark">In your browser, on your machine</p>
+  <h1>Mistral, inside your browser</h1>
+  <p class="lede">Ministral 3 3B, Mistral's own Apache 2.0 model, running inside this tab. No key, no API, no server: the weights download once from Mistral's repository on Hugging Face, and every word after that is worked out by your own machine. This is the first level of <a href="https://newsroom.sgit.ai/articles/a-european-brain.html">A European brain for a sovereign website</a>, "on the device", in the one place every visitor already has.</p>
+  <noscript><p class="warn">This page needs JavaScript and WebAssembly to run the model.</p></noscript>
+
+  <section aria-labelledby="h-before">
+    <h2 id="h-before">Before you download: what to expect</h2>
+    <ul class="plain">
+      <li><strong>The download is <span id="size">2.15 GB</span></strong>, once: Mistral's own file <code>Ministral-3-3B-Instruct-2512-Q4_K_M.gguf</code>, from <a href="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF">huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF</a> (size from Hugging Face's file listing, 1 GB = 10<sup>9</sup> bytes, as read on 21 November 2026). It is kept in this browser's private storage for this site, so a reload does not download it again. You can delete it below.</li>
+      <li><strong>It needs about 3 GB of free memory</strong> while it runs: the 2.15 GB of weights plus room for the conversation. <strong>Phones will very likely not cope</strong>; the system may close the tab. Use a laptop or desktop.</li>
+      <li><strong>Speed depends on your machine.</strong> With WebGPU (recent Chrome or Edge, with a graphics adapter) the engine runs the model on the graphics chip. Without it, it runs on the processor through WebAssembly, on one thread, which is slow. The recorded run below shows the slow case: about 1 token per second, measured in a cloud container on one WebAssembly thread with no WebGPU. A laptop with WebGPU should be much faster, but we have not measured one.</li>
+      <li><strong>Tested in Chromium only</strong> (version 157). Firefox and Safari lack features this engine build needs and may fail to load the model; we say so rather than guess.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-recorded">
+    <h2 id="h-recorded">A recorded run (nothing downloaded)</h2>
+    <div id="recorded" class="recorded"><p>Loading the recorded run...</p></div>
+  </section>
+
+  <section aria-labelledby="h-check">
+    <h2 id="h-check">1. What your browser can do</h2>
+    <p>Checked on this page, in your browser. Nothing has been downloaded or sent.</p>
+    <ul id="checks" class="checks"><li>Checking...</li></ul>
+  </section>
+
+  <section aria-labelledby="h-load">
+    <h2 id="h-load">2. Download and load the model</h2>
+    <p class="warn">Pressing the download button downloads 2.15 GB from Hugging Face (huggingface.co and its download servers), which see your IP address, as any download does. It is stored only in this browser until you delete it. On mobile data this may cost you. Nothing is fetched before you press it.</p>
+    <p id="cache-status" class="small"></p>
+    <p><label class="inline"><input type="checkbox" id="use-gpu" checked> Use WebGPU if this browser offers it</label></p>
+    <div class="actions">
+      <button type="button" id="download" class="primary">Download 2.15 GB from Hugging Face and load the model</button>
+      <button type="button" id="forget" disabled>Delete the model from this browser</button>
+    </div>
+    <progress id="progress" max="1" value="0" hidden></progress>
+    <p id="load-status" class="status" role="status" aria-live="polite"></p>
+  </section>
+
+  <section aria-labelledby="h-chat">
+    <h2 id="h-chat">3. Talk to it</h2>
+    <p class="label" id="examples-label">Try one of these, or write your own</p>
+    <div class="examples" id="examples" role="group" aria-labelledby="examples-label">
+      <button type="button">Write a two-sentence About paragraph for a Chiswick cheese shop's website.</button>
+      <button type="button">In three short bullet points, why might a small business want an AI that runs on its own machine?</button>
+      <button type="button">Translate into French: "Our shop is open from nine until five, Monday to Saturday."</button>
+    </div>
+    <label for="question">Your message</label>
+    <textarea id="question" rows="3" disabled></textarea>
+    <div class="actions">
+      <button type="button" id="ask" class="primary" disabled>Send to the model in this tab</button>
+      <button type="button" id="stop" disabled>Stop</button>
+      <button type="button" id="new">New conversation</button>
+      <button type="button" id="export" disabled>Download this conversation (JSON)</button>
+    </div>
+    <div id="chat" class="chat" aria-live="polite"></div>
+    <h3>Speed measured in your browser</h3>
+    <div class="tablewrap"><table>
+      <caption class="vh">Each answer in this tab: tokens and speed, measured in your browser</caption>
+      <thead><tr><th scope="col">Time</th><th scope="col">Engine</th><th scope="col" class="num">Tokens written</th><th scope="col" class="num">Seconds</th><th scope="col" class="num">Tokens per second</th><th scope="col" class="num">Seconds to first token</th></tr></thead>
+      <tbody id="runs-body"></tbody>
+    </table></div>
+    <p class="small">The conversation uses the same OpenAI-style list of messages (system, user, assistant) as the other demos on this site. It is kept in this tab's memory only, and gone when you reload.</p>
+  </section>
+
+  <section aria-labelledby="h-leaves">
+    <h2 id="h-leaves">4. What leaves this machine</h2>
+    <ul class="plain">
+      <li><strong>The download of the weights</strong>, when you press the button: your browser asks <code>huggingface.co</code> for Mistral's file and for its small checksum record, and Hugging Face redirects the file itself to one of its file servers under <code>hf.co</code> (in our test, <code>us.aws.cdn.hf.co</code>; the name may differ where you are). Like any download, those servers see your IP address and which file you fetched. Nothing you type is sent with these requests. Loading it again later, from this browser's storage, contacts nobody.</li>
+      <li><strong>Nothing else.</strong> Your messages, the model's answers and the speed figures stay in this tab. There is no key and no API call. The page's content security policy lets it connect only to this site and to those Hugging Face hosts, so it could not send your words elsewhere even by mistake.</li>
+    </ul>
+    <h3>Hosts this tab has contacted so far</h3>
+    <ul id="hosts" class="plain"></ul>
+    <p id="hosts-note" class="small"></p>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works, and what it does not claim</h2>
+    <ul class="plain">
+      <li>The engine is <a href="https://github.com/ngxson/wllama">wllama</a> 3.13.0 (MIT), which is <a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> (MIT, release b12211) compiled to WebAssembly, with WebGPU support. Its files are served from this site, in <code>vendor/wllama/</code>, with <a href="vendor/wllama/LICENCE">its licence</a>; nothing comes from a script CDN. We changed one thing: the library builds its two background workers from in-memory text, and we save that same text as two files on this site so the page can forbid any other script. <a href="vendor/make-vendor.mjs">make-vendor.mjs</a> does it and says how.</li>
+      <li>Ministral 3 3B Instruct is Mistral's model, released under Apache 2.0 for edge and local use (<a href="https://mistral.ai/news/mistral-3">mistral.ai/news/mistral-3</a>; licence from <a href="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF">the model's Hugging Face page</a>, both as read on 21 November 2026). Q4_K_M is Mistral's own 4-bit compressed version. The page uses the text part only; the vision part (0.84 GB more) is not downloaded.</li>
+      <li>The file is pinned to one version of Mistral's repository (commit <code>eb599d40</code>), so what you download is what we tested.</li>
+      <li>A 3B model is small. It writes fluent short text, and it can be confidently wrong about facts. Check anything that matters.</li>
+      <li>Speeds on this page are measured, not estimated: in your browser for your runs, and in a cloud container for the recorded run, which says so.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/browser/">In your browser</a>
+  <a href="/demos/on-device.html">On your device</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+  <p>Built by mistral.local@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. Static files only: no cookies, no tracking, no server of ours. The only thing this page stores is the model, in this browser, when you ask it to. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>
