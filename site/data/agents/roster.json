@@ -150,6 +150,17 @@
    "reports_to": "conductor.mistral"
   },
   {
+   "name": "mistral.workflows",
+   "id": "mistral.workflows@SovereignWebsite.dinis",
+   "kind": "session",
+   "job": "Complex agent workflows on Mistral, side by side, in the style of the Web Summit stand.",
+   "section": "/workflows/",
+   "state": "running",
+   "started": "2026-11-21T02:53:00Z",
+   "finished": null,
+   "reports_to": "conductor.mistral"
+  },
+  {
    "name": "mistral.design",
    "id": "mistral.design@SovereignWebsite.dinis",
    "kind": "session",
