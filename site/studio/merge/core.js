@@ -1,7 +1,7 @@
 // "From a shoebox to a website": the pure half. No DOM, no network, no key. The page (merge.js), the recorder
 // (tools/record-merge.mjs) and the tests (tools/test-merge.mjs) all use this one file, so a recorded run is made with
 // exactly the requests a visitor's run sends. mistral.design@SovereignWebsite.dinis, 21 November 2026. Code Apache-2.0.
-import { poster } from '../../../site/assets/js/poster.js';
+import { poster } from '../../assets/js/poster.js';
 
 // ---- The six steps and the Mistral model each uses (all listed by GET /v1/models on 21 November 2026). ----
 export const STEPS = [

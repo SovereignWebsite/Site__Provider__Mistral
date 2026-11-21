@@ -1,7 +1,7 @@
 // "The document desk": the pure half. No DOM, no network, no key. Used by the page (desk.js), the recorder and the tests.
 // mistral.design@SovereignWebsite.dinis, 21 November 2026. Code Apache-2.0.
-// In site/studio/desk/ this import is '../../assets/js/studio-kit.js'; here, under review in docs/, it reaches site/.
-import { esc, found, zip } from '../../../site/assets/js/studio-kit.js';
+// Shared helpers: site/assets/js/studio-kit.js.
+import { esc, found, zip } from '../../assets/js/studio-kit.js';
 export { zip };
 
 export const DESKS = [

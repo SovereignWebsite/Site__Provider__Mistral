@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")/.."
 node tools/gen.mjs
 node tools/nav.mjs --check
-for t in docs/review/studio-*/tools/test-*.mjs; do node "$t"; done
+for t in tools/studio/*/test-*.mjs; do node "$t"; done
 node .github/ci/build.mjs
 node .github/ci/share-check.mjs _site
 if [ ! -d site/demos ] && [ -d ../demos ]; then

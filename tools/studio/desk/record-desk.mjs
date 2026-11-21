@@ -5,8 +5,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as D from '../core.js';
-const HERE = join(dirname(fileURLToPath(import.meta.url)), '..');
+import * as D from '../../../site/studio/desk/core.js';
+const HERE = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'site', 'studio', 'desk');
 const KEY = process.env.MISTRAL_API_KEY || 'set-by-proxy';
 function post(path, body) {
   const t0 = Date.now();

@@ -2,7 +2,7 @@
 //   node tools/test-merge.mjs
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import * as C from '../core.js';
+import * as C from '../../../site/studio/merge/core.js';
 let n = 0; const t = (name, f) => { f(); n++; console.log('ok', name); };
 
 const src = { markdown: 'FORNO DA RIBEIRA\n**Opening hours**\nTuesday to Sunday, 7 am to 7 pm', transcript: 'We are Forno da Ribeira, a family bakery in Porto.' };
@@ -54,7 +54,7 @@ t('the request bodies name the models and paths the page says', () => {
   assert.deepEqual(pic.tools, [{ type: 'image_generation' }]); assert.match(pic.inputs, /No text, no letters, no logos, no people/);
 });
 t('the recorded run replays: its plan checks out against its own sources', () => {
-  const r = JSON.parse(readFileSync(new URL('../recorded.json', import.meta.url)));
+  const r = JSON.parse(readFileSync(new URL('../../../site/studio/merge/recorded.json', import.meta.url)));
   const ev = (s) => r.events.find((e) => e.step === s);
   const v = C.verify(ev('plan').plan, { markdown: ev('read').markdown, transcript: ev('listen').transcript });
   assert.deepEqual(v.kept, ev('plan').verified.kept);

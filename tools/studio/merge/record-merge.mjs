@@ -6,8 +6,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as C from '../core.js';
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..'); // the demo folder
+import * as C from '../../../site/studio/merge/core.js';
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'site', 'studio', 'merge'); // the demo folder
 const SAMPLES = join(ROOT, 'samples');
 const KEY = process.env.MISTRAL_API_KEY || 'set-by-proxy';
 const dataUrl = (file, type) => `data:${type};base64,${readFileSync(join(SAMPLES, file)).toString('base64')}`;
