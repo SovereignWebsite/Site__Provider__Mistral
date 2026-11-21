@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.mistral.ai https://api.eu.mistral.ai https://data.promptugal.news https://promptugal.news; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>What should I know today?</title>
+<meta name="description" content="A Mistral agent that reads across PrompTugal&#x27;s feeds for London and Portugal with tool calls in your browser, answers with each source and read time, and draws every step as a flow.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mistral, a European brain">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://mistral.provider.sovereignweb.site/promptugal/today/">
+<meta property="og:title" content="What should I know today?">
+<meta property="og:description" content="A Mistral agent that reads across PrompTugal&#x27;s feeds for London and Portugal with tool calls in your browser, answers with each source and read time, and draws every step as a flow.">
+<meta property="og:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="What should I know today?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What should I know today?">
+<meta name="twitter:description" content="A Mistral agent that reads across PrompTugal&#x27;s feeds for London and Portugal with tool calls in your browser, answers with each source and read time, and draws every step as a flow.">
+<meta name="twitter:image" content="https://mistral.provider.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://mistral.provider.sovereignweb.site/promptugal/today/">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/plain.css">
+<link rel="stylesheet" href="/browser/ask/panel.css">
+<link rel="stylesheet" href="/browser/ask/ask.css">
+<link rel="stylesheet" href="/promptugal/promptugal.css">
+<script src="/promptugal/lib/qrkey.js"></script>
+<script src="/demos/facts.js" defer></script>
+<script src="/browser/ask/chat-core.js" defer></script>
+<script src="/browser/ask/panel.js" defer></script>
+<script src="/promptugal/lib/pt-tools.js" defer></script>
+<script src="/promptugal/lib/figcheck.js" defer></script>
+<script src="/promptugal/lib/today.js" defer></script>
+<script type="module" src="/promptugal/today/today.js"></script>
+</head>
+<body class="t-plain">
+<!-- nav:head -->
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="top">
+  <a class="name" href="/">Mistral, a European brain</a>
+  <nav class="own" aria-label="This site">
+  <details class="chooser">
+    <summary>Choose a design</summary>
+    <ul>
+      <li><a href="/designs/1.html"><span class="num">1</span> The European brain</a></li>
+      <li><a href="/designs/2.html"><span class="num">2</span> The map</a></li>
+      <li><a href="/designs/3.html"><span class="num">3</span> The console</a></li>
+      <li><a href="/designs/4.html"><span class="num">4</span> The ledger</a></li>
+      <li><a href="/designs/5.html"><span class="num">5</span> The hackathon</a></li>
+      <li class="all"><a href="/designs/">See all five</a></li>
+      <li class="extra"><a href="/start/">Start here</a></li>
+      <li class="extra"><a href="/agents/">Use with your AI</a></li>
+    </ul>
+  </details>
+    <a class="own-link" href="/start/">Start here</a>
+    <a class="own-link" href="/agents/">Use with your AI</a>
+  </nav>
+</header>
+<section class="notice" aria-label="Notice"><p><span class="n-long">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</span><span class="n-short">Independent demonstration, not affiliated with Mistral AI.</span></p></section>
+<!-- /nav:head -->
+<main id="main">
+<p class="mark"><a href="/promptugal/">PrompTugal on Mistral</a>: today</p>
+  <h1>What should I know today?</h1>
+  <p class="lede">Say where you are today, in London or in Portugal, and what you are doing. A Mistral agent decides which of PrompTugal's feeds to read, reads them through tools that run in your browser, and answers in a few lines, each with its source and when it was read. Every step is drawn as it happens: you, Mistral, the tools in this page, and the feeds.</p>
+  <noscript><p class="warn">This page needs JavaScript to ask or replay.</p></noscript>
+
+  <section aria-labelledby="h-reads">
+    <h2 id="h-reads">What this page reads, and from where</h2>
+    <p>When the model asks for a tool, your browser reads PrompTugal's public files itself, with a plain GET: no key, no cookies, no question text. Only from <code>data.promptugal.news</code>: the catalogue (<code>/api/v1/index.json</code>), a place's "now" file (<code>/api/v1/by-place/now/&lt;place&gt;.json</code>, for a place in that catalogue only) and a source's latest file (<code>/api/v1/&lt;source&gt;/latest.json</code>, for a source in that catalogue only); and from <code>promptugal.news</code>, its search index and the text of a page in it. The content security policy of this page allows no other data host. See <a href="/promptugal/feeds/">all the feeds</a>.</p>
+    <p class="small">Each value keeps its source's licence; IPMA's data may be used without a profit-making purpose only, and this demonstration is not commercial. Not a warning service: follow IPMA and ANEPC in Portugal, the Environment Agency and the Met Office in England.</p>
+  </section>
+
+  <section aria-labelledby="h-replay">
+    <h2 id="h-replay">1. Replay a recorded run (no key needed)</h2>
+    <p>Two questions we asked through Mistral's API on 21 November 2026, one in English and one in Portuguese, saved as <a href="/promptugal/today/recorded.json">a file on this site</a> with every step. Replaying sends nothing anywhere.</p>
+    <div class="actions"><button type="button" id="replay" class="primary">Replay the recorded run</button></div>
+  </section>
+
+  <section aria-labelledby="h-key">
+    <h2 id="h-key">2. Your Mistral key</h2>
+    <div id="key-panel"></div>
+    <div class="qrbox">
+      <h3 id="qr-h">Your key as a QR code</h3>
+      <p>If you were given your key as a QR code: open its link on this device (the key comes after "#" in the link, and this page takes it from there), or paste or drop a picture of the QR code below. The picture is read here, in this tab, and sent nowhere.</p>
+      <div id="qr-drop" class="drop" tabindex="0" role="group" aria-labelledby="qr-drop-label">
+        <p id="qr-drop-label">Paste a picture of the QR code here (Ctrl+V, or Cmd+V on a Mac), or drop it here</p>
+        <label for="qr-file">Or choose a picture</label>
+        <input id="qr-file" type="file" accept="image/*">
+      </div>
+      <p id="qr-status" class="status" role="status" aria-live="polite"></p>
+      <details class="keymore">
+        <summary>What happens to a key from a QR code</summary>
+        <p class="small">Opened as a link: the browser never sends the part after "#" to any server, and this page removes it from the address bar and this tab's history the moment it loads. Your camera app or browser may still keep the link in its own history, so treat that link like the key itself. As a picture: decoded with your browser's own QR reader or, where it has none, <a href="/promptugal/vendor/README.txt">jsQR</a>, a copy kept on this site. Either way the key goes into the key box above, held in this tab's memory only, and is never shown.</p>
+      </details>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ask">
+    <h2 id="h-ask">3. Ask</h2>
+    <p class="label" id="examples-label">Try one of these, or ask your own</p>
+    <div class="examples" id="examples" role="group" aria-labelledby="examples-label"></div>
+    <label for="question">Where are you today, and what are you doing?</label>
+    <textarea id="question" rows="3"></textarea>
+    <div class="actions">
+      <button type="button" id="ask" class="primary">Ask</button>
+      <button type="button" id="stop" disabled>Stop</button>
+    </div>
+    <p id="ask-status" class="status" role="status" aria-live="polite"></p>
+    <div id="chat" class="chat"></div>
+  </section>
+
+  <section aria-labelledby="h-sends">
+    <h2 id="h-sends">4. What this call sends, and to whom</h2>
+    <div id="sends" class="sends"></div>
+  </section>
+
+  <section aria-labelledby="h-log">
+    <h2 id="h-log">Calls to Mistral made from this tab</h2>
+    <div class="tablewrap"><table>
+      <caption class="sr">Calls to Mistral from this tab</caption>
+      <thead><tr><th scope="col">Time</th><th scope="col">To</th><th scope="col">Model</th><th scope="col">Status</th><th scope="col" class="num">Time taken (ms)</th><th scope="col" class="num">Tokens</th></tr></thead>
+      <tbody id="call-log-body"></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-found">
+    <h2 id="h-found">What we found in the recorded run</h2>
+    <p>One run of two questions, 21 November 2026, <code>mistral-small-2603</code> on api.mistral.ai at temperature 0, on PrompTugal data read at 18:04 to 18:16 UTC on 20 November. n = 1 per question: examples, not a benchmark.</p>
+    <ul class="plain">
+      <li>London and Lisbon: the agent read the two place files and no more, and named Lisbon's yellow rain warning (12:00 to 18:00) first, as the prompt asks. Every figure in the answer is in the data, but one is rounded: London's maximum is "9 °C"; the data says 9.4. The figure check counts "9" as found because a 9 appears elsewhere in the data.</li>
+      <li>Faro, asked in Portuguese: the answer came in English, against the prompt. And "Sea temperature up to 19.4 °C today" is the figure for 20 November in the file, not for the 21st.</li>
+      <li>So three faults that code checks of figures cannot see: a rounded number, the wrong day, the wrong language. The flow and the steps show exactly what was read, so a person can check.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <ul class="plain">
+      <li>Five read-only tools, in <a href="/promptugal/lib/pt-tools.js">pt-tools.js</a>: <code>read_place</code> (one place's "now" file), <code>list_sources</code>, <code>read_source</code>, <code>search_news</code> and <code>read_news</code>. The model never gives an address: it names a place or a source from PrompTugal's catalogue, and the address is built in code.</li>
+      <li>The prompt is <a href="/promptugal/lib/today.js">today.js</a>: start with the places named, at most five tool calls, at most five lines, a warning always a line, each line with its source and read time.</li>
+      <li>The loop and the key panel are <a href="/browser/ask/chat-core.js">chat-core.js</a> and <a href="/browser/ask/panel.js">panel.js</a>, unchanged. Every tool result goes back to the model inside <code>&lt;untrusted-data&gt;</code> markers. A link in an answer is clickable only if a tool returned that exact address, on PrompTugal's, IPMA's, the UK government's, Open-Meteo's or the vulnerability databases' hosts.</li>
+      <li>This page talks to four places only: this site, the Mistral endpoint you choose (with your key, when you press Ask), data.promptugal.news and promptugal.news (without your key). Its content security policy enforces that.</li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+<!-- nav:foot -->
+<p class="foot-notice">An independent Sovereign Website demonstration. Not affiliated with or endorsed by Mistral AI.</p>
+<nav class="site-links" aria-label="About this site">
+  <a href="/promptugal/">PrompTugal on Mistral</a>
+  <a href="/browser/">In your browser</a>
+  <a href="/designs/">All five designs</a>
+  <a href="/sources/">Sources</a>
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">How this site was made</a>
+</nav>
+<!-- /nav:foot -->
+  <p>Built by mistral.promptugal@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+</footer>
+</body>
+</html>

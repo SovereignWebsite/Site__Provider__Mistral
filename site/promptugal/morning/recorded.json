@@ -1,0 +1,263 @@
+{
+ "kind": "promptugal-morning-run",
+ "recorded": "2026-11-21 03:01 UTC",
+ "date": "2026-11-21",
+ "endpoint": "api.mistral.ai",
+ "model": "mistral-small-2603",
+ "note": "Recorded real run. The briefing is model output; the facts and checks are code.",
+ "by": "site/promptugal/tools/record-morning.mjs, mistral.promptugal@SovereignWebsite.dinis",
+ "steps": [
+  {
+   "t": 483,
+   "type": "fetch",
+   "key": "london",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/london.json",
+   "status": 200,
+   "bytes": 4024,
+   "ms": 483,
+   "read_at": "2026-11-20T18:16:43Z"
+  },
+  {
+   "t": 505,
+   "type": "fetch",
+   "key": "lisboa",
+   "url": "https://data.promptugal.news/api/v1/by-place/now/lisboa.json",
+   "status": 200,
+   "bytes": 5965,
+   "ms": 22,
+   "read_at": "2026-11-20T18:16:43Z"
+  },
+  {
+   "t": 527,
+   "type": "fetch",
+   "key": "london-hourly",
+   "url": "https://data.promptugal.news/api/v1/open-meteo-london/latest.json",
+   "status": 200,
+   "bytes": 25531,
+   "ms": 22,
+   "read_at": "2026-11-20T18:16:06Z"
+  },
+  {
+   "t": 528,
+   "type": "facts",
+   "facts": {
+    "date": "2026-11-21",
+    "note": "Every figure is copied in code from PrompTugal's files. London times are UTC (London time in November); Lisbon times are Lisbon time (also UTC in November).",
+    "sources": [
+     {
+      "file": "https://data.promptugal.news/api/v1/by-place/now/london.json",
+      "read_at": "2026-11-20T18:16:43Z"
+     },
+     {
+      "file": "https://data.promptugal.news/api/v1/open-meteo-london/latest.json",
+      "read_at": "2026-11-20T18:16:06Z"
+     },
+     {
+      "file": "https://data.promptugal.news/api/v1/by-place/now/lisboa.json",
+      "read_at": "2026-11-20T18:16:43Z"
+     }
+    ],
+    "london": {
+     "forecast": {
+      "t_min_c": 4.9,
+      "t_max_c": 9.4,
+      "rain_mm": 0,
+      "from": "Open-Meteo, read 2026-11-20T18:16:06Z"
+     },
+     "flood_warnings_in_force": 0,
+     "flood_warnings": [],
+     "flood_read_at": "2026-11-20T18:04:54Z",
+     "follow": "the Environment Agency and the Met Office",
+     "daytime_07_to_21": {
+      "highest_chance_of_rain_pct": 0,
+      "at": "no hour above 0%",
+      "strongest_gust_kmh": 22,
+      "gust_at": "15:00",
+      "hours": 15,
+      "from": "Open-Meteo hourly, read 2026-11-20T18:16:06Z"
+     }
+    },
+    "lisboa": {
+     "forecast": {
+      "t_min_c": 14.5,
+      "t_max_c": 19.2,
+      "rain_probability_pct": 100,
+      "from": "IPMA, read 2026-11-20T18:16:43Z"
+     },
+     "warnings": [
+      {
+       "level": "yellow",
+       "type": "rain",
+       "from": "12:00",
+       "to": "18:00",
+       "text_pt": "Chuva persistente, por vezes forte."
+      }
+     ],
+     "fire_risk": "low",
+     "sea": null,
+     "follow": "IPMA and ANEPC"
+    }
+   }
+  },
+  {
+   "t": 2294,
+   "type": "briefing",
+   "model": "mistral-small-2603",
+   "usage": {
+    "prompt_tokens": 835,
+    "total_tokens": 1062,
+    "completion_tokens": 227,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "usd": 0.00026145,
+   "ms": 1764,
+   "request_bytes": 2807,
+   "raw": "{\"title\": \"Morning briefing, Saturday 21 November 2026\", \"london\": \"Today’s temperatures will range from 4.9°C to 9.4°C with no rain expected. There are no flood warnings in force. The strongest gust will reach 22 km/h at 15:00. <untrusted-data>follow the Environment Agency and the Met Office</untrusted-data>\", \"lisboa\": \"Today’s temperatures will range from 14.5°C to 19.2°C with a 100% chance of rain. A yellow rain warning is in force from 12:00 to 18:00. The fire risk is low. <untrusted-data>follow IPMA and ANEPC</untrusted-data>\", \"side_by_side\": \"London’s high of 9.4°C is 9.8°C lower than Lisboa’s 19.2°C. Lisboa’s rain probability of 100% contrasts with London’s 0%.\"}",
+   "briefing": {
+    "title": "Morning briefing, Saturday 21 November 2026",
+    "london": "Today’s temperatures will range from 4.9°C to 9.4°C with no rain expected. There are no flood warnings in force. The strongest gust will reach 22 km/h at 15:00. <untrusted-data>follow the Environment Agency and the Met Office</untrusted-data>",
+    "lisboa": "Today’s temperatures will range from 14.5°C to 19.2°C with a 100% chance of rain. A yellow rain warning is in force from 12:00 to 18:00. The fire risk is low. <untrusted-data>follow IPMA and ANEPC</untrusted-data>",
+    "side_by_side": "London’s high of 9.4°C is 9.8°C lower than Lisboa’s 19.2°C. Lisboa’s rain probability of 100% contrasts with London’s 0%."
+   },
+   "checks": {
+    "figures": {
+     "title": [
+      {
+       "text": "21 november 2026",
+       "kind": "date",
+       "start": 27,
+       "end": 43,
+       "found": true
+      }
+     ],
+     "london": [
+      {
+       "text": "4.9",
+       "kind": "number",
+       "start": 37,
+       "end": 40,
+       "found": true
+      },
+      {
+       "text": "9.4",
+       "kind": "number",
+       "start": 46,
+       "end": 49,
+       "found": true
+      },
+      {
+       "text": "22",
+       "kind": "number",
+       "start": 143,
+       "end": 145,
+       "found": true
+      },
+      {
+       "text": "15:00",
+       "kind": "time",
+       "start": 154,
+       "end": 159,
+       "found": true
+      }
+     ],
+     "lisboa": [
+      {
+       "text": "14.5",
+       "kind": "number",
+       "start": 37,
+       "end": 41,
+       "found": true
+      },
+      {
+       "text": "19.2",
+       "kind": "number",
+       "start": 47,
+       "end": 51,
+       "found": true
+      },
+      {
+       "text": "100",
+       "kind": "number",
+       "start": 61,
+       "end": 64,
+       "found": true
+      },
+      {
+       "text": "12:00",
+       "kind": "time",
+       "start": 121,
+       "end": 126,
+       "found": true
+      },
+      {
+       "text": "18:00",
+       "kind": "time",
+       "start": 130,
+       "end": 135,
+       "found": true
+      }
+     ],
+     "side_by_side": [
+      {
+       "text": "9.4",
+       "kind": "number",
+       "start": 17,
+       "end": 20,
+       "found": true
+      },
+      {
+       "text": "9.8",
+       "kind": "number",
+       "start": 26,
+       "end": 29,
+       "found": false
+      },
+      {
+       "text": "19.2",
+       "kind": "number",
+       "start": 52,
+       "end": 56,
+       "found": true
+      },
+      {
+       "text": "100",
+       "kind": "number",
+       "start": 89,
+       "end": 92,
+       "found": true
+      },
+      {
+       "text": "0",
+       "kind": "number",
+       "start": 118,
+       "end": 119,
+       "found": true
+      }
+     ]
+    },
+    "mentions": [
+     {
+      "what": "yellow",
+      "where": "lisboa",
+      "why": "a yellow rain warning, 12:00 to 18:00",
+      "found": true
+     }
+    ],
+    "weekday": {
+     "want": "saturday",
+     "named": [
+      "saturday"
+     ],
+     "ok": true
+    },
+    "no_warning_claim_ok": true
+   }
+  }
+ ]
+}

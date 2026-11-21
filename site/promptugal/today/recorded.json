@@ -1,0 +1,237 @@
+{
+ "kind": "promptugal-today-run",
+ "recorded": "2026-11-21 03:04 UTC",
+ "date": "2026-11-21",
+ "endpoint": "api.mistral.ai",
+ "requested_model": "mistral-small-2603",
+ "note": "Recorded real run, model output. Data read live from data.promptugal.news at the time shown.",
+ "by": "site/promptugal/tools/record-today.mjs, mistral.promptugal@SovereignWebsite.dinis",
+ "events": [
+  {
+   "t": 1,
+   "type": "question",
+   "text": "I am at the hackathon in London today and fly to Lisbon tonight. What should I know?",
+   "lang": "en"
+  },
+  {
+   "t": 1,
+   "type": "request",
+   "hop": 0,
+   "host": "api.mistral.ai",
+   "messages": 2,
+   "bytes": 4417
+  },
+  {
+   "t": 803,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 1135,
+    "total_tokens": 1160,
+    "completion_tokens": 25,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 0,
+   "tools": 2
+  },
+  {
+   "t": 803,
+   "type": "call",
+   "id": "ztcTDlTz2",
+   "name": "read_place",
+   "args": {
+    "place": "london"
+   }
+  },
+  {
+   "t": 905,
+   "type": "fetch",
+   "host": "data.promptugal.news",
+   "path": "/api/v1/index.json",
+   "status": 200,
+   "bytes": 28668,
+   "ms": 101
+  },
+  {
+   "t": 934,
+   "type": "fetch",
+   "host": "data.promptugal.news",
+   "path": "/api/v1/by-place/now/london.json",
+   "status": 200,
+   "bytes": 4024,
+   "ms": 29
+  },
+  {
+   "t": 934,
+   "type": "result",
+   "id": "ztcTDlTz2",
+   "name": "read_place",
+   "args": {
+    "place": "london"
+   },
+   "result": "{\"place\":\"london\",\"cite_url\":\"https://data.promptugal.news/api/v1/by-place/now/london.json\",\"read_at\":\"2026-11-20T18:16:43Z\",\"about\":\"Now in London, from the Environment Agency (flood warnings and Thames levels, Open Government Licence) and Open-Meteo (forecast, CC BY 4.0), as collected by data.promptugal.news: each value with its source and the time read. Not a warning service: follow the Environment Agency (https://check-for-flooding.service.gov.uk/) and the Met Office.\",\"country\":\"GB\",\"forecast\":{\"days\":[{\"date\":\"2026-11-20\",\"t_min_c\":6.5,\"t_max_c\":10.2,\"rain_mm\":0.2,\"weather_code\":51},{\"date\":\"2026-11-21\",\"t_min_c\":4.9,\"t_max_c\":9.4,\"rain_mm\":0,\"weather_code\":3},{\"date\":\"2026-11-22\",\"t_min_c\":5.9,\"t_max_c\":9.2,\"rain_mm\":0,\"weather_code\":3}],\"at\":\"2026-11-20T18:16:06Z\",\"expected_cadence\":{\"name\":\"twice a day\",\"seconds\":43200,\"stale_after_seconds\":46800,\"why\":\"read at data.b@'s two wakes a day (07:03 and 18:03 Lisbon, since 19 Nov 2026); Open-Meteo's free API is shared and answered 429 to hourly reads on 19 Nov\"},\"source\":\"https://data.promptugal.news/api/v1/open-meteo-london/latest.json\",\"attribution\":\"Weather data by Open-Meteo.com\",\"license\":{\"name\":\"CC BY 4.0\",\"url\":\"https://open-meteo.com/en/licence\"}},\"floods\":{\"warnings\":[],\"stations\":10,\"at\":\"2026-11-20T18:04:54Z\",\"source\":\"https://data.promptugal.news/api/v1/ea-flood/latest.json\",\"attribution\":\"this uses Environment Agency flood and river level data from the real-time data API (Beta)\",\"license\":{\"name\":\"Open Government Licence v3.0\",\"url\":\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\"}},\"reads\":{\"ea-flood\":{\"url\":\"https://data.promptugal.news/api/v1/ea-flood/latest.json\",\"at\":\"2026-11-20T18:04:54Z\"},\"open-meteo-london\":{\"url\":\"https://data.promptugal.news/api/v1/open-meteo-london/latest.json\",\"at\":\"2026-11-20T18:16:06Z\"}}}",
+   "error": null
+  },
+  {
+   "t": 934,
+   "type": "call",
+   "id": "a4Z2Z30dj",
+   "name": "read_place",
+   "args": {
+    "place": "lisboa"
+   }
+  },
+  {
+   "t": 963,
+   "type": "fetch",
+   "host": "data.promptugal.news",
+   "path": "/api/v1/by-place/now/lisboa.json",
+   "status": 200,
+   "bytes": 5965,
+   "ms": 29
+  },
+  {
+   "t": 963,
+   "type": "result",
+   "id": "a4Z2Z30dj",
+   "name": "read_place",
+   "args": {
+    "place": "lisboa"
+   },
+   "result": "{\"place\":\"lisboa\",\"cite_url\":\"https://data.promptugal.news/api/v1/by-place/now/lisboa.json\",\"read_at\":\"2026-11-20T18:16:43Z\",\"about\":\"Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata. Not a warning service: follow IPMA (https://www.ipma.pt/) and ANEPC.\",\"station\":{\"name\":\"Lisboa (Geofísico)\",\"id\":1200535,\"reading\":null,\"page\":\"https://www.ipma.pt/en/otempo/obs.superficie/\",\"source\":\"https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json\"},\"forecast\":{\"place\":\"Lisboa\",\"id\":1110600,\"page\":\"https://www.ipma.pt/en/otempo/prev.localidade.hora/\",\"days\":[{\"date\":\"2026-11-20\",\"t_min_c\":12.9,\"t_max_c\":17.5,\"rain_prob_pct\":33,\"weather_type\":3},{\"date\":\"2026-11-21\",\"t_min_c\":14.5,\"t_max_c\":19.2,\"rain_prob_pct\":100,\"weather_type\":9},{\"date\":\"2026-11-22\",\"t_min_c\":11.2,\"t_max_c\":17.6,\"rain_prob_pct\":0,\"weather_type\":3},{\"date\":\"2026-11-23\",\"t_min_c\":9.1,\"t_max_c\":16.1,\"rain_prob_pct\":6,\"weather_type\":5},{\"date\":\"2026-11-24\",\"t_min_c\":10.5,\"t_max_c\":15.5,\"rain_prob_pct\":92,\"weather_type\":10}],\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json\"},\"warnings\":{\"area\":\"LSB (the Lisboa district)\",\"active\":[{\"type\":\"rain\",\"type_pt\":\"Precipitação\",\"level\":\"yellow\",\"start\":\"2026-11-21T12:00:00\",\"end\":\"2026-11-21T18:00:00\",\"text\":\"Chuva persistente, por vezes forte.\"}],\"page\":\"https://www.ipma.pt/en/otempo/prev-sam/\",\"source\":\"https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json\"},\"fire_risk\":{\"municipality\":\"1106\",\"days\":[{\"date\":\"2026-11-20\",\"level\":\"low\"},{\"date\":\"2026-11-21\",\"level\":\"low\"},{\"date\":\"2026-11-22\",\"level\":\"low\"}],\"page\":\"https://www.ipma.pt/en/riscoincendio/rcm.pt/\",\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/rcm/rcm-d0.json\"},\"uv\":{\"place\":\"Lisboa\",\"date\":\"2026-11-24\",\"index\":1.9,\"page\":\"https://www.ipma.pt/en/otempo/prev.uv/\",\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/uv/uv.json\"},\"sea\":{\"coast\":\"Lisbon coast\",\"date\":\"2026-11-20\",\"waves_max_m\":3.4,\"sea_max_m\":3.5,\"sea_temp_max_c\":17.6,\"page\":\"https://www.ipma.pt/en/maritima/costeira/\",\"source\":\"https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json\"},\"airport\":null,\"reads\":{\"observations\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-observations/latest.json\",\"at\":\"2026-11-20T18:15:29Z\",\"status\":200},\"warnings\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-warnings/latest.json\",\"at\":\"2026-11-20T18:15:47Z\",\"status\":200},\"forecasts\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-city-forecasts/latest.json\",\"at\":\"2026-11-20T18:13:52Z\",\"status\":200},\"fire-risk\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-fire-risk/latest.json\",\"at\":\"2026-11-20T18:15:22Z\",\"status\":200},\"uv\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-uv/latest.json\",\"at\":\"2026-11-20T18:15:44Z\",\"status\":200},\"sea\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-sea/latest.json\",\"at\":\"2026-11-20T18:15:34Z\",\"status\":200},\"adsb\":{\"url\":\"https://data.promptugal.news/api/v1/adsb-faro/latest.json\",\"at\":\"2026-11-20T18:04:26Z\",\"status\":200}}}",
+   "error": null
+  },
+  {
+   "t": 963,
+   "type": "request",
+   "hop": 1,
+   "host": "api.mistral.ai",
+   "messages": 5,
+   "bytes": 10457
+  },
+  {
+   "t": 3007,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 3178,
+    "total_tokens": 3455,
+    "completion_tokens": 277,
+    "prompt_tokens_details": {
+     "cached_tokens": 1104
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 1,
+   "tools": 0
+  },
+  {
+   "t": 3007,
+   "type": "answer",
+   "content": "- Yellow rain warning for Lisboa district from 12:00 to 18:00 today [IPMA warnings](https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json) read at 2026-11-20T18:15:47Z\n- Rain expected in Lisboa today, 100 % probability [IPMA forecast](https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json) read at 2026-11-20T18:13:52Z\n- London: dry and cool today, max 9 °C [Open-Meteo](https://data.promptugal.news/api/v1/open-meteo-london/latest.json) read at 2026-11-20T18:16:06Z\n- No flood warnings in London [Environment Agency](https://data.promptugal.news/api/v1/ea-flood/latest.json) read at 2026-11-20T18:04:54Z\n\nFollow IPMA and ANEPC in Portugal, and the Met Office and the Environment Agency in England.",
+   "model": "mistral-small-2603",
+   "host": "api.mistral.ai"
+  },
+  {
+   "t": 3008,
+   "type": "question",
+   "text": "Vou passar o dia em Faro. O que devo saber hoje?",
+   "lang": "pt"
+  },
+  {
+   "t": 3008,
+   "type": "request",
+   "hop": 0,
+   "host": "api.mistral.ai",
+   "messages": 2,
+   "bytes": 4381
+  },
+  {
+   "t": 3487,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 1129,
+    "total_tokens": 1142,
+    "completion_tokens": 13,
+    "prompt_tokens_details": {
+     "cached_tokens": 1088
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 0,
+   "tools": 1
+  },
+  {
+   "t": 3487,
+   "type": "call",
+   "id": "bkPz2EGS9",
+   "name": "read_place",
+   "args": {
+    "place": "faro"
+   }
+  },
+  {
+   "t": 3517,
+   "type": "fetch",
+   "host": "data.promptugal.news",
+   "path": "/api/v1/by-place/now/faro.json",
+   "status": 200,
+   "bytes": 7060,
+   "ms": 30
+  },
+  {
+   "t": 3517,
+   "type": "result",
+   "id": "bkPz2EGS9",
+   "name": "read_place",
+   "args": {
+    "place": "faro"
+   },
+   "result": "{\"place\":\"faro\",\"cite_url\":\"https://data.promptugal.news/api/v1/by-place/now/faro.json\",\"read_at\":\"2026-11-20T18:16:43Z\",\"about\":\"Now in this place, from IPMA's open data and (for Faro) adsb.lol, as collected by data.promptugal.news: each value with its source and the time read; coords from Wikidata. Not a warning service: follow IPMA (https://www.ipma.pt/) and ANEPC.\",\"station\":{\"name\":\"Faro (Aeródromo)\",\"id\":1200554,\"km\":4,\"reading\":null,\"page\":\"https://www.ipma.pt/en/otempo/obs.superficie/\",\"source\":\"https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json\"},\"forecast\":{\"place\":\"Faro\",\"id\":1080500,\"km\":1,\"page\":\"https://www.ipma.pt/en/otempo/prev.localidade.hora/\",\"days\":[{\"date\":\"2026-11-20\",\"t_min_c\":9.9,\"t_max_c\":18.3,\"rain_prob_pct\":0,\"weather_type\":2},{\"date\":\"2026-11-21\",\"t_min_c\":13,\"t_max_c\":20.9,\"rain_prob_pct\":100,\"weather_type\":7},{\"date\":\"2026-11-22\",\"t_min_c\":11.4,\"t_max_c\":19.3,\"rain_prob_pct\":0,\"weather_type\":1},{\"date\":\"2026-11-23\",\"t_min_c\":9.1,\"t_max_c\":18.5,\"rain_prob_pct\":0,\"weather_type\":2},{\"date\":\"2026-11-24\",\"t_min_c\":12.5,\"t_max_c\":19.8,\"rain_prob_pct\":33,\"weather_type\":3}],\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1080500.json\"},\"warnings\":{\"area\":\"FAR (the Faro district)\",\"active\":[],\"page\":\"https://www.ipma.pt/en/otempo/prev-sam/\",\"source\":\"https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json\"},\"fire_risk\":{\"municipality\":\"0805\",\"days\":[{\"date\":\"2026-11-20\",\"level\":\"low\"},{\"date\":\"2026-11-21\",\"level\":\"low\"},{\"date\":\"2026-11-22\",\"level\":\"low\"}],\"page\":\"https://www.ipma.pt/en/riscoincendio/rcm.pt/\",\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/rcm/rcm-d0.json\"},\"uv\":{\"place\":\"Faro\",\"date\":\"2026-11-24\",\"index\":2.5,\"page\":\"https://www.ipma.pt/en/otempo/prev.uv/\",\"source\":\"https://api.ipma.pt/open-data/forecast/meteorology/uv/uv.json\"},\"sea\":{\"coast\":\"Faro coast\",\"date\":\"2026-11-20\",\"waves_max_m\":1,\"sea_max_m\":1,\"sea_temp_max_c\":19.4,\"page\":\"https://www.ipma.pt/en/maritima/costeira/\",\"source\":\"https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json\"},\"airport\":{\"icao\":\"LPFR\",\"name\":\"Faro airport\",\"within_nm\":40,\"at\":\"2026-11-20T18:04:26Z\",\"airline\":[{\"callsign\":\"GAF860\",\"airline\":\"GAF\",\"type\":\"A319\",\"alt_ft\":39000,\"on_ground\":false,\"ground_speed_kt\":444.9},{\"callsign\":\"LGL785\",\"airline\":\"LGL\",\"type\":\"B738\",\"alt_ft\":6200,\"on_ground\":false,\"ground_speed_kt\":266},{\"callsign\":\"TAP1906\",\"airline\":\"TAP\",\"type\":\"E190\",\"alt_ft\":20000,\"on_ground\":false,\"ground_speed_kt\":381.2},{\"callsign\":\"TRA6534\",\"airline\":\"TRA\",\"type\":\"B738\",\"alt_ft\":36000,\"on_ground\":false,\"ground_speed_kt\":462.5},{\"callsign\":\"TUI4AB\",\"airline\":\"TUI\",\"type\":\"B738\",\"alt_ft\":34000,\"on_ground\":false,\"ground_speed_kt\":502.3},{\"callsign\":\"VLG81WX\",\"airline\":\"VLG\",\"type\":\"A321\",\"alt_ft\":17350,\"on_ground\":false,\"ground_speed_kt\":417.4}],\"other_aircraft\":0,\"page\":\"https://globe.adsb.lol/?lat=37.014&lon=-7.966&zoom=9\",\"source\":\"https://api.adsb.lol/\",\"note\":\"What adsb.lol's community receivers saw within 40 nautical miles at the time read. Airline flights by callsign; other aircraft only counted.\"},\"reads\":{\"observations\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-observations/latest.json\",\"at\":\"2026-11-20T18:15:29Z\",\"status\":200},\"warnings\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-warnings/latest.json\",\"at\":\"2026-11-20T18:15:47Z\",\"status\":200},\"forecasts\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-city-forecasts/latest.json\",\"at\":\"2026-11-20T18:13:52Z\",\"status\":200},\"fire-risk\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-fire-risk/latest.json\",\"at\":\"2026-11-20T18:15:22Z\",\"status\":200},\"uv\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-uv/latest.json\",\"at\":\"2026-11-20T18:15:44Z\",\"status\":200},\"sea\":{\"url\":\"https://data.promptugal.news/api/v1/ipma-sea/latest.json\",\"at\":\"2026-11-20T18:15:34Z\",\"status\":200},\"adsb\":{\"url\":\"https://data.promptugal.news/api/v1/adsb-faro/latest.json\",\"at\":\"2026-11-20T18:04:26Z\",\"status\":200}}}",
+   "error": null
+  },
+  {
+   "t": 3517,
+   "type": "request",
+   "hop": 1,
+   "host": "api.mistral.ai",
+   "messages": 4,
+   "bytes": 9134
+  },
+  {
+   "t": 5193,
+   "type": "reply",
+   "usage": {
+    "prompt_tokens": 2825,
+    "total_tokens": 3081,
+    "completion_tokens": 256,
+    "prompt_tokens_details": {
+     "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    },
+    "service_tier": "standard"
+   },
+   "hop": 1,
+   "tools": 0
+  },
+  {
+   "t": 5193,
+   "type": "answer",
+   "content": "- Rain expected all day in Faro; 100 % chance of rain today [[IPMA forecast](https://www.ipma.pt/en/otempo/prev.localidade.hora/) 2026-11-20T18:13:52Z].\n- Temperatures rising to 20.9 °C today, lowest 13 °C [[IPMA forecast](https://www.ipma.pt/en/otempo/prev.localidade.hora/) 2026-11-20T18:13:52Z].\n- Fire risk in Faro municipality is low today [[IPMA fire risk](https://www.ipma.pt/en/riscoincendio/rcm.pt/) 2026-11-20T18:15:22Z].\n- Sea temperature up to 19.4 °C today off Faro coast [[IPMA sea forecast](https://www.ipma.pt/en/maritima/costeira/) 2026-11-20T18:15:34Z].\n- Follow IPMA and ANEPC for official warnings.",
+   "model": "mistral-small-2603",
+   "host": "api.mistral.ai"
+  }
+ ]
+}

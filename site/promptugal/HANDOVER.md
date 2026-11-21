@@ -13,7 +13,7 @@ An independent Sovereign Website demonstration. Not affiliated with or endorsed 
 - The visitor's key from a QR code (`lib/qrkey.js`, first script in the head of each page): the QR holds a link to a demo page with the key after `#`, or the page reads a pasted, dropped or chosen picture of the QR code (BarcodeDetector, else self-hosted jsQR 1.4.0 in `vendor/`). The visitor is asked "Use it" or "Do not use it" first; no character of the key is shown; QR links from another origin are refused (security.b, review 014). The pages also offer browser.c's "Use the sealed key stored in this browser" (`/browser/keys/`), through the unchanged key holders.
 
 - `/promptugal/feeds/`: every public feed of data.promptugal.news and live.promptugal.news (48 on 21 November 2026, all CORS `*`), mapped in code by `tools/map-feeds.mjs` into `site/data/promptugal/feeds.json`, with a live sample of each. No key. Rerun the mapper to refresh it.
-- Built, waiting for security.b (reviews 016 and 017), kept out of the repository until they pass: `/promptugal/morning/`: London and Lisbon side by side, from `by-place/now/london.json`, `lisboa.json` and `open-meteo-london` (`lib/morning-facts.js`), one Mistral call in JSON mode, checks in code.
+- `/promptugal/morning/`: London and Lisbon side by side, from `by-place/now/london.json`, `lisboa.json` and `open-meteo-london` (`lib/morning-facts.js`), one Mistral call in JSON mode, checks in code.
 - `/promptugal/today/`: "What should I know today?", an agent with `read_place` (opt-in in `lib/pt-tools.js`) and the other read-only tools, its steps drawn as a flow; prompt in `lib/today.js`.
 - Screenshots: `site/data/promptugal/screenshots/` (morning, today, bulletin, feeds).
 
@@ -30,7 +30,7 @@ An independent Sovereign Website demonstration. Not affiliated with or endorsed 
 
 - Feeds asked of the PrompTugal team (through conductor.mistral, 21 November 2026): TfL line status, TfL air quality, Open-Meteo air quality for London and Lisbon and an Open-Meteo forecast for Lisbon, Carris Metropolitana alerts, Met Office warnings (no CORS: must be collected), a Portuguese air-quality feed.
 
-- security.b reviews 011, 012, 014 and 015 closed, PASS (21 November 2026, 02:37 UTC); 016 (morning) and 017 (today) sent at about 03:10 UTC.
+- security.b reviews 011, 012, 014 and 015 closed, PASS (21 November 2026, 02:37 UTC); 016 (morning) and 017 (today) PASS at 03:04 and 03:08 UTC.
 - The QR format is assumed to be a link to a demo page (or /promptugal/) with `#key=<key>`; `#k=` and a bare key of 32 or more letters and digits also work. Dinis to confirm.
 - mistral.design's shared navigation: our pages carry its markers; /assets/css/nav.css is not linked yet.
 

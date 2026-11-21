@@ -148,6 +148,25 @@
         }
       }
     ];
+    // Opt in with create({ places: true }) (used by /promptugal/today/; /promptugal/ask/ does not): one place's "now"
+    // file, for a place named in the catalogue's by_place list only.
+    if (o.places) tools.unshift({
+      name: 'read_place',
+      description: 'Read what PrompTugal knows NOW about one place, in one small file: forecast, warnings, floods, fire risk, sea, UV, each with its source and when it was read. Places: london, lisboa, algarve, faro, lagos, tavira and the other Algarve towns (call with no place to get the list). Start here for "today" questions.',
+      parameters: { type: 'object', properties: { place: { type: 'string' } } },
+      async run(a) {
+        const c = await catalogue();
+        const urls = (c.by_place || []).filter((u) => /^https:\/\/data\.promptugal\.news\/api\/v1\/by-place\/now\/[a-z0-9-]+\.json$/.test(u));
+        const ids = urls.map((u) => u.split('/').pop().replace('.json', ''));
+        const want = fold(a.place).replace(/\s+/g, '-').replace(/^lisbon$/, 'lisboa');
+        if (!want || ids.indexOf(want) < 0) return { places: ids, note: want ? 'no place called "' + String(a.place).slice(0, 60) + '": use one of these ids' : 'call again with one of these ids' };
+        const url = urls[ids.indexOf(want)];
+        const j = await get(url, 'json');
+        const out = { place: want, cite_url: url, read_at: j.read_at, about: j.about };
+        Object.keys(j).forEach((k) => { if (['license', 'schema', 'expected_cadence', 'coords', 'by', 'about', 'data_read_at', 'read_at', 'place'].indexOf(k) < 0) out[k] = j[k]; });
+        return out;
+      }
+    });
     const byName = Object.fromEntries(tools.map((t) => [t.name, t]));
     return {
       tools: tools,
