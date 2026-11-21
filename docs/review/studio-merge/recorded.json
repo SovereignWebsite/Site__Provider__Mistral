@@ -1,0 +1,383 @@
+{
+  "about": "A recorded run of From a shoebox to a website on the fictional sample shoebox (samples/), made with tools/record-merge.mjs from the same request bodies as the page. Model output, as it came.",
+  "utc": "2026-11-21T03:40:26.832Z",
+  "host": "api.mistral.ai",
+  "events": [
+    {
+      "type": "call",
+      "step": "read",
+      "model": "mistral-ocr-latest",
+      "ms": 1571,
+      "usage": "1 page",
+      "markdown": "# FORNO DA RIBEIRA\n\nFamily bakery in Porto since 1962\n\n## **Baked in our wood oven every morning**\n\nBroa de milho, our corn bread\nSourdough loaves and rye\nCustard tarts, warm from 8 am\nAlmond cakes on Saturdays\n\n## **Opening hours**\n\nTuesday to Sunday, 7 am to 7 pm\nClosed on Mondays\n\n## **Find us**\n\nRua da Fonte 12, 4050 Porto\nPhone +351 220 000 000\nola@forno-da-ribeira.example\n\nA fictional sample for a demo. Not a real business."
+    },
+    {
+      "type": "call",
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1749,
+      "usage": "1544 tokens in, 79 out",
+      "photo": "samples/photo-1.jpg",
+      "look": {
+        "alt": "Three freshly baked bread rolls on a woven mat beside a small potted plant",
+        "caption": "Golden crusts promise a warm bite",
+        "subject": "Freshly baked bread",
+        "colours": [
+          "#d4a76a",
+          "#8b4513",
+          "#f5f5dc",
+          "#5e3927"
+        ]
+      }
+    },
+    {
+      "type": "call",
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1780,
+      "usage": "1544 tokens in, 88 out",
+      "photo": "samples/photo-2.jpg",
+      "look": {
+        "alt": "A quiet cobbled street lined with old houses and parked cars at dusk",
+        "caption": "Evening calm on a historic street",
+        "subject": "historic street",
+        "colours": [
+          "#5a7c5a",
+          "#d4a574",
+          "#2c2c2c",
+          "#8b4513",
+          "#a8a8a8"
+        ]
+      }
+    },
+    {
+      "type": "call",
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1628,
+      "usage": "1544 tokens in, 86 out",
+      "photo": "samples/photo-3.jpg",
+      "look": {
+        "alt": "Freshly baked cinnamon rolls cooling on a wire rack",
+        "caption": "Warm cinnamon rolls cooling on a rack",
+        "subject": "Cinnamon rolls cooling",
+        "colours": [
+          "#d2691e",
+          "#f5f5dc",
+          "#8b4513",
+          "#a0522d",
+          "#000000"
+        ]
+      }
+    },
+    {
+      "type": "call",
+      "step": "listen",
+      "model": "voxtral-mini-transcribe-3",
+      "ms": 892,
+      "usage": "23 s of audio",
+      "transcript": "Hello, this is a note for the new website. We are Forno da Ribeira, a family bakery in Porto. My grandmother opened it in 1962. We still bake everything in the wood oven, starting at 5:00 every morning. People come for the broa de milho, our corn bread, and for the custard tarts, which are warm from 8:00. We are open Tuesday to Sunday, from 7:00 in the morning to 7:00 in the evening."
+    },
+    {
+      "type": "call",
+      "step": "plan",
+      "model": "mistral-medium-latest",
+      "ms": 3649,
+      "usage": "630 tokens in, 784 out",
+      "plan": {
+        "business": {
+          "value": "Forno da Ribeira",
+          "quote": "Forno da Ribeira"
+        },
+        "tagline": {
+          "value": "Baked in our wood oven every morning",
+          "quote": "Baked in our wood oven every morning"
+        },
+        "sections": [
+          {
+            "kind": "about",
+            "heading": "A family bakery since 1962",
+            "text": "My grandmother opened Forno da Ribeira in 1962, and we still bake everything in the wood oven, starting at 5:00 every morning.",
+            "quotes": [
+              "a family bakery in Porto since 1962",
+              "My grandmother opened it in 1962. We still bake everything in the wood oven, starting at 5:00 every morning."
+            ]
+          },
+          {
+            "kind": "offer",
+            "heading": "Fresh from the oven",
+            "text": "We bake broa de milho, our corn bread, sourdough loaves, rye, custard tarts warm from 8 am, and almond cakes on Saturdays.",
+            "quotes": [
+              "Broa de milho, our corn bread",
+              "Sourdough loaves and rye",
+              "Custard tarts, warm from 8 am",
+              "Almond cakes on Saturdays",
+              "People come for the broa de milho, our corn bread, and for the custard tarts, which are warm from 8:00"
+            ]
+          },
+          {
+            "kind": "visit",
+            "heading": "Visit us",
+            "text": "We are open Tuesday to Sunday, from 7 am to 7 pm, and closed on Mondays. Find us at Rua da Fonte 12, 4050 Porto.",
+            "quotes": [
+              "Tuesday to Sunday, 7 am to 7 pm",
+              "Closed on Mondays",
+              "Rua da Fonte 12, 4050 Porto",
+              "We are open Tuesday to Sunday, from 7:00 in the morning to 7:00 in the evening."
+            ]
+          }
+        ],
+        "facts": [
+          {
+            "label": "Name",
+            "value": "Forno da Ribeira",
+            "quote": "Forno da Ribeira"
+          },
+          {
+            "label": "Offers",
+            "value": "Broa de milho, sourdough loaves, rye, custard tarts, almond cakes",
+            "quote": "Broa de milho, our corn bread, Sourdough loaves and rye, Custard tarts, warm from 8 am, Almond cakes on Saturdays"
+          },
+          {
+            "label": "Opening hours",
+            "value": "Tuesday to Sunday, 7 am to 7 pm. Closed on Mondays.",
+            "quote": "Tuesday to Sunday, 7 am to 7 pm, Closed on Mondays"
+          },
+          {
+            "label": "Address",
+            "value": "Rua da Fonte 12, 4050 Porto",
+            "quote": "Rua da Fonte 12, 4050 Porto"
+          },
+          {
+            "label": "Phone",
+            "value": "+351 220 000 000",
+            "quote": "+351 220 000 000"
+          },
+          {
+            "label": "Email",
+            "value": "ola@forno-da-ribeira.example",
+            "quote": "ola@forno-da-ribeira.example"
+          }
+        ],
+        "palette": [
+          "#D2B48C",
+          "#8B4513",
+          "#F5DEB3",
+          "#556B2F"
+        ],
+        "mood": "warm rustic cosy traditional inviting",
+        "picture": "A woven mat with freshly baked bread rolls and a small potted plant."
+      },
+      "verified": {
+        "business": "Forno da Ribeira",
+        "tagline": "Baked in our wood oven every morning",
+        "facts": [
+          {
+            "label": "Name",
+            "value": "Forno da Ribeira",
+            "quote": "Forno da Ribeira",
+            "ok": true
+          },
+          {
+            "label": "Offers",
+            "value": "Broa de milho, sourdough loaves, rye, custard tarts, almond cakes",
+            "quote": "Broa de milho, our corn bread, Sourdough loaves and rye, Custard tarts, warm from 8 am, Almond cakes on Saturdays",
+            "ok": false
+          },
+          {
+            "label": "Opening hours",
+            "value": "Tuesday to Sunday, 7 am to 7 pm. Closed on Mondays.",
+            "quote": "Tuesday to Sunday, 7 am to 7 pm, Closed on Mondays",
+            "ok": false
+          },
+          {
+            "label": "Address",
+            "value": "Rua da Fonte 12, 4050 Porto",
+            "quote": "Rua da Fonte 12, 4050 Porto",
+            "ok": true
+          },
+          {
+            "label": "Phone",
+            "value": "+351 220 000 000",
+            "quote": "+351 220 000 000",
+            "ok": true
+          },
+          {
+            "label": "Email",
+            "value": "ola@forno-da-ribeira.example",
+            "quote": "ola@forno-da-ribeira.example",
+            "ok": true
+          }
+        ],
+        "sections": [
+          {
+            "kind": "about",
+            "heading": "A family bakery since 1962",
+            "text": "My grandmother opened Forno da Ribeira in 1962, and we still bake everything in the wood oven, starting at 5:00 every morning.",
+            "quotes": [
+              "a family bakery in Porto since 1962",
+              "My grandmother opened it in 1962. We still bake everything in the wood oven, starting at 5:00 every morning."
+            ],
+            "checked": [
+              {
+                "q": "a family bakery in Porto since 1962",
+                "ok": true
+              },
+              {
+                "q": "My grandmother opened it in 1962. We still bake everything in the wood oven, starting at 5:00 every morning.",
+                "ok": true
+              }
+            ],
+            "ok": true
+          },
+          {
+            "kind": "offer",
+            "heading": "Fresh from the oven",
+            "text": "We bake broa de milho, our corn bread, sourdough loaves, rye, custard tarts warm from 8 am, and almond cakes on Saturdays.",
+            "quotes": [
+              "Broa de milho, our corn bread",
+              "Sourdough loaves and rye",
+              "Custard tarts, warm from 8 am",
+              "Almond cakes on Saturdays",
+              "People come for the broa de milho, our corn bread, and for the custard tarts, which are warm from 8:00"
+            ],
+            "checked": [
+              {
+                "q": "Broa de milho, our corn bread",
+                "ok": true
+              },
+              {
+                "q": "Sourdough loaves and rye",
+                "ok": true
+              },
+              {
+                "q": "Custard tarts, warm from 8 am",
+                "ok": true
+              },
+              {
+                "q": "Almond cakes on Saturdays",
+                "ok": true
+              },
+              {
+                "q": "People come for the broa de milho, our corn bread, and for the custard tarts, which are warm from 8:00",
+                "ok": true
+              }
+            ],
+            "ok": true
+          },
+          {
+            "kind": "visit",
+            "heading": "Visit us",
+            "text": "We are open Tuesday to Sunday, from 7 am to 7 pm, and closed on Mondays. Find us at Rua da Fonte 12, 4050 Porto.",
+            "quotes": [
+              "Tuesday to Sunday, 7 am to 7 pm",
+              "Closed on Mondays",
+              "Rua da Fonte 12, 4050 Porto",
+              "We are open Tuesday to Sunday, from 7:00 in the morning to 7:00 in the evening."
+            ],
+            "checked": [
+              {
+                "q": "Tuesday to Sunday, 7 am to 7 pm",
+                "ok": true
+              },
+              {
+                "q": "Closed on Mondays",
+                "ok": true
+              },
+              {
+                "q": "Rua da Fonte 12, 4050 Porto",
+                "ok": true
+              },
+              {
+                "q": "We are open Tuesday to Sunday, from 7:00 in the morning to 7:00 in the evening.",
+                "ok": true
+              }
+            ],
+            "ok": true
+          }
+        ],
+        "palette": [
+          "#D2B48C",
+          "#8B4513",
+          "#F5DEB3",
+          "#556B2F"
+        ],
+        "mood": "warm rustic cosy traditional inviting",
+        "picture": "A woven mat with freshly baked bread rolls and a small potted plant.",
+        "kept": {
+          "facts": 4,
+          "of": 6,
+          "sections": 3,
+          "ofSections": 3
+        }
+      }
+    },
+    {
+      "type": "call",
+      "step": "picture",
+      "model": "mistral-medium-latest",
+      "ms": 12761,
+      "usage": "image tool calls: 1",
+      "picture": "samples/recorded-header.jpg"
+    },
+    {
+      "type": "call",
+      "step": "design",
+      "model": "codestral-2508",
+      "ms": 5150,
+      "usage": "1109 tokens in, 1005 out",
+      "css": "body {\n    font-family: Georgia, serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #556B2F;\n    background-color: #F5DEB3;\n    margin: 0;\n    padding: 0;\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n}\n\n@media (prefers-color-scheme: dark) {\n    body {\n        color: #F5DEB3;\n        background-color: #556B2F;\n    }\n}\n\n.hero {\n    position: relative;\n    width: 100%;\n    height: 80vh;\n    min-height: 300px;\n    margin-bottom: 2rem;\n}\n\n.hero-picture {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    z-index: -1;\n}\n\n.hero-text {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    text-align: center;\n    color: #F5DEB3;\n    background-color: rgba(85, 107, 47, 0.7);\n    padding: 2rem;\n    border-radius: 0.5rem;\n}\n\n.name {\n    font-size: 4rem;\n    margin: 0;\n}\n\n.tagline {\n    font-size: 1.5rem;\n    margin: 0;\n}\n\n.site-nav {\n    display: flex;\n    justify-content: center;\n    flex-wrap: wrap;\n    gap: 1rem;\n    padding: 1rem;\n    background-color: #D2B48C;\n    margin-bottom: 2rem;\n}\n\n.site-nav a {\n    color: #556B2F;\n    text-decoration: none;\n    padding: 0.5rem 1rem;\n    border-radius: 0.25rem;\n}\n\n.site-nav a:hover {\n    background-color: #8B4513;\n    color: #F5DEB3;\n}\n\nmain {\n    flex: 1;\n    padding: 0 1rem;\n    max-width: 1200px;\n    margin: 0 auto;\n    width: 100%;\n}\n\n.sec {\n    margin-bottom: 2rem;\n    padding: 1rem;\n    background-color: rgba(210, 180, 140, 0.7);\n    border-radius: 0.5rem;\n}\n\n.sec h2 {\n    font-size: 2rem;\n    margin-top: 0;\n    color: #8B4513;\n}\n\n.photos {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n    gap: 1rem;\n    margin-bottom: 2rem;\n}\n\n.photo {\n    position: relative;\n    overflow: hidden;\n    border-radius: 0.5rem;\n}\n\n.photo img {\n    width: 100%;\n    height: auto;\n    display: block;\n}\n\n.photo figcaption {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(85, 107, 47, 0.7);\n    color: #F5DEB3;\n    padding: 1rem;\n    margin: 0;\n}\n\n.facts {\n    margin-bottom: 2rem;\n    padding: 1rem;\n    background-color: rgba(210, 180, 140, 0.7);\n    border-radius: 0.5rem;\n}\n\n.facts h2 {\n    font-size: 2rem;\n    margin-top: 0;\n    color: #8B4513;\n}\n\ndl {\n    display: grid;\n    grid-template-columns: 1fr 2fr;\n    gap: 0.5rem;\n}\n\ndt {\n    font-weight: bold;\n}\n\n.foot {\n    text-align: center;\n    padding: 1rem;\n    background-color: #D2B48C;\n    color: #556B2F;\n}\n\n@media (prefers-reduced-motion: reduce) {\n    * {\n        animation-duration: 0.01ms !important;\n        animation-iteration-count: 1 !important;\n        transition-duration: 0.01ms !important;\n        scroll-behavior: auto !important;\n    }\n}",
+      "problems": []
+    }
+  ],
+  "calls": [
+    {
+      "step": "read",
+      "model": "mistral-ocr-latest",
+      "ms": 1571,
+      "usage": "1 page"
+    },
+    {
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1749,
+      "usage": "1544 tokens in, 79 out"
+    },
+    {
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1780,
+      "usage": "1544 tokens in, 88 out"
+    },
+    {
+      "step": "look",
+      "model": "mistral-small-2603",
+      "ms": 1628,
+      "usage": "1544 tokens in, 86 out"
+    },
+    {
+      "step": "listen",
+      "model": "voxtral-mini-transcribe-3",
+      "ms": 892,
+      "usage": "23 s of audio"
+    },
+    {
+      "step": "plan",
+      "model": "mistral-medium-latest",
+      "ms": 3649,
+      "usage": "630 tokens in, 784 out"
+    },
+    {
+      "step": "picture",
+      "model": "mistral-medium-latest",
+      "ms": 12761,
+      "usage": "image tool calls: 1"
+    },
+    {
+      "step": "design",
+      "model": "codestral-2508",
+      "ms": 5150,
+      "usage": "1109 tokens in, 1005 out"
+    }
+  ]
+}

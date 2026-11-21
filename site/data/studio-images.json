@@ -459,6 +459,23 @@
           "image_generation": 1
         }
       }
+    },
+    {
+      "id": "merge",
+      "file": "/assets/studio/img/merge.jpg",
+      "model": "mistral-medium-latest",
+      "tool": "image_generation",
+      "prompt": "Generate one image. An open cardboard shoebox on a wooden table, spilling photographs, a folded flyer and a small cassette, with a tiny paper town rising out of it. Editorial illustration in the style of a mid-century European travel poster: flat shapes, strong composition, fine grain, blue hour light. Palette only deep cobalt, ultramarine, teal, slate grey, ink and off-white, with a touch of rose. No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.",
+      "made": "2026-11-21T03:32:22.438Z",
+      "usage": {
+        "prompt_tokens": 293,
+        "completion_tokens": 545,
+        "total_tokens": 1131,
+        "connector_tokens": 293,
+        "connectors": {
+          "image_generation": 1
+        }
+      }
     }
   ],
   "terms": {

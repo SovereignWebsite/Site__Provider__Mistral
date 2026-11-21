@@ -37,6 +37,7 @@ const LIST = [
   { u: '/designs/5.html', s: 'overview', p: '/designs/', l: 'Design 5, The hackathon', t: 'The briefing for Saturday 21 November 2026: start here, the demos, a first call in five minutes.' },
 
   { u: '/studio/', s: 'try', l: 'The studio', t: 'Every demo that works today, with what each needs: no key, or your own Mistral key.' },
+  { u: '/studio/merge/', s: 'try', l: 'From a shoebox to a website', t: 'A document, photos and a voice memo in, a website out: six Mistral models, every call shown.' },
   { u: '/browser/local/', s: 'try', l: 'Mistral on your device (no key)', t: 'Ministral 3 3B, Mistral’s Apache 2.0 model, running inside this browser tab: no key, no API; the weights download once.' },
   { u: '/demos/', s: 'try', l: 'Demos', t: 'Working demonstrations of a site whose AI model is the owner’s choice, like the host.' },
   { u: '/demos/side-by-side.html', s: 'try', p: '/demos/', l: 'Same brief, three brains', t: 'One brief sent to Mistral, OpenRouter and a model on your own machine, side by side.' },

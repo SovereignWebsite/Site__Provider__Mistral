@@ -16,6 +16,7 @@ const STYLE = 'Editorial illustration in the style of a mid-century European tra
   + 'No yellow, no orange, no gold. No text, no letters, no numbers, no logos, no people, no faces. Wide landscape framing.';
 export const SUBJECTS = {
   studio: 'A grand empty European museum atrium under a geometric glass skylight, plain stone walls, arches opening onto empty galleries, no statues, no sculptures.',
+  merge: 'An open cardboard shoebox on a wooden table, spilling photographs, a folded flyer and a small cassette, with a tiny paper town rising out of it.',
   local: 'A laptop open on a wooden desk by a chalet window in the Alps at night; inside the screen, a small constellation of light.',
   keys: 'An old iron key and a sealed envelope with a wax seal, on a table of blue Portuguese tiles.',
   seal: 'A hand-press for wax seals beside a folded letter, in a quiet stone room lit by one window.',

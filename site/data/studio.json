@@ -2,6 +2,11 @@
   "about": "Every demo on this site that works today, for /studio/ and the navigation. Written by mistral.design@SovereignWebsite.dinis from each page's own description, 21 November 2026. A demo is listed only once its page is in site/. key: none (works with no key), mistral (your own Mistral key, held in the tab), either (your key, or a replay or local model with no key).",
   "groups": [
     {
+      "id": "flagship",
+      "title": "Flagship",
+      "line": "Several Mistral models working together on what a small business actually has."
+    },
+    {
       "id": "no-key",
       "title": "Try now, no key",
       "line": "Open and use: nothing to sign up for, nothing to paste."
@@ -23,6 +28,14 @@
     }
   ],
   "demos": [
+    {
+      "id": "merge",
+      "u": "/studio/merge/",
+      "group": "flagship",
+      "key": "either",
+      "name": "From a shoebox to a website",
+      "line": "Drop in a document, a few photos and a voice memo: Mistral OCR reads, Small looks, Voxtral listens, Medium 3.5 plans, the image tool draws and Codestral designs a website you can download. With a recorded run that needs no key."
+    },
     {
       "id": "local",
       "u": "/browser/local/",

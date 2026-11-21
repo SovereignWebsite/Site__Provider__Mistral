@@ -1,0 +1,53 @@
+/* From a shoebox to a website. mistral.design@SovereignWebsite.dinis, 21 November 2026. With /assets/css/studio.css. */
+.replay-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin:1.2rem 0 .4rem}
+.hidden{display:none}
+
+/* 1. The three drop zones. */
+.drops{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));margin:1rem 0}
+.drop{position:relative;display:flex;flex-direction:column;gap:.35rem;padding:1.2rem;border:2px dashed var(--line);border-radius:16px;background:var(--panel);transition:border-color .15s ease,background .15s ease}
+.drop.over{border-color:var(--accent);background:var(--note)}
+.drop-kicker{margin:0;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.drop-h{margin:0;font-family:var(--head);font-size:1.3rem;font-weight:600;line-height:1.2}
+.drop p.small{margin:0 0 .4rem}
+.drop input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.pick{align-self:flex-start;display:inline-flex;align-items:center;min-height:2.9rem;padding:.5rem 1.2rem;border:2px solid var(--accent);border-radius:999px;color:var(--accent);background:var(--card,var(--bg));font-weight:650;cursor:pointer}
+.drop:focus-within .pick{outline:3px solid var(--accent);outline-offset:2px}
+.files{list-style:none;margin:.5rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem;font-size:.9rem}
+.files li{display:flex;align-items:center;gap:.6rem;margin:0;min-width:0;overflow-wrap:anywhere}
+.photos-list{flex-direction:row;flex-wrap:wrap}
+.photos-list li{flex-direction:column;align-items:flex-start;width:6.5rem}
+.photos-list img{width:6rem;height:4.5rem;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.files audio{max-width:100%;height:2.4rem}
+
+/* 3. The pipeline: six steps as a board. */
+.pipeline{list-style:none;margin:1rem 0;padding:0;display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));counter-reset:none}
+.pipe{position:relative;display:flex;flex-direction:column;gap:.25rem;margin:0;padding:.9rem .95rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--card,var(--bg));min-height:9.5rem;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.pipe-n{position:absolute;top:.7rem;right:.8rem;font:700 .8rem/1 var(--mono);color:var(--muted)}
+.pipe-name{font-family:var(--head);font-size:1.3rem;font-weight:600}
+.pipe-what{font-size:.86rem;color:var(--muted);line-height:1.35}
+.pipe-model{font-size:.74rem;color:var(--accent);overflow-wrap:anywhere}
+.pipe-stat{margin-top:auto;font-size:.84rem;font-weight:650}
+.pipe-off{border-style:dashed;background:transparent}
+.pipe-ready{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.pipe-run{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent);transform:translateY(-2px)}
+.pipe-run .pipe-stat::after{content:"";display:inline-block;width:.8em;height:.8em;margin-left:.4em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:-.1em;animation:spin 0.9s linear infinite}
+.pipe-ok{border-color:var(--teal,#0d7d77)}
+.pipe-ok .pipe-stat{color:var(--ok)}
+.pipe-bad{border-color:var(--bad)}
+.pipe-bad .pipe-stat{color:var(--bad)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.pipe,.pipe-run{transition:none;transform:none}.pipe-run .pipe-stat::after{animation:none}}
+.mode{border:1px solid var(--line);border-radius:12px;padding:.5rem 1rem;margin:.8rem 0}
+.mode legend{font-weight:650;padding:0 .3rem}
+.sends{margin-top:1rem;border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;background:var(--panel)}
+.sends pre.req{max-height:18rem;overflow:auto;white-space:pre-wrap;word-break:break-word;font-size:.78rem;background:var(--card,var(--bg));padding:.6rem .7rem;border-radius:8px}
+
+/* 4. The preview stage. */
+.device{display:flex;gap:.5rem;margin:.8rem 0}
+.stage{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#16161a;padding:clamp(.4rem,1.4vw,1rem);box-shadow:0 20px 50px rgba(12,22,44,.18)}
+.stage iframe{display:block;width:100%;height:min(80vh,52rem);border:0;border-radius:10px;background:#fff;margin:0 auto}
+.stage.phone iframe{width:min(100%,390px);height:min(80vh,46rem)}
+.picture-box{margin:1.4rem 0}
+.picture-box img{display:block;width:100%;max-width:42rem;height:auto;border-radius:12px;border:1px solid var(--line)}
+#checks q{display:block;margin:.1rem 0}
+#checks q.bad{color:var(--bad)}
