@@ -160,98 +160,6 @@ ${callLog}
 });
 
 
-// ------------------------------------------------------------------ /workflows/poster/
-const IMGHOST = 'https://mistralaiblackforestprod.blob.core.windows.net';
-page({
-  u: '/workflows/poster/', title: 'A poster for your sovereign website',
-  description: 'An art director on Mistral writes the commission; Mistral’s image tool paints the picture while a Mistral model draws the same poster in SVG, sanitised before it is shown. Both side by side, with every prompt. Replays with no key; runs on yours.',
-  connect: MISTRAL, img: [IMGHOST], css: KEYCSS,
-  scripts: [{ src: '/promptugal/lib/qrkey.js' }, { src: '/workflows/poster/poster-page.js', module: true }],
-  body: `
-  <p class="mark"><a href="/workflows/">Workflows on Mistral</a>: the poster studio</p>
-  <h1>A poster for your sovereign website</h1>
-  <p class="lede">Write a brief. An art director on Mistral turns it into a commission: a headline, a tagline, a palette, and a brief for each of two makers. Then, at the same time, a painter asks Mistral's image tool for the picture, and a designer draws the whole poster in SVG. Both land on the wall side by side, each with the prompt and the model that made it.</p>
-  <noscript><p class="warn">This page needs JavaScript to replay or run the studio. The recorded run is <a href="/data/workflows/poster-porto-bakery.json">a file on this site</a>, with <a href="/data/workflows/poster-porto-bakery.jpg">its picture</a>.</p></noscript>
-
-  <section aria-labelledby="h-ev">
-    <h2 id="h-ev">Can Mistral make images from a browser? What we tested</h2>
-    <p>Tested on 21 November 2026 between 02:56 and 03:12 UTC, from a script, with the Mistral key this site is built with, sending the same requests a browser sends:</p>
-    <ul class="evidence">
-      <li><strong>Mistral's documented route did not work for that key.</strong> The image tool's page shows an agent created with <code>tools: [{"type": "image_generation"}]</code> (<a href="https://docs.mistral.ai/agents/tools/built-in/image_generation">image generation</a>, ${READ}). <code>POST /v1/agents</code> answered 403: "Creating agents is not available for this organization. Use Managed Agents instead." Your organisation may differ.</li>
-      <li><strong>The same tool works without an agent.</strong> <code>POST /v1/conversations</code> with <code>model: "mistral-medium-latest"</code>, the tool in <code>tools</code>, and <code>store: false</code> answered 200 with an image. Its usage said <code>"connectors": {"image_generation": 1}</code>.</li>
-      <li><strong>It works from a browser.</strong> api.mistral.ai answered the browser's preflight for <code>/v1/conversations</code> and the answer itself with <code>Access-Control-Allow-Origin: *</code>.</li>
-      <li><strong>The picture is not on Mistral's own address.</strong> The answer gives a signed link on <code>mistralaiblackforestprod.blob.core.windows.net</code>, Microsoft Azure storage, which expired one hour after it was made. That host sends no CORS header, so a page can show the picture but not read it: this page shows it as an image from that host, and allows that one host in its security policy. The recorded run's picture is a copy kept on this site.</li>
-      <li><strong>Which model paints is not stated.</strong> The image tool's page, ${READ}, does not name the model or say what the picture may be used for. Mistral's <a href="https://legal.mistral.ai/terms/additional-terms">Additional Product Terms</a> (effective 25 September 2026, ${READ}) have sections on "Third-Party Connectors" and "Third-Party Technologies", which "do not constitute Mistral AI Products"; they do not say whether the image tool is one. Read them, and ask Mistral, before you print a poster for money.</li>
-      <li><strong>No price is published for it.</strong> Neither <a href="https://mistral.ai/pricing">Mistral's pricing page</a> nor <a href="https://docs.mistral.ai/inference/pricing">the API pricing page</a> lists a price for the image tool, ${READ}. Our cost meter counts tokens only, and says "+ the image".</li>
-      <li><strong>Not tested:</strong> the EU endpoint, api.eu.mistral.ai, for images.</li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="h-found">
-    <h2 id="h-found">What we found</h2>
-    <p>One recorded run, 21 November 2026 at 03:12 UTC, art director and SVG designer on <code>mistral-small-2603</code>, painter on <code>mistral-medium-latest</code> with the image tool. The brief is for an imaginary bakery, not a real business.</p>
-    <ul class="found">
-      <li>Three calls in 13.0 s. The token cost was under a tenth of a US cent at list price; the image's price is not published.</li>
-      <li>The art director kept to the brief's rules: a three-word headline, a nine-word tagline, five colours, and an image prompt that asks for no words.</li>
-      <li>The painter's model rewrote the prompt slightly before it called the tool; the page shows both.</li>
-      <li>The picture has no text in it, as asked; the page sets the headline and tagline in its own type. The SVG designer drew the words itself, and put its loaf off to the right, on top of the tagline: a model drawing blind. The sanitiser kept its 16 elements and dropped nothing.</li>
-    </ul>
-    <figure class="shot">
-      <img src="/workflows/shots/poster-porto-bakery.jpg" width="1200" height="874" alt="The poster wall after a replay: on the left a photograph-like picture of a sourdough loaf with the headline set below it, on the right the same poster drawn in SVG.">
-      <figcaption>The recorded run, replayed on this page (a screenshot).</figcaption>
-    </figure>
-  </section>
-
-  <section aria-labelledby="h-replay">
-    <h2 id="h-replay">1. Replay the recorded run (no key needed)</h2>
-    <div class="field">
-      <label for="prec">Recorded run</label>
-      <select id="prec"><option value="porto-bakery" selected>An imaginary bakery in Porto (03:12 UTC)</option></select>
-    </div>
-    <div class="actions"><button type="button" id="replay" class="primary">Replay the studio</button></div>
-    <p id="replay-status" class="status" role="status" aria-live="polite"></p>
-  </section>
-
-  <section aria-labelledby="h-studio">
-    <h2 id="h-studio">The studio</h2>
-    <div class="pstage">
-      <svg id="pflow" class="wf-flow" role="img" aria-labelledby="pflow-t"><title id="pflow-t">The poster workflow: brief, art director, then the painter with the image tool and the SVG designer with the sanitiser, side by side, then the wall. The same messages are listed beside it.</title></svg>
-      <div>
-        <h3>Messages</h3>
-        <ol class="feed" id="pfeed" tabindex="0" aria-label="Messages in the poster studio"></ol>
-        <dl class="meter" id="pmeter"></dl>
-      </div>
-    </div>
-    <div id="wall"></div>
-  </section>
-${keyBox()}
-  <section aria-labelledby="h-live">
-    <h2 id="h-live">3. Make your own, on your key</h2>
-    <p>Three calls: one art director, then one picture and one SVG at the same time.</p>
-    <label for="pbrief">Your brief (an imaginary business is best: say nothing confidential)</label>
-    <textarea id="pbrief" rows="3" maxlength="600"></textarea>
-    <div class="field">
-      <label for="pmodel">Art director and SVG designer</label>
-      <select id="pmodel">${MODELS('mistral-small-2603')}</select>
-    </div>
-    <div class="sends"><h3>What this call sends, and to whom</h3><div id="sends"></div></div>
-    <div class="actions"><button type="button" id="run" class="primary">Make the poster</button> <button type="button" id="stop" disabled>Stop</button></div>
-    <p id="run-status" class="status" role="status" aria-live="polite"></p>
-  </section>
-${callLog}
-  <section aria-labelledby="h-how">
-    <h2 id="h-how">How it works</h2>
-    <ul>
-      <li>The workflow is <a href="/workflows/lib/poster.js">poster.js</a>, run unchanged by the recorder and by this page; the drawing is <a href="/workflows/lib/flow.js">flow.js</a>, after the <a href="https://web-summit.sgit.ai/people/angelo/app/index.html#stand">SGit-AI Web Summit stand</a>'s views by Angelo Leggio and the Galaxy by Silvio Switha's dashboard agent.</li>
-      <li>The picture is accepted only as an https link on the one host above, or as a file id fetched from Mistral's files endpoint with your key.</li>
-      <li>The SVG is model output, so it is never put into the page as markup. <a href="/workflows/lib/svgsafe.js">svgsafe.js</a> rebuilds it from an allow-list of shapes, gradients, filters and text, drops scripts, links, images, styles and any url() that points outside the drawing, and the result is shown as an image from a blob: address, where a browser runs no script and loads nothing.</li>
-    </ul>
-  </section>`,
-});
-CARDS.push({ u: '/workflows/poster/', img: '/workflows/shots/poster-porto-bakery.jpg', name: 'A poster for your sovereign website', key: 'Replay with no key, or your key',
-  line: 'An art director on Mistral writes the commission; Mistral’s image tool paints while a Mistral model draws the same poster in SVG. What we found testing image generation from a browser, with the evidence.' });
-
-
 // ------------------------------------------------------------------ /workflows/xray/
 page({
   u: '/workflows/xray/', title: 'X-Ray: this site, claim by claim',
@@ -453,6 +361,7 @@ ${TICK.map(([v, l]) => `      <label><input type="checkbox" id="m-${v}" checked>
     <label for="brief">The brief</label>
     <textarea id="brief" rows="3" maxlength="600"></textarea>
     <div class="sends"><h3>What this call sends, and to whom</h3><div id="sends"></div></div>
+    <p class="warn">What a run costs on your key: each lane stops at 30 calls, so five lanes can make up to 150. Our recorded run made 78 calls and cost about $0.12 at list price, $0.11 of it Large 4; untick Large 4 and it is about one US cent.</p>
     <div class="actions"><button type="button" id="run" class="primary">Run the ticked models</button> <button type="button" id="stop" disabled>Stop</button></div>
     <p id="run-status" class="status" role="status" aria-live="polite"></p>
   </section>

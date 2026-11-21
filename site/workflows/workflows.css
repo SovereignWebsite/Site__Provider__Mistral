@@ -69,18 +69,6 @@ svg.wf-flow{display:block;width:100%;height:auto;border-radius:16px}
 .wf-cards h2 a::after{content:"";position:absolute;inset:0}
 .wf-cards p{margin:0 0 .35rem;font-size:.93rem;color:var(--muted)}
 
-/* The poster studio. */
-.fl-c-director{color:var(--c-planner)}.fl-c-painter{color:var(--c-writer)}.fl-c-imagetool{color:var(--c-site)}.fl-c-designer{color:var(--c-resA)}.fl-c-sanitiser{color:var(--c-site)}.fl-c-wall{color:var(--c-out)}
-.pstage{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:start}
-.wall{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));align-items:start;margin-top:1rem}
-.poster{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card,var(--bg))}
-.poster-art img,.poster-svg{display:block;width:100%;height:auto}
-.poster-type{background:#121a2b;color:#f6f5f1;padding:1rem 1.1rem 1.2rem}
-.poster-type .p-head{font-family:var(--head,Georgia,serif);font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.05;font-weight:600;margin:0 0 .4rem}
-.poster-type .p-tag{margin:0;font-size:1rem;color:#cdd6e6}
-.poster figcaption{padding:.6rem .9rem .8rem;font-size:.86rem;color:var(--muted)}
-.swatch{display:inline-block;margin:0 .35rem .2rem 0;padding:.05rem .4rem;border-radius:6px;background:var(--panel)}
-.evidence li{margin:.4rem 0}
 
 /* The X-Ray. */
 .fl-pinlabel{fill:var(--g-text);font:600 12.5px/1 system-ui,sans-serif}

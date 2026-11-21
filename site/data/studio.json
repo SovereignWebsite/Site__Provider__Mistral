@@ -248,14 +248,6 @@
       "line": "Planner, researchers, writer, reviewer and publisher on Mistral function calling, run on two models at once: paths, tokens, time, cost and checks compared live."
     },
     {
-      "id": "workflows-poster",
-      "u": "/workflows/poster/",
-      "group": "agentic",
-      "key": "either",
-      "name": "A poster for your sovereign website",
-      "line": "An art director on Mistral writes the commission; Mistral's image tool paints the picture while a Mistral model draws the same poster in SVG, sanitised before it is shown."
-    },
-    {
       "id": "workflows-xray",
       "u": "/workflows/xray/",
       "group": "agentic",
