@@ -11,22 +11,24 @@ This file is for AI agents and the people using them. The site is https://mistra
 - Say plainly that the site is an independent demonstration, not affiliated with or endorsed by Mistral AI, that nothing has been agreed with Mistral (the partnership is a proposal), and that the fit of Ministral 3 on a Raspberry Pi or a tablet is an estimate, not measured.
 - Do not change anything.
 
-## If you act for a hackathon participant (Saturday 21 November 2026)
+## If you act for someone who wants to try Mistral
 
-- Start at https://mistral.provider.sovereignweb.site/designs/5.html: a first call in five minutes with the participant's own key or a local model (Ollama), the demos at https://mistral.provider.sovereignweb.site/demos/, and how to share what they build.
-- Never ask the participant to paste an API key into a chat, a document or a commit.
+- Start at https://mistral.provider.sovereignweb.site/: the map of the two ways to reach Mistral (the API, and Mistral as the agent), the agents, the console and what every call cost.
+- Mistral with no key, in the browser: https://mistral.provider.sovereignweb.site/browser/local/. Every demo, with the visitor's own key: https://mistral.provider.sovereignweb.site/studio/
+- Never ask anyone to paste an API key into a chat, a document or a commit.
 
 ## If you act for the site's owner
 
 - The owner changes the site through the repository. You need write access, which the owner gets by accepting the repository invitation: https://mistral.provider.sovereignweb.site/start/
 - Work on the dev branch only; main is locked. Read the repository's CLAUDE.md first and follow it.
-- The pages are generated: edit tools/facts.mjs (the facts and their sources) and tools/designs.mjs (the five designs), then run node tools/gen.mjs.
+- The pages are generated: edit tools/facts.mjs (the facts and their sources) and tools/designs.mjs (the four designs) and tools/home.mjs (the home page, the map), then run node tools/gen.mjs.
 - Keep the site static: no server code, no cookies, no tracking. Never invent a fact, a price or a customer.
 - Every push to dev publishes the site in a minute or two.
 
 ## More
 
-- The five designs: https://mistral.provider.sovereignweb.site/designs/
+- The map (home): https://mistral.provider.sovereignweb.site/
+- The four designs: https://mistral.provider.sovereignweb.site/designs/
 - Sources: https://mistral.provider.sovereignweb.site/sources/
 - Open questions for the owner: https://mistral.provider.sovereignweb.site/questions/
 - Use this site with AI: https://mistral.provider.sovereignweb.site/agents/

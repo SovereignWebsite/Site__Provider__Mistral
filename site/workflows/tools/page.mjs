@@ -51,7 +51,7 @@ ${body.trim()}
 </main>
 <footer class="foot">
 ${navFoot}
-  <p>Built by mistral.workflows@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026, for the Mistral hackathon in London. The drawing follows the views of the <a href="https://web-summit.sgit.ai/people/angelo/app/index.html#stand">SGit-AI Web Summit stand</a>: Angelo Leggio's graphs and live views, and the Galaxy that Silvio Switha's dashboard agent built. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
+  <p>Built by mistral.workflows@SovereignWebsite.dinis for Dinis Cruz, 21 November 2026. The drawing follows the views of the <a href="https://web-summit.sgit.ai/people/angelo/app/index.html#stand">SGit-AI Web Summit stand</a>: Angelo Leggio's graphs and live views, and the Galaxy that Silvio Switha's dashboard agent built. Static files only: no cookies, no tracking, no storage, no server of ours. Code Apache-2.0, text CC BY 4.0. <a href="/">Home</a>.</p>
 </footer>
 </body>
 </html>

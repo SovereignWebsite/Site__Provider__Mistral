@@ -1,0 +1,30 @@
+/* The home page: the map (tools/home.mjs). Tokens from base.css. */
+.map{max-width:var(--max);margin:0 auto;padding:2.5rem 1rem 1rem}
+.map .mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0}
+.map h1{font-size:clamp(2rem,6vw,3rem);margin:.4rem 0 1rem;max-width:48rem}
+.map h2{font-size:1.5rem;margin:2.6rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line)}
+.map h3{font-size:1.15rem;margin:.2rem 0 .6rem}
+.map .lede{font-size:1.15rem;color:var(--muted);max-width:48rem}
+.map section>p,.map-links{max-width:52rem}
+.map-toc ol{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;padding:0;margin:1.2rem 0 0;list-style:none;counter-reset:toc}
+.map-toc li{counter-increment:toc;margin:0}
+.map-toc li::before{content:counter(toc) ". ";color:var(--muted)}
+.map-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.2rem}
+.map-way{border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:8px;padding:1rem 1.1rem;background:var(--panel)}
+.map-way ul{padding-left:1.1rem}
+.map-way li{margin:.45rem 0}
+.way-tag{display:inline-block;margin:0 0 .4rem;font:700 .75rem/1.4 var(--font);letter-spacing:.06em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;background:var(--accent);color:var(--accent-fg)}
+.way-next{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.map-agents{padding-left:1.1rem;max-width:52rem}
+.map-agents li{margin:.4rem 0}
+.map-table{width:100%;border-collapse:collapse;font-size:.93rem;margin:.6rem 0 1rem}
+.map-table caption{text-align:left;color:var(--muted);padding-bottom:.4rem}
+.map-table th,.map-table td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);vertical-align:top}
+.map-table thead th{border-bottom:2px solid var(--fg)}
+.map-finding{border-left:4px solid var(--accent);background:var(--panel);padding:.7rem .9rem}
+.todo{color:var(--muted);font-style:italic}
+@media (max-width:40rem){
+  .map-table thead{display:none}
+  .map-table tr{display:block;border-bottom:1px solid var(--line);padding:.4rem 0}
+  .map-table th,.map-table td{display:block;border:0;padding:.15rem 0}
+}

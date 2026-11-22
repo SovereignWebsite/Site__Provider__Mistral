@@ -18,7 +18,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 // The six sections. "to" is where the section label in the header goes.
 export const SECTIONS = [
-  { id: 'overview', label: 'Designs', title: 'Overview and the five designs', to: '/designs/' },
+  { id: 'overview', label: 'Designs', title: 'Overview and the four designs', to: '/designs/' },
   { id: 'try', label: 'Studio', title: 'The studio: every demo, in your browser', to: '/studio/' },
   { id: 'agentic', label: 'Agentic', title: 'Agentic, live on Mistral', to: '/studio/#agentic' },
   { id: 'articles', label: 'Articles', title: 'Articles', to: '/articles/' },
@@ -28,13 +28,12 @@ export const SECTIONS = [
 
 // Every page: url, section, label, one line, and (for pages inside a hub) the hub's url.
 const LIST = [
-  { u: '/', s: 'overview', l: 'Home', t: 'The home page, now design 5: the hackathon briefing.' },
-  { u: '/designs/', s: 'overview', l: 'Choose a design', t: 'All five designs of the same cited facts, with a picture of each.' },
+  { u: '/', s: 'overview', l: 'Home', t: 'The map: the two ways to reach Mistral, the agents, the console, and what we have run.' },
+  { u: '/designs/', s: 'overview', l: 'Choose a design', t: 'All four designs of the same cited facts, with a picture of each.' },
   { u: '/designs/1.html', s: 'overview', p: '/designs/', l: 'Design 1, The European brain', t: 'The article told as an editorial long read: the three levels, the licence to watch, the proposal.' },
   { u: '/designs/2.html', s: 'overview', p: '/designs/', l: 'Design 2, The map', t: 'Where the data goes: from your browser to each choice, what is sent, to whom and for how long.' },
   { u: '/designs/3.html', s: 'overview', p: '/designs/', l: 'Design 3, The console', t: 'The call itself: pick a provider and see the same OpenAI-style request, and where it goes.' },
   { u: '/designs/4.html', s: 'overview', p: '/designs/', l: 'Design 4, The ledger', t: 'Five questions for any AI you depend on, with Mistral as the worked example and your own row.' },
-  { u: '/designs/5.html', s: 'overview', p: '/designs/', l: 'Design 5, The hackathon', t: 'The briefing for Saturday 21 November 2026: start here, the demos, a first call in five minutes.' },
 
   { u: '/studio/', s: 'try', l: 'The studio', t: 'Every demo that works today, with what each needs: no key, or your own Mistral key.' },
   { u: '/studio/merge/', s: 'try', l: 'From a shoebox to a website', t: 'A document, photos and a voice memo in, a website out: six Mistral models, every call shown.' },
@@ -81,7 +80,7 @@ const LIST = [
 
   { u: '/sources/', s: 'sources', l: 'Sources', t: 'Every source this site uses, and the date it was read.' },
 
-  { u: '/start/', s: 'about', l: 'Start here', t: 'For a hackathon participant, the first call; for the owner, connecting GitHub and the first change.' },
+  { u: '/start/', s: 'about', l: 'Start here', t: 'The map, a first call, and for the owner, connecting GitHub and the first change.' },
   { u: '/agents/', s: 'about', l: 'Use with your AI', t: 'This site is written for people and for AI agents: point yours at llms.txt.' },
   { u: '/admin/', s: 'about', l: 'How this site was made', t: 'By agents, in which sessions, from which sources, with signed commits.' },
   { u: '/policy/', s: 'about', l: 'How this site is governed', t: 'The Agent Behaviour Policy: which agents may work on this site, and what is checked before anything is published.' },
@@ -131,7 +130,7 @@ const isStudioPage = (here) => here === '/studio/' || STUDIO.demos.some((x) => x
 
 const fileOf = (u) => join(SITE_DIR, u.endsWith('/') ? u + 'index.html' : u);
 // Generated pages are always listed (tools/gen.mjs writes them); a hand-written page only once its file is in site/.
-const GEN = new Set(['/studio/', '/', '/designs/', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html', '/designs/5.html',
+const GEN = new Set(['/studio/', '/', '/designs/', '/designs/1.html', '/designs/2.html', '/designs/3.html', '/designs/4.html',
   '/articles/', '/sources/', '/start/', '/agents/', '/admin/', '/questions/', '/sitemap/']);
 export const isGenerated = (u) => GEN.has(u) || ARTICLES.some((a) => a.u === u);
 export const pages = () => LIST.filter((x) => isGenerated(x.u) || existsSync(fileOf(x.u)));
@@ -157,15 +156,15 @@ const FAMILY = `<details class="family-credit">
 </details>`;
 
 // "Choose a design", with a preview of each (the pictures are made by node tools/shots.mjs thumbs).
-const DESIGN_KINDS = ['Newsroom feature', 'Where the data goes', 'Playground first', 'Sovereignty checklist', 'Saturday 21 November 2026'];
+const DESIGN_KINDS = ['Newsroom feature', 'Where the data goes', 'Playground first', 'Sovereignty checklist'];
 const chooser = (here) => `<details class="chooser">
     <summary><span class="ch-long">Choose a design</span><span class="ch-short">Designs</span></summary>
     <div class="chooser-panel">
       <ul class="chooser-list">
-${[1, 2, 3, 4, 5].map((n) => { const x = find(`/designs/${n}.html`); const name = x.l.replace(/^Design \d, /, '');
+${[1, 2, 3, 4].map((n) => { const x = find(`/designs/${n}.html`); const name = x.l.replace(/^Design \d, /, '');
   return `        <li><a href="${x.u}"${cur(here, x.u)}><img src="/assets/designs/${n}.jpg" width="640" height="400" alt="" loading="lazy"><span class="ch-name"><span class="num">${n}</span> ${esc(name)}</span><span class="ch-kind">${esc(DESIGN_KINDS[n - 1])}</span></a></li>`; }).join('\n')}
       </ul>
-      <p class="chooser-all"><a href="/designs/"${cur(here, '/designs/')}>See all five side by side</a> <span>The home page is design 5.</span></p>
+      <p class="chooser-all"><a href="/designs/"${cur(here, '/designs/')}>See all four side by side</a> <span>The home page is the map.</span></p>
     </div>
   </details>`;
 

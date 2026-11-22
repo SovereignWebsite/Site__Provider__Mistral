@@ -9,14 +9,14 @@ import { READ, ARTICLE, SITE, Q, S, F, RUN, RUNS } from './facts.mjs';
 import { d1, d2, d3, d4, d5 } from './designs.mjs';
 import { head, foot, sitemapBody, featureLocal, pic, run as navRun } from './nav.mjs';
 import { poster } from './art.mjs';
+import { home } from './home.mjs';
 
-export const HOME = 5; // the design used for the home page (see /questions/)
+export const HOME = 'map'; // the home page is the map (tools/home.mjs), Dinis Cruz, 22 November 2026
 export const DESIGNS = [
   { n: 1, name: 'The European brain', kind: 'Newsroom feature', idea: 'Dinis Cruz’s article told as an editorial long read: the three levels, the licence to watch, what was already run, and the proposal.' },
   { n: 2, name: 'The map', kind: 'Where the data goes', idea: 'A drawing of the path from your browser to each choice, with what is sent, to whom and for how long.' },
   { n: 3, name: 'The console', kind: 'Playground first', idea: 'Pick a provider and see the same OpenAI-style call, and what it sends and to whom.' },
   { n: 4, name: 'The ledger', kind: 'Sovereignty checklist', idea: 'Five questions as a table: Mistral’s three levels as the worked example, and your own row to fill in.' },
-  { n: 5, name: 'The hackathon', kind: 'Saturday 21 November 2026', idea: 'The briefing for participants: start here, the three demos, a first call in five minutes, and how to share.' },
 ];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -117,30 +117,30 @@ ${foot(url)}
   if (html.includes(String.fromCharCode(0x2014))) throw new Error(`${path}: an em dash`);
 }
 
-// The five designs.
-const D = { 1: d1, 2: d2, 3: d3, 4: d4, 5: d5 };
-const DJS = { 3: ['console.js', 'copy.js'], 4: ['ledger.js'], 5: ['copy.js'] };
+// The four designs.
+const D = { 1: d1, 2: d2, 3: d3, 4: d4 };
+const DJS = { 3: ['console.js', 'copy.js'], 4: ['ledger.js'] };
 for (const d of DESIGNS) {
   resetNotes(); const r = D[d.n]();
   page({ path: `designs/${d.n}.html`, url: `/designs/${d.n}.html`, title: `Design ${d.n}, ${d.name}`, description: r.description, theme: `d${d.n}`, body: r.body, js: DJS[d.n] || [] });
 }
 // Home: the chosen design, at /.
-{ resetNotes(); const r = D[HOME](); page({ path: 'index.html', url: '/', title: SITE.title, description: SITE.description, theme: `d${HOME}`, body: r.body, js: DJS[HOME] || [] }); }
+{ resetNotes(); const r = home(); page({ path: 'index.html', url: '/', title: SITE.title, description: r.description, theme: 'map', body: r.body }); }
 
 // The chooser.
 page({ path: 'designs/index.html', url: '/designs/', title: 'Choose a design', theme: 'plain',
-  description: 'Five designs of the same cited facts about Mistral and a sovereign website: a newsroom long read, a map, a console, a ledger and a hackathon poster.',
+  description: 'Four designs of the same cited facts about Mistral and a sovereign website: a newsroom long read, a map, a console and a ledger.',
   body: `<div class="wrap">
 <p class="mark">Choose a design</p>
-<h1>Five designs, the same facts</h1>
-<p class="lede">Each design rebuilds the page from the same cited facts; none is a reskin. The home page uses design ${HOME}, ${esc(DESIGNS[HOME - 1].name.toLowerCase())}, for the hackathon on Saturday 21 November 2026. Which one stays is an <a href="/questions/">open question</a>.</p>
+<h1>Four designs, the same facts</h1>
+<p class="lede">Each design rebuilds the page from the same cited facts; none is a reskin. The home page is now <a href="/">the map</a> of Mistral and this site; the designs stay as four ways to tell the same facts.</p>
 <ul class="cards">
 ${DESIGNS.map((d) => `<li class="card">
   <a href="/designs/${d.n}.html">
     <img src="/assets/designs/${d.n}.jpg" width="640" height="400" alt="Screenshot of design ${d.n}, ${esc(d.name)}">
     <span class="card-title"><span class="num">${d.n}</span> ${esc(d.name)}</span>
   </a>
-  <p class="card-kind">${esc(d.kind)}${d.n === HOME ? ' (the home page now)' : ''}</p>
+  <p class="card-kind">${esc(d.kind)}</p>
   <p>${esc(d.idea)}</p>
 </li>`).join('\n')}
 </ul>
@@ -186,31 +186,31 @@ ${used.map((k) => `<tr><td>${link(k)}</td><td>${READ}</td></tr>`).join('\n')}
 </div>` });
 
 // Questions for Dinis.
-page({ path: 'questions/index.html', url: '/questions/', title: 'Open questions', theme: 'plain', description: 'Open questions for Dinis Cruz about this site: which design for the home page, the partnership wording, and the hackathon details.',
+page({ path: 'questions/index.html', url: '/questions/', title: 'Open questions', theme: 'plain', description: 'Open questions for Dinis Cruz about this site: which design for the home page, the partnership wording, and the EU endpoint.',
   body: `<div class="wrap">
 <p class="mark">Open questions</p>
 <h1>Questions for Dinis</h1>
 <p class="lede">Decisions this site leaves to its owner. Until they are answered, the pages say less rather than guess.</p>
 <ol class="qs">
-<li><h2>Which design for the home page?</h2><p>The home page uses design ${HOME}, the hackathon briefing, because the people arriving on Saturday 21 November 2026 need “start here” first. After the event, design 1, the newsroom long read, may serve better. <a href="/designs/">Compare all five</a>.</p></li>
+<li><h2>Which design for the home page?</h2><p>Answered on 22 November 2026: the home page is <a href="/">the map</a> of Mistral and this site. The four designs stay at <a href="/designs/">/designs/</a>.</p></li>
 <li><h2>The partnership wording</h2><p>Every design says the partnership is a proposal and that nothing has been agreed with Mistral. Is “a partnership to propose”, as in the article, the wording you want, and should the site name the specific asks (a Mistral option on every site, Ministral 3 on the Pro appliances, the European stretch goals, credits for evals)?</p></li>
-<li><h2>The hackathon details</h2><p>Answered on 21 November 2026: the event is the Mistral Vibe Hackathon, organised by Mistral, and its public page is <a href="https://luma.com/le-chonk-in-london">luma.com/le-chonk-in-london</a>. The poster links it and quotes only what that page shows publicly (times, team size, age); the exact venue is shared by the organisers with selected participants, so it is not repeated here.</p></li>
-<li><h2>Where participants share what they build</h2><p>Design 5 asks participants to put their work in a public repository they own and to post the link “where the organisers ask”. Is there a channel, a hashtag or a form to name?</p></li>
 <li><h2>The EU endpoint in the code samples</h2><p>The code samples use the global endpoint, <code>api.mistral.ai</code>, which the demo agent called successfully. Only the EU endpoint, <code>api.eu.mistral.ai</code>, commits to processing in the EU, at 1.1 times the price; whether it serves <code>ministral-3b-2512</code> was not checked, because no authenticated call to it could be made. Should the samples default to the EU endpoint once that is checked?</p></li>
 <li><h2>Corrections to the article</h2><p>Mistral’s own pages differ from the article on several points (EU processing, training in Free mode, zero data retention and its broken link, the partner form, the Large 4 licence, “French”). This site follows Mistral’s pages; <a href="/sources/">the sources page</a> lists each one. Should the Newsroom article be corrected too?</p></li>
-<li><h2>Free mode for participants</h2><p>Whether a new Mistral account in Free mode needs a payment card or a phone number today was not confirmed from Mistral’s pages. Should the hackathon page tell participants to bring a card, or point them to the local model first?</p></li>
-<li><h2>The demos</h2><p>The designs link to the demos at <a href="${DEMOS.all}">/demos/</a>: <a href="${DEMOS.side}">side by side</a>, <a href="${DEMOS.key}">your key</a> and <a href="${DEMOS.device}">on your device</a>. Is that the order you want on the hackathon poster?</p></li>
+<li><h2>Free mode for visitors</h2><p>Whether a new Mistral account in Free mode needs a payment card or a phone number today was not confirmed from Mistral’s pages. Should the site tell visitors to expect one, or point them to the local model first?</p></li>
+<li><h2>The demos</h2><p>The designs link to the demos at <a href="${DEMOS.all}">/demos/</a>: <a href="${DEMOS.side}">side by side</a>, <a href="${DEMOS.key}">your key</a> and <a href="${DEMOS.device}">on your device</a>. Is that the order you want?</p></li>
 <li><h2>Measuring on the Pi</h2><p>The fit of Ministral 3 on a Pi or a tablet is an estimate on every page. When it is measured, should the numbers go on this site, on the Newsroom, or both?</p></li>
 </ol>
 </div>` });
 
 // Start, agents, admin (from the template, filled in).
-page({ path: 'start/index.html', url: '/start/', title: 'Start here', theme: 'plain', description: 'Where to start: for a hackathon participant, the first call in five minutes; for the owner of this site, connecting GitHub and the first change.',
+page({ path: 'start/index.html', url: '/start/', title: 'Start here', theme: 'plain', description: 'Where to start: the map of Mistral, a first call in five minutes, and for the owner of this site, connecting GitHub and the first change.',
   body: `<div class="wrap">
 <p class="mark">Start here</p>
 <h1>Where to start</h1>
-<h2>If you are at the hackathon</h2>
-<p>Open <a href="/designs/5.html">the hackathon briefing</a>: a first call to a Mistral model in five minutes, with your own key or a local model, then the <a href="${DEMOS.all}">demos</a>.</p>
+<h2>If you want the whole picture</h2>
+<p>Open <a href="/">the map</a>: the two ways to reach Mistral, the agents, the console, and what we have run.</p>
+<h2>If you want to try Mistral now</h2>
+<p>Run <a href="/browser/local/">Mistral in this tab</a> with no key, or open <a href="/studio/">the studio</a> for every demo, with your own key.</p>
 <h2>If you want the argument</h2>
 <p>Read <a href="/designs/1.html">the long read</a>, after ${ARTICLE.author}’s article <a href="${ARTICLE.url}">${ARTICLE.title}</a>.</p>
 <h2>If you own this site</h2>
@@ -269,7 +269,7 @@ page({ path: 'admin/index.html', url: '/admin/', title: 'How this site was made'
 <h2>The agents and their sessions</h2>
 <ul class="plain">
 <li><strong>conductor.mistral@SovereignWebsite.dinis</strong>: the conductor, who split the work, set the rules and assembles the site. Session: <a href="https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX">claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX</a>.</li>
-<li>The site agent, working for the conductor in the same session: the content, the five designs, the share card and the checks.</li>
+<li>The site agent, working for the conductor in the same session: the content, the designs, the share card and the checks.</li>
 <li>The research agent: Mistral’s facts, each checked on Mistral’s own pages, with its source, a verbatim quote and the date it was read, including where Mistral’s pages differ from the article.</li>
 <li>The demo agent: the demos at <a href="${DEMOS.all}">/demos/</a>. Its calls to Mistral, with their tokens, are on the <a href="/sources/">sources page</a>.</li>
 </ul>

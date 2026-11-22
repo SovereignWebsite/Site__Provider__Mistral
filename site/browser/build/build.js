@@ -31,7 +31,7 @@ if (window.top !== window.self) { throw new Error('framed: demo stopped'); }
   ];
   const PRESETS = [
     ['Chiswick cheese shop', 'A one-page site for a Chiswick cheese shop. British English, warm and plain. No invented facts: where the owner must add the address, the opening hours or the cheeses, leave a clear placeholder.'],
-    ['Hackathon team page', 'A two-page site for a hackathon team: a home page saying what we are building, and a page called "How to reach us" with placeholders for our names and links. British English. No invented names or facts.'],
+    ['Team page', 'A two-page site for a small team: a home page saying what we are building, and a page called "How to reach us" with placeholders for our names and links. British English. No invented names or facts.'],
     ['Community allotment', 'A small site for a community allotment group: home, "Join us" and "Rules of the plot". Plain British English, high contrast, large text. Placeholders for anything we have not told you.']
   ];
   const MAX_TOKENS = 4000;
